@@ -1,0 +1,2 @@
+/tools/*.sh text eol=lf
+/third_party/hdl-util-hdmi/** -text

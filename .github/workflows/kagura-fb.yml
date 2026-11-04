@@ -1,0 +1,80 @@
+name: KAGURA-HD
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: kagura-fb-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+env:
+  VERILATOR_COMMIT: 8ff77e9d47351b0a59114929880687839a51840b
+jobs:
+  simulation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read pinned Verilator version
+        id: verilator
+        run: echo "version=$(tr -d '[:space:]' < tools/verilator.version)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        id: cache
+        with:
+          path: ~/verilator
+          key: verilator-${{ steps.verilator.outputs.version }}-${{ env.VERILATOR_COMMIT }}-ubuntu-24.04
+      - name: Build Verilator
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git help2man perl python3 make autoconf g++ flex bison libfl2 libfl-dev zlib1g-dev
+          git clone --depth 1 --branch "v${{ steps.verilator.outputs.version }}" https://github.com/verilator/verilator.git /tmp/verilator-src
+          test "$(git -C /tmp/verilator-src rev-parse HEAD)" = "$VERILATOR_COMMIT"
+          cd /tmp/verilator-src
+          autoconf
+          ./configure --prefix="$HOME/verilator"
+          make -j"$(nproc)"
+          make install
+      - run: echo "$HOME/verilator/bin" >> "$GITHUB_PATH"
+      - name: Verify HDMI dependency bytes
+        shell: pwsh
+        run: ./tools/check-dependencies.ps1
+      - name: Run Kagura-FB simulations
+        env:
+          KAGURA_STRICT_VERSION: 1
+          KAGURA_SEED: 1
+        run: bash tools/test-fb-verilator.sh
+      - name: Run shared HDMI audio and memory regressions
+        env:
+          KAGURA_STRICT_VERSION: 1
+          KAGURA_SEED: 1
+        run: bash tools/test-common-verilator.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kagura-fb-simulation
+          if-no-files-found: warn
+          path: |
+            build/fb-verilator/*.log
+            build/common-verilator/*.log
+
+  host-drivers:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test portable C and Python drivers
+        run: bash tools/test-fb-drivers.sh
+      - name: Verify BLIT transaction model
+        run: python3 tools/analyze-fb-blit.py --output build/fb-blit-analysis.json
+      - name: Build pinned MicroPython Unix
+        run: |
+          git clone --depth 1 --branch v1.26.0 https://github.com/micropython/micropython.git /tmp/micropython
+          test "$(git -C /tmp/micropython rev-parse HEAD)" = "4ce2dd2cdab6e57f3982fc899f15a2103d71b0be"
+          make -C /tmp/micropython/ports/unix -j4 MICROPY_PY_SSL=0 MICROPY_PY_BTREE=0 MICROPY_PY_FFI=0 FROZEN_MANIFEST=
+      - name: Test on actual MicroPython runtime
+        env:
+          MICROPYTHON: /tmp/micropython/ports/unix/build-standard/micropython
+        run: bash tools/test-fb-micropython.sh
