@@ -1,5 +1,8 @@
 `timescale 1ns/1ps
 module tb_fb_scanout #(parameter bit INJECT_STALL=0);
+    wire rword_valid,scan_word_valid;
+    wire [31:0] rword_data,scan_word_data;
+
     reg stalled=0;
     integer missing_lines=0;
     reg clk=0,pix_clk=0,reset=1;
@@ -28,7 +31,7 @@ module tb_fb_scanout #(parameter bit INJECT_STALL=0);
         .sys_clk(clk),.sys_reset(reset),.pix_clk,.pix_reset(reset),.cx,.cy,
         .present_valid,.present_page,.present_palette,.present_ready,.present_done,
         .req_valid(display_valid),.req_ready(req_ready[0] && !stalled),.req_addr(display_addr),
-        .rsp_done(rsp_done[0]),.rsp_error(rsp_error[0]),.rsp_data,.rgb,.underrun,.memory_error,.generation_out);
+        .rsp_done(rsp_done[0]),.rsp_error(rsp_error[0]),.scan_word_valid,.scan_word_data,.rgb,.underrun,.memory_error,.generation_out);
     reg [2:0] background=0;
     reg [2:0] pending=0;
     wire [2:0] req_valid={background[2:1],display_valid && !stalled};

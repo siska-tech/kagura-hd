@@ -1,0 +1,370 @@
+{
+  "scope": "88s logical autoplay through actual existing C SDK and independent PC register model; no hardware",
+  "release_ready": false,
+  "pcm_startup_included": true,
+  "commands": 57742,
+  "traffic": {
+    "read_bytes": 467952,
+    "write_bytes": 3830561,
+    "transactions": 680154
+  },
+  "pc_tick_ms_mean": 10.816250956599138,
+  "pc_tick_ms_p95": 100.95479991286993,
+  "pc_tick_ms_max": 237.96419997233897,
+  "logical_seconds": {
+    "0": {
+      "commands": 15025,
+      "register_bytes": 1302008
+    },
+    "1": {
+      "commands": 136,
+      "register_bytes": 3752
+    },
+    "2": {
+      "commands": 17,
+      "register_bytes": 469
+    },
+    "3": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "4": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "5": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "6": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "7": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "8": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "9": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "10": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "11": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "12": {
+      "commands": 4170,
+      "register_bytes": 350704
+    },
+    "13": {
+      "commands": 286,
+      "register_bytes": 9246
+    },
+    "14": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "15": {
+      "commands": 192,
+      "register_bytes": 6384
+    },
+    "16": {
+      "commands": 155,
+      "register_bytes": 4495
+    },
+    "17": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "18": {
+      "commands": 531,
+      "register_bytes": 18118
+    },
+    "19": {
+      "commands": 168,
+      "register_bytes": 4963
+    },
+    "20": {
+      "commands": 192,
+      "register_bytes": 6384
+    },
+    "21": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "22": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "23": {
+      "commands": 155,
+      "register_bytes": 4495
+    },
+    "24": {
+      "commands": 440,
+      "register_bytes": 14842
+    },
+    "25": {
+      "commands": 192,
+      "register_bytes": 6384
+    },
+    "26": {
+      "commands": 155,
+      "register_bytes": 4495
+    },
+    "27": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "28": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "29": {
+      "commands": 155,
+      "register_bytes": 4495
+    },
+    "30": {
+      "commands": 4634,
+      "register_bytes": 369140
+    },
+    "31": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "32": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "33": {
+      "commands": 155,
+      "register_bytes": 4495
+    },
+    "34": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "35": {
+      "commands": 192,
+      "register_bytes": 6384
+    },
+    "36": {
+      "commands": 155,
+      "register_bytes": 4495
+    },
+    "37": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "38": {
+      "commands": 784,
+      "register_bytes": 48751
+    },
+    "39": {
+      "commands": 480,
+      "register_bytes": 16195
+    },
+    "40": {
+      "commands": 4021,
+      "register_bytes": 345121
+    },
+    "41": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "42": {
+      "commands": 155,
+      "register_bytes": 4495
+    },
+    "43": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "44": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "45": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "46": {
+      "commands": 171,
+      "register_bytes": 4927
+    },
+    "47": {
+      "commands": 4517,
+      "register_bytes": 398861
+    },
+    "48": {
+      "commands": 615,
+      "register_bytes": 55755
+    },
+    "49": {
+      "commands": 656,
+      "register_bytes": 59472
+    },
+    "50": {
+      "commands": 615,
+      "register_bytes": 55755
+    },
+    "51": {
+      "commands": 656,
+      "register_bytes": 59472
+    },
+    "52": {
+      "commands": 673,
+      "register_bytes": 59993
+    },
+    "53": {
+      "commands": 671,
+      "register_bytes": 58141
+    },
+    "54": {
+      "commands": 660,
+      "register_bytes": 57150
+    },
+    "55": {
+      "commands": 671,
+      "register_bytes": 58141
+    },
+    "56": {
+      "commands": 692,
+      "register_bytes": 59975
+    },
+    "57": {
+      "commands": 671,
+      "register_bytes": 58141
+    },
+    "58": {
+      "commands": 670,
+      "register_bytes": 58070
+    },
+    "59": {
+      "commands": 693,
+      "register_bytes": 60046
+    },
+    "60": {
+      "commands": 670,
+      "register_bytes": 58070
+    },
+    "61": {
+      "commands": 435,
+      "register_bytes": 37227
+    },
+    "62": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "63": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "64": {
+      "commands": 4,
+      "register_bytes": 128
+    },
+    "65": {
+      "commands": 4170,
+      "register_bytes": 350704
+    },
+    "66": {
+      "commands": 223,
+      "register_bytes": 7465
+    },
+    "67": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "68": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "69": {
+      "commands": 155,
+      "register_bytes": 4495
+    },
+    "70": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "71": {
+      "commands": 192,
+      "register_bytes": 6384
+    },
+    "72": {
+      "commands": 155,
+      "register_bytes": 4495
+    },
+    "73": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "74": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "75": {
+      "commands": 155,
+      "register_bytes": 4495
+    },
+    "76": {
+      "commands": 192,
+      "register_bytes": 6384
+    },
+    "77": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "78": {
+      "commands": 150,
+      "register_bytes": 4350
+    },
+    "79": {
+      "commands": 155,
+      "register_bytes": 4495
+    },
+    "80": {
+      "commands": 2910,
+      "register_bytes": 78612
+    },
+    "81": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "82": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "83": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "84": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "85": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "86": {
+      "commands": 0,
+      "register_bytes": 0
+    },
+    "87": {
+      "commands": 0,
+      "register_bytes": 0
+    }
+  },
+  "real_hardware_fps": null,
+  "real_fence_ms": null
+}

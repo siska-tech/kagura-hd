@@ -1,0 +1,10 @@
+{
+  "misaki.zip": {
+    "url": "https://littlelimit.net/arc/misaki/misaki_bdf_2021-05-05.zip",
+    "sha256": "a275f173cf5935890f84d3e65d05b1bf73028e4d4bf41cb3de0ef3b5ebe8e217"
+  },
+  "mplus.tar.xz": {
+    "url": "https://deb.debian.org/debian/pool/main/x/xfonts-mplus/xfonts-mplus_2.2.4.orig.tar.xz",
+    "sha256": "4c973ef85e3e17cb3894a6193b85256ca75aab94d01919175d308a76fa420b94"
+  }
+}

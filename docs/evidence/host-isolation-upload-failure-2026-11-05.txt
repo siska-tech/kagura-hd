@@ -1,0 +1,14 @@
+ISO1 {"stage": "diagnostic_identity", "test_id": 1, "actual": "49534f31000104"}
+
+ISO1 {"length": 4, "test_id": 1, "xor": "a2280000", "stage": "upload_echo", "expected": "ed0f2143", "address": 300032, "match": false, "error_bytes": [0, 1], "actual": "4f272143"}
+
+Traceback (most recent call last):
+
+  File "<stdin>", line 1, in <module>
+
+  File "<string>", line 12, in run_write
+
+  File "<string>", line 9, in _record
+
+ValueError: ISO1 mismatch; STOP, no retry: upload_echo
+

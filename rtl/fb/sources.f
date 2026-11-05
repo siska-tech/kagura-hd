@@ -21,6 +21,8 @@ third_party/hdl-util-hdmi/src/audio_info_frame.sv
 third_party/hdl-util-hdmi/src/auxiliary_video_information_info_frame.sv
 third_party/hdl-util-hdmi/src/source_product_description_info_frame.sv
 rtl/bus/kagura_spi_adapter.sv
+rtl/audio/kagura_audio_registers.sv
+rtl/fb/kagura_fb_audio_endpoint.sv
 rtl/fb/kagura_fb_host.sv
 rtl/fb/kagura_fb_registers.sv
 rtl/fb/kagura_fb_commands.sv

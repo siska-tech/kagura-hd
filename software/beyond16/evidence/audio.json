@@ -1,0 +1,12 @@
+{
+  "scope": "offline integer PCM mix; no device or hardware timing",
+  "sample_rate": 48000,
+  "channels": 2,
+  "frames": 7200000,
+  "seconds": 150,
+  "pcm0_loop_frames": 384000,
+  "pcm1_events": 8,
+  "clipped_samples": 0,
+  "peak": 14204,
+  "hardware_underrun": null
+}

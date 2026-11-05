@@ -2,8 +2,8 @@
 // One outstanding, tagged FB command. The register endpoint locks both
 // command and CPU writes to upload_data from acceptance through done. The
 // descriptor stays stable; COPY updates upload_data via read_result internally. Completion tag/error is paired with done.
-// Opcode 0 fence, 1 fill, 2 palette, 3 present, 4 write, 5 read, 6 aligned copy.
-module kagura_fb_commands (
+// Opcode 0 fence, 1 fill, 2 palette, 3 present, 4 write, 5 read, 6 aligned copy, 7 optional audio commit.
+module kagura_fb_commands #(parameter bit AUDIO_CSR=0) (
     input wire clk,reset,valid,
     output wire ready,
     input wire [127:0] command,
@@ -25,9 +25,11 @@ module kagura_fb_commands (
     output wire present_valid,
     input wire present_ready,present_done,
     output wire present_page,
+    output wire audio_capture,audio_apply,audio_commit_done,
+    input wire audio_settings_valid,audio_busy,audio_settle,audio_ready,audio_done,audio_apply_error,
     output reg [191:0] present_palette
 );
-    localparam IDLE=0,EXECUTE=1,FILL_START=2,FILL_WAIT=3,MEM_REQ=4,MEM_WAIT=5,PRESENT_REQ=6,PRESENT_WAIT=7,DECODE=8;
+    localparam IDLE=0,EXECUTE=1,FILL_START=2,FILL_WAIT=3,MEM_REQ=4,MEM_WAIT=5,PRESENT_REQ=6,PRESENT_WAIT=7,DECODE=8,AUDIO_SNAPSHOT=9,AUDIO_SEND=10,AUDIO_WAIT=11;
     localparam BAD_COMMAND=2,RANGE_ERROR=3,MEMORY_ERROR=4;
     reg [3:0] state;
     wire [127:0] desc=command;
@@ -61,6 +63,10 @@ module kagura_fb_commands (
     reg palette_command_ok,copy_range_ok,engine_empty;
     wire [15:0] engine_x=copy_command ? desc[79:64] : desc[47:32];
     wire [15:0] engine_y=copy_command ? desc[95:80] : desc[63:48];
+    // DECODE/EXECUTE settle this mux before FILL_START. Keep validation
+    // on the original full-width descriptor; only stage the engine operand.
+    reg [15:0] engine_y_q;
+    always @(posedge clk) if(reset) engine_y_q<=0; else engine_y_q<=engine_y;
     wire [15:0] engine_width=copy_command ? desc[111:96] : desc[79:64];
     wire [15:0] engine_height=copy_command ? desc[127:112] : desc[95:80];
     wire [16:0] copy_sx_end={1'b0,desc[47:32]}+{1'b0,desc[111:96]};
@@ -72,6 +78,11 @@ module kagura_fb_commands (
         fill_end_y<={1'b0,engine_y}+{1'b0,engine_height};
         copy_range_ok<=desc[47:32]<640 && desc[63:48]<360 && desc[79:64]<640 && desc[95:80]<360 && copy_sx_end<=640 && copy_sy_end<=360;
     end
+    wire audio_descriptor_ok=argument==0 && desc[127:32]==0;
+    assign audio_capture=!reset && AUDIO_CSR && state==EXECUTE && opcode==7 &&
+        audio_descriptor_ok && !audio_settle && !audio_busy && audio_settings_valid;
+    assign audio_apply=!reset && AUDIO_CSR && state==AUDIO_SEND;
+    assign audio_commit_done=!reset && AUDIO_CSR && state==AUDIO_WAIT && (audio_done || audio_apply_error);
     assign ready=!reset && state==IDLE;
     assign present_valid=!reset && state==PRESENT_REQ;
     assign present_page=argument[0];
@@ -95,7 +106,7 @@ module kagura_fb_commands (
     kagura_fb_fill_burst #(.VALIDATED_INPUT(1),.ENABLE_COPY(1),.NONEMPTY_INPUT(1)) fill(
         .clk,.reset,.valid(state==FILL_START),.page(copy_command ? argument[1] : argument[0]),
         .copy(copy_command),.src_page(argument[0]),.src_x(desc[47:32]),.src_y(desc[63:48]),.capture_window(copy_capture),
-        .x(engine_x),.y(engine_y),.width(engine_width),.height(engine_height),.color(desc[99:96]),
+        .x(engine_x),.y(engine_y_q),.width(engine_width),.height(engine_height),.color(desc[99:96]),
         .ready(fill_ready),.done(fill_done),.error(fill_error),
         .req_valid(fill_valid),.req_ready(host_ready && fill_active),.req_write(fill_write),
         .req_addr(fill_addr),.req_words(fill_words),.req_wdata(fill_wdata),.req_mask(fill_mask),
@@ -148,8 +159,20 @@ module kagura_fb_commands (
                         end else if(engine_empty) begin done<=1;state<=IDLE;end
                         else state<=FILL_START;
                     end
+                    7: begin
+                        if(!AUDIO_CSR || !audio_descriptor_ok) begin done<=1;error<=BAD_COMMAND;state<=IDLE;end
+                        else if(audio_busy) begin done<=1;error<=1;state<=IDLE;end
+                        else if(audio_settle) state<=EXECUTE;
+                        else if(!audio_settings_valid) begin done<=1;error<=RANGE_ERROR;state<=IDLE;end
+                        else state<=AUDIO_SNAPSHOT;
+                    end
                     default: begin done<=1; error<=BAD_COMMAND; state<=IDLE; end
                 endcase
+                AUDIO_SNAPSHOT: state<=AUDIO_SEND;
+                AUDIO_SEND: if(audio_ready) state<=AUDIO_WAIT;
+                AUDIO_WAIT: if(audio_done || audio_apply_error) begin
+                    done<=1;error<=audio_apply_error ? MEMORY_ERROR : 8'd0;state<=IDLE;
+                end
                 FILL_START: if(fill_ready) state<=FILL_WAIT;
                 FILL_WAIT: if(fill_done) begin
                     done<=1; error<=fill_error ? MEMORY_ERROR : 8'd0; state<=IDLE;

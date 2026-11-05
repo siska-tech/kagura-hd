@@ -6,7 +6,10 @@
 // valid/data are held until ready. done follows the CS-high recovery gap for
 // reads AND writes. error accompanies done on an invalid command, with no IO.
 // Fixed CR0, 54 MHz CK, LAT=14/RDL=6 follow the existing board configuration.
-// Burst operation still requires physical memory validation.
+// Requests are split at every absolute 32-byte boundary. TX/mask shift state
+// and the RX one-hot slot continue across CS-separated chunks; no second
+// payload buffer or change to the client interface is required.
+// CA45, CR0, LAT/RDL and PHY remain unchanged pending separate review.
 module kagura_fb_burst_ctrl #(
     parameter integer INIT_CYCLES=4096,
     parameter integer LAT=14,
@@ -23,6 +26,10 @@ module kagura_fb_burst_ctrl #(
     input wire [63:0] mask,
     output reg done, error,
     output wire [511:0] rdata,
+    // Unstallable tap; reserve a request before acceptance. Legacy rdata and
+    // physical transfer/completion timing are unaffected.
+    output reg rword_valid,
+    output reg [31:0] rword_data,
     output wire initialized,
     output wire phy_reset_n, phy_cs_n, phy_ck_en, phy_dq_oe,
     output wire [7:0] phy_dq_o_rise, phy_dq_o_fall,
@@ -31,13 +38,17 @@ module kagura_fb_burst_ctrl #(
     input wire [7:0] phy_dq_i_rise, phy_dq_i_fall
 );
     localparam integer CW=$clog2(INIT_CYCLES+2)>7 ? $clog2(INIT_CYCLES+2) : 7;
-    localparam INIT=0, CONFIG=1, IDLE=2, TRANSFER=3, GAP=4, CHECK=5;
+    localparam INIT=0, CONFIG=1, IDLE=2, TRANSFER=3, GAP=4, CHECK=5, PREPARE=6;
     reg [2:0] state;
     reg [CW-1:0] init_tick;
     reg [6:0] tick,last_tick,clock_end;
     reg calibrated, configuring, writing, last_region;
     reg [4:0] address_tail;
     reg [5:0] pairs;
+    reg [19:0] cursor;
+    reg [4:0] remaining;
+    wire [4:0] capacity=5'd8-{2'b00,cursor[2:0]};
+    wire [4:0] chunk_words=remaining<capacity ? remaining : capacity;
     reg [47:0] ca;
     reg [511:0] tx;
     reg capture_enable,clear_receive;
@@ -54,6 +65,24 @@ module kagura_fb_burst_ctrl #(
         assign rdata[slot*16+:16]=pair_data;
     end endgenerate
     reg [63:0] tx_mask;
+    reg [15:0] read_half;
+    reg read_half_valid;
+    always @(posedge clk) begin
+        if(reset) begin
+            read_half<=0; read_half_valid<=0; rword_valid<=0; rword_data<=0;
+        end else begin
+            rword_valid<=0;
+            if(clear_receive) read_half_valid<=0;
+            else if(capture_enable) begin
+                read_half_valid<=!read_half_valid;
+                if(!read_half_valid) read_half<={phy_dq_i_fall,phy_dq_i_rise};
+                else begin
+                    rword_data<={phy_dq_i_fall,phy_dq_i_rise,read_half};
+                    rword_valid<=1;
+                end
+            end
+        end
+    end
     // A <=16-word transaction can cross the 4 MiB limit only in the
     // final 32-word region. Keep a long address carry chain off the FSM.
     wire [5:0] tail_sum={1'b0,address_tail}+{1'b0,pairs[5:1]};
@@ -86,7 +115,7 @@ module kagura_fb_burst_ctrl #(
     always @(posedge clk) begin
         if(reset) begin
             state<=INIT; init_tick<=0; tick<=0; last_tick<=0; clock_end<=0; calibrated<=0; configuring<=0; writing<=0;
-            last_region<=0; address_tail<=0; pairs<=0; ca<=0; tx<=0; tx_mask<=0; capture_slot<=0; clear_receive<=0; capture_enable<=0; done<=0; error<=0;
+            last_region<=0; address_tail<=0; pairs<=0; cursor<=0; remaining<=0; ca<=0; tx<=0; tx_mask<=0; capture_slot<=0; clear_receive<=0; capture_enable<=0; done<=0; error<=0;
         end else begin
             done<=0;
             error<=0;
@@ -105,6 +134,7 @@ module kagura_fb_burst_ctrl #(
                     // Source mux/control depth must not drive 512-bit enables.
                     // Invalid requests never enter TRANSFER or assert CS.
                     configuring<=0; writing<=write; pairs<={words,1'b0};
+                    cursor<=addr; capture_slot<=32'd1;
                     // Bound the active transfer counter independently of the
                     // long power-up delay; precompute terminal counts once.
                     ca<=make_ca(!write,0,{11'b0,addr,1'b0});
@@ -113,10 +143,19 @@ module kagura_fb_burst_ctrl #(
                     tick<=0; if(valid) state<=CHECK;
                 end
                 CHECK: begin
-                    clock_end<=7'(LAT)+{1'b0,pairs};
-                    last_tick<=7'(LAT)+{1'b0,pairs}+(writing ? 7'd0 : 7'(RDL));
+                    remaining<=pairs[5:1];
                     if(pairs[5:1]==0 || pairs[5:1]>16 || beyond_die) begin done<=1; error<=1; state<=IDLE; end
-                    else state<=TRANSFER;
+                    else state<=PREPARE;
+                end
+                PREPARE: begin
+                    // At most 8 words and never across an absolute 32B edge.
+                    pairs<={chunk_words,1'b0};
+                    remaining<=remaining-chunk_words;
+                    clock_end<=7'(LAT)+{1'b0,chunk_words,1'b0};
+                    last_tick<=7'(LAT)+{1'b0,chunk_words,1'b0}+(writing ? 7'd0 : 7'(RDL));
+                    ca<=make_ca(!writing,0,{11'b0,cursor,1'b0});
+                    cursor<={cursor[19:3]+1'b1,3'b000};
+                    tick<=0;state<=TRANSFER;
                 end
                 TRANSFER: begin
                     if(data_phase && writing && !configuring) begin
@@ -124,14 +163,16 @@ module kagura_fb_burst_ctrl #(
                     end
                     // Registered one-hot slots select the receiving pair without
                     // a wide alignment mux or variable write decoder.
-                    if(!writing && tick==7'(LAT+RDL)) begin capture_enable<=1; capture_slot<=32'd1; end
+                    if(!writing && tick==7'(LAT+RDL)) capture_enable<=1;
                     if(capture_enable) capture_slot<=capture_slot<<1;
                     if(tick==last_tick) begin capture_enable<=0; tick<=0; state<=GAP; end
                     else tick<=tick+1'b1;
                 end
                 GAP: if(tick==7'(CS_HIGH_CYCLES-1)) begin
-                    tick<=0; state<=IDLE; calibrated<=1;
-                    if(!configuring) done<=1;
+                    tick<=0; calibrated<=1;
+                    if(configuring) state<=IDLE;
+                    else if(remaining!=0) state<=PREPARE;
+                    else begin done<=1;state<=IDLE;end
                     configuring<=0;
                 end else tick<=tick+1'b1;
                 default: begin state<=INIT; init_tick<=0; tick<=0; end

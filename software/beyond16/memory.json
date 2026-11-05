@@ -1,0 +1,113 @@
+{
+  "die_relative_limit": 4194304,
+  "pcm_exclusive_end_max": "0x3fffff",
+  "psram": [
+    {
+      "name": "page0",
+      "start": "0x0",
+      "end_exclusive": "0x1c200",
+      "bytes": 115200,
+      "alignment": 4,
+      "role": "display/back buffer + immutable source strip",
+      "lifetime": "preload through end; scratch reusable after benchmark",
+      "discardable": "after playback stopped",
+      "start_integer": 0
+    },
+    {
+      "name": "page1",
+      "start": "0x1c200",
+      "end_exclusive": "0x38400",
+      "bytes": 115200,
+      "alignment": 4,
+      "role": "display/back buffer + immutable source strip",
+      "lifetime": "preload through end; scratch reusable after benchmark",
+      "discardable": "after playback stopped",
+      "start_integer": 115200
+    },
+    {
+      "name": "PCM0 BGM",
+      "start": "0x80000",
+      "end_exclusive": "0xddc00",
+      "bytes": 384000,
+      "alignment": 4,
+      "role": "8 second looping FM composition",
+      "lifetime": "preload through end; scratch reusable after benchmark",
+      "discardable": "after playback stopped",
+      "start_integer": 524288
+    },
+    {
+      "name": "PCM1 FX0",
+      "start": "0xe0000",
+      "end_exclusive": "0xe1000",
+      "bytes": 4096,
+      "alignment": 4,
+      "role": "scene stinger",
+      "lifetime": "preload through end; scratch reusable after benchmark",
+      "discardable": "after playback stopped",
+      "start_integer": 917504
+    },
+    {
+      "name": "PCM1 FX1",
+      "start": "0xe4000",
+      "end_exclusive": "0xe4800",
+      "bytes": 2048,
+      "alignment": 4,
+      "role": "scene stinger",
+      "lifetime": "preload through end; scratch reusable after benchmark",
+      "discardable": "after playback stopped",
+      "start_integer": 933888
+    },
+    {
+      "name": "PCM1 FX2",
+      "start": "0xe8000",
+      "end_exclusive": "0xea000",
+      "bytes": 8192,
+      "alignment": 4,
+      "role": "scene stinger",
+      "lifetime": "preload through end; scratch reusable after benchmark",
+      "discardable": "after playback stopped",
+      "start_integer": 950272
+    },
+    {
+      "name": "PCM1 FX3",
+      "start": "0xec000",
+      "end_exclusive": "0xee000",
+      "bytes": 8192,
+      "alignment": 4,
+      "role": "scene stinger",
+      "lifetime": "preload through end; scratch reusable after benchmark",
+      "discardable": "after playback stopped",
+      "start_integer": 966656
+    },
+    {
+      "name": "scratch",
+      "start": "0x100000",
+      "end_exclusive": "0x101000",
+      "bytes": 4096,
+      "alignment": 4,
+      "role": "bench only, before autoplay",
+      "lifetime": "preload through end; scratch reusable after benchmark",
+      "discardable": "after playback stopped",
+      "start_integer": 1048576
+    }
+  ],
+  "atlas": {
+    "per_page_byte_offset": 102400,
+    "y": 320,
+    "width": 640,
+    "height": 32,
+    "bytes": 10240,
+    "logo": "header, y16..79, already in both pages",
+    "plasma": "tiles 8..15, sx=40*id,sy=320,size=32x32",
+    "storm_roto_wave": "sphere/icon tiles0..7; waves generated as FILL bands",
+    "mapping": "BLIT sources are framebuffer rectangles; no arbitrary PSRAM-address BLIT",
+    "visible": true,
+    "lifetime": "entire demo; never erased by dynamic region"
+  },
+  "dirty_map_ram_bytes": 4160,
+  "lz_history_ram_bytes": 32768,
+  "framebuffer_in_rp2040_ram": false,
+  "flash_bin_bytes": 316292,
+  "firmware_sector_end_exclusive": "0x1004e000",
+  "filesystem_start": "0x100a0000"
+}

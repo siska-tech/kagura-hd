@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "deployed_binary_and_C_inputs_unchanged": true,
+  "deployed_C_input_files": 12,
+  "new_full_backup_verified": true,
+  "firmware_readback_verified": true,
+  "filesystem_unchanged": true,
+  "fpga_flash_written": false,
+  "full_demo_STOP_rc": 0,
+  "all_8_scenes_captured": true,
+  "physical_before_after": "NOT RUN",
+  "load_sweep": "NOT RUN",
+  "full_framebuffer_CRC": "NOT RUN",
+  "current_state": "BEYOND finale held, audio stopped, QSPI deinitialized, firmware retained",
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1"
+      },
+      {
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "150.000000"
+    }
+  },
+  "release_ready": false
+}

@@ -1,0 +1,62 @@
+{
+  "release_ready": false,
+  "all_pc_checks_pass": true,
+  "checks": {
+    "focused": {
+      "pass": true,
+      "log": "build/pcm2-timing-01/build/analysis/focused.log",
+      "sha256": "718fda206bb76d492226fad920efa36590a6bb87095ba48d015f2ebd69e25f4b"
+    },
+    "fb26": {
+      "pass": true,
+      "log": "build/pcm2-timing-01/build/analysis/fb-regression.log",
+      "sha256": "0b69be8fee34ec99fca955a68cd500ed0cfa42f985f79a9999716de0bb5b9193"
+    },
+    "qspi_pcm": {
+      "pass": true,
+      "log": "build/pcm2-timing-01/build/analysis/audio-qspi.log",
+      "sha256": "d0019c4df39a87ee13f0b927a40d52767e05d70b2babce3a5277b572eed2cb5d"
+    },
+    "wrap12": {
+      "pass": true,
+      "log": "build/pcm2-timing-01/build/analysis/wrap-regression.log",
+      "sha256": "968b1cf2f069ad489022325a706f5eec7f37289e92edc9d60faa219ed8fc4a11"
+    },
+    "controller272": {
+      "pass": true,
+      "log": "build/pcm2-timing-01/build/analysis/controller272.log",
+      "sha256": "c70db37fb8a57c30f565393a8d1a9841e8eadce43929de9e32f1dc1c4d6eabd2"
+    },
+    "rx32": {
+      "pass": true,
+      "log": "build/pcm2-timing-01/build/analysis/rx32.log",
+      "sha256": "14083604b558dd0f18670a04e3c243242c0c903bdfeb215b13360ab2a12ea11b"
+    },
+    "common22": {
+      "pass": true,
+      "log": "build/pcm2-timing-01/build/analysis/common-regression.log",
+      "sha256": "4f027b600a8cf9ba38f05acc190a5e8077bc54ab10766176ddb837d75a07644f"
+    },
+    "raster_algebra": {
+      "pass": true,
+      "log": "build/pcm2-timing-01/build/analysis/raster-contract.json",
+      "sha256": "14689a9b91fad9159ba08fdc9b0c5e55a4867aa0e82461bd489fe5e8a2aa0f1e"
+    }
+  },
+  "parent_preserved": true,
+  "protected_bitstream_sha256": {
+    "rmw": "90b5b26189b198326818488056b9c8fb84e515973cdd2432e04287be3a91ef2e",
+    "rx32": "a99c5f8304aed79b8e0d148d6701f24bf5e282022c75c45ca3b0ab62b0d431cf",
+    "pcm2_parent": "3c61f8d87a407e25e2d348f09fa22abb8826361b6c3c93244e58fc200e36b034"
+  },
+  "changed_files": {
+    "DO_NOT_PROGRAM.txt": "2d395a6f5213eece44a59b70afbb1532a04e01ff724fc82d003d396709902bf2",
+    "tools/test-fb-verilator.sh": "cc71536f57f0f20d6d2d487f30aa883b98304f2fac6db33d7c5cbebd8ec7a560",
+    "sim/tests/tb_fb_cursor.sv": "cc2484ae4668358c19623aa3e5deba0d315b4c0fdaf5270cb5acc138c1f981b4",
+    "rtl/fb/kagura_fb_commands.sv": "fb0791d242707d8b9171a95565a06687e2eead20cef103c217e4af0530163f3c",
+    "rtl/fb/kagura_fb_cursor.sv": "c9c7f2a5e6dbbab5e35e48b1fd578830fd0f02dc653da836e133d5685a674893"
+  },
+  "parent_source_manifest_sha256": "05ed0e14518ae8313c3927b6f4eb4f73b256584f59779312dcf5c2a60d93f4c0",
+  "constraints_unchanged": true,
+  "controller_phy_audio_unchanged": true
+}

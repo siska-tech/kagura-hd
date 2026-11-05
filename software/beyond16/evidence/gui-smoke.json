@@ -1,0 +1,14 @@
+{
+  "tk_image_size": [
+    640,
+    360
+  ],
+  "mixer": [
+    48000,
+    -16,
+    2
+  ],
+  "bgm_seconds": 8.0,
+  "listening_test": false,
+  "hardware_access": false
+}

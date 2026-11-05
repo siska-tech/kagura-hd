@@ -15,6 +15,21 @@ module tb_fb_cursor;
  reg req_valid=0,req_write=0;reg [4:0] req_addr=0;reg [7:0] req_wdata=0;
  wire req_ready,rsp_valid,rsp_error,irq;wire [7:0] rsp_data;
  kagura_fb_cursor dut(.*);
+ wire ref_ready,ref_valid,ref_error,ref_irq;wire [7:0] ref_data;wire [23:0] ref_rgb;
+ kagura_fb_cursor_reference reference_cursor(
+  .sys_clk,.sys_reset,.pix_clk,.pix_reset,.req_valid,.req_write,.req_addr,.req_wdata,
+  .req_ready(ref_ready),.rsp_valid(ref_valid),.rsp_error(ref_error),.rsp_data(ref_data),.irq(ref_irq),
+  .cx,.cy,.background,.rgb_out(ref_rgb));
+ always @(negedge sys_clk) if(!sys_reset) begin
+  if({req_ready,rsp_valid,rsp_error,rsp_data,irq} !== {ref_ready,ref_valid,ref_error,ref_data,ref_irq})
+   $fatal(1,"cursor CSR cycle mismatch");
+ end
+ always @(negedge pix_clk) if(!pix_reset) begin
+  if(rgb_out!==ref_rgb) $fatal(1,"cursor RGB cycle mismatch cx=%0d cy=%0d",cx,cy);
+  if({dut.position_x,dut.position_y,dut.active_bank,dut.visible,dut.ack} !==
+     {reference_cursor.position_x,reference_cursor.position_y,reference_cursor.active_bank,reference_cursor.visible,reference_cursor.ack})
+   $fatal(1,"cursor mailbox application edge mismatch");
+ end
  task access(input bit wr,input integer address,data,expected_error,output integer result);
   begin
    @(negedge sys_clk);req_valid=1;req_write=wr;req_addr=5'(address);req_wdata=8'(data);

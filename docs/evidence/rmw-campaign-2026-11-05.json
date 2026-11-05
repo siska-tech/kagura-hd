@@ -1,0 +1,3472 @@
+{
+  "campaign": "RMW-CAMPAIGN-01",
+  "outcome": "STOPPED_FIRST_ERROR",
+  "failure": {
+    "case": "A0",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\rmw-campaign-2026-11-05-v1\\run.py\", line 118, in <module>\n    result=measurement.audio(wav,c)\n  File \"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\rmw-campaign-2026-11-05-v1\\measurement.py\", line 40, in audio\n    assert result['stereo_equal_fraction']>=.99,result\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: {'frames': 144096, 'longest_zero_frames': 2, 'min_rms': 74.9860146682922, 'stereo_equal_fraction': 0.9338149566955363}\n"
+  },
+  "bitstream_sha256": "90b5b26189b198326818488056b9c8fb84e515973cdd2432e04287be3a91ef2e",
+  "plan_sha256": "997e6a271ced4487346460e6a001de8c06a694a968b879f1f8b14fd42e1be726",
+  "frozen_inputs": 128,
+  "frozen_inputs_unchanged": true,
+  "elapsed_seconds": 163.047,
+  "passed_cases": 72,
+  "failed_cases": 1,
+  "stage_pass_counts": {
+    "1": 15,
+    "2": 1,
+    "3": 11,
+    "4": 40,
+    "5": 5
+  },
+  "comparisons": 1164,
+  "comparison_bytes": 8736,
+  "comparison_mismatches": 0,
+  "guard_comparisons": 564,
+  "measured_health_count": 73,
+  "health_errors": 0,
+  "health_after_failed_audio_capture": "not read; no claim about final FIFO state",
+  "audio_postmortem": {
+    "meta": {
+      "rate": 48000,
+      "channels": 2,
+      "frames": 144096,
+      "sample_bytes": 2
+    },
+    "original_gate": "FAIL: abs(L-R)<=2 fraction must be >=0.99; unchanged",
+    "equal_within2_fraction": 0.9338149566955363,
+    "left_rms": 77.52294532745096,
+    "right_rms": 77.52150266198561,
+    "difference_rms": 1.3888390138354125,
+    "max_abs_difference": 7,
+    "difference_histogram": {
+      "-7": 1,
+      "-6": 7,
+      "-5": 58,
+      "-4": 711,
+      "-3": 4019,
+      "-2": 14551,
+      "-1": 31694,
+      "0": 41747,
+      "1": 31960,
+      "2": 14607,
+      "3": 4028,
+      "4": 639,
+      "5": 71,
+      "6": 3
+    },
+    "lag_analysis": [
+      {
+        "lag_samples": -4,
+        "difference_rms": 49.74711763247277
+      },
+      {
+        "lag_samples": -3,
+        "difference_rms": 42.89837675172167
+      },
+      {
+        "lag_samples": -2,
+        "difference_rms": 34.638475671360005
+      },
+      {
+        "lag_samples": -1,
+        "difference_rms": 23.498860099353305
+      },
+      {
+        "lag_samples": 0,
+        "difference_rms": 1.3888390138354125
+      },
+      {
+        "lag_samples": 1,
+        "difference_rms": 23.531752982988962
+      },
+      {
+        "lag_samples": 2,
+        "difference_rms": 34.64629255405743
+      },
+      {
+        "lag_samples": 3,
+        "difference_rms": 42.903721039174535
+      },
+      {
+        "lag_samples": 4,
+        "difference_rms": 49.753120971322296
+      }
+    ],
+    "right_from_left_least_squares_gain": 0.9998209134620839,
+    "first_mismatches": [
+      {
+        "index": 35,
+        "left": 3,
+        "right": 0,
+        "difference": 3
+      },
+      {
+        "index": 50,
+        "left": 28,
+        "right": 25,
+        "difference": 3
+      },
+      {
+        "index": 53,
+        "left": -33,
+        "right": -30,
+        "difference": -3
+      },
+      {
+        "index": 65,
+        "left": -72,
+        "right": -75,
+        "difference": 3
+      },
+      {
+        "index": 77,
+        "left": -54,
+        "right": -51,
+        "difference": -3
+      },
+      {
+        "index": 94,
+        "left": -88,
+        "right": -85,
+        "difference": -3
+      },
+      {
+        "index": 165,
+        "left": -94,
+        "right": -91,
+        "difference": -3
+      },
+      {
+        "index": 209,
+        "left": -144,
+        "right": -141,
+        "difference": -3
+      },
+      {
+        "index": 231,
+        "left": 27,
+        "right": 24,
+        "difference": 3
+      },
+      {
+        "index": 255,
+        "left": 66,
+        "right": 63,
+        "difference": 3
+      },
+      {
+        "index": 257,
+        "left": 65,
+        "right": 70,
+        "difference": -5
+      },
+      {
+        "index": 292,
+        "left": 5,
+        "right": 2,
+        "difference": 3
+      },
+      {
+        "index": 306,
+        "left": -98,
+        "right": -101,
+        "difference": 3
+      },
+      {
+        "index": 308,
+        "left": -93,
+        "right": -97,
+        "difference": 4
+      },
+      {
+        "index": 313,
+        "left": -85,
+        "right": -89,
+        "difference": 4
+      },
+      {
+        "index": 336,
+        "left": 144,
+        "right": 141,
+        "difference": 3
+      },
+      {
+        "index": 349,
+        "left": 165,
+        "right": 168,
+        "difference": -3
+      },
+      {
+        "index": 359,
+        "left": -7,
+        "right": -4,
+        "difference": -3
+      },
+      {
+        "index": 370,
+        "left": 9,
+        "right": 13,
+        "difference": -4
+      },
+      {
+        "index": 373,
+        "left": 20,
+        "right": 17,
+        "difference": 3
+      },
+      {
+        "index": 387,
+        "left": 41,
+        "right": 44,
+        "difference": -3
+      },
+      {
+        "index": 400,
+        "left": 66,
+        "right": 62,
+        "difference": 4
+      },
+      {
+        "index": 417,
+        "left": -34,
+        "right": -31,
+        "difference": -3
+      },
+      {
+        "index": 430,
+        "left": -74,
+        "right": -77,
+        "difference": 3
+      },
+      {
+        "index": 461,
+        "left": -21,
+        "right": -17,
+        "difference": -4
+      },
+      {
+        "index": 464,
+        "left": -16,
+        "right": -13,
+        "difference": -3
+      },
+      {
+        "index": 474,
+        "left": 4,
+        "right": 1,
+        "difference": 3
+      },
+      {
+        "index": 520,
+        "left": -173,
+        "right": -170,
+        "difference": -3
+      },
+      {
+        "index": 534,
+        "left": -83,
+        "right": -86,
+        "difference": 3
+      },
+      {
+        "index": 542,
+        "left": -66,
+        "right": -69,
+        "difference": 3
+      },
+      {
+        "index": 548,
+        "left": 68,
+        "right": 71,
+        "difference": -3
+      },
+      {
+        "index": 549,
+        "left": 72,
+        "right": 69,
+        "difference": 3
+      }
+    ],
+    "tone_amplitudes_left": {
+      "440": 60.31253339440281,
+      "660": 39.04622969079028,
+      "880": 51.07209246020922,
+      "1500": 0.5333923193357137,
+      "3000": 0.22734947679763376
+    },
+    "limits": "Capture chain gain/resampling, HDMI packet/channel effects and FPGA audio remain hypotheses. No retry or threshold relaxation."
+  },
+  "roi_measurements": [
+    {
+      "id": "G1",
+      "kind": "HDMI_ROI",
+      "results": [
+        {
+          "point": [
+            40,
+            40
+          ],
+          "expected": [
+            0,
+            255,
+            0
+          ],
+          "actual_mean": [
+            6.0,
+            255.0,
+            0.0
+          ],
+          "max_error": 6.0
+        },
+        {
+          "point": [
+            100,
+            100
+          ],
+          "expected": [
+            255,
+            0,
+            0
+          ],
+          "actual_mean": [
+            244.0,
+            0.0,
+            0.0
+          ],
+          "max_error": 11.0
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "kind": "HDMI_ROI",
+      "results": [
+        {
+          "point": [
+            100,
+            100
+          ],
+          "expected": [
+            0,
+            0,
+            255
+          ],
+          "actual_mean": [
+            0.0,
+            0.0,
+            255.0
+          ],
+          "max_error": 0.0
+        },
+        {
+          "point": [
+            500,
+            300
+          ],
+          "expected": [
+            0,
+            0,
+            255
+          ],
+          "actual_mean": [
+            0.0,
+            0.0,
+            255.0
+          ],
+          "max_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "kind": "HDMI_ROI",
+      "results": [
+        {
+          "point": [
+            100,
+            100
+          ],
+          "expected": [
+            255,
+            255,
+            0
+          ],
+          "actual_mean": [
+            255.0,
+            255.0,
+            0.0
+          ],
+          "max_error": 0.0
+        },
+        {
+          "point": [
+            40,
+            40
+          ],
+          "expected": [
+            0,
+            255,
+            0
+          ],
+          "actual_mean": [
+            6.0,
+            255.0,
+            0.0
+          ],
+          "max_error": 6.0
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "kind": "HDMI_ROI",
+      "results": [
+        {
+          "point": [
+            325,
+            185
+          ],
+          "expected": [
+            255,
+            255,
+            255
+          ],
+          "actual_mean": [
+            255.0,
+            255.0,
+            255.0
+          ],
+          "max_error": 0.0
+        },
+        {
+          "point": [
+            400,
+            200
+          ],
+          "expected": [
+            255,
+            255,
+            0
+          ],
+          "actual_mean": [
+            255.0,
+            255.0,
+            0.0
+          ],
+          "max_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "kind": "HDMI_ROI",
+      "results": [
+        {
+          "point": [
+            100,
+            100
+          ],
+          "expected": [
+            0,
+            0,
+            0
+          ],
+          "actual_mean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_error": 0.0
+        },
+        {
+          "point": [
+            500,
+            300
+          ],
+          "expected": [
+            0,
+            0,
+            0
+          ],
+          "actual_mean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_error": 0.0
+        }
+      ]
+    }
+  ],
+  "all_cases": [
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 0,
+      "data": "00000000",
+      "pattern": "zero",
+      "id": "S1-000",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 30,
+      "data": "ffffffff",
+      "pattern": "ff",
+      "id": "S1-001",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 60,
+      "data": "aa55aa55",
+      "pattern": "aa55",
+      "id": "S1-002",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 0,
+      "data": "55aa55aa55aa55aa",
+      "pattern": "55aa",
+      "id": "S1-003",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 28,
+      "data": "1c1d1e1f20212223",
+      "pattern": "address",
+      "id": "S1-004",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 56,
+      "data": "0102040810204080",
+      "pattern": "walk1",
+      "id": "S1-005",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 0,
+      "data": "fefdfbf7efdfbf7ffefdfbf7efdfbf7f",
+      "pattern": "walk0",
+      "id": "S1-006",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 24,
+      "data": "808069f9504cf56d6554a3078f8628f8",
+      "pattern": "prng",
+      "id": "S1-007",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 48,
+      "data": "00000000000000000000000000000000",
+      "pattern": "zero",
+      "id": "S1-008",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 0,
+      "data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "pattern": "ff",
+      "id": "S1-009",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 16,
+      "data": "aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55",
+      "pattern": "aa55",
+      "id": "S1-010",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 32,
+      "data": "55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa",
+      "pattern": "55aa",
+      "id": "S1-011",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 0,
+      "data": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "pattern": "address",
+      "id": "S1-012",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 0,
+      "data": "ed0f2143",
+      "pattern": "original4",
+      "id": "S1-013",
+      "status": "PASS"
+    },
+    {
+      "stage": 1,
+      "kind": "upload",
+      "offset": 60,
+      "data": "43210fed",
+      "pattern": "reverse4",
+      "id": "S1-014",
+      "status": "PASS"
+    },
+    {
+      "stage": 2,
+      "kind": "memory",
+      "address": 300060,
+      "length": 8,
+      "pattern": "boundary-exact",
+      "data": "012345678aaccef0",
+      "initial": "6376899cafc2d5e8",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "012345678aaccef0",
+      "guards": [
+        {
+          "address": 300032,
+          "expected": "90919293"
+        },
+        {
+          "address": 300056,
+          "expected": "88898a8b"
+        },
+        {
+          "address": 300068,
+          "expected": "b4b5b6b7"
+        },
+        {
+          "address": 300096,
+          "expected": "d0d1d2d3"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 300060,
+          "host_length": 8,
+          "chunks": [
+            {
+              "address": 300060,
+              "length": 4,
+              "ca_write": "200049410006",
+              "ca_read": "a00049410006"
+            },
+            {
+              "address": 300064,
+              "length": 4,
+              "ca_write": "200049420000",
+              "ca_read": "a00049420000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S2-000",
+      "status": "PASS"
+    },
+    {
+      "stage": 3,
+      "kind": "memory",
+      "address": 304000,
+      "length": 16,
+      "pattern": "prng",
+      "data": "808069f9504cf56d6554a3078f8628f8",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d80",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "808069f9504cf56d6554a3078f8628f8",
+      "guards": [
+        {
+          "address": 303996,
+          "expected": "dbdad9d8"
+        },
+        {
+          "address": 304016,
+          "expected": "37363534"
+        },
+        {
+          "address": 304048,
+          "expected": "17161514"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 304000,
+          "host_length": 16,
+          "chunks": [
+            {
+              "address": 304000,
+              "length": 16,
+              "ca_write": "20004a380000",
+              "ca_read": "a0004a380000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S3-000",
+      "status": "PASS"
+    },
+    {
+      "stage": 3,
+      "kind": "memory",
+      "address": 304276,
+      "length": 16,
+      "pattern": "address",
+      "data": "3435363738393a3b3c3d3e3f00010203",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d80",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "3435363738393a3b3c3d3e3f00010203",
+      "guards": [
+        {
+          "address": 304256,
+          "expected": "20212223"
+        },
+        {
+          "address": 304272,
+          "expected": "30313233"
+        },
+        {
+          "address": 304292,
+          "expected": "04050607"
+        },
+        {
+          "address": 304324,
+          "expected": "64656667"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 304276,
+          "host_length": 16,
+          "chunks": [
+            {
+              "address": 304276,
+              "length": 12,
+              "ca_write": "20004a490002",
+              "ca_read": "a0004a490002"
+            },
+            {
+              "address": 304288,
+              "length": 4,
+              "ca_write": "20004a4a0000",
+              "ca_read": "a0004a4a0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S3-001",
+      "status": "PASS"
+    },
+    {
+      "stage": 3,
+      "kind": "memory",
+      "address": 304515,
+      "length": 16,
+      "pattern": "prng",
+      "data": "808069f9504cf56d6554a3078f8628f8",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d80",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "808069f9504cf56d6554a3078f8628f8",
+      "guards": [
+        {
+          "address": 304508,
+          "expected": "dddcdfde"
+        },
+        {
+          "address": 304532,
+          "expected": "35343736"
+        },
+        {
+          "address": 304564,
+          "expected": "15141716"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 304515,
+          "host_length": 16,
+          "chunks": [
+            {
+              "address": 304512,
+              "length": 20,
+              "ca_write": "20004a580000",
+              "ca_read": "a0004a580000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S3-002",
+      "status": "PASS"
+    },
+    {
+      "stage": 3,
+      "kind": "memory",
+      "address": 304768,
+      "length": 32,
+      "pattern": "address",
+      "data": "22232021262724252a2b28292e2f2c2d32333031363734353a3b38393e3f3c3d",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "22232021262724252a2b28292e2f2c2d32333031363734353a3b38393e3f3c3d",
+      "guards": [
+        {
+          "address": 304764,
+          "expected": "dedfdcdd"
+        },
+        {
+          "address": 304800,
+          "expected": "02030001"
+        },
+        {
+          "address": 304832,
+          "expected": "62636061"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 304768,
+          "host_length": 32,
+          "chunks": [
+            {
+              "address": 304768,
+              "length": 32,
+              "ca_write": "20004a680000",
+              "ca_read": "a0004a680000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S3-003",
+      "status": "PASS"
+    },
+    {
+      "stage": 3,
+      "kind": "memory",
+      "address": 305028,
+      "length": 32,
+      "pattern": "prng",
+      "data": "808069f9504cf56d6554a3078f8628f880c8046030beeba13c1a8877a6b052ce",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "808069f9504cf56d6554a3078f8628f880c8046030beeba13c1a8877a6b052ce",
+      "guards": [
+        {
+          "address": 305024,
+          "expected": "23222120"
+        },
+        {
+          "address": 305060,
+          "expected": "07060504"
+        },
+        {
+          "address": 305092,
+          "expected": "67666564"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 305028,
+          "host_length": 32,
+          "chunks": [
+            {
+              "address": 305028,
+              "length": 28,
+              "ca_write": "20004a780002",
+              "ca_read": "a0004a780002"
+            },
+            {
+              "address": 305056,
+              "length": 4,
+              "ca_write": "20004a7a0000",
+              "ca_read": "a0004a7a0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S3-004",
+      "status": "PASS"
+    },
+    {
+      "stage": 3,
+      "kind": "memory",
+      "address": 305281,
+      "length": 32,
+      "pattern": "address",
+      "data": "2d2e2f28292a2b24252627202122233c3d3e3f38393a3b34353637303132330c",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "2d2e2f28292a2b24252627202122233c3d3e3f38393a3b34353637303132330c",
+      "guards": [
+        {
+          "address": 305276,
+          "expected": "d0d1d2d3"
+        },
+        {
+          "address": 305316,
+          "expected": "08090a0b"
+        },
+        {
+          "address": 305348,
+          "expected": "68696a6b"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 305281,
+          "host_length": 32,
+          "chunks": [
+            {
+              "address": 305280,
+              "length": 32,
+              "ca_write": "20004a880000",
+              "ca_read": "a0004a880000"
+            },
+            {
+              "address": 305312,
+              "length": 4,
+              "ca_write": "20004a8a0000",
+              "ca_read": "a0004a8a0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S3-005",
+      "status": "PASS"
+    },
+    {
+      "stage": 3,
+      "kind": "memory",
+      "address": 305536,
+      "length": 64,
+      "pattern": "prng",
+      "data": "808069f9504cf56d6554a3078f8628f880c8046030beeba13c1a8877a6b052ced337e716c3d774413c8e98340243744e3f6d9c11a951c87d0fd7b0d111100064",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "808069f9504cf56d6554a3078f8628f880c8046030beeba13c1a8877a6b052ced337e716c3d774413c8e98340243744e3f6d9c11a951c87d0fd7b0d111100064",
+      "guards": [
+        {
+          "address": 305532,
+          "expected": "d1d0d3d2"
+        },
+        {
+          "address": 305600,
+          "expected": "6d6c6f6e"
+        },
+        {
+          "address": 305632,
+          "expected": "4d4c4f4e"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 305536,
+          "host_length": 64,
+          "chunks": [
+            {
+              "address": 305536,
+              "length": 32,
+              "ca_write": "20004a980000",
+              "ca_read": "a0004a980000"
+            },
+            {
+              "address": 305568,
+              "length": 32,
+              "ca_write": "20004a9a0000",
+              "ca_read": "a0004a9a0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S3-006",
+      "status": "PASS"
+    },
+    {
+      "stage": 3,
+      "kind": "memory",
+      "address": 305796,
+      "length": 64,
+      "pattern": "address",
+      "data": "2a2b282926272425222320213e3f3c3d3a3b383936373435323330310e0f0c0d0a0b080906070405020300011e1f1c1d1a1b181916171415121310116e6f6c6d",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "2a2b282926272425222320213e3f3c3d3a3b383936373435323330310e0f0c0d0a0b080906070405020300011e1f1c1d1a1b181916171415121310116e6f6c6d",
+      "guards": [
+        {
+          "address": 305792,
+          "expected": "2e2f2c2d"
+        },
+        {
+          "address": 305860,
+          "expected": "6a6b6869"
+        },
+        {
+          "address": 305892,
+          "expected": "4a4b4849"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 305796,
+          "host_length": 64,
+          "chunks": [
+            {
+              "address": 305796,
+              "length": 28,
+              "ca_write": "20004aa80002",
+              "ca_read": "a0004aa80002"
+            },
+            {
+              "address": 305824,
+              "length": 32,
+              "ca_write": "20004aaa0000",
+              "ca_read": "a0004aaa0000"
+            },
+            {
+              "address": 305856,
+              "length": 4,
+              "ca_write": "20004aac0000",
+              "ca_read": "a0004aac0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S3-007",
+      "status": "PASS"
+    },
+    {
+      "stage": 3,
+      "kind": "memory",
+      "address": 306049,
+      "length": 64,
+      "pattern": "prng",
+      "data": "808069f9504cf56d6554a3078f8628f880c8046030beeba13c1a8877a6b052ced337e716c3d774413c8e98340243744e3f6d9c11a951c87d0fd7b0d111100064",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "808069f9504cf56d6554a3078f8628f880c8046030beeba13c1a8877a6b052ced337e716c3d774413c8e98340243744e3f6d9c11a951c87d0fd7b0d111100064",
+      "guards": [
+        {
+          "address": 306044,
+          "expected": "d3d2d1d0"
+        },
+        {
+          "address": 306116,
+          "expected": "6b6a6968"
+        },
+        {
+          "address": 306148,
+          "expected": "4b4a4948"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 306049,
+          "host_length": 63,
+          "chunks": [
+            {
+              "address": 306048,
+              "length": 32,
+              "ca_write": "20004ab80000",
+              "ca_read": "a0004ab80000"
+            },
+            {
+              "address": 306080,
+              "length": 32,
+              "ca_write": "20004aba0000",
+              "ca_read": "a0004aba0000"
+            }
+          ]
+        },
+        {
+          "host_address": 306112,
+          "host_length": 1,
+          "chunks": [
+            {
+              "address": 306112,
+              "length": 4,
+              "ca_write": "20004abc0000",
+              "ca_read": "a0004abc0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S3-008",
+      "status": "PASS"
+    },
+    {
+      "stage": 3,
+      "kind": "memory",
+      "address": 300000,
+      "length": 64,
+      "pattern": "original11",
+      "data": "0b30557a9fc4e90e33587da2c7ec11365b80a5caef14395e83a8cdf2173c6186abd0f51a3f6489aed3f81d42678cb1d6fb20456a8fb4d9fe23486d92b7dc0126",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "0b30557a9fc4e90e33587da2c7ec11365b80a5caef14395e83a8cdf2173c6186abd0f51a3f6489aed3f81d42678cb1d6fb20456a8fb4d9fe23486d92b7dc0126",
+      "guards": [
+        {
+          "address": 299996,
+          "expected": "4b4a4948"
+        },
+        {
+          "address": 300064,
+          "expected": "b0b1b2b3"
+        },
+        {
+          "address": 300096,
+          "expected": "d0d1d2d3"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 300000,
+          "host_length": 64,
+          "chunks": [
+            {
+              "address": 300000,
+              "length": 32,
+              "ca_write": "2000493e0000",
+              "ca_read": "a000493e0000"
+            },
+            {
+              "address": 300032,
+              "length": 32,
+              "ca_write": "200049400000",
+              "ca_read": "a00049400000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S3-009",
+      "status": "PASS"
+    },
+    {
+      "stage": 3,
+      "kind": "memory",
+      "address": 300004,
+      "length": 64,
+      "pattern": "original53",
+      "data": "355a7fa4c9ee13385d82a7ccf1163b6085aacff4193e6388add2f71c41668bb0d5fa1f44698eb3d8fd22476c91b6db00254a6f94b9de03284d7297bce1062b50",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "355a7fa4c9ee13385d82a7ccf1163b6085aacff4193e6388add2f71c41668bb0d5fa1f44698eb3d8fd22476c91b6db00254a6f94b9de03284d7297bce1062b50",
+      "guards": [
+        {
+          "address": 300000,
+          "expected": "77767574"
+        },
+        {
+          "address": 300068,
+          "expected": "b4b5b6b7"
+        },
+        {
+          "address": 300100,
+          "expected": "d4d5d6d7"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 300004,
+          "host_length": 64,
+          "chunks": [
+            {
+              "address": 300004,
+              "length": 28,
+              "ca_write": "2000493e0002",
+              "ca_read": "a000493e0002"
+            },
+            {
+              "address": 300032,
+              "length": 32,
+              "ca_write": "200049400000",
+              "ca_read": "a00049400000"
+            },
+            {
+              "address": 300064,
+              "length": 4,
+              "ca_write": "200049420000",
+              "ca_read": "a00049420000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S3-010",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 312000,
+      "length": 4,
+      "pattern": "zero",
+      "data": "00000000",
+      "initial": "6376899c",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "00000000",
+      "guards": [
+        {
+          "address": 311996,
+          "expected": "7a7b7879"
+        },
+        {
+          "address": 312004,
+          "expected": "02030001"
+        },
+        {
+          "address": 312036,
+          "expected": "22232021"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 312000,
+          "host_length": 4,
+          "chunks": [
+            {
+              "address": 312000,
+              "length": 4,
+              "ca_write": "20004c2c0000",
+              "ca_read": "a0004c2c0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-000",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 312256,
+      "length": 8,
+      "pattern": "ff",
+      "data": "ffffffffffffffff",
+      "initial": "6376899cafc2d5e8",
+      "mask_kind": "alternate",
+      "inhibit_mask": "00000000000000aa",
+      "expected": "ff76ff9cffc2ffe8",
+      "guards": [
+        {
+          "address": 312252,
+          "expected": "7b7a7978"
+        },
+        {
+          "address": 312264,
+          "expected": "0f0e0d0c"
+        },
+        {
+          "address": 312296,
+          "expected": "2f2e2d2c"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 312256,
+          "host_length": 8,
+          "chunks": [
+            {
+              "address": 312256,
+              "length": 8,
+              "ca_write": "20004c3c0000",
+              "ca_read": "a0004c3c0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-001",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 312512,
+      "length": 16,
+      "pattern": "aa55",
+      "data": "aa55aa55aa55aa55aa55aa55aa55aa55",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d80",
+      "mask_kind": "first",
+      "inhibit_mask": "000000000000fffe",
+      "expected": "aa76899cafc2d5e8fb0e2134475a6d80",
+      "guards": [
+        {
+          "address": 312508,
+          "expected": "7c7d7e7f"
+        },
+        {
+          "address": 312528,
+          "expected": "10111213"
+        },
+        {
+          "address": 312560,
+          "expected": "30313233"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 312512,
+          "host_length": 16,
+          "chunks": [
+            {
+              "address": 312512,
+              "length": 16,
+              "ca_write": "20004c4c0000",
+              "ca_read": "a0004c4c0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-002",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 312768,
+      "length": 32,
+      "pattern": "55aa",
+      "data": "55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0",
+      "mask_kind": "last",
+      "inhibit_mask": "000000007fffffff",
+      "expected": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9daa",
+      "guards": [
+        {
+          "address": 312764,
+          "expected": "7d7c7f7e"
+        },
+        {
+          "address": 312800,
+          "expected": "21202322"
+        },
+        {
+          "address": 312832,
+          "expected": "c2c3c0c1"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 312768,
+          "host_length": 32,
+          "chunks": [
+            {
+              "address": 312768,
+              "length": 32,
+              "ca_write": "20004c5c0000",
+              "ca_read": "a0004c5c0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-003",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 313024,
+      "length": 64,
+      "pattern": "walk1",
+      "data": "01020408102040800102040810204080010204081020408001020408102040800102040810204080010204081020408001020408102040800102040810204080",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "mask_kind": "lane",
+      "inhibit_mask": "bbbbbbbbbbbbbbbb",
+      "expected": "6376049cafc240e8fb0e0434475a408093a604ccdff240182b3e0464778a40b0c3d604fc0f2240485b6e0494a7ba40e0f306042c3f5240788b9e04c4d7ea4010",
+      "guards": [
+        {
+          "address": 313020,
+          "expected": "7e7f7c7d"
+        },
+        {
+          "address": 313088,
+          "expected": "c3c2c1c0"
+        },
+        {
+          "address": 313120,
+          "expected": "e3e2e1e0"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 313024,
+          "host_length": 64,
+          "chunks": [
+            {
+              "address": 313024,
+              "length": 32,
+              "ca_write": "20004c6c0000",
+              "ca_read": "a0004c6c0000"
+            },
+            {
+              "address": 313056,
+              "length": 32,
+              "ca_write": "20004c6e0000",
+              "ca_read": "a0004c6e0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-004",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 313284,
+      "length": 4,
+      "pattern": "ff",
+      "data": "ffffffff",
+      "initial": "6376899c",
+      "mask_kind": "first",
+      "inhibit_mask": "000000000000000e",
+      "expected": "ff76899c",
+      "guards": [
+        {
+          "address": 313280,
+          "expected": "03020100"
+        },
+        {
+          "address": 313288,
+          "expected": "0b0a0908"
+        },
+        {
+          "address": 313320,
+          "expected": "2b2a2928"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 313284,
+          "host_length": 4,
+          "chunks": [
+            {
+              "address": 313284,
+              "length": 4,
+              "ca_write": "20004c7c0002",
+              "ca_read": "a0004c7c0002"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-005",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 313540,
+      "length": 8,
+      "pattern": "aa55",
+      "data": "aa55aa55aa55aa55",
+      "initial": "6376899cafc2d5e8",
+      "mask_kind": "last",
+      "inhibit_mask": "000000000000007f",
+      "expected": "6376899cafc2d555",
+      "guards": [
+        {
+          "address": 313536,
+          "expected": "0c0d0e0f"
+        },
+        {
+          "address": 313548,
+          "expected": "00010203"
+        },
+        {
+          "address": 313580,
+          "expected": "20212223"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 313540,
+          "host_length": 8,
+          "chunks": [
+            {
+              "address": 313540,
+              "length": 8,
+              "ca_write": "20004c8c0002",
+              "ca_read": "a0004c8c0002"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-006",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 313796,
+      "length": 16,
+      "pattern": "55aa",
+      "data": "55aa55aa55aa55aa55aa55aa55aa55aa",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d80",
+      "mask_kind": "lane",
+      "inhibit_mask": "000000000000bbbb",
+      "expected": "6376559cafc255e8fb0e5534475a5580",
+      "guards": [
+        {
+          "address": 313792,
+          "expected": "0d0c0f0e"
+        },
+        {
+          "address": 313812,
+          "expected": "19181b1a"
+        },
+        {
+          "address": 313844,
+          "expected": "39383b3a"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 313796,
+          "host_length": 16,
+          "chunks": [
+            {
+              "address": 313796,
+              "length": 16,
+              "ca_write": "20004c9c0002",
+              "ca_read": "a0004c9c0002"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-007",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 314052,
+      "length": 32,
+      "pattern": "walk1",
+      "data": "0102040810204080010204081020408001020408102040800102040810204080",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0",
+      "mask_kind": "word",
+      "inhibit_mask": "00000000f0f0f0f0",
+      "expected": "01020408afc2d5e801020408475a6d8001020408dff2051801020408778a9db0",
+      "guards": [
+        {
+          "address": 314048,
+          "expected": "0e0f0c0d"
+        },
+        {
+          "address": 314084,
+          "expected": "2a2b2829"
+        },
+        {
+          "address": 314116,
+          "expected": "cbcac9c8"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 314052,
+          "host_length": 32,
+          "chunks": [
+            {
+              "address": 314052,
+              "length": 28,
+              "ca_write": "20004cac0002",
+              "ca_read": "a0004cac0002"
+            },
+            {
+              "address": 314080,
+              "length": 4,
+              "ca_write": "20004cae0000",
+              "ca_read": "a0004cae0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-008",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 314308,
+      "length": 64,
+      "pattern": "walk0",
+      "data": "fefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7f",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "fefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7f",
+      "guards": [
+        {
+          "address": 314304,
+          "expected": "0f0e0d0c"
+        },
+        {
+          "address": 314372,
+          "expected": "cccdcecf"
+        },
+        {
+          "address": 314404,
+          "expected": "ecedeeef"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 314308,
+          "host_length": 64,
+          "chunks": [
+            {
+              "address": 314308,
+              "length": 28,
+              "ca_write": "20004cbc0002",
+              "ca_read": "a0004cbc0002"
+            },
+            {
+              "address": 314336,
+              "length": 32,
+              "ca_write": "20004cbe0000",
+              "ca_read": "a0004cbe0000"
+            },
+            {
+              "address": 314368,
+              "length": 4,
+              "ca_write": "20004cc00000",
+              "ca_read": "a0004cc00000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-009",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 314568,
+      "length": 4,
+      "pattern": "aa55",
+      "data": "aa55aa55",
+      "initial": "6376899c",
+      "mask_kind": "lane",
+      "inhibit_mask": "000000000000000b",
+      "expected": "6376aa9c",
+      "guards": [
+        {
+          "address": 314560,
+          "expected": "08090a0b"
+        },
+        {
+          "address": 314564,
+          "expected": "0c0d0e0f"
+        },
+        {
+          "address": 314572,
+          "expected": "04050607"
+        },
+        {
+          "address": 314604,
+          "expected": "24252627"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 314568,
+          "host_length": 4,
+          "chunks": [
+            {
+              "address": 314568,
+              "length": 4,
+              "ca_write": "20004ccc0004",
+              "ca_read": "a0004ccc0004"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-010",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 314824,
+      "length": 8,
+      "pattern": "55aa",
+      "data": "55aa55aa55aa55aa",
+      "initial": "6376899cafc2d5e8",
+      "mask_kind": "word",
+      "inhibit_mask": "00000000000000f0",
+      "expected": "55aa55aaafc2d5e8",
+      "guards": [
+        {
+          "address": 314816,
+          "expected": "09080b0a"
+        },
+        {
+          "address": 314820,
+          "expected": "0d0c0f0e"
+        },
+        {
+          "address": 314832,
+          "expected": "19181b1a"
+        },
+        {
+          "address": 314864,
+          "expected": "39383b3a"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 314824,
+          "host_length": 8,
+          "chunks": [
+            {
+              "address": 314824,
+              "length": 8,
+              "ca_write": "20004cdc0004",
+              "ca_read": "a0004cdc0004"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-011",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 315080,
+      "length": 16,
+      "pattern": "walk1",
+      "data": "01020408102040800102040810204080",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d80",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "01020408102040800102040810204080",
+      "guards": [
+        {
+          "address": 315072,
+          "expected": "0a0b0809"
+        },
+        {
+          "address": 315076,
+          "expected": "0e0f0c0d"
+        },
+        {
+          "address": 315096,
+          "expected": "12131011"
+        },
+        {
+          "address": 315128,
+          "expected": "32333031"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 315080,
+          "host_length": 16,
+          "chunks": [
+            {
+              "address": 315080,
+              "length": 16,
+              "ca_write": "20004cec0004",
+              "ca_read": "a0004cec0004"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-012",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 315336,
+      "length": 32,
+      "pattern": "walk0",
+      "data": "fefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7ffefdfbf7efdfbf7f",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0",
+      "mask_kind": "alternate",
+      "inhibit_mask": "00000000aaaaaaaa",
+      "expected": "fe76fb9cefc2bfe8fe0efb34ef5abf80fea6fbcceff2bf18fe3efb64ef8abfb0",
+      "guards": [
+        {
+          "address": 315328,
+          "expected": "0b0a0908"
+        },
+        {
+          "address": 315332,
+          "expected": "0f0e0d0c"
+        },
+        {
+          "address": 315368,
+          "expected": "23222120"
+        },
+        {
+          "address": 315400,
+          "expected": "dcdddedf"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 315336,
+          "host_length": 32,
+          "chunks": [
+            {
+              "address": 315336,
+              "length": 24,
+              "ca_write": "20004cfc0004",
+              "ca_read": "a0004cfc0004"
+            },
+            {
+              "address": 315360,
+              "length": 8,
+              "ca_write": "20004cfe0000",
+              "ca_read": "a0004cfe0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-013",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 315592,
+      "length": 64,
+      "pattern": "address",
+      "data": "1c1d1e1f18191a1b04050607000102030c0d0e0f08090a0b34353637303132333c3d3e3f38393a3b24252627202122232c2d2e2f28292a2bd5d4d7d6d1d0d3d2",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "mask_kind": "first",
+      "inhibit_mask": "fffffffffffffffe",
+      "expected": "1c76899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "guards": [
+        {
+          "address": 315584,
+          "expected": "14151617"
+        },
+        {
+          "address": 315588,
+          "expected": "10111213"
+        },
+        {
+          "address": 315656,
+          "expected": "dddcdfde"
+        },
+        {
+          "address": 315688,
+          "expected": "fdfcfffe"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 315592,
+          "host_length": 64,
+          "chunks": [
+            {
+              "address": 315592,
+              "length": 24,
+              "ca_write": "20004d0c0004",
+              "ca_read": "a0004d0c0004"
+            },
+            {
+              "address": 315616,
+              "length": 32,
+              "ca_write": "20004d0e0000",
+              "ca_read": "a0004d0e0000"
+            },
+            {
+              "address": 315648,
+              "length": 8,
+              "ca_write": "20004d100000",
+              "ca_read": "a0004d100000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-014",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 315852,
+      "length": 4,
+      "pattern": "55aa",
+      "data": "55aa55aa",
+      "initial": "6376899c",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "55aa55aa",
+      "guards": [
+        {
+          "address": 315840,
+          "expected": "15141716"
+        },
+        {
+          "address": 315848,
+          "expected": "1d1c1f1e"
+        },
+        {
+          "address": 315856,
+          "expected": "05040706"
+        },
+        {
+          "address": 315888,
+          "expected": "25242726"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 315852,
+          "host_length": 4,
+          "chunks": [
+            {
+              "address": 315852,
+              "length": 4,
+              "ca_write": "20004d1c0006",
+              "ca_read": "a0004d1c0006"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-015",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 316108,
+      "length": 8,
+      "pattern": "walk1",
+      "data": "0102040810204080",
+      "initial": "6376899cafc2d5e8",
+      "mask_kind": "alternate",
+      "inhibit_mask": "00000000000000aa",
+      "expected": "0176049c10c240e8",
+      "guards": [
+        {
+          "address": 316096,
+          "expected": "16171415"
+        },
+        {
+          "address": 316104,
+          "expected": "1e1f1c1d"
+        },
+        {
+          "address": 316116,
+          "expected": "02030001"
+        },
+        {
+          "address": 316148,
+          "expected": "22232021"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 316108,
+          "host_length": 8,
+          "chunks": [
+            {
+              "address": 316108,
+              "length": 8,
+              "ca_write": "20004d2c0006",
+              "ca_read": "a0004d2c0006"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-016",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 316364,
+      "length": 16,
+      "pattern": "walk0",
+      "data": "fefdfbf7efdfbf7ffefdfbf7efdfbf7f",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d80",
+      "mask_kind": "first",
+      "inhibit_mask": "000000000000fffe",
+      "expected": "fe76899cafc2d5e8fb0e2134475a6d80",
+      "guards": [
+        {
+          "address": 316352,
+          "expected": "17161514"
+        },
+        {
+          "address": 316360,
+          "expected": "1f1e1d1c"
+        },
+        {
+          "address": 316380,
+          "expected": "0b0a0908"
+        },
+        {
+          "address": 316412,
+          "expected": "2b2a2928"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 316364,
+          "host_length": 16,
+          "chunks": [
+            {
+              "address": 316364,
+              "length": 16,
+              "ca_write": "20004d3c0006",
+              "ca_read": "a0004d3c0006"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-017",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 316620,
+      "length": 32,
+      "pattern": "address",
+      "data": "1c1d1e1f000102030405060708090a0b0c0d0e0f303132333435363738393a3b",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0",
+      "mask_kind": "last",
+      "inhibit_mask": "000000007fffffff",
+      "expected": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9d3b",
+      "guards": [
+        {
+          "address": 316608,
+          "expected": "10111213"
+        },
+        {
+          "address": 316616,
+          "expected": "18191a1b"
+        },
+        {
+          "address": 316652,
+          "expected": "3c3d3e3f"
+        },
+        {
+          "address": 316684,
+          "expected": "dddcdfde"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 316620,
+          "host_length": 32,
+          "chunks": [
+            {
+              "address": 316620,
+              "length": 20,
+              "ca_write": "20004d4c0006",
+              "ca_read": "a0004d4c0006"
+            },
+            {
+              "address": 316640,
+              "length": 12,
+              "ca_write": "20004d4e0000",
+              "ca_read": "a0004d4e0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-018",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 316876,
+      "length": 64,
+      "pattern": "prng",
+      "data": "808069f9504cf56d6554a3078f8628f880c8046030beeba13c1a8877a6b052ced337e716c3d774413c8e98340243744e3f6d9c11a951c87d0fd7b0d111100064",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "mask_kind": "lane",
+      "inhibit_mask": "bbbbbbbbbbbbbbbb",
+      "expected": "6376699cafc2f5e8fb0ea334475a288093a604ccdff2eb182b3e8864778a52b0c3d6e7fc0f2274485b6e9894a7ba74e0f3069c2c3f52c8788b9eb0c4d7ea0010",
+      "guards": [
+        {
+          "address": 316864,
+          "expected": "11101312"
+        },
+        {
+          "address": 316872,
+          "expected": "19181b1a"
+        },
+        {
+          "address": 316940,
+          "expected": "dedfdcdd"
+        },
+        {
+          "address": 316972,
+          "expected": "fefffcfd"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 316876,
+          "host_length": 64,
+          "chunks": [
+            {
+              "address": 316876,
+              "length": 20,
+              "ca_write": "20004d5c0006",
+              "ca_read": "a0004d5c0006"
+            },
+            {
+              "address": 316896,
+              "length": 32,
+              "ca_write": "20004d5e0000",
+              "ca_read": "a0004d5e0000"
+            },
+            {
+              "address": 316928,
+              "length": 12,
+              "ca_write": "20004d600000",
+              "ca_read": "a0004d600000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-019",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 317136,
+      "length": 4,
+      "pattern": "walk1",
+      "data": "01020408",
+      "initial": "6376899c",
+      "mask_kind": "first",
+      "inhibit_mask": "000000000000000e",
+      "expected": "0176899c",
+      "guards": [
+        {
+          "address": 317120,
+          "expected": "12131011"
+        },
+        {
+          "address": 317132,
+          "expected": "1e1f1c1d"
+        },
+        {
+          "address": 317140,
+          "expected": "06070405"
+        },
+        {
+          "address": 317172,
+          "expected": "26272425"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 317136,
+          "host_length": 4,
+          "chunks": [
+            {
+              "address": 317136,
+              "length": 4,
+              "ca_write": "20004d6d0000",
+              "ca_read": "a0004d6d0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-020",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 317392,
+      "length": 8,
+      "pattern": "walk0",
+      "data": "fefdfbf7efdfbf7f",
+      "initial": "6376899cafc2d5e8",
+      "mask_kind": "last",
+      "inhibit_mask": "000000000000007f",
+      "expected": "6376899cafc2d57f",
+      "guards": [
+        {
+          "address": 317376,
+          "expected": "13121110"
+        },
+        {
+          "address": 317388,
+          "expected": "1f1e1d1c"
+        },
+        {
+          "address": 317400,
+          "expected": "0b0a0908"
+        },
+        {
+          "address": 317432,
+          "expected": "2b2a2928"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 317392,
+          "host_length": 8,
+          "chunks": [
+            {
+              "address": 317392,
+              "length": 8,
+              "ca_write": "20004d7d0000",
+              "ca_read": "a0004d7d0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-021",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 317648,
+      "length": 16,
+      "pattern": "address",
+      "data": "0c0d0e0f08090a0b0405060700010203",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d80",
+      "mask_kind": "lane",
+      "inhibit_mask": "000000000000bbbb",
+      "expected": "63760e9cafc20ae8fb0e0634475a0280",
+      "guards": [
+        {
+          "address": 317632,
+          "expected": "1c1d1e1f"
+        },
+        {
+          "address": 317644,
+          "expected": "10111213"
+        },
+        {
+          "address": 317664,
+          "expected": "3c3d3e3f"
+        },
+        {
+          "address": 317696,
+          "expected": "dddcdfde"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 317648,
+          "host_length": 16,
+          "chunks": [
+            {
+              "address": 317648,
+              "length": 16,
+              "ca_write": "20004d8d0000",
+              "ca_read": "a0004d8d0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-022",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 317904,
+      "length": 32,
+      "pattern": "prng",
+      "data": "808069f9504cf56d6554a3078f8628f880c8046030beeba13c1a8877a6b052ce",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0",
+      "mask_kind": "word",
+      "inhibit_mask": "00000000f0f0f0f0",
+      "expected": "808069f9afc2d5e86554a307475a6d8080c80460dff205183c1a8877778a9db0",
+      "guards": [
+        {
+          "address": 317888,
+          "expected": "1d1c1f1e"
+        },
+        {
+          "address": 317900,
+          "expected": "11101312"
+        },
+        {
+          "address": 317936,
+          "expected": "2d2c2f2e"
+        },
+        {
+          "address": 317968,
+          "expected": "cecfcccd"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 317904,
+          "host_length": 32,
+          "chunks": [
+            {
+              "address": 317904,
+              "length": 16,
+              "ca_write": "20004d9d0000",
+              "ca_read": "a0004d9d0000"
+            },
+            {
+              "address": 317920,
+              "length": 16,
+              "ca_write": "20004d9e0000",
+              "ca_read": "a0004d9e0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-023",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 318160,
+      "length": 64,
+      "pattern": "zero",
+      "data": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "guards": [
+        {
+          "address": 318144,
+          "expected": "1e1f1c1d"
+        },
+        {
+          "address": 318156,
+          "expected": "12131011"
+        },
+        {
+          "address": 318224,
+          "expected": "cfcecdcc"
+        },
+        {
+          "address": 318256,
+          "expected": "efeeedec"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 318160,
+          "host_length": 64,
+          "chunks": [
+            {
+              "address": 318160,
+              "length": 16,
+              "ca_write": "20004dad0000",
+              "ca_read": "a0004dad0000"
+            },
+            {
+              "address": 318176,
+              "length": 32,
+              "ca_write": "20004dae0000",
+              "ca_read": "a0004dae0000"
+            },
+            {
+              "address": 318208,
+              "length": 16,
+              "ca_write": "20004db00000",
+              "ca_read": "a0004db00000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-024",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 318420,
+      "length": 4,
+      "pattern": "walk0",
+      "data": "fefdfbf7",
+      "initial": "6376899c",
+      "mask_kind": "lane",
+      "inhibit_mask": "000000000000000b",
+      "expected": "6376fb9c",
+      "guards": [
+        {
+          "address": 318400,
+          "expected": "1f1e1d1c"
+        },
+        {
+          "address": 318416,
+          "expected": "0f0e0d0c"
+        },
+        {
+          "address": 318424,
+          "expected": "07060504"
+        },
+        {
+          "address": 318456,
+          "expected": "27262524"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 318420,
+          "host_length": 4,
+          "chunks": [
+            {
+              "address": 318420,
+              "length": 4,
+              "ca_write": "20004dbd0002",
+              "ca_read": "a0004dbd0002"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-025",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 318676,
+      "length": 8,
+      "pattern": "address",
+      "data": "0c0d0e0f00010203",
+      "initial": "6376899cafc2d5e8",
+      "mask_kind": "word",
+      "inhibit_mask": "00000000000000f0",
+      "expected": "0c0d0e0fafc2d5e8",
+      "guards": [
+        {
+          "address": 318656,
+          "expected": "18191a1b"
+        },
+        {
+          "address": 318672,
+          "expected": "08090a0b"
+        },
+        {
+          "address": 318684,
+          "expected": "04050607"
+        },
+        {
+          "address": 318716,
+          "expected": "24252627"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 318676,
+          "host_length": 8,
+          "chunks": [
+            {
+              "address": 318676,
+              "length": 8,
+              "ca_write": "20004dcd0002",
+              "ca_read": "a0004dcd0002"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-026",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 318932,
+      "length": 16,
+      "pattern": "prng",
+      "data": "808069f9504cf56d6554a3078f8628f8",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d80",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "808069f9504cf56d6554a3078f8628f8",
+      "guards": [
+        {
+          "address": 318912,
+          "expected": "19181b1a"
+        },
+        {
+          "address": 318928,
+          "expected": "09080b0a"
+        },
+        {
+          "address": 318948,
+          "expected": "3d3c3f3e"
+        },
+        {
+          "address": 318980,
+          "expected": "dedfdcdd"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 318932,
+          "host_length": 16,
+          "chunks": [
+            {
+              "address": 318932,
+              "length": 12,
+              "ca_write": "20004ddd0002",
+              "ca_read": "a0004ddd0002"
+            },
+            {
+              "address": 318944,
+              "length": 4,
+              "ca_write": "20004dde0000",
+              "ca_read": "a0004dde0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-027",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 319188,
+      "length": 32,
+      "pattern": "zero",
+      "data": "0000000000000000000000000000000000000000000000000000000000000000",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0",
+      "mask_kind": "alternate",
+      "inhibit_mask": "00000000aaaaaaaa",
+      "expected": "0076009c00c200e8000e0034005a008000a600cc00f20018003e0064008a00b0",
+      "guards": [
+        {
+          "address": 319168,
+          "expected": "1a1b1819"
+        },
+        {
+          "address": 319184,
+          "expected": "0a0b0809"
+        },
+        {
+          "address": 319220,
+          "expected": "2e2f2c2d"
+        },
+        {
+          "address": 319252,
+          "expected": "cfcecdcc"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 319188,
+          "host_length": 32,
+          "chunks": [
+            {
+              "address": 319188,
+              "length": 12,
+              "ca_write": "20004ded0002",
+              "ca_read": "a0004ded0002"
+            },
+            {
+              "address": 319200,
+              "length": 20,
+              "ca_write": "20004dee0000",
+              "ca_read": "a0004dee0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-028",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 319444,
+      "length": 64,
+      "pattern": "ff",
+      "data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "mask_kind": "first",
+      "inhibit_mask": "fffffffffffffffe",
+      "expected": "ff76899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "guards": [
+        {
+          "address": 319424,
+          "expected": "1b1a1918"
+        },
+        {
+          "address": 319440,
+          "expected": "0b0a0908"
+        },
+        {
+          "address": 319508,
+          "expected": "f0f1f2f3"
+        },
+        {
+          "address": 319540,
+          "expected": "d0d1d2d3"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 319444,
+          "host_length": 64,
+          "chunks": [
+            {
+              "address": 319444,
+              "length": 12,
+              "ca_write": "20004dfd0002",
+              "ca_read": "a0004dfd0002"
+            },
+            {
+              "address": 319456,
+              "length": 32,
+              "ca_write": "20004dfe0000",
+              "ca_read": "a0004dfe0000"
+            },
+            {
+              "address": 319488,
+              "length": 20,
+              "ca_write": "20004e000000",
+              "ca_read": "a0004e000000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-029",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 319704,
+      "length": 4,
+      "pattern": "address",
+      "data": "3c3d3e3f",
+      "initial": "6376899c",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "3c3d3e3f",
+      "guards": [
+        {
+          "address": 319680,
+          "expected": "24252627"
+        },
+        {
+          "address": 319700,
+          "expected": "30313233"
+        },
+        {
+          "address": 319708,
+          "expected": "38393a3b"
+        },
+        {
+          "address": 319740,
+          "expected": "18191a1b"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 319704,
+          "host_length": 4,
+          "chunks": [
+            {
+              "address": 319704,
+              "length": 4,
+              "ca_write": "20004e0d0004",
+              "ca_read": "a0004e0d0004"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-030",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 319960,
+      "length": 8,
+      "pattern": "prng",
+      "data": "808069f9504cf56d",
+      "initial": "6376899cafc2d5e8",
+      "mask_kind": "alternate",
+      "inhibit_mask": "00000000000000aa",
+      "expected": "8076699c50c2f5e8",
+      "guards": [
+        {
+          "address": 319936,
+          "expected": "25242726"
+        },
+        {
+          "address": 319956,
+          "expected": "31303332"
+        },
+        {
+          "address": 319968,
+          "expected": "05040706"
+        },
+        {
+          "address": 320000,
+          "expected": "e6e7e4e5"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 319960,
+          "host_length": 8,
+          "chunks": [
+            {
+              "address": 319960,
+              "length": 8,
+              "ca_write": "20004e1d0004",
+              "ca_read": "a0004e1d0004"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-031",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 320216,
+      "length": 16,
+      "pattern": "zero",
+      "data": "00000000000000000000000000000000",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d80",
+      "mask_kind": "first",
+      "inhibit_mask": "000000000000fffe",
+      "expected": "0076899cafc2d5e8fb0e2134475a6d80",
+      "guards": [
+        {
+          "address": 320192,
+          "expected": "26272425"
+        },
+        {
+          "address": 320212,
+          "expected": "32333031"
+        },
+        {
+          "address": 320232,
+          "expected": "0e0f0c0d"
+        },
+        {
+          "address": 320264,
+          "expected": "efeeedec"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 320216,
+          "host_length": 16,
+          "chunks": [
+            {
+              "address": 320216,
+              "length": 8,
+              "ca_write": "20004e2d0004",
+              "ca_read": "a0004e2d0004"
+            },
+            {
+              "address": 320224,
+              "length": 8,
+              "ca_write": "20004e2e0000",
+              "ca_read": "a0004e2e0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-032",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 320472,
+      "length": 32,
+      "pattern": "ff",
+      "data": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0",
+      "mask_kind": "last",
+      "inhibit_mask": "000000007fffffff",
+      "expected": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9dff",
+      "guards": [
+        {
+          "address": 320448,
+          "expected": "27262524"
+        },
+        {
+          "address": 320468,
+          "expected": "33323130"
+        },
+        {
+          "address": 320504,
+          "expected": "1f1e1d1c"
+        },
+        {
+          "address": 320536,
+          "expected": "f8f9fafb"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 320472,
+          "host_length": 32,
+          "chunks": [
+            {
+              "address": 320472,
+              "length": 8,
+              "ca_write": "20004e3d0004",
+              "ca_read": "a0004e3d0004"
+            },
+            {
+              "address": 320480,
+              "length": 24,
+              "ca_write": "20004e3e0000",
+              "ca_read": "a0004e3e0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-033",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 320728,
+      "length": 64,
+      "pattern": "aa55",
+      "data": "aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "mask_kind": "lane",
+      "inhibit_mask": "bbbbbbbbbbbbbbbb",
+      "expected": "6376aa9cafc2aae8fb0eaa34475aaa8093a6aaccdff2aa182b3eaa64778aaab0c3d6aafc0f22aa485b6eaa94a7baaae0f306aa2c3f52aa788b9eaac4d7eaaa10",
+      "guards": [
+        {
+          "address": 320704,
+          "expected": "20212223"
+        },
+        {
+          "address": 320724,
+          "expected": "34353637"
+        },
+        {
+          "address": 320792,
+          "expected": "f9f8fbfa"
+        },
+        {
+          "address": 320824,
+          "expected": "d9d8dbda"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 320728,
+          "host_length": 64,
+          "chunks": [
+            {
+              "address": 320728,
+              "length": 8,
+              "ca_write": "20004e4d0004",
+              "ca_read": "a0004e4d0004"
+            },
+            {
+              "address": 320736,
+              "length": 32,
+              "ca_write": "20004e4e0000",
+              "ca_read": "a0004e4e0000"
+            },
+            {
+              "address": 320768,
+              "length": 24,
+              "ca_write": "20004e500000",
+              "ca_read": "a0004e500000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-034",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 320988,
+      "length": 4,
+      "pattern": "prng",
+      "data": "808069f9",
+      "initial": "6376899c",
+      "mask_kind": "first",
+      "inhibit_mask": "000000000000000e",
+      "expected": "8076899c",
+      "guards": [
+        {
+          "address": 320960,
+          "expected": "21202322"
+        },
+        {
+          "address": 320984,
+          "expected": "39383b3a"
+        },
+        {
+          "address": 320992,
+          "expected": "01000302"
+        },
+        {
+          "address": 321024,
+          "expected": "e2e3e0e1"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 320988,
+          "host_length": 4,
+          "chunks": [
+            {
+              "address": 320988,
+              "length": 4,
+              "ca_write": "20004e5d0006",
+              "ca_read": "a0004e5d0006"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-035",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 321244,
+      "length": 8,
+      "pattern": "zero",
+      "data": "0000000000000000",
+      "initial": "6376899cafc2d5e8",
+      "mask_kind": "last",
+      "inhibit_mask": "000000000000007f",
+      "expected": "6376899cafc2d500",
+      "guards": [
+        {
+          "address": 321216,
+          "expected": "22232021"
+        },
+        {
+          "address": 321240,
+          "expected": "3a3b3839"
+        },
+        {
+          "address": 321252,
+          "expected": "06070405"
+        },
+        {
+          "address": 321284,
+          "expected": "e7e6e5e4"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 321244,
+          "host_length": 8,
+          "chunks": [
+            {
+              "address": 321244,
+              "length": 4,
+              "ca_write": "20004e6d0006",
+              "ca_read": "a0004e6d0006"
+            },
+            {
+              "address": 321248,
+              "length": 4,
+              "ca_write": "20004e6e0000",
+              "ca_read": "a0004e6e0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-036",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 321500,
+      "length": 16,
+      "pattern": "ff",
+      "data": "ffffffffffffffffffffffffffffffff",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d80",
+      "mask_kind": "lane",
+      "inhibit_mask": "000000000000bbbb",
+      "expected": "6376ff9cafc2ffe8fb0eff34475aff80",
+      "guards": [
+        {
+          "address": 321472,
+          "expected": "23222120"
+        },
+        {
+          "address": 321496,
+          "expected": "3b3a3938"
+        },
+        {
+          "address": 321516,
+          "expected": "0f0e0d0c"
+        },
+        {
+          "address": 321548,
+          "expected": "e0e1e2e3"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 321500,
+          "host_length": 16,
+          "chunks": [
+            {
+              "address": 321500,
+              "length": 4,
+              "ca_write": "20004e7d0006",
+              "ca_read": "a0004e7d0006"
+            },
+            {
+              "address": 321504,
+              "length": 12,
+              "ca_write": "20004e7e0000",
+              "ca_read": "a0004e7e0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-037",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 321756,
+      "length": 32,
+      "pattern": "aa55",
+      "data": "aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0",
+      "mask_kind": "word",
+      "inhibit_mask": "00000000f0f0f0f0",
+      "expected": "aa55aa55afc2d5e8aa55aa55475a6d80aa55aa55dff20518aa55aa55778a9db0",
+      "guards": [
+        {
+          "address": 321728,
+          "expected": "2c2d2e2f"
+        },
+        {
+          "address": 321752,
+          "expected": "34353637"
+        },
+        {
+          "address": 321788,
+          "expected": "10111213"
+        },
+        {
+          "address": 321820,
+          "expected": "f1f0f3f2"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 321756,
+          "host_length": 32,
+          "chunks": [
+            {
+              "address": 321756,
+              "length": 4,
+              "ca_write": "20004e8d0006",
+              "ca_read": "a0004e8d0006"
+            },
+            {
+              "address": 321760,
+              "length": 28,
+              "ca_write": "20004e8e0000",
+              "ca_read": "a0004e8e0000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-038",
+      "status": "PASS"
+    },
+    {
+      "stage": 4,
+      "kind": "memory",
+      "address": 322012,
+      "length": 64,
+      "pattern": "55aa",
+      "data": "55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa",
+      "initial": "6376899cafc2d5e8fb0e2134475a6d8093a6b9ccdff205182b3e5164778a9db0c3d6e9fc0f2235485b6e8194a7bacde0f306192c3f5265788b9eb1c4d7eafd10",
+      "mask_kind": "full",
+      "inhibit_mask": "0000000000000000",
+      "expected": "55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa",
+      "guards": [
+        {
+          "address": 321984,
+          "expected": "2d2c2f2e"
+        },
+        {
+          "address": 322008,
+          "expected": "35343736"
+        },
+        {
+          "address": 322076,
+          "expected": "f2f3f0f1"
+        },
+        {
+          "address": 322108,
+          "expected": "d2d3d0d1"
+        }
+      ],
+      "predicted_requests": [
+        {
+          "host_address": 322012,
+          "host_length": 64,
+          "chunks": [
+            {
+              "address": 322012,
+              "length": 4,
+              "ca_write": "20004e9d0006",
+              "ca_read": "a0004e9d0006"
+            },
+            {
+              "address": 322016,
+              "length": 32,
+              "ca_write": "20004e9e0000",
+              "ca_read": "a0004e9e0000"
+            },
+            {
+              "address": 322048,
+              "length": 28,
+              "ca_write": "20004ea00000",
+              "ca_read": "a0004ea00000"
+            }
+          ]
+        }
+      ],
+      "chunk_count_is": "RTL prediction; inferred data-order coverage, not pin count",
+      "id": "S4-039",
+      "status": "PASS"
+    },
+    {
+      "id": "G1",
+      "source": "\nfor i,c in enumerate((0x000,0xfff,0xf00,0x0f0,0x00f)):_gpu.palette(i,c)\n_gpu.fill_rect(0,0,0,640,360,4)\n_gpu.fill_rect(1,0,0,640,360,2)\n_gpu.fill_rect(1,0,0,64,32,3)\n_gpu.copy_rect(1,0,0,1,16,16,64,32)\n_gpu.present(1)\n",
+      "checks": [
+        [
+          128020,
+          "33333333"
+        ],
+        [
+          147250,
+          "22222222"
+        ],
+        [
+          32050,
+          "44444444"
+        ]
+      ],
+      "rois": [
+        [
+          40,
+          40,
+          [
+            0,
+            255,
+            0
+          ]
+        ],
+        [
+          100,
+          100,
+          [
+            255,
+            0,
+            0
+          ]
+        ]
+      ],
+      "stage": 5,
+      "status": "PASS_FRAMEBUFFER_AND_HDMI"
+    },
+    {
+      "id": "G2",
+      "source": "_gpu.present(0)\n",
+      "checks": [
+        [
+          32050,
+          "44444444"
+        ]
+      ],
+      "rois": [
+        [
+          100,
+          100,
+          [
+            0,
+            0,
+            255
+          ]
+        ],
+        [
+          500,
+          300,
+          [
+            0,
+            0,
+            255
+          ]
+        ]
+      ],
+      "stage": 5,
+      "status": "PASS_FRAMEBUFFER_AND_HDMI"
+    },
+    {
+      "id": "G3",
+      "source": "_gpu.palette(2,0xff0)\n_gpu.present(1)\n",
+      "checks": [
+        [
+          147250,
+          "22222222"
+        ]
+      ],
+      "rois": [
+        [
+          100,
+          100,
+          [
+            255,
+            255,
+            0
+          ]
+        ],
+        [
+          40,
+          40,
+          [
+            0,
+            255,
+            0
+          ]
+        ]
+      ],
+      "stage": 5,
+      "status": "PASS_FRAMEBUFFER_AND_HDMI"
+    },
+    {
+      "id": "G4",
+      "source": "_bank=1-((_gpu.cursor_status()[0]>>1)&1)\n_gpu.cursor_shape(_bank,bytes([0x55])*256,(0xfff,0xf00,0x0f0),(0,0))\n_gpu.cursor_move(320,180,_bank)\n_gpu.cursor_wait()\n",
+      "checks": [
+        [
+          174562,
+          "22222222"
+        ]
+      ],
+      "rois": [
+        [
+          325,
+          185,
+          [
+            255,
+            255,
+            255
+          ]
+        ],
+        [
+          400,
+          200,
+          [
+            255,
+            255,
+            0
+          ]
+        ]
+      ],
+      "stage": 5,
+      "status": "PASS_FRAMEBUFFER_AND_HDMI"
+    },
+    {
+      "id": "G5",
+      "source": "_gpu.cursor_move(0,0,0,False)\n_gpu.cursor_wait()\n_gpu.fill_rect(0,0,0,640,360,0)\n_gpu.fill_rect(1,0,0,640,360,0)\n_gpu.present(0)\n",
+      "checks": [
+        [
+          0,
+          "00000000"
+        ],
+        [
+          115199,
+          "00000000"
+        ],
+        [
+          147250,
+          "00000000"
+        ]
+      ],
+      "rois": [
+        [
+          100,
+          100,
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          500,
+          300,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "stage": 5,
+      "status": "PASS_FRAMEBUFFER_AND_HDMI"
+    },
+    {
+      "id": "A0",
+      "stage": 6,
+      "pcm0": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "pcm1": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "period": 32,
+      "sign": -1,
+      "status": "FAIL"
+    },
+    {
+      "id": "A1",
+      "stage": 6,
+      "pcm0": "4040404040404040c0c0c0c0c0c0c0c04040404040404040c0c0c0c0c0c0c0c04040404040404040c0c0c0c0c0c0c0c04040404040404040c0c0c0c0c0c0c0c0",
+      "pcm1": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "period": 16,
+      "sign": 1,
+      "status": "NOT_RUN_AFTER_FIRST_FAILURE"
+    },
+    {
+      "id": "A2",
+      "stage": 6,
+      "pcm0": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "pcm1": "40404040404040404040404040404040c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c040404040404040404040404040404040c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0",
+      "period": 32,
+      "sign": -1,
+      "status": "NOT_RUN_AFTER_FIRST_FAILURE"
+    }
+  ],
+  "stage7": "NOT_RUN_AFTER_AUDIO_FAILURE; fixed-top detailed channel/FIFO observability also incomplete",
+  "recovery": {
+    "fpga_reprogram": true,
+    "rp2040_flash_unchanged": true,
+    "soft_reset_banner": true,
+    "console_resume": true,
+    "hdmi_capture": true
+  },
+  "recovery_hdmi_visually_confirmed": true,
+  "hashes": {
+    "rp2040_flash_before_after": "7134077f8bb0d5a1cc426235a8e3ee274dbc7a6f9718e1ee6b152036996a6da6",
+    "boot_before": "9ef26228ee5039efa193938d4d11cc036d4b2589289250719f484647716b62b0",
+    "recovery_uf2": "4edd3bdcf17411049fe8ce58322c5bd0de2cbb5c41f1933ace1c440b7afaa44b",
+    "recovery_rp2040_bin": "7134077f8bb0d5a1cc426235a8e3ee274dbc7a6f9718e1ee6b152036996a6da6"
+  },
+  "fpga_recovery_file_hash": "UNVERIFIED: user explicitly waived this preflight item; existing Flash reprogram path used",
+  "sram_program_attempts": 1,
+  "reprograms": 1,
+  "retries": 0,
+  "flash_writes": 0,
+  "fw_or_device_filesystem_changes": 0,
+  "source_sha256": {
+    "rtl/fb/kagura_fb_registers.sv": "d17195466f66952f3732f59a8bf2fa21953f0149c0ebb9de360a1b11cb589e65",
+    "rtl/fb/kagura_fb_upload_word.sv": "8382ea49cec0ca8b8317b910c3870201985c593c7c582ef6a4beebe5530815f2",
+    "rtl/fb/kagura_fb_burst_ctrl.sv": "4d2189aadf187a40df48e25fe892f28db7a3c8569ade747dfcb29bdff7bb8f5c",
+    "rtl/memory/kagura_hyperram_phy_gowin.sv": "e20611d49ed5ebebb84db01cbee732f9198db57ec4e4ff8ef43b1a84b69d72c0",
+    "boards/tang-nano-9k/kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0",
+    "boards/tang-nano-9k/phase1.cst": "82ff01e377e4f1b918b0c12c0cdd51502201a8d382444d7f49e6baaba72f9094",
+    "boards/tang-nano-9k/host.cst": "87f6eed7e8c08fccab3fe8e6bbbefbdc261ed443f688c963f5c9be33eb037628"
+  },
+  "release_ready": false,
+  "external_psram_io_or_pvt_signoff": false
+}

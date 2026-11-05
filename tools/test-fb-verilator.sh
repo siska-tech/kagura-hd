@@ -27,10 +27,10 @@ run tb_audio_synth rtl/audio/kagura_audio_synth.sv sim/tests/tb_audio_synth.sv
 run tb_fb_command_bounds rtl/fb/kagura_fb_commands.sv rtl/fb/kagura_fb_fill_burst.sv sim/tests/tb_fb_command_bounds.sv
 run tb_fb_blit rtl/fb/kagura_fb_commands.sv rtl/fb/kagura_fb_fill_burst.sv rtl/fb/kagura_fb_arbiter.sv \
     rtl/fb/kagura_fb_burst_ctrl.sv sim/support/kagura_hyperram_pair_model.sv sim/tests/tb_fb_blit.sv
-run tb_fb_register_window rtl/fb/kagura_fb_registers.sv rtl/fb/kagura_fb_upload_word.sv sim/tests/tb_fb_register_window.sv
+run tb_fb_register_window sim/support/kagura_fb_registers_reference.sv rtl/fb/kagura_fb_registers.sv rtl/fb/kagura_fb_upload_word.sv sim/tests/tb_fb_register_window.sv
 run tb_fb_audio_clock rtl/audio/kagura_audio_transport.sv rtl/memory/kagura_async_fifo.sv sim/tests/tb_fb_audio_clock.sv
 run tb_async_fifo rtl/memory/kagura_async_fifo.sv sim/tests/tb_async_fifo.sv
-run tb_fb_cursor rtl/fb/kagura_fb_cursor.sv rtl/memory/kagura_ram_tdp.sv sim/tests/tb_fb_cursor.sv
+run tb_fb_cursor sim/support/kagura_fb_cursor_reference.sv rtl/fb/kagura_fb_cursor.sv rtl/memory/kagura_ram_tdp.sv sim/tests/tb_fb_cursor.sv
 run tb_fb_fill rtl/fb/kagura_fb_fill.sv sim/tests/tb_fb_fill.sv
 run tb_fb_byte_port rtl/fb/kagura_fb_byte_port.sv sim/tests/tb_fb_byte_port.sv
 run tb_fb_fill_chain rtl/fb/kagura_fb_fill.sv rtl/fb/kagura_fb_byte_port.sv \

@@ -1,0 +1,291 @@
+{
+  "release_ready": false,
+  "scope": "one finite optimized firmware physical run; logging on; seed0xb1616; stars64 objects32; nominal QSPI5MHz",
+  "success": true,
+  "scenes_complete": true,
+  "stop_rc": 0,
+  "g_to_stop_s": 159.625,
+  "estimated_audio_epoch_from_g_s": 9.646622999979511,
+  "runtime_rate_window": {
+    "first_ms": 1038,
+    "last_ms": 149556,
+    "seconds": 148.518,
+    "transactions_per_s": 14742.340995704224,
+    "wire_bytes_per_s": 80593.57114962496,
+    "transaction_us_per_second": 765230.7733742711,
+    "cumulative_transaction_us": 113650544,
+    "transaction_average_us": 51.907005379759696,
+    "actual_fps": 11.022232995327165
+  },
+  "frames_logged_excluding_initial_frame": 1663,
+  "mean_frame_ms": 79.53137883343355,
+  "worst_frame_ms": 509.063,
+  "drawing_commands_final_counter": 269822,
+  "blit_pixels_final_counter": 42742272,
+  "timeouts": 0,
+  "maximum_transaction_us": 336,
+  "pcm_status_faults": [
+    0
+  ],
+  "scenes": [
+    {
+      "scene": 0,
+      "name": "BOOT",
+      "nominal_seconds": 10.0,
+      "logged_frames": 145,
+      "effective_fps": 14.5,
+      "mean_frame_ms": 59.712248275862066,
+      "worst_frame_ms": 149.794,
+      "drawing_commands": 17124,
+      "blit_pixels": 1053696,
+      "first_host_ms": 148,
+      "last_host_ms": 9955,
+      "rates": {
+        "measured_seconds": 8.134,
+        "transactions_per_s": 14749.938529628718,
+        "wire_bytes_per_s": 79275.14138185394
+      }
+    },
+    {
+      "scene": 1,
+      "name": "HYPERSPACE",
+      "nominal_seconds": 20.0,
+      "logged_frames": 307,
+      "effective_fps": 15.35,
+      "mean_frame_ms": 56.68845928338762,
+      "worst_frame_ms": 142.627,
+      "drawing_commands": 32260,
+      "blit_pixels": 0,
+      "first_host_ms": 10005,
+      "last_host_ms": 29989,
+      "rates": {
+        "measured_seconds": 19.367,
+        "transactions_per_s": 14736.871998760778,
+        "wire_bytes_per_s": 78157.69091754014
+      }
+    },
+    {
+      "scene": 2,
+      "name": "RASTER WAVES",
+      "nominal_seconds": 20.0,
+      "logged_frames": 167,
+      "effective_fps": 8.35,
+      "mean_frame_ms": 110.45048502994013,
+      "worst_frame_ms": 225.875,
+      "drawing_commands": 40563,
+      "blit_pixels": 3527040,
+      "first_host_ms": 30039,
+      "last_host_ms": 49939,
+      "rates": {
+        "measured_seconds": 19.2,
+        "transactions_per_s": 15448.072916666668,
+        "wire_bytes_per_s": 86068.54166666667
+      }
+    },
+    {
+      "scene": 3,
+      "name": "PLASMA ENGINE",
+      "nominal_seconds": 20.0,
+      "logged_frames": 233,
+      "effective_fps": 11.65,
+      "mean_frame_ms": 76.5483991416309,
+      "worst_frame_ms": 175.782,
+      "drawing_commands": 31730,
+      "blit_pixels": 25767936,
+      "first_host_ms": 50073,
+      "last_host_ms": 69922,
+      "rates": {
+        "measured_seconds": 18.3,
+        "transactions_per_s": 14139.453551912567,
+        "wire_bytes_per_s": 75533.5519125683
+      }
+    },
+    {
+      "scene": 4,
+      "name": "ROTOZOOM",
+      "nominal_seconds": 25.0,
+      "logged_frames": 163,
+      "effective_fps": 6.52,
+      "mean_frame_ms": 143.18188957055216,
+      "worst_frame_ms": 225.756,
+      "drawing_commands": 52669,
+      "blit_pixels": 1133568,
+      "first_host_ms": 70006,
+      "last_host_ms": 94874,
+      "rates": {
+        "measured_seconds": 24.467,
+        "transactions_per_s": 15495.238484489313,
+        "wire_bytes_per_s": 87150.36579883109
+      }
+    },
+    {
+      "scene": 5,
+      "name": "BLIT STORM",
+      "nominal_seconds": 25.0,
+      "logged_frames": 360,
+      "effective_fps": 14.4,
+      "mean_frame_ms": 60.69552222222222,
+      "worst_frame_ms": 125.618,
+      "drawing_commands": 43227,
+      "blit_pixels": 10266624,
+      "first_host_ms": 95023,
+      "last_host_ms": 119989,
+      "rates": {
+        "measured_seconds": 23.517,
+        "transactions_per_s": 14456.478292299189,
+        "wire_bytes_per_s": 78464.42998681805
+      }
+    },
+    {
+      "scene": 6,
+      "name": "VECTOR WORLD",
+      "nominal_seconds": 20.0,
+      "logged_frames": 78,
+      "effective_fps": 3.9,
+      "mean_frame_ms": 246.5908205128205,
+      "worst_frame_ms": 358.839,
+      "drawing_commands": 44459,
+      "blit_pixels": 147840,
+      "first_host_ms": 120073,
+      "last_host_ms": 139873,
+      "rates": {
+        "measured_seconds": 18.766,
+        "transactions_per_s": 16025.578173292126,
+        "wire_bytes_per_s": 90459.55451348184
+      }
+    },
+    {
+      "scene": 7,
+      "name": "FINALE",
+      "nominal_seconds": 10.0,
+      "logged_frames": 210,
+      "effective_fps": 21.0,
+      "mean_frame_ms": 26.166295238095238,
+      "worst_frame_ms": 509.063,
+      "drawing_commands": 7790,
+      "blit_pixels": 845568,
+      "first_host_ms": 140239,
+      "last_host_ms": 149971,
+      "rates": {
+        "measured_seconds": 9.317,
+        "transactions_per_s": 9810.668670172803,
+        "wire_bytes_per_s": 48685.199098422236
+      }
+    }
+  ],
+  "bench": [
+    {
+      "phase": "PCM_STOPPED",
+      "op": "fence",
+      "samples": 64,
+      "issue_us": {
+        "mean": 439.34375,
+        "min": 419,
+        "max": 461
+      },
+      "completion_us": {
+        "mean": 212.375,
+        "min": 206,
+        "max": 224
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "fill",
+      "samples": 8,
+      "us": {
+        "mean": 679.875,
+        "min": 668,
+        "max": 697
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "blit",
+      "samples": 8,
+      "us": {
+        "mean": 688.375,
+        "min": 669,
+        "max": 730
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "present",
+      "samples": 8,
+      "us": {
+        "mean": 6939.75,
+        "min": 6776,
+        "max": 6988
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "fence",
+      "samples": 64,
+      "issue_us": {
+        "mean": 438.21875,
+        "min": 419,
+        "max": 459
+      },
+      "completion_us": {
+        "mean": 211.1875,
+        "min": 203,
+        "max": 227
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "fill",
+      "samples": 8,
+      "us": {
+        "mean": 678.875,
+        "min": 667,
+        "max": 703
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "blit",
+      "samples": 8,
+      "us": {
+        "mean": 692.625,
+        "min": 681,
+        "max": 721
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "present",
+      "samples": 8,
+      "us": {
+        "mean": 8194.75,
+        "min": 6881,
+        "max": 16941
+      }
+    }
+  ],
+  "physical_before_after": "NOT RUN: only optimized firmware deployed",
+  "PIO_GPIO_GPU_PSRAM_internal_split": "not separately measured",
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1"
+      },
+      {
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "163.494000"
+    }
+  }
+}

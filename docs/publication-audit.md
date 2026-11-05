@@ -1,3 +1,5 @@
+> 履歴資料：この文書の未検証・候補・公開保留などの記述は記録時点の状態です。最終版の選定と現行仕様は [リリース案内](release-validation.md) と [README](../README.md) を参照してください。
+
 # KAGURA-HD 公開用スナップショットの監査
 
 2026-11-04。公開先は https://github.com/siska-tech/kagura-hd です。GitHubリポジトリ作成とPushは最終承認待ちです。

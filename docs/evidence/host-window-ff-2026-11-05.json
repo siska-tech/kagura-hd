@@ -1,0 +1,135 @@
+{
+  "mode": "ff",
+  "test_id": "ISO2-1",
+  "candidate_sha256": "5f10672147b575d226e788c59e72df6a2a696908382b5578cd3b9165487c7848",
+  "internal_sta": {
+    "scope": "ISO2 Host/CSR six-boundary observation; PSRAM held inactive",
+    "numeric_sta_pass": true,
+    "setup_slack_ns": 4.632,
+    "hold_slack_ns": 0.708,
+    "setup_violations": 0,
+    "hold_violations": 0,
+    "routing_completed": true,
+    "resources": {
+      "Logic": [
+        2309,
+        8640
+      ],
+      "Register": [
+        2439,
+        6771
+      ],
+      "CLS": [
+        2083,
+        4320
+      ],
+      "BSRAM": [
+        0,
+        null
+      ],
+      "DSP": [
+        0,
+        null
+      ]
+    },
+    "bitstream_sha256": "5f10672147b575d226e788c59e72df6a2a696908382b5578cd3b9165487c7848",
+    "pin_constraints_match": true,
+    "psram_inactive_netlist_verified": true,
+    "psram_external_timing": "not exercised: static CS high, reset low, DQ/RWDS Hi-Z",
+    "host_external_timing": "asynchronous oversampled; board min/max unverified; initial SCK 1MHz only",
+    "hardware_tested": false,
+    "release_ready": false,
+    "sram_programming_authorized": false,
+    "compile_inputs": [
+      {
+        "path": "rtl/bus/kagura_spi_adapter.sv",
+        "sha256": "d1d761fe50283219e5fce44a5211047ecf2dfb1c75e7ade063c922406c3221dd"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_registers.sv",
+        "sha256": "a1e9a4a6927e12a4a87d6e70c28beaf3af90ce80e3de8bd13cfdcbdd130ca7aa"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_commands.sv",
+        "sha256": "c016fa9d3c9c18872068c5ac22e2fbbf7d38dce97a8594b03e0323b1474c244f"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_fill_burst.sv",
+        "sha256": "f425091da3cdc405e592b2adb230a0347d63d38ef6642aea3402f460a97c9a5b"
+      },
+      {
+        "path": "diagnostics/psram/psram_probe_uart.sv",
+        "sha256": "0bd356e39a2da3728a7461aad52b42ad54468dd18c1045ad2f45a81d89aba3fc"
+      },
+      {
+        "path": "diagnostics/psram-isolation/host-isolation.cst",
+        "sha256": "70edba2ffb5251c474d23b4ae54606779a9d6899944eb81174d13b4768727137"
+      },
+      {
+        "path": "diagnostics/psram-isolation/host-isolation.sdc",
+        "sha256": "d9ee4a9a420eac047d829c3c84165276cdf1bcfa4bcb366d7b02880fd19f3ca1"
+      },
+      {
+        "path": "diagnostics/host-window-observe/host_isolation_top.sv",
+        "sha256": "08042c24e4304db92eefd4c565ec6ed94b1af2d8adcfd6f3d0c7250cb26f3f2a"
+      },
+      {
+        "path": "diagnostics/host-window-observe/kagura_fb_host_observe.sv",
+        "sha256": "a7bfc19f48994d0a2941bdd5a58fdabe80d60b2d60cc1aa15ced0ec5b6217fdc"
+      },
+      {
+        "path": "diagnostics/host-window-observe/window_observe_core.sv",
+        "sha256": "c25f97378e2a55fd58b2590688a6ba52b91e5f5e64e1dc2f0444213b9ee2ec41"
+      },
+      {
+        "path": "diagnostics/host-window-observe/window_snapshot.sv",
+        "sha256": "694076144813819a80b8a97ae3002f17f4de95b89d0238262f5ee5a9b81f96d6"
+      },
+      {
+        "path": "diagnostics/host-window-observe/kagura_fb_upload_word_ff.sv",
+        "sha256": "375fdabcf399060306b912be8478cdfe0510aae05779f6ec99540425dc126395"
+      },
+      {
+        "path": "diagnostics/host-window-observe/build-ff.tcl",
+        "sha256": "2c20aec253790d8274d5b8079809a89e8493d0aa8766e7e82f8f5998f5cb0ca6"
+      }
+    ]
+  },
+  "uart": {
+    "test_id": "ISO2-1",
+    "boundaries": {
+      "transport_rx": "ed0f2143",
+      "csr_accept": "ed0f2143",
+      "upload_settled": "ed0f2143",
+      "upload_first_read": "ed0f2143",
+      "csr_response": "ed0f2143",
+      "transport_response": "ed0f2143"
+    },
+    "tx_count": 4,
+    "csr_count": 4,
+    "write_count": 4,
+    "rx_count": 4,
+    "flags": 0,
+    "read_count": 4,
+    "header_fault": false,
+    "all_six_match": true
+  },
+  "expected": "ed0f2143",
+  "host_actual": "ed0f2143",
+  "xor": "00000000",
+  "outcome": "PASS_LIMITED_4B",
+  "sram_program_count": 1,
+  "restore_reprogram_count": 1,
+  "retries": 0,
+  "configured_qspi_sck_hz": 1000000,
+  "pad_clock_measured": false,
+  "psram_transfers": 0,
+  "fpga_flash_writes": 0,
+  "rp2040_flash_writes": 0,
+  "fw_files_changed": false,
+  "flash_hash_before_after": "7134077f8bb0d5a1cc426235a8e3ee274dbc7a6f9718e1ee6b152036996a6da6",
+  "restore_banner_confirmed": true,
+  "hdmi_restored_visually_confirmed": true,
+  "hdmi_restore_image_sha256": "9aed0d965fbe0b8c4d59db26cda0ccad0a376729863c632971376c18c208c332",
+  "release_ready": false
+}

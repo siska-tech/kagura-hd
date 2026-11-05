@@ -1,0 +1,13 @@
+PICO_SDK_PATH is C:/Users/Shion/Documents/Projects/kagura-hd/software/midnight_terminal/toolchain/pico-sdk
+Target board (PICO_BOARD) is 'pico'.
+Using board configuration from C:/Users/Shion/Documents/Projects/kagura-hd/software/midnight_terminal/toolchain/pico-sdk/src/boards/include/boards/pico.h
+Pico Platform (PICO_PLATFORM) is 'rp2040'.
+Build type is Release
+TinyUSB available at C:/Users/Shion/Documents/Projects/kagura-hd/software/midnight_terminal/toolchain/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+-- Configuring done (0.5s)
+-- Generating done (0.2s)
+-- Build files have been written to: C:/Users/Shion/Documents/Projects/kagura-hd/software/beyond16/out/rp2040
+[1/2] Building C object CMakeFiles/beyond16.dir/src/rp2040_main.c.obj
+[2/2] Linking CXX executable beyond16.elf
+   text	   data	    bss	    dec	    hex	filename
+ 316288	      0	  41188	 357476	  57464	C:\Users\Shion\Documents\Projects\kagura-hd\software\beyond16/out/rp2040/beyond16.elf

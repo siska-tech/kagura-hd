@@ -1,5 +1,8 @@
 `timescale 1ns/1ps
 module tb_fb_fill_burst;
+    wire rword_valid,scan_word_valid;
+    wire [31:0] rword_data,scan_word_data;
+
     reg clk=0, reset=1, valid=0, page=0;
     always #5 clk=~clk;
     reg [15:0] x=0,y=0,width=0,height=0;
@@ -22,7 +25,7 @@ module tb_fb_fill_burst;
     kagura_fb_burst_ctrl #(.INIT_CYCLES(64)) controller(
         .clk,.reset,.valid(req_valid && allow_request),.ready(ctrl_ready),.write(req_write),.addr(req_addr),
         .words(req_words),.wdata(req_wdata),.mask(req_mask),.done(rsp_done),.error(rsp_error),.rdata(rsp_data),
-        .initialized,.phy_reset_n,.phy_cs_n,.phy_ck_en,.phy_dq_oe,.phy_dq_o_rise,.phy_dq_o_fall,
+        .rword_valid,.rword_data,.initialized,.phy_reset_n,.phy_cs_n,.phy_ck_en,.phy_dq_oe,.phy_dq_o_rise,.phy_dq_o_fall,
         .phy_rwds_oe,.phy_rwds_o_rise,.phy_rwds_o_fall,.phy_dq_tx,.phy_rwds_tx,.phy_dq_i_rise,.phy_dq_i_fall);
     kagura_hyperram_pair_model #(.BYTES(230400),.MAX_WORDS(16)) model(
         .clk,.reset_n(phy_reset_n),.cs_n(phy_cs_n),.ck_en(phy_ck_en),

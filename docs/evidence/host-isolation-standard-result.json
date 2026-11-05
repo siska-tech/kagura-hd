@@ -1,0 +1,166 @@
+{
+  "scope": "ISO1 candidate-v2 creation and PC verification; NOT hardware test",
+  "gate": {
+    "scope": "ISO1 Host/CSR isolation; internal STA; PSRAM held inactive",
+    "numeric_sta_pass": true,
+    "setup_slack_ns": 2.071,
+    "hold_slack_ns": 0.708,
+    "setup_violations": 0,
+    "hold_violations": 0,
+    "routing_completed": true,
+    "resources": {
+      "Logic": [
+        4535,
+        8640
+      ],
+      "Register": [
+        2412,
+        6771
+      ],
+      "CLS": [
+        2589,
+        4320
+      ],
+      "BSRAM": [
+        16,
+        26
+      ],
+      "DSP": [
+        4,
+        10
+      ]
+    },
+    "bitstream_sha256": "e64886ab3b80342d628b2f89655f95a759e4b00b12ead91c6c8b4cbf3cb6a3e2",
+    "pin_constraints_match": true,
+    "psram_inactive_netlist_verified": true,
+    "psram_external_timing": "not exercised: static CS high, reset low, DQ/RWDS Hi-Z",
+    "host_external_timing": "asynchronous oversampled; board min/max unverified; initial SCK 1MHz only",
+    "hardware_tested": false,
+    "release_ready": false,
+    "sram_programming_authorized": false,
+    "compile_inputs": [
+      {
+        "path": "rtl/bus/kagura_spi_adapter.sv",
+        "sha256": "d1d761fe50283219e5fce44a5211047ecf2dfb1c75e7ade063c922406c3221dd"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_host.sv",
+        "sha256": "8d2bcdf726f5254ec8a9ba1ba579079c9e408fe187540bdf77cd94a6a9a860cc"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_registers.sv",
+        "sha256": "a1e9a4a6927e12a4a87d6e70c28beaf3af90ce80e3de8bd13cfdcbdd130ca7aa"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_upload_word.sv",
+        "sha256": "0c6724da635664801fcc8ae8ae8bc1512629e5e05f17fb1162affe7c44adf147"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_commands.sv",
+        "sha256": "c016fa9d3c9c18872068c5ac22e2fbbf7d38dce97a8594b03e0323b1474c244f"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_fill_burst.sv",
+        "sha256": "f425091da3cdc405e592b2adb230a0347d63d38ef6642aea3402f460a97c9a5b"
+      },
+      {
+        "path": "diagnostics/psram/psram_probe_uart.sv",
+        "sha256": "0bd356e39a2da3728a7461aad52b42ad54468dd18c1045ad2f45a81d89aba3fc"
+      },
+      {
+        "path": "diagnostics/psram-isolation/build-host.tcl",
+        "sha256": "70b9074c144e173aaf1a9b36606a1f9a00780ddf8ae9adbfa3a24f5f5bdeaa65"
+      },
+      {
+        "path": "diagnostics/psram-isolation/host_isolation_core.sv",
+        "sha256": "4ff5ee4e4c3ab468b3dd81df0d8401d68996b8ece669e013376ae09f77d28e58"
+      },
+      {
+        "path": "diagnostics/psram-isolation/host_isolation_top.sv",
+        "sha256": "e4ce69e2274707e79625bb9ab2876b58f6416fca9cab46e7e10b43b3e8f968e2"
+      },
+      {
+        "path": "diagnostics/psram-isolation/host-isolation.cst",
+        "sha256": "70edba2ffb5251c474d23b4ae54606779a9d6899944eb81174d13b4768727137"
+      },
+      {
+        "path": "diagnostics/psram-isolation/host-isolation.sdc",
+        "sha256": "d9ee4a9a420eac047d829c3c84165276cdf1bcfa4bcb366d7b02880fd19f3ca1"
+      },
+      {
+        "path": "diagnostics/psram-isolation/pdt_snapshot.sv",
+        "sha256": "e34f4c3af164e5fc689fe5c22e8f06a868ff89efd0523494a9553d1a6fb7990a"
+      },
+      {
+        "path": "diagnostics/psram-isolation/psram_boundary_capture.sv",
+        "sha256": "bbc230b4cc6ae52a912ba548f4531827954d520ef33e06d03deda0a9513842bc"
+      },
+      {
+        "path": "diagnostics/psram-isolation/psram_host_stub.sv",
+        "sha256": "5821d819eeeb363026ea16770c625169de43d501de66de4afa390b58353b2e06"
+      },
+      {
+        "path": "diagnostics/psram-isolation/tb_capture.sv",
+        "sha256": "373f5f14df4b4758c5a229aed7ed6218984bb69f549045a8f92cf4d9c70a819f"
+      }
+    ]
+  },
+  "protected_artifacts_sha256": {
+    "build/rx32-scanout-worktree/build/kagura-fb-qspi/impl/pnr/kagura_fb.fs": "a99c5f8304aed79b8e0d148d6701f24bf5e282022c75c45ca3b0ab62b0d431cf",
+    "build/psram-probe-standard/candidate-v3/impl/pnr/psram_probe.fs": "f6619b747171c92ea9fdb0aa562acfadfdf7af37940d2d6286b9535eebca62ac",
+    "build/rx32-scanout-worktree/DO_NOT_PROGRAM.txt": "d97c7f7b7703f6ba0d077e2c2e11eefc398bd8eaaacc67070b88b35e2df80546"
+  },
+  "tests": {
+    "board_core_spi": "PASS",
+    "board_core_qspi": "PASS",
+    "board_core_qspi_bad_request": "PASS",
+    "standard_vendor_sp_qspi": "PASS",
+    "pdt_decoder": "4 PASS",
+    "ram_host_case_real_device_driver": "4 PASS"
+  },
+  "fpga_sram_program_count": 0,
+  "fpga_flash_writes": 0,
+  "rp2040_flash_writes": 0,
+  "live_flash_hash_checked": false,
+  "release_ready": false,
+  "file_sha256": {
+    "diagnostics/psram-isolation/audit_build.py": "2428bc598f09e243a6a5a03d5e04d9c20f067358f482935ee6a9eb7c519e4e13",
+    "diagnostics/psram-isolation/board-test.sh": "de076661977769f2d10e70e2bf3af1c8aa444af36d44eec52f06b0c55c3b758d",
+    "diagnostics/psram-isolation/build-host.tcl": "70b9074c144e173aaf1a9b36606a1f9a00780ddf8ae9adbfa3a24f5f5bdeaa65",
+    "diagnostics/psram-isolation/check.py": "955f4483d5ee3738b6f72d49a0afd7eaa83bfc530ba5dfce46c657e6465d5ea1",
+    "diagnostics/psram-isolation/collect_results.py": "b3245884f0925e89e3b146145e71782a7bbc93bfc9055ae6b86d8370ccd92c07",
+    "diagnostics/psram-isolation/decode_trace.py": "0a115a5062246ee822cbfbc15d79bf3fea700811b6da9355bd30451565ef1bb5",
+    "diagnostics/psram-isolation/host-isolation.cst": "70edba2ffb5251c474d23b4ae54606779a9d6899944eb81174d13b4768727137",
+    "diagnostics/psram-isolation/host-isolation.sdc": "d9ee4a9a420eac047d829c3c84165276cdf1bcfa4bcb366d7b02880fd19f3ca1",
+    "diagnostics/psram-isolation/host_case.py": "c52f3b33479e2ce3ce02f028dfdf16a8f1a862b7abb40c40748f0fa2b335e088",
+    "diagnostics/psram-isolation/host_isolation_core.sv": "4ff5ee4e4c3ab468b3dd81df0d8401d68996b8ece669e013376ae09f77d28e58",
+    "diagnostics/psram-isolation/host_isolation_top.sv": "e4ce69e2274707e79625bb9ab2876b58f6416fca9cab46e7e10b43b3e8f968e2",
+    "diagnostics/psram-isolation/oracle.py": "5b4f40e18f5a2684cc308e1e9241618a567d3481adff3a92788443d5da91d855",
+    "diagnostics/psram-isolation/pdt_snapshot.sv": "e34f4c3af164e5fc689fe5c22e8f06a868ff89efd0523494a9553d1a6fb7990a",
+    "diagnostics/psram-isolation/prepare.py": "6ea4f13f6f0ac7cf2ae8488f8fedae8a95835bbfaa59b9841cfbe843654e22cc",
+    "diagnostics/psram-isolation/prepare_board_test.py": "21dedd797b9410424189fecf5598f249e90c454a0121b98139d94cc6f9398412",
+    "diagnostics/psram-isolation/psram_boundary_capture.sv": "bbc230b4cc6ae52a912ba548f4531827954d520ef33e06d03deda0a9513842bc",
+    "diagnostics/psram-isolation/psram_host_stub.sv": "5821d819eeeb363026ea16770c625169de43d501de66de4afa390b58353b2e06",
+    "diagnostics/psram-isolation/README.md": "acf2604353b84b5272a3f34e164be8cf1bfe6a756a8f1f1988d6fc177b7eacd2",
+    "diagnostics/psram-isolation/tb_capture.sv": "373f5f14df4b4758c5a229aed7ed6218984bb69f549045a8f92cf4d9c70a819f",
+    "diagnostics/psram-isolation/test.sh": "85e5f598c36f1641561f3be17a405637e35edde0d5953e6b6becc3c39819f2c9",
+    "diagnostics/psram-isolation/test_host_case.py": "b110d67e666ddc12a5390197e74e0da2e31d9c4067be00b87856a69d4491fdcc",
+    "diagnostics/psram-isolation/test_trace.py": "58b5ff892a2da711c4f6b66046228b57722c0f472c150fe3cae7fe579a7f6ee9",
+    "diagnostics/psram-isolation/vendor-test.sh": "4c5a3cfa323b87a583e500231e1510c57f9ac7574db03d06cf303ca722590f7c",
+    "build/psram-isolation/board-sim/l1-b0.run.log": "2c5fccce6f0546b5de4408b6e7ce2d0ce2dc56fa28a28d87a09e4f155c56c4b3",
+    "build/psram-isolation/board-sim/l4-b0.run.log": "ec0c7f2405938909c5759f962ddfddc836ea1288fd3b8c0adbb431c099e376bf",
+    "build/psram-isolation/board-sim/l4-b1.run.log": "7574b11cf07dc788fbb288a7d2d58d0d2f5b57a73bd744a825efbbb05eed6f05",
+    "build/psram-isolation/board-sim/vendor-qspi.run.log": "7268e4b89a95c93b524c04aad9f476f389547f5d0220b6f04ba66777e6a1d2c1",
+    "build/psram-isolation/board-sim/uart-l1-b0.bin": "c13fed89b789b18d123b423b71060f879581dc0ed79cd03f0934b6e31496b966",
+    "build/psram-isolation/board-sim/uart-l4-b0.bin": "c13fed89b789b18d123b423b71060f879581dc0ed79cd03f0934b6e31496b966",
+    "build/psram-isolation/board-sim/uart-l4-b1.bin": "3c81f0e6c04051b66638275f61e74f42f387136c6449ed19167abbe4e76de046",
+    "build/psram-isolation/board-sim/uart-l4-b0-vendor.bin": "c13fed89b789b18d123b423b71060f879581dc0ed79cd03f0934b6e31496b966",
+    "build/psram-isolation/board-sim/tb_host_isolation_board.sv": "a212eb8aba4dcdd9122df4043a2627ad7924a9b0966609cefaf93f9de6d99f66",
+    "build/psram-isolation/board-sim/gowin_SP_sim.v": "92d0ecc44dfb9a7850780c6606b45d2453040743de561967472b62654d1ec26f",
+    "build/host-isolation-standard/candidate-v2/build.log": "a26c30bcf31f8029935a17a9d1e87f9e57ecafc906d954ad752859278bf74d1e",
+    "build/host-isolation-standard/candidate-v2/diagnostic-gate.json": "78e59fc4026b448de9d3556e13411a06558cd9e3024fa93cafb0f4a9296198ee",
+    "build/host-isolation-standard/candidate-v2/timing-status.json": "f80b88e8a97cb811384075a8c04b09e8952f2e13ffdd5de9a8a1641020737548",
+    "build/host-isolation-standard/candidate-v2/impl/pnr/host_isolation.fs": "e64886ab3b80342d628b2f89655f95a759e4b00b12ead91c6c8b4cbf3cb6a3e2",
+    "build/host-isolation-standard/candidate-v2/impl/pnr/host_isolation.pin.html": "a4b216e54fba9ed64d4b44792c5d6e3519d980ce3f2bfd4044e21355d3d3b7d4"
+  }
+}

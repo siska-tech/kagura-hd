@@ -1,0 +1,684 @@
+{
+  "release_ready": false,
+  "tool": "Gowin Standard V1.9.12.04",
+  "device": "GW1NR-LV9QN88PC6/I5",
+  "place_option": 1,
+  "route_option": 2,
+  "attempts": 1,
+  "tool_executable": "C:/Gowin/Gowin_V1.9.12.04_x64/IDE/bin/gw_sh.exe",
+  "tool_executable_sha256": "585c12968550a960d1021287742672ff9d6bbeaee5623f6811dfc1f907a4af41",
+  "tool_exit_code": 0,
+  "errors": [],
+  "placement_pass": true,
+  "routing_pass": true,
+  "pnr_resource_usage": {
+    "Logic": {
+      "used": 7808,
+      "available": 8640
+    },
+    "Register": {
+      "used": 5269,
+      "available": 6771
+    },
+    "CLS": {
+      "used": 4233,
+      "available": 4320
+    },
+    "BSRAM": {
+      "used": 19,
+      "available": 26
+    },
+    "IOLOGIC": {
+      "used": 28,
+      "available": 97
+    }
+  },
+  "synthesis_resource_usage": {
+    "ff": 5269,
+    "lut": 6708,
+    "alu": 875,
+    "bsram": 19,
+    "ssram": 16
+  },
+  "timing": {
+    "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+    "setup_violated_endpoints": 41,
+    "hold_violated_endpoints": 0,
+    "worst": {
+      "Setup": {
+        "slack_ns": -1.863,
+        "from": "host/commands/read_result_s0/Q",
+        "to": "host/registers/upload_words[10].ram/storage/DI[26]"
+      },
+      "Hold": {
+        "slack_ns": 0.506,
+        "from": "core/memory_ctrl/rword_data_10_s0/Q",
+        "to": "core/display/banks/banks[0].ram/memory_memory_0_0_s/DI[10]"
+      },
+      "Recovery": {
+        "slack_ns": 10.167,
+        "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+        "to": "core/hdmi/audio_link/fifo/visible_wb_2_s0/CLEAR"
+      },
+      "Removal": {
+        "slack_ns": 0.783,
+        "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+        "to": "core/hdmi/audio_link/fifo/rg_sync2_4_s0/CLEAR"
+      }
+    },
+    "negative_analyses": [
+      "Setup"
+    ],
+    "boot_miso": null,
+    "release_ready": false,
+    "report_sha256": "a39d6720276e3176b48700dd755bc5eb5209538a23708f7bcfb9c9f55f9a6d24"
+  },
+  "numeric_sta_gate_pass": false,
+  "setup_paths": [
+    {
+      "rank": 1,
+      "slack_ns": -1.863,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[26]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 20.338
+    },
+    {
+      "rank": 2,
+      "slack_ns": -1.639,
+      "from_node": "core/scheduler/owner_1_s0/Q",
+      "to_node": "core/memory_ctrl/tx_309_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.757
+    },
+    {
+      "rank": 3,
+      "slack_ns": -1.534,
+      "from_node": "core/scheduler/owner_1_s0/Q",
+      "to_node": "core/memory_ctrl/tx_429_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.652
+    },
+    {
+      "rank": 4,
+      "slack_ns": -1.527,
+      "from_node": "core/scheduler/owner_1_s0/Q",
+      "to_node": "core/memory_ctrl/tx_293_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.645
+    },
+    {
+      "rank": 5,
+      "slack_ns": -1.389,
+      "from_node": "core/scheduler/owner_1_s0/Q",
+      "to_node": "core/memory_ctrl/tx_445_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.507
+    },
+    {
+      "rank": 6,
+      "slack_ns": -1.296,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[25]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.771
+    },
+    {
+      "rank": 7,
+      "slack_ns": -1.281,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[24]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.756
+    },
+    {
+      "rank": 8,
+      "slack_ns": -1.281,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[10]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.756
+    },
+    {
+      "rank": 9,
+      "slack_ns": -1.225,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[0]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.7
+    },
+    {
+      "rank": 10,
+      "slack_ns": -1.007,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[9]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.482
+    },
+    {
+      "rank": 11,
+      "slack_ns": -1.005,
+      "from_node": "core/scheduler/owner_1_s0/Q",
+      "to_node": "core/memory_ctrl/tx_69_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.123
+    },
+    {
+      "rank": 12,
+      "slack_ns": -0.967,
+      "from_node": "core/scheduler/owner_1_s0/Q",
+      "to_node": "core/memory_ctrl/tx_453_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.085
+    },
+    {
+      "rank": 13,
+      "slack_ns": -0.957,
+      "from_node": "host/registers/command_35_s0/Q",
+      "to_node": "host/commands/error_1_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.075
+    },
+    {
+      "rank": 14,
+      "slack_ns": -0.92,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[28]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.395
+    },
+    {
+      "rank": 15,
+      "slack_ns": -0.906,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[11]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.381
+    },
+    {
+      "rank": 16,
+      "slack_ns": -0.9,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[2]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.375
+    },
+    {
+      "rank": 17,
+      "slack_ns": -0.888,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[4]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.363
+    },
+    {
+      "rank": 18,
+      "slack_ns": -0.883,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[8].ram/storage/DI[26]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.358
+    },
+    {
+      "rank": 19,
+      "slack_ns": -0.874,
+      "from_node": "core/cursor/held_colors_8_s1/Q",
+      "to_node": "core/cursor/pixel_colors_8_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "pixel74:[R]",
+      "relation_ns": 10.0,
+      "clock_skew_ns": 4.732,
+      "data_delay_ns": 5.712
+    },
+    {
+      "rank": 20,
+      "slack_ns": -0.816,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[19]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.291
+    },
+    {
+      "rank": 21,
+      "slack_ns": -0.755,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[22]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.23
+    },
+    {
+      "rank": 22,
+      "slack_ns": -0.702,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[8].ram/storage/DI[31]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.177
+    },
+    {
+      "rank": 23,
+      "slack_ns": -0.695,
+      "from_node": "core/cursor/sampled_cx_0_s0/Q",
+      "to_node": "core/cursor/logical_x_7_s0/D",
+      "from_clock": "pixel74:[R]",
+      "to_clock": "pixel74:[R]",
+      "relation_ns": 13.468,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 13.763
+    },
+    {
+      "rank": 24,
+      "slack_ns": -0.636,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[8].ram/storage/DI[30]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.111
+    },
+    {
+      "rank": 25,
+      "slack_ns": -0.608,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[15]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.083
+    }
+  ],
+  "setup_path_reporting_scope": "Default Gowin top 25 paths; not an enumeration of every violated endpoint.",
+  "below_0p1": [
+    {
+      "rank": 1,
+      "slack_ns": -1.863,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[26]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 20.338
+    },
+    {
+      "rank": 2,
+      "slack_ns": -1.639,
+      "from_node": "core/scheduler/owner_1_s0/Q",
+      "to_node": "core/memory_ctrl/tx_309_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.757
+    },
+    {
+      "rank": 3,
+      "slack_ns": -1.534,
+      "from_node": "core/scheduler/owner_1_s0/Q",
+      "to_node": "core/memory_ctrl/tx_429_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.652
+    },
+    {
+      "rank": 4,
+      "slack_ns": -1.527,
+      "from_node": "core/scheduler/owner_1_s0/Q",
+      "to_node": "core/memory_ctrl/tx_293_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.645
+    },
+    {
+      "rank": 5,
+      "slack_ns": -1.389,
+      "from_node": "core/scheduler/owner_1_s0/Q",
+      "to_node": "core/memory_ctrl/tx_445_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.507
+    },
+    {
+      "rank": 6,
+      "slack_ns": -1.296,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[25]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.771
+    },
+    {
+      "rank": 7,
+      "slack_ns": -1.281,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[24]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.756
+    },
+    {
+      "rank": 8,
+      "slack_ns": -1.281,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[10]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.756
+    },
+    {
+      "rank": 9,
+      "slack_ns": -1.225,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[0]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.7
+    },
+    {
+      "rank": 10,
+      "slack_ns": -1.007,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[9]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.482
+    },
+    {
+      "rank": 11,
+      "slack_ns": -1.005,
+      "from_node": "core/scheduler/owner_1_s0/Q",
+      "to_node": "core/memory_ctrl/tx_69_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.123
+    },
+    {
+      "rank": 12,
+      "slack_ns": -0.967,
+      "from_node": "core/scheduler/owner_1_s0/Q",
+      "to_node": "core/memory_ctrl/tx_453_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.085
+    },
+    {
+      "rank": 13,
+      "slack_ns": -0.957,
+      "from_node": "host/registers/command_35_s0/Q",
+      "to_node": "host/commands/error_1_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.075
+    },
+    {
+      "rank": 14,
+      "slack_ns": -0.92,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[28]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.395
+    },
+    {
+      "rank": 15,
+      "slack_ns": -0.906,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[11]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.381
+    },
+    {
+      "rank": 16,
+      "slack_ns": -0.9,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[2]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.375
+    },
+    {
+      "rank": 17,
+      "slack_ns": -0.888,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[4]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.363
+    },
+    {
+      "rank": 18,
+      "slack_ns": -0.883,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[8].ram/storage/DI[26]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.358
+    },
+    {
+      "rank": 19,
+      "slack_ns": -0.874,
+      "from_node": "core/cursor/held_colors_8_s1/Q",
+      "to_node": "core/cursor/pixel_colors_8_s0/D",
+      "from_clock": "system54:[R]",
+      "to_clock": "pixel74:[R]",
+      "relation_ns": 10.0,
+      "clock_skew_ns": 4.732,
+      "data_delay_ns": 5.712
+    },
+    {
+      "rank": 20,
+      "slack_ns": -0.816,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[19]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.291
+    },
+    {
+      "rank": 21,
+      "slack_ns": -0.755,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[22]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.23
+    },
+    {
+      "rank": 22,
+      "slack_ns": -0.702,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[8].ram/storage/DI[31]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.177
+    },
+    {
+      "rank": 23,
+      "slack_ns": -0.695,
+      "from_node": "core/cursor/sampled_cx_0_s0/Q",
+      "to_node": "core/cursor/logical_x_7_s0/D",
+      "from_clock": "pixel74:[R]",
+      "to_clock": "pixel74:[R]",
+      "relation_ns": 13.468,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 13.763
+    },
+    {
+      "rank": 24,
+      "slack_ns": -0.636,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[8].ram/storage/DI[30]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.111
+    },
+    {
+      "rank": 25,
+      "slack_ns": -0.608,
+      "from_node": "host/commands/read_result_s0/Q",
+      "to_node": "host/registers/upload_words[10].ram/storage/DI[15]",
+      "from_clock": "system54:[R]",
+      "to_clock": "system54:[R]",
+      "relation_ns": 18.518,
+      "clock_skew_ns": 0.0,
+      "data_delay_ns": 19.083
+    }
+  ],
+  "bitstream_generated": true,
+  "bitstream_sha256": "5531e7c6cc3b677fc3a4211453682b20d28284deafc57034e67910dea9213571",
+  "parent_preserved": true,
+  "constraints_unchanged": true,
+  "controller_phy_audio_unchanged": true,
+  "hardware_programming_performed": false,
+  "external_psram_io_verified": false,
+  "pc_evidence_sha256": "3019856cb24696f443892c6cdbe39236fbff10ce90454129774ce03d9e4a504e",
+  "source_input_manifest": {
+    "boards/tang-nano-9k/host.cst": "87f6eed7e8c08fccab3fe8e6bbbefbdc261ed443f688c963f5c9be33eb037628",
+    "boards/tang-nano-9k/kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0",
+    "boards/tang-nano-9k/kagura_fb_top.sv": "1d0dcad81267af9063e398747c743f7b98937a3af05d00c37d2974f3dbd8874c",
+    "boards/tang-nano-9k/phase1.cst": "82ff01e377e4f1b918b0c12c0cdd51502201a8d382444d7f49e6baaba72f9094",
+    "build/generated/kagura_hdmi_stream.sv": "71be747d75daacdf42be1aad5ba38ee1fa6bda9343d2c560d4ea3f46a9b45cf6",
+    "rtl/audio/kagura_audio_registers.sv": "f1a61d6eb898c211aab84b59f41a2663df0e50740556b1dae076af321aedcbe9",
+    "rtl/audio/kagura_audio_synth.sv": "b62dcac4362c77675cf55cc4d32d73a7d5d588f8736c3d7a792c14fc2429a5c4",
+    "rtl/audio/kagura_audio_transport.sv": "44ed941b01a6d56ff9fae95ed03fe34edd90ae1e9f4e5fa7a2d50d5ede87f350",
+    "rtl/audio/kagura_pcm_control.sv": "bfde93cbee15ff3838dd8857b23e65b2789ca2adc81aeae04f77f0b7d70fd2f3",
+    "rtl/audio/kagura_pcm_prefetch.sv": "1e8dc87d0dea90e8e92a2c164ea7d2fe390b878bedff819f366a004c00c1b4d4",
+    "rtl/bus/kagura_spi_adapter.sv": "d1d761fe50283219e5fce44a5211047ecf2dfb1c75e7ade063c922406c3221dd",
+    "rtl/fb/kagura_fb_arbiter.sv": "149b98e3e181f40ad9d0487c1a63a8581e7de7205839fbc138de1128657a9f9b",
+    "rtl/fb/kagura_fb_audio_endpoint.sv": "21bd5199cc366aa997f5a30e0331bf917d873df0e89c5d614fb41d476ec08a7c",
+    "rtl/fb/kagura_fb_burst_ctrl.sv": "4d2189aadf187a40df48e25fe892f28db7a3c8569ade747dfcb29bdff7bb8f5c",
+    "rtl/fb/kagura_fb_commands.sv": "fb0791d242707d8b9171a95565a06687e2eead20cef103c217e4af0530163f3c",
+    "rtl/fb/kagura_fb_core.sv": "e751daa8a3b77c01772a37a7a8cdef8aaa8186d4f5128ac2ca47f8376a4dd8ec",
+    "rtl/fb/kagura_fb_cursor.sv": "4c6d88f89ff5f8a7402c6bc019c186808a217848b88e0cb2cd993f0c09a99558",
+    "rtl/fb/kagura_fb_fill_burst.sv": "f425091da3cdc405e592b2adb230a0347d63d38ef6642aea3402f460a97c9a5b",
+    "rtl/fb/kagura_fb_host.sv": "f522154b37c8e144c6b446954ce51c635180cf64dc307f2b86bf0666bb7977c8",
+    "rtl/fb/kagura_fb_line_banks.sv": "927160b42c9ce72e76502b6ff52ed65b15dc242d1dffa866d2509b3887e9c827",
+    "rtl/fb/kagura_fb_line_fetch.sv": "2afbc98a76612943358a96c0b49d5eefbbf34915745a9f86a4f7e782b8975f57",
+    "rtl/fb/kagura_fb_pcm_port.sv": "c21302a2b90daaadd0730d54dae26107fa3c64e6e3ea0d89ba2704cf05d734bd",
+    "rtl/fb/kagura_fb_registers.sv": "6a48326be2453b03ffbc6fd2213b5368d822c885a79a45c3eda67f3fab6e8094",
+    "rtl/fb/kagura_fb_scanout.sv": "f6349d1de1e09d5a614b23a357bdb7b9e39853b09e8e2ae6e50e63d81edce5a2",
+    "rtl/fb/kagura_fb_upload_word.sv": "8382ea49cec0ca8b8317b910c3870201985c593c7c582ef6a4beebe5530815f2",
+    "rtl/fb/sources.f": "04009027e55af30f806f08488fdb551ad97c890deabd731e500e1cac73b79731",
+    "rtl/hdmi/kagura_audio_packets.sv": "03ba91ba79a409c183b229116ad227a8b147b2e0c7beb3af013fe72db47e99aa",
+    "rtl/hdmi/kagura_hdmi_stream_eval.sv": "5267367e73080e1e9465fe4e91bcf34f6e3111b10b113ae390369756aacc4584",
+    "rtl/hdmi/kagura_packet_assembler.sv": "33ae43defff2d15c92683af342138fd9ea3792dba02e781358e5c09a597a5f9a",
+    "rtl/hdmi/kagura_tmds_channel.sv": "0ac133c11510f175334c3f44cf7d3673d7f4fdae30a1dfe868459aff037a593f",
+    "rtl/memory/kagura_async_fifo.sv": "536010c7e934fb421584bf7645c622760932f4de7541fd47be959469c245b6d4",
+    "rtl/memory/kagura_hyperram_phy_gowin.sv": "e20611d49ed5ebebb84db01cbee732f9198db57ec4e4ff8ef43b1a84b69d72c0",
+    "rtl/memory/kagura_ram_tdp.sv": "3092ca6daa905254e31c4c0af4d5714078c0948a7805a3961743621ca6e18b6c",
+    "rtl/platform/kagura_gowin_serializer.sv": "95913b47d739d4a5dc73677457713cc6ea4354afe6c8e19cf0cd31de9e6dd749",
+    "rtl/platform/kagura_nano9k_clocks.sv": "c9c5300140f25f85bd5b474494de60218e695cf20dd5716087621bedfea0221f",
+    "third_party/hdl-util-hdmi/src/audio_info_frame.sv": "dedd552fa988d9e2875bdadc54f3c08d5041d54637da1ff565d46078eeb2ea89",
+    "third_party/hdl-util-hdmi/src/audio_sample_packet.sv": "0e3a35ccb3e934eecfcd3916c5dac9ef269abea21472d66ebd2660a9d25e6a13",
+    "third_party/hdl-util-hdmi/src/auxiliary_video_information_info_frame.sv": "c151e2675ad97ef36254044e42657f2d758512d305040137859f9b8806135f64",
+    "third_party/hdl-util-hdmi/src/source_product_description_info_frame.sv": "893269fdccd2dc147e8570519f35308ac5e5460ad7f54bf673b3c31e9a8259de",
+    "tools/build-fb.tcl": "d711c1d1aa125fd079696efee707471f47769a0687eef159b5a20dcdeba0ae69"
+  },
+  "implementation_gate_pass": false,
+  "raw_archive_sha256": "0e706f70a6c3655a6fb0a4c8d02f5dd2e4ab5290059ba6b62ece5944be1fc024"
+}

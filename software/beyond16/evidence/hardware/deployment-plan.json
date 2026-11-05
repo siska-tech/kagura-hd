@@ -1,0 +1,12 @@
+{
+  "user_authorization": "ŽÀ‹@‚É‚¢‚«‚Ü‚µ‚å‚¤",
+  "restore_target_sha256": "7ea52cb9898e6dbd3b44eb1b80861b28a3fd8026d858973162e05f5df32ee596",
+  "binary_sha256": "c66308e09ad46a2104d3924d0a7913b98937b05e7408ade4b523940a6cee200b",
+  "elf_sha256": "52acd188ebecee24e16feb6480c4009a0dab7d01d7f7b1cea4c9477cba8e58a6",
+  "bitstream_sha256": "642c7a3ce961685279c229dbe9b1577285bd7867353cfaf7de8f4db06b3683a7",
+  "bin_bytes": 316292,
+  "erase_end": "0x1004e000",
+  "filesystem_start": "0x100a0000",
+  "fpga_flash_write": false,
+  "release_ready": false
+}

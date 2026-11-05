@@ -1,0 +1,147 @@
+{
+  "release_ready": false,
+  "all_pc_checks_pass": true,
+  "checks": {
+    "focused": {
+      "pass": true,
+      "log": "build/pcm2-timing-02/build/analysis/focused.log",
+      "sha256": "f534c8a8a0292b723497e3b16873654eea823a7610e4970af7b06810f263b4da"
+    },
+    "fb26": {
+      "pass": true,
+      "log": "build/pcm2-timing-02/build/analysis/fb-regression.log",
+      "sha256": "c36ae8e31be426a2c3656d53429fc905268b27c76d6f5ec99ef053491f083dba"
+    },
+    "qspi_pcm": {
+      "pass": true,
+      "log": "build/pcm2-timing-02/build/analysis/audio-qspi.log",
+      "sha256": "0128fee3bdb30ba5f4aba2e060f6caf9bb454c6a9cc2400b32c7fefcc6ccce5f"
+    },
+    "wrap12": {
+      "pass": true,
+      "log": "build/pcm2-timing-02/build/analysis/wrap-regression.log",
+      "sha256": "5c79658aac76e13a8d0c949bae9897d2d386c490c2091f0c36e0f727693911af"
+    },
+    "controller272": {
+      "pass": true,
+      "log": "build/pcm2-timing-02/build/analysis/controller272.log",
+      "sha256": "c70db37fb8a57c30f565393a8d1a9841e8eadce43929de9e32f1dc1c4d6eabd2"
+    },
+    "rx32": {
+      "pass": true,
+      "log": "build/pcm2-timing-02/build/analysis/rx32.log",
+      "sha256": "14083604b558dd0f18670a04e3c243242c0c903bdfeb215b13360ab2a12ea11b"
+    },
+    "common22": {
+      "pass": true,
+      "log": "build/pcm2-timing-02/build/analysis/common-regression.log",
+      "sha256": "4f027b600a8cf9ba38f05acc190a5e8077bc54ab10766176ddb837d75a07644f"
+    },
+    "raster_algebra": {
+      "pass": true,
+      "log": "build/pcm2-timing-02/build/analysis/raster-contract.json",
+      "sha256": "14689a9b91fad9159ba08fdc9b0c5e55a4867aa0e82461bd489fe5e8a2aa0f1e"
+    }
+  },
+  "parent_preserved": true,
+  "protected_bitstream_sha256": {
+    "rmw": "90b5b26189b198326818488056b9c8fb84e515973cdd2432e04287be3a91ef2e",
+    "rx32": "a99c5f8304aed79b8e0d148d6701f24bf5e282022c75c45ca3b0ab62b0d431cf",
+    "pcm2_parent": "3c61f8d87a407e25e2d348f09fa22abb8826361b6c3c93244e58fc200e36b034",
+    "timing01_failed": "c619ea61d2730f92bb02face35fb7f9a67b7451395a6e3cac8f30e11cf0e9311"
+  },
+  "changed_files": {
+    "DO_NOT_PROGRAM.txt": "d8d386d6168245ecdc42acb4e20ee62da25162095bc1894efa266d04b6108237",
+    "tools/test-fb-verilator.sh": "cc71536f57f0f20d6d2d487f30aa883b98304f2fac6db33d7c5cbebd8ec7a560",
+    "sim/tests/tb_fb_cursor.sv": "cc2484ae4668358c19623aa3e5deba0d315b4c0fdaf5270cb5acc138c1f981b4",
+    "rtl/fb/kagura_fb_commands.sv": "fb0791d242707d8b9171a95565a06687e2eead20cef103c217e4af0530163f3c",
+    "rtl/fb/kagura_fb_cursor.sv": "4c6d88f89ff5f8a7402c6bc019c186808a217848b88e0cb2cd993f0c09a99558"
+  },
+  "parent_source_manifest_sha256": "05ed0e14518ae8313c3927b6f4eb4f73b256584f59779312dcf5c2a60d93f4c0",
+  "constraints_unchanged": true,
+  "controller_phy_audio_unchanged": true,
+  "inherited_checks": {
+    "common-regression.log": {
+      "inherited_from": "build/pcm2-timing-01",
+      "log_sha256": "4f027b600a8cf9ba38f05acc190a5e8077bc54ab10766176ddb837d75a07644f",
+      "identical_dependencies": {
+        "rtl/audio/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rtl/audio/kagura_audio_registers.sv": "f1a61d6eb898c211aab84b59f41a2663df0e50740556b1dae076af321aedcbe9",
+        "rtl/audio/kagura_audio_synth.sv": "b62dcac4362c77675cf55cc4d32d73a7d5d588f8736c3d7a792c14fc2429a5c4",
+        "rtl/audio/kagura_audio_transport.sv": "44ed941b01a6d56ff9fae95ed03fe34edd90ae1e9f4e5fa7a2d50d5ede87f350",
+        "rtl/audio/kagura_pcm_control.sv": "bfde93cbee15ff3838dd8857b23e65b2789ca2adc81aeae04f77f0b7d70fd2f3",
+        "rtl/audio/kagura_pcm_prefetch.sv": "1e8dc87d0dea90e8e92a2c164ea7d2fe390b878bedff819f366a004c00c1b4d4",
+        "rtl/audio/kagura_test_tone.sv": "b07c591302d480f8fb6152952960d122f6866e6a881d7b1001ba2ce6cf116c84",
+        "rtl/memory/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rtl/memory/kagura_async_fifo.sv": "536010c7e934fb421584bf7645c622760932f4de7541fd47be959469c245b6d4",
+        "rtl/memory/kagura_hyperram_ctrl.sv": "b01b12af28534e29e2fd56730fa7148e4c5829e48c2824fe0f91f9a84a92be57",
+        "rtl/memory/kagura_hyperram_phy_gowin.sv": "e20611d49ed5ebebb84db01cbee732f9198db57ec4e4ff8ef43b1a84b69d72c0",
+        "rtl/memory/kagura_psram_arbiter.sv": "ff9db75b76ebadb37854e0de0695819407e3e575f20dd2f0fa3d878143394e0b",
+        "rtl/memory/kagura_psram_byte_bridge.sv": "661a569797abf7dc2acfade30abd2c47cf98deb73877ea2cd74fbbee5029e2a8",
+        "rtl/memory/kagura_psram_read_cdc.sv": "f68160ede0bf38a9078c8e00cefbe154d74c39ca0cb5074ece09c74b35561025",
+        "rtl/memory/kagura_psram_read_path.sv": "89dbec614462acdc624880e06ac1fda5f9e6877caecbc855a5d176289c59c34e",
+        "rtl/memory/kagura_ram_rmw16.sv": "6e58baf00ccc6508143f82a5c254695b8496c478538d232cb1bfbd738d9f8018",
+        "rtl/memory/kagura_ram_sdp.sv": "331e381e6ef7a9b3ae4744b160f541aacc4a42e4f0ba4cdf49bb60e99ec94b8b",
+        "rtl/memory/kagura_ram_sp.sv": "37030a344a04ba1ea4e16c712b27fed3a636040b1cfa5465ac42759bc7c51208",
+        "rtl/memory/kagura_ram_tdp.sv": "3092ca6daa905254e31c4c0af4d5714078c0948a7805a3961743621ca6e18b6c",
+        "rtl/hdmi/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rtl/hdmi/kagura_audio_packets.sv": "03ba91ba79a409c183b229116ad227a8b147b2e0c7beb3af013fe72db47e99aa",
+        "rtl/hdmi/kagura_dvi_stream_eval.sv": "2f618d1c3938116dc574504cbae5d1f896e3f25bd1fd416fbd1a3c98df2cb416",
+        "rtl/hdmi/kagura_hdmi_eval.sv": "98bb350d1934fd953c4522b1403975ee3b30e9639682ede81f963e66c8605c0d",
+        "rtl/hdmi/kagura_hdmi_stream_eval.sv": "5267367e73080e1e9465fe4e91bcf34f6e3111b10b113ae390369756aacc4584",
+        "rtl/hdmi/kagura_packet_assembler.sv": "33ae43defff2d15c92683af342138fd9ea3792dba02e781358e5c09a597a5f9a",
+        "rtl/hdmi/kagura_tmds_channel.sv": "0ac133c11510f175334c3f44cf7d3673d7f4fdae30a1dfe868459aff037a593f",
+        "rtl/platform/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rtl/platform/kagura_gowin_serializer.sv": "95913b47d739d4a5dc73677457713cc6ea4354afe6c8e19cf0cd31de9e6dd749",
+        "rtl/platform/kagura_nano9k_clocks.sv": "c9c5300140f25f85bd5b474494de60218e695cf20dd5716087621bedfea0221f",
+        "rtl/vdp/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rtl/vdp/kagura_bar_pattern.sv": "287852a6fbea00928fdd678f9f93c8a499ca35215e72104dedb244d2aba8db0c",
+        "rtl/vdp/kagura_bg_renderer.sv": "7fde64360d9e09503de57c66b27a3e93c730082e61483e8457f50f95cd6cd870",
+        "rtl/vdp/kagura_line_banks.sv": "1a72721e4c09e94a6f2183e860e4efe0eb2d35ec2551b3f5034c8405a234eca8",
+        "rtl/vdp/kagura_line_display.sv": "feb93b54f0067a50ef57c4fe703601298f6453667b03108af8bc2d106acea23a",
+        "rtl/vdp/kagura_sprite_renderer.sv": "5f1625b8eeae4eed119bd7bcaf0a18d149c3580ea345a5564581e0824f8edae0",
+        "rtl/vdp/kagura_sprite_row.sv": "de13d204524cac39516aafb6e8f8367c89f241968909630daa14d91071731489",
+        "rtl/vdp/kagura_sprite_selector.sv": "b699198f6f8891d232b00e3c8be55a389ca19445d9308c9d0ae841dd33ffe2ed",
+        "rtl/vdp/kagura_test_pattern.sv": "b5362a34ab7581911bdc443b8e757b37e5560cf8e0b3f2b5fe52f01bbd1aa88a",
+        "rtl/vdp/kagura_vdp.sv": "b30210f69d348ded9cebbf72e82450a9f8129350fc23c74f35f9c5be106e4f70",
+        "rtl/vdp/kagura_video_source_bars.sv": "f8d74b682f7f88f68b05b72f70613c16bc8522b3734c06acafce8b2b7f726385",
+        "rtl/vdp/kagura_video_source_stress.sv": "1fa4ed76cb07b58b625a5f8a9382888efc8cef0c56ee290377a225fd84ff81af",
+        "rtl/vdp/kagura_vram.sv": "9389fb8c51716c0b143201a14bce317d0014c19101e27ac2b3bcfffa75699a22",
+        "third_party/hdl-util-hdmi/LICENSE-APACHE": "7c6c1ea9fbe1f376e2fc1ff4b0e5fe3f9896dd41f9fff101b7e69994a55f0d56",
+        "third_party/hdl-util-hdmi/LICENSE-MIT": "b39d2287911147fbe58a5a288aa0f2a38b4459575e168551c2a3e3853e01536d",
+        "third_party/hdl-util-hdmi/manifest.json": "e2889979ae33043f956e586261c4b498978e1dbbfe442e7b6ff48c4164fc2a58",
+        "third_party/hdl-util-hdmi/README.md": "bea671b576b6feada186adfe96ba0a9a050efef045aedaa93befe37eff7b6efe",
+        "third_party/hdl-util-hdmi/src/audio_clock_regeneration_packet.sv": "a8b7f0c592ce8c871bf31986db293799f64893b18b5a6387e262a81b7ec22954",
+        "third_party/hdl-util-hdmi/src/audio_info_frame.sv": "dedd552fa988d9e2875bdadc54f3c08d5041d54637da1ff565d46078eeb2ea89",
+        "third_party/hdl-util-hdmi/src/audio_sample_packet.sv": "0e3a35ccb3e934eecfcd3916c5dac9ef269abea21472d66ebd2660a9d25e6a13",
+        "third_party/hdl-util-hdmi/src/auxiliary_video_information_info_frame.sv": "c151e2675ad97ef36254044e42657f2d758512d305040137859f9b8806135f64",
+        "third_party/hdl-util-hdmi/src/hdmi.sv": "82a8a7fb4c37a7d3a9b23338613e3eea91e06b94dedc7d13c8869b04a9d36788",
+        "third_party/hdl-util-hdmi/src/packet_assembler.sv": "00d143e3b4226cb8ac7418bab35b9ea6f3a963e81fd0f2f7f3109844f4bde2c6",
+        "third_party/hdl-util-hdmi/src/packet_picker.sv": "6c3e87c8221a5756393bdbff0c48988f03e4917e0f088b7cba5cda8d6e83f3ad",
+        "third_party/hdl-util-hdmi/src/serializer.sv": "b3142d3240b97306828f5432e989f072c121da8146275c13c9c6087921d6af2f",
+        "third_party/hdl-util-hdmi/src/source_product_description_info_frame.sv": "893269fdccd2dc147e8570519f35308ac5e5460ad7f54bf673b3c31e9a8259de",
+        "third_party/hdl-util-hdmi/src/tmds_channel.sv": "1e45e87703e2ab1790c13235822e8889fb016ad4c11cd9e5def0980d26a24637"
+      }
+    },
+    "controller272.log": {
+      "inherited_from": "build/pcm2-timing-01",
+      "log_sha256": "c70db37fb8a57c30f565393a8d1a9841e8eadce43929de9e32f1dc1c4d6eabd2",
+      "identical_dependencies": {
+        "rtl/fb/kagura_fb_burst_ctrl.sv": "4d2189aadf187a40df48e25fe892f28db7a3c8569ade747dfcb29bdff7bb8f5c",
+        "sim/support/kagura_psram_wrap_pair_model.sv": "8e6bb03c0a0c4585dddbcb96e52b7e8860bac082e5c6931ecefc4a2d67b85658",
+        "sim/tests/tb_fb_wrap32.sv": "71d2209ffdfd4518dea17e084ba10155a5269fefc9106f6270c577d51ee4f04c"
+      }
+    },
+    "rx32.log": {
+      "inherited_from": "build/pcm2-timing-01",
+      "log_sha256": "14083604b558dd0f18670a04e3c243242c0c903bdfeb215b13360ab2a12ea11b",
+      "identical_dependencies": {
+        "rtl/fb/kagura_fb_burst_ctrl.sv": "4d2189aadf187a40df48e25fe892f28db7a3c8569ade747dfcb29bdff7bb8f5c",
+        "rtl/fb/kagura_fb_line_fetch.sv": "2afbc98a76612943358a96c0b49d5eefbbf34915745a9f86a4f7e782b8975f57",
+        "sim/experiments/kagura_fb_burst_ctrl_reference.sv": "aeba5e62dc2991ecac89920635b2a5e3de99a6348dabcd0c715c92fdfa9be6bf",
+        "sim/tests/tb_fb_rx32_tap.sv": "8cf2692d2ec23338adc15d6557b70e49ae1fa57d648357ff08be86f356915af2",
+        "sim/tests/tb_fb_rx32_fetch.sv": "21dcbff70d6bdb203dde233e295fb007f288990a1bda2dad6a4c443a136bcf58"
+      }
+    }
+  }
+}

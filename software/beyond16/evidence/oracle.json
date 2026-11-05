@@ -1,0 +1,14 @@
+[
+  {
+    "variant": "baseline",
+    "commands": 21306,
+    "timestamps": 20,
+    "pixel_oracle": "PASS"
+  },
+  {
+    "variant": "optimized",
+    "commands": 21306,
+    "timestamps": 20,
+    "pixel_oracle": "PASS"
+  }
+]

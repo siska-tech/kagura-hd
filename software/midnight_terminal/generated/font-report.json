@@ -1,0 +1,20 @@
+{
+  "mplus": {
+    "height": 13,
+    "missing": [],
+    "glyphs": 300,
+    "advances": [
+      6,
+      12
+    ]
+  },
+  "misaki": {
+    "height": 8,
+    "missing": [],
+    "glyphs": 300,
+    "advances": [
+      4,
+      8
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "rp2040_flash_authorized": true,
+  "rp2040_elf_sha256": "6162e730d69965726991e41c34cc410b1fefa7e57f574009efe33209af95d20d",
+  "rp2040_bin_sha256": "a0bbf0d6f2058eed09414f162e8bc462d7ac8fdf7e019766c25d5a1414aec027",
+  "fpga_sram_sha256": "642c7a3ce961685279c229dbe9b1577285bd7867353cfaf7de8f4db06b3683a7",
+  "fpga_sram_attempts_max": 1,
+  "rp_flash_attempts_max": 1,
+  "release_ready": false,
+  "initial_gpio_safe": true,
+  "backup_sha256": "7134077f8bb0d5a1cc426235a8e3ee274dbc7a6f9718e1ee6b152036996a6da6",
+  "boot_protocol": "USB gated start, g=preflight+autoplay, q=stop",
+  "first_fault": "stop and restore original RP Flash + existing FPGA Flash Reprogram"
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "fault": 1,
+    "return": -5,
+    "stopped_without_retry": true
+  },
+  {
+    "fault": 2,
+    "return": -6,
+    "stopped_without_retry": true
+  },
+  {
+    "fault": 3,
+    "return": -3,
+    "stopped_without_retry": true
+  },
+  {
+    "fault": 4,
+    "return": -2,
+    "stopped_without_retry": true
+  }
+]

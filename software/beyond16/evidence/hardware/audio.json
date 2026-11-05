@@ -1,0 +1,193 @@
+{
+  "scope": "physical UGREEN HDMI PCM16 stereo capture, not PC mix",
+  "sample_rate": 48000,
+  "channels": 2,
+  "capture_seconds": 163.5,
+  "audio_onset_s": 10.98,
+  "audio_end_s": 160.98999999999998,
+  "audible_span_s": 150.01,
+  "whole_capture_rms": [
+    1412.835677043048,
+    1412.8348534968998
+  ],
+  "peak": [
+    13704.0,
+    13706.0
+  ],
+  "left_right_max_abs_difference": 8.0,
+  "longest_observed_low_rms_ms": 0,
+  "low_rms_scan_threshold": 20,
+  "low_rms_intervals": [],
+  "bgm_segment_correlations": [
+    {
+      "scene": 0,
+      "capture_start_s": 13.98,
+      "samples": 96000,
+      "correlation": 0.9959096753684694,
+      "loop_offset_samples": 143711,
+      "gain_relative_to_reference": 0.9945308972911809,
+      "capture_rms": 1253.3388476884454
+    },
+    {
+      "scene": 1,
+      "capture_start_s": 23.98,
+      "samples": 96000,
+      "correlation": 0.9976334440405048,
+      "loop_offset_samples": 239719,
+      "gain_relative_to_reference": 0.9971902427773325,
+      "capture_rms": 1409.7497791792107
+    },
+    {
+      "scene": 2,
+      "capture_start_s": 43.980000000000004,
+      "samples": 96000,
+      "correlation": 0.9975748586262948,
+      "loop_offset_samples": 47735,
+      "gain_relative_to_reference": 0.9972281836714608,
+      "capture_rms": 1481.6897677497022
+    },
+    {
+      "scene": 3,
+      "capture_start_s": 63.980000000000004,
+      "samples": 96000,
+      "correlation": 0.9953665760330479,
+      "loop_offset_samples": 239751,
+      "gain_relative_to_reference": 0.9948851462713258,
+      "capture_rms": 1366.83067404885
+    },
+    {
+      "scene": 4,
+      "capture_start_s": 83.98,
+      "samples": 96000,
+      "correlation": 0.9955500428213077,
+      "loop_offset_samples": 47767,
+      "gain_relative_to_reference": 0.9948246146702967,
+      "capture_rms": 1523.445011345585
+    },
+    {
+      "scene": 5,
+      "capture_start_s": 108.98,
+      "samples": 96000,
+      "correlation": 0.9973705453220512,
+      "loop_offset_samples": 95787,
+      "gain_relative_to_reference": 0.9969004787660115,
+      "capture_rms": 1646.6322086971181
+    },
+    {
+      "scene": 6,
+      "capture_start_s": 133.98,
+      "samples": 96000,
+      "correlation": 0.994675651851638,
+      "loop_offset_samples": 143806,
+      "gain_relative_to_reference": 0.9941504040405901,
+      "capture_rms": 1421.6229289457056
+    },
+    {
+      "scene": 7,
+      "capture_start_s": 153.98,
+      "samples": 96000,
+      "correlation": 0.994705939791677,
+      "loop_offset_samples": 335822,
+      "gain_relative_to_reference": 0.9943223696818767,
+      "capture_rms": 1549.5187254939033
+    }
+  ],
+  "pcm_status_faults": [
+    0
+  ],
+  "underrun_counter_available": false,
+  "caveat": "STATUS fault observed at 1s cadence; no isolated underrun counter. Capture silence scan does not prove every sample.",
+  "pcm1_scene_stingers": [
+    {
+      "scene": 0,
+      "fx": 0,
+      "capture_time_s": 10.9875625,
+      "correlation_without_BGM_subtraction": 0.487516875756406,
+      "scope": "matched waveform in 1.2s around scene boundary; mixed with continuing BGM"
+    },
+    {
+      "scene": 1,
+      "fx": 1,
+      "capture_time_s": 20.9935625,
+      "correlation_without_BGM_subtraction": 0.4789018973507964,
+      "scope": "matched waveform in 1.2s around scene boundary; mixed with continuing BGM"
+    },
+    {
+      "scene": 2,
+      "fx": 2,
+      "capture_time_s": 41.026604166666665,
+      "correlation_without_BGM_subtraction": 0.7089743331173688,
+      "scope": "matched waveform in 1.2s around scene boundary; mixed with continuing BGM"
+    },
+    {
+      "scene": 3,
+      "fx": 3,
+      "capture_time_s": 61.06066666666667,
+      "correlation_without_BGM_subtraction": 0.8205576923192204,
+      "scope": "matched waveform in 1.2s around scene boundary; mixed with continuing BGM"
+    },
+    {
+      "scene": 4,
+      "fx": 0,
+      "capture_time_s": 80.99279166666666,
+      "correlation_without_BGM_subtraction": 0.41982666725242074,
+      "scope": "matched waveform in 1.2s around scene boundary; mixed with continuing BGM"
+    },
+    {
+      "scene": 5,
+      "fx": 1,
+      "capture_time_s": 106.00914583333333,
+      "correlation_without_BGM_subtraction": 0.46814434012821016,
+      "scope": "matched waveform in 1.2s around scene boundary; mixed with continuing BGM"
+    },
+    {
+      "scene": 6,
+      "fx": 2,
+      "capture_time_s": 131.05875,
+      "correlation_without_BGM_subtraction": 0.7968357384469485,
+      "scope": "matched waveform in 1.2s around scene boundary; mixed with continuing BGM"
+    },
+    {
+      "scene": 7,
+      "fx": 3,
+      "capture_time_s": 151.225125,
+      "correlation_without_BGM_subtraction": 0.5142963640922462,
+      "scope": "matched waveform in 1.2s around scene boundary; mixed with continuing BGM"
+    }
+  ],
+  "relative_BGM_phase": [
+    {
+      "scene": 0,
+      "relative_phase_error_ms": 0.0
+    },
+    {
+      "scene": 1,
+      "relative_phase_error_ms": 0.16666666666666666
+    },
+    {
+      "scene": 2,
+      "relative_phase_error_ms": 0.5
+    },
+    {
+      "scene": 3,
+      "relative_phase_error_ms": 0.8333333333333334
+    },
+    {
+      "scene": 4,
+      "relative_phase_error_ms": 1.1666666666666667
+    },
+    {
+      "scene": 5,
+      "relative_phase_error_ms": 1.5833333333333333
+    },
+    {
+      "scene": 6,
+      "relative_phase_error_ms": 1.9791666666666667
+    },
+    {
+      "scene": 7,
+      "relative_phase_error_ms": 2.3125
+    }
+  ],
+  "phase_caveat": "single integer-lag correlation per scene, no physical clock/scope measurement"
+}

@@ -1,0 +1,1198 @@
+{
+  "scope": "read-only failed-STA analysis; no constraint/RTL/P&R changes",
+  "release_ready": false,
+  "reports": {
+    "pcm2": {
+      "report_sha256": "2c27537f5fab94d0660948b5a3b13425c8557b3ea0d72bd60eac0053e36c4a9a",
+      "setup_table": [
+        {
+          "rank": 1,
+          "slack_ns": -1.234,
+          "from_node": "core/cursor/held_6_s1/Q",
+          "to_node": "core/cursor/position_x_6_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 10.0,
+          "clock_skew_ns": 4.732,
+          "data_delay_ns": 6.072
+        },
+        {
+          "rank": 2,
+          "slack_ns": -0.624,
+          "from_node": "core/hdmi/protocol/cx_1_s0/Q",
+          "to_node": "core/cursor/logical_x_2_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 13.692
+        },
+        {
+          "rank": 3,
+          "slack_ns": -0.033,
+          "from_node": "host/commands/copy_command_s0/Q",
+          "to_node": "host/commands/fill/row_word_14_s1/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 18.151
+        },
+        {
+          "rank": 4,
+          "slack_ns": 0.041,
+          "from_node": "core/cursor/edit_bank_s0/Q",
+          "to_node": "core/cursor/shape_complete_0_s0/CE",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 18.434
+        },
+        {
+          "rank": 5,
+          "slack_ns": 0.088,
+          "from_node": "core/cursor/edit_bank_s0/Q",
+          "to_node": "core/cursor/last_error_0_s0/CE",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 18.387
+        },
+        {
+          "rank": 6,
+          "slack_ns": 0.094,
+          "from_node": "host/registers/data_addr_3_s0/Q",
+          "to_node": "host/registers/window_group_10_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 18.024
+        },
+        {
+          "rank": 7,
+          "slack_ns": 0.157,
+          "from_node": "core/hdmi/protocol/cx_1_s0/Q",
+          "to_node": "core/cursor/logical_x_4_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 12.911
+        },
+        {
+          "rank": 8,
+          "slack_ns": 0.182,
+          "from_node": "host/registers/command_36_s0/Q",
+          "to_node": "host/commands/error_0_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 17.936
+        },
+        {
+          "rank": 9,
+          "slack_ns": 0.236,
+          "from_node": "core/display/held_palette_127_s0/Q",
+          "to_node": "core/display/palette_127_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 10.0,
+          "clock_skew_ns": 4.732,
+          "data_delay_ns": 4.602
+        },
+        {
+          "rank": 10,
+          "slack_ns": 0.236,
+          "from_node": "core/display/held_palette_146_s0/Q",
+          "to_node": "core/display/palette_146_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 10.0,
+          "clock_skew_ns": 4.732,
+          "data_delay_ns": 4.602
+        },
+        {
+          "rank": 11,
+          "slack_ns": 0.291,
+          "from_node": "core/hdmi/protocol/cx_3_s0/Q",
+          "to_node": "core/display/scan_addr_2_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 12.777
+        },
+        {
+          "rank": 12,
+          "slack_ns": 0.302,
+          "from_node": "host/registers/data_addr_4_s0/Q",
+          "to_node": "host/registers/window_write_word_25_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 17.816
+        },
+        {
+          "rank": 13,
+          "slack_ns": 0.375,
+          "from_node": "core/cursor/edit_bank_s0/Q",
+          "to_node": "core/cursor/shape_complete_1_s0/CE",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 18.1
+        },
+        {
+          "rank": 14,
+          "slack_ns": 0.408,
+          "from_node": "host/registers/data_addr_3_s0/Q",
+          "to_node": "host/registers/window_write_word_10_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 17.71
+        },
+        {
+          "rank": 15,
+          "slack_ns": 0.415,
+          "from_node": "host/registers/executing_s0/Q",
+          "to_node": "host/registers/upload_words[8].ram/storage/DI[22]",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 18.06
+        },
+        {
+          "rank": 16,
+          "slack_ns": 0.428,
+          "from_node": "host/commands/use_fill_payload_s0/Q",
+          "to_node": "core/memory_ctrl/tx_456_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 17.69
+        },
+        {
+          "rank": 17,
+          "slack_ns": 0.459,
+          "from_node": "core/hdmi/protocol/cx_3_s0/Q",
+          "to_node": "core/display/scan_shift_4_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 12.609
+        },
+        {
+          "rank": 18,
+          "slack_ns": 0.516,
+          "from_node": "host/commands/use_fill_payload_s0/Q",
+          "to_node": "core/memory_ctrl/tx_471_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 17.602
+        },
+        {
+          "rank": 19,
+          "slack_ns": 0.535,
+          "from_node": "host/registers/upload_words[6].ram/storage/DO[5]",
+          "to_node": "host/registers/window_group_5_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 17.584
+        },
+        {
+          "rank": 20,
+          "slack_ns": 0.549,
+          "from_node": "host/registers/upload_words[15].ram/storage/DO[8]",
+          "to_node": "host/registers/window_write_word_8_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 17.569
+        },
+        {
+          "rank": 21,
+          "slack_ns": 0.558,
+          "from_node": "core/hdmi/protocol/cy_5_s0/Q",
+          "to_node": "core/hdmi/protocol/true_hdmi_output.guard_line_s1/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 12.51
+        },
+        {
+          "rank": 22,
+          "slack_ns": 0.564,
+          "from_node": "core/hdmi/protocol/cy_5_s0/Q",
+          "to_node": "core/display/take_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 12.504
+        },
+        {
+          "rank": 23,
+          "slack_ns": 0.571,
+          "from_node": "host/registers/upload_words[15].ram/storage/DO[30]",
+          "to_node": "host/registers/window_write_word_30_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 17.548
+        },
+        {
+          "rank": 24,
+          "slack_ns": 0.574,
+          "from_node": "host/commands/copy_command_s0/Q",
+          "to_node": "host/commands/fill/backwards_y_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 17.544
+        },
+        {
+          "rank": 25,
+          "slack_ns": 0.591,
+          "from_node": "host/registers/command_36_s0/Q",
+          "to_node": "host/commands/error_1_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 17.527
+        }
+      ],
+      "below_zero": [
+        {
+          "rank": 1,
+          "slack_ns": -1.234,
+          "from_node": "core/cursor/held_6_s1/Q",
+          "to_node": "core/cursor/position_x_6_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 10.0,
+          "clock_skew_ns": 4.732,
+          "data_delay_ns": 6.072
+        },
+        {
+          "rank": 2,
+          "slack_ns": -0.624,
+          "from_node": "core/hdmi/protocol/cx_1_s0/Q",
+          "to_node": "core/cursor/logical_x_2_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 13.692
+        },
+        {
+          "rank": 3,
+          "slack_ns": -0.033,
+          "from_node": "host/commands/copy_command_s0/Q",
+          "to_node": "host/commands/fill/row_word_14_s1/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 18.151
+        }
+      ],
+      "below_0p1": [
+        {
+          "rank": 1,
+          "slack_ns": -1.234,
+          "from_node": "core/cursor/held_6_s1/Q",
+          "to_node": "core/cursor/position_x_6_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 10.0,
+          "clock_skew_ns": 4.732,
+          "data_delay_ns": 6.072
+        },
+        {
+          "rank": 2,
+          "slack_ns": -0.624,
+          "from_node": "core/hdmi/protocol/cx_1_s0/Q",
+          "to_node": "core/cursor/logical_x_2_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 13.692
+        },
+        {
+          "rank": 3,
+          "slack_ns": -0.033,
+          "from_node": "host/commands/copy_command_s0/Q",
+          "to_node": "host/commands/fill/row_word_14_s1/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 18.151
+        },
+        {
+          "rank": 4,
+          "slack_ns": 0.041,
+          "from_node": "core/cursor/edit_bank_s0/Q",
+          "to_node": "core/cursor/shape_complete_0_s0/CE",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 18.434
+        },
+        {
+          "rank": 5,
+          "slack_ns": 0.088,
+          "from_node": "core/cursor/edit_bank_s0/Q",
+          "to_node": "core/cursor/last_error_0_s0/CE",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 18.387
+        },
+        {
+          "rank": 6,
+          "slack_ns": 0.094,
+          "from_node": "host/registers/data_addr_3_s0/Q",
+          "to_node": "host/registers/window_group_10_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 18.024
+        }
+      ],
+      "path_summaries": [
+        {
+          "Slack": "-1.234",
+          "Data Arrival Time": "13.444",
+          "Data Required Time": "12.210",
+          "From": "core/cursor/held_6_s1",
+          "To": "core/cursor/position_x_6_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "-0.624",
+          "Data Arrival Time": "16.332",
+          "Data Required Time": "15.708",
+          "From": "core/hdmi/protocol/cx_1_s0",
+          "To": "core/cursor/logical_x_2_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "-0.033",
+          "Data Arrival Time": "25.523",
+          "Data Required Time": "25.490",
+          "From": "host/commands/copy_command_s0",
+          "To": "host/commands/fill/row_word_14_s1",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.041",
+          "Data Arrival Time": "25.806",
+          "Data Required Time": "25.847",
+          "From": "core/cursor/edit_bank_s0",
+          "To": "core/cursor/shape_complete_0_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.088",
+          "Data Arrival Time": "25.759",
+          "Data Required Time": "25.847",
+          "From": "core/cursor/edit_bank_s0",
+          "To": "core/cursor/last_error_0_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.094",
+          "Data Arrival Time": "25.396",
+          "Data Required Time": "25.490",
+          "From": "host/registers/data_addr_3_s0",
+          "To": "host/registers/window_group_10_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.157",
+          "Data Arrival Time": "15.551",
+          "Data Required Time": "15.708",
+          "From": "core/hdmi/protocol/cx_1_s0",
+          "To": "core/cursor/logical_x_4_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "0.182",
+          "Data Arrival Time": "25.308",
+          "Data Required Time": "25.490",
+          "From": "host/registers/command_36_s0",
+          "To": "host/commands/error_0_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.236",
+          "Data Arrival Time": "11.974",
+          "Data Required Time": "12.210",
+          "From": "core/display/held_palette_127_s0",
+          "To": "core/display/palette_127_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "0.236",
+          "Data Arrival Time": "11.974",
+          "Data Required Time": "12.210",
+          "From": "core/display/held_palette_146_s0",
+          "To": "core/display/palette_146_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "0.291",
+          "Data Arrival Time": "15.417",
+          "Data Required Time": "15.708",
+          "From": "core/hdmi/protocol/cx_3_s0",
+          "To": "core/display/scan_addr_2_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "0.302",
+          "Data Arrival Time": "25.188",
+          "Data Required Time": "25.490",
+          "From": "host/registers/data_addr_4_s0",
+          "To": "host/registers/window_write_word_25_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.375",
+          "Data Arrival Time": "25.472",
+          "Data Required Time": "25.847",
+          "From": "core/cursor/edit_bank_s0",
+          "To": "core/cursor/shape_complete_1_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.408",
+          "Data Arrival Time": "25.082",
+          "Data Required Time": "25.490",
+          "From": "host/registers/data_addr_3_s0",
+          "To": "host/registers/window_write_word_10_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.415",
+          "Data Arrival Time": "25.432",
+          "Data Required Time": "25.847",
+          "From": "host/registers/executing_s0",
+          "To": "host/registers/upload_words[8].ram/storage",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.428",
+          "Data Arrival Time": "25.062",
+          "Data Required Time": "25.490",
+          "From": "host/commands/use_fill_payload_s0",
+          "To": "core/memory_ctrl/tx_456_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.459",
+          "Data Arrival Time": "15.249",
+          "Data Required Time": "15.708",
+          "From": "core/hdmi/protocol/cx_3_s0",
+          "To": "core/display/scan_shift_4_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "0.516",
+          "Data Arrival Time": "24.974",
+          "Data Required Time": "25.490",
+          "From": "host/commands/use_fill_payload_s0",
+          "To": "core/memory_ctrl/tx_471_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.535",
+          "Data Arrival Time": "24.956",
+          "Data Required Time": "25.490",
+          "From": "host/registers/upload_words[6].ram/storage",
+          "To": "host/registers/window_group_5_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.549",
+          "Data Arrival Time": "24.941",
+          "Data Required Time": "25.490",
+          "From": "host/registers/upload_words[15].ram/storage",
+          "To": "host/registers/window_write_word_8_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.558",
+          "Data Arrival Time": "15.150",
+          "Data Required Time": "15.708",
+          "From": "core/hdmi/protocol/cy_5_s0",
+          "To": "core/hdmi/protocol/true_hdmi_output.guard_line_s1",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "0.564",
+          "Data Arrival Time": "15.144",
+          "Data Required Time": "15.708",
+          "From": "core/hdmi/protocol/cy_5_s0",
+          "To": "core/display/take_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "0.571",
+          "Data Arrival Time": "24.920",
+          "Data Required Time": "25.490",
+          "From": "host/registers/upload_words[15].ram/storage",
+          "To": "host/registers/window_write_word_30_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.574",
+          "Data Arrival Time": "24.916",
+          "Data Required Time": "25.490",
+          "From": "host/commands/copy_command_s0",
+          "To": "host/commands/fill/backwards_y_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.591",
+          "Data Arrival Time": "24.899",
+          "Data Required Time": "25.490",
+          "From": "host/registers/command_36_s0",
+          "To": "host/commands/error_1_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        }
+      ]
+    },
+    "rmw_baseline": {
+      "report_sha256": "50e8a98c74837753673abd44d86b710c10b35d6825d5e0a4c975a8bb01a81fa5",
+      "setup_table": [
+        {
+          "rank": 1,
+          "slack_ns": 0.717,
+          "from_node": "core/hdmi/protocol/cx_2_s0/Q",
+          "to_node": "core/display/scan_shift_4_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 12.351
+        },
+        {
+          "rank": 2,
+          "slack_ns": 0.725,
+          "from_node": "core/hdmi/protocol/true_hdmi_output.audio_packets/acr_pending_s4/Q",
+          "to_node": "core/hdmi/protocol/true_hdmi_output.audio_packets/sub[1]_54_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 12.343
+        },
+        {
+          "rank": 3,
+          "slack_ns": 0.761,
+          "from_node": "core/hdmi/protocol/cx_2_s0/Q",
+          "to_node": "core/display/scan_addr_1_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 12.307
+        },
+        {
+          "rank": 4,
+          "slack_ns": 0.812,
+          "from_node": "host/commands/copy_command_s0/Q",
+          "to_node": "host/commands/fill/backwards_x_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 17.306
+        },
+        {
+          "rank": 5,
+          "slack_ns": 0.952,
+          "from_node": "host/commands/use_fill_payload_s0/Q",
+          "to_node": "core/memory_ctrl/tx_443_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 17.166
+        },
+        {
+          "rank": 6,
+          "slack_ns": 0.985,
+          "from_node": "core/memory_ctrl/state_0_s1/Q",
+          "to_node": "core/memory_ctrl/tx_126_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 17.133
+        },
+        {
+          "rank": 7,
+          "slack_ns": 1.015,
+          "from_node": "core/display/held_palette_28_s0/Q",
+          "to_node": "core/display/palette_28_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 10.0,
+          "clock_skew_ns": 4.732,
+          "data_delay_ns": 3.823
+        },
+        {
+          "rank": 8,
+          "slack_ns": 1.098,
+          "from_node": "core/hdmi/protocol/cx_2_s0/Q",
+          "to_node": "core/display/scan_addr_2_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 11.97
+        },
+        {
+          "rank": 9,
+          "slack_ns": 1.12,
+          "from_node": "core/memory_ctrl/state_0_s1/Q",
+          "to_node": "core/memory_ctrl/tx_182_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 16.998
+        },
+        {
+          "rank": 10,
+          "slack_ns": 1.159,
+          "from_node": "core/display/held_page_s0/Q",
+          "to_node": "core/display/line_page_s1/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 10.0,
+          "clock_skew_ns": 4.732,
+          "data_delay_ns": 3.679
+        },
+        {
+          "rank": 11,
+          "slack_ns": 1.352,
+          "from_node": "core/hdmi/protocol/cx_2_s0/Q",
+          "to_node": "core/display/scan_shift_3_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 11.716
+        },
+        {
+          "rank": 12,
+          "slack_ns": 1.463,
+          "from_node": "core/hdmi/protocol/cy_0_s1/Q",
+          "to_node": "core/hdmi/protocol/true_hdmi_output.audio_packets/audio_sent_s1/CE",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 11.961
+        },
+        {
+          "rank": 13,
+          "slack_ns": 1.518,
+          "from_node": "core/hdmi/protocol/true_hdmi_output.data_island_period_s0/Q",
+          "to_node": "core/hdmi/protocol/true_hdmi_output.packet_assembler/first_s1/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 11.55
+        },
+        {
+          "rank": 14,
+          "slack_ns": 1.541,
+          "from_node": "core/memory_ctrl/state_0_s1/Q",
+          "to_node": "core/memory_ctrl/tx_233_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 16.577
+        },
+        {
+          "rank": 15,
+          "slack_ns": 1.543,
+          "from_node": "core/display/held_palette_165_s0/Q",
+          "to_node": "core/display/palette_165_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 10.0,
+          "clock_skew_ns": 4.732,
+          "data_delay_ns": 3.295
+        },
+        {
+          "rank": 16,
+          "slack_ns": 1.57,
+          "from_node": "host/commands/fill/rmw_s0/Q",
+          "to_node": "core/memory_ctrl/tx_494_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 16.548
+        },
+        {
+          "rank": 17,
+          "slack_ns": 1.578,
+          "from_node": "core/hdmi/audio_link/pixel_valid_s1/Q",
+          "to_node": "core/hdmi/audio_link/fifo/read_data_24_s0/CE",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 11.846
+        },
+        {
+          "rank": 18,
+          "slack_ns": 1.578,
+          "from_node": "core/hdmi/audio_link/pixel_valid_s1/Q",
+          "to_node": "core/hdmi/audio_link/fifo/read_data_25_s0/CE",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 11.846
+        },
+        {
+          "rank": 19,
+          "slack_ns": 1.578,
+          "from_node": "core/hdmi/audio_link/pixel_valid_s1/Q",
+          "to_node": "core/hdmi/audio_link/fifo/read_data_26_s0/CE",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 11.846
+        },
+        {
+          "rank": 20,
+          "slack_ns": 1.578,
+          "from_node": "core/hdmi/audio_link/pixel_valid_s1/Q",
+          "to_node": "core/hdmi/audio_link/fifo/read_data_27_s0/CE",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 11.846
+        },
+        {
+          "rank": 21,
+          "slack_ns": 1.638,
+          "from_node": "host/commands/use_fill_payload_s0/Q",
+          "to_node": "core/memory_ctrl/tx_427_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 16.48
+        },
+        {
+          "rank": 22,
+          "slack_ns": 1.684,
+          "from_node": "host/commands/use_fill_payload_s0/Q",
+          "to_node": "core/memory_ctrl/tx_336_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 16.434
+        },
+        {
+          "rank": 23,
+          "slack_ns": 1.707,
+          "from_node": "core/hdmi/protocol/cx_2_s0/Q",
+          "to_node": "core/display/scan_addr_0_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 11.361
+        },
+        {
+          "rank": 24,
+          "slack_ns": 1.723,
+          "from_node": "core/memory_ctrl/state_0_s1/Q",
+          "to_node": "core/memory_ctrl/tx_437_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 16.395
+        },
+        {
+          "rank": 25,
+          "slack_ns": 1.738,
+          "from_node": "core/cursor/held_colors_19_s1/Q",
+          "to_node": "core/cursor/pixel_colors_19_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 10.0,
+          "clock_skew_ns": 4.732,
+          "data_delay_ns": 3.1
+        }
+      ],
+      "below_zero": [],
+      "below_0p1": [],
+      "path_summaries": [
+        {
+          "Slack": "0.717",
+          "Data Arrival Time": "14.991",
+          "Data Required Time": "15.708",
+          "From": "core/hdmi/protocol/cx_2_s0",
+          "To": "core/display/scan_shift_4_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "0.725",
+          "Data Arrival Time": "14.983",
+          "Data Required Time": "15.708",
+          "From": "core/hdmi/protocol/true_hdmi_output.audio_packets/acr_pending_s4",
+          "To": "core/hdmi/protocol/true_hdmi_output.audio_packets/sub[1]_54_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "0.761",
+          "Data Arrival Time": "14.947",
+          "Data Required Time": "15.708",
+          "From": "core/hdmi/protocol/cx_2_s0",
+          "To": "core/display/scan_addr_1_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "0.812",
+          "Data Arrival Time": "24.678",
+          "Data Required Time": "25.490",
+          "From": "host/commands/copy_command_s0",
+          "To": "host/commands/fill/backwards_x_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.952",
+          "Data Arrival Time": "24.538",
+          "Data Required Time": "25.490",
+          "From": "host/commands/use_fill_payload_s0",
+          "To": "core/memory_ctrl/tx_443_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "0.985",
+          "Data Arrival Time": "24.505",
+          "Data Required Time": "25.490",
+          "From": "core/memory_ctrl/state_0_s1",
+          "To": "core/memory_ctrl/tx_126_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "1.015",
+          "Data Arrival Time": "11.195",
+          "Data Required Time": "12.210",
+          "From": "core/display/held_palette_28_s0",
+          "To": "core/display/palette_28_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "1.098",
+          "Data Arrival Time": "14.610",
+          "Data Required Time": "15.708",
+          "From": "core/hdmi/protocol/cx_2_s0",
+          "To": "core/display/scan_addr_2_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "1.120",
+          "Data Arrival Time": "24.370",
+          "Data Required Time": "25.490",
+          "From": "core/memory_ctrl/state_0_s1",
+          "To": "core/memory_ctrl/tx_182_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "1.159",
+          "Data Arrival Time": "11.051",
+          "Data Required Time": "12.210",
+          "From": "core/display/held_page_s0",
+          "To": "core/display/line_page_s1",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "1.352",
+          "Data Arrival Time": "14.356",
+          "Data Required Time": "15.708",
+          "From": "core/hdmi/protocol/cx_2_s0",
+          "To": "core/display/scan_shift_3_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "1.463",
+          "Data Arrival Time": "14.601",
+          "Data Required Time": "16.065",
+          "From": "core/hdmi/protocol/cy_0_s1",
+          "To": "core/hdmi/protocol/true_hdmi_output.audio_packets/audio_sent_s1",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "1.518",
+          "Data Arrival Time": "14.190",
+          "Data Required Time": "15.708",
+          "From": "core/hdmi/protocol/true_hdmi_output.data_island_period_s0",
+          "To": "core/hdmi/protocol/true_hdmi_output.packet_assembler/first_s1",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "1.541",
+          "Data Arrival Time": "23.949",
+          "Data Required Time": "25.490",
+          "From": "core/memory_ctrl/state_0_s1",
+          "To": "core/memory_ctrl/tx_233_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "1.543",
+          "Data Arrival Time": "10.667",
+          "Data Required Time": "12.210",
+          "From": "core/display/held_palette_165_s0",
+          "To": "core/display/palette_165_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "1.570",
+          "Data Arrival Time": "23.920",
+          "Data Required Time": "25.490",
+          "From": "host/commands/fill/rmw_s0",
+          "To": "core/memory_ctrl/tx_494_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "1.578",
+          "Data Arrival Time": "14.486",
+          "Data Required Time": "16.065",
+          "From": "core/hdmi/audio_link/pixel_valid_s1",
+          "To": "core/hdmi/audio_link/fifo/read_data_24_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "1.578",
+          "Data Arrival Time": "14.486",
+          "Data Required Time": "16.065",
+          "From": "core/hdmi/audio_link/pixel_valid_s1",
+          "To": "core/hdmi/audio_link/fifo/read_data_25_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "1.578",
+          "Data Arrival Time": "14.486",
+          "Data Required Time": "16.065",
+          "From": "core/hdmi/audio_link/pixel_valid_s1",
+          "To": "core/hdmi/audio_link/fifo/read_data_26_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "1.578",
+          "Data Arrival Time": "14.486",
+          "Data Required Time": "16.065",
+          "From": "core/hdmi/audio_link/pixel_valid_s1",
+          "To": "core/hdmi/audio_link/fifo/read_data_27_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "1.638",
+          "Data Arrival Time": "23.852",
+          "Data Required Time": "25.490",
+          "From": "host/commands/use_fill_payload_s0",
+          "To": "core/memory_ctrl/tx_427_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "1.684",
+          "Data Arrival Time": "23.806",
+          "Data Required Time": "25.490",
+          "From": "host/commands/use_fill_payload_s0",
+          "To": "core/memory_ctrl/tx_336_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "1.707",
+          "Data Arrival Time": "14.001",
+          "Data Required Time": "15.708",
+          "From": "core/hdmi/protocol/cx_2_s0",
+          "To": "core/display/scan_addr_0_s0",
+          "Launch Clk": "pixel74:[R]",
+          "Latch Clk": "pixel74:[R]"
+        },
+        {
+          "Slack": "1.723",
+          "Data Arrival Time": "23.767",
+          "Data Required Time": "25.490",
+          "From": "core/memory_ctrl/state_0_s1",
+          "To": "core/memory_ctrl/tx_437_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "system54:[R]"
+        },
+        {
+          "Slack": "1.738",
+          "Data Arrival Time": "10.472",
+          "Data Required Time": "12.210",
+          "From": "core/cursor/held_colors_19_s1",
+          "To": "core/cursor/pixel_colors_19_s0",
+          "Launch Clk": "system54:[R]",
+          "Latch Clk": "pixel74:[R]"
+        }
+      ]
+    }
+  },
+  "path_families": {
+    "cursor_bundle": {
+      "pcm2": [
+        {
+          "rank": 1,
+          "slack_ns": -1.234,
+          "from_node": "core/cursor/held_6_s1/Q",
+          "to_node": "core/cursor/position_x_6_s0/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 10.0,
+          "clock_skew_ns": 4.732,
+          "data_delay_ns": 6.072
+        }
+      ],
+      "rmw_baseline": []
+    },
+    "cursor_pixel_x": {
+      "pcm2": [
+        {
+          "rank": 2,
+          "slack_ns": -0.624,
+          "from_node": "core/hdmi/protocol/cx_1_s0/Q",
+          "to_node": "core/cursor/logical_x_2_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 13.692
+        },
+        {
+          "rank": 7,
+          "slack_ns": 0.157,
+          "from_node": "core/hdmi/protocol/cx_1_s0/Q",
+          "to_node": "core/cursor/logical_x_4_s0/D",
+          "from_clock": "pixel74:[R]",
+          "to_clock": "pixel74:[R]",
+          "relation_ns": 13.468,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 12.911
+        }
+      ],
+      "rmw_baseline": []
+    },
+    "blit_copy_row": {
+      "pcm2": [
+        {
+          "rank": 3,
+          "slack_ns": -0.033,
+          "from_node": "host/commands/copy_command_s0/Q",
+          "to_node": "host/commands/fill/row_word_14_s1/D",
+          "from_clock": "system54:[R]",
+          "to_clock": "system54:[R]",
+          "relation_ns": 18.518,
+          "clock_skew_ns": 0.0,
+          "data_delay_ns": 18.151
+        }
+      ],
+      "rmw_baseline": []
+    }
+  },
+  "sdc_unchanged": true,
+  "unchanged_source_sha256": {
+    "rtl/fb/kagura_fb_cursor.sv": "54d9e4ff9a39e53a9be93bedd05ca41cec15d934808587e6a6e95d0f20e3cf0d",
+    "rtl/fb/kagura_fb_commands.sv": "fb6f57e06bc4db59f2de447d9113654176f8c8e0d5ba8879bfa93187291dfdb6",
+    "rtl/fb/kagura_fb_fill_burst.sv": "f425091da3cdc405e592b2adb230a0347d63d38ef6642aea3402f460a97c9a5b",
+    "rtl/fb/kagura_fb_upload_word.sv": "8382ea49cec0ca8b8317b910c3870201985c593c7c582ef6a4beebe5530815f2",
+    "boards/tang-nano-9k/kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0",
+    "boards/tang-nano-9k/phase1.cst": "82ff01e377e4f1b918b0c12c0cdd51502201a8d382444d7f49e6baaba72f9094",
+    "boards/tang-nano-9k/host.cst": "87f6eed7e8c08fccab3fe8e6bbbefbdc261ed443f688c963f5c9be33eb037628"
+  },
+  "host_register_only_change_is_abi_minor_constant": true,
+  "interpretation": "One violation is a CDC max-delay-bound path; two are same-clock paths. Do not waive any gate."
+}

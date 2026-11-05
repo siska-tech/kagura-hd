@@ -16,7 +16,8 @@ module kagura_fb_scanout (
     input wire req_ready,
     output wire [19:0] req_addr,
     input wire rsp_done,rsp_error,
-    input wire [511:0] rsp_data,
+    input wire scan_word_valid,
+    input wire [31:0] scan_word_data,
     output reg [23:0] rgb,
     output wire underrun,
     output reg memory_error,
@@ -113,7 +114,7 @@ module kagura_fb_scanout (
     kagura_fb_line_fetch fetch(
         .clk(sys_clk),.reset(sys_reset),.start(fetch_start),.page(fetch_page),.row(fetch_row),
         .ready(fetch_ready),.done(fetch_done),.error(fetch_error),.req_valid,.req_ready,.req_addr,
-        .rsp_done,.rsp_error,.rsp_data,.bank_we,.bank_addr,.bank_data);
+        .rsp_done,.rsp_error,.scan_word_valid,.scan_word_data,.bank_we,.bank_addr,.bank_data);
     // Register controls ahead of the RAM, index and palette pipeline.
     wire [10:0] ax5=cx>=1645 ? cx-11'd1645 : cx+11'd5;
     reg scan;

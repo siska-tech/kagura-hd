@@ -1,8 +1,14 @@
 # SPDX-License-Identifier: Apache-2.0
 # Kagura-FB standalone integration target. Run prepare-hdmi-stream.py first.
 set root [file normalize [file join [file dirname [info script]] ..]]
-set transport [expr {[llength $argv]>0 ? [lindex $argv 0] : "spi"}]
+set transport [expr {[llength $argv]>0 ? [lindex $argv 0] : "qspi"}]
 if {$transport ni {spi qspi}} { error "Expected spi or qspi" }
+set place_option [expr {[llength $argv]>1 ? [lindex $argv 1] : 1}]
+set route_option [expr {[llength $argv]>2 ? [lindex $argv 2] : 2}]
+if {$place_option ni {0 1 2 3 4} || $route_option ni {0 1 2}} {
+    error "Invalid placement/routing option"
+}
+puts "KAGURA_BUILD transport=$transport place_option=$place_option route_option=$route_option"
 set config [file join [pwd] kagura_fb_config.sv]
 set configfile [open $config w]
 puts $configfile "package kagura_fb_config; localparam integer HOST_LANES=[expr {$transport eq {qspi} ? 4 : 1}]; endpackage"
@@ -33,8 +39,8 @@ foreach fragment {phase1.cst host.cst} {
 close $cstfile
 add_file -type cst $cst
 add_file -type sdc [file join $root boards tang-nano-9k kagura-fb.sdc]
-set_option -place_option 1
-set_option -route_option 2
+set_option -place_option $place_option
+set_option -route_option $route_option
 set_option -top_module kagura_fb_top
 set_option -output_base_name kagura_fb
 foreach feature {sspi mspi ready done cpu} { set_option -use_${feature}_as_gpio 1 }

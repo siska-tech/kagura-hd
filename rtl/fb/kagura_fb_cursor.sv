@@ -157,14 +157,18 @@ module kagura_fb_cursor(
  end
  // Four-cycle cursor lookahead. The final output register replaces the
  // pre-existing HDMI RGB register, so background/sync latency is unchanged.
- wire [10:0] ahead_x=cx>=1646 ? cx-11'd1646 : cx+11'd4;
  wire [9:0] ahead_y=cx>=1646 ? (cy==749 ? 10'd0 : cy+10'd1) : cy;
  reg [9:0] logical_x;
  reg [8:0] logical_y;
  reg look_active,delta_active;
  reg signed [11:0] dx,dy;
  always @(posedge pix_clk) begin
-  logical_x<=ahead_x[10:1];logical_y<=ahead_y[9:1];
+  // Fixed 1650-pixel raster, 2x logical scale. Equivalent to
+  // ((cx+4)%1650)/2, without a cx-driven wide add/mux path.
+  // cx==0 resynchronizes every line, including reset release.
+  if(pix_reset || cx==0) logical_x<=10'd2;
+  else if(!cx[0]) logical_x<=logical_x==824 ? 10'd0 : logical_x+1'b1;
+  logical_y<=ahead_y[9:1];
   look_active<=!pix_reset && ((cx<1276 && cy<720) || (cx>=1646 && (cy==749 || cy<719)));
   dx<=$signed({2'd0,logical_x})-position_x;
   dy<=$signed({3'd0,logical_y})-position_y;

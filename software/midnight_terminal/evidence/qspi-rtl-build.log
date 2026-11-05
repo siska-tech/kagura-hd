@@ -1,0 +1,140 @@
+%Warning-WIDTHEXPAND: third_party/hdl-util-hdmi/src/audio_sample_packet.sv:86:61: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'frame_counter' generates 8 bits.
+                                                                                : ... note: In instance 'tb_fb_board_qspi.dut.core.hdmi.protocol.true_hdmi_output.audio_packets.asp'
+   86 |                 aligned_frame_counter[i] = 8'(frame_counter + i - CHANNEL_STATUS_LENGTH);
+      |                                                             ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.032
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: rtl/memory/kagura_ram_tdp.sv:46:76: Operator TASKREF 'report_collision' expects 32 bits on the Function Argument, but Function Argument's VARREF 'addr_a' generates 7 bits.
+                                                        : ... note: In instance 'tb_fb_board_qspi.dut.core.display.banks.banks[1].ram'
+   46 |             if(addr_a==read_addr_seen && $realtime-last_read<COLLISION_NS) report_collision(addr_a);
+      |                                                                            ^~~~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: rtl/memory/kagura_ram_tdp.sv:51:78: Operator TASKREF 'report_collision' expects 32 bits on the Function Argument, but Function Argument's VARREF 'addr_b' generates 7 bits.
+                                                        : ... note: In instance 'tb_fb_board_qspi.dut.core.display.banks.banks[1].ram'
+   51 |             if(addr_b==write_addr_seen && $realtime-last_write<COLLISION_NS) report_collision(addr_b);
+      |                                                                              ^~~~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: rtl/memory/kagura_ram_tdp.sv:46:76: Operator TASKREF 'report_collision' expects 32 bits on the Function Argument, but Function Argument's VARREF 'addr_a' generates 9 bits.
+                                                        : ... note: In instance 'tb_fb_board_qspi.dut.core.cursor.bitmap'
+   46 |             if(addr_a==read_addr_seen && $realtime-last_read<COLLISION_NS) report_collision(addr_a);
+      |                                                                            ^~~~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: rtl/memory/kagura_ram_tdp.sv:51:78: Operator TASKREF 'report_collision' expects 32 bits on the Function Argument, but Function Argument's VARREF 'addr_b' generates 9 bits.
+                                                        : ... note: In instance 'tb_fb_board_qspi.dut.core.cursor.bitmap'
+   51 |             if(addr_b==write_addr_seen && $realtime-last_write<COLLISION_NS) report_collision(addr_b);
+      |                                                                              ^~~~~~~~~~~~~~~~
+%Warning-WIDTHTRUNC: build/generated/kagura_hdmi_stream.sv:86:39: Operator ASSIGN expects 11 bits on the Assign RHS, but Assign RHS's VARREF 'START_X' generates 32 bits.
+                                                                : ... note: In instance 'tb_fb_board_qspi.dut.core.hdmi.protocol'
+   86 |     output logic [BIT_WIDTH-1:0] cx = START_X,
+      |                                       ^~~~~~~
+%Warning-WIDTHTRUNC: build/generated/kagura_hdmi_stream.sv:87:40: Operator ASSIGN expects 10 bits on the Assign RHS, but Assign RHS's VARREF 'START_Y' generates 32 bits.
+                                                                : ... note: In instance 'tb_fb_board_qspi.dut.core.hdmi.protocol'
+   87 |     output logic [BIT_HEIGHT-1:0] cy = START_Y,
+      |                                        ^~~~~~~
+%Warning-WIDTHEXPAND: build/generated/kagura_hdmi_stream.sv:274:54: Operator SUB expects 32 bits on the LHS, but LHS's VARREF 'frame_width' generates 11 bits.
+                                                                  : ... note: In instance 'tb_fb_board_qspi.dut.core.hdmi.protocol'
+  274 |             max_num_packets_alongside = (frame_width - screen_width    - 2   - 8   - 4   - 2   - 2   - 8   - 4  ) / 32;
+      |                                                      ^
+%Warning-WIDTHEXPAND: build/generated/kagura_hdmi_stream.sv:274:54: Operator SUB expects 32 bits on the RHS, but RHS's VARREF 'screen_width' generates 11 bits.
+                                                                  : ... note: In instance 'tb_fb_board_qspi.dut.core.hdmi.protocol'
+  274 |             max_num_packets_alongside = (frame_width - screen_width    - 2   - 8   - 4   - 2   - 2   - 8   - 4  ) / 32;
+      |                                                      ^
+%Warning-WIDTHEXPAND: build/generated/kagura_hdmi_stream.sv:288:23: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'cx' generates 11 bits.
+                                                                  : ... note: In instance 'tb_fb_board_qspi.dut.core.hdmi.protocol'
+  288 |                 5'(cx + screen_width + 19) == 5'd0;
+      |                       ^
+%Warning-WIDTHEXPAND: build/generated/kagura_hdmi_stream.sv:288:23: Operator ADD expects 32 bits on the RHS, but RHS's VARREF 'screen_width' generates 11 bits.
+                                                                  : ... note: In instance 'tb_fb_board_qspi.dut.core.hdmi.protocol'
+  288 |                 5'(cx + screen_width + 19) == 5'd0;
+      |                       ^
+%Warning-WIDTHEXPAND: rtl/audio/kagura_audio_transport.sv:101:25: Operator GTE expects 32 bits on the LHS, but LHS's VARREF 'level' generates 5 bits.
+                                                                : ... note: In instance 'tb_fb_board_qspi.dut.core.hdmi.audio_link'
+  101 |                 if(level>=PREFILL) muted<=0;
+      |                         ^~
+%Warning-WIDTHEXPAND: rtl/bus/kagura_spi_adapter.sv:66:26: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'chunk' generates 3 bits.
+                                                         : ... note: In instance 'tb_fb_board_qspi.dut.host.transport'
+   66 |     wire last_chunk=chunk==CHUNKS-1;
+      |                          ^~
+%Warning-WIDTHEXPAND: rtl/bus/kagura_spi_adapter.sv:67:27: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'chunk' generates 3 bits.
+                                                         : ... note: In instance 'tb_fb_board_qspi.dut.host.transport'
+   67 |     wire fetch_chunk=chunk==CHUNKS-2;
+      |                           ^~
+%Warning-WIDTHEXPAND: rtl/bus/kagura_spi_adapter.sv:86:29: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'queue_free' generates 6 bits.
+                                                         : ... note: In instance 'tb_fb_board_qspi.dut.host.transport'
+   86 |             busy<=queue_free<BUSY_MARGIN;
+      |                             ^
+%Warning-WIDTHEXPAND: rtl/audio/kagura_audio_registers.sv:93:82: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'ch' generates 3 bits.
+                                                               : ... note: In instance 'tb_fb_board_qspi.dut.audio_endpoint.registers'
+   93 |             for(integer c=0;c<6;c=c+1) rdata_c=rdata_c | (channel_data[c] & {8{ch==c}});
+      |                                                                                  ^~
+%Warning-WIDTHEXPAND: rtl/audio/kagura_audio_registers.sv:172:53: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'ch' generates 3 bits.
+                                                                : ... note: In instance 'tb_fb_board_qspi.dut.audio_endpoint.registers'
+  172 |                     for(integer c=0;c<6;c=c+1) if(ch==c) case(offset)
+      |                                                     ^~
+%Warning-WIDTHEXPAND: /mnt/c/Users/Shion/Documents/Projects/kagura-hd/software/midnight_terminal/out/qspi-rtl/tb_fb_board_qspi_5mhz.sv:103:37: Operator NEQ expects 32 bits on the LHS, but LHS's SIGNED generates 16 bits.
+                                                                                                                                             : ... note: In instance 'tb_fb_board_qspi'
+  103 |     if($signed(dut.core.sample_left)!=left || $signed(dut.core.sample_right)!=right)
+      |                                     ^~
+%Warning-WIDTHEXPAND: /mnt/c/Users/Shion/Documents/Projects/kagura-hd/software/midnight_terminal/out/qspi-rtl/tb_fb_board_qspi_5mhz.sv:103:77: Operator NEQ expects 32 bits on the LHS, but LHS's SIGNED generates 16 bits.
+                                                                                                                                             : ... note: In instance 'tb_fb_board_qspi'
+  103 |     if($signed(dut.core.sample_left)!=left || $signed(dut.core.sample_right)!=right)
+      |                                                                             ^~
+%Warning-COMBDLY: build/generated/kagura_hdmi_stream.sv:197:11: Non-blocking assignment '<=' in combinational logic process
+                                                              : ... This will be executed as a blocking assignment '='!
+  197 |     hsync <= invert ^ (cx >= screen_width + hsync_pulse_start && cx < screen_width + hsync_pulse_start + hsync_pulse_size);
+      |           ^~
+                  *** See https://verilator.org/warn/COMBDLY before disabling this,
+                  else you may end up with different sim results.
+%Warning-COMBDLY: build/generated/kagura_hdmi_stream.sv:201:15: Non-blocking assignment '<=' in combinational logic process
+                                                              : ... This will be executed as a blocking assignment '='!
+  201 |         vsync <= invert ^ (cx >= screen_width + hsync_pulse_start);
+      |               ^~
+%Warning-UNOPTFLAT: third_party/hdl-util-hdmi/src/source_product_description_info_frame.sv:26:13: Signal unoptimizable: Circular combinational logic: 'tb_fb_board_qspi.dut.core.hdmi.protocol.true_hdmi_output.audio_packets.spd.packet_bytes'
+   26 | logic [7:0] packet_bytes [27:0];
+      |             ^~~~~~~~~~~~
+                    third_party/hdl-util-hdmi/src/source_product_description_info_frame.sv:26:13:      Example path: tb_fb_board_qspi.dut.core.hdmi.protocol.true_hdmi_output.audio_packets.spd.packet_bytes
+                    third_party/hdl-util-hdmi/src/source_product_description_info_frame.sv:28:24:      Example path: ASSIGNW
+                    third_party/hdl-util-hdmi/src/source_product_description_info_frame.sv:26:13:      Example path: tb_fb_board_qspi.dut.core.hdmi.protocol.true_hdmi_output.audio_packets.spd.packet_bytes
+%Warning-UNOPTFLAT: third_party/hdl-util-hdmi/src/auxiliary_video_information_info_frame.sv:39:13: Signal unoptimizable: Circular combinational logic: 'tb_fb_board_qspi.dut.core.hdmi.protocol.true_hdmi_output.audio_packets.avi.packet_bytes'
+   39 | logic [7:0] packet_bytes [27:0];
+      |             ^~~~~~~~~~~~
+                    third_party/hdl-util-hdmi/src/auxiliary_video_information_info_frame.sv:39:13:      Example path: tb_fb_board_qspi.dut.core.hdmi.protocol.true_hdmi_output.audio_packets.avi.packet_bytes
+                    third_party/hdl-util-hdmi/src/auxiliary_video_information_info_frame.sv:41:24:      Example path: ASSIGNW
+                    third_party/hdl-util-hdmi/src/auxiliary_video_information_info_frame.sv:39:13:      Example path: tb_fb_board_qspi.dut.core.hdmi.protocol.true_hdmi_output.audio_packets.avi.packet_bytes
+%Warning-UNOPTFLAT: third_party/hdl-util-hdmi/src/audio_info_frame.sv:33:13: Signal unoptimizable: Circular combinational logic: 'tb_fb_board_qspi.dut.core.hdmi.protocol.true_hdmi_output.audio_packets.aif.packet_bytes'
+   33 | logic [7:0] packet_bytes [27:0];
+      |             ^~~~~~~~~~~~
+                    third_party/hdl-util-hdmi/src/audio_info_frame.sv:33:13:      Example path: tb_fb_board_qspi.dut.core.hdmi.protocol.true_hdmi_output.audio_packets.aif.packet_bytes
+                    third_party/hdl-util-hdmi/src/audio_info_frame.sv:35:24:      Example path: ASSIGNW
+                    third_party/hdl-util-hdmi/src/audio_info_frame.sv:33:13:      Example path: tb_fb_board_qspi.dut.core.hdmi.protocol.true_hdmi_output.audio_packets.aif.packet_bytes
+make: Entering directory '/mnt/c/Users/Shion/Documents/Projects/kagura-hd/software/midnight_terminal/out/qspi-rtl/obj'
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/share/verilator/include/verilated.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_dpi.o /usr/share/verilator/include/verilated_dpi.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/share/verilator/include/verilated_timing.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/share/verilator/include/verilated_threads.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -x c++-header Vtb_fb_board_qspi__pch.h -o Vtb_fb_board_qspi__pch.h.fast.gch
+g++   -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -x c++-header Vtb_fb_board_qspi__pch.h -o Vtb_fb_board_qspi__pch.h.slow.gch
+echo "" > Vtb_fb_board_qspi__ALL.verilator_deplist.tmp
+g++   -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.slow -c -o Vtb_fb_board_qspi__ConstPool_0.o Vtb_fb_board_qspi__ConstPool_0.cpp
+g++   -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.slow -c -o Vtb_fb_board_qspi___024root__Slow.o Vtb_fb_board_qspi___024root__Slow.cpp
+g++   -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.slow -c -o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__0__Slow.o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__0__Slow.cpp
+g++   -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.slow -c -o Vtb_fb_board_qspi___024root__DepSet_hac9e9258__0__Slow.o Vtb_fb_board_qspi___024root__DepSet_hac9e9258__0__Slow.cpp
+g++   -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.slow -c -o Vtb_fb_board_qspi__Syms.o Vtb_fb_board_qspi__Syms.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi.o Vtb_fb_board_qspi.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__0.o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__0.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__1.o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__1.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__2.o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__2.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__3.o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__3.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__4.o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__4.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__5.o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__5.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__6.o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__6.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__7.o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__7.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__8.o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__8.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__9.o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__9.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__10.o Vtb_fb_board_qspi___024root__DepSet_hba4a8d9b__10.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi___024root__DepSet_hac9e9258__0.o Vtb_fb_board_qspi___024root__DepSet_hac9e9258__0.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi__main.o Vtb_fb_board_qspi__main.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_fb_board_qspi__pch.h.fast -c -o Vtb_fb_board_qspi__Dpi.o Vtb_fb_board_qspi__Dpi.cpp
+g++    verilated.o verilated_dpi.o verilated_timing.o verilated_threads.o Vtb_fb_board_qspi__ALL.a    -pthread -lpthread -latomic   -o Vtb_fb_board_qspi
+rm Vtb_fb_board_qspi__ALL.verilator_deplist.tmp
+make: Leaving directory '/mnt/c/Users/Shion/Documents/Projects/kagura-hd/software/midnight_terminal/out/qspi-rtl/obj'
+- V e r i l a t i o n   R e p o r t: Verilator 5.032 2025-01-01 rev (Debian 5.032-1)
+- Verilator: Built from 3.443 MB sources in 42 modules, into 6.515 MB in 20 C++ files needing 0.003 MB
+- Verilator: Walltime 48.757 s (elab=0.055, cvt=0.791, bld=46.907); cpu 1.170 s on 4 threads; alloced 82.219 MB

@@ -1,0 +1,236 @@
+BEYOND 16 COLORS / release_ready=false / g=150s autoplay b=benchmark q=idle; no automatic start
+BENCH_PHASE PCM_STOPPED
+BENCH raw_pointer_write n=1 us=45 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=208 rc=0
+BENCH psram_write n=1 us=896 rc=0
+BENCH psram_read n=1 us=825 rc=0
+BENCH raw_pointer_write n=2 us=189 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=197 rc=0
+BENCH psram_write n=2 us=858 rc=0
+BENCH psram_read n=2 us=807 rc=0
+BENCH raw_pointer_write n=4 us=199 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=215 rc=0
+BENCH psram_write n=4 us=858 rc=0
+BENCH psram_read n=4 us=819 rc=0
+BENCH raw_pointer_write n=8 us=211 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=227 rc=0
+BENCH psram_write n=8 us=892 rc=0
+BENCH psram_read n=8 us=819 rc=0
+BENCH raw_pointer_write n=16 us=249 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=263 rc=0
+BENCH psram_write n=16 us=941 rc=0
+BENCH psram_read n=16 us=857 rc=0
+BENCH raw_pointer_write n=64 us=480 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=496 rc=0
+BENCH psram_write n=64 us=1211 rc=0
+BENCH psram_read n=64 us=1104 rc=0
+BENCH raw_pointer_write n=512 us=2582 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=2668 rc=0
+BENCH psram_write n=512 us=7470 rc=0
+BENCH psram_read n=512 us=6895 rc=0
+BENCH fence issue_us=461 completion_us=223 rc=0
+BENCH fence issue_us=443 completion_us=209 rc=0
+BENCH fence issue_us=441 completion_us=208 rc=0
+BENCH fence issue_us=444 completion_us=214 rc=0
+BENCH fence issue_us=440 completion_us=211 rc=0
+BENCH fence issue_us=429 completion_us=208 rc=0
+BENCH fence issue_us=436 completion_us=214 rc=0
+BENCH fence issue_us=440 completion_us=216 rc=0
+BENCH fence issue_us=435 completion_us=212 rc=0
+BENCH fence issue_us=447 completion_us=212 rc=0
+BENCH fence issue_us=445 completion_us=210 rc=0
+BENCH fence issue_us=447 completion_us=216 rc=0
+BENCH fence issue_us=439 completion_us=214 rc=0
+BENCH fence issue_us=431 completion_us=213 rc=0
+BENCH fence issue_us=436 completion_us=208 rc=0
+BENCH fence issue_us=447 completion_us=213 rc=0
+BENCH fence issue_us=437 completion_us=219 rc=0
+BENCH fence issue_us=430 completion_us=217 rc=0
+BENCH fence issue_us=448 completion_us=215 rc=0
+BENCH fence issue_us=434 completion_us=218 rc=0
+BENCH fence issue_us=441 completion_us=214 rc=0
+BENCH fence issue_us=430 completion_us=214 rc=0
+BENCH fence issue_us=445 completion_us=208 rc=0
+BENCH fence issue_us=447 completion_us=220 rc=0
+BENCH fence issue_us=439 completion_us=214 rc=0
+BENCH fence issue_us=444 completion_us=210 rc=0
+BENCH fence issue_us=438 completion_us=206 rc=0
+BENCH fence issue_us=430 completion_us=211 rc=0
+BENCH fence issue_us=433 completion_us=212 rc=0
+BENCH fence issue_us=450 completion_us=209 rc=0
+BENCH fence issue_us=433 completion_us=211 rc=0
+BENCH fence issue_us=419 completion_us=214 rc=0
+BENCH fence issue_us=442 completion_us=211 rc=0
+BENCH fence issue_us=440 completion_us=213 rc=0
+BENCH fence issue_us=423 completion_us=217 rc=0
+BENCH fence issue_us=437 completion_us=210 rc=0
+BENCH fence issue_us=447 completion_us=206 rc=0
+BENCH fence issue_us=430 completion_us=209 rc=0
+BENCH fence issue_us=434 completion_us=209 rc=0
+BENCH fence issue_us=429 completion_us=216 rc=0
+BENCH fence issue_us=442 completion_us=208 rc=0
+BENCH fence issue_us=452 completion_us=213 rc=0
+BENCH fence issue_us=436 completion_us=215 rc=0
+BENCH fence issue_us=442 completion_us=214 rc=0
+BENCH fence issue_us=443 completion_us=210 rc=0
+BENCH fence issue_us=449 completion_us=212 rc=0
+BENCH fence issue_us=460 completion_us=216 rc=0
+BENCH fence issue_us=444 completion_us=224 rc=0
+BENCH fence issue_us=441 completion_us=210 rc=0
+BENCH fence issue_us=433 completion_us=207 rc=0
+BENCH fence issue_us=441 completion_us=210 rc=0
+BENCH fence issue_us=430 completion_us=207 rc=0
+BENCH fence issue_us=431 completion_us=213 rc=0
+BENCH fence issue_us=443 completion_us=211 rc=0
+BENCH fence issue_us=444 completion_us=216 rc=0
+BENCH fence issue_us=435 completion_us=213 rc=0
+BENCH fence issue_us=450 completion_us=216 rc=0
+BENCH fence issue_us=431 completion_us=212 rc=0
+BENCH fence issue_us=441 completion_us=209 rc=0
+BENCH fence issue_us=428 completion_us=208 rc=0
+BENCH fence issue_us=433 completion_us=213 rc=0
+BENCH fence issue_us=437 completion_us=209 rc=0
+BENCH fence issue_us=430 completion_us=209 rc=0
+BENCH fence issue_us=461 completion_us=213 rc=0
+BENCH fill us=693 rc=0
+BENCH blit pixels=1024 us=730 rc=0
+BENCH present us=6776 rc=0
+BENCH fill us=681 rc=0
+BENCH blit pixels=1024 us=699 rc=0
+BENCH present us=6944 rc=0
+BENCH fill us=676 rc=0
+BENCH blit pixels=1024 us=682 rc=0
+BENCH present us=6988 rc=0
+BENCH fill us=697 rc=0
+BENCH blit pixels=1024 us=683 rc=0
+BENCH present us=6933 rc=0
+BENCH fill us=686 rc=0
+BENCH blit pixels=1024 us=678 rc=0
+BENCH present us=6968 rc=0
+BENCH fill us=670 rc=0
+BENCH blit pixels=1024 us=669 rc=0
+BENCH present us=6962 rc=0
+BENCH fill us=668 rc=0
+BENCH blit pixels=1024 us=674 rc=0
+BENCH present us=6975 rc=0
+BENCH fill us=668 rc=0
+BENCH blit pixels=1024 us=692 rc=0
+BENCH present us=6972 rc=0
+BENCH_PHASE PCM_PLAYING
+BENCH raw_pointer_write n=1 us=47 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=221 rc=0
+BENCH psram_write n=1 us=870 rc=0
+BENCH psram_read n=1 us=813 rc=0
+BENCH raw_pointer_write n=2 us=190 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=205 rc=0
+BENCH psram_write n=2 us=871 rc=0
+BENCH psram_read n=2 us=810 rc=0
+BENCH raw_pointer_write n=4 us=198 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=213 rc=0
+BENCH psram_write n=4 us=867 rc=0
+BENCH psram_read n=4 us=807 rc=0
+BENCH raw_pointer_write n=8 us=212 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=234 rc=0
+BENCH psram_write n=8 us=888 rc=0
+BENCH psram_read n=8 us=832 rc=0
+BENCH raw_pointer_write n=16 us=255 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=266 rc=0
+BENCH psram_write n=16 us=924 rc=0
+BENCH psram_read n=16 us=860 rc=0
+BENCH raw_pointer_write n=64 us=480 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=491 rc=0
+BENCH psram_write n=64 us=1215 rc=0
+BENCH psram_read n=64 us=1105 rc=0
+BENCH raw_pointer_write n=512 us=2588 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=2662 rc=0
+BENCH psram_write n=512 us=7502 rc=0
+BENCH psram_read n=512 us=6853 rc=0
+BENCH fence issue_us=447 completion_us=227 rc=0
+BENCH fence issue_us=441 completion_us=216 rc=0
+BENCH fence issue_us=432 completion_us=211 rc=0
+BENCH fence issue_us=459 completion_us=208 rc=0
+BENCH fence issue_us=430 completion_us=212 rc=0
+BENCH fence issue_us=438 completion_us=208 rc=0
+BENCH fence issue_us=441 completion_us=208 rc=0
+BENCH fence issue_us=442 completion_us=212 rc=0
+BENCH fence issue_us=447 completion_us=209 rc=0
+BENCH fence issue_us=446 completion_us=213 rc=0
+BENCH fence issue_us=436 completion_us=216 rc=0
+BENCH fence issue_us=443 completion_us=208 rc=0
+BENCH fence issue_us=436 completion_us=209 rc=0
+BENCH fence issue_us=450 completion_us=213 rc=0
+BENCH fence issue_us=419 completion_us=210 rc=0
+BENCH fence issue_us=448 completion_us=203 rc=0
+BENCH fence issue_us=430 completion_us=213 rc=0
+BENCH fence issue_us=432 completion_us=209 rc=0
+BENCH fence issue_us=429 completion_us=209 rc=0
+BENCH fence issue_us=443 completion_us=214 rc=0
+BENCH fence issue_us=428 completion_us=214 rc=0
+BENCH fence issue_us=446 completion_us=216 rc=0
+BENCH fence issue_us=438 completion_us=207 rc=0
+BENCH fence issue_us=426 completion_us=212 rc=0
+BENCH fence issue_us=425 completion_us=210 rc=0
+BENCH fence issue_us=439 completion_us=209 rc=0
+BENCH fence issue_us=433 completion_us=209 rc=0
+BENCH fence issue_us=437 completion_us=212 rc=0
+BENCH fence issue_us=432 completion_us=217 rc=0
+BENCH fence issue_us=439 completion_us=206 rc=0
+BENCH fence issue_us=442 completion_us=212 rc=0
+BENCH fence issue_us=441 completion_us=209 rc=0
+BENCH fence issue_us=428 completion_us=209 rc=0
+BENCH fence issue_us=445 completion_us=209 rc=0
+BENCH fence issue_us=434 completion_us=212 rc=0
+BENCH fence issue_us=434 completion_us=216 rc=0
+BENCH fence issue_us=438 completion_us=210 rc=0
+BENCH fence issue_us=439 completion_us=212 rc=0
+BENCH fence issue_us=443 completion_us=209 rc=0
+BENCH fence issue_us=440 completion_us=208 rc=0
+BENCH fence issue_us=443 completion_us=213 rc=0
+BENCH fence issue_us=429 completion_us=213 rc=0
+BENCH fence issue_us=441 completion_us=208 rc=0
+BENCH fence issue_us=443 completion_us=206 rc=0
+BENCH fence issue_us=437 completion_us=208 rc=0
+BENCH fence issue_us=437 completion_us=212 rc=0
+BENCH fence issue_us=448 completion_us=212 rc=0
+BENCH fence issue_us=439 completion_us=213 rc=0
+BENCH fence issue_us=438 completion_us=214 rc=0
+BENCH fence issue_us=436 completion_us=209 rc=0
+BENCH fence issue_us=422 completion_us=205 rc=0
+BENCH fence issue_us=432 completion_us=206 rc=0
+BENCH fence issue_us=422 completion_us=215 rc=0
+BENCH fence issue_us=445 completion_us=208 rc=0
+BENCH fence issue_us=439 completion_us=214 rc=0
+BENCH fence issue_us=441 completion_us=207 rc=0
+BENCH fence issue_us=452 completion_us=214 rc=0
+BENCH fence issue_us=443 completion_us=213 rc=0
+BENCH fence issue_us=436 completion_us=208 rc=0
+BENCH fence issue_us=449 completion_us=213 rc=0
+BENCH fence issue_us=451 completion_us=211 rc=0
+BENCH fence issue_us=430 completion_us=216 rc=0
+BENCH fence issue_us=430 completion_us=211 rc=0
+BENCH fence issue_us=447 completion_us=221 rc=0
+BENCH fill us=703 rc=0
+BENCH blit pixels=1024 us=721 rc=0
+BENCH present us=16941 rc=0
+BENCH fill us=677 rc=0
+BENCH blit pixels=1024 us=692 rc=0
+BENCH present us=6881 rc=0
+BENCH fill us=682 rc=0
+BENCH blit pixels=1024 us=687 rc=0
+BENCH present us=6924 rc=0
+BENCH fill us=685 rc=0
+BENCH blit pixels=1024 us=685 rc=0
+BENCH present us=6927 rc=0
+BENCH fill us=667 rc=0
+BENCH blit pixels=1024 us=694 rc=0
+BENCH present us=6956 rc=0
+BENCH fill us=675 rc=0
+BENCH blit pixels=1024 us=684 rc=0
+BENCH present us=6983 rc=0
+BENCH fill us=672 rc=0
+BENCH blit pixels=1024 us=697 rc=0
+BENCH present us=6974 rc=0
+BENCH fill us=670 rc=0
+BENCH blit pixels=1024 us=681 rc=0
+BENCH present us=6972 rc=0
+STOP rc=0; no retry; release_ready=false

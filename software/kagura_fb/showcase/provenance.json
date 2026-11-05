@@ -1,0 +1,19 @@
+{
+  "fonts.py": {
+    "source": "kagura/software/micropython/kagura/ui/fonts.py",
+    "sha256": "90c31e0ef33bd1b196d24a026a6e5c38a4c45db8113a916e25111eb8a926e8eb"
+  },
+  "font-license.txt": {
+    "source": "kagura/software/micropython/fonts/README.md",
+    "sha256": "241e85a27137e1fa190e7848aeca3e8f301cf162c51f6e1c107713ca15b52864"
+  },
+  "kagura_fb_audio.py": {
+    "source": "kagura-hd/build/pcm2-timing-04/software/kagura_fb/kagura_fb_audio.py",
+    "sha256": "07624052155d4a6e819b2ebd76251ebe75483d3019aefdb1941f0cde8adcedc7"
+  },
+  "ascii_rows.py": {
+    "source": "kagura/software/desktop/core/kd_font_data.c",
+    "source_sha256": "8a5452ac530c9e8fdec4c5c7b998b70cc572799d4fa2895bb83e5a9d86315c6b",
+    "rows_sha256": "ff070fc4a1ed99f7b22245ec88cf3ea3c136800fc94a1f15d8cdbf1e618cb903"
+  }
+}

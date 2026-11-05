@@ -1,0 +1,153 @@
+MIDNIGHT TERMINAL / USB CONTROL / send g to run / q to stop / release_ready=false
+IDENTITY KFB1 ABI=1.4 CAPS=ff
+PREFLIGHT PSRAM PASS cases=72 guards=256 scratch=0x3e000
+PREFLIGHT GPU PASS odd_x_fill=1 page_blit=1
+QSPI PIO / SCK nominal=5000000 / RP2040=120000000 / release_ready=false
+SCENE id=0 host_ms=0 DEMO_READY
+host_ms=1000 frames=22 bytes=462126 commands=1282 waits_ms=7801 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2274341 transactions=216614 elapsed_us=17561986 max_transaction_us=352 timeouts=0
+host_ms=2000 frames=52 bytes=462126 commands=1426 waits_ms=7935 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2284809 transactions=218930 elapsed_us=17679659 max_transaction_us=352 timeouts=0
+host_ms=3000 frames=82 bytes=462126 commands=1444 waits_ms=7961 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2286752 transactions=219379 elapsed_us=17701915 max_transaction_us=352 timeouts=0
+host_ms=4000 frames=112 bytes=462126 commands=1444 waits_ms=7961 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2286764 transactions=219383 elapsed_us=17702233 max_transaction_us=352 timeouts=0
+host_ms=5001 frames=142 bytes=462126 commands=1444 waits_ms=7961 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2286776 transactions=219387 elapsed_us=17702557 max_transaction_us=352 timeouts=0
+host_ms=6001 frames=172 bytes=462126 commands=1444 waits_ms=7961 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2286788 transactions=219391 elapsed_us=17702869 max_transaction_us=352 timeouts=0
+host_ms=7001 frames=202 bytes=462126 commands=1444 waits_ms=7961 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2286800 transactions=219395 elapsed_us=17703174 max_transaction_us=352 timeouts=0
+host_ms=8001 frames=232 bytes=462126 commands=1444 waits_ms=7961 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2286812 transactions=219399 elapsed_us=17703492 max_transaction_us=352 timeouts=0
+host_ms=9001 frames=262 bytes=462126 commands=1444 waits_ms=7961 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2286824 transactions=219403 elapsed_us=17703805 max_transaction_us=352 timeouts=0
+host_ms=10001 frames=292 bytes=462126 commands=1444 waits_ms=7961 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2286836 transactions=219407 elapsed_us=17704120 max_transaction_us=352 timeouts=0
+host_ms=11001 frames=322 bytes=462126 commands=1444 waits_ms=7961 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2286848 transactions=219411 elapsed_us=17704435 max_transaction_us=352 timeouts=0
+SCENE id=1 host_ms=12000
+host_ms=15527 frames=353 bytes=694224 commands=1743 waits_ms=11670 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2691790 transactions=258554 elapsed_us=20848977 max_transaction_us=352 timeouts=0
+host_ms=16527 frames=373 bytes=695922 commands=2120 waits_ms=12108 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2725403 transactions=265937 elapsed_us=21228292 max_transaction_us=352 timeouts=0
+host_ms=17527 frames=403 bytes=695922 commands=2300 waits_ms=12504 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2755109 transactions=273042 elapsed_us=21574100 max_transaction_us=352 timeouts=0
+host_ms=18531 frames=433 bytes=697014 commands=2665 waits_ms=13034 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2794942 transactions=282132 elapsed_us=22030792 max_transaction_us=352 timeouts=0
+host_ms=19531 frames=463 bytes=698262 commands=3054 waits_ms=13518 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2831725 transactions=290386 elapsed_us=22450832 max_transaction_us=352 timeouts=0
+host_ms=20531 frames=493 bytes=698694 commands=3258 waits_ms=13988 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2866925 transactions=298725 elapsed_us=22857815 max_transaction_us=352 timeouts=0
+host_ms=21531 frames=523 bytes=699126 commands=3456 waits_ms=14461 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2902499 transactions=307171 elapsed_us=23269141 max_transaction_us=352 timeouts=0
+host_ms=22531 frames=553 bytes=699126 commands=3636 waits_ms=14934 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2937925 transactions=315706 elapsed_us=23681377 max_transaction_us=352 timeouts=0
+host_ms=23531 frames=583 bytes=699126 commands=3816 waits_ms=15405 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=2973339 transactions=324238 elapsed_us=24093633 max_transaction_us=352 timeouts=0
+host_ms=24531 frames=613 bytes=700218 commands=4181 waits_ms=15882 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=3009360 transactions=332375 elapsed_us=24505830 max_transaction_us=352 timeouts=0
+host_ms=25531 frames=643 bytes=701058 commands=4478 waits_ms=16398 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=3048478 transactions=341455 elapsed_us=24955748 max_transaction_us=352 timeouts=0
+host_ms=26531 frames=673 bytes=701706 commands=4688 waits_ms=16853 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=3082899 transactions=349543 elapsed_us=25352313 max_transaction_us=352 timeouts=0
+host_ms=27531 frames=703 bytes=701706 commands=4868 waits_ms=17322 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=3117965 transactions=357988 elapsed_us=25760342 max_transaction_us=352 timeouts=0
+host_ms=28531 frames=733 bytes=701706 commands=5048 waits_ms=17779 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=3152151 transactions=366213 elapsed_us=26158202 max_transaction_us=352 timeouts=0
+host_ms=29531 frames=763 bytes=701706 commands=5228 waits_ms=18255 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=3187677 transactions=374773 elapsed_us=26571616 max_transaction_us=352 timeouts=0
+SCENE id=2 host_ms=30000
+host_ms=33528 frames=778 bytes=934662 commands=5758 waits_ms=22241 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=3614785 transactions=418700 elapsed_us=29963605 max_transaction_us=352 timeouts=0
+host_ms=34528 frames=792 bytes=937218 commands=6246 waits_ms=22711 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=3651940 transactions=426426 elapsed_us=30373410 max_transaction_us=352 timeouts=0
+host_ms=35528 frames=822 bytes=937218 commands=6426 waits_ms=23122 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=3682754 transactions=433808 elapsed_us=30732046 max_transaction_us=352 timeouts=0
+host_ms=36528 frames=852 bytes=938082 commands=6648 waits_ms=23515 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=3712646 transactions=440694 elapsed_us=31074685 max_transaction_us=352 timeouts=0
+host_ms=37528 frames=882 bytes=938082 commands=6828 waits_ms=23893 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=3740960 transactions=447451 elapsed_us=31404469 max_transaction_us=352 timeouts=0
+host_ms=38731 frames=913 bytes=963572 commands=7210 waits_ms=24721 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=3816620 transactions=459140 elapsed_us=32114098 max_transaction_us=352 timeouts=0
+host_ms=39748 frames=934 bytes=966146 commands=7765 waits_ms=25208 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=3853915 transactions=466952 elapsed_us=32530866 max_transaction_us=352 timeouts=0
+SCENE id=3 host_ms=40000
+host_ms=43584 frames=943 bytes=1197780 commands=8053 waits_ms=28976 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=4263578 transactions=507356 elapsed_us=35732670 max_transaction_us=352 timeouts=0
+host_ms=44584 frames=970 bytes=1198170 commands=8280 waits_ms=29312 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=4288751 transactions=513165 elapsed_us=36022892 max_transaction_us=352 timeouts=0
+host_ms=45584 frames=1000 bytes=1198170 commands=8460 waits_ms=29639 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=4313453 transactions=519019 elapsed_us=36310267 max_transaction_us=352 timeouts=0
+host_ms=46584 frames=1030 bytes=1198170 commands=8656 waits_ms=30001 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=4340767 transactions=525490 elapsed_us=36627398 max_transaction_us=352 timeouts=0
+SCENE id=4 host_ms=47000
+host_ms=50530 frames=1043 bytes=1500698 commands=8908 waits_ms=34802 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=4866137 transactions=576161 elapsed_us=40701136 max_transaction_us=352 timeouts=0
+host_ms=51718 frames=1044 bytes=1595866 commands=9060 waits_ms=36329 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=5032409 transactions=592342 elapsed_us=41995961 max_transaction_us=352 timeouts=0
+host_ms=53268 frames=1045 bytes=1649946 commands=9080 waits_ms=37173 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=5125313 transactions=601200 elapsed_us=42712449 max_transaction_us=352 timeouts=0
+host_ms=54881 frames=1047 bytes=1729946 commands=9096 waits_ms=38416 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=5262306 transactions=614195 elapsed_us=43767320 max_transaction_us=352 timeouts=0
+host_ms=56098 frames=1050 bytes=1786586 commands=9109 waits_ms=39325 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=5361463 transactions=623932 elapsed_us=44539478 max_transaction_us=352 timeouts=0
+host_ms=57115 frames=1058 bytes=1831386 commands=9141 waits_ms=40159 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=5448659 transactions=633800 elapsed_us=45252491 max_transaction_us=352 timeouts=0
+host_ms=58131 frames=1077 bytes=1871386 commands=9218 waits_ms=41117 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=5542216 transactions=646493 elapsed_us=46072945 max_transaction_us=352 timeouts=0
+host_ms=59131 frames=1096 bytes=1911066 commands=9296 waits_ms=42076 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=5635596 transactions=659223 elapsed_us=46893411 max_transaction_us=352 timeouts=0
+host_ms=60148 frames=1116 bytes=1951386 commands=9377 waits_ms=43052 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=5730485 transactions=672160 elapsed_us=47727047 max_transaction_us=352 timeouts=0
+host_ms=61165 frames=1136 bytes=1991066 commands=9457 waits_ms=44009 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=5825033 transactions=685178 elapsed_us=48561014 max_transaction_us=352 timeouts=0
+host_ms=62165 frames=1159 bytes=2009882 commands=9519 waits_ms=44442 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=5867593 transactions=690777 elapsed_us=48930563 max_transaction_us=352 timeouts=0
+host_ms=63165 frames=1189 bytes=2009882 commands=9519 waits_ms=44442 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=5867605 transactions=690781 elapsed_us=48930908 max_transaction_us=352 timeouts=0
+host_ms=64165 frames=1219 bytes=2009882 commands=9525 waits_ms=44478 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=5870341 transactions=691458 elapsed_us=48963014 max_transaction_us=352 timeouts=0
+SCENE id=5 host_ms=65000
+host_ms=68531 frames=1245 bytes=2241668 commands=9774 waits_ms=48148 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6272625 transactions=730100 elapsed_us=52079318 max_transaction_us=352 timeouts=0
+host_ms=69531 frames=1267 bytes=2243054 commands=10111 waits_ms=48540 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6302680 transactions=736728 elapsed_us=52419552 max_transaction_us=352 timeouts=0
+host_ms=70531 frames=1297 bytes=2243054 commands=10291 waits_ms=48927 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6331906 transactions=743713 elapsed_us=52759524 max_transaction_us=352 timeouts=0
+host_ms=71531 frames=1327 bytes=2243486 commands=10495 waits_ms=49364 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6365030 transactions=751533 elapsed_us=53142190 max_transaction_us=352 timeouts=0
+host_ms=72531 frames=1357 bytes=2243918 commands=10693 waits_ms=49760 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6395416 transactions=758682 elapsed_us=53493381 max_transaction_us=352 timeouts=0
+host_ms=73531 frames=1387 bytes=2243918 commands=10873 waits_ms=50209 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6429618 transactions=766911 elapsed_us=53891577 max_transaction_us=352 timeouts=0
+host_ms=74531 frames=1417 bytes=2243918 commands=11053 waits_ms=50600 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6458852 transactions=773898 elapsed_us=54231733 max_transaction_us=352 timeouts=0
+host_ms=75531 frames=1447 bytes=2243918 commands=11233 waits_ms=51055 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6493054 transactions=782127 elapsed_us=54629778 max_transaction_us=352 timeouts=0
+host_ms=76531 frames=1477 bytes=2244134 commands=11425 waits_ms=51494 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6526107 transactions=789999 elapsed_us=55012954 max_transaction_us=352 timeouts=0
+host_ms=77531 frames=1507 bytes=2244782 commands=11635 waits_ms=51905 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6557596 transactions=797354 elapsed_us=55375412 max_transaction_us=352 timeouts=0
+host_ms=78531 frames=1537 bytes=2244782 commands=11815 waits_ms=52312 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6588066 transactions=804650 elapsed_us=55729911 max_transaction_us=352 timeouts=0
+host_ms=79531 frames=1567 bytes=2244782 commands=11995 waits_ms=52725 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6619084 transactions=812083 elapsed_us=56090916 max_transaction_us=352 timeouts=0
+SCENE id=6 host_ms=80000
+host_ms=80815 frames=1583 bytes=2244782 commands=14991 waits_ms=54453 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6753651 transactions=839032 elapsed_us=57597846 max_transaction_us=352 timeouts=0
+host_ms=81815 frames=1590 bytes=2244782 commands=14991 waits_ms=54453 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6753663 transactions=839036 elapsed_us=57598179 max_transaction_us=352 timeouts=0
+host_ms=82815 frames=1620 bytes=2244782 commands=14991 waits_ms=54453 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6753675 transactions=839040 elapsed_us=57598493 max_transaction_us=352 timeouts=0
+host_ms=83815 frames=1650 bytes=2244782 commands=14991 waits_ms=54453 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6753687 transactions=839044 elapsed_us=57598797 max_transaction_us=352 timeouts=0
+host_ms=84816 frames=1680 bytes=2244782 commands=14991 waits_ms=54453 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6753699 transactions=839048 elapsed_us=57599107 max_transaction_us=352 timeouts=0
+host_ms=85816 frames=1710 bytes=2244782 commands=14991 waits_ms=54453 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6753711 transactions=839052 elapsed_us=57599409 max_transaction_us=352 timeouts=0
+host_ms=86816 frames=1740 bytes=2244782 commands=14991 waits_ms=54453 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6753723 transactions=839056 elapsed_us=57599731 max_transaction_us=352 timeouts=0
+host_ms=87816 frames=1770 bytes=2244782 commands=14991 waits_ms=54453 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=6753735 transactions=839060 elapsed_us=57600045 max_transaction_us=352 timeouts=0
+SCENE id=0 host_ms=88000

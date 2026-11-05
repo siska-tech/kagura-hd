@@ -1,0 +1,143 @@
+{
+  "release_ready": false,
+  "scope": "PCM2-only design analysis, no RTL edits or builds",
+  "projection_not_synthesis": true,
+  "register_projection": {
+    "synth_shadow": {
+      "measured_full_ff": 292,
+      "projected_kept_ff": 8,
+      "kept_fields": [
+        "master"
+      ]
+    },
+    "pcm_shadow": {
+      "measured_full_ff": 180,
+      "projected_kept_ff": 180,
+      "kept_fields": [
+        "pcm_start",
+        "pcm_end",
+        "pcm_loop",
+        "pcm_loop_enable",
+        "pcm_gain_l",
+        "pcm_gain_r",
+        "pcm_enable"
+      ]
+    },
+    "accepted_snapshot": {
+      "measured_full_ff": 318,
+      "projected_kept_ff": 42,
+      "kept_fields": [
+        "snapshot_master",
+        "snapshot_pcm_l",
+        "snapshot_pcm_r",
+        "snapshot_pcm_enable"
+      ]
+    },
+    "capture_control": {
+      "measured_full_ff": 8,
+      "projected_kept_ff": 2,
+      "kept_fields": [
+        "capture_pending",
+        "apply_busy"
+      ]
+    },
+    "readback_cache": {
+      "measured_full_ff": 64,
+      "projected_kept_ff": 16,
+      "kept_fields": [
+        "global_data",
+        "pcm_data"
+      ]
+    },
+    "index_read_response_validation": {
+      "measured_full_ff": 19,
+      "projected_kept_ff": 18,
+      "kept_fields": [
+        "index",
+        "rdata",
+        "read_legal",
+        "write_legal"
+      ]
+    },
+    "write_pipeline_settle": {
+      "measured_full_ff": 12,
+      "projected_kept_ff": 12,
+      "kept_fields": [
+        "dw_q",
+        "wd_q",
+        "settle_sr"
+      ]
+    },
+    "pcm_command_pulses": {
+      "measured_full_ff": 6,
+      "projected_kept_ff": 6,
+      "kept_fields": [
+        "pcm_prepare",
+        "pcm_stop",
+        "pcm_clear"
+      ]
+    },
+    "sticky_faults": {
+      "measured_full_ff": 2,
+      "projected_kept_ff": 2,
+      "kept_fields": [
+        "underflow",
+        "overflow"
+      ]
+    }
+  },
+  "projected_register_ff": 286,
+  "projected_removed_register_ff": 615,
+  "top_ff_if_only_register_projection_changed": 5694,
+  "baseline_measured_synth": {
+    "ff": 757,
+    "lut": 793,
+    "alu": 103,
+    "bsram": 0,
+    "ssram": 0,
+    "mult18": 2,
+    "local_ff": 757,
+    "local_lut": 793
+  },
+  "baseline_measured_prefetch": {
+    "ff": 263,
+    "lut": 431,
+    "alu": 176,
+    "bsram": 0,
+    "ssram": 8,
+    "mult18": 0,
+    "local_ff": 263,
+    "local_lut": 431
+  },
+  "baseline_measured_pcm_control": {
+    "ff": 12,
+    "lut": 14,
+    "alu": 0,
+    "bsram": 0,
+    "ssram": 0,
+    "mult18": 0,
+    "local_ff": 12,
+    "local_lut": 14
+  },
+  "planned_base": "FF-only minimal bridge; snapshot192 not carried forward",
+  "planned_bsram_baseline": 19,
+  "planned_audio_additional_bsram": 0,
+  "source_sha256": {
+    "rtl/audio/kagura_audio_registers.sv": "48216aaf6a6a40b6a2384d39492c871d73baf847061ad44993f2826a1cc63f33",
+    "rtl/audio/kagura_audio_synth.sv": "8dacedac0fba49c9ee3e959e7a65c47fdf5df59acfc2ca087bbbaca6de528e29",
+    "rtl/audio/kagura_pcm_control.sv": "bfde93cbee15ff3838dd8857b23e65b2789ca2adc81aeae04f77f0b7d70fd2f3",
+    "rtl/audio/kagura_pcm_prefetch.sv": "1e8dc87d0dea90e8e92a2c164ea7d2fe390b878bedff819f366a004c00c1b4d4",
+    "rtl/audio/kagura_audio_transport.sv": "44ed941b01a6d56ff9fae95ed03fe34edd90ae1e9f4e5fa7a2d50d5ede87f350",
+    "rtl/fb/kagura_fb_core.sv": "f32b96fca98fe456bc6201d52880052b595e561555cacff27d14bc3d364e79a4",
+    "rtl/fb/kagura_fb_commands.sv": "fb6f57e06bc4db59f2de447d9113654176f8c8e0d5ba8879bfa93187291dfdb6",
+    "rtl/fb/kagura_fb_audio_endpoint.sv": "bf5f30392e4c6615d127b63972ffbf5eb3571855fddff812c27b6fe448b810e7",
+    "boards/tang-nano-9k/kagura_fb_top.sv": "c37619ca3a027bf0399df01e5739eeaed8eec2f6d5cb2bc55aa1f8f17341a6bf",
+    "boards/tang-nano-9k/kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0",
+    "boards/tang-nano-9k/phase1.cst": "82ff01e377e4f1b918b0c12c0cdd51502201a8d382444d7f49e6baaba72f9094",
+    "boards/tang-nano-9k/host.cst": "87f6eed7e8c08fccab3fe8e6bbbefbdc261ed443f688c963f5c9be33eb037628"
+  },
+  "protected_bitstream_sha256": {
+    "rmw": "90b5b26189b198326818488056b9c8fb84e515973cdd2432e04287be3a91ef2e",
+    "rx32": "a99c5f8304aed79b8e0d148d6701f24bf5e282022c75c45ca3b0ab62b0d431cf"
+  }
+}

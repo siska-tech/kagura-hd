@@ -1,3 +1,5 @@
+> 履歴資料：この文書の未検証・候補・公開保留などの記述は記録時点の状態です。最終版の選定と現行仕様は [リリース案内](release-validation.md) と [README](../README.md) を参照してください。
+
 # KAGURA-HD の継承元と Desktop 移管
 
 KAGURA-HD は [Kagura-9 の基準コミット](https://github.com/siska-tech/kagura/tree/f562b2ec84605860fdb9f701f5b2e197b5ed4432) を基盤に開発しました。公開スナップショットは新規 main の単独初期コミットとして準備し、開発リポジトリとそのバックアップを保護しています。

@@ -29,6 +29,7 @@ module kagura_audio_packets #(
     // PB1..3 CTS, PB4..6 N (big endian 20bit); PB0 reserved.
     localparam [55:0] ACR_SUB={N20[7:0],N20[15:8],4'h0,N20[19:16],CTS20[7:0],CTS20[15:8],4'h0,CTS20[19:16],8'h00};
     reg acr_pending,audio_sent,avi_sent,spd_sent;
+    reg asp_selected;
     wire [23:0] ah,ih,vh,sh;
     wire [55:0] ab[3:0],ib[3:0],vb[3:0],sb[3:0];
     wire [23:0] words [3:0][1:0];
@@ -46,12 +47,13 @@ module kagura_audio_packets #(
     auxiliary_video_information_info_frame #(.VIDEO_ID_CODE(VIDEO_ID_CODE),.PICTURE_ASPECT_RATIO(ASPECT),.IT_CONTENT(1'b1)) avi(.header(vh),.sub(vb));
     source_product_description_info_frame #(.VENDOR_NAME("KAGURA\0\0"),
         .PRODUCT_DESCRIPTION("KAGURA-9\0\0\0\0\0\0\0\0"),.SOURCE_DEVICE_INFORMATION(8'h08)) spd(.header(sh),.sub(sb));
-    wire take_audio=packet_enable && !acr_pending && count==4;
+    wire take_audio=packet_enable && asp_selected;
+    wire acr_pending_next=(acr_timer==17'(CTS-1)) || (acr_pending && !packet_enable);
     wire [2:0] count_next=take_audio ? 3'd0 : count+{2'b0,sample_valid && sample_ready};
     integer i;
     always @(posedge clk_pixel) begin
         if(reset) begin
-            count<=0; sample_ready<=1; frame_base<=0; header<=0;
+            asp_selected<=0; count<=0; sample_ready<=1; frame_base<=0; header<=0;
             acr_timer<=0; acr_pending<=1; audio_sent<=0; avi_sent<=0; spd_sent<=0;
             for(i=0;i<4;i=i+1) begin collected[i]<=0; sub[i]<=0; end
         end else begin
@@ -60,6 +62,7 @@ module kagura_audio_packets #(
             if(video_field_end) begin audio_sent<=0; avi_sent<=0; spd_sent<=0; end
             if(sample_valid && sample_ready) collected[count[1:0]]<=sample_data;
             count<=count_next;
+            asp_selected<=!acr_pending_next && count_next==4;
             sample_ready<=count_next<4;
             if(packet_enable) begin
                 header<=0;
@@ -69,7 +72,7 @@ module kagura_audio_packets #(
                     for(i=0;i<4;i=i+1) sub[i]<=ACR_SUB;
                     // Preserve a new due event occurring on this exact edge.
                     acr_pending<=acr_timer==17'(CTS-1);
-                end else if(count==4) begin
+                end else if(asp_selected) begin
                     header<=ah;
                     for(i=0;i<4;i=i+1) sub[i]<=ab[i];
                     frame_base<=frame_base==188 ? 8'd0 : frame_base+8'd4;

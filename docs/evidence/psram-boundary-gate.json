@@ -1,0 +1,15 @@
+{
+  "scope": "Independent 8B boundary PSRAM diagnostic; numeric internal STA only; external IO not certified",
+  "quality_gate_pass": true,
+  "setup_gate_ns": 0.1,
+  "setup_slack_ns": 5.514,
+  "hold_slack_ns": 0.708,
+  "setup_violated_endpoints": 0,
+  "hold_violated_endpoints": 0,
+  "routing_completed": true,
+  "routing_evidence": "PnR completion + successful bitstream generation; no error/unrouted message",
+  "bitstream_sha256": "6c52669e3965d2d18ce993944a0e05d6af16f44caece545f328f3cb87afca657",
+  "device_programmed": false,
+  "hardware_pass": false,
+  "release_ready": false
+}

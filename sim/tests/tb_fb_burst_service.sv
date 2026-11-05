@@ -3,6 +3,9 @@
 // This deliberately has no memory data model: only command/response timing is
 // tested. End-to-end data checks remain in tb_fb_burst and the GPU regressions.
 module tb_fb_burst_service;
+    wire rword_valid,scan_word_valid;
+    wire [31:0] rword_data,scan_word_data;
+
     reg clk=0;
     always #5 clk=~clk;
     reg reset=1,request=0,writing=0;
@@ -22,10 +25,10 @@ module tb_fb_burst_service;
         .req_write({writing,2'b00}),.req_addr(60'd0),.req_words,
         .req_wdata(1536'd0),.req_mask(192'd0),.rsp_done,.rsp_error,
         .rsp_data(),.valid,.ready,.write,.addr,.words(count),.wdata,.mask,
-        .done,.error,.rdata);
+        .done,.error,.rdata,.rword_valid,.rword_data,.scan_word_valid,.scan_word_data);
     kagura_fb_burst_ctrl #(.INIT_CYCLES(4)) controller(
         .clk,.reset,.valid,.ready,.write,.addr,.words(count),.wdata,.mask,
-        .done,.error,.rdata,.initialized,
+        .done,.error,.rdata,.rword_valid,.rword_data,.initialized,
         .phy_reset_n(),.phy_cs_n(),.phy_ck_en(),.phy_dq_oe(),
         .phy_dq_o_rise(),.phy_dq_o_fall(),.phy_rwds_oe(),
         .phy_rwds_o_rise(),.phy_rwds_o_fall(),.phy_dq_tx(),.phy_rwds_tx(),
@@ -43,7 +46,8 @@ module tb_fb_burst_service;
             reset=0;
             wait(initialized);
             @(negedge clk);request=1;
-            last_start=-1;starts=0;expected=(wr ? 21 : 27)+2*n;
+            last_start=-1;starts=0;
+            expected=(wr ? 22 : 28)+2*n+((n+7)/8-1)*(wr ? 18 : 24);
             while(starts<4) begin
                 @(posedge clk);
                 if(req_ready[2]) begin
@@ -60,7 +64,7 @@ module tb_fb_burst_service;
     endtask
     initial begin
         for(integer n=1;n<=16;n=n+1) begin measure(0,n);measure(1,n);end
-        $display("PASS tb_fb_burst_service: %0d intervals, read=27+2N write=21+2N",checked);
+        $display("PASS tb_fb_burst_service: %0d intervals, aligned split read=28+2N+24(K-1) write=22+2N+18(K-1)",checked);
         $finish;
     end
     initial begin #1000000;$fatal(1,"timeout");end

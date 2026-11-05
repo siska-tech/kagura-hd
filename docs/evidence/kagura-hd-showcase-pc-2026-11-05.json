@@ -1,0 +1,171 @@
+{
+  "release_ready": false,
+  "all_pc_checks_pass": true,
+  "checks": {
+    "showcase16": {
+      "pass": true,
+      "log": "build/showcase/tests.log",
+      "sha256": "5b6ae915341d0aba4013dfab924bbf98fdd63f401495124f14ae3c3d1d6fbff5"
+    },
+    "existing15": {
+      "pass": true,
+      "log": "build/showcase/existing-drivers.log",
+      "sha256": "75dce216dc9a70b0d8991080060fd86a94e3ff432b9311962c8fd33313f14d15"
+    },
+    "existing_qspi4": {
+      "pass": true,
+      "log": "build/showcase/existing-drivers.log",
+      "sha256": "75dce216dc9a70b0d8991080060fd86a94e3ff432b9311962c8fd33313f14d15"
+    },
+    "micropython192": {
+      "pass": true,
+      "log": "build/showcase/micropython-192k.log",
+      "sha256": "d905d865e0978774fd699aae066f37e8a1a69c6b0557e1a84dd9d0015c9c234e"
+    },
+    "micropython128": {
+      "pass": true,
+      "log": "build/showcase/micropython-128k.log",
+      "sha256": "6e22429f90d958ad74000fd17681753bd8a88ec3fcf11bfbc4c7f43ed69dcc4e"
+    },
+    "ram_loader": {
+      "pass": true,
+      "log": "build/showcase/ram-loader.log",
+      "sha256": "f15a5e40d7bbd4f45dd7587d821d7abef8adc6eabb24ac634429f46c700f8c62"
+    }
+  },
+  "source_sha256": {
+    "software/kagura_fb/showcase/demo_main.py": "3afd0de50678dc52f0ec189ab015d85f890003cd450a7c1f1a054276e8240b76",
+    "software/kagura_fb/showcase/diagnostics.py": "b918ff2b66e1c04b62765ee16bbace0a46dc41328108162acd708b5efbc70c55",
+    "software/kagura_fb/showcase/framebuffer_oracle.py": "c3a9b98c03661c33f053139c22c7a8274a36324700155f7d07dd3aa8aa97d981",
+    "software/kagura_fb/showcase/gpu_api_adapter.py": "70effd97e8328b3cc36aa7f746d0f0831c5c85c045ce2b2f9e13859c093bfbff",
+    "software/kagura_fb/showcase/music.py": "7ae831b4ccf92cf734d6fe19f58b1d9ba8486510fa63cfd57c5eb0836b47ebef",
+    "software/kagura_fb/showcase/pc_mock.py": "2d2a7c8290cadc14acba115f184e1b95eae3e99b1c302ec2363b342f9469d7f6",
+    "software/kagura_fb/showcase/provenance.json": "2797aa72a878fbf6b2cd1bb3ecd7752337895abc8f4cf6e8f87fdfe1e4f6a592",
+    "software/kagura_fb/showcase/README.md": "a9c97964ede46d1f14b54c6c927f4d5d25cc3fe89740175a6cc2821f45195b8c",
+    "software/kagura_fb/showcase/scenes.py": "db354fe6e5dbabd2fdced5c2eb5423d7ecc7e6fe0242a7833f9a81a27e803c14",
+    "software/kagura_fb/showcase/scene_manager.py": "2d67cf9ea22454057a0aed253928ba487a1806657596af828233984c9d7c0433",
+    "software/kagura_fb/showcase/__init__.py": "6c6ec57de9f82ef42d82760f144a4571cb16b3cd6de33aaa7aa9fd65e8ab1fa1",
+    "software/kagura_fb/showcase/tests/memory_micropython.py": "cf0997ab8607daafbb4bdfbf4348b2426c44e7caeedca2399350725813b68baa",
+    "software/kagura_fb/showcase/tests/test_showcase.py": "9c2d672118f139e2068fe90140014ba1b37477b2af3fe330af02c47ba443a58f",
+    "software/kagura_fb/showcase/vendor/ascii_rows.py": "13f1ce7c2ac666a7de4fbeaabf2845d8a9f863816c0e6e40d992559103573a02",
+    "software/kagura_fb/showcase/vendor/font-license.txt": "241e85a27137e1fa190e7848aeca3e8f301cf162c51f6e1c107713ca15b52864",
+    "software/kagura_fb/showcase/vendor/fonts.py": "90c31e0ef33bd1b196d24a026a6e5c38a4c45db8113a916e25111eb8a926e8eb",
+    "software/kagura_fb/showcase/vendor/__init__.py": "6c6ec57de9f82ef42d82760f144a4571cb16b3cd6de33aaa7aa9fd65e8ab1fa1"
+  },
+  "artifacts_sha256": {
+    "build/showcase/preview/contact-sheet.png": "b9b68ac57499deec40ae45551ff5f12fefe44cf3b2e7fa12d901963ba960a5b9",
+    "build/showcase/preview/index.html": "20c8d450569837841e0d2942778fed7c745be49e44aa91943cf79dfe12461c98",
+    "build/showcase/preview/kagura-hd-pc-preview.mp4": "4a94856a17e154f25b8dd43a2b1ff7aec189dd7bd736f749715f1bdaf9e3ff79",
+    "build/showcase/preview/result.json": "95c2af23a15e7a381529ff8fc03165110244cd185903b5af038fd67c602dbc34",
+    "build/showcase/preview/scene_1.png": "b0a6c850e5dc0867897092fd6e5ad777381dd6088a74f1b386b07be92675073b",
+    "build/showcase/preview/scene_2.png": "39b7d549acbcf9e46b8191fffc6e830c9c5027f6b643c9dcf7ef6c90592d0dce",
+    "build/showcase/preview/scene_3.png": "fe109c0474458b872afa51d79a8c75d523b3f3f438b6344e5ad4faa3aa6fc6f4",
+    "build/showcase/preview/scene_4.png": "3480a58599e18f2d7442d3e65a73d10306ce6057e2b81d521379aedf3a2cd1ee",
+    "build/showcase/preview/scene_5.png": "cfff0b21b539d11746f5a3daf6aea96288a73ef57726bc3ff3d31674353cc1cd",
+    "build/showcase/preview/scene_6.png": "d2e227c31c9959023c60d6d3b34f5219e23f7f7d271a1942b4719ab49c74b866",
+    "build/showcase/preview/telemetry.jsonl": "5f11b347997d985a02aad4a76be5468a01d8b1e8463d2a518c7140e09cfd3137",
+    "build/showcase/preview/tiny-horizon.wav": "86bf063c7a12fd7c2e83c24980d67f5012c4aa33acef937573a64172863fc8e4"
+  },
+  "heap_unix_only": {
+    "micropython-128k.log": {
+      "before": 53056,
+      "after_gc": 56096,
+      "sampled_max_alloc": 109568,
+      "sampled_min_free": 19968
+    },
+    "micropython-192k.log": {
+      "before": 53056,
+      "after_gc": 56096,
+      "sampled_max_alloc": 184960,
+      "sampled_min_free": 9344
+    },
+    "ram-loader.log": {
+      "before": 81920,
+      "after_gc": 84992,
+      "sampled_max_alloc": 165728,
+      "sampled_min_free": 28576
+    }
+  },
+  "preview": {
+    "scope": "PC behavioral wire-Mock using existing Device/Audio SDK; NOT RTL or hardware",
+    "frames": 288,
+    "nominal_timeline_seconds": 36.0,
+    "hardware_update_rate_measured": false,
+    "opcode_counts": [
+      255,
+      6158,
+      1152,
+      253,
+      16428,
+      40800,
+      53,
+      3
+    ],
+    "call_statistics_virtual_time_only": {
+      "present_wait_us": [
+        253,
+        0,
+        0
+      ],
+      "fill_us": [
+        6158,
+        0,
+        0
+      ],
+      "blit_us": [
+        53,
+        0,
+        0
+      ],
+      "cursor_wait_us": [
+        51,
+        0,
+        0
+      ]
+    },
+    "wav": {
+      "rate": 48000,
+      "channels": 2,
+      "bits": 16,
+      "samples": 384000,
+      "peak": [
+        10250,
+        11220
+      ],
+      "clipped_samples": 0,
+      "sha256": "86bf063c7a12fd7c2e83c24980d67f5012c4aa33acef937573a64172863fc8e4"
+    },
+    "framebuffer_oracle": "both full pages after each scene",
+    "pcm_upload": "every byte readback checked",
+    "runtime_buffers_bytes": {
+      "scanline": 320,
+      "pcm_generation": 256,
+      "pcm_verify": 256,
+      "cursor": 256
+    },
+    "rp2040_heap_measured": false,
+    "release_ready": false
+  },
+  "protected_bitstreams": {
+    "pcm2_sta04": "642c7a3ce961685279c229dbe9b1577285bd7867353cfaf7de8f4db06b3683a7",
+    "rmw": "90b5b26189b198326818488056b9c8fb84e515973cdd2432e04287be3a91ef2e",
+    "rx32": "a99c5f8304aed79b8e0d148d6701f24bf5e282022c75c45ca3b0ab62b0d431cf"
+  },
+  "fixed_fpga_inputs_unchanged": 40,
+  "root_rtl_boards_diff_empty": true,
+  "existing_driver_unchanged": true,
+  "audio_sdk_reused_verbatim": true,
+  "new_demo_verilator_replay_performed": false,
+  "hardware_test_performed": false,
+  "new_bitstream_generated": false,
+  "rp2040_heap_measured": false,
+  "external_psram_io_verified_by_demo": false,
+  "micropython_version": "3.4.0; MicroPython v1.26.0 on 2026-11-01",
+  "prior_do_not_program_markers_preserved": true,
+  "limitations": [
+    "behavioral Mock is not RTL/IO/PVT proof",
+    "Unix heap fixture is not native RP2040",
+    "Host timing is virtual in preview",
+    "FIFO level/sample position unavailable in ABI"
+  ]
+}

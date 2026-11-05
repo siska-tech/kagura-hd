@@ -6,7 +6,8 @@
 // Two shared 18x9 multipliers serve all voice gains and the master gain.
 module kagura_audio_synth #(
     parameter bit EXTERNAL_SNAPSHOT=0, // caller holds cfg until apply_done
-    parameter bit PCM_ENABLE=0
+    parameter bit PCM_ENABLE=0,
+    parameter bit PCM_ONLY=0
 ) (
     input wire clk, reset,
     input wire apply_valid,
@@ -31,7 +32,7 @@ module kagura_audio_synth #(
     input wire [15:0] cfg_pcm_gain_l, cfg_pcm_gain_r,
     input wire [1:0] cfg_pcm_enable
 );
-    localparam [3:0] IDLE=0,VOICE=1,WAVE=2,MULT=3,MASTER=4,EMIT=5,PREP=6,SAT=7,ACC=8,LOAD=9;
+    localparam [3:0] IDLE=0,VOICE=1,WAVE=2,MULT=3,MASTER=4,EMIT=5,PREP=6,SAT=7,ACC=8,LOAD=9,PCM_DELAY=10;
     reg [3:0] state;
     reg [2:0] channel;
     reg [10:0] divider;
@@ -73,9 +74,9 @@ module kagura_audio_synth #(
     endcase
     // Read even disabled voices; muting is applied to the returned sample.
     // Keep the wide STEP/enable mux away from the shared RAM arbitration.
-    assign wave_read=state==VOICE && channel>=4;
+    assign wave_read=!PCM_ONLY && state==VOICE && channel>=4;
     reg [8:0] wave_addr_q;
-    assign wave_addr=wave_addr_q;
+    assign wave_addr=PCM_ONLY ? 9'd0 : wave_addr_q;
 
     // An eight-voice sum lies within -261120..259080. Split the master input
     // into unsigned low17 plus signed high bits (only -2,-1,0,1 possible),
@@ -120,6 +121,7 @@ module kagura_audio_synth #(
     always @* begin
         invalid=cfg_wave_len[3:0]<5 || cfg_wave_len[3:0]>8 || cfg_wave_len[7:4]<5 || cfg_wave_len[7:4]>8;
         for(integer c=0;c<6;c=c+1) if(c!=3 && cfg_step[c*24+23]) invalid=1;
+        if(PCM_ONLY) invalid=0;
     end
     always @(posedge clk)
         if(reset) begin
@@ -156,7 +158,7 @@ module kagura_audio_synth #(
                 end
             end
             if(divider==11'd1124) begin
-                divider<=0; channel<=0; sum_l<=0; sum_r<=0; cycles<=0; state<=PREP;
+                divider<=0; channel<=PCM_ONLY ? 3'd6 : 3'd0; sum_l<=0; sum_r<=0; cycles<=0; state<=PCM_ONLY ? PCM_DELAY : PREP;
                 if(pending) begin
                     pending<=0; apply_done<=1;
                     active_step<=EXTERNAL_SNAPSHOT ? cfg_step : pending_step;
@@ -178,8 +180,11 @@ module kagura_audio_synth #(
             end else divider<=divider+1'b1;
             if(state!=IDLE) cycles<=cycles+1'b1;
             case(state)
+                // Preserve the PCM input/emit edges of the original 31-cycle
+                // mixer while removing all six synthesized voices.
+                PCM_DELAY: if(cycles==19) state<=PREP;
                 PREP: begin
-                    if(channel<6) begin
+                    if(!PCM_ONLY && channel<6) begin
                         wave_addr_q<={channel==5,wave_index};
                         step_now<=active_step[24*channel +:24]; phase_now<=phase[channel];
                         gain_l<=active_l[8*channel +:8]; gain_r<=active_r[8*channel +:8];
@@ -195,7 +200,7 @@ module kagura_audio_synth #(
                 end
                 VOICE: begin
                     operand_l<=0; operand_r<=0;
-                    if(channel<3) begin
+                    if(!PCM_ONLY && channel<3) begin
                         if(voice_on) begin
                             phase[channel]<=phase_now+step_now;
                             if(step_now!=0 && duty_now!=0) begin
@@ -203,7 +208,7 @@ module kagura_audio_synth #(
                                 operand_r<=phase_now[23:16]<duty_now ? 18'sd127 : -18'sd127;
                             end
                         end
-                    end else if(channel==3) begin
+                    end else if(!PCM_ONLY && channel==3) begin
                         if(voice_on) begin
                             operand_l<=noise_state[14] ? 18'sd127 : -18'sd127;
                             operand_r<=noise_state[14] ? 18'sd127 : -18'sd127;
@@ -211,17 +216,17 @@ module kagura_audio_synth #(
                                 noise_state<={noise_state[13:0],noise_state[14]^noise_state[13]}; noise_count<=active_period;noise_zero<=active_period==0;
                             end else begin noise_count<=noise_count-1'b1;noise_zero<=noise_count==1;end
                         end
-                    end else if(channel<6) begin
+                    end else if(!PCM_ONLY && channel<6) begin
                         if(voice_on) phase[channel]<=phase_now+step_now;
                     end else if(voice_on) begin
                         operand_l<=widen(channel==6 ? pcm_sample0 : pcm_sample1);
                         operand_r<=widen(channel==6 ? pcm_sample0 : pcm_sample1);
                     end
-                    state<=channel==4 || channel==5 ? WAVE : MULT;
+                    state<=!PCM_ONLY && (channel==4 || channel==5) ? WAVE : MULT;
                 end
                 WAVE: begin
-                    operand_l<=voice_on && step_now!=0 ? widen(wave_data) : 18'sd0;
-                    operand_r<=voice_on && step_now!=0 ? widen(wave_data) : 18'sd0;
+                    operand_l<=!PCM_ONLY && voice_on && step_now!=0 ? widen(wave_data) : 18'sd0;
+                    operand_r<=!PCM_ONLY && voice_on && step_now!=0 ? widen(wave_data) : 18'sd0;
                     state<=MULT;
                 end
                 MULT: begin

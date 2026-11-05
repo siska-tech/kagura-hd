@@ -1,0 +1,8 @@
+{
+  "scope": "PC behavioral C/SDK recording; synthetic 30fps schedule, not hardware capture",
+  "frames": 4500,
+  "seconds": 150,
+  "render_seconds": 55.60992570000235,
+  "bytes": 14486058,
+  "audio": "offline original PCM mix"
+}

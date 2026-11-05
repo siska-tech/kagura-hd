@@ -1,0 +1,10 @@
+{
+  "native_bin_sha256": "a0bbf0d6f2058eed09414f162e8bc462d7ac8fdf7e019766c25d5a1414aec027",
+  "full_flash_sha256": "7ea52cb9898e6dbd3b44eb1b80861b28a3fd8026d858973162e05f5df32ee596",
+  "firmware_bytes": 480308,
+  "erased_sectors_end": "0x10076000",
+  "tail_beyond_sectors_unchanged": true,
+  "filesystem_start": "0x100A0000",
+  "filesystem_unchanged": true,
+  "release_ready": false
+}

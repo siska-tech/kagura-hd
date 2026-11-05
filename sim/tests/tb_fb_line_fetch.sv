@@ -1,5 +1,8 @@
 `timescale 1ns/1ps
 module tb_fb_line_fetch;
+    wire rword_valid,scan_word_valid;
+    wire [31:0] rword_data,scan_word_data;
+
     reg clk=0,reset=1;
     wire valid,write;
     always #5 clk=~clk;
@@ -40,7 +43,7 @@ module tb_fb_line_fetch;
         .clk,.reset,.start(fetch_start),.page(line_index>=360),.row(fetch_row),
         .ready(fetch_ready),.done(fetch_done),.error(fetch_error),
         .req_valid(fetch_valid),.req_ready(req_ready[0]),.req_addr(fetch_addr),
-        .rsp_done(rsp_done[0]),.rsp_error(rsp_error[0]),.rsp_data,
+        .rsp_done(rsp_done[0]),.rsp_error(rsp_error[0]),.scan_word_valid,.scan_word_data,
         .bank_we,.bank_addr,.bank_data);
     integer written=0;
     integer cycles=0,line_start=0,line_index=0,burst_index=0,max_line=0;

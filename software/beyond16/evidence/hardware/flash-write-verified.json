@@ -1,0 +1,10 @@
+{
+  "firmware_bytes": 316292,
+  "firmware_sha256": "c66308e09ad46a2104d3924d0a7913b98937b05e7408ade4b523940a6cee200b",
+  "full_flash_sha256": "29001ff651a227cf2d4d8b2286c4dbc67af385ede3d205e1f124518b4295aa4a",
+  "erase_end": "0x1004e000",
+  "tail_unchanged": true,
+  "filesystem_unchanged": true,
+  "fpga_flash_written": false,
+  "release_ready": false
+}

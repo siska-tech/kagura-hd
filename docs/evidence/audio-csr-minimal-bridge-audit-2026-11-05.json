@@ -1,0 +1,250 @@
+{
+  "protected": [
+    {
+      "path": "build/upload-rmw-worktree/build/standard-latched-rmw/impl/pnr/kagura_fb.fs",
+      "sha256": "90B5B26189B198326818488056B9C8FB84E515973CDD2432E04287BE3A91EF2E"
+    },
+    {
+      "path": "build/rx32-scanout-worktree/build/kagura-fb-qspi/impl/pnr/kagura_fb.fs",
+      "sha256": "A99C5F8304AED79B8E0D148D6701F24BF5E282022C75C45CA3B0AB62B0D431CF"
+    },
+    {
+      "path": "build/rx32-scanout-worktree/DO_NOT_PROGRAM.txt",
+      "sha256": "D97C7F7B7703F6BA0D077E2C2E11EEFC398BD8EAAACC67070B88B35E2DF80546"
+    }
+  ],
+  "scope": "comparison audit only",
+  "modules": [
+    {
+      "path": "C:\\Users\\Shion\\Documents\\Projects\\Kagura\\rtl\\audio\\kagura_audio_registers.sv",
+      "sha256": "27C248C5BFD05C1BDFF32C7CBBB37BF8FB1F854733D6034C6845491DF6FF7AC5",
+      "source": "../Kagura"
+    },
+    {
+      "path": "C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\upload-rmw-worktree\\rtl\\audio\\kagura_audio_registers.sv",
+      "sha256": "48216AAF6A6A40B6A2384D39492C871D73BAF847061AD44993F2826A1CC63F33",
+      "source": "build/upload-rmw-worktree"
+    },
+    {
+      "path": "C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-host-csr-worktree\\rtl\\audio\\kagura_audio_registers.sv",
+      "sha256": "9A3F6E47E4C8D92DBC74B4FD298EF09A0F539403509249B1D9E5ABBB1EE8CCBB",
+      "source": "build/audio-host-csr-worktree"
+    },
+    {
+      "path": "C:\\Users\\Shion\\Documents\\Projects\\Kagura\\rtl\\audio\\kagura_audio_synth.sv",
+      "sha256": "39F2028B8C75F525A88601384E96B5D3A42D26C2D736E53DEC83D822BF123E0F",
+      "source": "../Kagura"
+    },
+    {
+      "path": "C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\upload-rmw-worktree\\rtl\\audio\\kagura_audio_synth.sv",
+      "sha256": "8DACEDAC0FBA49C9EE3E959E7A65C47FDF5DF59ACFC2CA087BBBACA6DE528E29",
+      "source": "build/upload-rmw-worktree"
+    },
+    {
+      "path": "C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-host-csr-worktree\\rtl\\audio\\kagura_audio_synth.sv",
+      "sha256": "8DACEDAC0FBA49C9EE3E959E7A65C47FDF5DF59ACFC2CA087BBBACA6DE528E29",
+      "source": "build/audio-host-csr-worktree"
+    },
+    {
+      "path": "C:\\Users\\Shion\\Documents\\Projects\\Kagura\\rtl\\audio\\kagura_pcm_control.sv",
+      "sha256": "C7327D07D95D5351EE3016FBA2B905F222F116BD3C1BC4F2C1DA6EDE37F287BD",
+      "source": "../Kagura"
+    },
+    {
+      "path": "C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\upload-rmw-worktree\\rtl\\audio\\kagura_pcm_control.sv",
+      "sha256": "BFDE93CBEE15FF3838DD8857B23E65B2789CA2ADC81AEAE04F77F0B7D70FD2F3",
+      "source": "build/upload-rmw-worktree"
+    },
+    {
+      "path": "C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-host-csr-worktree\\rtl\\audio\\kagura_pcm_control.sv",
+      "sha256": "BFDE93CBEE15FF3838DD8857B23E65B2789CA2ADC81AEAE04F77F0B7D70FD2F3",
+      "source": "build/audio-host-csr-worktree"
+    },
+    {
+      "path": "C:\\Users\\Shion\\Documents\\Projects\\Kagura\\rtl\\audio\\kagura_pcm_prefetch.sv",
+      "sha256": "E4A6C2EFCB9D656A2824C42524B4976A924664C85C572DF5A330ABF851873BB0",
+      "source": "../Kagura"
+    },
+    {
+      "path": "C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\upload-rmw-worktree\\rtl\\audio\\kagura_pcm_prefetch.sv",
+      "sha256": "1E8DC87D0DEA90E8E92A2C164EA7D2FE390B878BEDFF819F366A004C00C1B4D4",
+      "source": "build/upload-rmw-worktree"
+    },
+    {
+      "path": "C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-host-csr-worktree\\rtl\\audio\\kagura_pcm_prefetch.sv",
+      "sha256": "1E8DC87D0DEA90E8E92A2C164EA7D2FE390B878BEDFF819F366A004C00C1B4D4",
+      "source": "build/audio-host-csr-worktree"
+    }
+  ],
+  "release_ready": false,
+  "resources": [
+    {
+      "alu": "703(0)",
+      "bsram": "19(0)",
+      "variant": "baseline",
+      "ff": "4932(30)",
+      "name": "kagura_fb_top",
+      "lut": "6457(267)"
+    },
+    {
+      "alu": null,
+      "bsram": null,
+      "variant": "baseline",
+      "ff": null,
+      "name": "clocks",
+      "lut": "1(1)"
+    },
+    {
+      "alu": "381(0)",
+      "bsram": "16(0)",
+      "variant": "baseline",
+      "ff": "866(36)",
+      "name": "host",
+      "lut": "2120(22)"
+    },
+    {
+      "alu": "322(0)",
+      "bsram": "3(0)",
+      "variant": "baseline",
+      "ff": "3996(7)",
+      "name": "core",
+      "lut": "4050(7)"
+    },
+    {
+      "alu": null,
+      "bsram": null,
+      "variant": "baseline",
+      "ff": "40(40)",
+      "name": "phy",
+      "lut": "19(19)"
+    },
+    {
+      "alu": "907(0)",
+      "bsram": "19(0)",
+      "variant": "03",
+      "ff": "6372(30)",
+      "name": "kagura_fb_top",
+      "lut": "7589(255)"
+    },
+    {
+      "alu": null,
+      "bsram": null,
+      "variant": "03",
+      "ff": null,
+      "name": "clocks",
+      "lut": "1(1)"
+    },
+    {
+      "alu": "15(15)",
+      "bsram": null,
+      "variant": "03",
+      "ff": "982(81)",
+      "name": "audio_endpoint",
+      "lut": "821(145)"
+    },
+    {
+      "alu": "377(0)",
+      "bsram": "16(0)",
+      "variant": "03",
+      "ff": "880(50)",
+      "name": "host",
+      "lut": "2131(36)"
+    },
+    {
+      "alu": "515(0)",
+      "bsram": "3(0)",
+      "variant": "03",
+      "ff": "4440(7)",
+      "name": "core",
+      "lut": "4363(7)"
+    },
+    {
+      "alu": null,
+      "bsram": null,
+      "variant": "03",
+      "ff": "40(40)",
+      "name": "phy",
+      "lut": "18(18)"
+    },
+    {
+      "alu": "907(0)",
+      "bsram": "19(0)",
+      "variant": "05",
+      "ff": "6053(30)",
+      "name": "kagura_fb_top",
+      "lut": "7646(258)"
+    },
+    {
+      "alu": null,
+      "bsram": null,
+      "variant": "05",
+      "ff": null,
+      "name": "clocks",
+      "lut": "1(1)"
+    },
+    {
+      "alu": "15(15)",
+      "bsram": null,
+      "variant": "05",
+      "ff": "663(81)",
+      "name": "audio_endpoint",
+      "lut": "837(151)"
+    },
+    {
+      "alu": "377(0)",
+      "bsram": "16(0)",
+      "variant": "05",
+      "ff": "880(50)",
+      "name": "host",
+      "lut": "2146(37)"
+    },
+    {
+      "alu": "515(0)",
+      "bsram": "3(0)",
+      "variant": "05",
+      "ff": "4440(7)",
+      "name": "core",
+      "lut": "4386(7)"
+    },
+    {
+      "alu": null,
+      "bsram": null,
+      "variant": "05",
+      "ff": "40(40)",
+      "name": "phy",
+      "lut": "18(18)"
+    }
+  ],
+  "unvalidated_stopped_wip": [
+    {
+      "path": "build/audio-host-csr-worktree/rtl/audio/kagura_audio_registers.sv",
+      "sha256": "9A3F6E47E4C8D92DBC74B4FD298EF09A0F539403509249B1D9E5ABBB1EE8CCBB"
+    },
+    {
+      "path": "build/audio-host-csr-worktree/rtl/audio/kagura_audio_readback_ram.sv",
+      "sha256": "84D2C2CD0804F22318C95A78528DA98BBA614AFA478E3E5B03A5BC603A3285C0"
+    },
+    {
+      "path": "build/audio-host-csr-worktree/rtl/fb/kagura_fb_audio_endpoint.sv",
+      "sha256": "DE1436B451DD56ADF7DB78DB9F445D6252CFE74531D3F690D9C8CEE9C2E97A5B"
+    }
+  ],
+  "k9_hd_normalized_comparison": [
+    {
+      "module": "kagura_audio_registers.sv",
+      "crlf_normalized_equal": true
+    },
+    {
+      "module": "kagura_audio_synth.sv",
+      "crlf_normalized_equal": false
+    },
+    {
+      "module": "kagura_pcm_control.sv",
+      "crlf_normalized_equal": true
+    },
+    {
+      "module": "kagura_pcm_prefetch.sv",
+      "crlf_normalized_equal": true
+    }
+  ]
+}

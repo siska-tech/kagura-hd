@@ -1,0 +1,14 @@
+{
+  "generated/asset-report.json": "49a05e7b3614573d655f2a0ac2ba8a502a4239d09db516a81e53f2f3e163ae4b",
+  "generated/assets.inc": "18dfaff32c6f32750d7fa36c24063e67d3a0f5936e731534574d37e9f1438a92",
+  "generated/bgm.lz": "5badfd919369f05a363379c5fe9c7ee75bf9fd1316bcd7aace80645d7f17c12d",
+  "generated/bgm.s8": "c407e1ab9be9b1fa1c47d623e6fe03344be65f70e753be37c217f4371b14bc7b",
+  "generated/bgm.wav": "def4d051e35b3ff06b71aeb08924e425a76a66a17e164a7e425084753f4dc4e6",
+  "generated/frame-atlas.png": "72111129e249780a05d219f9f4b61855926376947b88c88fdb2d93cc442cab46",
+  "generated/frame.4bpp": "e659e3cde231018d4146a11b4d0af9564e2f56381fe25fa3f2730066b4c65454",
+  "generated/fx0.s8": "a6030f1d212aa7026ec76657232e26fbd5b2a8abd26ca1c080e76259ed9783e0",
+  "generated/fx1.s8": "1c8e21b78492b5b05f424be152d2d10f4c811efff41de7da1c1e7009b716b62c",
+  "generated/fx2.s8": "f20539c712165d09a425a74466b4536ff00acc4c4df967f18e8bf0f6bafa7c62",
+  "generated/fx3.s8": "037ba298ab1ada37d025861df1207006f57df5b2566ff9db86322c40737a8ab6",
+  "generated/plasma.png": "1ecae398730b720e1b0a786c140af80b3e018b45064cdb42e448bebbbdcf8caa"
+}

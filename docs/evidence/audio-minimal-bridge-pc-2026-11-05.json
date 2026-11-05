@@ -1,0 +1,112 @@
+{
+  "release_ready": false,
+  "hardware_programming_performed": false,
+  "bitstream_exists": false,
+  "sta_evaluated": false,
+  "old_audio_and_baseline_unchanged": true,
+  "preserved_inputs": {
+    "rtl/audio/kagura_audio_registers.sv": "48216aaf6a6a40b6a2384d39492c871d73baf847061ad44993f2826a1cc63f33",
+    "rtl/audio/kagura_audio_synth.sv": "8dacedac0fba49c9ee3e959e7a65c47fdf5df59acfc2ca087bbbaca6de528e29",
+    "rtl/audio/kagura_audio_transport.sv": "44ed941b01a6d56ff9fae95ed03fe34edd90ae1e9f4e5fa7a2d50d5ede87f350",
+    "rtl/audio/kagura_pcm_control.sv": "bfde93cbee15ff3838dd8857b23e65b2789ca2adc81aeae04f77f0b7d70fd2f3",
+    "rtl/audio/kagura_pcm_prefetch.sv": "1e8dc87d0dea90e8e92a2c164ea7d2fe390b878bedff819f366a004c00c1b4d4",
+    "rtl/fb/kagura_fb_burst_ctrl.sv": "4d2189aadf187a40df48e25fe892f28db7a3c8569ade747dfcb29bdff7bb8f5c",
+    "rtl/memory/kagura_hyperram_phy_gowin.sv": "e20611d49ed5ebebb84db01cbee732f9198db57ec4e4ff8ef43b1a84b69d72c0",
+    "boards/tang-nano-9k/kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0",
+    "boards/tang-nano-9k/phase1.cst": "82ff01e377e4f1b918b0c12c0cdd51502201a8d382444d7f49e6baaba72f9094",
+    "boards/tang-nano-9k/host.cst": "87f6eed7e8c08fccab3fe8e6bbbefbdc261ed443f688c963f5c9be33eb037628",
+    "tools/build-fb.tcl": "d711c1d1aa125fd079696efee707471f47769a0687eef159b5a20dcdeba0ae69"
+  },
+  "checks": {
+    "minimal86": {
+      "pass": true,
+      "log": "build/audio-csr/endpoint-run.log",
+      "sha256": "f3b8a555412b5f8bee1c1377b254f6098b4acb77a426b2f014d145fe7a895a88"
+    },
+    "board_spi": {
+      "pass": true,
+      "log": "build/analysis/board.log",
+      "sha256": "aa51a8fb3719d7a31ca14710ba25c73b14e9c8dcde2d71f9906e8fc9a529195e"
+    },
+    "board_qspi": {
+      "pass": true,
+      "log": "build/analysis/audio-qspi.log",
+      "sha256": "597b2502bc13aac2f99886209123fe62e53da71619f84fe8fd424df5bc840bdb"
+    },
+    "sdk7": {
+      "pass": true,
+      "log": "build/analysis/audio-sdk.log",
+      "sha256": "55c443882838af1a647fbd8c514e974fa1fc55b0f5546ea5d7e5f0d11fdd0998"
+    },
+    "drivers19": {
+      "pass": true,
+      "log": "build/analysis/drivers.log",
+      "sha256": "e85a1fb70ed9a586bc2ec41575bbf499d8ff5dfef1215a6f3a1719949bb53a6c"
+    },
+    "qspi_driver4": {
+      "pass": true,
+      "log": "build/analysis/drivers.log",
+      "sha256": "e85a1fb70ed9a586bc2ec41575bbf499d8ff5dfef1215a6f3a1719949bb53a6c"
+    },
+    "fb26": {
+      "pass": true,
+      "log": "build/analysis/fb-regression.log",
+      "sha256": "a76e632024051c973e275ac4cf730c533f4c6a17ca24b829a77779c97f5c124b"
+    },
+    "wrap12": {
+      "pass": true,
+      "log": "build/analysis/wrap-regression.log",
+      "sha256": "d37a28d283ba3eee9e33cfe6a58bbc8b9b4d5c6b537e030acfe665cbb3abc921"
+    },
+    "common22": {
+      "pass": true,
+      "log": "build/analysis/common-regression.log",
+      "sha256": "0a780e0591f5a6aed93a101c0b849f02a0b5e5c01a05848bb44c73b601780bf8"
+    }
+  },
+  "all_pc_checks_pass": true,
+  "feature_changes": [
+    "rtl/fb/kagura_fb_audio_endpoint.sv",
+    "rtl/fb/kagura_fb_commands.sv",
+    "rtl/fb/kagura_fb_core.sv",
+    "rtl/fb/kagura_fb_host.sv",
+    "rtl/fb/kagura_fb_registers.sv",
+    "rtl/fb/sources.f",
+    "boards/tang-nano-9k/kagura_fb_top.sv",
+    "software/kagura_fb/kagura_fb.c",
+    "software/kagura_fb/kagura_fb.h",
+    "software/kagura_fb/kagura_fb_audio.py",
+    "software/kagura_fb/tests/test_audio_csr.py",
+    "sim/tests/tb_audio_registers_default_equivalence.sv",
+    "sim/tests/tb_fb_audio_endpoint.sv",
+    "sim/tests/tb_fb_board.sv",
+    "sim/tests/tb_fb_board_qspi.sv",
+    "tools/test-audio-default-equivalence.sh",
+    "tools/test-fb-audio-csr.sh",
+    "tools/test-fb-audio-qspi.sh"
+  ],
+  "feature_sha256": {
+    "rtl/fb/kagura_fb_audio_endpoint.sv": "bf5f30392e4c6615d127b63972ffbf5eb3571855fddff812c27b6fe448b810e7",
+    "rtl/fb/kagura_fb_commands.sv": "fb6f57e06bc4db59f2de447d9113654176f8c8e0d5ba8879bfa93187291dfdb6",
+    "rtl/fb/kagura_fb_core.sv": "f32b96fca98fe456bc6201d52880052b595e561555cacff27d14bc3d364e79a4",
+    "rtl/fb/kagura_fb_host.sv": "f522154b37c8e144c6b446954ce51c635180cf64dc307f2b86bf0666bb7977c8",
+    "rtl/fb/kagura_fb_registers.sv": "83c100e434a61b6e5f6b796780fa9f5556f721d0b01e522f762789a66c0fc4c3",
+    "rtl/fb/sources.f": "04009027e55af30f806f08488fdb551ad97c890deabd731e500e1cac73b79731",
+    "boards/tang-nano-9k/kagura_fb_top.sv": "c37619ca3a027bf0399df01e5739eeaed8eec2f6d5cb2bc55aa1f8f17341a6bf",
+    "software/kagura_fb/kagura_fb.c": "4cb09908b61ad1b4dd71ecb055ccf53782c1ed26e69a02b9fd5941a677c29214",
+    "software/kagura_fb/kagura_fb.h": "701f7ff8a260ccb8d237e53cd62929a46e50db869f041f5a3a6cea0d32229f9e",
+    "software/kagura_fb/kagura_fb_audio.py": "3f61d52deeea20c04a6cd7490cc104cde2ceafec8689c0b39f20da460e2effe0",
+    "software/kagura_fb/tests/test_audio_csr.py": "4bfb5204e565ca627f06392a3bc554e694a464cf4e129ce82d1eb81bcf411bac",
+    "sim/tests/tb_audio_registers_default_equivalence.sv": "7d86aea9fb1e4589668b624e5636d75a277fd69579c7cf6adfdf33fe5bdbdcd6",
+    "sim/tests/tb_fb_audio_endpoint.sv": "39f88a71eeac69108e63f676209d35bff8049d372efe311880534d982028b45f",
+    "sim/tests/tb_fb_board.sv": "3b88f14d4c5a78ef7fb0cefa9b596debe774708cd877d951f099fc82d4fa619f",
+    "sim/tests/tb_fb_board_qspi.sv": "272acaf4cc060458b9b2d9e70442c06930d153d2081188c98b724509a45f4821",
+    "tools/test-audio-default-equivalence.sh": "6011e5d7eb5292136984e4bfbaebff0ea32c606396eff9cddf8acd8375533578",
+    "tools/test-fb-audio-csr.sh": "5cda37b8dbec5b1f0c34fd6264f6481c17c7a4e51439a085dcde244b0ef469f4",
+    "tools/test-fb-audio-qspi.sh": "68b9528b24ef65a181925e8b3f27a3ebae7f73ea65dc1be0d1b8246bd2ad75b2"
+  },
+  "raw_log_archive": {
+    "path": "docs/evidence/audio-minimal-bridge-rawlogs-2026-11-05.zip",
+    "sha256": "5fe168d2d8aef34400e26a3989029a0ff9b346f518d84e02a5be5f7350c4a26c"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "release_ready": false,
+  "bitstream": "build\\pcm2-timing-04\\build\\standard-timing-04\\impl\\pnr\\kagura_fb.fs",
+  "bitstream_sha256": "642c7a3ce961685279c229dbe9b1577285bd7867353cfaf7de8f4db06b3683a7",
+  "previous_freeze_files_verified": 250,
+  "freeze_mismatches": [],
+  "original_backup": {
+    "path": "build\\midnight-hardware\\recovery\\current-flash-2MiB.bin",
+    "sha256": "7134077f8bb0d5a1cc426235a8e3ee274dbc7a6f9718e1ee6b152036996a6da6",
+    "bytes": 2097152
+  },
+  "last_native_flash_snapshot": {
+    "path": "build\\midnight-hardware\\recovery\\after-native-flash.bin",
+    "sha256": "7ea52cb9898e6dbd3b44eb1b80861b28a3fd8026d858973162e05f5df32ee596",
+    "bytes": 2097152
+  },
+  "current_device_flash_read": true,
+  "hardware_opened": true,
+  "rtl_changes_this_task": 0,
+  "new_backup": {
+    "bytes": 2097152,
+    "sha256": "7ea52cb9898e6dbd3b44eb1b80861b28a3fd8026d858973162e05f5df32ee596",
+    "picotool_verify": true,
+    "uid": "REDACTED_DEVICE_UID",
+    "restore_target": "immediate pre-campaign MIDNIGHT TERMINAL image",
+    "flash_written": false,
+    "release_ready": false
+  },
+  "fpga_sram_programs_this_campaign": 1,
+  "fpga_flash_written": false,
+  "publication_redactions": [
+    "individual RP2040 device UID"
+  ]
+}

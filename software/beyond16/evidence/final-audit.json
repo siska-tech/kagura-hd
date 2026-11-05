@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "scope": "offline artifact consistency; no physical hardware IO",
+  "frozen_source_files": 34,
+  "oracle_timestamps_per_variant": 20,
+  "oracle_variants": 2,
+  "traced_descriptors": 21306,
+  "PC_runtime_upload_bytes": 0,
+  "firmware_bytes": 316292,
+  "filesystem_bounds": "PASS",
+  "video_seconds": 150.0,
+  "hardware": "separate physical finite run recorded",
+  "release_ready": false,
+  "artifacts": {
+    "out/rp2040/beyond16.bin": {
+      "bytes": 316292,
+      "sha256": "c66308e09ad46a2104d3924d0a7913b98937b05e7408ade4b523940a6cee200b"
+    },
+    "out/rp2040/beyond16.elf": {
+      "bytes": 810652,
+      "sha256": "52acd188ebecee24e16feb6480c4009a0dab7d01d7f7b1cea4c9477cba8e58a6"
+    },
+    "out/beyond16-pc.mp4": {
+      "bytes": 14486058,
+      "sha256": "e6702b171b3ebaf663c6bb2001e34b7672767b10f782ef48e09e0caf1d86a233"
+    },
+    "out/beyond16-pc.wav": {
+      "bytes": 28800044,
+      "sha256": "29b26ab511c14847895dfb8e34eef2c766f94bbcbbf5b24eea48c3b18698f86e"
+    },
+    "evidence/contact-sheet.png": {
+      "bytes": 91129,
+      "sha256": "8e9b22dfac6a6ba350d2e286859ccb0ef6f7b45a7c5023f81d9ba5f8558ea327"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-05",
+  "observed_first_bad_boundary": "CSR accepted bytes -> upload SP output",
+  "ff_counterfactual_all_six_match": true,
+  "source_differences": {
+    "sp": [
+      "diagnostics/host-window-observe/build.tcl",
+      "rtl/fb/kagura_fb_upload_word.sv"
+    ],
+    "ff": [
+      "diagnostics/host-window-observe/build-ff.tcl",
+      "diagnostics/host-window-observe/kagura_fb_upload_word_ff.sv"
+    ]
+  },
+  "shared_input_hashes_match": true,
+  "exact_cause": "UNRESOLVED: SP configuration/byte-enable support or port timing/implementation",
+  "original_psram_failure_same_cause": "UNPROVEN",
+  "additional_sram_programs": 2,
+  "restores": 2,
+  "flash_writes": 0,
+  "release_ready": false,
+  "protected_artifacts": {
+    "build/rx32-scanout-worktree/build/kagura-fb-qspi/impl/pnr/kagura_fb.fs": "a99c5f8304aed79b8e0d148d6701f24bf5e282022c75c45ca3b0ab62b0d431cf",
+    "build/psram-probe-standard/candidate-v3/impl/pnr/psram_probe.fs": "f6619b747171c92ea9fdb0aa562acfadfdf7af37940d2d6286b9535eebca62ac",
+    "build/rx32-scanout-worktree/DO_NOT_PROGRAM.txt": "d97c7f7b7703f6ba0d077e2c2e11eefc398bd8eaaacc67070b88b35e2df80546"
+  },
+  "hardware_cases": {
+    "sp": "08bb172eb68f10ea03ad3ab362ad03a0d43cc52f054be2db0b49da8f3b234752",
+    "ff": "5f10672147b575d226e788c59e72df6a2a696908382b5578cd3b9165487c7848"
+  }
+}

@@ -1,0 +1,5 @@
+PASS: wrap32 linear READ/WRITE, every word offset/1..16 words, masks, guards, die/reset: cases=272 max_read=106
+- sim/tests/tb_fb_wrap32.sv:90: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 166us; walltime 0.035 s; speed 4.634 ms/s
+- Verilator: cpu 0.036 s on 1 threads; alloced 129 MB

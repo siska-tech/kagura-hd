@@ -1,0 +1,238 @@
+{
+  "date": "2026-11-05",
+  "test_id": "RMW-INTEGRATED-4B-01",
+  "outcome": "PASS_LIMITED_UPLOAD_AND_PSRAM4",
+  "branch": "fix/upload-word-rmw-01",
+  "bitstream_sha256": "90b5b26189b198326818488056b9c8fb84e515973cdd2432e04287be3a91ef2e",
+  "release_ready": false,
+  "upload_cases": 5,
+  "upload_bytes": 112,
+  "psram_write_commands": 5,
+  "psram_read_comparisons": 17,
+  "target_address_decimal": 300032,
+  "target_patterns": [
+    "ed0f2143",
+    "43210fed",
+    "12345678"
+  ],
+  "guards": [
+    {
+      "address": 300000,
+      "expected": "aa55aa55"
+    },
+    {
+      "address": 300064,
+      "expected": "55aa55aa"
+    }
+  ],
+  "readback_records": [
+    {
+      "test_id": "GUARD-SEED",
+      "address": 300000,
+      "length": 4,
+      "expected": "aa55aa55",
+      "actual": "aa55aa55",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "GUARD-SEED",
+      "address": 300064,
+      "length": 4,
+      "expected": "55aa55aa",
+      "actual": "55aa55aa",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-ED-FIRST",
+      "address": 300032,
+      "length": 4,
+      "expected": "ed0f2143",
+      "actual": "ed0f2143",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-ED-REPEAT",
+      "address": 300032,
+      "length": 4,
+      "expected": "ed0f2143",
+      "actual": "ed0f2143",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-ED-GUARD",
+      "address": 300000,
+      "length": 4,
+      "expected": "aa55aa55",
+      "actual": "aa55aa55",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-ED-GUARD",
+      "address": 300064,
+      "length": 4,
+      "expected": "55aa55aa",
+      "actual": "55aa55aa",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-ED-AFTER-OTHER-WAIT",
+      "address": 300032,
+      "length": 4,
+      "expected": "ed0f2143",
+      "actual": "ed0f2143",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-REV-FIRST",
+      "address": 300032,
+      "length": 4,
+      "expected": "43210fed",
+      "actual": "43210fed",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-REV-REPEAT",
+      "address": 300032,
+      "length": 4,
+      "expected": "43210fed",
+      "actual": "43210fed",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-REV-GUARD",
+      "address": 300000,
+      "length": 4,
+      "expected": "aa55aa55",
+      "actual": "aa55aa55",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-REV-GUARD",
+      "address": 300064,
+      "length": 4,
+      "expected": "55aa55aa",
+      "actual": "55aa55aa",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-REV-AFTER-OTHER-WAIT",
+      "address": 300032,
+      "length": 4,
+      "expected": "43210fed",
+      "actual": "43210fed",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-1234-FIRST",
+      "address": 300032,
+      "length": 4,
+      "expected": "12345678",
+      "actual": "12345678",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-1234-REPEAT",
+      "address": 300032,
+      "length": 4,
+      "expected": "12345678",
+      "actual": "12345678",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-1234-GUARD",
+      "address": 300000,
+      "length": 4,
+      "expected": "aa55aa55",
+      "actual": "aa55aa55",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-1234-GUARD",
+      "address": 300064,
+      "length": 4,
+      "expected": "55aa55aa",
+      "actual": "55aa55aa",
+      "xor": "00000000",
+      "error_bytes": []
+    },
+    {
+      "test_id": "P4-1234-AFTER-OTHER-WAIT",
+      "address": 300032,
+      "length": 4,
+      "expected": "12345678",
+      "actual": "12345678",
+      "xor": "00000000",
+      "error_bytes": []
+    }
+  ],
+  "init_gpio": {
+    "ready": 1,
+    "busy": 0,
+    "irq_n": 1
+  },
+  "identity_hex": "4b46423101027f",
+  "physical_conditions": {
+    "system_mhz": 54,
+    "psram_ck_mhz_nominal": 54,
+    "ck_phase_deg_nominal": 67.5,
+    "LAT": 14,
+    "RDL": 6,
+    "rwds_read_sampling": "unused; fixed capture",
+    "pad_waveforms_measured": false
+  },
+  "predicted_target_command": {
+    "length_bytes": 4,
+    "chunk_count": 1,
+    "chunk_words": 1,
+    "host_inhibit_mask_hex": "fffffffffffffff0",
+    "controller_chunk_mask_hex": "0",
+    "ca_write_hex": "200049400000",
+    "ca_read_hex": "a00049400000",
+    "physical_ca_observed": false
+  },
+  "recovery": {
+    "sram_programs": 1,
+    "reprograms": 1,
+    "diagnostic_retries": 0,
+    "flash_writes": 0,
+    "firmware_changes": 0,
+    "flash_before_after_sha256": "7134077f8bb0d5a1cc426235a8e3ee274dbc7a6f9718e1ee6b152036996a6da6",
+    "boot_before_sha256": "9ef26228ee5039efa193938d4d11cc036d4b2589289250719f484647716b62b0",
+    "restored_abi": [
+      0,
+      6
+    ],
+    "console_resume_required": true,
+    "hdmi_confirmed": true
+  },
+  "not_tested": [
+    "PSRAM boundary crossing",
+    "PSRAM 8/16/32/64B",
+    "cold power cycle",
+    "phase sweep",
+    "PVT",
+    "external IO min/max signoff",
+    "GPU feature hardware acceptance"
+  ],
+  "source_sha256": {
+    "rtl/fb/kagura_fb_registers.sv": "d17195466f66952f3732f59a8bf2fa21953f0149c0ebb9de360a1b11cb589e65",
+    "rtl/fb/kagura_fb_upload_word.sv": "8382ea49cec0ca8b8317b910c3870201985c593c7c582ef6a4beebe5530815f2",
+    "rtl/fb/kagura_fb_burst_ctrl.sv": "4d2189aadf187a40df48e25fe892f28db7a3c8569ade747dfcb29bdff7bb8f5c",
+    "rtl/memory/kagura_hyperram_phy_gowin.sv": "e20611d49ed5ebebb84db01cbee732f9198db57ec4e4ff8ef43b1a84b69d72c0"
+  }
+}

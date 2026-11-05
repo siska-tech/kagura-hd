@@ -1,0 +1,58 @@
+[
+  {
+    "scene": 0,
+    "static_roi_pixels": 76800,
+    "within_24_rgb_fraction": 0.9728255208333333,
+    "median_channel_error": 0.0,
+    "scope": "static header/source-bank calibrated RGB shape consistency; excludes dynamic stage; not raw framebuffer CRC"
+  },
+  {
+    "scene": 1,
+    "static_roi_pixels": 76800,
+    "within_24_rgb_fraction": 0.9710677083333333,
+    "median_channel_error": 0.0,
+    "scope": "static header/source-bank calibrated RGB shape consistency; excludes dynamic stage; not raw framebuffer CRC"
+  },
+  {
+    "scene": 2,
+    "static_roi_pixels": 76800,
+    "within_24_rgb_fraction": 0.9708072916666667,
+    "median_channel_error": 0.0,
+    "scope": "static header/source-bank calibrated RGB shape consistency; excludes dynamic stage; not raw framebuffer CRC"
+  },
+  {
+    "scene": 3,
+    "static_roi_pixels": 76800,
+    "within_24_rgb_fraction": 0.9678255208333333,
+    "median_channel_error": 0.0,
+    "scope": "static header/source-bank calibrated RGB shape consistency; excludes dynamic stage; not raw framebuffer CRC"
+  },
+  {
+    "scene": 4,
+    "static_roi_pixels": 76800,
+    "within_24_rgb_fraction": 0.9729166666666667,
+    "median_channel_error": 0.0,
+    "scope": "static header/source-bank calibrated RGB shape consistency; excludes dynamic stage; not raw framebuffer CRC"
+  },
+  {
+    "scene": 5,
+    "static_roi_pixels": 76800,
+    "within_24_rgb_fraction": 0.9711328125,
+    "median_channel_error": 0.0,
+    "scope": "static header/source-bank calibrated RGB shape consistency; excludes dynamic stage; not raw framebuffer CRC"
+  },
+  {
+    "scene": 6,
+    "static_roi_pixels": 76800,
+    "within_24_rgb_fraction": 0.9708072916666667,
+    "median_channel_error": 0.0,
+    "scope": "static header/source-bank calibrated RGB shape consistency; excludes dynamic stage; not raw framebuffer CRC"
+  },
+  {
+    "scene": 7,
+    "static_roi_pixels": 76800,
+    "within_24_rgb_fraction": 0.9677083333333333,
+    "median_channel_error": 0.0,
+    "scope": "static header/source-bank calibrated RGB shape consistency; excludes dynamic stage; not raw framebuffer CRC"
+  }
+]

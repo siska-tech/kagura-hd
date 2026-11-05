@@ -1,3 +1,5 @@
+> 履歴資料：この文書の未検証・候補・公開保留などの記述は記録時点の状態です。最終版の選定と現行仕様は [リリース案内](release-validation.md) と [README](../README.md) を参照してください。
+
 # Kagura-FB implementation status
 
 > 設計・実装・診断構成の開発記録です。過去の製品名・資源値・ビルド構成が含まれます。現行 KAGURA-HD の仕様と最新の検証値は [README](../README.md) を参照してください。

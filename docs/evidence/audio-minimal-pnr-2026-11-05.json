@@ -1,0 +1,95 @@
+{
+  "release_ready": false,
+  "attempts": 1,
+  "place_option": 1,
+  "route_option": 2,
+  "tool_exit_code": 1,
+  "errors": [
+    "ERROR  (PR0003) : Failed to place with '124 LUT(s)(equivalent, include LUT/MUX/ALU) unPlaced, 273 REG(s) unPlaced ' in the device 'GW1NR-9C-QFN88P-6'"
+  ],
+  "unplaced": {
+    "lut_equivalent": 124,
+    "register": 273
+  },
+  "placement_pass": false,
+  "routing_pass": false,
+  "timing": null,
+  "numeric_sta_gate_pass": false,
+  "resource_usage": {
+    "Logic": {
+      "used": 8570,
+      "available": 8640
+    },
+    "Register": {
+      "used": 6309,
+      "available": 6771
+    },
+    "CLS": {
+      "used": 4320,
+      "available": 4320
+    },
+    "BSRAM": {
+      "used": 19,
+      "available": 26
+    },
+    "IOLOGIC": {
+      "used": 28,
+      "available": 97
+    }
+  },
+  "synthesis_totals_identical_to_prior": true,
+  "fixed_input_manifest": {
+    "boards/tang-nano-9k/host.cst": "87f6eed7e8c08fccab3fe8e6bbbefbdc261ed443f688c963f5c9be33eb037628",
+    "boards/tang-nano-9k/kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0",
+    "boards/tang-nano-9k/kagura_fb_top.sv": "c37619ca3a027bf0399df01e5739eeaed8eec2f6d5cb2bc55aa1f8f17341a6bf",
+    "boards/tang-nano-9k/phase1.cst": "82ff01e377e4f1b918b0c12c0cdd51502201a8d382444d7f49e6baaba72f9094",
+    "build/generated/kagura_hdmi_stream.sv": "71be747d75daacdf42be1aad5ba38ee1fa6bda9343d2c560d4ea3f46a9b45cf6",
+    "rtl/audio/kagura_audio_registers.sv": "48216aaf6a6a40b6a2384d39492c871d73baf847061ad44993f2826a1cc63f33",
+    "rtl/audio/kagura_audio_synth.sv": "8dacedac0fba49c9ee3e959e7a65c47fdf5df59acfc2ca087bbbaca6de528e29",
+    "rtl/audio/kagura_audio_transport.sv": "44ed941b01a6d56ff9fae95ed03fe34edd90ae1e9f4e5fa7a2d50d5ede87f350",
+    "rtl/audio/kagura_pcm_control.sv": "bfde93cbee15ff3838dd8857b23e65b2789ca2adc81aeae04f77f0b7d70fd2f3",
+    "rtl/audio/kagura_pcm_prefetch.sv": "1e8dc87d0dea90e8e92a2c164ea7d2fe390b878bedff819f366a004c00c1b4d4",
+    "rtl/bus/kagura_spi_adapter.sv": "d1d761fe50283219e5fce44a5211047ecf2dfb1c75e7ade063c922406c3221dd",
+    "rtl/fb/kagura_fb_arbiter.sv": "149b98e3e181f40ad9d0487c1a63a8581e7de7205839fbc138de1128657a9f9b",
+    "rtl/fb/kagura_fb_audio_endpoint.sv": "bf5f30392e4c6615d127b63972ffbf5eb3571855fddff812c27b6fe448b810e7",
+    "rtl/fb/kagura_fb_burst_ctrl.sv": "4d2189aadf187a40df48e25fe892f28db7a3c8569ade747dfcb29bdff7bb8f5c",
+    "rtl/fb/kagura_fb_commands.sv": "fb6f57e06bc4db59f2de447d9113654176f8c8e0d5ba8879bfa93187291dfdb6",
+    "rtl/fb/kagura_fb_core.sv": "f32b96fca98fe456bc6201d52880052b595e561555cacff27d14bc3d364e79a4",
+    "rtl/fb/kagura_fb_cursor.sv": "54d9e4ff9a39e53a9be93bedd05ca41cec15d934808587e6a6e95d0f20e3cf0d",
+    "rtl/fb/kagura_fb_fill_burst.sv": "f425091da3cdc405e592b2adb230a0347d63d38ef6642aea3402f460a97c9a5b",
+    "rtl/fb/kagura_fb_host.sv": "f522154b37c8e144c6b446954ce51c635180cf64dc307f2b86bf0666bb7977c8",
+    "rtl/fb/kagura_fb_line_banks.sv": "927160b42c9ce72e76502b6ff52ed65b15dc242d1dffa866d2509b3887e9c827",
+    "rtl/fb/kagura_fb_line_fetch.sv": "2afbc98a76612943358a96c0b49d5eefbbf34915745a9f86a4f7e782b8975f57",
+    "rtl/fb/kagura_fb_pcm_port.sv": "c21302a2b90daaadd0730d54dae26107fa3c64e6e3ea0d89ba2704cf05d734bd",
+    "rtl/fb/kagura_fb_registers.sv": "83c100e434a61b6e5f6b796780fa9f5556f721d0b01e522f762789a66c0fc4c3",
+    "rtl/fb/kagura_fb_scanout.sv": "f6349d1de1e09d5a614b23a357bdb7b9e39853b09e8e2ae6e50e63d81edce5a2",
+    "rtl/fb/kagura_fb_upload_word.sv": "8382ea49cec0ca8b8317b910c3870201985c593c7c582ef6a4beebe5530815f2",
+    "rtl/fb/sources.f": "04009027e55af30f806f08488fdb551ad97c890deabd731e500e1cac73b79731",
+    "rtl/hdmi/kagura_audio_packets.sv": "03ba91ba79a409c183b229116ad227a8b147b2e0c7beb3af013fe72db47e99aa",
+    "rtl/hdmi/kagura_hdmi_stream_eval.sv": "5267367e73080e1e9465fe4e91bcf34f6e3111b10b113ae390369756aacc4584",
+    "rtl/hdmi/kagura_packet_assembler.sv": "33ae43defff2d15c92683af342138fd9ea3792dba02e781358e5c09a597a5f9a",
+    "rtl/hdmi/kagura_tmds_channel.sv": "0ac133c11510f175334c3f44cf7d3673d7f4fdae30a1dfe868459aff037a593f",
+    "rtl/memory/kagura_async_fifo.sv": "536010c7e934fb421584bf7645c622760932f4de7541fd47be959469c245b6d4",
+    "rtl/memory/kagura_hyperram_phy_gowin.sv": "e20611d49ed5ebebb84db01cbee732f9198db57ec4e4ff8ef43b1a84b69d72c0",
+    "rtl/memory/kagura_ram_tdp.sv": "3092ca6daa905254e31c4c0af4d5714078c0948a7805a3961743621ca6e18b6c",
+    "rtl/platform/kagura_gowin_serializer.sv": "95913b47d739d4a5dc73677457713cc6ea4354afe6c8e19cf0cd31de9e6dd749",
+    "rtl/platform/kagura_nano9k_clocks.sv": "c9c5300140f25f85bd5b474494de60218e695cf20dd5716087621bedfea0221f",
+    "third_party/hdl-util-hdmi/src/audio_info_frame.sv": "dedd552fa988d9e2875bdadc54f3c08d5041d54637da1ff565d46078eeb2ea89",
+    "third_party/hdl-util-hdmi/src/audio_sample_packet.sv": "0e3a35ccb3e934eecfcd3916c5dac9ef269abea21472d66ebd2660a9d25e6a13",
+    "third_party/hdl-util-hdmi/src/auxiliary_video_information_info_frame.sv": "c151e2675ad97ef36254044e42657f2d758512d305040137859f9b8806135f64",
+    "third_party/hdl-util-hdmi/src/source_product_description_info_frame.sv": "893269fdccd2dc147e8570519f35308ac5e5460ad7f54bf673b3c31e9a8259de",
+    "tools/build-fb.tcl": "d711c1d1aa125fd079696efee707471f47769a0687eef159b5a20dcdeba0ae69"
+  },
+  "protected_originals_unchanged": true,
+  "protected_bitstream_sha256": {
+    "rmw": "90b5b26189b198326818488056b9c8fb84e515973cdd2432e04287be3a91ef2e",
+    "rx32": "a99c5f8304aed79b8e0d148d6701f24bf5e282022c75c45ca3b0ab62b0d431cf"
+  },
+  "bitstream_generated": false,
+  "bitstream_sha256": null,
+  "hardware_programming_performed": false,
+  "external_psram_io_verified": false,
+  "implementation_gate_pass": false,
+  "build_log_sha256": "10f0ade0de97fedde49847c44e4d80f725802fe73c74dcc219487e1da982411c",
+  "archive_sha256": "6d6811ee596570d53453908c052b3f79cd7ee7a7ae7d81bf6e8e63e541dcba53"
+}

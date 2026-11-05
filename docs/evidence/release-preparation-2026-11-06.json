@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-06",
+  "scope": "Integration and publication preparation of the existing hardware-demo bitstream",
+  "verilator": "5.032",
+  "seed": 1,
+  "checks": {
+    "drivers": {
+      "result": "PASS",
+      "test_count": 29,
+      "log": "release-preparation-2026-11-06/release-drivers.log",
+      "log_sha256": "935fd269a65266a63e4a13b150a7803ec2459fd24becfd6b57d348d42397f38f"
+    },
+    "fb": {
+      "result": "PASS",
+      "test_count": 26,
+      "log": "release-preparation-2026-11-06/release-fb.log",
+      "log_sha256": "7fea4ed97135a07236b6d12743df4dd43ce03b30b67742074df1148097129260"
+    },
+    "qspi": {
+      "result": "PASS",
+      "test_count": 1,
+      "log": "release-preparation-2026-11-06/release-qspi.log",
+      "log_sha256": "40738e1ea29f1904538e903556ecb1ff7ad2d24436a0cd8bb5c8e3f43b9ecb03"
+    },
+    "wrap32": {
+      "result": "PASS",
+      "test_count": 1,
+      "log": "release-preparation-2026-11-06/release-wrap32.log",
+      "log_sha256": "fd3786d959d74e89266207541d65e8fa79c4ac677c3bb35b25dfc2563a2213ee"
+    },
+    "wrap-integration": {
+      "result": "PASS",
+      "test_count": 12,
+      "log": "release-preparation-2026-11-06/release-wrap-integration.log",
+      "log_sha256": "06adfbcee3562428d4759f7f6a6a7000d5b2dfc927fc2a2295d4978d769ca765"
+    },
+    "common": {
+      "result": "PASS",
+      "test_count": 22,
+      "log": "release-preparation-2026-11-06/release-common.log",
+      "log_sha256": "8c8e6bf38db8c30d4c3cfe03a08ba91e6cd4cc7f809b2a3ad1714e353a5918ec"
+    },
+    "beyond16": {
+      "result": "PASS",
+      "test_count": 4,
+      "log": "release-preparation-2026-11-06/release-beyond16.log",
+      "log_sha256": "e10f44f07ab41ddbec3c66767e74ed79fc150f7aa7ff52945ad99cb1fa964508"
+    },
+    "showcase": {
+      "result": "PASS",
+      "test_count": 16,
+      "log": "release-preparation-2026-11-06/release-showcase.log",
+      "log_sha256": "581c6650751d2cffbf36792ff69a8bea5e8bab9d61e080ebaea00507f2f41510"
+    }
+  },
+  "frozen_build_inputs": 40,
+  "current_fpga_inputs": "PASS; LF/CRLF normalized for text comparison only",
+  "bitstream_sha256": "642c7a3ce961685279c229dbe9b1577285bd7867353cfaf7de8f4db06b3683a7",
+  "dependency_manifest_files": 12,
+  "gowin_rebuild_this_session": false,
+  "hardware_programming_this_session": false,
+  "publication_this_session": false,
+  "micropython_unix_this_session": "NOT RUN; not installed in this WSL environment",
+  "notes": [
+    "C SDK preserves the existing optional KFB_PACK_DESCRIPTOR optimization",
+    "QSPI PCM2 test now generates its HDMI source for standalone clean runs",
+    "Historical failing hardware/timing records remain unchanged except chronology notices"
+  ]
+}

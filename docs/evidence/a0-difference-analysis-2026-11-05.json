@@ -1,0 +1,256 @@
+{
+  "input_sha256": "b93f10d1fb2cbfab809faf5cee282cedfe3c4cdc91e5643c0a646a0064b308df",
+  "rate": 48000,
+  "frames": 144096,
+  "duration_seconds": 3.002,
+  "source_preserved": true,
+  "gate_status": "Original A0 FAIL unchanged; offline analysis does not regrade",
+  "nonzero_count": 102349,
+  "nonzero_fraction": 0.7102834221630024,
+  "exceed2_count": 9537,
+  "exceed2_fraction": 0.06618504330446369,
+  "histogram": {
+    "-7": 1,
+    "-6": 7,
+    "-5": 58,
+    "-4": 711,
+    "-3": 4019,
+    "-2": 14551,
+    "-1": 31694,
+    "0": 41747,
+    "1": 31960,
+    "2": 14607,
+    "3": 4028,
+    "4": 639,
+    "5": 71,
+    "6": 3
+  },
+  "mean_difference": 0.0010479125027759272,
+  "difference_rms": 1.3888390138354125,
+  "difference_std": 1.3888386184977388,
+  "max_abs_difference": 7,
+  "median": 0.0,
+  "abs_difference_percentiles": {
+    "50": 1.0,
+    "90": 2.0,
+    "95": 3.0,
+    "99": 4.0,
+    "99.9": 4.0,
+    "100": 7.0
+  },
+  "first_nonzero_sample": 0,
+  "first_exceed2_sample": 35,
+  "last_exceed2_sample": 144094,
+  "max_exceed_run_samples": 4,
+  "exceed_run_histogram": {
+    "1": 8165,
+    "2": 607,
+    "3": 50,
+    "4": 2
+  },
+  "time_10ms": {
+    "full_bin_count": 300,
+    "minimum_rate": 0.035416666666666666,
+    "maximum_rate": 0.09583333333333334,
+    "max_bin": {
+      "start_sample": 46560,
+      "start_seconds": 0.97,
+      "count": 480,
+      "nonzero": 346,
+      "exceed2": 46,
+      "exceed_fraction": 0.09583333333333334,
+      "mean": -0.09375,
+      "rms": 1.4627314631651749,
+      "max_abs": 4
+    },
+    "variance_ratio_to_iid_binomial": 1.0005564926892099
+  },
+  "correlation": {
+    "signed_difference_vs_common": 0.0010596596213824049,
+    "signed_difference_vs_slew": 0.016082978385255506,
+    "abs_difference_vs_abs_common": -0.002483853657280228,
+    "abs_difference_vs_abs_slew": 0.0024105276047749623,
+    "exceed_indicator_vs_abs_common": 0.0005425975266356599,
+    "exceed_indicator_vs_abs_slew": -0.00097771746319995
+  },
+  "linear_fit": {
+    "offset_LSB": 0.0010891716045650635,
+    "common_coefficient": 1.8991689865922242e-05,
+    "slew_coefficient": 0.0012900714611993487,
+    "variance_explained": 0.000259785042973637,
+    "warning": "Descriptive fit only; coefficient does not establish gain or physical fractional delay"
+  },
+  "amplitude_bins": [
+    {
+      "low": 0.0,
+      "high": 7.5,
+      "count": 14197,
+      "difference_rms": 1.3983608673897183,
+      "exceed2_fraction": 0.06621117137423399
+    },
+    {
+      "low": 7.5,
+      "high": 20.5,
+      "count": 21747,
+      "difference_rms": 1.3854043442398583,
+      "exceed2_fraction": 0.06543431277877408
+    },
+    {
+      "low": 20.5,
+      "high": 61.5,
+      "count": 35779,
+      "difference_rms": 1.3866117271779836,
+      "exceed2_fraction": 0.06534559378406328
+    },
+    {
+      "low": 61.5,
+      "high": 90.0,
+      "count": 35885,
+      "difference_rms": 1.393649883296849,
+      "exceed2_fraction": 0.06793925038316845
+    },
+    {
+      "low": 90.0,
+      "high": 136.5,
+      "count": 22057,
+      "difference_rms": 1.3842094226019357,
+      "exceed2_fraction": 0.06505871152015233
+    },
+    {
+      "low": 136.5,
+      "high": 180.0,
+      "count": 14431,
+      "difference_rms": 1.3852024931106013,
+      "exceed2_fraction": 0.06673134224932437
+    }
+  ],
+  "slew_bins": [
+    {
+      "low": 0.0,
+      "high": 1.0,
+      "count": 8765,
+      "difference_rms": 1.6134064687928142,
+      "exceed2_fraction": 0.1159155733029093
+    },
+    {
+      "low": 1.0,
+      "high": 1.5,
+      "count": 22904,
+      "difference_rms": 1.3910547012885393,
+      "exceed2_fraction": 0.06662591687041565
+    },
+    {
+      "low": 1.5,
+      "high": 2.0,
+      "count": 37467,
+      "difference_rms": 1.3056109932356494,
+      "exceed2_fraction": 0.05159206768623055
+    },
+    {
+      "low": 2.0,
+      "high": 2.5,
+      "count": 31792,
+      "difference_rms": 1.3293628497558603,
+      "exceed2_fraction": 0.053535480624056365
+    },
+    {
+      "low": 2.5,
+      "high": 30.25,
+      "count": 28146,
+      "difference_rms": 1.478919350200366,
+      "exceed2_fraction": 0.08459461379947417
+    },
+    {
+      "low": 30.25,
+      "high": 122.25,
+      "count": 15022,
+      "difference_rms": 1.3941124276007442,
+      "exceed2_fraction": 0.06517108241246172
+    }
+  ],
+  "autocorrelation": {
+    "lag1": -0.1295919584012895,
+    "largest_abs_lag1_256": 0.1295919584012895,
+    "largest_lag": 1,
+    "indicator_lag1": 0.009183781761247782
+  },
+  "phase_exploration": {
+    "16": {
+      "min_fraction": 0.06129247168554297,
+      "max_fraction": 0.06950921607817011,
+      "max_phase": 4,
+      "rms_rate_deviation": 0.002221945026403036,
+      "exploratory_only": "many correlated period/phase comparisons; no multiple-testing adjusted significance"
+    },
+    "32": {
+      "min_fraction": 0.05729513657561625,
+      "max_fraction": 0.07372862536087053,
+      "max_phase": 1,
+      "rms_rate_deviation": 0.0034059096287550345,
+      "exploratory_only": "many correlated period/phase comparisons; no multiple-testing adjusted significance"
+    },
+    "48": {
+      "min_fraction": 0.05629580279813458,
+      "max_fraction": 0.07794803464357095,
+      "max_phase": 1,
+      "rms_rate_deviation": 0.003887778649060549,
+      "exploratory_only": "many correlated period/phase comparisons; no multiple-testing adjusted significance"
+    },
+    "64": {
+      "min_fraction": 0.053753887161261664,
+      "max_fraction": 0.07548845470692718,
+      "max_phase": 19,
+      "rms_rate_deviation": 0.004956435850172805,
+      "exploratory_only": "many correlated period/phase comparisons; no multiple-testing adjusted significance"
+    },
+    "96": {
+      "min_fraction": 0.047968021319120584,
+      "max_fraction": 0.0832778147901399,
+      "max_phase": 1,
+      "rms_rate_deviation": 0.005498714252125787,
+      "exploratory_only": "many correlated period/phase comparisons; no multiple-testing adjusted significance"
+    },
+    "128": {
+      "min_fraction": 0.049777777777777775,
+      "max_fraction": 0.08259325044404973,
+      "max_phase": 54,
+      "rms_rate_deviation": 0.007186036779287799,
+      "exploratory_only": "many correlated period/phase comparisons; no multiple-testing adjusted significance"
+    },
+    "192": {
+      "min_fraction": 0.045272969374167776,
+      "max_fraction": 0.088,
+      "max_phase": 104,
+      "rms_rate_deviation": 0.008171095911837815,
+      "exploratory_only": "many correlated period/phase comparisons; no multiple-testing adjusted significance"
+    },
+    "256": {
+      "min_fraction": 0.04085257548845471,
+      "max_fraction": 0.0905861456483126,
+      "max_phase": 42,
+      "rms_rate_deviation": 0.010156385638717864,
+      "exploratory_only": "many correlated period/phase comparisons; no multiple-testing adjusted significance"
+    },
+    "480": {
+      "min_fraction": 0.02666666666666667,
+      "max_fraction": 0.12,
+      "max_phase": 333,
+      "rms_rate_deviation": 0.013804322069113422,
+      "exploratory_only": "many correlated period/phase comparisons; no multiple-testing adjusted significance"
+    },
+    "800": {
+      "min_fraction": 0.016666666666666666,
+      "max_fraction": 0.16111111111111112,
+      "max_phase": 734,
+      "rms_rate_deviation": 0.018600137926590505,
+      "exploratory_only": "many correlated period/phase comparisons; no multiple-testing adjusted significance"
+    }
+  },
+  "difference_psd_band_fractions": {
+    "0-100": 0.01044762297451309,
+    "100-1000": 0.030977570429386796,
+    "1000-10000": 0.28846273272278206,
+    "10000-24000.1": 0.6701120738733181
+  },
+  "identifiability": "No HDMI input sample trace, so capture noise/dither and source/channel errors cannot be uniquely separated."
+}

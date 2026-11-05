@@ -1,0 +1,11 @@
+test_palette_limit (__main__.Tests.test_palette_limit) ... C:\Users\Shion\Documents\Projects\kagura-hd\software\beyond16\tools\test_assets.py:23: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  im=Image.open(p);self.assertEqual(im.mode,'P');self.assertLessEqual(max(im.getdata()),15);self.assertEqual(im.size,(640,360))
+ok
+test_seed_reproduction (__main__.Tests.test_seed_reproduction) ... ok
+test_signed_pcm_lossless_psram (__main__.Tests.test_signed_pcm_lossless_psram) ... ok
+test_wall_clock_skip_and_end (__main__.Tests.test_wall_clock_skip_and_end) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.102s
+
+OK

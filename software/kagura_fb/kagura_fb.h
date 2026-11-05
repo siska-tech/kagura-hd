@@ -44,4 +44,10 @@ int kfb_cursor_shape(kfb_device *,unsigned bank,const uint8_t shape[256],const u
 int kfb_cursor_move(kfb_device *,int32_t x,int32_t y,unsigned bank,bool visible);
 int kfb_cursor_status(kfb_device *,uint8_t *status,uint16_t *generation);
 int kfb_cursor_wait(kfb_device *,uint16_t *generation);
+// ABI 1.4 PCM2-only indexed audio; voice indices 00..5F unsupported. PCM addresses are HD die-relative.
+// Shadow writes may interleave with a pending commit; one owner only.
+int kfb_audio_write(kfb_device *,uint8_t index,uint8_t value);
+int kfb_audio_read(kfb_device *,uint8_t index,uint8_t *value);
+// Returns the existing command tag; use kfb_wait for actual apply completion.
+int kfb_audio_commit(kfb_device *,uint16_t *tag);
 #endif

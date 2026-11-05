@@ -1,0 +1,521 @@
+{
+  "scope": "physical UGREEN HDMI capture + native C USB log",
+  "release_ready": false,
+  "full_loop": true,
+  "g_to_first_frame_seconds": 20.15700000000652,
+  "g_to_second_boot_seconds": 115.15700000000652,
+  "scenes": [
+    {
+      "id": 0,
+      "host_ms": 0,
+      "pc_elapsed_seconds": 20.15700000000652
+    },
+    {
+      "id": 1,
+      "host_ms": 12000,
+      "pc_elapsed_seconds": 35.625
+    },
+    {
+      "id": 2,
+      "host_ms": 30000,
+      "pc_elapsed_seconds": 53.60999999998603
+    },
+    {
+      "id": 3,
+      "host_ms": 40000,
+      "pc_elapsed_seconds": 63.76600000006147
+    },
+    {
+      "id": 4,
+      "host_ms": 47000,
+      "pc_elapsed_seconds": 70.65700000000652
+    },
+    {
+      "id": 5,
+      "host_ms": 65000,
+      "pc_elapsed_seconds": 88.65700000000652
+    },
+    {
+      "id": 6,
+      "host_ms": 80000,
+      "pc_elapsed_seconds": 100.10999999998603
+    },
+    {
+      "id": 0,
+      "host_ms": 88000,
+      "pc_elapsed_seconds": 115.15700000000652
+    }
+  ],
+  "pcm_format": "48000Hz signed16 stereo",
+  "whole_capture_audio": {
+    "rms": [
+      847.7874281166233,
+      847.7863714462464
+    ],
+    "peak": [
+      6734.0,
+      6736.0
+    ]
+  },
+  "dialogue_44_46s": {
+    "rms": [
+      1233.2714081652573,
+      1233.27292795769
+    ],
+    "peak": [
+      2729.0,
+      2729.0
+    ]
+  },
+  "bgm_reference_match": [
+    {
+      "correlation": 0.999692071536137,
+      "ppm_grid": 0,
+      "reference_offset_sample": 272100,
+      "gain_relative_to_digital_reference": 0.9996612041294287
+    },
+    {
+      "correlation": 0.999692094186008,
+      "ppm_grid": 0,
+      "reference_offset_sample": 272100,
+      "gain_relative_to_digital_reference": 0.9996624573274233
+    }
+  ],
+  "scheduler_intervals": [
+    {
+      "from_ms": 1000,
+      "to_ms": 2000,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 144.0
+    },
+    {
+      "from_ms": 2000,
+      "to_ms": 3000,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 18.0
+    },
+    {
+      "from_ms": 3000,
+      "to_ms": 4000,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 4000,
+      "to_ms": 5001,
+      "scheduler_hz": 29.97002997002997,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 5001,
+      "to_ms": 6001,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 6001,
+      "to_ms": 7001,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 7001,
+      "to_ms": 8001,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 8001,
+      "to_ms": 9001,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 9001,
+      "to_ms": 10001,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 10001,
+      "to_ms": 11001,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 11001,
+      "to_ms": 15527,
+      "scheduler_hz": 6.8493150684931505,
+      "adapter_command_rate": 66.06274856385329
+    },
+    {
+      "from_ms": 15527,
+      "to_ms": 16527,
+      "scheduler_hz": 20.0,
+      "adapter_command_rate": 377.0
+    },
+    {
+      "from_ms": 16527,
+      "to_ms": 17527,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 17527,
+      "to_ms": 18531,
+      "scheduler_hz": 29.8804780876494,
+      "adapter_command_rate": 363.54581673306774
+    },
+    {
+      "from_ms": 18531,
+      "to_ms": 19531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 389.0
+    },
+    {
+      "from_ms": 19531,
+      "to_ms": 20531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 204.0
+    },
+    {
+      "from_ms": 20531,
+      "to_ms": 21531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 198.0
+    },
+    {
+      "from_ms": 21531,
+      "to_ms": 22531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 22531,
+      "to_ms": 23531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 23531,
+      "to_ms": 24531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 365.0
+    },
+    {
+      "from_ms": 24531,
+      "to_ms": 25531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 297.0
+    },
+    {
+      "from_ms": 25531,
+      "to_ms": 26531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 210.0
+    },
+    {
+      "from_ms": 26531,
+      "to_ms": 27531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 27531,
+      "to_ms": 28531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 28531,
+      "to_ms": 29531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 29531,
+      "to_ms": 33528,
+      "scheduler_hz": 3.7528146109582186,
+      "adapter_command_rate": 132.5994495871904
+    },
+    {
+      "from_ms": 33528,
+      "to_ms": 34528,
+      "scheduler_hz": 14.0,
+      "adapter_command_rate": 488.0
+    },
+    {
+      "from_ms": 34528,
+      "to_ms": 35528,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 35528,
+      "to_ms": 36528,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 222.0
+    },
+    {
+      "from_ms": 36528,
+      "to_ms": 37528,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 37528,
+      "to_ms": 38731,
+      "scheduler_hz": 25.768911055694097,
+      "adapter_command_rate": 317.5394846217789
+    },
+    {
+      "from_ms": 38731,
+      "to_ms": 39748,
+      "scheduler_hz": 20.64896755162242,
+      "adapter_command_rate": 545.7227138643068
+    },
+    {
+      "from_ms": 39748,
+      "to_ms": 43584,
+      "scheduler_hz": 2.346193952033368,
+      "adapter_command_rate": 75.07820646506778
+    },
+    {
+      "from_ms": 43584,
+      "to_ms": 44584,
+      "scheduler_hz": 27.0,
+      "adapter_command_rate": 227.0
+    },
+    {
+      "from_ms": 44584,
+      "to_ms": 45584,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 45584,
+      "to_ms": 46584,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 196.0
+    },
+    {
+      "from_ms": 46584,
+      "to_ms": 50530,
+      "scheduler_hz": 3.2944754181449567,
+      "adapter_command_rate": 63.862138874809936
+    },
+    {
+      "from_ms": 50530,
+      "to_ms": 51718,
+      "scheduler_hz": 0.8417508417508418,
+      "adapter_command_rate": 127.94612794612794
+    },
+    {
+      "from_ms": 51718,
+      "to_ms": 53268,
+      "scheduler_hz": 0.6451612903225806,
+      "adapter_command_rate": 12.903225806451612
+    },
+    {
+      "from_ms": 53268,
+      "to_ms": 54881,
+      "scheduler_hz": 1.2399256044637321,
+      "adapter_command_rate": 9.919404835709857
+    },
+    {
+      "from_ms": 54881,
+      "to_ms": 56098,
+      "scheduler_hz": 2.4650780608052587,
+      "adapter_command_rate": 10.682004930156122
+    },
+    {
+      "from_ms": 56098,
+      "to_ms": 57115,
+      "scheduler_hz": 7.866273352999016,
+      "adapter_command_rate": 31.465093411996065
+    },
+    {
+      "from_ms": 57115,
+      "to_ms": 58131,
+      "scheduler_hz": 18.700787401574804,
+      "adapter_command_rate": 75.78740157480316
+    },
+    {
+      "from_ms": 58131,
+      "to_ms": 59131,
+      "scheduler_hz": 19.0,
+      "adapter_command_rate": 78.0
+    },
+    {
+      "from_ms": 59131,
+      "to_ms": 60148,
+      "scheduler_hz": 19.66568338249754,
+      "adapter_command_rate": 79.64601769911505
+    },
+    {
+      "from_ms": 60148,
+      "to_ms": 61165,
+      "scheduler_hz": 19.66568338249754,
+      "adapter_command_rate": 78.66273352999016
+    },
+    {
+      "from_ms": 61165,
+      "to_ms": 62165,
+      "scheduler_hz": 23.0,
+      "adapter_command_rate": 62.0
+    },
+    {
+      "from_ms": 62165,
+      "to_ms": 63165,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 63165,
+      "to_ms": 64165,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 6.0
+    },
+    {
+      "from_ms": 64165,
+      "to_ms": 68531,
+      "scheduler_hz": 5.955107650022904,
+      "adapter_command_rate": 57.031607879065504
+    },
+    {
+      "from_ms": 68531,
+      "to_ms": 69531,
+      "scheduler_hz": 22.0,
+      "adapter_command_rate": 337.0
+    },
+    {
+      "from_ms": 69531,
+      "to_ms": 70531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 70531,
+      "to_ms": 71531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 204.0
+    },
+    {
+      "from_ms": 71531,
+      "to_ms": 72531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 198.0
+    },
+    {
+      "from_ms": 72531,
+      "to_ms": 73531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 73531,
+      "to_ms": 74531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 74531,
+      "to_ms": 75531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 75531,
+      "to_ms": 76531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 192.0
+    },
+    {
+      "from_ms": 76531,
+      "to_ms": 77531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 210.0
+    },
+    {
+      "from_ms": 77531,
+      "to_ms": 78531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 78531,
+      "to_ms": 79531,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 180.0
+    },
+    {
+      "from_ms": 79531,
+      "to_ms": 80815,
+      "scheduler_hz": 12.461059190031152,
+      "adapter_command_rate": 2333.3333333333335
+    },
+    {
+      "from_ms": 80815,
+      "to_ms": 81815,
+      "scheduler_hz": 7.0,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 81815,
+      "to_ms": 82815,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 82815,
+      "to_ms": 83815,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 83815,
+      "to_ms": 84816,
+      "scheduler_hz": 29.97002997002997,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 84816,
+      "to_ms": 85816,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 85816,
+      "to_ms": 86816,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 0.0
+    },
+    {
+      "from_ms": 86816,
+      "to_ms": 87816,
+      "scheduler_hz": 30.0,
+      "adapter_command_rate": 0.0
+    }
+  ],
+  "scheduler_caveat": "frames counts eligible C engine ticks; not a direct PRESENT or HDMI refresh counter",
+  "last_scheduler_sample": {
+    "host_ms": 87816,
+    "frames": 1770,
+    "bytes": 2244782,
+    "commands": 14991,
+    "waits_ms": 54453,
+    "audio_fault": 0
+  },
+  "pcm_faults_observed": [
+    0
+  ],
+  "raw_transport_last": "qspi_nominal_hz=5000000 wire_bytes=6753735 transactions=839060 elapsed_us=57600045 max_transaction_us=352 timeouts=0",
+  "all_branches_on_hardware": "not tested; autoplay selected terminal only",
+  "physical_sck_scope_measurement": "not performed; nominal 5MHz config",
+  "pcm1_select_while_bgm": {
+    "capture_start_seconds": 61.169916666666666,
+    "correlation_after_bgm_removal": 0.9999143874750382,
+    "gain_relative_to_digital_reference": 0.9993621113856563,
+    "scope": "one short selection effect only, not every PCM1 effect"
+  }
+}

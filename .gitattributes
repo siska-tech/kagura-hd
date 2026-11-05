@@ -1,2 +1,10 @@
 /tools/*.sh text eol=lf
 /third_party/hdl-util-hdmi/** -text
+
+/releases/pcm2-qspi-final/** -text
+
+* whitespace=cr-at-eol
+
+/releases/pcm2-spi/** -text
+
+/artifacts/** -text

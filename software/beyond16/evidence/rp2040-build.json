@@ -1,0 +1,118 @@
+{
+  "target": "RP2040/Pico Cortex-M0+",
+  "compiler": "Arm GNU GCC 14.2.1",
+  "sdk_commit": "bddd20f928ce76142793bef434d4f75f4af6e433",
+  "text": 316288,
+  "data": 0,
+  "bss": 41188,
+  "stack_reserved": 8192,
+  "sections": [
+    {
+      "name": ".boot2",
+      "address": "0x10000000",
+      "bytes": 256,
+      "type": 1
+    },
+    {
+      "name": ".text",
+      "address": "0x10000100",
+      "bytes": 75396,
+      "type": 1
+    },
+    {
+      "name": ".rodata",
+      "address": "0x10012788",
+      "bytes": 235068,
+      "type": 1
+    },
+    {
+      "name": ".binary_info",
+      "address": "0x1004bdc4",
+      "bytes": 40,
+      "type": 1
+    },
+    {
+      "name": ".ram_vector_table",
+      "address": "0x20000000",
+      "bytes": 192,
+      "type": 8
+    },
+    {
+      "name": ".data",
+      "address": "0x200000c0",
+      "bytes": 5528,
+      "type": 1
+    },
+    {
+      "name": ".tdata",
+      "address": "0x20001658",
+      "bytes": 0,
+      "type": 1
+    },
+    {
+      "name": ".tbss",
+      "address": "0x20001658",
+      "bytes": 0,
+      "type": 8
+    },
+    {
+      "name": ".bss",
+      "address": "0x20001658",
+      "bytes": 40996,
+      "type": 8
+    }
+  ],
+  "symbols": {
+    "frame_lz": {
+      "address": "0x10012788",
+      "bytes": 9694
+    },
+    "song_lz": {
+      "address": "0x10014d68",
+      "bytes": 193656
+    },
+    "gpu": {
+      "address": "0x20002fe8",
+      "bytes": 24
+    },
+    "engine": {
+      "address": "0x200017d8",
+      "bytes": 4272
+    },
+    "history": {
+      "address": "0x20003000",
+      "bytes": 32768
+    },
+    "__StackBottom": {
+      "address": "0x20040000",
+      "bytes": 0
+    },
+    "__flash_binary_end": {
+      "address": "0x1004d384",
+      "bytes": 0
+    },
+    "__StackTop": {
+      "address": "0x20042000",
+      "bytes": 0
+    }
+  },
+  "bin_bytes": 316292,
+  "sector_end_exclusive": "0x1004e000",
+  "filesystem_start": "0x100a0000",
+  "filesystem_capacity_check": "PASS (offline bounds only)",
+  "bin_sha256": "c66308e09ad46a2104d3924d0a7913b98937b05e7408ade4b523940a6cee200b",
+  "elf_sha256": "52acd188ebecee24e16feb6480c4009a0dab7d01d7f7b1cea4c9477cba8e58a6",
+  "programmed": true,
+  "release_ready": false,
+  "flash_deployment": {
+    "firmware_bytes": 316292,
+    "firmware_sha256": "c66308e09ad46a2104d3924d0a7913b98937b05e7408ade4b523940a6cee200b",
+    "full_flash_sha256": "29001ff651a227cf2d4d8b2286c4dbc67af385ede3d205e1f124518b4295aa4a",
+    "erase_end": "0x1004e000",
+    "tail_unchanged": true,
+    "filesystem_unchanged": true,
+    "fpga_flash_written": false,
+    "release_ready": false
+  },
+  "hardware_result": "HARDWARE_RESULT.md"
+}

@@ -1,0 +1,43 @@
+{
+  "kagura_host.pio": {
+    "source": "../Kagura/software/pico/kagura_host.pio",
+    "sha256": "4c89410848f1618a99c34c036e0bb58cae0a65f0dd44e555f8755e21b271dab3",
+    "license": "Apache-2.0",
+    "copied_without_changes": true
+  },
+  "kagura_pio_timing.py": {
+    "source": "../Kagura/software/pico/tests/test_pio_timing.py",
+    "sha256": "60cb1b0327af3b7ca11d626a0fcead9d4edf11518b2355e301136be7d4b94113",
+    "license": "Apache-2.0",
+    "copied_without_changes": true
+  },
+  "source_snapshot": "local KAGURA-9 working-tree files, identified by SHA-256",
+  "parameter_sources": {
+    "kagura_host.c": {
+      "source": "..\\Kagura\\software\\pico\\kagura_host.c",
+      "sha256": "5e3e653d6f11216a40b03d1ef1e665c6680b76a83c25f409dfdf26425a917a33"
+    },
+    "main.c": {
+      "source": "..\\Kagura\\software\\pico\\main.c",
+      "sha256": "47166acd6c3e396daaadf0c07e88b24b860ddb545cfbc589ec17d72e087a2cf8"
+    },
+    "README.md": {
+      "source": "..\\Kagura\\software\\pico\\README.md",
+      "sha256": "51f2a63af3341a58c767ab0d37ef2049fbbdb14a455932191fa528eabfd86707"
+    }
+  },
+  "parameters": {
+    "system_hz": 120000000,
+    "pio_divider": 2,
+    "cycles_per_sck": 12,
+    "nominal_sck_hz": 5000000,
+    "cs_ns": [
+      250,
+      40,
+      250
+    ],
+    "drive_ma": 2,
+    "slew": "slow",
+    "input_hysteresis": true
+  }
+}

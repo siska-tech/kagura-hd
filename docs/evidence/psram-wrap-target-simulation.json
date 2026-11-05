@@ -1,0 +1,92 @@
+[
+  {
+    "capture": "packet-r0-a0-f0.bin",
+    "last_step": 7,
+    "status": 5,
+    "classification": "target_prediction_differs",
+    "observation_complete": true,
+    "actual": "ed0f2143",
+    "bytes": 1192,
+    "sha256": "8e0e1efe9fa85260bf625aba05b5bf2254d096764e7029b2941fd8f88f7efd65"
+  },
+  {
+    "capture": "packet-r0-a0-f1.bin",
+    "last_step": 6,
+    "status": 2,
+    "classification": "aborted",
+    "observation_complete": false,
+    "actual": null,
+    "bytes": 1043,
+    "sha256": "82fefe14c214d08b9b7ee35ad864b0e6137d556249aa494cfe2b3d6102133efd"
+  },
+  {
+    "capture": "packet-r0-a0-f2.bin",
+    "last_step": 6,
+    "status": 3,
+    "classification": "aborted",
+    "observation_complete": false,
+    "actual": null,
+    "bytes": 1043,
+    "sha256": "412af95dd917a8931584018efe8e50c2c0247b8882d004d6e51807e4f67db3f0"
+  },
+  {
+    "capture": "packet-r0-a0-f3.bin",
+    "last_step": 6,
+    "status": 3,
+    "classification": "aborted",
+    "observation_complete": false,
+    "actual": null,
+    "bytes": 1043,
+    "sha256": "412af95dd917a8931584018efe8e50c2c0247b8882d004d6e51807e4f67db3f0"
+  },
+  {
+    "capture": "packet-r0-a0-f4.bin",
+    "last_step": 4,
+    "status": 1,
+    "classification": "aborted",
+    "observation_complete": false,
+    "actual": null,
+    "bytes": 745,
+    "sha256": "346c7ec446f47fd8f85fffd029ba87b1dacc9eb1af76ad094a50513697b21502"
+  },
+  {
+    "capture": "packet-r0-a0-f6.bin",
+    "last_step": 7,
+    "status": 2,
+    "classification": "aborted",
+    "observation_complete": false,
+    "actual": null,
+    "bytes": 1192,
+    "sha256": "672ff3f9cbc88acb33a747eb491bd15b202a204964c5493046e5501ff5f45598"
+  },
+  {
+    "capture": "packet-r0-a1-f0.bin",
+    "last_step": 3,
+    "status": 1,
+    "classification": "aborted",
+    "observation_complete": false,
+    "actual": null,
+    "bytes": 596,
+    "sha256": "1c4b0931e1fed0fbe40de53535862809e29ab87d500690336dd1d5c47d620240"
+  },
+  {
+    "capture": "packet-r1-a0-f0.bin",
+    "last_step": 7,
+    "status": 4,
+    "classification": "wrap32_target_prediction_match",
+    "observation_complete": true,
+    "actual": "8aaccef0",
+    "bytes": 1192,
+    "sha256": "60d81af6052d66202ba70082a830a1bacb2d030941b757d87fcbdb8a9905a70a"
+  },
+  {
+    "capture": "packet-r1-a0-f5.bin",
+    "last_step": 7,
+    "status": 5,
+    "classification": "target_prediction_differs",
+    "observation_complete": true,
+    "actual": "8baccef0",
+    "bytes": 1192,
+    "sha256": "883fdbca45dc06b0e8f19747c46f1050541bb3873bfa5d6874c8fe2a829c395a"
+  }
+]

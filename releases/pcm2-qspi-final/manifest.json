@@ -1,0 +1,40 @@
+{
+  "name": "KAGURA-HD PCM2 QSPI final",
+  "abi": "1.4",
+  "transport": "qspi",
+  "artifact": "../../artifacts/validated/kagura-hd-qspi-pcm2.fs",
+  "sha256": "642c7a3ce961685279c229dbe9b1577285bd7867353cfaf7de8f4db06b3683a7",
+  "size_bytes": 3558476,
+  "tool": "Gowin Standard V1.9.12.04",
+  "device": "GW1NR-LV9QN88PC6/I5",
+  "place_option": 1,
+  "route_option": 2,
+  "setup_slack_ns": 0.16,
+  "hold_slack_ns": 0.484,
+  "setup_hold_violations": [
+    0,
+    0
+  ],
+  "selection": "Existing hardware-demo bitstream; no rebuild",
+  "hardware_evidence": [
+    "software/midnight_terminal/HARDWARE_RESULT.md",
+    "software/beyond16/HARDWARE_RESULT.md"
+  ],
+  "source_base_commit": "1d46c6db71eb48e486a8e038d41e5a44342fe699",
+  "source_state": "Uncommitted development snapshot; exact FPGA inputs in build-inputs",
+  "publication_status": "included in repository snapshot; GitHub Release not created",
+  "limitations": [
+    "QSPI only; SPI hardware unqualified",
+    "No exhaustive external IO/PVT or long-duration validation",
+    "Demo target 30fps not achieved; see hardware results"
+  ],
+  "distribution": {
+    "channel": "GitHub Releases",
+    "repository": "siska-tech/kagura-hd",
+    "required_assets": [
+      "kagura-hd-qspi-pcm2.fs",
+      "SHA256SUMS"
+    ],
+    "bitstream_is_public_release_asset": true
+  }
+}

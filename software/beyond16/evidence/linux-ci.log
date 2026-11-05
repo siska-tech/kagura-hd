@@ -1,0 +1,9 @@
+test_fault_stop_no_retry (__main__.Tests.test_fault_stop_no_retry) ... ok
+test_full_autoplay_equivalence (__main__.Tests.test_full_autoplay_equivalence) ... ok
+test_independent_pixel_oracle (__main__.Tests.test_independent_pixel_oracle) ... ok
+test_sdk_timeout_tag_wrap_and_bounds (__main__.Tests.test_sdk_timeout_tag_wrap_and_bounds) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.216s
+
+OK

@@ -1,0 +1,34 @@
+{
+  "build/beyond16-hardware-2026-11-06/beyond16-hardware.mp4": {
+    "bytes": 28090730,
+    "sha256": "45b9320d940b916dfa3fbf1374d84a65953742a5b4ab9da9852ba12f1b000841"
+  },
+  "build/beyond16-hardware-2026-11-06/demo-hdmi.mkv": {
+    "bytes": 107573472,
+    "sha256": "5c8528b07edc9e1c0e9e26c884d39f8942506c3f54c58ccffbf43fb4cbad5839"
+  },
+  "build/beyond16-hardware-2026-11-06/demo-audio.wav": {
+    "bytes": 31392078,
+    "sha256": "c63bd612104d0729c4165c6b156bcf04a35d826bc9abe2e50e3ce6ec132ab537"
+  },
+  "software/beyond16/evidence/hardware/performance.json": {
+    "bytes": 7384,
+    "sha256": "c5d4c017574a6d5472d0d5f9819ee165786e35fd6a738ca8eea78d967b061211"
+  },
+  "software/beyond16/evidence/hardware/audio.json": {
+    "bytes": 5744,
+    "sha256": "d75ac0a0642d7402e4031b36137c07cd2df2cf324c00553264ae5182670f7385"
+  },
+  "software/beyond16/evidence/hardware/contact-sheet.png": {
+    "bytes": 727776,
+    "sha256": "cbc2e8a1e6d9607cda2332150e69ef626a804806e1e0b2a36501cb8de43b0b2b"
+  },
+  "software/beyond16/evidence/hardware/demo-usb.log": {
+    "bytes": 143901,
+    "sha256": "f1a1c14e99a20ed17194ef7a8cf44c1cd75ea1a3eb791e95b3ebced2936831de"
+  },
+  "software/beyond16/evidence/hardware/bench-usb.log": {
+    "bytes": 10166,
+    "sha256": "78a09908dd999f23abb5c200c1dd6ee28b6a3cc6c8813ca589b99336f814ec1b"
+  }
+}

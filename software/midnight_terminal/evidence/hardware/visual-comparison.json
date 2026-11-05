@@ -1,0 +1,85 @@
+{
+  "scope": "HDMI capture static bar ROI y26..254, excluding rain/eyes; per-color median capture calibration, nearest-color index comparison",
+  "roi_pixels": 145948,
+  "matched_pixels": 144973,
+  "match_fraction": 0.9933195384657549,
+  "calibrated_rgb_centers": [
+    [
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      21.0,
+      35.0
+    ],
+    [
+      19.0,
+      17.0,
+      55.0
+    ],
+    [
+      39.0,
+      37.0,
+      75.0
+    ],
+    [
+      79.0,
+      78.0,
+      95.0
+    ],
+    [
+      133.0,
+      117.0,
+      134.0
+    ],
+    [
+      192.0,
+      176.0,
+      193.0
+    ],
+    [
+      24.0,
+      62.0,
+      75.0
+    ],
+    [
+      51.5,
+      106.5,
+      117.0
+    ],
+    [
+      100.5,
+      189.5,
+      182.5
+    ],
+    [
+      209.0,
+      255.0,
+      255.0
+    ],
+    [
+      92.0,
+      31.0,
+      93.0
+    ],
+    [
+      166.0,
+      66.0,
+      132.0
+    ],
+    [
+      248.5,
+      151.25,
+      197.25
+    ],
+    [
+      90.0,
+      34.0,
+      56.0
+    ]
+  ],
+  "not_full_framebuffer_crc": true,
+  "release_ready": false
+}

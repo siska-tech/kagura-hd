@@ -1,0 +1,135 @@
+Verilator 5.032 2025-01-01 rev (Debian 5.032-1), seed 1
+PASS: pipelined TMDS channel equals upstream three clocks later, 599988 lane symbols (125222 video cycles), all modes
+- sim/tests/tb_tmds_pipeline.sv:52: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 2ms; walltime 0.099 s; speed 20.335 ms/s
+- Verilator: cpu 0.098 s on 1 threads; alloced 121 MB
+PASS: six-voice synth, 34774 stereo samples vs integer model, 25 applies, 7 invalid; 25/64 cycles, pulse/wave/noise, full LFSR period, snapshots, reset, pan and saturation
+- sim/tests/tb_audio_synth.sv:222: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 724ms; walltime 57.224 s; speed 12.686 ms/s
+- Verilator: cpu 57.109 s on 1 threads; alloced 121 MB
+PASS: fb_command_bounds 1222 tagged read/write ranges; rejected commands never reach memory
+- sim/tests/tb_fb_command_bounds.sv:32: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 67us; walltime 0.003 s; speed 18.767 ms/s
+- Verilator: cpu 0.004 s on 1 threads; alloced 121 MB
+PASS tb_fb_blit: 1150 cases; pixel oracle, all byte phases, overlaps, range/alignment, errors/reset, 46341 interleaves; isolated full=289809 cycles
+- sim/tests/tb_fb_blit.sv:150: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 84ms; walltime 9.427 s; speed 8.880 ms/s
+- Verilator: cpu 9.407 s on 1 threads; alloced 121 MB
+PASS tb_fb_register_window: immediate masked byte writes/readback, 6 READ completions, 18 COPY captures, warm reset
+- sim/tests/tb_fb_register_window.sv:84: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 36us; walltime 0.004 s; speed 10.687 ms/s
+- Verilator: cpu 0.003 s on 1 threads; alloced 121 MB
+PASS: fb_audio_clock 720000 exact tick decisions, 525/1, 12375/8, 7/4, registered/combinational ticks, fast-ratio fallback, mid-phase reset
+- sim/tests/tb_fb_audio_clock.sv:33: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 1ms; walltime 0.144 s; speed 8.266 ms/s
+- Verilator: cpu 0.145 s on 1 threads; alloced 121 MB
+PASS: async FIFO depth16, 1024 ordered words, wrap and nonempty reset, empty pop
+- sim/tests/tb_async_fifo.sv:69: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 29us; walltime 0.006 s; speed 4.199 ms/s
+- Verilator: cpu 0.007 s on 1 threads; alloced 121 MB
+PASS: fb_cursor 7425424 pixels, 2x scale, transparency/colors/hotspot, clipping, bank swap, latest coalescing, busy/range/partial-shape errors, no RAM collision
+- sim/tests/tb_fb_cursor.sv:123: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 100ms; walltime 8.566 s; speed 11.698 ms/s
+- Verilator: cpu 8.549 s on 1 threads; alloced 121 MB
+PASS fb_fill: full pages, boundaries, odd edges, invalid ranges, 80 randomized rectangles, memory stalls
+- sim/tests/tb_fb_fill.sv:79: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 7ms; walltime 0.342 s; speed 19.375 ms/s
+- Verilator: cpu 0.343 s on 1 threads; alloced 121 MB
+PASS fb_byte_port: init gating, all byte lanes, write completion, read routing
+- sim/tests/tb_fb_byte_port.sv:66: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 945ns; walltime 0.001 s; speed 734.383 us/s
+- Verilator: cpu 0.001 s on 1 threads; alloced 121 MB
+PASS: fb_fill_chain: full pages, boundaries, odd edges, invalid ranges, 80 randomized rectangles, memory stalls
+- sim/tests/tb_fb_fill_chain.sv:80: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 26ms; walltime 1.510 s; speed 17.216 ms/s
+- Verilator: cpu 1.510 s on 1 threads; alloced 121 MB
+PASS: fb_burst_ctrl random masked writes, 1..16 words, boundaries, reset; max read 106 cycles
+- sim/tests/tb_fb_burst_ctrl.sv:80: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 123us; walltime 0.022 s; speed 5.839 ms/s
+- Verilator: cpu 0.021 s on 1 threads; alloced 121 MB
+PASS: fb_burst_bounds 1216 end-of-die lengths, rejected requests never assert CS
+- sim/tests/tb_fb_burst_bounds.sv:40: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 475us; walltime 0.019 s; speed 23.869 ms/s
+- Verilator: cpu 0.020 s on 1 threads; alloced 121 MB
+PASS tb_fb_burst_service: 96 intervals, aligned split read=28+2N+24(K-1) write=22+2N+18(K-1)
+- sim/tests/tb_fb_burst_service.sv:68: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 56us; walltime 0.003 s; speed 19.986 ms/s
+- Verilator: cpu 0.003 s on 1 threads; alloced 121 MB
+PASS: fb_contention 360 lines max=612 cycles PCM max=186 cycles PCM=8187 GPU=6462
+- sim/tests/tb_fb_contention.sv:79: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 9ms; walltime 0.530 s; speed 16.236 ms/s
+- Verilator: cpu 0.531 s on 1 threads; alloced 121 MB
+PASS: fb_line_fetch 720 lines (both pages) max=643 cycles PCM max=185 cycles PCM=16398 GPU=12941
+- sim/tests/tb_fb_line_fetch.sv:94: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 17ms; walltime 1.003 s; speed 17.262 ms/s
+- Verilator: cpu 1.000 s on 1 threads; alloced 121 MB
+PASS: fb_line_fetch_control invalid row, backpressure, response error, reset during stream
+- sim/tests/tb_fb_line_fetch_control.sv:40: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 235ns; walltime 0.001 s; speed 224.834 us/s
+- Verilator: cpu 0.001 s on 1 threads; alloced 121 MB
+PASS: fb_line_banks async clocks, tags, stale discard, ownership, underrun, pending reset
+- sim/tests/tb_fb_line_banks.sv:63: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 19us; walltime 0.001 s; speed 11.673 ms/s
+- Verilator: cpu 0.002 s on 1 threads; alloced 121 MB
+PASS: fb_scanout 1843200 pixels, 2x scaling, palette+page atomic flip, saturated background, missing lines=0
+- sim/tests/tb_fb_scanout.sv:88: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 50ms; walltime 5.208 s; speed 9.617 ms/s
+- Verilator: cpu 5.199 s on 1 threads; alloced 121 MB
+PASS: fb_scanout 1843200 pixels, 2x scaling, palette+page atomic flip, saturated background, missing lines=3
+- sim/tests/tb_fb_scanout.sv:88: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 50ms; walltime 2.223 s; speed 22.520 ms/s
+- Verilator: cpu 2.220 s on 1 threads; alloced 121 MB
+PASS: fb_pcm_port init gating, byte lanes, cache, flush during read, errors, stalls
+- sim/tests/tb_fb_pcm_port.sv:59: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 635ns; walltime 0.001 s; speed 411.696 us/s
+- Verilator: cpu 0.002 s on 1 threads; alloced 121 MB
+Prepared /mnt/c/Users/Shion/Documents/Projects/kagura-hd/build/release-validation-run/build/generated/kagura_hdmi_stream.sv
+PASS: fb_fill_burst full pages, odd nibble/byte/word edges, invalid ranges, 100 random rectangles, stalls; full=130200 cycles
+- sim/tests/tb_fb_fill_burst.sv:76: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 7ms; walltime 0.822 s; speed 8.884 ms/s
+- Verilator: cpu 0.823 s on 1 threads; alloced 121 MB
+PASS: fb_core 1843200 RGB pixels, 1843200 TMDS pixels, 2387 decoded stereo samples, 49 ACR, 4 AVI, PCM2+PSG6+host writes
+- sim/tests/tb_fb_core.sv:84: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 50ms; walltime 22.959 s; speed 2.181 ms/s
+- Verilator: cpu 22.929 s on 1 threads; alloced 121 MB
+BLIT contention LANES=1: lines=161 max=813 sys cycles, ordered PCM=342, copy=372169 sys cycles
+PASS: fb_host LANES=1 physical protocol -> tagged commands -> PSRAM -> displayed pixels
+- sim/tests/tb_fb_host.sv:227: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 25ms; walltime 32.388 s; speed 785.542 us/s
+- Verilator: cpu 32.319 s on 1 threads; alloced 122 MB
+BLIT contention LANES=4: lines=156 max=817 sys cycles, ordered PCM=334, copy=372019 sys cycles
+PASS: fb_host LANES=4 physical protocol -> tagged commands -> PSRAM -> displayed pixels
+- sim/tests/tb_fb_host.sv:227: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 24ms; walltime 22.151 s; speed 1.103 ms/s
+- Verilator: cpu 22.115 s on 1 threads; alloced 121 MB
+PASS: PCM2 board LANES=1 ABI1.4, Host upload/readback/FENCE, stereo sample oracle, gains, pause/resume, loop/one-shot, rejection, display
+- sim/tests/tb_fb_board.sv:155: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 33ms; walltime 16.257 s; speed 2.065 ms/s
+- Verilator: cpu 16.142 s on 1 threads; alloced 124 MB
+PASS: all 26 Kagura-FB tests

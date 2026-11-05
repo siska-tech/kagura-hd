@@ -1,0 +1,209 @@
+{
+  "scope": "native C engine + existing C SDK + behavioral register model; no physical wait, PIO or PSRAM arbitration",
+  "variant": "optimized",
+  "release_ready": false,
+  "initial_load_counts": [
+    109644,
+    1145391,
+    9970,
+    1,
+    0,
+    636928,
+    0,
+    0
+  ],
+  "runtime_counts": [
+    19913930,
+    106205760,
+    2212570,
+    4545,
+    97987584,
+    0,
+    0,
+    0
+  ],
+  "wall_seconds": 0.36075430002529174,
+  "scenes": [
+    {
+      "scene": 0,
+      "name": "BOOT",
+      "logical_seconds": 10.0,
+      "frames": 304,
+      "transactions": 1617168,
+      "wire_bytes": 8624700,
+      "gpu_commands": 179676,
+      "blit_pixels": 0,
+      "transactions_per_logical_second": 161716.8,
+      "wire_bytes_per_logical_second": 862470.0,
+      "cpu_frame_mean_ms": 0.06384078947368421,
+      "cpu_frame_worst_ms": 0.0993,
+      "cpu_frame_p95_ms": 0.0708,
+      "logical_update_fps": 30.4,
+      "fence_wait_hardware_ms": null,
+      "pcm_underrun_hardware": null
+    },
+    {
+      "scene": 1,
+      "name": "HYPERSPACE",
+      "logical_seconds": 20.0,
+      "frames": 607,
+      "transactions": 1261805,
+      "wire_bytes": 6729384,
+      "gpu_commands": 140189,
+      "blit_pixels": 0,
+      "transactions_per_logical_second": 63090.25,
+      "wire_bytes_per_logical_second": 336469.2,
+      "cpu_frame_mean_ms": 0.027458484349258648,
+      "cpu_frame_worst_ms": 0.2504,
+      "cpu_frame_p95_ms": 0.0313,
+      "logical_update_fps": 30.35,
+      "fence_wait_hardware_ms": null,
+      "pcm_underrun_hardware": null
+    },
+    {
+      "scene": 2,
+      "name": "RASTER WAVES",
+      "logical_seconds": 20.0,
+      "frames": 607,
+      "transactions": 4022839,
+      "wire_bytes": 21454908,
+      "gpu_commands": 446971,
+      "blit_pixels": 0,
+      "transactions_per_logical_second": 201141.95,
+      "wire_bytes_per_logical_second": 1072745.4,
+      "cpu_frame_mean_ms": 0.07708995057660625,
+      "cpu_frame_worst_ms": 0.1834,
+      "cpu_frame_p95_ms": 0.0859,
+      "logical_update_fps": 30.35,
+      "fence_wait_hardware_ms": null,
+      "pcm_underrun_hardware": null
+    },
+    {
+      "scene": 3,
+      "name": "PLASMA ENGINE",
+      "logical_seconds": 20.0,
+      "frames": 607,
+      "transactions": 1625666,
+      "wire_bytes": 8669976,
+      "gpu_commands": 180618,
+      "blit_pixels": 67018752,
+      "transactions_per_logical_second": 81283.3,
+      "wire_bytes_per_logical_second": 433498.8,
+      "cpu_frame_mean_ms": 0.038525700164744645,
+      "cpu_frame_worst_ms": 0.088,
+      "cpu_frame_p95_ms": 0.0437,
+      "logical_update_fps": 30.35,
+      "fence_wait_hardware_ms": null,
+      "pcm_underrun_hardware": null
+    },
+    {
+      "scene": 4,
+      "name": "ROTOZOOM",
+      "logical_seconds": 25.0,
+      "frames": 758,
+      "transactions": 3045540,
+      "wire_bytes": 16242600,
+      "gpu_commands": 338380,
+      "blit_pixels": 5426176,
+      "transactions_per_logical_second": 121821.6,
+      "wire_bytes_per_logical_second": 649704.0,
+      "cpu_frame_mean_ms": 0.05626754617414248,
+      "cpu_frame_worst_ms": 0.1772,
+      "cpu_frame_p95_ms": 0.0601,
+      "logical_update_fps": 30.32,
+      "fence_wait_hardware_ms": null,
+      "pcm_underrun_hardware": null
+    },
+    {
+      "scene": 5,
+      "name": "BLIT STORM",
+      "logical_seconds": 25.0,
+      "frames": 758,
+      "transactions": 1739851,
+      "wire_bytes": 9278916,
+      "gpu_commands": 193303,
+      "blit_pixels": 24805376,
+      "transactions_per_logical_second": 69594.04,
+      "wire_bytes_per_logical_second": 371156.64,
+      "cpu_frame_mean_ms": 0.03177915567282322,
+      "cpu_frame_worst_ms": 0.0718,
+      "cpu_frame_p95_ms": 0.0359,
+      "logical_update_fps": 30.32,
+      "fence_wait_hardware_ms": null,
+      "pcm_underrun_hardware": null
+    },
+    {
+      "scene": 6,
+      "name": "VECTOR WORLD",
+      "logical_seconds": 20.0,
+      "frames": 607,
+      "transactions": 3919699,
+      "wire_bytes": 20904828,
+      "gpu_commands": 435511,
+      "blit_pixels": 0,
+      "transactions_per_logical_second": 195984.95,
+      "wire_bytes_per_logical_second": 1045241.4,
+      "cpu_frame_mean_ms": 0.07507034596375618,
+      "cpu_frame_worst_ms": 0.2498,
+      "cpu_frame_p95_ms": 0.0829,
+      "logical_update_fps": 30.35,
+      "fence_wait_hardware_ms": null,
+      "pcm_underrun_hardware": null
+    },
+    {
+      "scene": 7,
+      "name": "FINALE",
+      "logical_seconds": 10.0,
+      "frames": 304,
+      "transactions": 2681362,
+      "wire_bytes": 14300448,
+      "gpu_commands": 297922,
+      "blit_pixels": 737280,
+      "transactions_per_logical_second": 268136.2,
+      "wire_bytes_per_logical_second": 1430044.8,
+      "cpu_frame_mean_ms": 0.10813157894736843,
+      "cpu_frame_worst_ms": 0.2168,
+      "cpu_frame_p95_ms": 0.1511,
+      "logical_update_fps": 30.4,
+      "fence_wait_hardware_ms": null,
+      "pcm_underrun_hardware": null
+    }
+  ],
+  "frame_crc32": [
+    [
+      0,
+      3414771348
+    ],
+    [
+      1,
+      3486984496
+    ],
+    [
+      2,
+      2655405841
+    ],
+    [
+      3,
+      470213826
+    ],
+    [
+      4,
+      1498685234
+    ],
+    [
+      5,
+      2233419712
+    ],
+    [
+      6,
+      1262984320
+    ],
+    [
+      7,
+      3897816202
+    ]
+  ],
+  "hardware": "NOT RUN",
+  "pcm_model_faults": 0,
+  "pcm_underrun": null
+}

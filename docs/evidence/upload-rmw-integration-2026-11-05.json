@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-05",
+  "branch": "fix/upload-word-rmw-01",
+  "candidate": {
+    "scope": "latched word CSR RMW",
+    "internal_quality_gate_pass": true,
+    "external_psram_io_verified": false,
+    "hardware_verified": false,
+    "routing_completed": true,
+    "unrouted_nets": 0,
+    "logic": 7368,
+    "ff": 4932,
+    "cls": 4171,
+    "bsram": 19,
+    "setup_slack_ns": 0.717,
+    "hold_slack_ns": 0.407,
+    "setup_violations": 0,
+    "hold_violations": 0,
+    "bitstream_generated": true,
+    "bitstream_sha256": "90b5b26189b198326818488056b9c8fb84e515973cdd2432e04287be3a91ef2e",
+    "release_ready": false
+  },
+  "provenance": {
+    "variant": "standard-latched-rmw",
+    "provenance_pass": true,
+    "inherited_files_checked": 279,
+    "changed_inherited_files": [
+      "DO_NOT_PROGRAM.txt",
+      "rtl/fb/kagura_fb_registers.sv",
+      "rtl/fb/kagura_fb_upload_word.sv"
+    ],
+    "frozen_inputs_checked": 38,
+    "original_candidate_preserved": true,
+    "release_ready": false,
+    "upload_sp_definitions_checked": 16,
+    "upload_sp_ad_constant_fullword": true,
+    "combined_cst_matches_evaluated": true,
+    "hardware_integration_verified": false
+  },
+  "regressions": {
+    "common22": {
+      "pass_observed": true,
+      "log": "rmw-common-regression.log",
+      "sha256": "bee49fafc8216771fad76d4ed10bfe642a490f0da970a7fae4d33cdc87c09553"
+    },
+    "fb26": {
+      "pass_observed": true,
+      "log": "latched-rmw-fb.log",
+      "sha256": "d3dcefd856da5d6657a27c0816761ef7d4bf3678e7b779b710e11ef3831ccc88"
+    },
+    "wrap12": {
+      "pass_observed": true,
+      "log": "latched-rmw-wrap12.log",
+      "sha256": "9ba6b6bb1f6e3adc204e613468e09f5cc79960ddba7accd4573446efc8776f03"
+    },
+    "controller272": {
+      "pass_observed": true,
+      "log": "rmw-controller272.log",
+      "sha256": "19e3cc09d450b3e03388b3294823bdcdf1b36c7f758fb861d497a8eb97d576da"
+    },
+    "rx32": {
+      "pass_observed": true,
+      "log": "rmw-rx32.log",
+      "sha256": "ddb996e267c84042e8bcb04d837fa3eb7d65839d1d8767ee237712f90d7c03cd"
+    },
+    "drivers15_qspi4": {
+      "pass_observed": true,
+      "log": "rmw-drivers.log",
+      "sha256": "2053b0506cd1246fafcbb9919dac6fd57a3bc25062ad26178edbadbb717718c3"
+    },
+    "vendor_leaf": {
+      "pass_observed": true,
+      "log": "latched-rmw-vendor.log",
+      "sha256": "92b3bdd5e08976fe4b0057eb7e96010ce64c4a1203ca9940eb0b11c075d3398d"
+    },
+    "shared_interleave": {
+      "pass_observed": true,
+      "log": "latched-rmw-interleave.log",
+      "sha256": "475c9331fcfeceec753793eda9b462469420bd95575ca9f3acd6b3745c20fbee"
+    }
+  },
+  "release_ready": false
+}

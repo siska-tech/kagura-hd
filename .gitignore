@@ -8,3 +8,21 @@ reports/
 *.bit
 __pycache__/
 *.pyc
+
+# Local editor settings and release preparation backups
+.vscode/
+# The selected hardware-tested release is intentionally versioned.
+
+
+# User-requested PCM2 SPI release artifact.
+
+
+# Bitstreams are only stored in explicit artifact tiers.
+!artifacts/validated/*.fs
+!artifacts/experimental/spi-sta-fail/*.fs
+
+# Frozen release inputs and STA reports are public evidence, not live build output.
+!releases/*/build-inputs/build/
+!releases/*/build-inputs/build/**
+!releases/pcm2-spi/reports/
+!releases/pcm2-spi/reports/**

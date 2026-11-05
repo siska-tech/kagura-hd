@@ -1,0 +1,21 @@
+test_abi_reject_and_memory_structure (__main__.ShowcaseTests.test_abi_reject_and_memory_structure) ... ok
+test_all_scenes_two_loops (__main__.ShowcaseTests.test_all_scenes_two_loops) ... ok
+test_audio_parameters_buffers_and_independent_mix (__main__.ShowcaseTests.test_audio_parameters_buffers_and_independent_mix) ... ok
+test_blit_scene_matches_fresh_composition_including_shadow (__main__.ShowcaseTests.test_blit_scene_matches_fresh_composition_including_shadow) ... ok
+test_busy_before_submit_sends_no_command (__main__.ShowcaseTests.test_busy_before_submit_sends_no_command) ... ok
+test_cursor_crc_and_locked_bank (__main__.ShowcaseTests.test_cursor_crc_and_locked_bank) ... ok
+test_device_error_no_replay (__main__.ShowcaseTests.test_device_error_no_replay) ... ok
+test_fill_clipping_and_odd_edges (__main__.ShowcaseTests.test_fill_clipping_and_odd_edges) ... ok
+test_hardware_entry_requires_qualification_without_io (__main__.ShowcaseTests.test_hardware_entry_requires_qualification_without_io) ... ok
+test_oracle_detects_corruption (__main__.ShowcaseTests.test_oracle_detects_corruption) ... ok
+test_overlap_four_directions_and_guards (__main__.ShowcaseTests.test_overlap_four_directions_and_guards) ... ok
+test_palette_atomic_present_and_palette_only_phase (__main__.ShowcaseTests.test_palette_atomic_present_and_palette_only_phase) ... ok
+test_pcm_fault_latches_manager (__main__.ShowcaseTests.test_pcm_fault_latches_manager) ... ok
+test_pcm_fault_stops_no_automatic_retry (__main__.ShowcaseTests.test_pcm_fault_stops_no_automatic_retry) ... ok
+test_timeout_and_latched_stop_then_explicit_fresh_recovery (__main__.ShowcaseTests.test_timeout_and_latched_stop_then_explicit_fresh_recovery) ... ok
+test_uncertain_submit_not_replayed_or_cleaned_up (__main__.ShowcaseTests.test_uncertain_submit_not_replayed_or_cleaned_up) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 31.325s
+
+OK

@@ -1,0 +1,2269 @@
+{
+  "id": "UGREEN-CAL-01",
+  "plan_sha256": "428f7217eefd93018760873f6deba83e2982eeb15375cce17de9ca7fb76a8647",
+  "rows": [
+    {
+      "id": "DirectShow_AV_original-00",
+      "path": "DirectShow_AV_original",
+      "reference": "silence",
+      "frames": 143232,
+      "left_rms": 0.47871355387816905,
+      "right_rms": 0.4794276497175282,
+      "difference_mean": 2.7926720285969615e-05,
+      "difference_rms": 0.6748133823384215,
+      "max_abs_difference": 2,
+      "equal_within2_fraction": 1.0,
+      "exact_stereo_fraction": 0.6170129579982127,
+      "difference_histogram": {
+        "-2": 1847,
+        "-1": 25460,
+        "0": 88376,
+        "1": 25940,
+        "2": 1609
+      },
+      "render_status": [],
+      "input_overflows": 0,
+      "source_match_within2_fraction": 1.0,
+      "qualified_for_new_sample_campaign": true
+    },
+    {
+      "id": "DirectShow_AV_original-01",
+      "path": "DirectShow_AV_original",
+      "reference": "quiet_multitone",
+      "frames": 143232,
+      "left_rms": 10.909489378559092,
+      "right_rms": 10.904912356098569,
+      "difference_mean": 0.0013753909740840036,
+      "difference_rms": 0.6959554978299873,
+      "max_abs_difference": 5,
+      "equal_within2_fraction": 0.9987153708668454,
+      "exact_stereo_fraction": 0.6103454535299374,
+      "difference_histogram": {
+        "-5": 2,
+        "-4": 14,
+        "-3": 77,
+        "-2": 2065,
+        "-1": 25550,
+        "0": 87421,
+        "1": 26146,
+        "2": 1866,
+        "3": 72,
+        "4": 15,
+        "5": 4
+      },
+      "render_status": [],
+      "input_overflows": 0,
+      "alignment": {
+        "integer_offset": 23310,
+        "best_normalized_correlation": 0.14035929858608542,
+        "fitted_common_gain": 0.019731584195724485,
+        "source_error_rms": 76.78125966694103,
+        "source_match_within2_fraction": 0.07924206881143879,
+        "max_source_abs_error": 175.0,
+        "local_offsets_min": 23191,
+        "local_offsets_max": 23429,
+        "local_match_min": 0.0646875,
+        "local_blocks": [
+          {
+            "capture_start": 0,
+            "reference_start": 23230,
+            "offset_samples": 23230,
+            "match_within2_fraction": 0.06635416666666667
+          },
+          {
+            "capture_start": 4800,
+            "reference_start": 28227,
+            "offset_samples": 23427,
+            "match_within2_fraction": 0.06729166666666667
+          },
+          {
+            "capture_start": 9600,
+            "reference_start": 32859,
+            "offset_samples": 23259,
+            "match_within2_fraction": 0.0659375
+          },
+          {
+            "capture_start": 14400,
+            "reference_start": 37709,
+            "offset_samples": 23309,
+            "match_within2_fraction": 0.06635416666666667
+          },
+          {
+            "capture_start": 19200,
+            "reference_start": 42487,
+            "offset_samples": 23287,
+            "match_within2_fraction": 0.06604166666666667
+          },
+          {
+            "capture_start": 24000,
+            "reference_start": 47338,
+            "offset_samples": 23338,
+            "match_within2_fraction": 0.06635416666666667
+          },
+          {
+            "capture_start": 28800,
+            "reference_start": 52186,
+            "offset_samples": 23386,
+            "match_within2_fraction": 0.065625
+          },
+          {
+            "capture_start": 33600,
+            "reference_start": 56966,
+            "offset_samples": 23366,
+            "match_within2_fraction": 0.06635416666666667
+          },
+          {
+            "capture_start": 38400,
+            "reference_start": 61598,
+            "offset_samples": 23198,
+            "match_within2_fraction": 0.06552083333333333
+          },
+          {
+            "capture_start": 43200,
+            "reference_start": 66446,
+            "offset_samples": 23246,
+            "match_within2_fraction": 0.06625
+          },
+          {
+            "capture_start": 48000,
+            "reference_start": 71224,
+            "offset_samples": 23224,
+            "match_within2_fraction": 0.06645833333333333
+          },
+          {
+            "capture_start": 52800,
+            "reference_start": 76077,
+            "offset_samples": 23277,
+            "match_within2_fraction": 0.06510416666666667
+          },
+          {
+            "capture_start": 57600,
+            "reference_start": 80924,
+            "offset_samples": 23324,
+            "match_within2_fraction": 0.06489583333333333
+          },
+          {
+            "capture_start": 62400,
+            "reference_start": 85703,
+            "offset_samples": 23303,
+            "match_within2_fraction": 0.06666666666666667
+          },
+          {
+            "capture_start": 67200,
+            "reference_start": 90556,
+            "offset_samples": 23356,
+            "match_within2_fraction": 0.0646875
+          },
+          {
+            "capture_start": 72000,
+            "reference_start": 95405,
+            "offset_samples": 23405,
+            "match_within2_fraction": 0.06583333333333333
+          },
+          {
+            "capture_start": 76800,
+            "reference_start": 100182,
+            "offset_samples": 23382,
+            "match_within2_fraction": 0.06645833333333333
+          },
+          {
+            "capture_start": 81600,
+            "reference_start": 104817,
+            "offset_samples": 23217,
+            "match_within2_fraction": 0.06604166666666667
+          },
+          {
+            "capture_start": 86400,
+            "reference_start": 109591,
+            "offset_samples": 23191,
+            "match_within2_fraction": 0.06489583333333333
+          },
+          {
+            "capture_start": 91200,
+            "reference_start": 114442,
+            "offset_samples": 23242,
+            "match_within2_fraction": 0.0653125
+          },
+          {
+            "capture_start": 96000,
+            "reference_start": 119296,
+            "offset_samples": 23296,
+            "match_within2_fraction": 0.0659375
+          },
+          {
+            "capture_start": 100800,
+            "reference_start": 124070,
+            "offset_samples": 23270,
+            "match_within2_fraction": 0.06479166666666666
+          },
+          {
+            "capture_start": 105600,
+            "reference_start": 128923,
+            "offset_samples": 23323,
+            "match_within2_fraction": 0.06604166666666667
+          },
+          {
+            "capture_start": 110400,
+            "reference_start": 133772,
+            "offset_samples": 23372,
+            "match_within2_fraction": 0.06510416666666667
+          },
+          {
+            "capture_start": 115200,
+            "reference_start": 138550,
+            "offset_samples": 23350,
+            "match_within2_fraction": 0.06729166666666667
+          },
+          {
+            "capture_start": 120000,
+            "reference_start": 143402,
+            "offset_samples": 23402,
+            "match_within2_fraction": 0.0659375
+          },
+          {
+            "capture_start": 124800,
+            "reference_start": 148032,
+            "offset_samples": 23232,
+            "match_within2_fraction": 0.06635416666666667
+          },
+          {
+            "capture_start": 129600,
+            "reference_start": 153029,
+            "offset_samples": 23429,
+            "match_within2_fraction": 0.06729166666666667
+          },
+          {
+            "capture_start": 134400,
+            "reference_start": 157661,
+            "offset_samples": 23261,
+            "match_within2_fraction": 0.0659375
+          }
+        ]
+      },
+      "qualified_for_new_sample_campaign": false
+    },
+    {
+      "id": "DirectShow_AV_original-02",
+      "path": "DirectShow_AV_original",
+      "reference": "a0_common_dual_mono",
+      "frames": 143232,
+      "left_rms": 77.23817578932541,
+      "right_rms": 77.23797231763048,
+      "difference_mean": -0.003490840035746202,
+      "difference_rms": 1.389129410213436,
+      "max_abs_difference": 7,
+      "equal_within2_fraction": 0.9339602882037533,
+      "exact_stereo_fraction": 0.28984444816800714,
+      "difference_histogram": {
+        "-7": 1,
+        "-6": 3,
+        "-5": 66,
+        "-4": 714,
+        "-3": 3971,
+        "-2": 14565,
+        "-1": 31613,
+        "0": 41515,
+        "1": 31758,
+        "2": 14322,
+        "3": 3945,
+        "4": 668,
+        "5": 89,
+        "6": 1,
+        "7": 1
+      },
+      "render_status": [],
+      "input_overflows": 0,
+      "alignment": {
+        "integer_offset": 46146,
+        "best_normalized_correlation": 0.9456615937199319,
+        "fitted_common_gain": 0.9419529534761887,
+        "source_error_rms": 25.52274110157061,
+        "source_match_within2_fraction": 0.47423061885612156,
+        "max_source_abs_error": 209.0,
+        "local_offsets_min": 46144,
+        "local_offsets_max": 46149,
+        "local_match_min": 0.5238541666666666,
+        "local_blocks": [
+          {
+            "capture_start": 0,
+            "reference_start": 46149,
+            "offset_samples": 46149,
+            "match_within2_fraction": 0.6113541666666666
+          },
+          {
+            "capture_start": 4800,
+            "reference_start": 50948,
+            "offset_samples": 46148,
+            "match_within2_fraction": 0.6871875
+          },
+          {
+            "capture_start": 9600,
+            "reference_start": 55748,
+            "offset_samples": 46148,
+            "match_within2_fraction": 0.7930208333333333
+          },
+          {
+            "capture_start": 14400,
+            "reference_start": 60548,
+            "offset_samples": 46148,
+            "match_within2_fraction": 0.6555208333333333
+          },
+          {
+            "capture_start": 19200,
+            "reference_start": 65348,
+            "offset_samples": 46148,
+            "match_within2_fraction": 0.680625
+          },
+          {
+            "capture_start": 24000,
+            "reference_start": 70148,
+            "offset_samples": 46148,
+            "match_within2_fraction": 0.7025
+          },
+          {
+            "capture_start": 28800,
+            "reference_start": 74948,
+            "offset_samples": 46148,
+            "match_within2_fraction": 0.6257291666666667
+          },
+          {
+            "capture_start": 33600,
+            "reference_start": 79747,
+            "offset_samples": 46147,
+            "match_within2_fraction": 0.7771875
+          },
+          {
+            "capture_start": 38400,
+            "reference_start": 84547,
+            "offset_samples": 46147,
+            "match_within2_fraction": 0.7795833333333333
+          },
+          {
+            "capture_start": 43200,
+            "reference_start": 89347,
+            "offset_samples": 46147,
+            "match_within2_fraction": 0.6475
+          },
+          {
+            "capture_start": 48000,
+            "reference_start": 94147,
+            "offset_samples": 46147,
+            "match_within2_fraction": 0.7430208333333334
+          },
+          {
+            "capture_start": 52800,
+            "reference_start": 98947,
+            "offset_samples": 46147,
+            "match_within2_fraction": 0.6534375
+          },
+          {
+            "capture_start": 57600,
+            "reference_start": 103747,
+            "offset_samples": 46147,
+            "match_within2_fraction": 0.616875
+          },
+          {
+            "capture_start": 62400,
+            "reference_start": 108546,
+            "offset_samples": 46146,
+            "match_within2_fraction": 0.6882291666666667
+          },
+          {
+            "capture_start": 67200,
+            "reference_start": 113346,
+            "offset_samples": 46146,
+            "match_within2_fraction": 0.8091666666666667
+          },
+          {
+            "capture_start": 72000,
+            "reference_start": 118146,
+            "offset_samples": 46146,
+            "match_within2_fraction": 0.6760416666666667
+          },
+          {
+            "capture_start": 76800,
+            "reference_start": 122946,
+            "offset_samples": 46146,
+            "match_within2_fraction": 0.6786458333333333
+          },
+          {
+            "capture_start": 81600,
+            "reference_start": 127746,
+            "offset_samples": 46146,
+            "match_within2_fraction": 0.7227083333333333
+          },
+          {
+            "capture_start": 86400,
+            "reference_start": 132546,
+            "offset_samples": 46146,
+            "match_within2_fraction": 0.6232291666666666
+          },
+          {
+            "capture_start": 91200,
+            "reference_start": 137346,
+            "offset_samples": 46146,
+            "match_within2_fraction": 0.5238541666666666
+          },
+          {
+            "capture_start": 96000,
+            "reference_start": 142145,
+            "offset_samples": 46145,
+            "match_within2_fraction": 0.7636458333333334
+          },
+          {
+            "capture_start": 100800,
+            "reference_start": 146945,
+            "offset_samples": 46145,
+            "match_within2_fraction": 0.6151041666666667
+          },
+          {
+            "capture_start": 105600,
+            "reference_start": 151745,
+            "offset_samples": 46145,
+            "match_within2_fraction": 0.7133333333333334
+          },
+          {
+            "capture_start": 110400,
+            "reference_start": 156545,
+            "offset_samples": 46145,
+            "match_within2_fraction": 0.7051041666666666
+          },
+          {
+            "capture_start": 115200,
+            "reference_start": 161345,
+            "offset_samples": 46145,
+            "match_within2_fraction": 0.6195833333333334
+          },
+          {
+            "capture_start": 120000,
+            "reference_start": 166145,
+            "offset_samples": 46145,
+            "match_within2_fraction": 0.5760416666666667
+          },
+          {
+            "capture_start": 124800,
+            "reference_start": 170944,
+            "offset_samples": 46144,
+            "match_within2_fraction": 0.7561458333333333
+          },
+          {
+            "capture_start": 129600,
+            "reference_start": 175744,
+            "offset_samples": 46144,
+            "match_within2_fraction": 0.6988541666666667
+          },
+          {
+            "capture_start": 134400,
+            "reference_start": 180544,
+            "offset_samples": 46144,
+            "match_within2_fraction": 0.688125
+          }
+        ]
+      },
+      "qualified_for_new_sample_campaign": false
+    },
+    {
+      "id": "DirectShow_AV_original-03",
+      "path": "DirectShow_AV_original",
+      "reference": "quiet_prng",
+      "frames": 143232,
+      "left_rms": 67.12212176993606,
+      "right_rms": 67.11867645820935,
+      "difference_mean": -0.005969336461126005,
+      "difference_rms": 1.3929514051354452,
+      "max_abs_difference": 6,
+      "equal_within2_fraction": 0.9334226988382485,
+      "exact_stereo_fraction": 0.28661193029490617,
+      "difference_histogram": {
+        "-6": 6,
+        "-5": 78,
+        "-4": 659,
+        "-3": 4054,
+        "-2": 14726,
+        "-1": 31791,
+        "0": 41052,
+        "1": 31684,
+        "2": 14443,
+        "3": 3983,
+        "4": 689,
+        "5": 65,
+        "6": 2
+      },
+      "render_status": [],
+      "input_overflows": 0,
+      "alignment": {
+        "integer_offset": 45908,
+        "best_normalized_correlation": 0.22999625721108785,
+        "fitted_common_gain": 0.2089434434089627,
+        "source_error_rms": 87.64938705095278,
+        "source_match_within2_fraction": 0.09971584562109026,
+        "max_source_abs_error": 257.0,
+        "local_offsets_min": 45907,
+        "local_offsets_max": 45911,
+        "local_match_min": 0.03989583333333333,
+        "local_blocks": [
+          {
+            "capture_start": 0,
+            "reference_start": 45911,
+            "offset_samples": 45911,
+            "match_within2_fraction": 0.6270833333333333
+          },
+          {
+            "capture_start": 4800,
+            "reference_start": 50711,
+            "offset_samples": 45911,
+            "match_within2_fraction": 0.7352083333333334
+          },
+          {
+            "capture_start": 9600,
+            "reference_start": 55511,
+            "offset_samples": 45911,
+            "match_within2_fraction": 0.7472916666666667
+          },
+          {
+            "capture_start": 14400,
+            "reference_start": 60311,
+            "offset_samples": 45911,
+            "match_within2_fraction": 0.23552083333333335
+          },
+          {
+            "capture_start": 19200,
+            "reference_start": 65111,
+            "offset_samples": 45911,
+            "match_within2_fraction": 0.03989583333333333
+          },
+          {
+            "capture_start": 24000,
+            "reference_start": 69910,
+            "offset_samples": 45910,
+            "match_within2_fraction": 0.09416666666666666
+          },
+          {
+            "capture_start": 28800,
+            "reference_start": 74710,
+            "offset_samples": 45910,
+            "match_within2_fraction": 0.6271875
+          },
+          {
+            "capture_start": 33600,
+            "reference_start": 79510,
+            "offset_samples": 45910,
+            "match_within2_fraction": 0.7029166666666666
+          },
+          {
+            "capture_start": 38400,
+            "reference_start": 84310,
+            "offset_samples": 45910,
+            "match_within2_fraction": 0.7648958333333333
+          },
+          {
+            "capture_start": 43200,
+            "reference_start": 89110,
+            "offset_samples": 45910,
+            "match_within2_fraction": 0.29010416666666666
+          },
+          {
+            "capture_start": 48000,
+            "reference_start": 93910,
+            "offset_samples": 45910,
+            "match_within2_fraction": 0.05291666666666667
+          },
+          {
+            "capture_start": 52800,
+            "reference_start": 98709,
+            "offset_samples": 45909,
+            "match_within2_fraction": 0.0809375
+          },
+          {
+            "capture_start": 57600,
+            "reference_start": 103509,
+            "offset_samples": 45909,
+            "match_within2_fraction": 0.5039583333333333
+          },
+          {
+            "capture_start": 62400,
+            "reference_start": 108309,
+            "offset_samples": 45909,
+            "match_within2_fraction": 0.7282291666666667
+          },
+          {
+            "capture_start": 67200,
+            "reference_start": 113109,
+            "offset_samples": 45909,
+            "match_within2_fraction": 0.7064583333333333
+          },
+          {
+            "capture_start": 72000,
+            "reference_start": 117909,
+            "offset_samples": 45909,
+            "match_within2_fraction": 0.45770833333333333
+          },
+          {
+            "capture_start": 76800,
+            "reference_start": 122709,
+            "offset_samples": 45909,
+            "match_within2_fraction": 0.07677083333333333
+          },
+          {
+            "capture_start": 81600,
+            "reference_start": 127508,
+            "offset_samples": 45908,
+            "match_within2_fraction": 0.06989583333333334
+          },
+          {
+            "capture_start": 86400,
+            "reference_start": 132308,
+            "offset_samples": 45908,
+            "match_within2_fraction": 0.4421875
+          },
+          {
+            "capture_start": 91200,
+            "reference_start": 137108,
+            "offset_samples": 45908,
+            "match_within2_fraction": 0.6967708333333333
+          },
+          {
+            "capture_start": 96000,
+            "reference_start": 141908,
+            "offset_samples": 45908,
+            "match_within2_fraction": 0.7051041666666666
+          },
+          {
+            "capture_start": 100800,
+            "reference_start": 146708,
+            "offset_samples": 45908,
+            "match_within2_fraction": 0.47489583333333335
+          },
+          {
+            "capture_start": 105600,
+            "reference_start": 151508,
+            "offset_samples": 45908,
+            "match_within2_fraction": 0.08885416666666666
+          },
+          {
+            "capture_start": 110400,
+            "reference_start": 156307,
+            "offset_samples": 45907,
+            "match_within2_fraction": 0.05364583333333333
+          },
+          {
+            "capture_start": 115200,
+            "reference_start": 161107,
+            "offset_samples": 45907,
+            "match_within2_fraction": 0.31604166666666667
+          },
+          {
+            "capture_start": 120000,
+            "reference_start": 165907,
+            "offset_samples": 45907,
+            "match_within2_fraction": 0.7223958333333333
+          },
+          {
+            "capture_start": 124800,
+            "reference_start": 170707,
+            "offset_samples": 45907,
+            "match_within2_fraction": 0.7458333333333333
+          },
+          {
+            "capture_start": 129600,
+            "reference_start": 175507,
+            "offset_samples": 45907,
+            "match_within2_fraction": 0.591875
+          },
+          {
+            "capture_start": 134400,
+            "reference_start": 180307,
+            "offset_samples": 45907,
+            "match_within2_fraction": 0.1178125
+          }
+        ]
+      },
+      "qualified_for_new_sample_campaign": false
+    },
+    {
+      "id": "DirectShow_AV_original-04",
+      "path": "DirectShow_AV_original",
+      "reference": "medium_1k",
+      "frames": 143232,
+      "left_rms": 2892.9148783938854,
+      "right_rms": 2892.906619580207,
+      "difference_mean": 0.0008447832886505809,
+      "difference_rms": 1.3888956843742009,
+      "max_abs_difference": 6,
+      "equal_within2_fraction": 0.9340789767649688,
+      "exact_stereo_fraction": 0.2883294235924933,
+      "difference_histogram": {
+        "-6": 7,
+        "-5": 84,
+        "-4": 731,
+        "-3": 3933,
+        "-2": 14495,
+        "-1": 31471,
+        "0": 41298,
+        "1": 32097,
+        "2": 14429,
+        "3": 4003,
+        "4": 625,
+        "5": 51,
+        "6": 8
+      },
+      "render_status": [],
+      "input_overflows": 0,
+      "alignment": {
+        "integer_offset": 59538,
+        "best_normalized_correlation": 0.9821384567639104,
+        "fitted_common_gain": 0.9810307024688243,
+        "source_error_rms": 547.094892281745,
+        "source_match_within2_fraction": 0.05276753798033959,
+        "max_source_abs_error": 4165.0,
+        "local_offsets_min": 59440,
+        "local_offsets_max": 59445,
+        "local_match_min": 0.0,
+        "local_blocks": [
+          {
+            "capture_start": 0,
+            "reference_start": 59445,
+            "offset_samples": 59445,
+            "match_within2_fraction": 0.004479166666666667
+          },
+          {
+            "capture_start": 4800,
+            "reference_start": 64244,
+            "offset_samples": 59444,
+            "match_within2_fraction": 0.00010416666666666667
+          },
+          {
+            "capture_start": 9600,
+            "reference_start": 69044,
+            "offset_samples": 59444,
+            "match_within2_fraction": 0.12302083333333333
+          },
+          {
+            "capture_start": 14400,
+            "reference_start": 73844,
+            "offset_samples": 59444,
+            "match_within2_fraction": 0.43677083333333333
+          },
+          {
+            "capture_start": 19200,
+            "reference_start": 78644,
+            "offset_samples": 59444,
+            "match_within2_fraction": 0.4533333333333333
+          },
+          {
+            "capture_start": 24000,
+            "reference_start": 83444,
+            "offset_samples": 59444,
+            "match_within2_fraction": 0.38208333333333333
+          },
+          {
+            "capture_start": 28800,
+            "reference_start": 88244,
+            "offset_samples": 59444,
+            "match_within2_fraction": 0.006458333333333333
+          },
+          {
+            "capture_start": 33600,
+            "reference_start": 93043,
+            "offset_samples": 59443,
+            "match_within2_fraction": 0.0
+          },
+          {
+            "capture_start": 38400,
+            "reference_start": 97843,
+            "offset_samples": 59443,
+            "match_within2_fraction": 0.0565625
+          },
+          {
+            "capture_start": 43200,
+            "reference_start": 102643,
+            "offset_samples": 59443,
+            "match_within2_fraction": 0.4479166666666667
+          },
+          {
+            "capture_start": 48000,
+            "reference_start": 107443,
+            "offset_samples": 59443,
+            "match_within2_fraction": 0.455
+          },
+          {
+            "capture_start": 52800,
+            "reference_start": 112243,
+            "offset_samples": 59443,
+            "match_within2_fraction": 0.4328125
+          },
+          {
+            "capture_start": 57600,
+            "reference_start": 117043,
+            "offset_samples": 59443,
+            "match_within2_fraction": 0.008020833333333333
+          },
+          {
+            "capture_start": 62400,
+            "reference_start": 121843,
+            "offset_samples": 59443,
+            "match_within2_fraction": 0.0
+          },
+          {
+            "capture_start": 67200,
+            "reference_start": 126642,
+            "offset_samples": 59442,
+            "match_within2_fraction": 0.007395833333333333
+          },
+          {
+            "capture_start": 72000,
+            "reference_start": 131442,
+            "offset_samples": 59442,
+            "match_within2_fraction": 0.42916666666666664
+          },
+          {
+            "capture_start": 76800,
+            "reference_start": 136242,
+            "offset_samples": 59442,
+            "match_within2_fraction": 0.44989583333333333
+          },
+          {
+            "capture_start": 81600,
+            "reference_start": 141042,
+            "offset_samples": 59442,
+            "match_within2_fraction": 0.44708333333333333
+          },
+          {
+            "capture_start": 86400,
+            "reference_start": 145842,
+            "offset_samples": 59442,
+            "match_within2_fraction": 0.0509375
+          },
+          {
+            "capture_start": 91200,
+            "reference_start": 150642,
+            "offset_samples": 59442,
+            "match_within2_fraction": 0.0
+          },
+          {
+            "capture_start": 96000,
+            "reference_start": 155441,
+            "offset_samples": 59441,
+            "match_within2_fraction": 0.0060416666666666665
+          },
+          {
+            "capture_start": 100800,
+            "reference_start": 160241,
+            "offset_samples": 59441,
+            "match_within2_fraction": 0.3616666666666667
+          },
+          {
+            "capture_start": 105600,
+            "reference_start": 165041,
+            "offset_samples": 59441,
+            "match_within2_fraction": 0.4515625
+          },
+          {
+            "capture_start": 110400,
+            "reference_start": 169841,
+            "offset_samples": 59441,
+            "match_within2_fraction": 0.4515625
+          },
+          {
+            "capture_start": 115200,
+            "reference_start": 174641,
+            "offset_samples": 59441,
+            "match_within2_fraction": 0.12770833333333334
+          },
+          {
+            "capture_start": 120000,
+            "reference_start": 179441,
+            "offset_samples": 59441,
+            "match_within2_fraction": 0.0003125
+          },
+          {
+            "capture_start": 124800,
+            "reference_start": 184240,
+            "offset_samples": 59440,
+            "match_within2_fraction": 0.0067708333333333336
+          },
+          {
+            "capture_start": 129600,
+            "reference_start": 189040,
+            "offset_samples": 59440,
+            "match_within2_fraction": 0.2984375
+          },
+          {
+            "capture_start": 134400,
+            "reference_start": 193840,
+            "offset_samples": 59440,
+            "match_within2_fraction": 0.44916666666666666
+          }
+        ]
+      },
+      "qualified_for_new_sample_campaign": false
+    },
+    {
+      "id": "DirectShow_AV_original-05",
+      "path": "DirectShow_AV_original",
+      "reference": "medium_prng",
+      "frames": 143184,
+      "left_rms": 1077.0684190538263,
+      "right_rms": 1077.0708772247042,
+      "difference_mean": 0.0036316906916973963,
+      "difference_rms": 1.4162072901285507,
+      "max_abs_difference": 6,
+      "equal_within2_fraction": 0.9283928371885127,
+      "exact_stereo_fraction": 0.2828528327187395,
+      "difference_histogram": {
+        "-6": 6,
+        "-5": 77,
+        "-4": 759,
+        "-3": 4300,
+        "-2": 14765,
+        "-1": 31172,
+        "0": 40500,
+        "1": 31734,
+        "2": 14760,
+        "3": 4231,
+        "4": 777,
+        "5": 94,
+        "6": 9
+      },
+      "render_status": [],
+      "input_overflows": 0,
+      "alignment": {
+        "integer_offset": 45283,
+        "best_normalized_correlation": 0.23019337464270417,
+        "fitted_common_gain": 0.209786011416028,
+        "source_error_rms": 1403.849785989913,
+        "source_match_within2_fraction": 0.016468320482735502,
+        "max_source_abs_error": 5750.0,
+        "local_offsets_min": 45280,
+        "local_offsets_max": 45284,
+        "local_match_min": 0.0015625,
+        "local_blocks": [
+          {
+            "capture_start": 0,
+            "reference_start": 45284,
+            "offset_samples": 45284,
+            "match_within2_fraction": 0.003958333333333334
+          },
+          {
+            "capture_start": 4800,
+            "reference_start": 50084,
+            "offset_samples": 45284,
+            "match_within2_fraction": 0.06791666666666667
+          },
+          {
+            "capture_start": 9600,
+            "reference_start": 54884,
+            "offset_samples": 45284,
+            "match_within2_fraction": 0.14822916666666666
+          },
+          {
+            "capture_start": 14400,
+            "reference_start": 59684,
+            "offset_samples": 45284,
+            "match_within2_fraction": 0.14895833333333333
+          },
+          {
+            "capture_start": 19200,
+            "reference_start": 64484,
+            "offset_samples": 45284,
+            "match_within2_fraction": 0.0928125
+          },
+          {
+            "capture_start": 24000,
+            "reference_start": 69284,
+            "offset_samples": 45284,
+            "match_within2_fraction": 0.0071875
+          },
+          {
+            "capture_start": 28800,
+            "reference_start": 74083,
+            "offset_samples": 45283,
+            "match_within2_fraction": 0.0032291666666666666
+          },
+          {
+            "capture_start": 33600,
+            "reference_start": 78883,
+            "offset_samples": 45283,
+            "match_within2_fraction": 0.051354166666666666
+          },
+          {
+            "capture_start": 38400,
+            "reference_start": 83683,
+            "offset_samples": 45283,
+            "match_within2_fraction": 0.13916666666666666
+          },
+          {
+            "capture_start": 43200,
+            "reference_start": 88483,
+            "offset_samples": 45283,
+            "match_within2_fraction": 0.13958333333333334
+          },
+          {
+            "capture_start": 48000,
+            "reference_start": 93283,
+            "offset_samples": 45283,
+            "match_within2_fraction": 0.118125
+          },
+          {
+            "capture_start": 52800,
+            "reference_start": 98083,
+            "offset_samples": 45283,
+            "match_within2_fraction": 0.007291666666666667
+          },
+          {
+            "capture_start": 57600,
+            "reference_start": 102882,
+            "offset_samples": 45282,
+            "match_within2_fraction": 0.0033333333333333335
+          },
+          {
+            "capture_start": 62400,
+            "reference_start": 107682,
+            "offset_samples": 45282,
+            "match_within2_fraction": 0.03208333333333333
+          },
+          {
+            "capture_start": 67200,
+            "reference_start": 112482,
+            "offset_samples": 45282,
+            "match_within2_fraction": 0.15239583333333334
+          },
+          {
+            "capture_start": 72000,
+            "reference_start": 117282,
+            "offset_samples": 45282,
+            "match_within2_fraction": 0.14416666666666667
+          },
+          {
+            "capture_start": 76800,
+            "reference_start": 122082,
+            "offset_samples": 45282,
+            "match_within2_fraction": 0.13104166666666667
+          },
+          {
+            "capture_start": 81600,
+            "reference_start": 126882,
+            "offset_samples": 45282,
+            "match_within2_fraction": 0.010520833333333333
+          },
+          {
+            "capture_start": 86400,
+            "reference_start": 131682,
+            "offset_samples": 45282,
+            "match_within2_fraction": 0.0022916666666666667
+          },
+          {
+            "capture_start": 91200,
+            "reference_start": 136481,
+            "offset_samples": 45281,
+            "match_within2_fraction": 0.009895833333333333
+          },
+          {
+            "capture_start": 96000,
+            "reference_start": 141281,
+            "offset_samples": 45281,
+            "match_within2_fraction": 0.14854166666666666
+          },
+          {
+            "capture_start": 100800,
+            "reference_start": 146081,
+            "offset_samples": 45281,
+            "match_within2_fraction": 0.15270833333333333
+          },
+          {
+            "capture_start": 105600,
+            "reference_start": 150881,
+            "offset_samples": 45281,
+            "match_within2_fraction": 0.14677083333333332
+          },
+          {
+            "capture_start": 110400,
+            "reference_start": 155681,
+            "offset_samples": 45281,
+            "match_within2_fraction": 0.015729166666666666
+          },
+          {
+            "capture_start": 115200,
+            "reference_start": 160481,
+            "offset_samples": 45281,
+            "match_within2_fraction": 0.0015625
+          },
+          {
+            "capture_start": 120000,
+            "reference_start": 165280,
+            "offset_samples": 45280,
+            "match_within2_fraction": 0.006458333333333333
+          },
+          {
+            "capture_start": 124800,
+            "reference_start": 170080,
+            "offset_samples": 45280,
+            "match_within2_fraction": 0.12927083333333333
+          },
+          {
+            "capture_start": 129600,
+            "reference_start": 174880,
+            "offset_samples": 45280,
+            "match_within2_fraction": 0.145
+          },
+          {
+            "capture_start": 134400,
+            "reference_start": 179680,
+            "offset_samples": 45280,
+            "match_within2_fraction": 0.14520833333333333
+          }
+        ]
+      },
+      "qualified_for_new_sample_campaign": false
+    },
+    {
+      "id": "WASAPI_exclusive-00",
+      "path": "WASAPI_exclusive",
+      "reference": "silence",
+      "frames": 144000,
+      "left_rms": 31.566700875553448,
+      "right_rms": 31.564297253560248,
+      "difference_mean": -0.009173611111111112,
+      "difference_rms": 1.2160300846059142,
+      "max_abs_difference": 5,
+      "equal_within2_fraction": 0.9657013888888889,
+      "exact_stereo_fraction": 0.32861805555555557,
+      "difference_histogram": {
+        "-5": 10,
+        "-4": 220,
+        "-3": 2306,
+        "-2": 12337,
+        "-1": 33904,
+        "0": 47321,
+        "1": 33309,
+        "2": 12190,
+        "3": 2204,
+        "4": 191,
+        "5": 8
+      },
+      "render_status": [],
+      "input_overflows": 0,
+      "source_match_within2_fraction": 0.83815625,
+      "qualified_for_new_sample_campaign": false
+    },
+    {
+      "id": "WASAPI_exclusive-01",
+      "path": "WASAPI_exclusive",
+      "reference": "quiet_multitone",
+      "frames": 144000,
+      "left_rms": 77.42028924965341,
+      "right_rms": 77.42830545808884,
+      "difference_mean": -0.003423611111111111,
+      "difference_rms": 1.2152474599392868,
+      "max_abs_difference": 5,
+      "equal_within2_fraction": 0.9660902777777778,
+      "exact_stereo_fraction": 0.32747916666666665,
+      "difference_histogram": {
+        "-5": 8,
+        "-4": 184,
+        "-3": 2344,
+        "-2": 12359,
+        "-1": 33549,
+        "0": 47157,
+        "1": 33759,
+        "2": 12293,
+        "3": 2157,
+        "4": 184,
+        "5": 6
+      },
+      "render_status": [],
+      "input_overflows": 0,
+      "alignment": {
+        "integer_offset": 10421,
+        "best_normalized_correlation": 0.9911751175509012,
+        "fitted_common_gain": 0.989860884986371,
+        "source_error_rms": 10.310946684363069,
+        "source_match_within2_fraction": 0.3214513888888889,
+        "max_source_abs_error": 177.0,
+        "local_offsets_min": 10419,
+        "local_offsets_max": 10423,
+        "local_match_min": 0.47729166666666667,
+        "local_blocks": [
+          {
+            "capture_start": 0,
+            "reference_start": 10423,
+            "offset_samples": 10423,
+            "match_within2_fraction": 0.5642708333333334
+          },
+          {
+            "capture_start": 4800,
+            "reference_start": 15223,
+            "offset_samples": 10423,
+            "match_within2_fraction": 0.6998958333333334
+          },
+          {
+            "capture_start": 9600,
+            "reference_start": 20023,
+            "offset_samples": 10423,
+            "match_within2_fraction": 0.7429166666666667
+          },
+          {
+            "capture_start": 14400,
+            "reference_start": 24823,
+            "offset_samples": 10423,
+            "match_within2_fraction": 0.7308333333333333
+          },
+          {
+            "capture_start": 19200,
+            "reference_start": 29623,
+            "offset_samples": 10423,
+            "match_within2_fraction": 0.6865625
+          },
+          {
+            "capture_start": 24000,
+            "reference_start": 34423,
+            "offset_samples": 10423,
+            "match_within2_fraction": 0.6013541666666666
+          },
+          {
+            "capture_start": 28800,
+            "reference_start": 39222,
+            "offset_samples": 10422,
+            "match_within2_fraction": 0.5054166666666666
+          },
+          {
+            "capture_start": 33600,
+            "reference_start": 44022,
+            "offset_samples": 10422,
+            "match_within2_fraction": 0.6678125
+          },
+          {
+            "capture_start": 38400,
+            "reference_start": 48822,
+            "offset_samples": 10422,
+            "match_within2_fraction": 0.7361458333333334
+          },
+          {
+            "capture_start": 43200,
+            "reference_start": 53622,
+            "offset_samples": 10422,
+            "match_within2_fraction": 0.7447916666666666
+          },
+          {
+            "capture_start": 48000,
+            "reference_start": 58422,
+            "offset_samples": 10422,
+            "match_within2_fraction": 0.6714583333333334
+          },
+          {
+            "capture_start": 52800,
+            "reference_start": 63222,
+            "offset_samples": 10422,
+            "match_within2_fraction": 0.659375
+          },
+          {
+            "capture_start": 57600,
+            "reference_start": 68022,
+            "offset_samples": 10422,
+            "match_within2_fraction": 0.47729166666666667
+          },
+          {
+            "capture_start": 62400,
+            "reference_start": 72821,
+            "offset_samples": 10421,
+            "match_within2_fraction": 0.7082291666666667
+          },
+          {
+            "capture_start": 67200,
+            "reference_start": 77621,
+            "offset_samples": 10421,
+            "match_within2_fraction": 0.7759375
+          },
+          {
+            "capture_start": 72000,
+            "reference_start": 82421,
+            "offset_samples": 10421,
+            "match_within2_fraction": 0.7155208333333334
+          },
+          {
+            "capture_start": 76800,
+            "reference_start": 87221,
+            "offset_samples": 10421,
+            "match_within2_fraction": 0.67875
+          },
+          {
+            "capture_start": 81600,
+            "reference_start": 92021,
+            "offset_samples": 10421,
+            "match_within2_fraction": 0.7029166666666666
+          },
+          {
+            "capture_start": 86400,
+            "reference_start": 96821,
+            "offset_samples": 10421,
+            "match_within2_fraction": 0.5134375
+          },
+          {
+            "capture_start": 91200,
+            "reference_start": 101620,
+            "offset_samples": 10420,
+            "match_within2_fraction": 0.6284375
+          },
+          {
+            "capture_start": 96000,
+            "reference_start": 106420,
+            "offset_samples": 10420,
+            "match_within2_fraction": 0.7188541666666667
+          },
+          {
+            "capture_start": 100800,
+            "reference_start": 111220,
+            "offset_samples": 10420,
+            "match_within2_fraction": 0.7601041666666667
+          },
+          {
+            "capture_start": 105600,
+            "reference_start": 116020,
+            "offset_samples": 10420,
+            "match_within2_fraction": 0.7094791666666667
+          },
+          {
+            "capture_start": 110400,
+            "reference_start": 120820,
+            "offset_samples": 10420,
+            "match_within2_fraction": 0.6953125
+          },
+          {
+            "capture_start": 115200,
+            "reference_start": 125620,
+            "offset_samples": 10420,
+            "match_within2_fraction": 0.5197916666666667
+          },
+          {
+            "capture_start": 120000,
+            "reference_start": 130419,
+            "offset_samples": 10419,
+            "match_within2_fraction": 0.6284375
+          },
+          {
+            "capture_start": 124800,
+            "reference_start": 135219,
+            "offset_samples": 10419,
+            "match_within2_fraction": 0.7351041666666667
+          },
+          {
+            "capture_start": 129600,
+            "reference_start": 140019,
+            "offset_samples": 10419,
+            "match_within2_fraction": 0.6742708333333334
+          },
+          {
+            "capture_start": 134400,
+            "reference_start": 144819,
+            "offset_samples": 10419,
+            "match_within2_fraction": 0.6901041666666666
+          },
+          {
+            "capture_start": 139200,
+            "reference_start": 149619,
+            "offset_samples": 10419,
+            "match_within2_fraction": 0.74375
+          }
+        ]
+      },
+      "qualified_for_new_sample_campaign": false
+    },
+    {
+      "id": "WASAPI_exclusive-02",
+      "path": "WASAPI_exclusive",
+      "reference": "a0_common_dual_mono",
+      "frames": 144000,
+      "left_rms": 77.25137588670437,
+      "right_rms": 77.249927049588,
+      "difference_mean": -0.0014027777777777777,
+      "difference_rms": 1.2158844517469578,
+      "max_abs_difference": 5,
+      "equal_within2_fraction": 0.9657777777777777,
+      "exact_stereo_fraction": 0.32706944444444447,
+      "difference_histogram": {
+        "-5": 6,
+        "-4": 210,
+        "-3": 2262,
+        "-2": 12231,
+        "-1": 33818,
+        "0": 47098,
+        "1": 33691,
+        "2": 12234,
+        "3": 2237,
+        "4": 201,
+        "5": 12
+      },
+      "render_status": [],
+      "input_overflows": 0,
+      "alignment": {
+        "integer_offset": 316770,
+        "best_normalized_correlation": 0.9431718288460447,
+        "fitted_common_gain": 0.9398859849057586,
+        "source_error_rms": 26.09663478730969,
+        "source_match_within2_fraction": 0.47160416666666666,
+        "max_source_abs_error": 230.0,
+        "local_offsets_min": 316768,
+        "local_offsets_max": 316772,
+        "local_match_min": 0.541875,
+        "local_blocks": [
+          {
+            "capture_start": 0,
+            "reference_start": 316772,
+            "offset_samples": 316772,
+            "match_within2_fraction": 0.744375
+          },
+          {
+            "capture_start": 4800,
+            "reference_start": 321572,
+            "offset_samples": 316772,
+            "match_within2_fraction": 0.7332291666666667
+          },
+          {
+            "capture_start": 9600,
+            "reference_start": 326372,
+            "offset_samples": 316772,
+            "match_within2_fraction": 0.6653125
+          },
+          {
+            "capture_start": 14400,
+            "reference_start": 331172,
+            "offset_samples": 316772,
+            "match_within2_fraction": 0.7555208333333333
+          },
+          {
+            "capture_start": 19200,
+            "reference_start": 335972,
+            "offset_samples": 316772,
+            "match_within2_fraction": 0.5686458333333333
+          },
+          {
+            "capture_start": 24000,
+            "reference_start": 340771,
+            "offset_samples": 316771,
+            "match_within2_fraction": 0.8238541666666667
+          },
+          {
+            "capture_start": 28800,
+            "reference_start": 345571,
+            "offset_samples": 316771,
+            "match_within2_fraction": 0.7679166666666667
+          },
+          {
+            "capture_start": 33600,
+            "reference_start": 350371,
+            "offset_samples": 316771,
+            "match_within2_fraction": 0.690625
+          },
+          {
+            "capture_start": 38400,
+            "reference_start": 355171,
+            "offset_samples": 316771,
+            "match_within2_fraction": 0.6973958333333333
+          },
+          {
+            "capture_start": 43200,
+            "reference_start": 359971,
+            "offset_samples": 316771,
+            "match_within2_fraction": 0.7347916666666666
+          },
+          {
+            "capture_start": 48000,
+            "reference_start": 364771,
+            "offset_samples": 316771,
+            "match_within2_fraction": 0.6046875
+          },
+          {
+            "capture_start": 52800,
+            "reference_start": 369570,
+            "offset_samples": 316770,
+            "match_within2_fraction": 0.7144791666666667
+          },
+          {
+            "capture_start": 57600,
+            "reference_start": 374370,
+            "offset_samples": 316770,
+            "match_within2_fraction": 0.7916666666666666
+          },
+          {
+            "capture_start": 62400,
+            "reference_start": 379170,
+            "offset_samples": 316770,
+            "match_within2_fraction": 0.6973958333333333
+          },
+          {
+            "capture_start": 67200,
+            "reference_start": 383970,
+            "offset_samples": 316770,
+            "match_within2_fraction": 0.7169791666666666
+          },
+          {
+            "capture_start": 72000,
+            "reference_start": 388770,
+            "offset_samples": 316770,
+            "match_within2_fraction": 0.70875
+          },
+          {
+            "capture_start": 76800,
+            "reference_start": 393570,
+            "offset_samples": 316770,
+            "match_within2_fraction": 0.7217708333333334
+          },
+          {
+            "capture_start": 81600,
+            "reference_start": 398369,
+            "offset_samples": 316769,
+            "match_within2_fraction": 0.7151041666666667
+          },
+          {
+            "capture_start": 86400,
+            "reference_start": 403169,
+            "offset_samples": 316769,
+            "match_within2_fraction": 0.7971875
+          },
+          {
+            "capture_start": 91200,
+            "reference_start": 407969,
+            "offset_samples": 316769,
+            "match_within2_fraction": 0.7871875
+          },
+          {
+            "capture_start": 96000,
+            "reference_start": 412769,
+            "offset_samples": 316769,
+            "match_within2_fraction": 0.6432291666666666
+          },
+          {
+            "capture_start": 100800,
+            "reference_start": 417569,
+            "offset_samples": 316769,
+            "match_within2_fraction": 0.7215625
+          },
+          {
+            "capture_start": 105600,
+            "reference_start": 422369,
+            "offset_samples": 316769,
+            "match_within2_fraction": 0.6698958333333334
+          },
+          {
+            "capture_start": 110400,
+            "reference_start": 427169,
+            "offset_samples": 316769,
+            "match_within2_fraction": 0.5807291666666666
+          },
+          {
+            "capture_start": 115200,
+            "reference_start": 431968,
+            "offset_samples": 316768,
+            "match_within2_fraction": 0.8067708333333333
+          },
+          {
+            "capture_start": 120000,
+            "reference_start": 436768,
+            "offset_samples": 316768,
+            "match_within2_fraction": 0.7184375
+          },
+          {
+            "capture_start": 124800,
+            "reference_start": 441568,
+            "offset_samples": 316768,
+            "match_within2_fraction": 0.7134375
+          },
+          {
+            "capture_start": 129600,
+            "reference_start": 446368,
+            "offset_samples": 316768,
+            "match_within2_fraction": 0.6725
+          },
+          {
+            "capture_start": 134400,
+            "reference_start": 451168,
+            "offset_samples": 316768,
+            "match_within2_fraction": 0.7005208333333334
+          },
+          {
+            "capture_start": 139200,
+            "reference_start": 455968,
+            "offset_samples": 316768,
+            "match_within2_fraction": 0.541875
+          }
+        ]
+      },
+      "qualified_for_new_sample_campaign": false
+    },
+    {
+      "id": "WASAPI_exclusive-03",
+      "path": "WASAPI_exclusive",
+      "reference": "quiet_prng",
+      "frames": 144000,
+      "left_rms": 66.97397011982424,
+      "right_rms": 66.97401667603805,
+      "difference_mean": -0.005291666666666667,
+      "difference_rms": 1.2139581724443576,
+      "max_abs_difference": 5,
+      "equal_within2_fraction": 0.9661388888888889,
+      "exact_stereo_fraction": 0.3273125,
+      "difference_histogram": {
+        "-5": 7,
+        "-4": 205,
+        "-3": 2247,
+        "-2": 12285,
+        "-1": 33959,
+        "0": 47133,
+        "1": 33590,
+        "2": 12157,
+        "3": 2213,
+        "4": 200,
+        "5": 4
+      },
+      "render_status": [],
+      "input_overflows": 0,
+      "alignment": {
+        "integer_offset": 28675,
+        "best_normalized_correlation": 0.23160823842415698,
+        "fitted_common_gain": 0.20963141446535222,
+        "source_error_rms": 87.54977445398957,
+        "source_match_within2_fraction": 0.10013194444444444,
+        "max_source_abs_error": 257.0,
+        "local_offsets_min": 28672,
+        "local_offsets_max": 28677,
+        "local_match_min": 0.037395833333333336,
+        "local_blocks": [
+          {
+            "capture_start": 0,
+            "reference_start": 28677,
+            "offset_samples": 28677,
+            "match_within2_fraction": 0.7276041666666667
+          },
+          {
+            "capture_start": 4800,
+            "reference_start": 33477,
+            "offset_samples": 28677,
+            "match_within2_fraction": 0.7344791666666667
+          },
+          {
+            "capture_start": 9600,
+            "reference_start": 38277,
+            "offset_samples": 28677,
+            "match_within2_fraction": 0.414375
+          },
+          {
+            "capture_start": 14400,
+            "reference_start": 43077,
+            "offset_samples": 28677,
+            "match_within2_fraction": 0.079375
+          },
+          {
+            "capture_start": 19200,
+            "reference_start": 47876,
+            "offset_samples": 28676,
+            "match_within2_fraction": 0.06125
+          },
+          {
+            "capture_start": 24000,
+            "reference_start": 52676,
+            "offset_samples": 28676,
+            "match_within2_fraction": 0.38604166666666667
+          },
+          {
+            "capture_start": 28800,
+            "reference_start": 57476,
+            "offset_samples": 28676,
+            "match_within2_fraction": 0.7526041666666666
+          },
+          {
+            "capture_start": 33600,
+            "reference_start": 62276,
+            "offset_samples": 28676,
+            "match_within2_fraction": 0.6851041666666666
+          },
+          {
+            "capture_start": 38400,
+            "reference_start": 67076,
+            "offset_samples": 28676,
+            "match_within2_fraction": 0.57
+          },
+          {
+            "capture_start": 43200,
+            "reference_start": 71876,
+            "offset_samples": 28676,
+            "match_within2_fraction": 0.0909375
+          },
+          {
+            "capture_start": 48000,
+            "reference_start": 76675,
+            "offset_samples": 28675,
+            "match_within2_fraction": 0.044895833333333336
+          },
+          {
+            "capture_start": 52800,
+            "reference_start": 81475,
+            "offset_samples": 28675,
+            "match_within2_fraction": 0.28239583333333335
+          },
+          {
+            "capture_start": 57600,
+            "reference_start": 86275,
+            "offset_samples": 28675,
+            "match_within2_fraction": 0.7666666666666667
+          },
+          {
+            "capture_start": 62400,
+            "reference_start": 91075,
+            "offset_samples": 28675,
+            "match_within2_fraction": 0.68
+          },
+          {
+            "capture_start": 67200,
+            "reference_start": 95875,
+            "offset_samples": 28675,
+            "match_within2_fraction": 0.6152083333333334
+          },
+          {
+            "capture_start": 72000,
+            "reference_start": 100675,
+            "offset_samples": 28675,
+            "match_within2_fraction": 0.109375
+          },
+          {
+            "capture_start": 76800,
+            "reference_start": 105474,
+            "offset_samples": 28674,
+            "match_within2_fraction": 0.0453125
+          },
+          {
+            "capture_start": 81600,
+            "reference_start": 110274,
+            "offset_samples": 28674,
+            "match_within2_fraction": 0.15791666666666668
+          },
+          {
+            "capture_start": 86400,
+            "reference_start": 115074,
+            "offset_samples": 28674,
+            "match_within2_fraction": 0.771875
+          },
+          {
+            "capture_start": 91200,
+            "reference_start": 119874,
+            "offset_samples": 28674,
+            "match_within2_fraction": 0.7420833333333333
+          },
+          {
+            "capture_start": 96000,
+            "reference_start": 124674,
+            "offset_samples": 28674,
+            "match_within2_fraction": 0.708125
+          },
+          {
+            "capture_start": 100800,
+            "reference_start": 129474,
+            "offset_samples": 28674,
+            "match_within2_fraction": 0.15614583333333334
+          },
+          {
+            "capture_start": 105600,
+            "reference_start": 134274,
+            "offset_samples": 28674,
+            "match_within2_fraction": 0.037395833333333336
+          },
+          {
+            "capture_start": 110400,
+            "reference_start": 139073,
+            "offset_samples": 28673,
+            "match_within2_fraction": 0.11385416666666667
+          },
+          {
+            "capture_start": 115200,
+            "reference_start": 143873,
+            "offset_samples": 28673,
+            "match_within2_fraction": 0.6245833333333334
+          },
+          {
+            "capture_start": 120000,
+            "reference_start": 148673,
+            "offset_samples": 28673,
+            "match_within2_fraction": 0.7497916666666666
+          },
+          {
+            "capture_start": 124800,
+            "reference_start": 153473,
+            "offset_samples": 28673,
+            "match_within2_fraction": 0.7489583333333333
+          },
+          {
+            "capture_start": 129600,
+            "reference_start": 158273,
+            "offset_samples": 28673,
+            "match_within2_fraction": 0.2632291666666667
+          },
+          {
+            "capture_start": 134400,
+            "reference_start": 163073,
+            "offset_samples": 28673,
+            "match_within2_fraction": 0.04572916666666667
+          },
+          {
+            "capture_start": 139200,
+            "reference_start": 167872,
+            "offset_samples": 28672,
+            "match_within2_fraction": 0.08958333333333333
+          }
+        ]
+      },
+      "qualified_for_new_sample_campaign": false
+    },
+    {
+      "id": "WASAPI_exclusive-04",
+      "path": "WASAPI_exclusive",
+      "reference": "medium_1k",
+      "frames": 144000,
+      "left_rms": 2893.0401431507903,
+      "right_rms": 2893.037033124149,
+      "difference_mean": -0.002395833333333333,
+      "difference_rms": 1.2124613395898445,
+      "max_abs_difference": 5,
+      "equal_within2_fraction": 0.9669027777777778,
+      "exact_stereo_fraction": 0.3289166666666667,
+      "difference_histogram": {
+        "-5": 9,
+        "-4": 196,
+        "-3": 2209,
+        "-2": 12262,
+        "-1": 33787,
+        "0": 47364,
+        "1": 33517,
+        "2": 12304,
+        "3": 2123,
+        "4": 217,
+        "5": 12
+      },
+      "render_status": [],
+      "input_overflows": 0,
+      "alignment": {
+        "integer_offset": 245636,
+        "best_normalized_correlation": 0.9829007818523254,
+        "fitted_common_gain": 0.9818355603415995,
+        "source_error_rms": 535.304071951556,
+        "source_match_within2_fraction": 0.05442361111111111,
+        "max_source_abs_error": 4183.0,
+        "local_offsets_min": 245538,
+        "local_offsets_max": 245542,
+        "local_match_min": 0.0,
+        "local_blocks": [
+          {
+            "capture_start": 0,
+            "reference_start": 245542,
+            "offset_samples": 245542,
+            "match_within2_fraction": 0.0
+          },
+          {
+            "capture_start": 4800,
+            "reference_start": 250342,
+            "offset_samples": 245542,
+            "match_within2_fraction": 0.021458333333333333
+          },
+          {
+            "capture_start": 9600,
+            "reference_start": 255142,
+            "offset_samples": 245542,
+            "match_within2_fraction": 0.43125
+          },
+          {
+            "capture_start": 14400,
+            "reference_start": 259942,
+            "offset_samples": 245542,
+            "match_within2_fraction": 0.4427083333333333
+          },
+          {
+            "capture_start": 19200,
+            "reference_start": 264742,
+            "offset_samples": 245542,
+            "match_within2_fraction": 0.4661458333333333
+          },
+          {
+            "capture_start": 24000,
+            "reference_start": 269542,
+            "offset_samples": 245542,
+            "match_within2_fraction": 0.07416666666666667
+          },
+          {
+            "capture_start": 28800,
+            "reference_start": 274342,
+            "offset_samples": 245542,
+            "match_within2_fraction": 0.0
+          },
+          {
+            "capture_start": 33600,
+            "reference_start": 279141,
+            "offset_samples": 245541,
+            "match_within2_fraction": 0.012291666666666666
+          },
+          {
+            "capture_start": 38400,
+            "reference_start": 283941,
+            "offset_samples": 245541,
+            "match_within2_fraction": 0.3572916666666667
+          },
+          {
+            "capture_start": 43200,
+            "reference_start": 288741,
+            "offset_samples": 245541,
+            "match_within2_fraction": 0.45479166666666665
+          },
+          {
+            "capture_start": 48000,
+            "reference_start": 293541,
+            "offset_samples": 245541,
+            "match_within2_fraction": 0.4559375
+          },
+          {
+            "capture_start": 52800,
+            "reference_start": 298341,
+            "offset_samples": 245541,
+            "match_within2_fraction": 0.1540625
+          },
+          {
+            "capture_start": 57600,
+            "reference_start": 303141,
+            "offset_samples": 245541,
+            "match_within2_fraction": 0.0003125
+          },
+          {
+            "capture_start": 62400,
+            "reference_start": 307940,
+            "offset_samples": 245540,
+            "match_within2_fraction": 0.011041666666666667
+          },
+          {
+            "capture_start": 67200,
+            "reference_start": 312740,
+            "offset_samples": 245540,
+            "match_within2_fraction": 0.2746875
+          },
+          {
+            "capture_start": 72000,
+            "reference_start": 317540,
+            "offset_samples": 245540,
+            "match_within2_fraction": 0.44635416666666666
+          },
+          {
+            "capture_start": 76800,
+            "reference_start": 322340,
+            "offset_samples": 245540,
+            "match_within2_fraction": 0.446875
+          },
+          {
+            "capture_start": 81600,
+            "reference_start": 327140,
+            "offset_samples": 245540,
+            "match_within2_fraction": 0.24239583333333334
+          },
+          {
+            "capture_start": 86400,
+            "reference_start": 331940,
+            "offset_samples": 245540,
+            "match_within2_fraction": 0.0010416666666666667
+          },
+          {
+            "capture_start": 91200,
+            "reference_start": 336739,
+            "offset_samples": 245539,
+            "match_within2_fraction": 0.004270833333333333
+          },
+          {
+            "capture_start": 96000,
+            "reference_start": 341539,
+            "offset_samples": 245539,
+            "match_within2_fraction": 0.20229166666666668
+          },
+          {
+            "capture_start": 100800,
+            "reference_start": 346339,
+            "offset_samples": 245539,
+            "match_within2_fraction": 0.4503125
+          },
+          {
+            "capture_start": 105600,
+            "reference_start": 351139,
+            "offset_samples": 245539,
+            "match_within2_fraction": 0.44854166666666667
+          },
+          {
+            "capture_start": 110400,
+            "reference_start": 355939,
+            "offset_samples": 245539,
+            "match_within2_fraction": 0.31697916666666665
+          },
+          {
+            "capture_start": 115200,
+            "reference_start": 360739,
+            "offset_samples": 245539,
+            "match_within2_fraction": 0.0060416666666666665
+          },
+          {
+            "capture_start": 120000,
+            "reference_start": 365538,
+            "offset_samples": 245538,
+            "match_within2_fraction": 0.0
+          },
+          {
+            "capture_start": 124800,
+            "reference_start": 370338,
+            "offset_samples": 245538,
+            "match_within2_fraction": 0.12104166666666667
+          },
+          {
+            "capture_start": 129600,
+            "reference_start": 375138,
+            "offset_samples": 245538,
+            "match_within2_fraction": 0.4484375
+          },
+          {
+            "capture_start": 134400,
+            "reference_start": 379938,
+            "offset_samples": 245538,
+            "match_within2_fraction": 0.44427083333333334
+          },
+          {
+            "capture_start": 139200,
+            "reference_start": 384738,
+            "offset_samples": 245538,
+            "match_within2_fraction": 0.3840625
+          }
+        ]
+      },
+      "qualified_for_new_sample_campaign": false
+    },
+    {
+      "id": "WASAPI_exclusive-05",
+      "path": "WASAPI_exclusive",
+      "reference": "medium_prng",
+      "frames": 144000,
+      "left_rms": 1084.4520220804811,
+      "right_rms": 1084.4513284823909,
+      "difference_mean": 0.003125,
+      "difference_rms": 1.2432707759061266,
+      "max_abs_difference": 6,
+      "equal_within2_fraction": 0.9610208333333333,
+      "exact_stereo_fraction": 0.32103472222222224,
+      "difference_histogram": {
+        "-6": 1,
+        "-5": 18,
+        "-4": 254,
+        "-3": 2467,
+        "-2": 12613,
+        "-1": 33462,
+        "0": 46229,
+        "1": 33412,
+        "2": 12671,
+        "3": 2604,
+        "4": 260,
+        "5": 9
+      },
+      "render_status": [],
+      "input_overflows": 0,
+      "alignment": {
+        "integer_offset": 28531,
+        "best_normalized_correlation": 0.22965584115763457,
+        "fitted_common_gain": 0.21045841691368103,
+        "source_error_rms": 1409.597768317063,
+        "source_match_within2_fraction": 0.016975694444444446,
+        "max_source_abs_error": 5763.0,
+        "local_offsets_min": 28529,
+        "local_offsets_max": 28533,
+        "local_match_min": 0.003125,
+        "local_blocks": [
+          {
+            "capture_start": 0,
+            "reference_start": 28533,
+            "offset_samples": 28533,
+            "match_within2_fraction": 0.05125
+          },
+          {
+            "capture_start": 4800,
+            "reference_start": 33333,
+            "offset_samples": 28533,
+            "match_within2_fraction": 0.15041666666666667
+          },
+          {
+            "capture_start": 9600,
+            "reference_start": 38133,
+            "offset_samples": 28533,
+            "match_within2_fraction": 0.146875
+          },
+          {
+            "capture_start": 14400,
+            "reference_start": 42933,
+            "offset_samples": 28533,
+            "match_within2_fraction": 0.12645833333333334
+          },
+          {
+            "capture_start": 19200,
+            "reference_start": 47733,
+            "offset_samples": 28533,
+            "match_within2_fraction": 0.017916666666666668
+          },
+          {
+            "capture_start": 24000,
+            "reference_start": 52533,
+            "offset_samples": 28533,
+            "match_within2_fraction": 0.004166666666666667
+          },
+          {
+            "capture_start": 28800,
+            "reference_start": 57332,
+            "offset_samples": 28532,
+            "match_within2_fraction": 0.0221875
+          },
+          {
+            "capture_start": 33600,
+            "reference_start": 62132,
+            "offset_samples": 28532,
+            "match_within2_fraction": 0.14645833333333333
+          },
+          {
+            "capture_start": 38400,
+            "reference_start": 66932,
+            "offset_samples": 28532,
+            "match_within2_fraction": 0.14229166666666668
+          },
+          {
+            "capture_start": 43200,
+            "reference_start": 71732,
+            "offset_samples": 28532,
+            "match_within2_fraction": 0.15052083333333333
+          },
+          {
+            "capture_start": 48000,
+            "reference_start": 76532,
+            "offset_samples": 28532,
+            "match_within2_fraction": 0.022291666666666668
+          },
+          {
+            "capture_start": 52800,
+            "reference_start": 81332,
+            "offset_samples": 28532,
+            "match_within2_fraction": 0.0038541666666666668
+          },
+          {
+            "capture_start": 57600,
+            "reference_start": 86131,
+            "offset_samples": 28531,
+            "match_within2_fraction": 0.004270833333333333
+          },
+          {
+            "capture_start": 62400,
+            "reference_start": 90931,
+            "offset_samples": 28531,
+            "match_within2_fraction": 0.13291666666666666
+          },
+          {
+            "capture_start": 67200,
+            "reference_start": 95731,
+            "offset_samples": 28531,
+            "match_within2_fraction": 0.15083333333333335
+          },
+          {
+            "capture_start": 72000,
+            "reference_start": 100531,
+            "offset_samples": 28531,
+            "match_within2_fraction": 0.14177083333333335
+          },
+          {
+            "capture_start": 76800,
+            "reference_start": 105331,
+            "offset_samples": 28531,
+            "match_within2_fraction": 0.0465625
+          },
+          {
+            "capture_start": 81600,
+            "reference_start": 110131,
+            "offset_samples": 28531,
+            "match_within2_fraction": 0.003125
+          },
+          {
+            "capture_start": 86400,
+            "reference_start": 114930,
+            "offset_samples": 28530,
+            "match_within2_fraction": 0.004895833333333334
+          },
+          {
+            "capture_start": 91200,
+            "reference_start": 119730,
+            "offset_samples": 28530,
+            "match_within2_fraction": 0.11375
+          },
+          {
+            "capture_start": 96000,
+            "reference_start": 124530,
+            "offset_samples": 28530,
+            "match_within2_fraction": 0.14322916666666666
+          },
+          {
+            "capture_start": 100800,
+            "reference_start": 129330,
+            "offset_samples": 28530,
+            "match_within2_fraction": 0.1490625
+          },
+          {
+            "capture_start": 105600,
+            "reference_start": 134130,
+            "offset_samples": 28530,
+            "match_within2_fraction": 0.06520833333333333
+          },
+          {
+            "capture_start": 110400,
+            "reference_start": 138930,
+            "offset_samples": 28530,
+            "match_within2_fraction": 0.0067708333333333336
+          },
+          {
+            "capture_start": 115200,
+            "reference_start": 143729,
+            "offset_samples": 28529,
+            "match_within2_fraction": 0.005
+          },
+          {
+            "capture_start": 120000,
+            "reference_start": 148529,
+            "offset_samples": 28529,
+            "match_within2_fraction": 0.08854166666666667
+          },
+          {
+            "capture_start": 124800,
+            "reference_start": 153329,
+            "offset_samples": 28529,
+            "match_within2_fraction": 0.146875
+          },
+          {
+            "capture_start": 129600,
+            "reference_start": 158129,
+            "offset_samples": 28529,
+            "match_within2_fraction": 0.1490625
+          },
+          {
+            "capture_start": 134400,
+            "reference_start": 162929,
+            "offset_samples": 28529,
+            "match_within2_fraction": 0.08947916666666667
+          },
+          {
+            "capture_start": 139200,
+            "reference_start": 167729,
+            "offset_samples": 28529,
+            "match_within2_fraction": 0.0128125
+          }
+        ]
+      },
+      "qualified_for_new_sample_campaign": false
+    }
+  ],
+  "path_qualified": {
+    "DirectShow_AV_original": false,
+    "WASAPI_exclusive": false
+  },
+  "interpretation": "Physical FPGA was disconnected. Any measured difference belongs to PC-render/HDMI/UGREEN/OS acquisition chain. API comparison does not alone identify UGREEN hardware as cause.",
+  "original_A0_status": "FAIL unchanged",
+  "input_identical": true,
+  "FPGA_or_RP2040_access": false
+}

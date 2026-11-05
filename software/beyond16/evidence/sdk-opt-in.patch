@@ -1,0 +1,30 @@
+diff --git a/software/kagura_fb/kagura_fb.c b/software/kagura_fb/kagura_fb.c
+index 7d52093..b18174f 100644
+--- a/software/kagura_fb/kagura_fb.c
++++ b/software/kagura_fb/kagura_fb.c
+@@ -37,10 +37,25 @@ static int submit_inner(kfb_device *dev,uint8_t command[16],const uint8_t *paylo
+     *submitted_tag=tag;
+     put16(command+2,tag);
+     dev->last_device_error=0;
++#ifndef KFB_PACK_DESCRIPTOR
++#define KFB_PACK_DESCRIPTOR 0
++#endif
++#if !KFB_PACK_DESCRIPTOR
+     result=write_one(dev,7,0);
++#endif
+     if(result==0 && payload!=NULL) result=write_one(dev,25,0);
+     if(result==0 && payload!=NULL) result=write_regs(dev,24,false,payload,size);
++#if KFB_PACK_DESCRIPTOR
++    /* Opt-in ABI-preserving burst: sticky clear (7), then descriptor (8..23).
++     * wait_idle has completed; no submission occurs until the separate reg26.
++     * Default SDK behavior remains unchanged for existing applications. */
++    if(result==0) {
++        uint8_t burst[17]; burst[0]=0; memcpy(burst+1,command,16);
++        result=write_regs(dev,7,true,burst,sizeof burst);
++    }
++#else
+     if(result==0) result=write_regs(dev,8,true,command,16);
++#endif
+     if(result==0) result=write_one(dev,26,1);
+     if(result!=0) return result; // Never automatically resend an uncertain submission.
+     return KFB_OK;

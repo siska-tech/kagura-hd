@@ -37,10 +37,25 @@ static int submit_inner(kfb_device *dev,uint8_t command[16],const uint8_t *paylo
     *submitted_tag=tag;
     put16(command+2,tag);
     dev->last_device_error=0;
+#ifndef KFB_PACK_DESCRIPTOR
+#define KFB_PACK_DESCRIPTOR 0
+#endif
+#if !KFB_PACK_DESCRIPTOR
     result=write_one(dev,7,0);
+#endif
     if(result==0 && payload!=NULL) result=write_one(dev,25,0);
     if(result==0 && payload!=NULL) result=write_regs(dev,24,false,payload,size);
+#if KFB_PACK_DESCRIPTOR
+    /* Opt-in ABI-preserving burst: sticky clear (7), then descriptor (8..23).
+     * wait_idle has completed; no submission occurs until the separate reg26.
+     * Default SDK behavior remains unchanged for existing applications. */
+    if(result==0) {
+        uint8_t burst[17]; burst[0]=0; memcpy(burst+1,command,16);
+        result=write_regs(dev,7,true,burst,sizeof burst);
+    }
+#else
     if(result==0) result=write_regs(dev,8,true,command,16);
+#endif
     if(result==0) result=write_one(dev,26,1);
     if(result!=0) return result; // Never automatically resend an uncertain submission.
     return KFB_OK;
@@ -252,4 +267,44 @@ int kfb_cursor_wait(kfb_device *dev,uint16_t *generation) {
         }
         if((uint32_t)(dev->io.now_ms(dev->io.context)-started)>=dev->timeout_ms) return KFB_TIMEOUT;
     }
+}
+
+static int audio_available(kfb_device *dev) {
+    if(dev==NULL || !dev->connected) return KFB_ARGUMENT;
+    uint8_t id[7];
+    int rc=read_regs(dev,0,true,id,7);
+    if(rc!=0) return rc;
+    return memcmp(id,"KFB1",4)==0 && id[4]==1 && id[5]>=4 && (id[6]&128) ? KFB_OK : KFB_VERSION;
+}
+static int audio_check(kfb_device *dev) {
+    uint8_t error;
+    int rc=read_regs(dev,7,false,&error,1);
+    if(rc!=0) return rc;
+    dev->last_device_error=error;
+    return error ? KFB_DEVICE : KFB_OK;
+}
+int kfb_audio_write(kfb_device *dev,uint8_t index,uint8_t value) {
+    if(index<0x60) return KFB_ARGUMENT;
+    int rc=audio_available(dev);
+    if(rc==0) rc=audio_check(dev);
+    uint8_t pair[2]={index,value};
+    if(rc==0) rc=write_regs(dev,54,true,pair,2);
+    if(rc==0) rc=audio_check(dev);
+    return rc;
+}
+int kfb_audio_read(kfb_device *dev,uint8_t index,uint8_t *value) {
+    if(value==NULL || index<0x60) return KFB_ARGUMENT;
+    int rc=audio_available(dev);
+    if(rc==0) rc=write_one(dev,54,index);
+    if(rc==0) rc=read_regs(dev,55,false,value,1);
+    if(rc==0) rc=audio_check(dev);
+    return rc;
+}
+int kfb_audio_commit(kfb_device *dev,uint16_t *tag) {
+    if(tag==NULL) return KFB_ARGUMENT;
+    int rc=audio_available(dev);
+    if(rc==0) rc=audio_check(dev);
+    uint8_t command[16]={7};
+    if(rc==0) rc=kfb_submit(dev,command,NULL,0,tag);
+    return rc;
 }

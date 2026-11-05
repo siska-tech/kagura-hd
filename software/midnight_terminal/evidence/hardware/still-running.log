@@ -1,0 +1,6 @@
+host_ms=477533 frames=8654 bytes=12158152 commands=80403 waits_ms=293852 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=30165858 transactions=3943818 elapsed_us=262807243 max_transaction_us=613 timeouts=0
+host_ms=478733 frames=8685 bytes=12183642 commands=80785 waits_ms=294741 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=30245954 transactions=3956616 elapsed_us=263569078 max_transaction_us=613 timeouts=0
+host_ms=479749 frames=8706 bytes=12186216 commands=81340 waits_ms=295230 audio_fault=0 release_ready=false
+qspi_nominal_hz=5000000 wire_bytes=30283709 transactions=3964543 elapsed_us=263991455 max_transaction_us=613 timeouts=0

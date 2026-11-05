@@ -1,0 +1,16 @@
+test_actual_sdk_through_c_transport_to_register_oracle (__main__.Tests.test_actual_sdk_through_c_transport_to_register_oracle) ... ok
+test_argument_reject_without_bus_activity (__main__.Tests.test_argument_reject_without_bus_activity) ... ok
+test_assembled_pio_5mhz_timing (__main__.Tests.test_assembled_pio_5mhz_timing) ... C:\Users\Shion\Documents\Projects\kagura-hd\software\midnight_terminal\vendor\kagura_pio_timing.py:17: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\software\\midnight_terminal\\out\\rp2040\\kagura_host.pio.h' mode='r' encoding='cp932'>
+  text = open(header).read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_read_count_dummy_turnaround_and_256 (__main__.Tests.test_read_count_dummy_turnaround_and_256) ... ok
+test_reused_source_and_pin_parameters (__main__.Tests.test_reused_source_and_pin_parameters) ... ok
+test_six_bit_all_registers_increment_wrap (__main__.Tests.test_six_bit_all_registers_increment_wrap) ... ok
+test_timeout_safe_release_latched_no_retry (__main__.Tests.test_timeout_safe_release_latched_no_retry) ... ok
+test_wrong_clock_and_no_resource (__main__.Tests.test_wrong_clock_and_no_resource) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.070s
+
+OK

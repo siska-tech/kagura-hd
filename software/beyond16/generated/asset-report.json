@@ -1,0 +1,35 @@
+{
+  "original": true,
+  "seed": 726550,
+  "palette_rgb444": [
+    1,
+    275,
+    549,
+    823,
+    1097,
+    1627,
+    2380,
+    3164,
+    3963,
+    4029,
+    3839,
+    2543,
+    973,
+    394,
+    3988,
+    4092
+  ],
+  "frame_bytes": 115200,
+  "frame_lz_bytes": 9694,
+  "bgm_bytes": 384000,
+  "bgm_lz_bytes": 193656,
+  "bgm_seconds": 8,
+  "bpm": 120,
+  "sfx_bytes": [
+    4096,
+    2048,
+    8192,
+    8192
+  ],
+  "no_full_frame_runtime_upload": true
+}

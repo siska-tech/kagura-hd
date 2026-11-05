@@ -1,4 +1,19 @@
-# KAGURA-HD ホストABI 1.2
+# KAGURA-HD ホストABI 1.4
+
+現行最終版はPCM2専用 **ABI 1.4 / CAPS FF / QSPI** です。以下の描画・カーソル・BLIT契約はABI 1.2から継承します。実機Demoではnominal PIO QSPI 5MHzを使用しています。最大速度の保証ではありません。
+
+SPI版はテスト未実施・STA未達のため[experimental](../artifacts/experimental/spi-sta-fail/README.md)へ隔離しました。通常Releaseから除外し、DO_NOT_PROGRAMを付けています。
+
+## PCM2音声（ABI 1.4）
+
+CSR `0x36`（54）がINDEX、`0x37`（55）がDATAです。PCM0はindex `0x60`、PCM1は`0x80`をbaseとし、各chのSTART/END/LOOP、左右GAIN、ENABLEを設定します。MASTERは`0xE0`、全体STATUSは`0xE1`、error clearは`0xE2`です。旧6ch index `0x00..0x5F`は使用できません。
+
+ch base + `0x0F`の制御はPREPARE=1、STOP=2、CLEAR=4。ch STATUSはREADY bit0、ACTIVE bit1、DONE bit2、UNDERRUN bit3、CONFIG_ERROR bit4、MEMORY_ERROR bit5、PREPARING bit6です。両ch停止→PCM転送→FENCE→設定→PREPARE→READY確認→MASTER→opcode **7 AUDIO_COMMIT**→tag完了待ちの順に開始します。COMMIT descriptorはopcodeとtag以外0で、既存DONE/error/IRQ経路を使用します。
+
+PCMは48kHz signed8 mono ×2を合成し、HDMIへsigned16 stereoを送ります。アドレスはHDのdie-relative byte address、ENDは排他です。`0x400000`の排他ENDは表現できません。FBとPCMの領域を重ねず、Host呼出しを直列化してください。
+
+詳細なindex配置は[C SDK](../software/kagura_fb/kagura_fb.h)と[MicroPython Audio](../software/kagura_fb/kagura_fb_audio.py)を参照してください。Cは`kfb_audio_write/read/commit`、MicroPythonは`Audio`を使用します。Cの`KFB_PACK_DESCRIPTOR=1`は任意の通信削減optionで、既定は0、ABIは不変です。
+
 
 起動時の診断初期化が完了すると、SPIまたはQSPIで1命令ずつ受け付けます。既存Kagura-9のレジスタABIとは互換ではありません。命令キューの深さは1です。CとMicroPythonのドライバは同じデバイスへの呼出しを直列化して使用してください。
 
@@ -18,7 +33,7 @@
 
 IRQ_nはオープンドレイン出力です。使用する場合は3.3 Vへのプルアップを設けます。
 
-ビルドは `tools/build-fb.ps1`（SPI既定）、`-Transport qspi`（QSPI）です。両端で同じレーン数を選びます。Mode 0、MSB先行。初期動作確認用は1 MHzです。これはシミュレーションで検証した条件であり、実機での最大クロックは未測定です。QSPIは1バイトを上位・下位の順に2ニブルで転送します。IOの方向切替と読み出しダミーを守ってください。
+ビルドは `tools/build-fb.ps1`（QSPI既定）、`-Transport spi`（実験用・STA未達のSPI）です。両端で同じレーン数を選びます。Mode 0、MSB先行。初期動作確認用は1 MHz、実機Demoはnominal PIO QSPI 5MHzです。実機の最大クロックは未測定です。QSPIは1バイトを上位・下位の順に2ニブルで転送します。IOの方向切替と読み出しダミーを守ってください。
 
 レジスタ転送ヘッダは `bit7=read, bit6=address increment, bit5:0=address` です。書込みはヘッダの直後にデータを送ります。読出しはヘッダ、読出しバイト数、ダミー1バイト、その後データです。CSを転送全体でLowに保ちます。24番データ窓はアドレス増分を無効にし、内部ポインタだけを進めます。
 
@@ -27,8 +42,8 @@ IRQ_nはオープンドレイン出力です。使用する場合は3.3 Vへの�
 |アドレス|機能|
 |---|---|
 |0–3|ASCII `KFB1`|
-|4 / 5|ABI major=1 / minor=2|
-|6|能力ビット0 Fill、1 Palette、2 Present、3 Write、4 Read、5 Cursor、6 Aligned Copy（値0x7f）|
+|4 / 5|ABI major=1 / minor=4|
+|6|能力ビット0 Fill、1 Palette、2 Present、3 Write、4 Read、5 Cursor、6 Aligned Copy、7 Audio CSR（値0xff）|
 |7|sticky error。任意値の書込みでクリア|
 |8–23|16バイト命令ステージング|
 |24|64バイトデータ窓。読書きで内部ポインタ増加|
@@ -41,7 +56,7 @@ IRQ_nはオープンドレイン出力です。使用する場合は3.3 Vへの�
 
 BUSY中は命令・データ窓への変更とsubmitを拒否します。状態読出しは可能です。タグとDONEを併せて完了を判断します。Presentの完了は垂直帰線での反映後です。IRQ_nは完了またはsticky errorでLowになります。エラー番号は0正常、1 busy、2命令不正、3範囲、4メモリ、5窓範囲、6転送遅延です。SPI lateはリセットまで保持されます。
 
-カーソルは独立したCSR32～63を使います。入力の保持・検証を含め、カーソルendpointの応答は2 sys edgeです。[カーソル仕様・API](kagura-fb-cursor.md)を参照してください。
+カーソルは独立したCSR32～53を使い、CSR54～55は音声INDEX/DATAです。入力の保持・検証を含め、カーソルendpointの応答は2 sys edgeです。[カーソル仕様・API](kagura-fb-cursor.md)を参照してください。
 
 ## 命令
 
@@ -56,10 +71,11 @@ BUSY中は命令・データ窓への変更とsubmitを拒否します。状態�
 |4 Write|word数1–16|byte address:u32、byte mask:u64|
 |5 Read|word数1–16|byte address:u32、残り0|
 |6 Copy|bit0 src_page、bit1 dst_page、他0|src_x:u16、src_y:u16、dst_x:u16、dst_y:u16、width:u16、height:u16|
+|7 Audio Commit|0|すべて0|
 
 Read/Writeは4バイト整列、1 word=4バイト、4 MiBの単一ダイ内です。Writeは事前にデータ窓へアップロードし、maskの1はそのバイトの書込みを禁止します。Read完了時にデータ窓を更新します。Fillは640×360内の矩形を受け付けます。画面はpage0=0、page1=115200バイト、stride=320バイト。偶数xが上位ニブル、奇数xが下位ニブルです。Paletteはシャドウを変更し、Presentでページと16色を同時に反映します。Fenceは先行命令が完了してから発行する同期点です。
 
-2 PCMチャネルは現時点の診断topで無音初期データを再生しています。ホストからの音声設定命令と文字描画のABIはまだありません。カーソルは別CSR窓で実装しています。診断PCM領域240000–240127バイトも使用中のため、任意PSRAM書込みは表示・音声データとの重複に注意してください。
+PCM2のHost制御は上記の音声CSRとopcode7を使用します。起動時の診断用PCM初期領域240000–240127バイトとFBを避けてPCMを配置してください。文字描画opcodeはなく、Hostで4bppへ展開してWRITEします。
 
 ## 不透明BLIT（Copy）
 
@@ -97,7 +113,7 @@ if (rc == KFB_OK) rc = kfb_present(&gpu, 1);
 
 ## C
 
-`software/kagura_fb/kagura_fb.c` とヘッダを組み込みます。動的メモリ確保はありません。`kfb_io` のread/writeはレジスタ転送を実装して成功時0を返し、now_msは折返し可能な32bitミリ秒を返します。コールバックは6bitアドレスをそのまま送るrawレジスタ転送とし、全転送をHOST_BUSYで待たせないでください。カーソル窓はGPU BUSY中にもアクセスします。既存PIO転送関数はこの条件へ適合する必要があり、RP2040/RP2350向け実機バックエンドの検証は未完了です。
+`software/kagura_fb/kagura_fb.c` とヘッダを組み込みます。動的メモリ確保はありません。`kfb_io` のread/writeはレジスタ転送を実装して成功時0を返し、now_msは折返し可能な32bitミリ秒を返します。コールバックは6bitアドレスをそのまま送るrawレジスタ転送とし、全転送をHOST_BUSYで待たせないでください。カーソル窓はGPU BUSY中にもアクセスします。既存PIO転送関数はこの条件へ適合する必要があり、RP2040のC版PIO QSPIバックエンドは実機Demoで使用済みです。RP2350の実機検証は未完了です。
 
 ```c
 kfb_device gpu;

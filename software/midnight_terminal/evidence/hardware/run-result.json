@@ -1,0 +1,57 @@
+{
+  "release_ready": false,
+  "native_c": true,
+  "nominal_qspi_hz": 5000000,
+  "started": true,
+  "complete_loop": true,
+  "failure": null,
+  "scenes": [
+    {
+      "id": 0,
+      "host_ms": 0,
+      "pc_elapsed_seconds": 20.15700000000652
+    },
+    {
+      "id": 1,
+      "host_ms": 12000,
+      "pc_elapsed_seconds": 35.625
+    },
+    {
+      "id": 2,
+      "host_ms": 30000,
+      "pc_elapsed_seconds": 53.60999999998603
+    },
+    {
+      "id": 3,
+      "host_ms": 40000,
+      "pc_elapsed_seconds": 63.76600000006147
+    },
+    {
+      "id": 4,
+      "host_ms": 47000,
+      "pc_elapsed_seconds": 70.65700000000652
+    },
+    {
+      "id": 5,
+      "host_ms": 65000,
+      "pc_elapsed_seconds": 88.65700000000652
+    },
+    {
+      "id": 6,
+      "host_ms": 80000,
+      "pc_elapsed_seconds": 100.10999999998603
+    },
+    {
+      "id": 0,
+      "host_ms": 88000,
+      "pc_elapsed_seconds": 115.15700000000652
+    }
+  ],
+  "port": "COM5",
+  "capture_started_seconds_before_g": 3,
+  "psram_preflight_pass": true,
+  "gpu_preflight_pass": true,
+  "wall_seconds_after_g": 115.15700000000652,
+  "left_running": true,
+  "capture_exit": 0
+}

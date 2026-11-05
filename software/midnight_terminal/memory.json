@@ -1,0 +1,99 @@
+{
+  "addressing": "die-relative bytes / 4MiB / exclusive PCM END <=0x3fffff",
+  "psram": [
+    {
+      "name": "Framebuffer page0",
+      "start": 0,
+      "end_exclusive": 115200,
+      "start_hex": "0x0",
+      "end_hex": "0x1c200",
+      "bytes": 115200,
+      "role": "double buffer"
+    },
+    {
+      "name": "Framebuffer page1",
+      "start": 115200,
+      "end_exclusive": 230400,
+      "start_hex": "0x1c200",
+      "end_hex": "0x38400",
+      "bytes": 115200,
+      "role": "double buffer"
+    },
+    {
+      "name": "bar backup",
+      "start": 262144,
+      "end_exclusive": 377344,
+      "start_hex": "0x40000",
+      "end_hex": "0x5c200",
+      "bytes": 115200,
+      "role": "background + attendant + UI, opaque composite"
+    },
+    {
+      "name": "warning backup",
+      "start": 393216,
+      "end_exclusive": 508416,
+      "start_hex": "0x60000",
+      "end_hex": "0x7c200",
+      "bytes": 115200,
+      "role": "pre-generated 80x44 cells + header"
+    },
+    {
+      "name": "PCM0 BGM",
+      "start": 524288,
+      "end_exclusive": 908288,
+      "start_hex": "0x80000",
+      "end_hex": "0xddc00",
+      "bytes": 384000,
+      "role": "8s loop"
+    },
+    {
+      "name": "PCM1 select",
+      "start": 909312,
+      "end_exclusive": 916032,
+      "start_hex": "0xde000",
+      "end_hex": "0xdfa40",
+      "bytes": 6720,
+      "role": "one shot"
+    },
+    {
+      "name": "PCM1 talk",
+      "start": 917504,
+      "end_exclusive": 919184,
+      "start_hex": "0xe0000",
+      "end_hex": "0xe0690",
+      "bytes": 1680,
+      "role": "one shot"
+    },
+    {
+      "name": "PCM1 alarm",
+      "start": 921600,
+      "end_exclusive": 936000,
+      "start_hex": "0xe1000",
+      "end_hex": "0xe4840",
+      "bytes": 14400,
+      "role": "one shot"
+    },
+    {
+      "name": "PCM1 restore",
+      "start": 937984,
+      "end_exclusive": 949504,
+      "start_hex": "0xe5000",
+      "end_hex": "0xe7d00",
+      "bytes": 11520,
+      "role": "one shot"
+    }
+  ],
+  "flash": {
+    "mplus_subset": 9600,
+    "misaki_subset": 9600,
+    "bar": 115200,
+    "warning": 115200,
+    "pcm_total": 135658,
+    "bgm_lossless_packed": 101338
+  },
+  "host_scratch": "No full framebuffer. Text positions/Unicode arrays 1024B stack, max glyph row 6B; existing SDK transfer scratch64B. Generated data const in Flash.",
+  "cursor": "256B shape transient stack, hardware separate cursor bank; not PSRAM",
+  "scratch_psram": "none allocated",
+  "rp2040_history_ram_bytes": 32768,
+  "expanded_psram_pcm_bytes": 418320
+}

@@ -16,6 +16,17 @@ module tb_fb_register_window;
         .req_valid,.req_write,.req_addr,.req_wdata,.req_ready,.rsp_valid,.rsp_error,.rsp_rdata,
         .busy,.irq,.cmd_valid,.cmd_ready(1'b1),.cmd_done,.cmd_read_result,
         .cmd_tag(16'habcd),.cmd_error(8'd0),.cmd_read_data,.command,.upload_data);
+    wire ref_req_ready,ref_rsp_valid,ref_rsp_error,ref_busy,ref_irq,ref_cmd_valid;
+    wire [7:0] ref_rsp_rdata;wire [127:0] ref_command;wire [511:0] ref_upload_data;
+    kagura_fb_registers_reference reference_registers(
+        .clk,.reset,.enabled(1'b1),.spi_late(1'b0),.video_error(1'b0),.audio_error(1'b0),.external_error(1'b0),
+        .req_valid,.req_write,.req_addr,.req_wdata,.req_ready(ref_req_ready),.rsp_valid(ref_rsp_valid),.rsp_error(ref_rsp_error),.rsp_rdata(ref_rsp_rdata),
+        .busy(ref_busy),.irq(ref_irq),.cmd_valid(ref_cmd_valid),.cmd_ready(1'b1),.cmd_done,.cmd_read_result,
+        .cmd_tag(16'habcd),.cmd_error(8'd0),.cmd_read_data,.command(ref_command),.upload_data(ref_upload_data));
+    always @(negedge clk) if(!reset)
+        if({req_ready,rsp_valid,rsp_error,rsp_rdata,busy,irq,cmd_valid,command,upload_data} !==
+           {ref_req_ready,ref_rsp_valid,ref_rsp_error,ref_rsp_rdata,ref_busy,ref_irq,ref_cmd_valid,ref_command,ref_upload_data})
+            $fatal(1,"Host window cycle/reference mismatch");
     task access(input bit wr,input integer address,value,output reg [7:0] result);
         begin
             @(negedge clk);req_valid=1;req_write=wr;req_addr=5'(address);req_wdata=8'(value);

@@ -1,5 +1,8 @@
 `timescale 1ns/1ps
 module tb_fb_contention;
+    wire rword_valid,scan_word_valid;
+    wire [31:0] rword_data,scan_word_data;
+
     reg clk=0,reset=1;
     wire valid,write;
     always #5 clk=~clk;

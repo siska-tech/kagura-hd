@@ -1,5 +1,8 @@
 `timescale 1ns/1ps
 module tb_fb_burst_bounds;
+    wire rword_valid,scan_word_valid;
+    wire [31:0] rword_data,scan_word_data;
+
     reg clk=0,reset=1,valid=0,write=1;
     always #5 clk=~clk;
     reg [19:0] addr=0;
@@ -29,7 +32,8 @@ module tb_fb_burst_bounds;
                 expected_error=length==0 || length>16 || address+length>1048576;
                 @(negedge clk); valid=0; wait(done); #1;
                 if(error!==1'(expected_error)) $fatal(1,"die bound %0d + %0d",address,length);
-                if(windows-before_windows!=(expected_error!=0 ? 0 : 1)) $fatal(1,"invalid request drove CS");
+                if(windows-before_windows!=(expected_error!=0 ? 0 : ((address%8+length+7)/8)))
+                    $fatal(1,"invalid request drove CS or split window count wrong");
                 cases=cases+1;
             end
         $display("PASS: fb_burst_bounds %0d end-of-die lengths, rejected requests never assert CS",cases);

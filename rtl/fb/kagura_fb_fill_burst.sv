@@ -67,6 +67,18 @@ module kagura_fb_fill_burst #(
     reg [3:0] first_mask,last_mask;
     wire [8:0] tail_distance=last_word-current_byte;
     reg [31:0] patched_data;
+    reg row_finished;
+    reg [7:0] patch_mask;
+    reg [7:0] patch_mask_next;
+    // Geometry and chunk fields settle before READ/WRITE response states.
+    // Register control decisions without changing the FSM or bus latency.
+    always @(posedge clk) begin
+        if(reset) begin row_finished<=0;patch_mask<=0;end
+        else begin
+            row_finished<=backwards_x ? current_byte[8:2]==first_byte[8:2] : next_byte>={1'b0,end_byte};
+            patch_mask<=patch_mask_next;
+        end
+    end
     always @* begin
         // Interior bytes need no mask. Only the first/last word can be
         // partial; mask bits beyond req_words are not transmitted.
@@ -84,15 +96,14 @@ module kagura_fb_fill_burst #(
         endcase
         byte_mask=current_byte[8:2]==first_byte[8:2] ? {60'd0,first_mask} : 64'd0;
         if(tail_distance[8:6]==0) byte_mask=byte_mask | ({60'd0,last_mask} << tail_distance[5:0]);
-        patched_data=rsp_data[31:0];
+        patch_mask_next=0;
         for(integer i=0;i<4;i=i+1) begin
             if(int'(current_byte)+i>=int'(first_byte) && int'(current_byte)+i<int'(end_byte)) begin
-                patched_data[i*8+:8]={fill_color,fill_color};
-                if(left_odd && int'(current_byte)+i==int'(first_byte))
-                    patched_data[i*8+4+:4]=rsp_data[i*8+4+:4];
-                if(right_odd && int'(current_byte)+i==int'(last_byte))
-                    patched_data[i*8+:4]=rsp_data[i*8+:4];
+                patch_mask_next[i*2]=!(right_odd && int'(current_byte)+i==int'(last_byte));
+                patch_mask_next[i*2+1]=!(left_odd && int'(current_byte)+i==int'(first_byte));
             end
+            patched_data[i*8+:4]=patch_mask[i*2] ? fill_color : rsp_data[i*8+:4];
+            patched_data[i*8+4+:4]=patch_mask[i*2+1] ? fill_color : rsp_data[i*8+4+:4];
         end
     end
 `ifndef SYNTHESIS
@@ -183,7 +194,7 @@ module kagura_fb_fill_burst #(
                 WRITE_REQ: if(req_ready) begin request_pending<=0;state<=WRITE_WAIT;end
                 WRITE_WAIT: if(rsp_done) begin
                     if(rsp_error) begin state<=IDLE; done<=1; error<=1; end
-                    else if(backwards_x ? current_byte[8:2]==first_byte[8:2] : next_byte>={1'b0,end_byte}) begin
+                    else if(row_finished) begin
                         if(rows_left==1) begin state<=IDLE; done<=1; end
                         else begin
                             rows_left<=rows_left-1'b1; row_word<=backwards_y ? row_word-16'd80 : row_word+16'd80;

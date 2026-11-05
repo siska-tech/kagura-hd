@@ -1,0 +1,16 @@
+name: Beyond16 PC
+on:
+  workflow_dispatch:
+  push:
+    paths: ['software/beyond16/**', 'software/kagura_fb/kagura_fb.c', 'software/midnight_terminal/src/mt_lz.*']
+jobs:
+  headless:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install Pillow
+      - run: bash software/beyond16/tools/ci.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: beyond16-pc-evidence
+          path: software/beyond16/evidence

@@ -9,7 +9,8 @@
 // GAIN and ENABLE join the AUDIO_COMMIT snapshot; START/END/LOOP/LOOP_ENABLE
 // are taken when a PREPARE is accepted. Other offsets read 0, writes ignored.
 module kagura_audio_registers #(
-    parameter bit PCM=0
+    parameter bit PCM=0,
+    parameter bit PCM_ONLY=0
 ) (
     input wire clk,reset,index_write,data_write,
     input wire [7:0] wdata,
@@ -47,7 +48,7 @@ module kagura_audio_registers #(
     reg [5:0] captured_resets;
     wire [2:0] ch=index[6:4];
     wire [3:0] offset=index[3:0];
-    wire channel_index=index<8'h60;
+    wire channel_index=!PCM_ONLY && index<8'h60;
     wire pcm_index=PCM && index>=8'h60 && index<8'ha0;
     wire pcm_ch=index[7];              // 60..7F -> 0, 80..9F -> 1
     wire [4:0] pcm_off=index[4:0];
@@ -101,8 +102,10 @@ module kagura_audio_registers #(
             default: ;
             endcase
         end
+        if(PCM_ONLY && index<8'h60) begin read_legal_c=0;write_legal_c=0;end
         valid_settings=lengths[7:0]>=5 && lengths[7:0]<=8 && lengths[15:8]>=5 && lengths[15:8]<=8;
         for(integer c=0;c<6;c=c+1) if(c!=3 && steps[24*c+23]) valid_settings=0;
+        if(PCM_ONLY) valid_settings=1;
     end
     // Predecode the offset for each channel in parallel, then select the
     // channel into the ordinary bus response. The two-edge request interval

@@ -1,0 +1,23 @@
+{
+  "single_case_pass": true,
+  "scope": "one 4B WRITE/READ only; not KAGURA-HD acceptance",
+  "address": 300032,
+  "length": 4,
+  "expected": "f1163b60",
+  "actual": "f1163b60",
+  "status": 0,
+  "separate_error_code_field": null,
+  "error_code_note": "PDR1 encodes controller_error=2 and timeout=3 in status; no separate controller error register",
+  "trigger_count": 1,
+  "additional_diagnostics": 0,
+  "uart_bytes": 149,
+  "uart_sha256": "bd2ed2f03877b6267937c38c421fc78965faea9743b7a7fbd625301ed80c39af",
+  "uart_quiet_seconds": 2.0375072000315413,
+  "fpga_restored": true,
+  "rp2040_flash_unchanged": true,
+  "firmware_backup_retained": true,
+  "restored_video_confirmed": true,
+  "fpga_flash_writes": 0,
+  "rp2040_flash_writes": 0,
+  "release_ready": false
+}

@@ -1,0 +1,2105 @@
+{
+  "release_ready": false,
+  "stage": "synthesis only",
+  "tool_exit_code": 0,
+  "errors": [],
+  "warnings": [
+    "WARN  (EX2478) : Non-net output port 'tmds' cannot be initialized at declaration in SystemVerilog mode(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\hdmi\\kagura_tmds_channel.sv\":25)",
+    "WARN  (EX2478) : Non-net output port 'counter' cannot be initialized at declaration in SystemVerilog mode(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\hdmi\\kagura_packet_assembler.sv\":22)",
+    "WARN  (EX2478) : Non-net output port 'cx' cannot be initialized at declaration in SystemVerilog mode(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\build\\generated\\kagura_hdmi_stream.sv\":86)",
+    "WARN  (EX2478) : Non-net output port 'cy' cannot be initialized at declaration in SystemVerilog mode(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\build\\generated\\kagura_hdmi_stream.sv\":87)",
+    "WARN  (EX3073) : Port 'CLKOUTP' remains unconnected for this instance(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\platform\\kagura_nano9k_clocks.sv\":22)",
+    "WARN  (EX3073) : Port 'CLKOUTD' remains unconnected for this instance(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\platform\\kagura_nano9k_clocks.sv\":31)",
+    "WARN  (EX3780) : Using initial value of 'CHANNEL_LEFT' since it is never assigned(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\third_party\\hdl-util-hdmi\\src\\audio_sample_packet.sv\":63)",
+    "WARN  (EX3780) : Using initial value of 'CHANNEL_RIGHT' since it is never assigned(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\third_party\\hdl-util-hdmi\\src\\audio_sample_packet.sv\":64)",
+    "WARN  (NL0002) : The module \"audio_info_frame\" instantiated to \"aif\" is swept in optimizing(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\hdmi\\kagura_audio_packets.sv\":46)",
+    "WARN  (NL0002) : The module \"audio_sample_packet\" instantiated to \"asp\" is swept in optimizing(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\hdmi\\kagura_audio_packets.sv\":45)",
+    "WARN  (NL0002) : The module \"auxiliary_video_information_info_frame\" instantiated to \"avi\" is swept in optimizing(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\hdmi\\kagura_audio_packets.sv\":47)",
+    "WARN  (NL0002) : The module \"source_product_description_info_frame\" instantiated to \"spd\" is swept in optimizing(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\hdmi\\kagura_audio_packets.sv\":49)"
+  ],
+  "synthesis_pass": true,
+  "placement_evaluated": false,
+  "routing_evaluated": false,
+  "sta_evaluated": false,
+  "bitstream_generated": false,
+  "hardware_programming_performed": false,
+  "inputs_match_pc_candidate": true,
+  "old_audio_and_baseline_unchanged": true,
+  "protected_bitstream_sha256": {
+    "rmw": "90b5b26189b198326818488056b9c8fb84e515973cdd2432e04287be3a91ef2e",
+    "rx32": "a99c5f8304aed79b8e0d148d6701f24bf5e282022c75c45ca3b0ab62b0d431cf"
+  },
+  "synthesis_report_tool_version": "V1.9.12.04 (64-bit)",
+  "resource_utilization": {
+    "logic": {
+      "used": 8581,
+      "available": 8640,
+      "remaining": 59,
+      "percent_calculated": 99.31712962962963
+    },
+    "register": {
+      "used": 6309,
+      "available": 6771,
+      "remaining": 462,
+      "percent_calculated": 93.17678334071776
+    }
+  },
+  "manifest": {
+    "boards/tang-nano-9k/host.cst": "87f6eed7e8c08fccab3fe8e6bbbefbdc261ed443f688c963f5c9be33eb037628",
+    "boards/tang-nano-9k/kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0",
+    "boards/tang-nano-9k/kagura_fb_top.sv": "c37619ca3a027bf0399df01e5739eeaed8eec2f6d5cb2bc55aa1f8f17341a6bf",
+    "boards/tang-nano-9k/phase1.cst": "82ff01e377e4f1b918b0c12c0cdd51502201a8d382444d7f49e6baaba72f9094",
+    "build/generated/kagura_hdmi_stream.sv": "71be747d75daacdf42be1aad5ba38ee1fa6bda9343d2c560d4ea3f46a9b45cf6",
+    "rtl/audio/kagura_audio_registers.sv": "48216aaf6a6a40b6a2384d39492c871d73baf847061ad44993f2826a1cc63f33",
+    "rtl/audio/kagura_audio_synth.sv": "8dacedac0fba49c9ee3e959e7a65c47fdf5df59acfc2ca087bbbaca6de528e29",
+    "rtl/audio/kagura_audio_transport.sv": "44ed941b01a6d56ff9fae95ed03fe34edd90ae1e9f4e5fa7a2d50d5ede87f350",
+    "rtl/audio/kagura_pcm_control.sv": "bfde93cbee15ff3838dd8857b23e65b2789ca2adc81aeae04f77f0b7d70fd2f3",
+    "rtl/audio/kagura_pcm_prefetch.sv": "1e8dc87d0dea90e8e92a2c164ea7d2fe390b878bedff819f366a004c00c1b4d4",
+    "rtl/bus/kagura_spi_adapter.sv": "d1d761fe50283219e5fce44a5211047ecf2dfb1c75e7ade063c922406c3221dd",
+    "rtl/fb/kagura_fb_arbiter.sv": "149b98e3e181f40ad9d0487c1a63a8581e7de7205839fbc138de1128657a9f9b",
+    "rtl/fb/kagura_fb_audio_endpoint.sv": "bf5f30392e4c6615d127b63972ffbf5eb3571855fddff812c27b6fe448b810e7",
+    "rtl/fb/kagura_fb_burst_ctrl.sv": "4d2189aadf187a40df48e25fe892f28db7a3c8569ade747dfcb29bdff7bb8f5c",
+    "rtl/fb/kagura_fb_commands.sv": "fb6f57e06bc4db59f2de447d9113654176f8c8e0d5ba8879bfa93187291dfdb6",
+    "rtl/fb/kagura_fb_core.sv": "f32b96fca98fe456bc6201d52880052b595e561555cacff27d14bc3d364e79a4",
+    "rtl/fb/kagura_fb_cursor.sv": "54d9e4ff9a39e53a9be93bedd05ca41cec15d934808587e6a6e95d0f20e3cf0d",
+    "rtl/fb/kagura_fb_fill_burst.sv": "f425091da3cdc405e592b2adb230a0347d63d38ef6642aea3402f460a97c9a5b",
+    "rtl/fb/kagura_fb_host.sv": "f522154b37c8e144c6b446954ce51c635180cf64dc307f2b86bf0666bb7977c8",
+    "rtl/fb/kagura_fb_line_banks.sv": "927160b42c9ce72e76502b6ff52ed65b15dc242d1dffa866d2509b3887e9c827",
+    "rtl/fb/kagura_fb_line_fetch.sv": "2afbc98a76612943358a96c0b49d5eefbbf34915745a9f86a4f7e782b8975f57",
+    "rtl/fb/kagura_fb_pcm_port.sv": "c21302a2b90daaadd0730d54dae26107fa3c64e6e3ea0d89ba2704cf05d734bd",
+    "rtl/fb/kagura_fb_registers.sv": "83c100e434a61b6e5f6b796780fa9f5556f721d0b01e522f762789a66c0fc4c3",
+    "rtl/fb/kagura_fb_scanout.sv": "f6349d1de1e09d5a614b23a357bdb7b9e39853b09e8e2ae6e50e63d81edce5a2",
+    "rtl/fb/kagura_fb_upload_word.sv": "8382ea49cec0ca8b8317b910c3870201985c593c7c582ef6a4beebe5530815f2",
+    "rtl/fb/sources.f": "04009027e55af30f806f08488fdb551ad97c890deabd731e500e1cac73b79731",
+    "rtl/hdmi/kagura_audio_packets.sv": "03ba91ba79a409c183b229116ad227a8b147b2e0c7beb3af013fe72db47e99aa",
+    "rtl/hdmi/kagura_hdmi_stream_eval.sv": "5267367e73080e1e9465fe4e91bcf34f6e3111b10b113ae390369756aacc4584",
+    "rtl/hdmi/kagura_packet_assembler.sv": "33ae43defff2d15c92683af342138fd9ea3792dba02e781358e5c09a597a5f9a",
+    "rtl/hdmi/kagura_tmds_channel.sv": "0ac133c11510f175334c3f44cf7d3673d7f4fdae30a1dfe868459aff037a593f",
+    "rtl/memory/kagura_async_fifo.sv": "536010c7e934fb421584bf7645c622760932f4de7541fd47be959469c245b6d4",
+    "rtl/memory/kagura_hyperram_phy_gowin.sv": "e20611d49ed5ebebb84db01cbee732f9198db57ec4e4ff8ef43b1a84b69d72c0",
+    "rtl/memory/kagura_ram_tdp.sv": "3092ca6daa905254e31c4c0af4d5714078c0948a7805a3961743621ca6e18b6c",
+    "rtl/platform/kagura_gowin_serializer.sv": "95913b47d739d4a5dc73677457713cc6ea4354afe6c8e19cf0cd31de9e6dd749",
+    "rtl/platform/kagura_nano9k_clocks.sv": "c9c5300140f25f85bd5b474494de60218e695cf20dd5716087621bedfea0221f",
+    "third_party/hdl-util-hdmi/src/audio_info_frame.sv": "dedd552fa988d9e2875bdadc54f3c08d5041d54637da1ff565d46078eeb2ea89",
+    "third_party/hdl-util-hdmi/src/audio_sample_packet.sv": "0e3a35ccb3e934eecfcd3916c5dac9ef269abea21472d66ebd2660a9d25e6a13",
+    "third_party/hdl-util-hdmi/src/auxiliary_video_information_info_frame.sv": "c151e2675ad97ef36254044e42657f2d758512d305040137859f9b8806135f64",
+    "third_party/hdl-util-hdmi/src/source_product_description_info_frame.sv": "893269fdccd2dc147e8570519f35308ac5e5460ad7f54bf673b3c31e9a8259de",
+    "tools/build-fb.tcl": "d711c1d1aa125fd079696efee707471f47769a0687eef159b5a20dcdeba0ae69"
+  },
+  "source_input_manifest_sha256": "2781b5d6330ea326d7d7b5fd6df52040b91e9cf806505a7bcec2bbacbd71bdd6",
+  "log_sha256": "6725ad3b301a23c647861bc44524a860d38270ec35174b57bcd29d1d0961a0ab",
+  "resources": {
+    "baseline": {
+      "xml_sha256": "a436c63ffff7d8616998920dc5852640796a2918104e28230b7e8f777183876f",
+      "hierarchy": {
+        "/kagura_fb_top": {
+          "ff": 4932,
+          "lut": 6457,
+          "alu": 703,
+          "bsram": 19,
+          "ssram": 16,
+          "mult18": 2,
+          "local_ff": 30,
+          "local_lut": 267
+        },
+        "/kagura_fb_top/clocks": {
+          "ff": 0,
+          "lut": 1,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 1
+        },
+        "/kagura_fb_top/host": {
+          "ff": 866,
+          "lut": 2120,
+          "alu": 381,
+          "bsram": 16,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 36,
+          "local_lut": 22
+        },
+        "/kagura_fb_top/host/transport": {
+          "ff": 80,
+          "lut": 94,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 80,
+          "local_lut": 94
+        },
+        "/kagura_fb_top/host/registers": {
+          "ff": 277,
+          "lut": 1270,
+          "alu": 0,
+          "bsram": 16,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 277,
+          "local_lut": 1270
+        },
+        "/kagura_fb_top/host/registers/upload_words[0].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[1].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[2].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[3].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[4].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[5].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[6].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[7].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[8].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[9].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[10].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[11].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[12].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[13].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[14].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[15].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/commands": {
+          "ff": 473,
+          "lut": 734,
+          "alu": 381,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 242,
+          "local_lut": 259
+        },
+        "/kagura_fb_top/host/commands/fill": {
+          "ff": 231,
+          "lut": 475,
+          "alu": 277,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 231,
+          "local_lut": 475
+        },
+        "/kagura_fb_top/core": {
+          "ff": 3996,
+          "lut": 4050,
+          "alu": 322,
+          "bsram": 3,
+          "ssram": 16,
+          "mult18": 2,
+          "local_ff": 7,
+          "local_lut": 7
+        },
+        "/kagura_fb_top/core/display": {
+          "ff": 627,
+          "lut": 372,
+          "alu": 44,
+          "bsram": 2,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 532,
+          "local_lut": 291
+        },
+        "/kagura_fb_top/core/display/fetch": {
+          "ff": 29,
+          "lut": 61,
+          "alu": 18,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 29,
+          "local_lut": 61
+        },
+        "/kagura_fb_top/core/display/banks": {
+          "ff": 66,
+          "lut": 20,
+          "alu": 26,
+          "bsram": 2,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 66,
+          "local_lut": 20
+        },
+        "/kagura_fb_top/core/display/banks/banks[0].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/display/banks/banks[1].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/pcm_port": {
+          "ff": 88,
+          "lut": 49,
+          "alu": 20,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 88,
+          "local_lut": 49
+        },
+        "/kagura_fb_top/core/prefetch": {
+          "ff": 173,
+          "lut": 333,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 173,
+          "local_lut": 333
+        },
+        "/kagura_fb_top/core/pcm_control": {
+          "ff": 10,
+          "lut": 8,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 10,
+          "local_lut": 8
+        },
+        "/kagura_fb_top/core/synth": {
+          "ff": 405,
+          "lut": 543,
+          "alu": 86,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 2,
+          "local_ff": 405,
+          "local_lut": 543
+        },
+        "/kagura_fb_top/core/cursor": {
+          "ff": 424,
+          "lut": 318,
+          "alu": 76,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 424,
+          "local_lut": 314
+        },
+        "/kagura_fb_top/core/cursor/bitmap": {
+          "ff": 0,
+          "lut": 4,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 4
+        },
+        "/kagura_fb_top/core/hdmi": {
+          "ff": 981,
+          "lut": 885,
+          "alu": 78,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/hdmi/audio_link": {
+          "ff": 143,
+          "lut": 107,
+          "alu": 19,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 54,
+          "local_lut": 74
+        },
+        "/kagura_fb_top/core/hdmi/audio_link/fifo": {
+          "ff": 89,
+          "lut": 33,
+          "alu": 19,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 89,
+          "local_lut": 33
+        },
+        "/kagura_fb_top/core/hdmi/protocol": {
+          "ff": 838,
+          "lut": 778,
+          "alu": 59,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 58,
+          "local_lut": 54
+        },
+        "/kagura_fb_top/core/hdmi/protocol/true_hdmi_output.audio_packets": {
+          "ff": 313,
+          "lut": 239,
+          "alu": 16,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 313,
+          "local_lut": 239
+        },
+        "/kagura_fb_top/core/hdmi/protocol/true_hdmi_output.packet_assembler": {
+          "ff": 281,
+          "lut": 253,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 281,
+          "local_lut": 253
+        },
+        "/kagura_fb_top/core/hdmi/protocol/tmds_gen[0].tmds_channel": {
+          "ff": 66,
+          "lut": 82,
+          "alu": 11,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 66,
+          "local_lut": 82
+        },
+        "/kagura_fb_top/core/hdmi/protocol/tmds_gen[1].tmds_channel": {
+          "ff": 60,
+          "lut": 76,
+          "alu": 11,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 60,
+          "local_lut": 76
+        },
+        "/kagura_fb_top/core/hdmi/protocol/tmds_gen[2].tmds_channel": {
+          "ff": 60,
+          "lut": 74,
+          "alu": 11,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 60,
+          "local_lut": 74
+        },
+        "/kagura_fb_top/core/hdmi/protocol/serializer": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/scheduler": {
+          "ff": 12,
+          "lut": 36,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 12,
+          "local_lut": 36
+        },
+        "/kagura_fb_top/core/memory_ctrl": {
+          "ff": 1269,
+          "lut": 1499,
+          "alu": 18,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 1269,
+          "local_lut": 1499
+        },
+        "/kagura_fb_top/phy": {
+          "ff": 40,
+          "lut": 19,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 40,
+          "local_lut": 19
+        }
+      }
+    },
+    "full_snapshot_03": {
+      "xml_sha256": "fc7970e2af6c673b71ea91b4bd78528d4077d040968a0f0bfef52e7048adfd21",
+      "hierarchy": {
+        "/kagura_fb_top": {
+          "ff": 6372,
+          "lut": 7589,
+          "alu": 907,
+          "bsram": 19,
+          "ssram": 16,
+          "mult18": 2,
+          "local_ff": 30,
+          "local_lut": 255
+        },
+        "/kagura_fb_top/clocks": {
+          "ff": 0,
+          "lut": 1,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 1
+        },
+        "/kagura_fb_top/audio_endpoint": {
+          "ff": 982,
+          "lut": 821,
+          "alu": 15,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 81,
+          "local_lut": 145
+        },
+        "/kagura_fb_top/audio_endpoint/registers": {
+          "ff": 901,
+          "lut": 676,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 901,
+          "local_lut": 676
+        },
+        "/kagura_fb_top/host": {
+          "ff": 880,
+          "lut": 2131,
+          "alu": 377,
+          "bsram": 16,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 50,
+          "local_lut": 36
+        },
+        "/kagura_fb_top/host/transport": {
+          "ff": 80,
+          "lut": 99,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 80,
+          "local_lut": 99
+        },
+        "/kagura_fb_top/host/registers": {
+          "ff": 277,
+          "lut": 1266,
+          "alu": 0,
+          "bsram": 16,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 277,
+          "local_lut": 1266
+        },
+        "/kagura_fb_top/host/registers/upload_words[0].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[1].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[2].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[3].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[4].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[5].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[6].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[7].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[8].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[9].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[10].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[11].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[12].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[13].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[14].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[15].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/commands": {
+          "ff": 473,
+          "lut": 730,
+          "alu": 377,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 242,
+          "local_lut": 248
+        },
+        "/kagura_fb_top/host/commands/fill": {
+          "ff": 231,
+          "lut": 482,
+          "alu": 273,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 231,
+          "local_lut": 482
+        },
+        "/kagura_fb_top/core": {
+          "ff": 4440,
+          "lut": 4363,
+          "alu": 515,
+          "bsram": 3,
+          "ssram": 16,
+          "mult18": 2,
+          "local_ff": 7,
+          "local_lut": 7
+        },
+        "/kagura_fb_top/core/display": {
+          "ff": 627,
+          "lut": 367,
+          "alu": 44,
+          "bsram": 2,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 532,
+          "local_lut": 290
+        },
+        "/kagura_fb_top/core/display/fetch": {
+          "ff": 29,
+          "lut": 58,
+          "alu": 18,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 29,
+          "local_lut": 58
+        },
+        "/kagura_fb_top/core/display/banks": {
+          "ff": 66,
+          "lut": 19,
+          "alu": 26,
+          "bsram": 2,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 66,
+          "local_lut": 19
+        },
+        "/kagura_fb_top/core/display/banks/banks[0].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/display/banks/banks[1].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/pcm_port": {
+          "ff": 88,
+          "lut": 48,
+          "alu": 20,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 88,
+          "local_lut": 48
+        },
+        "/kagura_fb_top/core/prefetch": {
+          "ff": 263,
+          "lut": 435,
+          "alu": 176,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 263,
+          "local_lut": 435
+        },
+        "/kagura_fb_top/core/pcm_control": {
+          "ff": 12,
+          "lut": 16,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 12,
+          "local_lut": 16
+        },
+        "/kagura_fb_top/core/synth": {
+          "ff": 757,
+          "lut": 780,
+          "alu": 103,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 2,
+          "local_ff": 757,
+          "local_lut": 780
+        },
+        "/kagura_fb_top/core/cursor": {
+          "ff": 424,
+          "lut": 313,
+          "alu": 76,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 424,
+          "local_lut": 304
+        },
+        "/kagura_fb_top/core/cursor/bitmap": {
+          "ff": 0,
+          "lut": 9,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 9
+        },
+        "/kagura_fb_top/core/hdmi": {
+          "ff": 981,
+          "lut": 866,
+          "alu": 78,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/hdmi/audio_link": {
+          "ff": 143,
+          "lut": 104,
+          "alu": 19,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 54,
+          "local_lut": 73
+        },
+        "/kagura_fb_top/core/hdmi/audio_link/fifo": {
+          "ff": 89,
+          "lut": 31,
+          "alu": 19,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 89,
+          "local_lut": 31
+        },
+        "/kagura_fb_top/core/hdmi/protocol": {
+          "ff": 838,
+          "lut": 762,
+          "alu": 59,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 58,
+          "local_lut": 47
+        },
+        "/kagura_fb_top/core/hdmi/protocol/true_hdmi_output.audio_packets": {
+          "ff": 313,
+          "lut": 239,
+          "alu": 16,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 313,
+          "local_lut": 239
+        },
+        "/kagura_fb_top/core/hdmi/protocol/true_hdmi_output.packet_assembler": {
+          "ff": 281,
+          "lut": 252,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 281,
+          "local_lut": 252
+        },
+        "/kagura_fb_top/core/hdmi/protocol/tmds_gen[0].tmds_channel": {
+          "ff": 66,
+          "lut": 81,
+          "alu": 11,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 66,
+          "local_lut": 81
+        },
+        "/kagura_fb_top/core/hdmi/protocol/tmds_gen[1].tmds_channel": {
+          "ff": 60,
+          "lut": 74,
+          "alu": 11,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 60,
+          "local_lut": 74
+        },
+        "/kagura_fb_top/core/hdmi/protocol/tmds_gen[2].tmds_channel": {
+          "ff": 60,
+          "lut": 69,
+          "alu": 11,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 60,
+          "local_lut": 69
+        },
+        "/kagura_fb_top/core/hdmi/protocol/serializer": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/scheduler": {
+          "ff": 12,
+          "lut": 33,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 12,
+          "local_lut": 33
+        },
+        "/kagura_fb_top/core/memory_ctrl": {
+          "ff": 1269,
+          "lut": 1498,
+          "alu": 18,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 1269,
+          "local_lut": 1498
+        },
+        "/kagura_fb_top/phy": {
+          "ff": 40,
+          "lut": 18,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 40,
+          "local_lut": 18
+        }
+      }
+    },
+    "locked_05": {
+      "xml_sha256": "02821a2e699d308f583fd4b73975db09b6d7cc025241757f2d08426f97f046a4",
+      "hierarchy": {
+        "/kagura_fb_top": {
+          "ff": 6053,
+          "lut": 7646,
+          "alu": 907,
+          "bsram": 19,
+          "ssram": 16,
+          "mult18": 2,
+          "local_ff": 30,
+          "local_lut": 258
+        },
+        "/kagura_fb_top/clocks": {
+          "ff": 0,
+          "lut": 1,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 1
+        },
+        "/kagura_fb_top/audio_endpoint": {
+          "ff": 663,
+          "lut": 837,
+          "alu": 15,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 81,
+          "local_lut": 151
+        },
+        "/kagura_fb_top/audio_endpoint/registers": {
+          "ff": 582,
+          "lut": 686,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 582,
+          "local_lut": 686
+        },
+        "/kagura_fb_top/host": {
+          "ff": 880,
+          "lut": 2146,
+          "alu": 377,
+          "bsram": 16,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 50,
+          "local_lut": 37
+        },
+        "/kagura_fb_top/host/transport": {
+          "ff": 80,
+          "lut": 95,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 80,
+          "local_lut": 95
+        },
+        "/kagura_fb_top/host/registers": {
+          "ff": 277,
+          "lut": 1277,
+          "alu": 0,
+          "bsram": 16,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 277,
+          "local_lut": 1277
+        },
+        "/kagura_fb_top/host/registers/upload_words[0].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[1].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[2].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[3].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[4].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[5].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[6].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[7].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[8].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[9].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[10].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[11].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[12].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[13].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[14].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[15].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/commands": {
+          "ff": 473,
+          "lut": 737,
+          "alu": 377,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 242,
+          "local_lut": 251
+        },
+        "/kagura_fb_top/host/commands/fill": {
+          "ff": 231,
+          "lut": 486,
+          "alu": 273,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 231,
+          "local_lut": 486
+        },
+        "/kagura_fb_top/core": {
+          "ff": 4440,
+          "lut": 4386,
+          "alu": 515,
+          "bsram": 3,
+          "ssram": 16,
+          "mult18": 2,
+          "local_ff": 7,
+          "local_lut": 7
+        },
+        "/kagura_fb_top/core/display": {
+          "ff": 627,
+          "lut": 368,
+          "alu": 44,
+          "bsram": 2,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 532,
+          "local_lut": 289
+        },
+        "/kagura_fb_top/core/display/fetch": {
+          "ff": 29,
+          "lut": 60,
+          "alu": 18,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 29,
+          "local_lut": 60
+        },
+        "/kagura_fb_top/core/display/banks": {
+          "ff": 66,
+          "lut": 19,
+          "alu": 26,
+          "bsram": 2,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 66,
+          "local_lut": 19
+        },
+        "/kagura_fb_top/core/display/banks/banks[0].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/display/banks/banks[1].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/pcm_port": {
+          "ff": 88,
+          "lut": 48,
+          "alu": 20,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 88,
+          "local_lut": 48
+        },
+        "/kagura_fb_top/core/prefetch": {
+          "ff": 263,
+          "lut": 431,
+          "alu": 176,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 263,
+          "local_lut": 431
+        },
+        "/kagura_fb_top/core/pcm_control": {
+          "ff": 12,
+          "lut": 14,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 12,
+          "local_lut": 14
+        },
+        "/kagura_fb_top/core/synth": {
+          "ff": 757,
+          "lut": 792,
+          "alu": 103,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 2,
+          "local_ff": 757,
+          "local_lut": 792
+        },
+        "/kagura_fb_top/core/cursor": {
+          "ff": 424,
+          "lut": 318,
+          "alu": 76,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 424,
+          "local_lut": 313
+        },
+        "/kagura_fb_top/core/cursor/bitmap": {
+          "ff": 0,
+          "lut": 5,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 5
+        },
+        "/kagura_fb_top/core/hdmi": {
+          "ff": 981,
+          "lut": 877,
+          "alu": 78,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/hdmi/audio_link": {
+          "ff": 143,
+          "lut": 106,
+          "alu": 19,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 54,
+          "local_lut": 74
+        },
+        "/kagura_fb_top/core/hdmi/audio_link/fifo": {
+          "ff": 89,
+          "lut": 32,
+          "alu": 19,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 89,
+          "local_lut": 32
+        },
+        "/kagura_fb_top/core/hdmi/protocol": {
+          "ff": 838,
+          "lut": 771,
+          "alu": 59,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 58,
+          "local_lut": 48
+        },
+        "/kagura_fb_top/core/hdmi/protocol/true_hdmi_output.audio_packets": {
+          "ff": 313,
+          "lut": 240,
+          "alu": 16,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 313,
+          "local_lut": 240
+        },
+        "/kagura_fb_top/core/hdmi/protocol/true_hdmi_output.packet_assembler": {
+          "ff": 281,
+          "lut": 252,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 281,
+          "local_lut": 252
+        },
+        "/kagura_fb_top/core/hdmi/protocol/tmds_gen[0].tmds_channel": {
+          "ff": 66,
+          "lut": 84,
+          "alu": 11,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 66,
+          "local_lut": 84
+        },
+        "/kagura_fb_top/core/hdmi/protocol/tmds_gen[1].tmds_channel": {
+          "ff": 60,
+          "lut": 74,
+          "alu": 11,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 60,
+          "local_lut": 74
+        },
+        "/kagura_fb_top/core/hdmi/protocol/tmds_gen[2].tmds_channel": {
+          "ff": 60,
+          "lut": 73,
+          "alu": 11,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 60,
+          "local_lut": 73
+        },
+        "/kagura_fb_top/core/hdmi/protocol/serializer": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/scheduler": {
+          "ff": 12,
+          "lut": 33,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 12,
+          "local_lut": 33
+        },
+        "/kagura_fb_top/core/memory_ctrl": {
+          "ff": 1269,
+          "lut": 1498,
+          "alu": 18,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 1269,
+          "local_lut": 1498
+        },
+        "/kagura_fb_top/phy": {
+          "ff": 40,
+          "lut": 18,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 40,
+          "local_lut": 18
+        }
+      }
+    },
+    "minimal": {
+      "xml_sha256": "efaf3db3f4e0cea8aab10c254479d56cbd8bdddee7a131172d260dea9e6c08d5",
+      "hierarchy": {
+        "/kagura_fb_top": {
+          "ff": 6309,
+          "lut": 7593,
+          "alu": 892,
+          "bsram": 19,
+          "ssram": 16,
+          "mult18": 2,
+          "local_ff": 30,
+          "local_lut": 258
+        },
+        "/kagura_fb_top/clocks": {
+          "ff": 0,
+          "lut": 1,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 1
+        },
+        "/kagura_fb_top/audio_endpoint": {
+          "ff": 919,
+          "lut": 720,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 18,
+          "local_lut": 32
+        },
+        "/kagura_fb_top/audio_endpoint/registers": {
+          "ff": 901,
+          "lut": 688,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 901,
+          "local_lut": 688
+        },
+        "/kagura_fb_top/host": {
+          "ff": 880,
+          "lut": 2188,
+          "alu": 377,
+          "bsram": 16,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 50,
+          "local_lut": 34
+        },
+        "/kagura_fb_top/host/transport": {
+          "ff": 80,
+          "lut": 94,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 80,
+          "local_lut": 94
+        },
+        "/kagura_fb_top/host/registers": {
+          "ff": 277,
+          "lut": 1282,
+          "alu": 0,
+          "bsram": 16,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 277,
+          "local_lut": 1282
+        },
+        "/kagura_fb_top/host/registers/upload_words[0].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[1].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[2].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[3].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[4].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[5].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[6].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[7].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[8].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[9].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[10].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[11].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[12].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[13].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[14].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/registers/upload_words[15].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/host/commands": {
+          "ff": 473,
+          "lut": 778,
+          "alu": 377,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 242,
+          "local_lut": 273
+        },
+        "/kagura_fb_top/host/commands/fill": {
+          "ff": 231,
+          "lut": 505,
+          "alu": 273,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 231,
+          "local_lut": 505
+        },
+        "/kagura_fb_top/core": {
+          "ff": 4440,
+          "lut": 4408,
+          "alu": 515,
+          "bsram": 3,
+          "ssram": 16,
+          "mult18": 2,
+          "local_ff": 7,
+          "local_lut": 9
+        },
+        "/kagura_fb_top/core/display": {
+          "ff": 627,
+          "lut": 373,
+          "alu": 44,
+          "bsram": 2,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 532,
+          "local_lut": 292
+        },
+        "/kagura_fb_top/core/display/fetch": {
+          "ff": 29,
+          "lut": 61,
+          "alu": 18,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 29,
+          "local_lut": 61
+        },
+        "/kagura_fb_top/core/display/banks": {
+          "ff": 66,
+          "lut": 20,
+          "alu": 26,
+          "bsram": 2,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 66,
+          "local_lut": 20
+        },
+        "/kagura_fb_top/core/display/banks/banks[0].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/display/banks/banks[1].ram": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/pcm_port": {
+          "ff": 88,
+          "lut": 48,
+          "alu": 20,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 88,
+          "local_lut": 48
+        },
+        "/kagura_fb_top/core/prefetch": {
+          "ff": 263,
+          "lut": 431,
+          "alu": 176,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 263,
+          "local_lut": 431
+        },
+        "/kagura_fb_top/core/pcm_control": {
+          "ff": 12,
+          "lut": 14,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 12,
+          "local_lut": 14
+        },
+        "/kagura_fb_top/core/synth": {
+          "ff": 757,
+          "lut": 793,
+          "alu": 103,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 2,
+          "local_ff": 757,
+          "local_lut": 793
+        },
+        "/kagura_fb_top/core/cursor": {
+          "ff": 424,
+          "lut": 319,
+          "alu": 76,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 424,
+          "local_lut": 314
+        },
+        "/kagura_fb_top/core/cursor/bitmap": {
+          "ff": 0,
+          "lut": 5,
+          "alu": 0,
+          "bsram": 1,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 5
+        },
+        "/kagura_fb_top/core/hdmi": {
+          "ff": 981,
+          "lut": 888,
+          "alu": 78,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/hdmi/audio_link": {
+          "ff": 143,
+          "lut": 105,
+          "alu": 19,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 54,
+          "local_lut": 74
+        },
+        "/kagura_fb_top/core/hdmi/audio_link/fifo": {
+          "ff": 89,
+          "lut": 31,
+          "alu": 19,
+          "bsram": 0,
+          "ssram": 8,
+          "mult18": 0,
+          "local_ff": 89,
+          "local_lut": 31
+        },
+        "/kagura_fb_top/core/hdmi/protocol": {
+          "ff": 838,
+          "lut": 783,
+          "alu": 59,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 58,
+          "local_lut": 52
+        },
+        "/kagura_fb_top/core/hdmi/protocol/true_hdmi_output.audio_packets": {
+          "ff": 313,
+          "lut": 240,
+          "alu": 16,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 313,
+          "local_lut": 240
+        },
+        "/kagura_fb_top/core/hdmi/protocol/true_hdmi_output.packet_assembler": {
+          "ff": 281,
+          "lut": 253,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 281,
+          "local_lut": 253
+        },
+        "/kagura_fb_top/core/hdmi/protocol/tmds_gen[0].tmds_channel": {
+          "ff": 66,
+          "lut": 85,
+          "alu": 11,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 66,
+          "local_lut": 85
+        },
+        "/kagura_fb_top/core/hdmi/protocol/tmds_gen[1].tmds_channel": {
+          "ff": 60,
+          "lut": 79,
+          "alu": 11,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 60,
+          "local_lut": 79
+        },
+        "/kagura_fb_top/core/hdmi/protocol/tmds_gen[2].tmds_channel": {
+          "ff": 60,
+          "lut": 74,
+          "alu": 11,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 60,
+          "local_lut": 74
+        },
+        "/kagura_fb_top/core/hdmi/protocol/serializer": {
+          "ff": 0,
+          "lut": 0,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 0,
+          "local_lut": 0
+        },
+        "/kagura_fb_top/core/scheduler": {
+          "ff": 12,
+          "lut": 34,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 12,
+          "local_lut": 34
+        },
+        "/kagura_fb_top/core/memory_ctrl": {
+          "ff": 1269,
+          "lut": 1499,
+          "alu": 18,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 1269,
+          "local_lut": 1499
+        },
+        "/kagura_fb_top/phy": {
+          "ff": 40,
+          "lut": 18,
+          "alu": 0,
+          "bsram": 0,
+          "ssram": 0,
+          "mult18": 0,
+          "local_ff": 40,
+          "local_lut": 18
+        }
+      }
+    }
+  },
+  "summary_lines": [
+    "Analyzing Verilog file 'C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\audio\\kagura_audio_registers.sv'",
+    "Analyzing Verilog file 'C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\fb\\kagura_fb_registers.sv'",
+    "Compiling module 'kagura_audio_registers(PCM=1'b1)'(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\audio\\kagura_audio_registers.sv\":11)",
+    "Extracting RAM for identifier 'channel_data'(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\audio\\kagura_audio_registers.sv\":58)",
+    "Compiling module 'kagura_fb_registers(AUDIO_CSR=1'b1)'(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\fb\\kagura_fb_registers.sv\":5)",
+    "Compiling module 'kagura_fb_core(AUDIO_REGISTER_TICK=1'b1)'(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\fb\\kagura_fb_core.sv\":9)",
+    "Compiling module 'kagura_hdmi_stream_eval(EXTERNAL_RGB=1'b1,VIDEO_ID_CODE=4,AUDIO_REGISTER_TICK=1'b1)'(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\hdmi\\kagura_hdmi_stream_eval.sv\":7)",
+    "Compiling module 'kagura_audio_transport(TICK_NUM=12375,TICK_DEN=8,REGISTER_TICK=1'b1)'(\"C:\\Users\\Shion\\Documents\\Projects\\kagura-hd\\build\\audio-minimal-bridge\\build\\standard-minimal-syn-01\\inputs\\rtl\\audio\\kagura_audio_transport.sv\":8)",
+    "GowinSynthesis finish"
+  ],
+  "archive_sha256": "04ecf22b74089d19654a54f29ca235abf85eb73bcf9d260986b714ac5ea8b358"
+}

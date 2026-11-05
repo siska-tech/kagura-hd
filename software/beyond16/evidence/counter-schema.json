@@ -1,0 +1,13 @@
+{
+  "pc_counts_array": [
+    "host_transactions",
+    "wire_bytes_including_headers_dummy",
+    "completed_GPU_commands",
+    "completed_PRESENTs",
+    "BLIT_pixels",
+    "PSRAM_WRITE_bytes_aligned",
+    "GPU_errors",
+    "BUSY_window_write_violations"
+  ],
+  "timing": "CPU/model only. pc clock_ms increments on callback and is for timeout tests, never used as a physical duration."
+}

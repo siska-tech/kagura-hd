@@ -1,3 +1,5 @@
+> 履歴資料：この文書の未検証・候補・公開保留などの記述は記録時点の状態です。最終版の選定と現行仕様は [リリース案内](release-validation.md) と [README](../README.md) を参照してください。
+
 # 映像仕様
 
 > Kagura-9 から継承した共通部品・診断用の歴史資料です。旧 ABI・数値・ホスト手順は当時の構成を示します。現行 KAGURA-HD は [README](../README.md) と [ABI 1.2](kagura-fb-host-api.md) を参照してください。[元資料](https://github.com/siska-tech/kagura/blob/f562b2ec84605860fdb9f701f5b2e197b5ed4432/docs/video.md)

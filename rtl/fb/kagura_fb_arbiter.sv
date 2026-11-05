@@ -27,7 +27,11 @@ module kagura_fb_arbiter (
     output wire [511:0] wdata,
     output wire [63:0] mask,
     input wire done,error,
-    input wire [511:0] rdata
+    input wire [511:0] rdata,
+    input wire rword_valid,
+    input wire [31:0] rword_data,
+    output wire scan_word_valid,
+    output wire [31:0] scan_word_data
 );
     localparam IDLE=0, ISSUE=1, WAIT=2;
     reg [1:0] state,owner,last_owner;
@@ -45,6 +49,9 @@ module kagura_fb_arbiter (
     assign wdata=req_wdata[owner];
     assign mask=req_mask[owner];
     assign rsp_data=rdata;
+    // Only the scanout owner consumes the unstallable read tap.
+    assign scan_word_valid=!reset && state==WAIT && owner==0 && rword_valid;
+    assign scan_word_data=rword_data;
     always @(posedge clk) begin
         if(reset) begin
             state<=IDLE; owner<=0; last_owner<=2;

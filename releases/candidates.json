@@ -1,0 +1,34 @@
+{
+  "qspi": {
+    "status": "selected",
+    "abi": "1.4",
+    "artifact": "../artifacts/validated/kagura-hd-qspi-pcm2.fs",
+    "distribution": "GitHub Releases"
+  },
+  "spi": {
+    "status": "quarantined_sta_fail",
+    "distribution_selected_by_user": false,
+    "abi": "1.4",
+    "artifact": "../artifacts/experimental/spi-sta-fail/kagura-hd-spi.fs",
+    "sha256": "4e9ef3fe73d72ad245bbd659e8ede4de9837175fce32c2e86dd39bf7d497b719",
+    "distribution": "experimental archive only; excluded from normal Releases",
+    "current_pcm2_bitstream_found": true,
+    "build_date": "2026-11-06",
+    "numeric_sta_gate_pass": false,
+    "regression_tests": "NOT RUN at user request",
+    "hardware_tests": "NOT RUN at user request",
+    "historical_build": {
+      "abi": "1.2",
+      "tool": "Gowin Education 1.9.11.03",
+      "record": "docs/publication-audit.md",
+      "fs_sha256": "ea716f2c7ecee681c2a4b6fe13b62629d473dade7d454e42d3abdd8b7a1387b0",
+      "artifact_found": false
+    },
+    "do_not_program": "../artifacts/experimental/spi-sta-fail/DO_NOT_PROGRAM.txt",
+    "tracking_issue_url": "https://github.com/siska-tech/kagura-hd/issues/1"
+  },
+  "release_assets": [
+    "../artifacts/validated/kagura-hd-qspi-pcm2.fs",
+    "SHA256SUMS"
+  ]
+}

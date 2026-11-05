@@ -8,7 +8,8 @@
 // read response. Addresses here are die-relative bytes/words, not the old ABI.
 module kagura_fb_core #(
     parameter integer INIT_CYCLES=4096,
-    parameter bit AUDIO_REGISTER_TICK=1
+    parameter bit AUDIO_REGISTER_TICK=1,
+    parameter bit PCM_ONLY=0
 ) (
     input wire clk_system,clk_pixel,clk_pixel_x5,reset,
     input wire host_valid,host_write,
@@ -43,7 +44,7 @@ module kagura_fb_core #(
     input wire signed [7:0] wave_data,
     output wire [2:0] tmds,
     output wire tmds_clock,
-    output wire initialized,video_underrun,memory_error,audio_overflow,audio_underflow,
+    output wire initialized,video_underrun,memory_error,audio_overflow,audio_underflow,audio_muted,
     output wire [10:0] cx,
     output wire [9:0] cy,
     output wire [23:0] rgb,
@@ -68,6 +69,8 @@ module kagura_fb_core #(
     wire [2:0][511:0] req_wdata={3{host_wdata}};
     wire [2:0][63:0] req_mask={3{host_mask}};
     wire [511:0] rsp_data;
+    wire scan_word_valid,rword_valid;
+    wire [31:0] scan_word_data,rword_data;
     assign req_valid[2]=host_valid;
     assign req_addr[2]=host_addr;
     assign host_ready=req_ready[2];
@@ -78,7 +81,7 @@ module kagura_fb_core #(
         .sys_clk(clk_system),.sys_reset(system_reset),.pix_clk(clk_pixel),.pix_reset(pixel_reset),.cx,.cy,
         .present_valid,.present_page,.present_palette,.present_ready,.present_done,
         .req_valid(req_valid[0]),.req_ready(req_ready[0]),.req_addr(req_addr[0]),
-        .rsp_done(rsp_done[0]),.rsp_error(rsp_error[0]),.rsp_data,.rgb,
+        .rsp_done(rsp_done[0]),.rsp_error(rsp_error[0]),.scan_word_valid,.scan_word_data,.rgb,
         .underrun(video_underrun),.memory_error,.generation_out());
     wire pf_req,pf_req_ready,pf_rsp,pf_rsp_error;
     wire [21:0] pf_addr;
@@ -116,7 +119,7 @@ module kagura_fb_core #(
     wire sample_valid,audio_apply_ready;
     assign audio_ready=!system_reset && audio_apply_ready;
     wire signed [15:0] sample_left,sample_right;
-    kagura_audio_synth #(.EXTERNAL_SNAPSHOT(1),.PCM_ENABLE(1)) synth(
+    kagura_audio_synth #(.EXTERNAL_SNAPSHOT(1),.PCM_ENABLE(1),.PCM_ONLY(PCM_ONLY)) synth(
         .clk(clk_system),.reset(system_reset),.apply_valid(audio_apply),.apply_ready(audio_apply_ready),
         .cfg_step,.cfg_duty,.cfg_gain_l,.cfg_gain_r,.cfg_enable,.cfg_phase_reset,.cfg_wave_len,.cfg_master,.cfg_noise_period,
         .apply_done(audio_done),.apply_error(audio_error),.apply_busy(),.wave_read,.wave_addr,.wave_data,
@@ -132,7 +135,7 @@ module kagura_fb_core #(
         .cx,.cy,.background(rgb),.rgb_out(hdmi_rgb));
     kagura_hdmi_stream_eval #(.EXTERNAL_RGB(1),.VIDEO_ID_CODE(4),.AUDIO_REGISTER_TICK(AUDIO_REGISTER_TICK)) hdmi(
         .clk_system,.clk_pixel,.clk_pixel_x5,.reset(pixel_reset),.sample_valid,.sample_data({sample_right,sample_left}),
-        .full(),.overflow(audio_overflow),.underflow(audio_underflow),.tmds,.tmds_clock,.muted(),
+        .full(),.overflow(audio_overflow),.underflow(audio_underflow),.tmds,.tmds_clock,.muted(audio_muted),
         .rgb_in(hdmi_rgb),.cx_out(cx),.cy_out(cy),.underflow_toggle());
     wire ctrl_valid,ctrl_ready,ctrl_write,ctrl_done,ctrl_error;
     wire [19:0] ctrl_addr;
@@ -142,10 +145,12 @@ module kagura_fb_core #(
     kagura_fb_arbiter scheduler(
         .clk(clk_system),.reset(system_reset),.req_valid,.req_ready,.req_write,.req_addr,.req_words,.req_wdata,.req_mask,
         .rsp_done,.rsp_error,.rsp_data,.valid(ctrl_valid),.ready(ctrl_ready),.write(ctrl_write),.addr(ctrl_addr),
-        .words(ctrl_words),.wdata(ctrl_wdata),.mask(ctrl_mask),.done(ctrl_done),.error(ctrl_error),.rdata(ctrl_rdata));
+        .words(ctrl_words),.wdata(ctrl_wdata),.mask(ctrl_mask),.done(ctrl_done),.error(ctrl_error),.rdata(ctrl_rdata),
+        .rword_valid,.rword_data,.scan_word_valid,.scan_word_data);
     kagura_fb_burst_ctrl #(.INIT_CYCLES(INIT_CYCLES)) memory_ctrl(
         .clk(clk_system),.reset(system_reset),.valid(ctrl_valid),.ready(ctrl_ready),.write(ctrl_write),.addr(ctrl_addr),
         .words(ctrl_words),.wdata(ctrl_wdata),.mask(ctrl_mask),.done(ctrl_done),.error(ctrl_error),.rdata(ctrl_rdata),
+        .rword_valid,.rword_data,
         .initialized,.phy_reset_n,.phy_cs_n,.phy_ck_en,.phy_dq_oe,.phy_dq_o_rise,.phy_dq_o_fall,
         .phy_rwds_oe,.phy_rwds_o_rise,.phy_rwds_o_fall,.phy_dq_tx,.phy_rwds_tx,.phy_dq_i_rise,.phy_dq_i_fall);
 endmodule

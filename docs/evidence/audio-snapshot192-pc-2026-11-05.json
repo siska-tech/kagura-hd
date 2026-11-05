@@ -1,0 +1,91 @@
+{
+  "release_ready": false,
+  "hardware_programming_performed": false,
+  "scope_audit_pass": true,
+  "all_pc_checks_pass": true,
+  "checks": {
+    "cycle_behavioral": {
+      "pass": true,
+      "log": "build/snapshot192/behavioral.run.log",
+      "sha256": "61645926dc7e9809971294c3f9d42ac5178c4bbd7fd8016089247ebbbc67044a"
+    },
+    "cycle_vendor": {
+      "pass": true,
+      "log": "build/snapshot192/vendor.run.log",
+      "sha256": "ccb8a2fd4c7d2c17cce71e41283b45e986e39479352543a02ba8d26125464dc8"
+    },
+    "endpoint86": {
+      "pass": true,
+      "log": "build/analysis/endpoint.log",
+      "sha256": "21de55917edeeeca2e05104ad66ab5015f70a0088c5b5d2fcdff9348e84b2149"
+    },
+    "fb26": {
+      "pass": true,
+      "log": "build/analysis/fb-regression.log",
+      "sha256": "5044df604fe07c6f970b03252f8055d65941c44e0a9b323efe7f9fefb0308d36"
+    },
+    "qspi_top": {
+      "pass": true,
+      "log": "build/analysis/audio-qspi.log",
+      "sha256": "7b99e35b64938e5dae78db632e9d490003205c059a9df0d4f6a59937e78107ad"
+    },
+    "wrap12": {
+      "pass": true,
+      "log": "build/analysis/wrap-regression.log",
+      "sha256": "18093d622b6a0cb8cbabaca3dbd2c54b053fb518ee0dcd5fa2030319a6942a86"
+    },
+    "common22": {
+      "pass": true,
+      "log": "build/analysis/common-regression.log",
+      "sha256": "d5be827f85cf9f6f27842cc10fc2f85b84605f43bc8da024e930f5d41a86faf8"
+    }
+  },
+  "changed_parent_files": [
+    "DO_NOT_PROGRAM.txt",
+    "tools/test-fb-audio-csr.sh",
+    "rtl/audio/kagura_audio_registers.sv",
+    "rtl/fb/kagura_fb_audio_endpoint.sv",
+    "rtl/fb/sources.f"
+  ],
+  "feature_file_sha256": {
+    "rtl/audio/kagura_audio_registers.sv": "5afdc35c180ef3f81fd92416d650eea7ac0274e9c863a1a8dc56e34922f0094d",
+    "rtl/audio/kagura_audio_snapshot_word.sv": "929529b9d0fb53da934d27a1ed980cdeb32fcd12d7535c5882726bc9835f97a9",
+    "rtl/fb/kagura_fb_audio_endpoint.sv": "baa125c95bd46a6eba321c12e223c988f97eb4384f523c09c0e333322b1986d2",
+    "rtl/fb/sources.f": "373de61095a305a71858751952f63cc3f881025d2fb92881ced0a5c3c0c9fce5",
+    "sim/tests/tb_audio_snapshot192.sv": "0b2a6e520119f0591de06618e554806b85f6df676297f4862f991b8e57d908bf",
+    "tools/test-audio-snapshot192.sh": "41ee75505952a82138328d90fdf695c07ab0a732c5d768ca1da710597484329c",
+    "tools/test-fb-audio-csr.sh": "941e44a02008faf37c456efdc18d58acfe59c984ced4fe10cdc86143f5874dea"
+  },
+  "protected_source_sha256": {
+    "rtl/audio/kagura_audio_synth.sv": "8dacedac0fba49c9ee3e959e7a65c47fdf5df59acfc2ca087bbbaca6de528e29",
+    "rtl/audio/kagura_pcm_control.sv": "bfde93cbee15ff3838dd8857b23e65b2789ca2adc81aeae04f77f0b7d70fd2f3",
+    "rtl/audio/kagura_pcm_prefetch.sv": "1e8dc87d0dea90e8e92a2c164ea7d2fe390b878bedff819f366a004c00c1b4d4",
+    "rtl/audio/kagura_audio_transport.sv": "44ed941b01a6d56ff9fae95ed03fe34edd90ae1e9f4e5fa7a2d50d5ede87f350",
+    "rtl/fb/kagura_fb_commands.sv": "fb6f57e06bc4db59f2de447d9113654176f8c8e0d5ba8879bfa93187291dfdb6",
+    "rtl/fb/kagura_fb_core.sv": "f32b96fca98fe456bc6201d52880052b595e561555cacff27d14bc3d364e79a4",
+    "rtl/fb/kagura_fb_host.sv": "f522154b37c8e144c6b446954ce51c635180cf64dc307f2b86bf0666bb7977c8",
+    "rtl/fb/kagura_fb_registers.sv": "83c100e434a61b6e5f6b796780fa9f5556f721d0b01e522f762789a66c0fc4c3",
+    "rtl/fb/kagura_fb_burst_ctrl.sv": "4d2189aadf187a40df48e25fe892f28db7a3c8569ade747dfcb29bdff7bb8f5c",
+    "rtl/memory/kagura_hyperram_phy_gowin.sv": "e20611d49ed5ebebb84db01cbee732f9198db57ec4e4ff8ef43b1a84b69d72c0",
+    "boards/tang-nano-9k/kagura_fb_top.sv": "c37619ca3a027bf0399df01e5739eeaed8eec2f6d5cb2bc55aa1f8f17341a6bf",
+    "boards/tang-nano-9k/kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0",
+    "boards/tang-nano-9k/phase1.cst": "82ff01e377e4f1b918b0c12c0cdd51502201a8d382444d7f49e6baaba72f9094",
+    "boards/tang-nano-9k/host.cst": "87f6eed7e8c08fccab3fe8e6bbbefbdc261ed443f688c963f5c9be33eb037628",
+    "tools/build-fb.tcl": "d711c1d1aa125fd079696efee707471f47769a0687eef159b5a20dcdeba0ae69",
+    "software/kagura_fb/kagura_fb_audio.py": "3f61d52deeea20c04a6cd7490cc104cde2ceafec8689c0b39f20da460e2effe0",
+    "software/kagura_fb/kagura_fb.c": "4cb09908b61ad1b4dd71ecb055ccf53782c1ed26e69a02b9fd5941a677c29214",
+    "software/kagura_fb/kagura_fb.h": "701f7ff8a260ccb8d237e53cd62929a46e50db869f041f5a3a6cea0d32229f9e"
+  },
+  "reference_hashes": {
+    "ff_reference_source_sha256": "48216aaf6a6a40b6a2384d39492c871d73baf847061ad44993f2826a1cc63f33",
+    "vendor_library_sha256": "3f7909fa03c062b0732d7cfdc032268115609d6302457e28675d11917e6e85dd",
+    "unmodified_vendor_SP_sha256": "6dd7e18ffa732c537a54a12cd08e63f73b305e7bc44788e96306878838af5e6f"
+  },
+  "generated_ff_reference_sha256": "4e5f7e8bab7ff8bbfef0ec03335158e5e446e1eac3bd27860c7a5f631123c778",
+  "vendor_SP_exact_unmodified": true,
+  "original_and_parent_sources_unchanged": true,
+  "protected_bitstream_sha256": {
+    "rmw": "90b5b26189b198326818488056b9c8fb84e515973cdd2432e04287be3a91ef2e",
+    "rx32": "a99c5f8304aed79b8e0d148d6701f24bf5e282022c75c45ca3b0ab62b0d431cf"
+  }
+}

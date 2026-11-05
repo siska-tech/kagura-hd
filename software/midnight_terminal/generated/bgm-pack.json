@@ -1,0 +1,7 @@
+{
+  "original_bytes": 384000,
+  "packed_bytes": 101338,
+  "sha256_original": "a857d6a99648fa4ac6e44b1a9becae99262c2e2e3b798351535970206f42125f",
+  "sha256_packed": "eca2062acccf1473e9c153c4d3a133a3091032a7e4ee560d8481b925b64138fb",
+  "codec": "literal1..128 or 3..130 byte LZ match / uint16 distance-1 / 32KiB history"
+}

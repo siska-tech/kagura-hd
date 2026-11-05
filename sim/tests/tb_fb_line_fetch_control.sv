@@ -3,7 +3,8 @@ module tb_fb_line_fetch_control;
     reg clk=0,reset=1,start=0,page=1,req_ready=0,rsp_done=0,rsp_error=0;
     always #5 clk=~clk;
     reg [8:0] row=0;
-    reg [511:0] rsp_data=0;
+    reg scan_word_valid=0;
+    reg [31:0] scan_word_data=0;
     wire ready,done,error,req_valid,bank_we;
     wire [19:0] req_addr;
     wire [6:0] bank_addr;
@@ -29,13 +30,13 @@ module tb_fb_line_fetch_control;
         rsp_done=1; rsp_error=1; @(negedge clk); rsp_done=0; rsp_error=0;
         if(!done || !error || bank_we || !ready) $fatal(1,"memory error");
         launch(0); req_ready=1; @(negedge clk); req_ready=0;
-        rsp_done=1; @(negedge clk); rsp_done=0;
-        if(!bank_we || bank_addr!=0) $fatal(1,"drain start");
+        scan_word_valid=1; #1;
+        if(!bank_we || bank_addr!=0) $fatal(1,"stream start");
         reset=1;
         if(bank_we) begin #1; if(bank_we) $fatal(1,"reset write gate"); end
-        repeat(3) @(negedge clk); reset=0; #1;
+        repeat(3) @(negedge clk); scan_word_valid=0; reset=0; #1;
         if(!ready || req_valid || bank_we || done) $fatal(1,"reset cancellation");
-        $display("PASS: fb_line_fetch_control invalid row, backpressure, response error, reset during drain");
+        $display("PASS: fb_line_fetch_control invalid row, backpressure, response error, reset during stream");
         $finish;
     end
     initial begin #100000; $fatal(1,"watchdog"); end

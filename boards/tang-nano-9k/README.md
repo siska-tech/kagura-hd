@@ -1,8 +1,8 @@
 # Tang Nano 9K
 
-> 設計・実装・診断構成の開発記録です。過去の製品名・資源値・ビルド構成が含まれます。現行 KAGURA-HD の仕様と最新の検証値は [README](../../README.md) を参照してください。
+現行KAGURA-HDのtopは`kagura_fb_top.sv`、採用構成はPCM2 / ABI 1.4 / QSPIです。Windowsでリポジトリルートから`./tools/build-fb.ps1 -Transport qspi`を実行します。`phase1.cst`と`host.cst`を連結し、`kagura-fb.sdc`を使用します。
 
-KAGURA-9の対象ボード。board top（`kagura_*_top.sv`）、ピン制約（`*.cst`）、タイミング制約（`*.sdc`）、ピン一覧（[pin-inventory.csv](pin-inventory.csv)）を置く。CST/SDCは`tools/build-nano9k.tcl`が構成ごとに連結してbuildディレクトリへ書き出す。ビルドと書込みは[ビルド・テスト](https://github.com/siska-tech/kagura/blob/f562b2ec84605860fdb9f701f5b2e197b5ed4432/docs/build-and-test.md)、構成とLEDは[アーキテクチャ](../../docs/architecture.md#ビルド構成とcaps)を参照。
+[最終Bitstreamと元入力](../../releases/pcm2-qspi-final/README.md)、[Host配線](../../docs/kagura-fb-host-api.md)、[再ビルド手順](../../docs/standard-build.md)を参照してください。`pin-inventory.csv`と、Kagura-9由来のboard top・診断Topも保持しています。以下の旧構成は`tools/build-nano9k.tcl`等を使用する開発・診断の記録です。
 
 ## 基本のピン
 

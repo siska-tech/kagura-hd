@@ -1,0 +1,15 @@
+{
+  "scope": "Independent wrap-target observation; numeric internal STA only; external IO not certified",
+  "quality_gate_pass": true,
+  "setup_gate_ns": 0.1,
+  "setup_slack_ns": 6.601,
+  "hold_slack_ns": 0.708,
+  "setup_violated_endpoints": 0,
+  "hold_violated_endpoints": 0,
+  "routing_completed": true,
+  "routing_evidence": "PnR completion + successful bitstream generation; no error/unrouted message",
+  "bitstream_sha256": "95338d44f7c7535fe18759996f69e3849a4ee44ff814711941b67a3bfde21694",
+  "device_programmed": false,
+  "hardware_pass": false,
+  "release_ready": false
+}

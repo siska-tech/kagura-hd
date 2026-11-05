@@ -2,6 +2,9 @@
 // COPY command -> shared fill/copy walker -> real arbiter/controller -> CA model.
 // upload_data has the same one-edge-later capture as the register endpoint.
 module tb_fb_blit;
+    wire rword_valid,scan_word_valid;
+    wire [31:0] rword_data,scan_word_data;
+
     reg clk=0,reset=1,valid=0;
     always #5 clk=~clk;
     reg [127:0] command=0;
@@ -36,7 +39,7 @@ module tb_fb_blit;
         .rsp_done,.rsp_error,.rsp_data(host_rdata),
         .valid(ctrl_valid),.ready(ctrl_ready),.write(ctrl_write),.addr(ctrl_addr),
         .words(ctrl_words),.wdata(ctrl_wdata),.mask(ctrl_mask),
-        .done(ctrl_done),.error(ctrl_error),.rdata(ctrl_rdata));
+        .done(ctrl_done),.error(ctrl_error),.rdata(ctrl_rdata),.rword_valid,.rword_data,.scan_word_valid,.scan_word_data);
     wire [511:0] ctrl_rdata;
     wire phy_reset_n,phy_cs_n,phy_ck_en,phy_dq_oe,phy_rwds_oe;
     wire phy_rwds_o_rise,phy_rwds_o_fall,phy_dq_tx,phy_rwds_tx;
@@ -44,7 +47,7 @@ module tb_fb_blit;
     kagura_fb_burst_ctrl #(.INIT_CYCLES(16)) controller(
         .clk,.reset,.valid(ctrl_valid),.ready(ctrl_ready),.write(ctrl_write),.addr(ctrl_addr),
         .words(ctrl_words),.wdata(ctrl_wdata),.mask(ctrl_mask),.done(ctrl_done),.error(ctrl_error),.rdata(ctrl_rdata),
-        .initialized,.phy_reset_n,.phy_cs_n,.phy_ck_en,.phy_dq_oe,.phy_dq_o_rise,.phy_dq_o_fall,
+        .rword_valid,.rword_data,.initialized,.phy_reset_n,.phy_cs_n,.phy_ck_en,.phy_dq_oe,.phy_dq_o_rise,.phy_dq_o_fall,
         .phy_rwds_oe,.phy_rwds_o_rise,.phy_rwds_o_fall,.phy_dq_tx,.phy_rwds_tx,.phy_dq_i_rise,.phy_dq_i_fall);
     kagura_hyperram_pair_model #(.BYTES(262144),.MAX_WORDS(16)) model(
         .clk,.reset_n(phy_reset_n),.cs_n(phy_cs_n),.ck_en(phy_ck_en),

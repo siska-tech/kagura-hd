@@ -1,0 +1,114 @@
+Verilator 5.032 2025-01-01 rev (Debian 5.032-1), seed 1
+PASS: two complete video frames, geometry/RGB, 746 stereo samples, reset
+- sim/tests/tb_phase1_sources.sv:58: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 8ms; walltime 0.349 s; speed 24.009 ms/s
+- Verilator: cpu 0.350 s on 1 threads; alloced 121 MB
+PASS: upstream TMDS control codes and 8192 video symbols decoded, disparity bounded
+- sim/tests/tb_tmds_channel.sv:44: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 82us; walltime 0.005 s; speed 14.997 ms/s
+- Verilator: cpu 0.005 s on 1 threads; alloced 121 MB
+PASS: pipelined TMDS channel equals upstream three clocks later, 599988 lane symbols (125222 video cycles), all modes
+- sim/tests/tb_tmds_pipeline.sv:52: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 2ms; walltime 0.108 s; speed 18.487 ms/s
+- Verilator: cpu 0.108 s on 1 threads; alloced 121 MB
+PASS: packet assembler matches hdl-util, 28282 packets, 904466 island pixels, 31 resets
+- sim/tests/tb_packet_assembler.sv:52: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 13ms; walltime 0.317 s; speed 40.823 ms/s
+- Verilator: cpu 0.318 s on 1 threads; alloced 121 MB
+PASS: serializer uses GSR-enabled OSER10s with local RESET disabled
+- sim/tests/tb_serializer_reset.sv:44: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 64ns; walltime 0.001 s; speed 63.840 us/s
+- Verilator: cpu 0.001 s on 1 threads; alloced 121 MB
+PASS: async FIFO depth16, 1024 ordered words, wrap and nonempty reset, empty pop
+- sim/tests/tb_async_fifo.sv:69: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 29us; walltime 0.002 s; speed 11.666 ms/s
+- Verilator: cpu 0.003 s on 1 threads; alloced 121 MB
+PASS: tick-paced FIFO to packets, 3072 stereo pairs + 44 silence (startup mute, one stall), max pending ticks 2, BCH, parity/status, InfoFrame checksum and ACR
+- sim/tests/tb_audio_packets.sv:133: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 49ms; walltime 2.916 s; speed 16.853 ms/s
+- Verilator: cpu 2.915 s on 1 threads; alloced 121 MB
+Prepared /tmp/kagura-release-rest-mlfDXQ/build/generated/kagura_hdmi_stream.sv
+PASS: integrated HDMI VIC1 timing/TERC4 path, 1024 stereo pairs after partial-group reset, ACR CTS=25200/N=6144, 21 ACR (47.62 samples/ms), AVI, before PHY
+- sim/tests/tb_hdmi_stream.sv:111: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 16ms; walltime 1.873 s; speed 8.712 ms/s
+- Verilator: cpu 1.872 s on 1 threads; alloced 121 MB
+PASS: integrated HDMI VIC4 timing/TERC4 path, 1024 stereo pairs after partial-group reset, ACR CTS=74250/N=6144, 21 ACR (47.62 samples/ms), AVI, before PHY
+- sim/tests/tb_hdmi_stream.sv:111: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 16ms; walltime 5.024 s; speed 3.247 ms/s
+- Verilator: cpu 5.021 s on 1 threads; alloced 121 MB
+PASS: SP2048x8 latency, SDP512x32 cross-clock, 3000 random byte RMW ops (2-cycle busy), TDP collision detect, 40 line handovers + underrun
+- sim/tests/tb_bsram_wrappers.sv:133: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 3ms; walltime 0.106 s; speed 28.690 ms/s
+- Verilator: cpu 0.107 s on 1 threads; alloced 121 MB
+PASS: six-voice synth, 34774 stereo samples vs integer model, 25 applies, 7 invalid; 25/64 cycles, pulse/wave/noise, full LFSR period, snapshots, reset, pan and saturation
+- sim/tests/tb_audio_synth.sv:222: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 724ms; walltime 59.125 s; speed 12.261 ms/s
+- Verilator: cpu 59.086 s on 1 threads; alloced 121 MB
+PASS: optional PCM 2ch mix, snapshots, 31/64 cycles and saturation
+- sim/tests/tb_audio_pcm_mix.sv:80: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 147us; walltime 0.004 s; speed 33.979 ms/s
+- Verilator: cpu 0.004 s on 1 threads; alloced 121 MB
+PASS: PCM 2ch prefetch, one-shot, loop, memory error and starvation
+- sim/tests/tb_pcm_prefetch.sv:114: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 1us; walltime 0.002 s; speed 498.346 us/s
+- Verilator: cpu 0.003 s on 1 threads; alloced 121 MB
+PASS: PCM response timeout, late-response drain and clean reconfiguration
+- sim/tests/tb_pcm_timeout.sv:45: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 155ns; walltime 0.001 s; speed 66.147 us/s
+- Verilator: cpu 0.002 s on 1 threads; alloced 121 MB
+PASS: PSRAM-model prefetch to PCM mixer, four signed samples and one-shot completion
+- sim/tests/tb_pcm_audio_path.sv:77: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 84us; walltime 0.003 s; speed 25.276 ms/s
+- Verilator: cpu 0.003 s on 1 threads; alloced 121 MB
+PASS: PSRAM byte bridge backpressure, four-byte cache, alignment and controller loss
+- sim/tests/tb_psram_byte_bridge.sv:97: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 205ns; walltime 0.001 s; speed 234.987 us/s
+- Verilator: cpu 0.001 s on 1 threads; alloced 121 MB
+PASS: PSRAM read CDC, 302 requests, async clocks, backpressure, latency, error and reset
+- sim/tests/tb_psram_read_cdc.sv:75: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 59us; walltime 0.003 s; speed 18.245 ms/s
+- Verilator: cpu 0.003 s on 1 threads; alloced 121 MB
+PASS: tb_hyperram_ctrl
+- sim/tests/tb_hyperram_ctrl.sv:185: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 18us; walltime 0.002 s; speed 6.609 ms/s
+- Verilator: cpu 0.003 s on 1 threads; alloced 121 MB
+PASS: tb_psram_arbiter p_reads=5778 h_reads=3147 h_writes=3103 max_wait p=31 h=61
+- sim/tests/tb_psram_arbiter.sv:129: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 2ms; walltime 0.101 s; speed 19.577 ms/s
+- Verilator: cpu 0.102 s on 1 threads; alloced 121 MB
+host_words=58434 pcm_wait_max=57 cycles
+PASS: dual PCM upload, unaligned 513/511-byte loops, refills under host traffic, mixer, host and PCM corruption detection and reset recovery
+- sim/tests/tb_hyperram_pcm_source.sv:60: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 34ms; walltime 0.859 s; speed 39.186 ms/s
+- Verilator: cpu 0.859 s on 1 threads; alloced 125 MB
+PASS: HyperRAM upload/masked writes, CA model, read path, prefetch and PCM mixer; lat 14/6, 8 samples in 2 reads
+- sim/tests/tb_hyperram_pcm_chain.sv:132: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 188us; walltime 0.010 s; speed 17.250 ms/s
+- Verilator: cpu 0.011 s on 1 threads; alloced 121 MB
+PASS: PSRAM 32-bit model, cache, async CDC, prefetch and PCM mixer; 8 samples in 2 commands
+- sim/tests/tb_psram_pcm_chain.sv:111: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 167us; walltime 0.011 s; speed 15.258 ms/s
+- Verilator: cpu 0.011 s on 1 threads; alloced 121 MB
+PASS: all 22 shared component tests

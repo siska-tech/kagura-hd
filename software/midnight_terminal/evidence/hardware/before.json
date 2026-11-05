@@ -1,0 +1,11 @@
+{
+  "machine": "KAGURA Raspberry Pi Pico with RP2040",
+  "boot_py_sha256": "9ef26228ee5039efa193938d4d11cc036d4b2589289250719f484647716b62b0",
+  "gpio_safe": true,
+  "flash_sha256": "7134077f8bb0d5a1cc426235a8e3ee274dbc7a6f9718e1ee6b152036996a6da6",
+  "uid": "REDACTED_DEVICE_UID",
+  "frequency": 125000000,
+  "publication_redactions": [
+    "individual RP2040 device UID"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "bytes": 2097152,
+  "sha256": "7ea52cb9898e6dbd3b44eb1b80861b28a3fd8026d858973162e05f5df32ee596",
+  "picotool_verify": true,
+  "uid": "REDACTED_DEVICE_UID",
+  "restore_target": "immediate pre-campaign MIDNIGHT TERMINAL image",
+  "flash_written": false,
+  "release_ready": false,
+  "publication_redactions": [
+    "individual RP2040 device UID"
+  ]
+}

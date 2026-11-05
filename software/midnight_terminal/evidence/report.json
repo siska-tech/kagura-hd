@@ -1,0 +1,22 @@
+{
+  "release_ready": false,
+  "pc_preview_complete": true,
+  "duration_ms": 88000,
+  "pc_tick_ms_mean": 0.41530914932914026,
+  "pc_tick_ms_p95": 0.5694000283256173,
+  "pc_tick_ms_max": 142.22929999232292,
+  "operations": {
+    "4": 532,
+    "5": 1903,
+    "3": 4612,
+    "6": 19,
+    "1": 9694,
+    "7": 1896,
+    "2": 269
+  },
+  "host_asset_bytes": 2246734,
+  "present_count": 1903,
+  "hardware_fps": null,
+  "hardware_fence_wait_ms": null,
+  "note": "PC ctypes pixel backend timing includes trace and Python emulation; no SPI, FPGA, HDMI or PCM capture."
+}

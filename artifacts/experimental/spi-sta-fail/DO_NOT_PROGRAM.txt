@@ -1,0 +1,10 @@
+DO NOT PROGRAM
+EXPERIMENTAL / STA FAIL / NOT VALIDATED
+
+This SPI bitstream has setup slack -3.359 ns and 4 violated endpoints.
+It is quarantined for investigation only and is NOT a normal release asset.
+Do not load it into FPGA SRAM or Flash.
+Regression and hardware tests were not run for this SPI build.
+Resolve the timing violations and complete qualification before promotion.
+
+Tracking issue: https://github.com/siska-tech/kagura-hd/issues/1
