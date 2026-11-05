@@ -1,0 +1,1608 @@
+[
+  {
+    "n": 1,
+    "us": 20,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 1,
+    "transactions": 1,
+    "us": 75,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 1,
+    "us": 355,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_write"
+  },
+  {
+    "n": 1,
+    "us": 289,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_read"
+  },
+  {
+    "n": 2,
+    "us": 25,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 2,
+    "transactions": 1,
+    "us": 32,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 2,
+    "us": 263,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_write"
+  },
+  {
+    "n": 2,
+    "us": 251,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_read"
+  },
+  {
+    "n": 4,
+    "us": 25,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 4,
+    "transactions": 1,
+    "us": 31,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 4,
+    "us": 263,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_write"
+  },
+  {
+    "n": 4,
+    "us": 252,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_read"
+  },
+  {
+    "n": 8,
+    "us": 32,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 8,
+    "transactions": 1,
+    "us": 48,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 8,
+    "us": 259,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_write"
+  },
+  {
+    "n": 8,
+    "us": 259,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_read"
+  },
+  {
+    "n": 16,
+    "us": 48,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 16,
+    "transactions": 1,
+    "us": 97,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 16,
+    "us": 277,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_write"
+  },
+  {
+    "n": 16,
+    "us": 243,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_read"
+  },
+  {
+    "n": 64,
+    "us": 114,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 64,
+    "transactions": 1,
+    "us": 102,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 64,
+    "us": 312,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_write"
+  },
+  {
+    "n": 64,
+    "us": 308,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_read"
+  },
+  {
+    "n": 512,
+    "us": 463,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 512,
+    "transactions": 2,
+    "us": 495,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 512,
+    "us": 1988,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_write"
+  },
+  {
+    "n": 512,
+    "us": 1942,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "psram_read"
+  },
+  {
+    "issue_us": 144,
+    "completion_us": 88,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 115,
+    "completion_us": 100,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 119,
+    "completion_us": 84,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 110,
+    "completion_us": 109,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 128,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 120,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 100,
+    "completion_us": 80,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 107,
+    "completion_us": 94,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 119,
+    "completion_us": 83,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 121,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 122,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 121,
+    "completion_us": 84,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 103,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 95,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 125,
+    "completion_us": 83,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 127,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 81,
+    "completion_us": 79,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 106,
+    "completion_us": 96,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 126,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 141,
+    "completion_us": 98,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 126,
+    "completion_us": 80,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 124,
+    "completion_us": 83,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 86,
+    "completion_us": 125,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 106,
+    "completion_us": 100,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 119,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 88,
+    "completion_us": 113,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 127,
+    "completion_us": 83,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 123,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 75,
+    "completion_us": 124,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 123,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 110,
+    "completion_us": 94,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 86,
+    "completion_us": 112,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 97,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 109,
+    "completion_us": 101,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 78,
+    "completion_us": 125,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 156,
+    "completion_us": 87,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 122,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 75,
+    "completion_us": 92,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 118,
+    "completion_us": 103,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 104,
+    "completion_us": 100,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 105,
+    "completion_us": 105,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 120,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 104,
+    "completion_us": 80,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 104,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 108,
+    "completion_us": 99,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 117,
+    "completion_us": 83,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 115,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 108,
+    "completion_us": 97,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 109,
+    "completion_us": 99,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 120,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 137,
+    "completion_us": 99,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 120,
+    "completion_us": 83,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 108,
+    "completion_us": 103,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 89,
+    "completion_us": 129,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 119,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 120,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 78,
+    "completion_us": 120,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 120,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 117,
+    "completion_us": 83,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 75,
+    "completion_us": 91,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 95,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 126,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 106,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "issue_us": 123,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fence"
+  },
+  {
+    "us": 264,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 285,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "blit"
+  },
+  {
+    "us": 3825,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "present"
+  },
+  {
+    "us": 217,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 251,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "blit"
+  },
+  {
+    "us": 15887,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "present"
+  },
+  {
+    "us": 203,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 235,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "blit"
+  },
+  {
+    "us": 15941,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "present"
+  },
+  {
+    "us": 213,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 253,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "blit"
+  },
+  {
+    "us": 15895,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "present"
+  },
+  {
+    "us": 196,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 233,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "blit"
+  },
+  {
+    "us": 15943,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "present"
+  },
+  {
+    "us": 200,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 252,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "blit"
+  },
+  {
+    "us": 15877,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "present"
+  },
+  {
+    "us": 216,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 245,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "blit"
+  },
+  {
+    "us": 15896,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "present"
+  },
+  {
+    "us": 213,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 230,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "blit"
+  },
+  {
+    "us": 15888,
+    "rc": 0,
+    "phase": "PCM_STOPPED",
+    "op": "present"
+  },
+  {
+    "n": 1,
+    "us": 19,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 1,
+    "transactions": 1,
+    "us": 77,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 1,
+    "us": 328,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_write"
+  },
+  {
+    "n": 1,
+    "us": 277,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_read"
+  },
+  {
+    "n": 2,
+    "us": 29,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 2,
+    "transactions": 1,
+    "us": 54,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 2,
+    "us": 261,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_write"
+  },
+  {
+    "n": 2,
+    "us": 256,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_read"
+  },
+  {
+    "n": 4,
+    "us": 55,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 4,
+    "transactions": 1,
+    "us": 31,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 4,
+    "us": 251,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_write"
+  },
+  {
+    "n": 4,
+    "us": 259,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_read"
+  },
+  {
+    "n": 8,
+    "us": 57,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 8,
+    "transactions": 1,
+    "us": 34,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 8,
+    "us": 258,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_write"
+  },
+  {
+    "n": 8,
+    "us": 263,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_read"
+  },
+  {
+    "n": 16,
+    "us": 41,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 16,
+    "transactions": 1,
+    "us": 89,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 16,
+    "us": 268,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_write"
+  },
+  {
+    "n": 16,
+    "us": 265,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_read"
+  },
+  {
+    "n": 64,
+    "us": 104,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 64,
+    "transactions": 1,
+    "us": 120,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 64,
+    "us": 331,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_write"
+  },
+  {
+    "n": 64,
+    "us": 295,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_read"
+  },
+  {
+    "n": 512,
+    "us": 471,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_pointer_write"
+  },
+  {
+    "n": 512,
+    "transactions": 2,
+    "us": 486,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "raw_csr_read"
+  },
+  {
+    "n": 512,
+    "us": 2019,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_write"
+  },
+  {
+    "n": 512,
+    "us": 1947,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "psram_read"
+  },
+  {
+    "issue_us": 131,
+    "completion_us": 85,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 120,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 105,
+    "completion_us": 89,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 78,
+    "completion_us": 80,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 81,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 124,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 120,
+    "completion_us": 105,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 70,
+    "completion_us": 78,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 78,
+    "completion_us": 80,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 119,
+    "completion_us": 103,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 110,
+    "completion_us": 80,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 79,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 108,
+    "completion_us": 97,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 103,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 79,
+    "completion_us": 80,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 127,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 87,
+    "completion_us": 126,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 120,
+    "completion_us": 83,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 114,
+    "completion_us": 84,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 91,
+    "completion_us": 112,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 120,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 104,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 78,
+    "completion_us": 93,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 103,
+    "completion_us": 94,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 117,
+    "completion_us": 83,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 77,
+    "completion_us": 78,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 76,
+    "completion_us": 114,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 110,
+    "completion_us": 101,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 103,
+    "completion_us": 97,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 123,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 125,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 108,
+    "completion_us": 80,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 95,
+    "completion_us": 80,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 117,
+    "completion_us": 83,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 122,
+    "completion_us": 83,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 118,
+    "completion_us": 100,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 118,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 114,
+    "completion_us": 83,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 88,
+    "completion_us": 108,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 119,
+    "completion_us": 84,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 126,
+    "completion_us": 83,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 76,
+    "completion_us": 91,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 118,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 120,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 103,
+    "completion_us": 106,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 122,
+    "completion_us": 84,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 107,
+    "completion_us": 101,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 74,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 76,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 124,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 76,
+    "completion_us": 80,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 108,
+    "completion_us": 110,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 76,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 80,
+    "completion_us": 127,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 81,
+    "completion_us": 125,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 120,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 125,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 76,
+    "completion_us": 92,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 98,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 122,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 77,
+    "completion_us": 91,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 142,
+    "completion_us": 82,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 127,
+    "completion_us": 81,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "issue_us": 79,
+    "completion_us": 80,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fence"
+  },
+  {
+    "us": 260,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 287,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "blit"
+  },
+  {
+    "us": 13446,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "present"
+  },
+  {
+    "us": 218,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 262,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "blit"
+  },
+  {
+    "us": 15859,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "present"
+  },
+  {
+    "us": 217,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 246,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "blit"
+  },
+  {
+    "us": 15898,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "present"
+  },
+  {
+    "us": 223,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 250,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "blit"
+  },
+  {
+    "us": 15885,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "present"
+  },
+  {
+    "us": 230,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 256,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "blit"
+  },
+  {
+    "us": 15859,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "present"
+  },
+  {
+    "us": 236,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 251,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "blit"
+  },
+  {
+    "us": 15868,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "present"
+  },
+  {
+    "us": 198,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 249,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "blit"
+  },
+  {
+    "us": 15877,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "present"
+  },
+  {
+    "us": 239,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "fill"
+  },
+  {
+    "pixels": 1024,
+    "us": 254,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "blit"
+  },
+  {
+    "us": 15876,
+    "rc": 0,
+    "phase": "PCM_PLAYING",
+    "op": "present"
+  }
+]

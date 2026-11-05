@@ -1,0 +1,8 @@
+{
+  "frames": 607,
+  "commands": 156770,
+  "mean_commands": 258.2701812191104,
+  "worst_commands": 688,
+  "hardware_fps": null,
+  "appearance": "continuous 4x4 cells; intentionally different from dotted original"
+}

@@ -40,7 +40,7 @@ class PCM(BlitModel):
    if self.active.get(0x6e+32*ch,0)&1:self.pcm[ch]|=2
 class Harness:
  def __init__(self,variant):
-  self.model=PCM();self.lib=C.CDLL(str(R/'out'/(f'{variant}.dll' if sys.platform=='win32' else f'lib{variant}.so')));self.errors=[];self.dev=Device();self.engine=C.create_string_buffer(8192)
+  self.model=PCM();self.lib=C.CDLL(str(R/'out'/(f'{variant}.dll' if sys.platform=='win32' else f'lib{variant}.so')));self.errors=[];self.dev=Device();self.lib.b16_size.restype=C.c_size_t;self.engine=C.create_string_buffer(self.lib.b16_size())
   def read(_,a,inc,p,n):
    try:C.memmove(p,bytes(self.model.read(a,inc,n)),n);return 0
    except Exception as ex:self.errors.append(str(ex));return -1

@@ -1,11 +1,13 @@
 // SPDX-License-Identifier: Apache-2.0
 #include "b16.h"
-#include "../../midnight_terminal/src/mt_qspi.h"
+#include "b16_qspi.h"
 #include "pico/stdlib.h"
 #include "pico/stdio_usb.h"
 #include "hardware/clocks.h"
 #include <stdio.h>
 #include <string.h>
+typedef struct {uint32_t ms,scene,us;uint64_t commands,blit_pixels;} frame_record;
+static frame_record frame_log[4600];static unsigned frame_count;
 static kfb_device gpu;static b16_engine engine;static b16_bus bus;
 static int benchmark(void){
  const unsigned lengths[]={1,2,4,8,16,64,512};uint8_t buffer[512]={0},readback[512];int r=0;
@@ -51,8 +53,13 @@ int main(void){set_sys_clock_khz(120000,true);stdio_init_all();while(!stdio_usb_
  // Timeline epoch follows actual completed BGM COMMIT; startup/preload excluded.
  uint32_t epoch_ms=engine.audio_epoch_ms;uint32_t logged=0;uint64_t sum_us=0,worst_us=0;uint32_t drawn=0;
  while(!rc){uint32_t ms=(uint32_t)(to_ms_since_boot(get_absolute_time())-epoch_ms);if(ms>=B16_DURATION||getchar_timeout_us(0)=='q')break;
-  uint32_t before=engine.stats.frames;uint64_t t=time_us_64();rc=b16_tick(&engine,ms);uint64_t dt=time_us_64()-t;if(engine.stats.frames!=before){sum_us+=dt;if(dt>worst_us)worst_us=dt;drawn++;printf("FRAME ms=%lu scene=%lu us=%llu commands=%llu blit_pixels=%llu\n",(unsigned long)ms,(unsigned long)engine.stats.scene,(unsigned long long)dt,(unsigned long long)engine.stats.commands,(unsigned long long)engine.stats.blit_pixels);}
-  if(ms-logged>=1000){const mt_qspi_stats *s=mt_qspi_statistics();printf("PERF ms=%lu scene=%d frames=%lu skipped=%lu transactions=%llu wire_bytes=%llu transaction_us=%llu max_transaction_us=%lu timeouts=%lu frame_sum_us=%llu worst_us=%llu audio_fault=%d\n",(unsigned long)ms,engine.scene,(unsigned long)drawn,(unsigned long)engine.stats.skipped,(unsigned long long)s->transactions,(unsigned long long)s->wire_bytes,(unsigned long long)s->elapsed_us,(unsigned long)s->max_transaction_us,(unsigned long)s->timeouts,(unsigned long long)sum_us,(unsigned long long)worst_us,engine.error);logged=ms;}sleep_ms(1);
+  uint32_t before=engine.stats.frames;uint64_t t=time_us_64();rc=b16_tick(&engine,ms);uint64_t dt=time_us_64()-t;if(engine.stats.frames!=before){sum_us+=dt;if(dt>worst_us)worst_us=dt;drawn++;if(frame_count<4600)frame_log[frame_count++]=(frame_record){ms,engine.stats.scene,(uint32_t)dt,engine.stats.commands,engine.stats.blit_pixels};
+#ifdef B16_VERBOSE_FRAMES
+ printf("FRAME ms=%lu scene=%lu us=%llu commands=%llu blit_pixels=%llu\n",(unsigned long)ms,(unsigned long)engine.stats.scene,(unsigned long long)dt,(unsigned long long)engine.stats.commands,(unsigned long long)engine.stats.blit_pixels);
+#endif
+ }
+  if(ms-logged>=1000){const mt_qspi_stats *s=mt_qspi_statistics();printf("PERF ms=%lu scene=%d frames=%lu skipped=%lu transactions=%llu wire_bytes=%llu transaction_us=%llu max_transaction_us=%lu timeouts=%lu frame_sum_us=%llu worst_us=%llu audio_fault=%d\n",(unsigned long)ms,engine.scene,(unsigned long)drawn,(unsigned long)engine.stats.skipped,(unsigned long long)s->transactions,(unsigned long long)s->wire_bytes,(unsigned long long)s->elapsed_us,(unsigned long)s->max_transaction_us,(unsigned long)s->timeouts,(unsigned long long)sum_us,(unsigned long long)worst_us,engine.error);printf("BUS ms=%lu begin_us=%llu transfer_us=%llu end_us=%llu\n",(unsigned long)ms,(unsigned long long)s->begin_us,(unsigned long long)s->transfer_us,(unsigned long long)s->end_us);logged=ms;}sleep_ms(1);
  }
  if(!rc)rc=b16_finish(&engine);
- stopped:printf("STOP rc=%d; no retry; release_ready=false\n",rc);mt_qspi_deinit();while(true)tight_loop_contents();}
+ stopped:for(unsigned i=0;i<frame_count;i++){const frame_record *f=&frame_log[i];printf("FRAME ms=%lu scene=%lu us=%lu commands=%llu blit_pixels=%llu\n",(unsigned long)f->ms,(unsigned long)f->scene,(unsigned long)f->us,(unsigned long long)f->commands,(unsigned long long)f->blit_pixels);}
+ printf("STOP rc=%d; no retry; release_ready=false\n",rc);mt_qspi_deinit();while(true)tight_loop_contents();}

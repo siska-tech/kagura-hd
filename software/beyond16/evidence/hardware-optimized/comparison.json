@@ -1,0 +1,84 @@
+{
+  "scenes": [
+    {
+      "name": "BOOT",
+      "old_fps": 14.5,
+      "new_fps": 19.4,
+      "mean_ms": 49.670963917525775,
+      "worst_ms": 116.455,
+      "completion_interval_p95_ms": 50.49900000000025,
+      "interval_over_33_34_fraction": 1.0
+    },
+    {
+      "name": "HYPERSPACE",
+      "old_fps": 15.35,
+      "new_fps": 17.4,
+      "mean_ms": 56.23749712643678,
+      "worst_ms": 115.754,
+      "completion_interval_p95_ms": 67.06399999999849,
+      "interval_over_33_34_fraction": 1.0
+    },
+    {
+      "name": "RASTER WAVES",
+      "old_fps": 8.35,
+      "new_fps": 11.95,
+      "mean_ms": 82.47825941422595,
+      "worst_ms": 148.896,
+      "completion_interval_p95_ms": 84.02700000000186,
+      "interval_over_33_34_fraction": 1.0
+    },
+    {
+      "name": "PLASMA ENGINE",
+      "old_fps": 11.65,
+      "new_fps": 20.6,
+      "mean_ms": 44.42957524271845,
+      "worst_ms": 148.894,
+      "completion_interval_p95_ms": 83.27799999999843,
+      "interval_over_33_34_fraction": 0.732360097323601
+    },
+    {
+      "name": "ROTOZOOM",
+      "old_fps": 6.52,
+      "new_fps": 15.28,
+      "mean_ms": 64.07743455497382,
+      "worst_ms": 115.591,
+      "completion_interval_p95_ms": 83.98799999999756,
+      "interval_over_33_34_fraction": 1.0
+    },
+    {
+      "name": "BLIT STORM",
+      "old_fps": 14.4,
+      "new_fps": 28.16,
+      "mean_ms": 34.16143323863636,
+      "worst_ms": 82.23,
+      "completion_interval_p95_ms": 50.004999999990105,
+      "interval_over_33_34_fraction": 0.4310099573257468
+    },
+    {
+      "name": "VECTOR WORLD",
+      "old_fps": 3.9,
+      "new_fps": 4.2,
+      "mean_ms": 238.08239285714285,
+      "worst_ms": 365.766,
+      "completion_interval_p95_ms": 317.02799999999115,
+      "interval_over_33_34_fraction": 1.0
+    },
+    {
+      "name": "FINALE",
+      "old_fps": 21.0,
+      "new_fps": 21.4,
+      "mean_ms": 26.35172429906542,
+      "worst_ms": 611.812,
+      "completion_interval_p95_ms": 83.03199999997742,
+      "interval_over_33_34_fraction": 0.4413145539906103
+    }
+  ],
+  "bus_window_s": 148.217,
+  "bus_cumulative_s": {
+    "begin_us": 34.017524,
+    "transfer_us": 60.559014,
+    "end_us": 16.3933
+  },
+  "scope": "one old and one new run; logging and instrumentation differ",
+  "release_ready": false
+}

@@ -1,26 +1,26 @@
 {
   "conditions": "same C scene functions, seed 0xB1616, 33ms logical schedule, 3 status polls per model command; baseline uncached and original SDK; optimized CAPS cache and packed descriptor",
   "baseline": [
-    10428231,
-    50973583,
-    1029051,
+    5006520,
+    24409486,
+    487134,
     4545,
-    113032704,
+    85899840,
     0,
     0,
     0
   ],
   "optimized": [
-    9262259,
-    49396848,
-    1029051,
+    4385006,
+    23384832,
+    487134,
     4545,
-    113032704,
+    85899840,
     0,
     0,
     0
   ],
-  "transaction_reduction_percent": 11.180918412720242,
+  "transaction_reduction_percent": 12.4140920240007,
   "pixel_crc_equal": true,
   "physical_speedup": null
 }

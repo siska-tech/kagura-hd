@@ -1,3 +1,5 @@
+> 最新の改善と実機測定：[Host A/B結果](HARDWARE_HOST_AB_RESULT.md)。主要scene約30fps、VECTOR25.7fps。RTL変更0、release_ready=false。下記の初期版記録も履歴として保持しています。投稿用コピーは[publishing](publishing/YOUTUBE_COPY_JA.txt)、動画本体・Flash復旧像はローカルout/buildに保持。
+
 # KAGURA-HD — BEYOND 16 COLORS
 
 **ONE TINY FPGA. A WHOLE WORLD OF PIXELS.**

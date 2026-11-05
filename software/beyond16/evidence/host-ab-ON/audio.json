@@ -1,0 +1,100 @@
+{
+  "scope": "physical UGREEN HDMI PCM16 stereo capture, not PC mix",
+  "sample_rate": 48000,
+  "channels": 2,
+  "capture_seconds": 156.5,
+  "audio_onset_s": 3.7600000000000002,
+  "audio_end_s": 153.76,
+  "audible_span_s": 150.0,
+  "whole_capture_rms": [
+    1443.8824376768362,
+    1443.8812265620734
+  ],
+  "peak": [
+    14016.0,
+    14015.0
+  ],
+  "left_right_max_abs_difference": 7.0,
+  "longest_observed_low_rms_ms": 0,
+  "low_rms_scan_threshold": 20,
+  "low_rms_intervals": [],
+  "bgm_segment_correlations": [
+    {
+      "scene": 0,
+      "capture_start_s": 6.76,
+      "samples": 96000,
+      "correlation": 0.9956010187227992,
+      "loop_offset_samples": 143870,
+      "gain_relative_to_reference": 0.9952081427476013,
+      "capture_rms": 1254.5126135235082
+    },
+    {
+      "scene": 1,
+      "capture_start_s": 16.759999999999998,
+      "samples": 96000,
+      "correlation": 0.9965479015383507,
+      "loop_offset_samples": 239876,
+      "gain_relative_to_reference": 0.9950557824076847,
+      "capture_rms": 1408.4199236459688
+    },
+    {
+      "scene": 2,
+      "capture_start_s": 36.76,
+      "samples": 96000,
+      "correlation": 0.9955603021719075,
+      "loop_offset_samples": 47893,
+      "gain_relative_to_reference": 0.9941117852106127,
+      "capture_rms": 1479.9997575907742
+    },
+    {
+      "scene": 3,
+      "capture_start_s": 56.76,
+      "samples": 96000,
+      "correlation": 0.9957663782580137,
+      "loop_offset_samples": 239908,
+      "gain_relative_to_reference": 0.9943482433214311,
+      "capture_rms": 1365.6630832371015
+    },
+    {
+      "scene": 4,
+      "capture_start_s": 76.76,
+      "samples": 96000,
+      "correlation": 0.9959718681197745,
+      "loop_offset_samples": 47924,
+      "gain_relative_to_reference": 0.9948342373741722,
+      "capture_rms": 1522.717909966693
+    },
+    {
+      "scene": 5,
+      "capture_start_s": 101.76,
+      "samples": 96000,
+      "correlation": 0.9968202644113098,
+      "loop_offset_samples": 95943,
+      "gain_relative_to_reference": 0.9952250339780826,
+      "capture_rms": 1644.6758199091241
+    },
+    {
+      "scene": 6,
+      "capture_start_s": 126.76,
+      "samples": 96000,
+      "correlation": 0.9971573576006915,
+      "loop_offset_samples": 143962,
+      "gain_relative_to_reference": 0.996229491801,
+      "capture_rms": 1421.1430027556164
+    },
+    {
+      "scene": 7,
+      "capture_start_s": 146.76,
+      "samples": 96000,
+      "correlation": 0.9954210041309756,
+      "loop_offset_samples": 335978,
+      "gain_relative_to_reference": 0.9944626192334701,
+      "capture_rms": 1548.62760828607
+    }
+  ],
+  "pcm_status_faults": [
+    0
+  ],
+  "underrun_counter_available": false,
+  "caveat": "STATUS fault observed at 1s cadence; no isolated underrun counter. Capture silence scan does not prove every sample."
+}

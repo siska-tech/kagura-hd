@@ -21,19 +21,51 @@ int b16_audio_poll(kfb_device *g){for(unsigned ch=0;ch<2;ch++){uint8_t s;int r=a
 static int fs(b16_engine *e,int p,int x,int y,int w,int h,int c){if(e->error)return e->error;e->stats.commands++;int r=kfb_fill_rect(e->gpu,(unsigned)p,x,y,w,h,(unsigned)c);if(r)e->error=r;return r;}
 static void mark(b16_engine *e,int p,int x,int y,int w,int h){int x0=x/8,x1=(x+w-1)/8,y0=(y-88)/8,y1=(y+h-1-88)/8;for(int j=y0;j<=y1;j++)for(int i=x0;i<=x1;i++)if(j>=0&&j<26&&i>=0&&i<80)e->dirty[p][j][i]=1;}
 static void dot(b16_engine *e,int x,int y,int w,int h,int c){if(x<16||y<88||x+w>624||y+h>280)return;fs(e,e->page,x,y,w,h,c);mark(e,e->page,x,y,w,h);}
-static void clear_dirty(b16_engine *e){for(int y=0;y<26;y++){int x=0;while(x<80){if(!e->dirty[e->page][y][x]){x++;continue;}int first=x;while(x<80&&e->dirty[e->page][y][x]){e->dirty[e->page][y][x]=0;x++;}fs(e,e->page,first*8,88+y*8,(x-first)*8,8,0);}}}
+static void clear_dirty(b16_engine *e){
+ uint8_t (*d)[80]=e->dirty[e->page];
+ for(int y=0;y<26;y++)for(int x=0;x<80;){
+  if(!d[y][x]){x++;continue;}
+  int first=x;while(x<80&&d[y][x])x++;int bottom=y+1;
+  while(bottom<26){int ok=1;for(int i=first;i<x;i++)if(!d[bottom][i]){ok=0;break;}if(!ok)break;bottom++;}
+  for(int j=y;j<bottom;j++)memset(&d[j][first],0,(size_t)(x-first));
+  fs(e,e->page,first*8,88+y*8,(x-first)*8,(bottom-y)*8,0);
+ }
+}
 static int sn(unsigned a){return sine[a&255];}
 static uint32_t hash(uint32_t a){a^=a>>16;a*=0x7feb352du;a^=a>>15;a*=0x846ca68bu;return a^(a>>16);}
 static void sprite(b16_engine *e,int id,int x,int y){if(e->error)return;x&=~7;if(x<16||x+32>624||y<88||y+32>280)return;int sx=(id&15)*40;e->stats.commands++;e->stats.blit_pixels+=1024;int r=kfb_copy_rect(e->gpu,e->page,sx,320,e->page,x,y,32,32);if(r)e->error=r;mark(e,e->page,x,y,32,32);}
-static void line(b16_engine *e,int x0,int y0,int x1,int y1,int c){int dx=x1-x0,dy=y1-y0,n=(dx<0?-dx:dx);int ay=dy<0?-dy:dy;if(ay>n)n=ay;n=n/5+1;for(int i=0;i<=n;i++)dot(e,x0+dx*i/n,y0+dy*i/n,5,2,c);}
+/* 152x48 final indexed cells, expanded 4x4 by existing FILL. */
+static uint8_t vector_mask[48][152];
+static void vector_flush(b16_engine *e){uint8_t (*prev)[152]=e->vector_previous[e->page];
+ for(int y=0;y<48;y++)for(int x=0;x<152;){unsigned c=vector_mask[y][x];if(prev[y][x]==c){x++;continue;}int first=x;while(x<152&&vector_mask[y][x]==c)x++;int bottom=y+1;
+  while(bottom<48){int ok=1;for(int i=first;i<x;i++)if(vector_mask[bottom][i]!=c){ok=0;break;}if(!ok)break;bottom++;}
+  dot(e,16+first*4,88+y*4,(x-first)*4,(bottom-y)*4,(int)c);
+  if(e->error)return;
+  for(int j=y;j<bottom;j++)for(int i=first;i<x;i++)prev[j][i]=(uint8_t)c;
+ }
+}
+static void line(b16_engine *e,int x0,int y0,int x1,int y1,int c){(void)e;
+ x0=(x0-16)/4;y0=(y0-88)/4;x1=(x1-16)/4;y1=(y1-88)/4;
+ int dx=x1>x0?x1-x0:x0-x1,dy=y1>y0?y0-y1:y1-y0,sx=x0<x1?1:-1,sy=y0<y1?1:-1,err=dx+dy;
+ for(;;){if(x0>=0&&x0<152&&y0>=0&&y0<48)vector_mask[y0][x0]=(uint8_t)c;if(x0==x1&&y0==y1)break;int twice=2*err;if(twice>=dy){err+=dy;x0+=sx;}if(twice<=dx){err+=dx;y0+=sy;}}
+}
 static void stars(b16_engine *e,uint32_t t,unsigned count){unsigned turn=t/31;for(unsigned i=0;i<count;i++){uint32_t h=hash(i+e->seed);unsigned beat=(t/500)&3;uint32_t travel=((t/2000)*5000+250*beat*(beat+1)+(t%500)*(beat+1))/3;int z=32+(int)(999-(h+travel)%1000);int x=(int)(h&511)-256,y=(int)((h>>9)&255)-128;int a=(x*sn(turn+64)-y*sn(turn))/1024,b=(x*sn(turn)+y*sn(turn+64))/1024;x=320+a*180/z;y=192+b*110/z;int size=z<180?3:1;dot(e,x,y,size+1,size,z<240?10:4+(int)(i%9));if(z<180)dot(e,x-(x-320)/30,y-(y-192)/30,2,2,12);}}
 /* Immutable header slices, copied by the real aligned page BLIT instruction. */
-static void waving_logo(b16_engine *e,uint32_t t){for(int x=40;x<480&&!e->error;x+=8){int dx=x+80,dy=142+sn(t/17+x/3)*22/1024;e->stats.commands++;e->stats.blit_pixels+=8*48;int r=kfb_copy_rect(e->gpu,e->page,x,22,e->page,dx,dy,8,48);if(r)e->error=r;else mark(e,e->page,dx,dy,8,48);}}
-static void waves(b16_engine *e,uint32_t t){for(int layer=0;layer<3;layer++)for(int x=24;x<616;x+=32){int y=178+layer*8+sn(x/4+t/14+layer*27)*(22+layer*5)/1024;for(int band=0;band<3;band++)dot(e,x,y+band*3,32,3,3+(layer+band+(int)(t/500))%10);}}
-static void plasma_effect(b16_engine *e,uint32_t t){for(int y=0;y<6;y++)for(int x=0;x<18;x++){int phase=(sn(x*9+t/25)+sn(y*21+t/37)+2048)/256;int tile=8+((phase+(int)(t/180))&7);sprite(e,tile,32+x*32,88+y*32);}}
-static void roto(b16_engine *e,uint32_t t){int a=(int)(t/22),scale=180+(sn(t/40)+1024)/6;for(int y=0;y<12;y++)for(int x=0;x<24;x++){int xx=x-12,yy=y-6,u=((xx*sn(a+64)-yy*sn(a))*scale)/4096,v=((xx*sn(a)+yy*sn(a+64))*scale)/4096;int c=((u/256)^(v/256))&1;dot(e,32+x*24,88+y*16,24,16,c?11:3+(y/3));}for(int i=0;i<7;i++){int radius=18+(int)((t/40+i*17)%98);int x=320+sn(a+i*32)*radius/1024,y=180+sn(a+i*32+64)*radius/1400;sprite(e,i,x,y);}}
+static void waving_logo(b16_engine *e,uint32_t t){for(int x=40;x<480&&!e->error;x+=8){int dx=x+80,dy=142+sn(t/17+x/3)*22/1024;e->stats.commands++;e->stats.blit_pixels+=8*48;int r=kfb_copy_rect(e->gpu,e->page,x,22,e->page,dx,dy,8,48);if(r)e->error=r;else {mark(e,e->page,dx,dy,8,48);if(e->scene==6){for(int j=(dy-88)/4;j<=(dy+47-88)/4;j++)for(int i=(dx-16)/4;i<=(dx+7-16)/4;i++)if(j>=0&&j<48&&i>=0&&i<152)e->vector_previous[e->page][j][i]=255;}}}}
+static void waves(b16_engine *e,uint32_t t){
+ /* Temporary opaque 32x9 strip; the source is restored before PRESENT. */
+ for(int layer=0;layer<3;layer++){
+  for(int band=0;band<3;band++)fs(e,e->page,0,300+band*3,32,3,3+(layer+band+(int)(t/500))%10);
+  for(int x=24;x<616;x+=32){int y=178+layer*8+sn(x/4+t/14+layer*27)*(22+layer*5)/1024;if(x+32>624)continue;
+   e->stats.commands++;e->stats.blit_pixels+=32*9;int r=kfb_copy_rect(e->gpu,e->page,0,300,e->page,x,y,32,9);if(r)e->error=r;else mark(e,e->page,x,y,32,9);
+  }
+ }
+ e->stats.commands++;e->stats.blit_pixels+=32*9;int r=kfb_copy_rect(e->gpu,e->page^1,0,300,e->page,0,300,32,9);if(r)e->error=r;
+}
+static void plasma_effect(b16_engine *e,uint32_t t){for(int y=0;y<6;y++)for(int x=0;x<18;x++){int phase=(sn(x*9+t/25)+sn(y*21+t/37)+2048)/256;int tile=8+((phase+(int)(t/180))&7);if(e->plasma_cache[e->page][y][x]!=tile){sprite(e,tile,32+x*32,88+y*32);e->plasma_cache[e->page][y][x]=(uint8_t)tile;}}}
+static void roto(b16_engine *e,uint32_t t){int a=(int)(t/22),scale=180+(sn(t/40)+1024)/6;for(int y=0;y<12;y++){int colors[24];for(int x=0;x<24;x++){int xx=x-12,yy=y-6,u=((xx*sn(a+64)-yy*sn(a))*scale)/4096,v=((xx*sn(a)+yy*sn(a+64))*scale)/4096;colors[x]=(((u/256)^(v/256))&1)?11:3+(y/3);}for(int x=0;x<24;){int first=x,c=colors[x++];while(x<24&&colors[x]==c)x++;dot(e,32+first*24,88+y*16,(x-first)*24,16,c);}}for(int i=0;i<7;i++){int radius=18+(int)((t/40+i*17)%98);int x=320+sn(a+i*32)*radius/1024,y=180+sn(a+i*32+64)*radius/1400;sprite(e,i,x,y);}}
 static void storm(b16_engine *e,uint32_t t,unsigned count){for(unsigned i=0;i<count;i++){unsigned a=(unsigned)(t/(15+i%7)+i*29);int x=304+sn(a)*(270-(int)(i%7)*8)/1024,y=174+sn(a*2+i*11)*82/1024;sprite(e,(int)i&7,x,y);}}
-static void vectors(b16_engine *e,uint32_t t){
+static void vector_geometry(b16_engine *e,uint32_t t){
  static const uint8_t cube_edges[12][2]={{0,1},{1,3},{3,2},{2,0},{4,5},{5,7},{7,6},{6,4},{0,4},{1,5},{2,6},{3,7}};
  static const uint8_t octa_edges[12][2]={{0,1},{0,3},{0,2},{0,4},{5,1},{5,3},{5,2},{5,4},{1,2},{1,4},{3,2},{3,4}};
  static const int8_t octa[6][3]={{-65,0,0},{0,-65,0},{0,0,-65},{0,65,0},{0,0,65},{65,0,0}};
@@ -44,7 +76,7 @@ static void vectors(b16_engine *e,uint32_t t){
    for(int i=0;i<4;i++){px[i]=320+sn(angle+i*64)*radius/1024;py[i]=186+sn(angle+i*64+64)*radius/3072;}
    for(int i=0;i<4;i++)line(e,px[i],py[i],px[(i+1)&3],py[(i+1)&3],3+ring);
   }
-  if(t>=17500)waving_logo(e,t);
+
   return;
  }
  int px[8],py[8],count=t>=7000?6:8;
@@ -62,22 +94,23 @@ static void vectors(b16_engine *e,uint32_t t){
   for(int i=0;i<12;i++)line(e,px[edges[i][0]],py[edges[i][0]],px[edges[i][1]],py[edges[i][1]],o==1?10:12-o*3);
  }
 }
+static void vectors(b16_engine *e,uint32_t t){memset(vector_mask,0,sizeof vector_mask);vector_geometry(e,t);vector_flush(e);if(t>=17500)waving_logo(e,t);}
 static void lettering(b16_engine *e,int x,int y,const char *s,int scale,int c){for(;*s;s++,x+=8*scale){if((unsigned char)*s<32||(unsigned char)*s>127)continue;for(int j=0;j<8;j++){uint8_t row=ascii_rows[(*s-32)*8+j];for(int i=0;i<8;){if(!(row&(128>>i))){i++;continue;}int first=i;while(i<8&&(row&(128>>i)))i++;dot(e,x+first*scale,y+j*scale,(i-first)*scale,scale,c);}}}}
-static void caption(b16_engine *e,const char *s){fs(e,e->page,24,282,560,13,0);int x=32;for(;*s;s++,x+=8)for(int j=0;j<8;j++){uint8_t row=ascii_rows[(*s-32)*8+j];for(int i=0;i<8;i++)if(row&(128>>i))fs(e,e->page,x+i,284+j,1,1,11);}}
+static void caption(b16_engine *e,const char *s){fs(e,e->page,24,282,560,13,0);int x=32;for(;*s;s++,x+=8)for(int j=0;j<8;j++){uint8_t row=ascii_rows[(*s-32)*8+j];for(int i=0;i<8;){if(!(row&(128>>i))){i++;continue;}int first=i;while(i<8&&(row&(128>>i)))i++;fs(e,e->page,x+first,284+j,i-first,1,11);}}}
 static const uint32_t boundaries[]={0,10000,30000,50000,70000,95000,120000,140000,150000};
 static const char *names[]={"00 / BOOT SEQUENCE","01 / HYPERSPACE","02 / RASTER WAVES","03 / PLASMA ENGINE","04 / ROTOZOOM","05 / BLIT STORM","06 / VECTOR WORLD","07 / BEYOND 16 COLORS"};
 size_t b16_size(void){return sizeof(b16_engine);}
 const b16_stats *b16_statistics(b16_engine *e){return &e->stats;}
 void b16_load_test(b16_engine *e,unsigned stars_count,unsigned objects){e->stars=stars_count>256?256:stars_count;e->objects=objects>128?128:objects;}
-int b16_init(b16_engine *e,kfb_device *g,uint32_t seed){if(!e||!g)return KFB_ARGUMENT;memset(e,0,sizeof *e);e->gpu=g;e->seed=seed;e->scene=-1;e->page_scene[0]=e->page_scene[1]=-1;e->page=1;e->stars=64;e->objects=32;int r=kfb_probe(g);uint8_t id[7];if(!r&&g->io.read(g->io.context,0,true,id,7))r=KFB_IO;if(!r&&(id[4]!=1||id[5]!=4||id[6]!=255))r=KFB_VERSION;if(!r)r=b16_audio_stop(g);if(!r)r=b16_assets(g);for(unsigned i=0;i<16&&!r;i++)r=kfb_palette(g,i,b16_pal[i]);if(!r)r=kfb_present(g,1);e->stats.upload_bytes=636928;e->error=r;return r;}
+int b16_init(b16_engine *e,kfb_device *g,uint32_t seed){if(!e||!g)return KFB_ARGUMENT;memset(e,0,sizeof *e);memset(e->vector_previous,255,sizeof e->vector_previous);e->gpu=g;e->seed=seed;e->scene=-1;e->page_scene[0]=e->page_scene[1]=-1;e->page=1;e->stars=64;e->objects=32;int r=kfb_probe(g);uint8_t id[7];if(!r&&g->io.read(g->io.context,0,true,id,7))r=KFB_IO;if(!r&&(id[4]!=1||id[5]!=4||id[6]!=255))r=KFB_VERSION;if(!r)r=b16_audio_stop(g);if(!r)r=b16_assets(g);for(unsigned i=0;i<16&&!r;i++)r=kfb_palette(g,i,b16_pal[i]);if(!r)r=kfb_present(g,1);memcpy(e->palette_cache,b16_pal,sizeof e->palette_cache);e->stats.upload_bytes=636928;e->error=r;return r;}
 int b16_tick(b16_engine *e,uint32_t ms){if(!e||e->error)return e?e->error:KFB_ARGUMENT;if(ms>=B16_DURATION)return 0;if(ms<e->next_frame)return 0;if(e->next_frame&&ms>e->next_frame+34)e->stats.skipped+=(ms-e->next_frame)/34;e->next_frame=ms+33;e->stats.now_ms=ms;if(!e->started){int r=b16_audio(e->gpu,-1);if(r)return e->error=r;e->started=1;e->audio_epoch_ms=e->gpu->io.now_ms(e->gpu->io.context);}
  int scene=0;while(scene<7&&ms>=boundaries[scene+1])scene++;if(scene!=e->scene){e->scene=scene;int r=b16_audio(e->gpu,scene);if(r)return e->error=r;}
- e->stats.scene=(uint32_t)scene;uint32_t t=ms-boundaries[scene];e->page^=1;if(!(scene==7&&t>=3000&&e->final_ready[e->page]))clear_dirty(e);if(e->page_scene[e->page]!=scene){caption(e,names[scene]);e->page_scene[e->page]=scene;}
+ e->stats.scene=(uint32_t)scene;uint32_t t=ms-boundaries[scene];e->page^=1;if(!(scene==7&&t>=3000&&e->final_ready[e->page])&&!(scene==3&&e->page_scene[e->page]==3)&&!(scene==6&&e->page_scene[e->page]==6))clear_dirty(e);if(scene==6&&e->page_scene[e->page]!=6)memset(e->vector_previous[e->page],255,sizeof e->vector_previous[e->page]);if(scene==3&&e->page_scene[e->page]!=3)memset(e->plasma_cache[e->page],255,sizeof e->plasma_cache[e->page]);if(e->page_scene[e->page]!=scene){caption(e,names[scene]);e->page_scene[e->page]=scene;}
  switch(scene){case 0:stars(e,ms,48);storm(e,ms,8);break;case 1:stars(e,ms,e->stars);break;case 2:waves(e,t);waving_logo(e,t);break;case 3:plasma_effect(e,t);break;case 4:roto(e,t);break;case 5:{unsigned n=e->objects?e->objects:(8u<<((t/5000)%5));storm(e,t,n);break;}case 6:vectors(e,t);break;case 7:if(t<3000){stars(e,ms,32);storm(e,t,8);waving_logo(e,t);}else if(!e->final_ready[e->page]){fs(e,e->page,24,282,560,13,0);e->final_ready[e->page]=1;lettering(e,192,98,"KAGURA-HD",3,10);lettering(e,128,128,"BEYOND 16 COLORS",3,12);const char *s[]={"ONE TINY FPGA.","A WHOLE WORLD OF PIXELS.","640X360 / 16 COLORS","720p60 HDMI / PCM 2CH / 48kHz","RP2040 + TANG NANO 9K"};for(int i=0;i<5;i++)lettering(e,88,170+i*21,s[i],2,i<2?11:9);}break;}
 
  // Palette shadow applies with the following PRESENT, never per scanline.
  if(e->error){e->stats.error=e->error;return e->error;}
- unsigned idx=6+(ms/500)%4;int r=kfb_palette(e->gpu,idx,b16_pal[6+((ms/500+scene)%4)]);if(!r&&!e->error)r=kfb_present(e->gpu,e->page);e->stats.commands+=2;if(r)e->error=r;
+ unsigned idx=6+(ms/500)%4;unsigned value=b16_pal[6+((ms/500+scene)%4)];int r=0;if(e->palette_cache[idx]!=value){r=kfb_palette(e->gpu,idx,value);if(!r)e->palette_cache[idx]=(uint16_t)value;e->stats.commands++;}if(!r&&!e->error)r=kfb_present(e->gpu,e->page);e->stats.commands++;if(r)e->error=r;
  if(ms-e->last_audio_poll>=1000&&!e->error){e->error=b16_audio_poll(e->gpu);e->last_audio_poll=ms;}e->stats.frames++;e->stats.error=e->error;return e->error;}
 int b16_finish(b16_engine *e){if(!e)return KFB_ARGUMENT;return b16_audio_stop(e->gpu);}
 

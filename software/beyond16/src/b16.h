@@ -12,7 +12,7 @@
 #define BGM_SIZE 384000u
 #define FX_ADDR 0xe0000u
 typedef struct {uint64_t commands,blit_pixels,upload_bytes;uint32_t frames,skipped,scene,now_ms;int error;} b16_stats;
-typedef struct {kfb_device *gpu;uint32_t seed,next_frame,last_audio_poll,audio_epoch_ms;int scene,page,started,error,page_scene[2],final_ready[2];unsigned stars,objects;uint8_t dirty[2][26][80];b16_stats stats;} b16_engine;
+typedef struct {kfb_device *gpu;uint32_t seed,next_frame,last_audio_poll,audio_epoch_ms;int scene,page,started,error,page_scene[2],final_ready[2];unsigned stars,objects;uint8_t vector_previous[2][48][152];uint16_t palette_cache[16];uint8_t plasma_cache[2][6][18];uint8_t dirty[2][26][80];b16_stats stats;} b16_engine;
 API size_t b16_size(void);
 API int b16_init(b16_engine *,kfb_device *,uint32_t);
 API int b16_tick(b16_engine *,uint32_t);

@@ -1,0 +1,9 @@
+{
+  "firmware_sha256": "69951d777ad9a12d52482112b2edb56047c7c674359cf564227b3055fe919dd6",
+  "backup_sha256": "6cdf12cdff7bf341125d97579527735d336f4087fd6a44094165f0300b6d7dc2",
+  "after_sha256": "70eae6a4d1a9881056a5426be77f3dadc2f4b57caf62bfa12eb6e9ca5c65a387",
+  "filesystem_unchanged": true,
+  "tail_unchanged": true,
+  "erase_end": "0x10045000",
+  "release_ready": false
+}

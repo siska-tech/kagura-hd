@@ -6,15 +6,15 @@
   "PCM_data_generation": "PASS",
   "flash_capacity_filesystem_protection": "PASS (full physical readback, firmware matches, tail and filesystem unchanged)",
   "PC_performance_measurement": "PASS (CPU/model and wire counts; no physical timing simulation)",
-  "hardware_performance": "MEASURED / FAIL 30fps target (scene range 3.9..21fps)",
+  "hardware_performance": "MEASURED: O2 Host ON main effects about30fps; VECTOR25.70fps; target not fully achieved",
   "hardware_audio": "PASS observed finite 150s capture; PCM status fault0; no >=10ms low-RMS gap; independent underrun counter unavailable",
   "hardware_full_demo": "PASS (8 scenes, STOP rc=0)",
   "RTL_changes": 0,
   "release": "NOT READY",
   "release_ready": false,
-  "physical_before_after": "NOT RUN (optimized firmware only)",
+  "physical_before_after": "PASS finite A/B: same O2/drawing/logging FAST OFF vs ON; see HARDWARE_HOST_AB_RESULT.md",
   "hardware_framebuffer_crc": "NOT RUN",
   "current_hardware_state": "BEYOND firmware, finale held, audio stopped, QSPI deinitialized",
-  "scope": "Demo application performance and original hardware campaign status",
+  "scope": "Latest O2 Host A/B finite runs; historical evidence retained",
   "fpga_bitstream_selection": "FINAL: releases/pcm2-qspi-final; unchanged hardware-tested artifact"
 }
