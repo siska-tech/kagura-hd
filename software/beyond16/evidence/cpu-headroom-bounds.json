@@ -1,0 +1,105 @@
+{
+  "scope": "recorded core0 wall-time bounds, not utilization; callbacks include active CPU work and waits",
+  "whole": {
+    "window_s": 148.95,
+    "frame_call_s": 105.430434,
+    "outside_frame_s": 43.51956599999998,
+    "outside_frame_fraction": 0.2921756696878146,
+    "host_callback_s": 87.356834,
+    "host_callback_fraction": 0.5864842833165492,
+    "frame_nonhost_s": 18.0736,
+    "current_spare_cpu_s": null,
+    "async_recoverable_cpu_s": null
+  },
+  "scenes": {
+    "0": {
+      "window_s": 8.083,
+      "frame_call_s": 4.837688,
+      "outside_frame_s": 3.245312,
+      "outside_frame_fraction": 0.40149845354447605,
+      "host_callback_s": 4.017193,
+      "host_callback_fraction": 0.4969928244463689,
+      "frame_nonhost_s": 0.8204950000000002,
+      "current_spare_cpu_s": null,
+      "async_recoverable_cpu_s": null
+    },
+    "1": {
+      "window_s": 19.2,
+      "frame_call_s": 11.553026,
+      "outside_frame_s": 7.646974,
+      "outside_frame_fraction": 0.39827989583333334,
+      "host_callback_s": 9.57456,
+      "host_callback_fraction": 0.49867500000000003,
+      "frame_nonhost_s": 1.9784659999999992,
+      "current_spare_cpu_s": null,
+      "async_recoverable_cpu_s": null
+    },
+    "2": {
+      "window_s": 19.0,
+      "frame_call_s": 18.411212,
+      "outside_frame_s": 0.588788000000001,
+      "outside_frame_fraction": 0.03098884210526321,
+      "host_callback_s": 15.455191,
+      "host_callback_fraction": 0.8134311052631579,
+      "frame_nonhost_s": 2.956021,
+      "current_spare_cpu_s": null,
+      "async_recoverable_cpu_s": null
+    },
+    "3": {
+      "window_s": 19.117,
+      "frame_call_s": 9.888025,
+      "outside_frame_s": 9.228975,
+      "outside_frame_fraction": 0.48276272427682165,
+      "host_callback_s": 8.338688,
+      "host_callback_fraction": 0.4361922895851859,
+      "frame_nonhost_s": 1.5493370000000013,
+      "current_spare_cpu_s": null,
+      "async_recoverable_cpu_s": null
+    },
+    "4": {
+      "window_s": 24.101,
+      "frame_call_s": 20.080877,
+      "outside_frame_s": 4.020122999999998,
+      "outside_frame_fraction": 0.16680316169453543,
+      "host_callback_s": 16.704089,
+      "host_callback_fraction": 0.6930869673457533,
+      "frame_nonhost_s": 3.3767880000000012,
+      "current_spare_cpu_s": null,
+      "async_recoverable_cpu_s": null
+    },
+    "5": {
+      "window_s": 24.2,
+      "frame_call_s": 12.772805,
+      "outside_frame_s": 11.427195,
+      "outside_frame_fraction": 0.4721981404958678,
+      "host_callback_s": 10.659763,
+      "host_callback_fraction": 0.4404860743801653,
+      "frame_nonhost_s": 2.113042,
+      "current_spare_cpu_s": null,
+      "async_recoverable_cpu_s": null
+    },
+    "6": {
+      "window_s": 19.2,
+      "frame_call_s": 18.357132,
+      "outside_frame_s": 0.8428679999999993,
+      "outside_frame_fraction": 0.04389937499999996,
+      "host_callback_s": 14.644316,
+      "host_callback_fraction": 0.7627247916666667,
+      "frame_nonhost_s": 3.712816,
+      "current_spare_cpu_s": null,
+      "async_recoverable_cpu_s": null
+    },
+    "7": {
+      "window_s": 9.0,
+      "frame_call_s": 3.933072,
+      "outside_frame_s": 5.066928,
+      "outside_frame_fraction": 0.5629919999999999,
+      "host_callback_s": 3.319591,
+      "host_callback_fraction": 0.36884344444444445,
+      "frame_nonhost_s": 0.6134810000000002,
+      "current_spare_cpu_s": null,
+      "async_recoverable_cpu_s": null
+    }
+  },
+  "caveat": "PERF timestamps precede frame call but counters follow it; endpoints are not perfectly aligned. Interrupt CPU time not separated."
+}

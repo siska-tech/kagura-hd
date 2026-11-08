@@ -11,7 +11,8 @@
 #define MT_QSPI_CSW_NS 250u
 typedef struct {
  uint64_t transactions,wire_bytes,elapsed_us,begin_us,transfer_us,end_us;
- uint32_t max_transaction_us,timeouts;
+ uint64_t dma_setup_us,dma_wait_us,dma_transfers,wire_wait_us,fifo_stalls;
+ uint32_t max_transaction_us,timeouts,dma_errors;
  bool faulted;
 } mt_qspi_stats;
 /* Uses PIO0 + one unclaimed SM; GP2..5 IO, GP6 SCK, GP7 CS.

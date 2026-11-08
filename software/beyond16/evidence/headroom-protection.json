@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "protected_files": 248,
+  "bitstream_sha256": "642c7a3ce961685279c229dbe9b1577285bd7867353cfaf7de8f4db06b3683a7",
+  "backups_unchanged": true,
+  "rtl_changes": 0,
+  "hardware_operations": 0,
+  "firmware_variants": 8,
+  "filesystem_bounds": "PASS (offline only)",
+  "release_ready": false
+}

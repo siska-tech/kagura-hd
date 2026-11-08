@@ -1,0 +1,104 @@
+[
+  {
+    "elf_sha256": "c86dad6c7ae3c973a5154807fe21c24018084516582aa557886fcb0d0734ede8",
+    "filesystem_safe": true,
+    "bin_sha256": "44d9e58caec817e78453ee6123001b3f1ac311bbfd9d77e4642082268e241a12",
+    "release_ready": false,
+    "variant": {
+      "Profile": 0,
+      "Name": "A-off"
+    },
+    "hardware": "NOT RUN",
+    "bin_bytes": 281044
+  },
+  {
+    "elf_sha256": "5a4b658c9a821e11ac92bc9c9be5e40b98b51a907e208b321a1ed061e56ed0a8",
+    "filesystem_safe": true,
+    "bin_sha256": "a2ebbb82763e6dcdac9024915966c9b1fab900d4166645beaa0aac7184425334",
+    "release_ready": false,
+    "variant": {
+      "Profile": 1,
+      "Name": "A-summary"
+    },
+    "hardware": "NOT RUN",
+    "bin_bytes": 281892
+  },
+  {
+    "elf_sha256": "62b1ba776170299524e01abf453f89c250dfe4e09a833d026209250a8db7bebb",
+    "filesystem_safe": true,
+    "bin_sha256": "29a4d3f39814bf98b7c4198979e83a4407342ab7853e95bad1d25e37d3ef2bd4",
+    "release_ready": false,
+    "variant": {
+      "Profile": 2,
+      "Name": "A-detailed"
+    },
+    "hardware": "NOT RUN",
+    "bin_bytes": 281956
+  },
+  {
+    "elf_sha256": "9368e223768b52437f3e5605d346dc68c5d2328088fb9e9085d619c469da09a8",
+    "filesystem_safe": true,
+    "bin_sha256": "e54dccc72a0b2da5897426559b12741dcffbbe56ef7a0b8ccaa2802be2e86a86",
+    "release_ready": false,
+    "variant": {
+      "Transport": 1,
+      "Profile": 1,
+      "Name": "B-summary"
+    },
+    "hardware": "NOT RUN",
+    "bin_bytes": 283212
+  },
+  {
+    "elf_sha256": "a5e9c7aa9da16c8185e44e73bb027f877de4f58f270f75e07dd403ee85007f6d",
+    "filesystem_safe": true,
+    "bin_sha256": "5f40aaa4d62dab48d7bfe4f36e210c74181cca212cdf00e8099ad48d4414ca6e",
+    "release_ready": false,
+    "variant": {
+      "DmaThreshold": 128,
+      "Transport": 2,
+      "Profile": 1,
+      "Name": "C-test128"
+    },
+    "hardware": "NOT RUN",
+    "bin_bytes": 283212
+  },
+  {
+    "elf_sha256": "034ab8f8e92dc1514bfddb071ae6246580ee8cce34a7bb779327fa5f20616e8b",
+    "filesystem_safe": true,
+    "bin_sha256": "d742b15292cd2f99febd8d1e3fd38340efc39b8d5360db84f8e4ba39ecb4040b",
+    "release_ready": false,
+    "variant": {
+      "Scheduler": 1,
+      "Profile": 1,
+      "Name": "absolute30"
+    },
+    "hardware": "NOT RUN",
+    "bin_bytes": 282036
+  },
+  {
+    "elf_sha256": "e5eea98891aa77fb66cf284ad706a842b4ebcc1a31dac0556c7abbd180324884",
+    "filesystem_safe": true,
+    "bin_sha256": "36a9026439da9fef3124af0f927905c37908cea0337a3d417812b1eaf72c5825",
+    "release_ready": false,
+    "variant": {
+      "Cooperative": true,
+      "Profile": 1,
+      "Name": "cooperative"
+    },
+    "hardware": "NOT RUN",
+    "bin_bytes": 282132
+  },
+  {
+    "elf_sha256": "02ff1a322a7932b0086f30e9c4b639ea952c350e43d42563d3b884690c6b09d6",
+    "filesystem_safe": true,
+    "bin_sha256": "71a5dbdfe6ea30b3ffde23975630ae0e219bb6914cd157da750daccc67a93ea7",
+    "release_ready": false,
+    "variant": {
+      "WorkRounds": 64,
+      "Profile": 1,
+      "Name": "work64"
+    },
+    "hardware": "NOT RUN",
+    "bin_bytes": 282300
+  }
+]

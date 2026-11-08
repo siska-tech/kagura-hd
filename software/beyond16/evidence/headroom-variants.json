@@ -1,0 +1,46 @@
+{
+  "baseline_commit": "92b99daf3ae32b38524c533d5c47ac7a0325d539",
+  "variants": [
+    {
+      "variant": "off",
+      "logical_step_ms": 33,
+      "frames": 4546,
+      "full_byte_palette_compare": "PASS",
+      "gpu_errors": 0,
+      "busy_overwrite": 0
+    },
+    {
+      "variant": "summary",
+      "logical_step_ms": 33,
+      "frames": 4546,
+      "full_byte_palette_compare": "PASS",
+      "gpu_errors": 0,
+      "busy_overwrite": 0
+    },
+    {
+      "variant": "detailed",
+      "logical_step_ms": 33,
+      "frames": 4546,
+      "full_byte_palette_compare": "PASS",
+      "gpu_errors": 0,
+      "busy_overwrite": 0
+    },
+    {
+      "variant": "coop",
+      "logical_step_ms": 33,
+      "frames": 4546,
+      "full_byte_palette_compare": "PASS",
+      "gpu_errors": 0,
+      "busy_overwrite": 0
+    },
+    {
+      "variant": "absolute",
+      "logical_step_ms": 34,
+      "frames": 4412,
+      "full_byte_palette_compare": "PASS",
+      "gpu_errors": 0,
+      "busy_overwrite": 0
+    }
+  ],
+  "hardware": "NOT RUN"
+}

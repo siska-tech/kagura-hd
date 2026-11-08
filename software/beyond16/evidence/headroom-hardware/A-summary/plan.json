@@ -1,0 +1,6 @@
+{
+  "firmware_sha256": "a2ebbb82763e6dcdac9024915966c9b1fab900d4166645beaa0aac7184425334",
+  "backup_sha256": "fab538f4ec08153015e844efacad5a53e85bade769d5517c729dc63976aaf116",
+  "release_ready": false,
+  "fpga_programming": 0
+}

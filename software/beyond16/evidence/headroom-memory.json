@@ -1,0 +1,782 @@
+[
+  {
+    "variant": "A-off",
+    "bin_bytes": 281044,
+    "erase_end": "0x10045000",
+    "filesystem_start": "0x100a0000",
+    "sections": [
+      {
+        "name": ".boot2",
+        "address": "0x10000000",
+        "bytes": 256,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".text",
+        "address": "0x10000100",
+        "bytes": 42956,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".rodata",
+        "address": "0x1000a8d0",
+        "bytes": 234744,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".binary_info",
+        "address": "0x10043dc8",
+        "bytes": 28,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".ram_vector_table",
+        "address": "0x20000000",
+        "bytes": 192,
+        "type": 8,
+        "flags": 3
+      },
+      {
+        "name": ".data",
+        "address": "0x200000c0",
+        "bytes": 3056,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".bss",
+        "address": "0x20000cb0",
+        "bytes": 174640,
+        "type": 8,
+        "flags": 3
+      }
+    ],
+    "symbols": {
+      "profile_snapshot": {
+        "address": "0x20020838",
+        "bytes": 456
+      },
+      "frame_log": {
+        "address": "0x200058e8",
+        "bytes": 110400
+      },
+      "engine": {
+        "address": "0x20000e40",
+        "bytes": 19112
+      },
+      "history": {
+        "address": "0x20021484",
+        "bytes": 32768
+      },
+      "__StackBottom": {
+        "address": "0x20040000",
+        "bytes": 0
+      },
+      "__flash_binary_end": {
+        "address": "0x100449d4",
+        "bytes": 0
+      },
+      "__bss_end__": {
+        "address": "0x2002b6e0",
+        "bytes": 0
+      },
+      "__StackTop": {
+        "address": "0x20042000",
+        "bytes": 0
+      },
+      "__StackLimit": {
+        "address": "0x20040000",
+        "bytes": 0
+      }
+    }
+  },
+  {
+    "variant": "A-summary",
+    "bin_bytes": 281892,
+    "erase_end": "0x10045000",
+    "filesystem_start": "0x100a0000",
+    "sections": [
+      {
+        "name": ".boot2",
+        "address": "0x10000000",
+        "bytes": 256,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".text",
+        "address": "0x10000100",
+        "bytes": 43804,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".rodata",
+        "address": "0x1000ac20",
+        "bytes": 234744,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".binary_info",
+        "address": "0x10044118",
+        "bytes": 28,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".ram_vector_table",
+        "address": "0x20000000",
+        "bytes": 192,
+        "type": 8,
+        "flags": 3
+      },
+      {
+        "name": ".data",
+        "address": "0x200000c0",
+        "bytes": 3056,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".bss",
+        "address": "0x20000cb0",
+        "bytes": 174640,
+        "type": 8,
+        "flags": 3
+      }
+    ],
+    "symbols": {
+      "profile_snapshot": {
+        "address": "0x20020838",
+        "bytes": 456
+      },
+      "frame_log": {
+        "address": "0x200058e8",
+        "bytes": 110400
+      },
+      "engine": {
+        "address": "0x20000e40",
+        "bytes": 19112
+      },
+      "history": {
+        "address": "0x20021484",
+        "bytes": 32768
+      },
+      "__StackBottom": {
+        "address": "0x20040000",
+        "bytes": 0
+      },
+      "__flash_binary_end": {
+        "address": "0x10044d24",
+        "bytes": 0
+      },
+      "__bss_end__": {
+        "address": "0x2002b6e0",
+        "bytes": 0
+      },
+      "__StackTop": {
+        "address": "0x20042000",
+        "bytes": 0
+      },
+      "__StackLimit": {
+        "address": "0x20040000",
+        "bytes": 0
+      }
+    }
+  },
+  {
+    "variant": "A-detailed",
+    "bin_bytes": 281956,
+    "erase_end": "0x10045000",
+    "filesystem_start": "0x100a0000",
+    "sections": [
+      {
+        "name": ".boot2",
+        "address": "0x10000000",
+        "bytes": 256,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".text",
+        "address": "0x10000100",
+        "bytes": 43868,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".rodata",
+        "address": "0x1000ac60",
+        "bytes": 234744,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".binary_info",
+        "address": "0x10044158",
+        "bytes": 28,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".ram_vector_table",
+        "address": "0x20000000",
+        "bytes": 192,
+        "type": 8,
+        "flags": 3
+      },
+      {
+        "name": ".data",
+        "address": "0x200000c0",
+        "bytes": 3056,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".bss",
+        "address": "0x20000cb0",
+        "bytes": 174640,
+        "type": 8,
+        "flags": 3
+      }
+    ],
+    "symbols": {
+      "profile_snapshot": {
+        "address": "0x20020838",
+        "bytes": 456
+      },
+      "frame_log": {
+        "address": "0x200058e8",
+        "bytes": 110400
+      },
+      "engine": {
+        "address": "0x20000e40",
+        "bytes": 19112
+      },
+      "history": {
+        "address": "0x20021484",
+        "bytes": 32768
+      },
+      "__StackBottom": {
+        "address": "0x20040000",
+        "bytes": 0
+      },
+      "__flash_binary_end": {
+        "address": "0x10044d64",
+        "bytes": 0
+      },
+      "__bss_end__": {
+        "address": "0x2002b6e0",
+        "bytes": 0
+      },
+      "__StackTop": {
+        "address": "0x20042000",
+        "bytes": 0
+      },
+      "__StackLimit": {
+        "address": "0x20040000",
+        "bytes": 0
+      }
+    }
+  },
+  {
+    "variant": "B-summary",
+    "bin_bytes": 283212,
+    "erase_end": "0x10046000",
+    "filesystem_start": "0x100a0000",
+    "sections": [
+      {
+        "name": ".boot2",
+        "address": "0x10000000",
+        "bytes": 256,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".text",
+        "address": "0x10000100",
+        "bytes": 44828,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".rodata",
+        "address": "0x1000b020",
+        "bytes": 235024,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".binary_info",
+        "address": "0x10044630",
+        "bytes": 28,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".ram_vector_table",
+        "address": "0x20000000",
+        "bytes": 192,
+        "type": 8,
+        "flags": 3
+      },
+      {
+        "name": ".data",
+        "address": "0x200000c0",
+        "bytes": 3072,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".bss",
+        "address": "0x20000cc0",
+        "bytes": 176692,
+        "type": 8,
+        "flags": 3
+      }
+    ],
+    "symbols": {
+      "profile_snapshot": {
+        "address": "0x20020848",
+        "bytes": 456
+      },
+      "frame_log": {
+        "address": "0x200058f8",
+        "bytes": 110400
+      },
+      "engine": {
+        "address": "0x20000e50",
+        "bytes": 19112
+      },
+      "dma_words": {
+        "address": "0x20021470",
+        "bytes": 2048
+      },
+      "dma_sink": {
+        "address": "0x2002146c",
+        "bytes": 4
+      },
+      "history": {
+        "address": "0x20021c98",
+        "bytes": 32768
+      },
+      "__StackBottom": {
+        "address": "0x20040000",
+        "bytes": 0
+      },
+      "__flash_binary_end": {
+        "address": "0x1004524c",
+        "bytes": 0
+      },
+      "__bss_end__": {
+        "address": "0x2002bef4",
+        "bytes": 0
+      },
+      "__StackTop": {
+        "address": "0x20042000",
+        "bytes": 0
+      },
+      "__StackLimit": {
+        "address": "0x20040000",
+        "bytes": 0
+      }
+    }
+  },
+  {
+    "variant": "C-test128",
+    "bin_bytes": 283212,
+    "erase_end": "0x10046000",
+    "filesystem_start": "0x100a0000",
+    "sections": [
+      {
+        "name": ".boot2",
+        "address": "0x10000000",
+        "bytes": 256,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".text",
+        "address": "0x10000100",
+        "bytes": 44828,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".rodata",
+        "address": "0x1000b020",
+        "bytes": 235024,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".binary_info",
+        "address": "0x10044630",
+        "bytes": 28,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".ram_vector_table",
+        "address": "0x20000000",
+        "bytes": 192,
+        "type": 8,
+        "flags": 3
+      },
+      {
+        "name": ".data",
+        "address": "0x200000c0",
+        "bytes": 3072,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".bss",
+        "address": "0x20000cc0",
+        "bytes": 176692,
+        "type": 8,
+        "flags": 3
+      }
+    ],
+    "symbols": {
+      "profile_snapshot": {
+        "address": "0x20020848",
+        "bytes": 456
+      },
+      "frame_log": {
+        "address": "0x200058f8",
+        "bytes": 110400
+      },
+      "engine": {
+        "address": "0x20000e50",
+        "bytes": 19112
+      },
+      "dma_words": {
+        "address": "0x20021470",
+        "bytes": 2048
+      },
+      "dma_sink": {
+        "address": "0x2002146c",
+        "bytes": 4
+      },
+      "history": {
+        "address": "0x20021c98",
+        "bytes": 32768
+      },
+      "__StackBottom": {
+        "address": "0x20040000",
+        "bytes": 0
+      },
+      "__flash_binary_end": {
+        "address": "0x1004524c",
+        "bytes": 0
+      },
+      "__bss_end__": {
+        "address": "0x2002bef4",
+        "bytes": 0
+      },
+      "__StackTop": {
+        "address": "0x20042000",
+        "bytes": 0
+      },
+      "__StackLimit": {
+        "address": "0x20040000",
+        "bytes": 0
+      }
+    }
+  },
+  {
+    "variant": "absolute30",
+    "bin_bytes": 282036,
+    "erase_end": "0x10045000",
+    "filesystem_start": "0x100a0000",
+    "sections": [
+      {
+        "name": ".boot2",
+        "address": "0x10000000",
+        "bytes": 256,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".text",
+        "address": "0x10000100",
+        "bytes": 43948,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".rodata",
+        "address": "0x1000acb0",
+        "bytes": 234744,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".binary_info",
+        "address": "0x100441a8",
+        "bytes": 28,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".ram_vector_table",
+        "address": "0x20000000",
+        "bytes": 192,
+        "type": 8,
+        "flags": 3
+      },
+      {
+        "name": ".data",
+        "address": "0x200000c0",
+        "bytes": 3056,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".bss",
+        "address": "0x20000cb0",
+        "bytes": 174640,
+        "type": 8,
+        "flags": 3
+      }
+    ],
+    "symbols": {
+      "profile_snapshot": {
+        "address": "0x20020838",
+        "bytes": 456
+      },
+      "frame_log": {
+        "address": "0x200058e8",
+        "bytes": 110400
+      },
+      "engine": {
+        "address": "0x20000e40",
+        "bytes": 19112
+      },
+      "history": {
+        "address": "0x20021484",
+        "bytes": 32768
+      },
+      "__StackBottom": {
+        "address": "0x20040000",
+        "bytes": 0
+      },
+      "__flash_binary_end": {
+        "address": "0x10044db4",
+        "bytes": 0
+      },
+      "__bss_end__": {
+        "address": "0x2002b6e0",
+        "bytes": 0
+      },
+      "__StackTop": {
+        "address": "0x20042000",
+        "bytes": 0
+      },
+      "__StackLimit": {
+        "address": "0x20040000",
+        "bytes": 0
+      }
+    }
+  },
+  {
+    "variant": "cooperative",
+    "bin_bytes": 282132,
+    "erase_end": "0x10045000",
+    "filesystem_start": "0x100a0000",
+    "sections": [
+      {
+        "name": ".boot2",
+        "address": "0x10000000",
+        "bytes": 256,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".text",
+        "address": "0x10000100",
+        "bytes": 44044,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".rodata",
+        "address": "0x1000ad10",
+        "bytes": 234744,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".binary_info",
+        "address": "0x10044208",
+        "bytes": 28,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".ram_vector_table",
+        "address": "0x20000000",
+        "bytes": 192,
+        "type": 8,
+        "flags": 3
+      },
+      {
+        "name": ".data",
+        "address": "0x200000c0",
+        "bytes": 3056,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".bss",
+        "address": "0x20000cb0",
+        "bytes": 175672,
+        "type": 8,
+        "flags": 3
+      }
+    ],
+    "symbols": {
+      "star_seed_cache": {
+        "address": "0x20029a38",
+        "bytes": 1024
+      },
+      "profile_snapshot": {
+        "address": "0x20020838",
+        "bytes": 456
+      },
+      "frame_log": {
+        "address": "0x200058e8",
+        "bytes": 110400
+      },
+      "engine": {
+        "address": "0x20000e40",
+        "bytes": 19112
+      },
+      "history": {
+        "address": "0x20021484",
+        "bytes": 32768
+      },
+      "__StackBottom": {
+        "address": "0x20040000",
+        "bytes": 0
+      },
+      "__flash_binary_end": {
+        "address": "0x10044e14",
+        "bytes": 0
+      },
+      "__bss_end__": {
+        "address": "0x2002bae8",
+        "bytes": 0
+      },
+      "__StackTop": {
+        "address": "0x20042000",
+        "bytes": 0
+      },
+      "__StackLimit": {
+        "address": "0x20040000",
+        "bytes": 0
+      }
+    }
+  },
+  {
+    "variant": "work64",
+    "bin_bytes": 282300,
+    "erase_end": "0x10045000",
+    "filesystem_start": "0x100a0000",
+    "sections": [
+      {
+        "name": ".boot2",
+        "address": "0x10000000",
+        "bytes": 256,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".text",
+        "address": "0x10000100",
+        "bytes": 44196,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".rodata",
+        "address": "0x1000ada8",
+        "bytes": 234744,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".binary_info",
+        "address": "0x100442a0",
+        "bytes": 28,
+        "type": 1,
+        "flags": 2
+      },
+      {
+        "name": ".ram_vector_table",
+        "address": "0x20000000",
+        "bytes": 192,
+        "type": 8,
+        "flags": 3
+      },
+      {
+        "name": ".data",
+        "address": "0x200000c0",
+        "bytes": 3072,
+        "type": 1,
+        "flags": 6
+      },
+      {
+        "name": ".bss",
+        "address": "0x20000cc0",
+        "bytes": 174656,
+        "type": 8,
+        "flags": 3
+      }
+    ],
+    "symbols": {
+      "frame_log": {
+        "address": "0x200058f8",
+        "bytes": 110400
+      },
+      "profile_snapshot": {
+        "address": "0x20020848",
+        "bytes": 456
+      },
+      "engine": {
+        "address": "0x20000e50",
+        "bytes": 19112
+      },
+      "history": {
+        "address": "0x200214a4",
+        "bytes": 32768
+      },
+      "__StackBottom": {
+        "address": "0x20040000",
+        "bytes": 0
+      },
+      "__flash_binary_end": {
+        "address": "0x10044ebc",
+        "bytes": 0
+      },
+      "__bss_end__": {
+        "address": "0x2002b700",
+        "bytes": 0
+      },
+      "__StackTop": {
+        "address": "0x20042000",
+        "bytes": 0
+      },
+      "__StackLimit": {
+        "address": "0x20040000",
+        "bytes": 0
+      }
+    }
+  }
+]

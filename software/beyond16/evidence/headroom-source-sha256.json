@@ -1,0 +1,15 @@
+{
+  "software/beyond16/CMakeLists.txt": "c84f05c81f2a8e45b21dd8202597ed3926dd9569b3d4bef83c57a3499b92e8c4",
+  "software/beyond16/src/b16.c": "62ac150ca94a42a8974f5572c9e2cff7201661e6875b2269e6b49263c753d401",
+  "software/beyond16/src/b16.h": "3ebfc6e7c5e956764d6295ee82c037a497eff8894b607cbeeaee530f9eccf7b3",
+  "software/beyond16/src/b16_profile.c": "9581a2e9d3f5b0ee8af960965a4160264ba890c12189dba70099a78eccc8d798",
+  "software/beyond16/src/b16_profile.h": "0ef4800450bd7193d6fb1219a36723bcef435dc70d0f5b05f57ed65c84029727",
+  "software/beyond16/src/b16_qspi.c": "8773621e627289e747a0eea81fdc135c8c681ec8cf89701f7daa06214b7265f2",
+  "software/beyond16/src/b16_qspi.h": "b94f5effd2e8c991d8baf95da2f665d3041a09f68b273677bf171ef087a4a5b4",
+  "software/beyond16/src/pc.c": "0b93328c90e22c8fd2fcfffabc209e2a02a6e4b10c579ddbc33331598776a2a0",
+  "software/beyond16/src/rp2040_main.c": "af7f5f5bc3937516fd085d65ee148b159a9827564f5b98ead6cefdb3018702da",
+  "software/kagura_fb/kagura_fb.c": "9e529ab514771775b097332373a401cbd1ed48a619a6ef3f32da71092e4b8a65",
+  "software/kagura_fb/kagura_fb.h": "8bda499e48d4577439eefc27b45c38c6b6fdf70cd0baeaa08024b375f44f0f7f",
+  "software/midnight_terminal/vendor/kagura_host.pio": "4c89410848f1618a99c34c036e0bb58cae0a65f0dd44e555f8755e21b271dab3",
+  "software/beyond16/generated/assets.inc": "18dfaff32c6f32750d7fa36c24063e67d3a0f5936e731534574d37e9f1438a92"
+}

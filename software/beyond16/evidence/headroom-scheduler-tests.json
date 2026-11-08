@@ -1,0 +1,18 @@
+{
+  "variants": [
+    {
+      "variant": "off",
+      "frames": 4546,
+      "logical_1ms_tick": "PASS",
+      "late_no_catchup": "PASS"
+    },
+    {
+      "variant": "absolute",
+      "frames": 4500,
+      "logical_1ms_tick": "PASS",
+      "late_no_catchup": "PASS"
+    }
+  ],
+  "parser_wrap_percentiles_deadline": "PASS",
+  "physical_timing": "NOT RUN"
+}

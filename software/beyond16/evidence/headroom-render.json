@@ -1,0 +1,31 @@
+{
+  "seed": "0xb1616",
+  "frames": 4546,
+  "both_pages_every_byte": "PASS",
+  "palette_every_frame": "PASS",
+  "seed_replay": "PASS",
+  "sha256": "f9ad302e0163f0c80b5cf192c899fb89d7e5d1ff984583881175f0677eddc84a",
+  "before": [
+    4381892,
+    23368224,
+    486788,
+    4546,
+    86019264,
+    0,
+    0,
+    0
+  ],
+  "after": [
+    4285853,
+    22856016,
+    476117,
+    4546,
+    86019264,
+    0,
+    0,
+    0
+  ],
+  "gpu_errors": 0,
+  "busy_overwrite": 0,
+  "hardware": "NOT RUN"
+}

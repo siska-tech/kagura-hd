@@ -1,0 +1,37 @@
+{
+  "CPU_measurement_implementation": "PASS (exclusive elapsed regions; not CPU utilization)",
+  "PC_render_verification": "PASS",
+  "DMA_fake_test": "PASS",
+  "Host_safety_contract": "PASS (offline model/code scope)",
+  "RP2040_build": "PASS (8 variants)",
+  "RAM_Flash_protection": "PASS (8 physical full readbacks, filesystem equal, protected hashes unchanged)",
+  "hardware_DMA": "MEASURED finite transport latency; adoption deferred",
+  "hardware_CPU_headroom": "MEASURED synthetic work; deadline-qualified capacity NOT ESTABLISHED",
+  "CPU_headroom": "NOT ESTABLISHED (all-frame deadline qualified maximum)",
+  "hardware_30fps_stability": "MEASURED / TARGET NOT MET",
+  "RTL_changes": 0,
+  "release": "NOT READY",
+  "release_ready": false,
+  "hardware_operations": "authorized campaign; 8 RP2040 firmware writes, FPGA operations 0",
+  "baseline_transport": "CPU + PIO FAST ON",
+  "hybrid_threshold": "NOT SELECTED",
+  "limits": [
+    "one run per variant; no randomized replication/PVT",
+    "no physical PIO/DMA waveform or hardware framebuffer byte oracle",
+    "frozen scratch pattern all-zero; changing-pattern physical DMA test deferred",
+    "no independent underrun or BUSY-overwrite hardware counter",
+    "deadline-qualified maximum CPU headroom not established",
+    "strict vblank-pair/present-completion scheduler integration deferred",
+    "no runtime stack watermark"
+  ],
+  "reports": [
+    "CPU_HEADROOM_REPORT.md",
+    "DMA_DESIGN.md",
+    "DMA_BENCHMARK.md",
+    "SCHEDULER_REPORT.md",
+    "RENDER_OPTIMIZATION.md",
+    "HARDWARE_TEST_PLAN.md",
+    "MEMORY_MAP.md"
+  ],
+  "latest_hardware_report": "HARDWARE_HEADROOM_RESULT.md"
+}

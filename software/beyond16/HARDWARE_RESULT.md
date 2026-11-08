@@ -1,6 +1,6 @@
 # 実機結果 — BEYOND 16 COLORS / 2026-11-06
 
-> この報告は実機評価時点の記録です。使用したFPGA Bitstreamは、その後 [PCM2 QSPI最終版](../../releases/pcm2-qspi-final/README.md)として選定しました。本文の性能目標未達・未検証項目・当時の機器状態は記録として保持しています。
+> この報告は実機評価時点の記録です。使用したFPGA Bitstreamは、その後 [PCM2 QSPI版](../../releases/pcm2-qspi-final/README.md)として選定しました。2026-11-08に、選定版は [PCMストリーミング版](../../releases/pcm-stream-qspi/README.md)に置き換わっています。本文の性能目標未達・未検証項目・当時の機器状態は記録として保持しています。
 
 
 **有限ベンチと150秒本編の全8シーンを実機で完走。STOP rc=0。30fps目標は未達、Release NOT READY / `release_ready=false`。**

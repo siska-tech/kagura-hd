@@ -1,3 +1,15 @@
+> 最新：[連続読出しA/B/A/B・100 ms照合](../../docs/gpu-completion-abab.md)。全体平均29.483→29.688 fps、VECTOR 25.105→26.605 fpsで2組とも改善を再現。100 msはA/B双方のFINALE初回文字描画で発生。安定30 fpsは未達。[sticky確認短縮候補・ACK待機観測](../../docs/gpu-ack-observation-design.md)も追加。
+
+> 前段：[Queue完了読出しburst](../../docs/gpu-completion-burst.md)。独立metadata readを省く実験オプション。
+
+> 前段：[Queue待ち時間切り分け／FINALE文字結合](../../docs/gpu-queue-waits-lettering.md)。両pageの画素等価を確認し、実機の最悪描画callを148.982→82.330 msへ短縮。
+
+> 深さ8の暫定承認候補で[Queue実機負荷比較](../../docs/gpu-queue-demo-hardware.md)を実施。直列／Queue各150秒完走、320,062件回収、全体29.366→29.480 fps。実験オプションで、製品既定は深さ1を維持。
+
+> 最新の8構成実機比較：[実機結果](HARDWARE_HEADROOM_RESULT.md)。全8周完走・音声/Flash照合、30fps目標は未達、Release NOT READY。
+
+> Host最適化候補（実機未投入）：[Headroom総合報告](HEADROOM_REPORT.md)。画素等価command削減、排他計測、DMA実験、8構成ビルド。実機CPU余力はNOT MEASURED、release_ready=false。
+
 > 最新の改善と実機測定：[Host A/B結果](HARDWARE_HOST_AB_RESULT.md)。主要scene約30fps、VECTOR25.7fps。RTL変更0、release_ready=false。下記の初期版記録も履歴として保持しています。動画本体・Flash復旧像はローカルout/buildに保持。
 
 # KAGURA-HD — BEYOND 16 COLORS
@@ -6,7 +18,7 @@
 
 RP2040のネイティブCから、既存KAGURA-HD PCM2 ABI 1.4を使う150秒のオリジナルデモ。16色のクローム文字、3D風星、波、プラズマタイル合成、低解像度Rotozoom、球体・アイコンのBLIT、固定小数点ワイヤーフレームを音楽の500msビートへ同期する。
 
-**実機の有限ベンチと150秒・全8シーン完走を確認。Host timeout／PCM STATUS fault=0。実更新3.9–21fpsで30fps目標は未達。Demoの性能目標は未達です。FPGA Bitstreamは[PCM2 QSPI最終版](../../releases/pcm2-qspi-final/README.md)として選定済みです。** [実機結果・録画](HARDWARE_RESULT.md)。現在はフィナーレ画面・音声停止、BEYOND firmwareを保持。
+**実機の有限ベンチと150秒・全8シーン完走を確認。Host timeout／PCM STATUS fault=0。実更新3.9–21fpsで30fps目標は未達。Demoの性能目標は未達です。当時のFPGA Bitstreamは[PCM2 QSPI版](../../releases/pcm2-qspi-final/README.md)です。2026-11-08の選定版（[PCMストリーミング版](../../releases/pcm-stream-qspi/README.md)）でも150秒の回帰試験を行い、全8シーンの完走と、音声の欠落0を確認しました。** [実機結果・録画](HARDWARE_RESULT.md)。現在はフィナーレ画面・音声停止、BEYOND firmwareを保持。
 
 ## 見る
 
