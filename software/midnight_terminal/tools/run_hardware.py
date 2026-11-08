@@ -24,7 +24,10 @@ p.add_argument('--elf-sha', required=True)
 p.add_argument('--reference', type=Path, required=True)
 p.add_argument('--analyze-only', action='store_true')
 p.add_argument('--flash', action='store_true', help='RP2040 Flash image; restore the original Flash afterwards')
+p.add_argument('--uf2', type=Path, help='with --flash: write this UF2 (built from --elf) instead of the ELF')
+p.add_argument('--autostart', action='store_true', help='release UF2: no host start; the serial port stays closed until the end')
 args = p.parse_args()
+assert not (args.uf2 or args.autostart) or args.flash, '--uf2/--autostart need --flash'
 out = (args.out if args.out.is_absolute() else root/args.out).resolve()
 assert out.is_relative_to(root/'build')
 pico = root/'build/midnight-hardware/picotool/picotool/picotool.exe'
@@ -33,16 +36,39 @@ image = root/'artifacts/validated/kagura-hd-qspi-pcm-stream.fs'
 IMAGE_SHA = 'fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db'
 restore = root/'build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8/impl/pnr/kagura_fb.fs'
 elf = (args.elf if args.elf.is_absolute() else root/args.elf).resolve()
+uf2 = (args.uf2 if args.uf2.is_absolute() else root/args.uf2).resolve() if args.uf2 else None
+DEMO_S = 104
 reference = (args.reference if args.reference.is_absolute() else root/args.reference).resolve()
 ff = Path((root/'build/midnight-hardware/ffmpeg-path.txt').read_text(encoding='utf-8-sig').strip())
 def sha(x): return hashlib.sha256(x.read_bytes()).hexdigest()
 result = dict(image_sha256=IMAGE_SHA, elf_sha256=args.elf_sha.lower(), passed=False, fpga_flash_writes=0, rp2040_flash_writes=0)
 def save(): (out/'result.json').write_text(json.dumps(result, indent=2))
 
+def start_capture(caplog):
+    return subprocess.Popen([str(ff), '-hide_banner', '-y', '-f', 'dshow', '-rtbufsize', '256M', '-video_size', '1280x720',
+        '-framerate', '60', '-sample_rate', '48000', '-channels', '2',
+        '-i', 'video=UGREEN 15390:audio=デジタル オーディオ インターフェイス (UGREEN 15390)',
+        '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '16', '-pix_fmt', 'yuv420p', '-c:a', 'pcm_s16le', str(out/'demo-hdmi.mkv')],
+        stdin=subprocess.PIPE, stdout=caplog, stderr=subprocess.STDOUT, creationflags=subprocess.CREATE_NO_WINDOW)
+
+def stop_capture(cap):
+    if cap.poll() is None:
+        try: cap.communicate(b'q', timeout=20)
+        except subprocess.TimeoutExpired: cap.kill(); cap.wait()
+    result['capture_exit'] = cap.returncode
+
+def read_summary(raw):
+    result['stop'] = re.search(rb'^STOP [^\r\n]+', raw, re.M)[0].decode()
+    m = re.search(rb'^PCM_STATUS [^\r\n]+', raw, re.M); result['pcm_status'] = m[0].decode() if m else None
+    m = re.search(rb'^SCENES [^\r\n]+', raw, re.M); result['scenes'] = m[0].decode() if m else None
+    print(result['stop'], flush=True)
+    result['passed'] = 'rc=0 ' in result['stop'] and 'timeouts=0 ' in result['stop']
+
 def hardware():
     out.mkdir(parents=True, exist_ok=False)
     assert sha(image) == IMAGE_SHA and sha(restore) == '5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77'
     assert sha(elf) == args.elf_sha.lower()
+    if uf2: result['uf2_sha256'] = sha(uf2); result['autostart'] = args.autostart
     data = elf.read_bytes(); entry, offset = struct.unpack_from('<II', data, 24); size, count = struct.unpack_from('<HH', data, 42)
     loads = [s for s in (struct.unpack_from('<8I', data, offset+i*size) for i in range(count)) if s[0] == 1]
     if args.flash:
@@ -74,6 +100,28 @@ def hardware():
             if len(m) == 1: return m[0].device
             time.sleep(.2)
         raise RuntimeError('USB serial port did not appear')
+    def autostart_run(uid):
+        """Release UF2: record from before the write, let the demo start by itself, and open
+        the USB serial port only after it has finished (the summary is printed on connect)."""
+        with (out/'capture.log').open('xb') as caplog:
+            cap = start_capture(caplog)
+            try:
+                time.sleep(3); assert cap.poll() is None, 'Capture exited before start'
+                call('rp2040-flash', [pico, 'load', '-v', '-x', uf2, '--ser', uid], timeout=300)
+                t0 = time.monotonic(); result['started'] = 'autostart'; save(); print('UF2 written; waiting for autostart', flush=True)
+                port_name = wait_port(uid)
+                while time.monotonic()-t0 < DEMO_S+5+10:
+                    assert cap.poll() is None, 'Capture exited'; time.sleep(1)
+                with serial.Serial(port_name, 115200, timeout=.2, write_timeout=2) as port, (out/'demo-usb.log').open('xb') as log:
+                    raw = bytearray(); end = time.monotonic()+10
+                    while not re.search(rb'^STOP .*\r?\n', raw, re.M):
+                        assert time.monotonic() < end, 'No summary after autostart'
+                        chunk = port.read(4096); raw.extend(chunk); log.write(chunk); log.flush()
+                    result['banner_seen'] = b'g=start' in raw
+                    read_summary(raw)
+            finally:
+                stop_capture(cap)
+
     assert '0x1100481B' in call('jtag-scan', [programmer, '--cable-index', '1', '--scan'])
     ports = rp_ports(); assert len(ports) == 1, [x.device for x in ports]
     uid = ports[0].serial_number.upper(); assert uid != 'EEEEEEEEEEEEEEEE'
@@ -83,7 +131,8 @@ def hardware():
         result['fpga_user_code'] = sram('candidate-sram', image)
         if args.flash:
             result['rp2040_flash_writes'] = 1
-            call('rp2040-flash', [pico, 'load', '-v', '-x', elf, '--ser', uid], timeout=300)
+            if args.autostart: autostart_run(uid); return
+            call('rp2040-flash', [pico, 'load', '-v', '-x', uf2 or elf, '--ser', uid], timeout=300)
             port_name = wait_port(uid)
         else:
             call('rp2040-sram', [pico, 'load', '-v', '-x', elf, '--ser', uid])
@@ -96,11 +145,7 @@ def hardware():
             while b'MIDNIGHT TERMINAL / FM EDITION' not in raw:
                 assert time.monotonic() < end, 'No demo banner'; pump()
             with (out/'capture.log').open('xb') as caplog:
-                cap = subprocess.Popen([str(ff), '-hide_banner', '-y', '-f', 'dshow', '-rtbufsize', '256M', '-video_size', '1280x720',
-                    '-framerate', '60', '-sample_rate', '48000', '-channels', '2',
-                    '-i', 'video=UGREEN 15390:audio=デジタル オーディオ インターフェイス (UGREEN 15390)',
-                    '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '16', '-pix_fmt', 'yuv420p', '-c:a', 'pcm_s16le', str(out/'demo-hdmi.mkv')],
-                    stdin=subprocess.PIPE, stdout=caplog, stderr=subprocess.STDOUT, creationflags=subprocess.CREATE_NO_WINDOW)
+                cap = start_capture(caplog)
                 try:
                     time.sleep(3); assert cap.poll() is None, 'Capture exited before start'
                     port.write(b'g'); result['started'] = True; save(); print('demo started', flush=True)
@@ -109,16 +154,9 @@ def hardware():
                         assert time.monotonic() < end, 'Demo timed out'; assert cap.poll() is None, 'Capture exited'
                         pump()
                     time.sleep(1.5); pump()
-                    result['stop'] = re.search(rb'^STOP [^\r\n]+', raw, re.M)[0].decode()
-                    m = re.search(rb'^PCM_STATUS [^\r\n]+', raw, re.M); result['pcm_status'] = m[0].decode() if m else None
-                    m = re.search(rb'^SCENES [^\r\n]+', raw, re.M); result['scenes'] = m[0].decode() if m else None
-                    print(result['stop'], flush=True)
-                    result['passed'] = 'rc=0 ' in result['stop'] and 'timeouts=0 ' in result['stop']
+                    read_summary(raw)
                 finally:
-                    if cap.poll() is None:
-                        try: cap.communicate(b'q', timeout=20)
-                        except subprocess.TimeoutExpired: cap.kill(); cap.wait()
-                    result['capture_exit'] = cap.returncode
+                    stop_capture(cap)
     except BaseException as ex:
         result['error'] = repr(ex); print('stopped:', repr(ex), flush=True)
     finally:

@@ -27,6 +27,8 @@
 
 ## 見る・作る
 
+すぐに実機で見るときは、[Releases](https://github.com/siska-tech/kagura-hd/releases/latest)の`four-operators.uf2`を使います。手順は[ルートのREADME](../../README.md#すぐに試す)にあります。このUF2は、下のRAM ELFと同じプログラムを`copy_to_ram`の形式にしたものです。起動時にFlashからSRAMへ写して実行し、約5秒後に自動で始まります。
+
 PC プレビューの作り方です。KFB の振る舞いモデルに、実物の SDK・デモ・音源をつないで描画します。
 
 ```bash
@@ -34,10 +36,11 @@ PC プレビューの作り方です。KFB の振る舞いモデルに、実物�
 software/fm_megademo/tools/preview.sh build/fm-megademo
 ```
 
-RP2040 用の RAM 専用 ELF をビルドします。Flash へ書き込むターゲットはありません。
+RP2040 用の RAM 専用 ELF をビルドします。`-Release` を付けると、配布用の UF2（`build/fm-megademo/rp2040-release/four_operators.uf2`）を作ります。UF2 への変換には picotool 2.x を使います。
 
 ```powershell
 ./software/fm_megademo/tools/build_rp2040.ps1
+./software/fm_megademo/tools/build_rp2040.ps1 -Release
 ```
 
 実機で実行します。手順は、選定版 bitstream を FPGA の SRAM へ投入し、RAM ELF を実行し、HDMI を映像と音声ごとキャプチャし、承認済みの Queue8 に戻し、RP2040 の Flash が変わっていないことを照合する、の順です。
@@ -45,6 +48,10 @@ RP2040 用の RAM 専用 ELF をビルドします。Flash へ書き込むター
 ```powershell
 python software/fm_megademo/tools/run_hardware.py build/fm-megademo/hw-XX `
   --elf build/fm-megademo/rp2040/four_operators.elf --elf-sha <sha256> --reference build/fm-megademo/pc.wav
+# 配布用UF2：RP2040のFlash全体を退避してから書き込み、ホストから開始せずに自動開始を待つ。終了後に書き戻して照合する
+python software/fm_megademo/tools/run_hardware.py build/fm-megademo/hw-XX --flash --autostart `
+  --uf2 build/fm-megademo/rp2040-release/four_operators.uf2 --elf build/fm-megademo/rp2040-release/four_operators.elf `
+  --elf-sha <sha256> --reference build/fm-megademo/pc.wav
 ```
 
 ## 実機結果
@@ -63,6 +70,12 @@ python software/fm_megademo/tools/run_hardware.py build/fm-megademo/hw-XX `
 パレット循環のシーンとスクローラーは約 30 fps で動きます。VECTOR は約 16 fps、SCOPE は約 12 fps です。どちらも、ほぼすべてを同期式の FILL で描くため、QSPI の通信量で速度が決まります（1 コマンドあたり約 180 µs）。同じ時間には、音声の補充（1 半面あたり 128 回の WRITE）も行われています。
 
 この結果は 1 枚の基板、1 回、132 秒の有限試験です。速度の目標は設けていません。相関が 1 にならないのは、初期化時の `sinf`/`pow` が PC と RP2040 で末尾のビットまで一致しないため、位相がわずかにずれるからです。実機の画像は [contact sheet](evidence/hardware-contact-sheet.png) にあります。結果の JSON と USB ログも [evidence/](evidence/) に保存しました。
+
+### 配布用 UF2
+
+2026-11-09 に、配布用 UF2（`6c8a2fd9…`、ELF `4df2009e…`）を同じ基板で 1 回実行しました（`hw-uf2-auto`）。RP2040 の Flash 全体を退避してから UF2 を書き込み、ホストからは開始の指示を送らず、終わるまで USB のポートも開いていません。デモは自動で始まり、`STOP rc=0`、QSPI timeout 0 で完走しました。録音の 10 ms 単位の欠落は左右とも 0、PC の基準との相関は中央値 0.993、最小 0.914 でした。フレーム数は 3425 です。終了後に退避した内容を書き戻し、全 2 MiB が実行前と一致することを確認しています（RP2040 の Flash 書込みは 2 回、FPGA の Flash 書込みは 0 回）。UF2 の中身が ELF の内容と一致することも、ブロック単位で確認しました。記録は [release-uf2-result.json](evidence/release-uf2-result.json) です。
+
+RAM ELF を既定の設定でビルドし直すと、読み込まれる内容は `hw-03` の ELF と比べて、埋め込まれたビルド日付の 1 バイトだけが異なりました。
 
 途中の不具合と修正です（`hw-01`、`hw-02`）。
 

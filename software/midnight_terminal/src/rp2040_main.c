@@ -12,6 +12,13 @@
 #include "pico/stdlib.h"
 #include <stdio.h>
 
+// KAGURA_AUTOSTART_MS (release UF2 only; 0 = host-driven build): start on power-up
+// unless a terminal opens the USB serial port within that time, in which case the
+// demo waits for g as usual. The summary is printed again whenever a terminal connects.
+#ifndef KAGURA_AUTOSTART_MS
+#define KAGURA_AUTOSTART_MS 0
+#endif
+
 #define FRAME_US 33333u
 #define TRY(x) do { int rc_ = (x); if (rc_) return rc_; } while (0)
 
@@ -76,13 +83,33 @@ static int run(void) {
     return 0;
 }
 
+#define PRINT_SUMMARY() do { \
+    printf("SCENES"); \
+    for (unsigned i = 0; i < 7; i++) printf(" %lu", (unsigned long)d->scene_frames[i]); \
+    printf("\nSTOP rc=%d phase=%s frames=%lu halves=%lu wraps=%lu worst_latency_us=%lu synth_waits=%lu " \
+    "synth_busy_ms=%lu fm_peak=%lu fm_clipped=%lu timeouts=%lu device_error=%u\n", \
+    rc, result_phase, (unsigned long)d->frames, (unsigned long)ss->halves, (unsigned long)ss->wraps, \
+    (unsigned long)ss->worst_latency_us, (unsigned long)ss->synth_waits, (unsigned long)(synth_busy_us/1000u), \
+    (unsigned long)fm_peak(), (unsigned long)fm_clipped(), (unsigned long)q->timeouts, gpu.last_device_error); \
+} while (0)
+
 int main(void) {
     set_sys_clock_khz(120000, true);
     stdio_init_all();
+#if KAGURA_AUTOSTART_MS
+    absolute_time_t autostart = make_timeout_time_ms(KAGURA_AUTOSTART_MS);
+    while (!stdio_usb_connected() && !time_reached(autostart)) sleep_ms(10);
+    if (stdio_usb_connected()) {
+        puts("MIDNIGHT TERMINAL / FM EDITION / g=start q=stop");
+        int key = 0;
+        while (key != 'g') key = getchar_timeout_us(100000);
+    }
+#else
     while (!stdio_usb_connected()) sleep_ms(10);
     puts("MIDNIGHT TERMINAL / FM EDITION / g=start q=stop");
     int key = 0;
     while (key != 'g') key = getchar_timeout_us(100000);
+#endif
     fm_init();
     multicore_launch_core1(core1_main);
     int rc = run();
@@ -90,13 +117,15 @@ int main(void) {
     if (rc && rc != KFB_IO && rc != KFB_TIMEOUT) (void)stream_stop();
     synth_run = false;
     const show_stats *d = show_statistics(); const stream_stats *ss = stream_statistics(); const mt_qspi_stats *q = mt_qspi_statistics();
-    printf("SCENES");
-    for (unsigned i = 0; i < 7; i++) printf(" %lu", (unsigned long)d->scene_frames[i]);
-    printf("\nSTOP rc=%d phase=%s frames=%lu halves=%lu wraps=%lu worst_latency_us=%lu synth_waits=%lu "
-           "synth_busy_ms=%lu fm_peak=%lu fm_clipped=%lu timeouts=%lu device_error=%u\n",
-           rc, result_phase, (unsigned long)d->frames, (unsigned long)ss->halves, (unsigned long)ss->wraps,
-           (unsigned long)ss->worst_latency_us, (unsigned long)ss->synth_waits, (unsigned long)(synth_busy_us/1000u),
-           (unsigned long)fm_peak(), (unsigned long)fm_clipped(), (unsigned long)q->timeouts, gpu.last_device_error);
+    PRINT_SUMMARY();
     mt_qspi_deinit();
+#if KAGURA_AUTOSTART_MS
+    for (bool was = true;; sleep_ms(100)) {
+        bool now = stdio_usb_connected();
+        if (now && !was) { sleep_ms(500); PRINT_SUMMARY(); }
+        was = now;
+    }
+#else
     for (;;) sleep_ms(1000);
+#endif
 }
