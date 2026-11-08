@@ -29,7 +29,19 @@ RP2040の2つ目のコアで動くソフトウェアFM音源（4オペレータ�
 - [BEYOND 16 COLORS](software/beyond16/README.md)：150秒・全8シーンのデモ。選定版でも回帰試験を行い、完走を確認しています。[実機結果](software/beyond16/HARDWARE_RESULT.md)
 - [6シーンのMicroPython Showcase](software/kagura_fb/showcase/README.md)
 
-デモのファームウェアは、どれもRAMで実行します。FPGAへはSRAMに一時投入して試すため、電源を切ると元のFlashの構成に戻ります。
+実機試験では、FPGAへは選定版をSRAMに一時投入しています（電源を切ると元のFlashの構成に戻ります）。RP2040のFlashへ書き込んだ試験では、終了後に元の内容へ書き戻し、一致を確認しています。
+
+## すぐに試す
+
+[Releases](https://github.com/siska-tech/kagura-hd/releases/latest)に、選定版bitstreamと2つのデモのUF2を置いています。ビルド環境は要りません。
+
+1. Tang Nano 9Kに`kagura-hd-qspi-pcm-stream.fs`を書き込みます（Gowin Programmer、またはopenFPGALoader）。
+2. Raspberry Pi Pico（RP2040）を[配線表](docs/kagura-fb-host-api.md#配線転送)のとおりにつなぎ、GNDを共通にします。
+3. PicoのBOOTSELボタンを押しながらUSBをつなぎ、現れたドライブ`RPI-RP2`へ`four-operators.uf2`か`midnight-terminal.uf2`をコピーします。
+4. Tang Nano 9KのHDMIを、720p60と音声に対応した表示機へつなぎます。
+
+Picoは起動から約5秒後に、自動でデモを始めます。もう一度見るときは、Picoの電源を入れ直してください。UF2を書き込むと、Picoにそれまで入っていたプログラムは消えます。起動から5秒以内にシリアル端末でPicoのUSBポートを開くと、従来どおり`g`の入力を待ってから始まり、終了時に結果を表示します。
+
 
 ## Bitstream
 

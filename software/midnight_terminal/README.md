@@ -39,6 +39,8 @@
 
 ## 作る・見る
 
+すぐに実機で見るときは、[Releases](https://github.com/siska-tech/kagura-hd/releases/latest)の`midnight-terminal.uf2`を使います。手順は[ルートのREADME](../../README.md#すぐに試す)にあります。約5秒後に自動で始まります。
+
 ```bash
 # 素材の再生成（Python 3.12、Pillow、NumPy。保存した配布フォントのアーカイブだけを使う）
 python software/midnight_terminal/tools/build_assets.py build/midnight-terminal/art
@@ -51,9 +53,13 @@ build/midnight-terminal/mt_pc --video - | ffmpeg -f rawvideo -pix_fmt rgb24 -s 6
 ```powershell
 # RP2040のFlash用イメージ（ELF・bin・hex）。画像とフォントはFlashに置き、音源の内側のループはRAMに置く
 ./software/midnight_terminal/tools/build_rp2040.ps1
+# 配布用UF2（自動開始。build/midnight-terminal/rp2040-release/midnight_terminal.uf2）。変換にはpicotool 2.xを使う
+./software/midnight_terminal/tools/build_rp2040.ps1 -Release
 # 実機での実行：FPGAはSRAMへ投入する。RP2040は、Flash全体（2 MiB）を退避してからデモを書き込み、
 # 終了後に退避した内容を書き戻して、元と一致することを照合する
 python software/midnight_terminal/tools/run_hardware.py build/midnight-terminal/hw-XX --flash --elf build/midnight-terminal/rp2040/midnight_terminal.elf --elf-sha <sha256> --reference build/midnight-terminal/pc.wav
+# 配布用UF2：ホストから開始せず、終わるまでUSBのポートも開かずに自動開始を確かめる
+python software/midnight_terminal/tools/run_hardware.py build/midnight-terminal/hw-XX --flash --autostart --uf2 build/midnight-terminal/rp2040-release/midnight_terminal.uf2 --elf build/midnight-terminal/rp2040-release/midnight_terminal.elf --elf-sha <sha256> --reference build/midnight-terminal/pc.wav
 ```
 
 ## 実機結果
@@ -77,6 +83,12 @@ python software/midnight_terminal/tools/run_hardware.py build/midnight-terminal/
 |映像|3035フレーム（平均約29 fps）。シーン別には330 / 985 / 405 / 445 / 244 / 405 / 221。まばたきもHDMIで確認した（[静止画](evidence/hardware-blink.png)）|
 
 実機の画像は[contact sheet](evidence/hardware-contact-sheet.png)、記録は[evidence/](evidence/)にあります。この結果は、1枚の基板で1回ずつ実行した有限の試験です。
+
+### 配布用UF2
+
+配布用UF2（`aa37c59d…`、ELF `00d0910a…`）も、2026-11-09に同じ基板で1回実行しました（`hw-uf2-auto`）。Flash全体を退避してからUF2を書き込みました。ホストからは開始の指示を送らず、終わるまでUSBのポートも開いていません。デモは自動で始まり、`STOP rc=0`、QSPI timeout 0、3036フレームで完走しました。録音の10 ms単位の欠落は左右とも0、PCの基準との相関は中央値0.997、最小0.983でした。終了後に書き戻し、全2 MiBの一致を確認しています。UF2の中身はELFの内容とブロック単位で一致しました。記録は[release-uf2-result.json](evidence/release-uf2-result.json)です。
+
+自動開始の有無は`KAGURA_AUTOSTART_MS`で切り替えます。既定のビルドでは0で、上の`528dc2ef…`と読み込まれる内容が完全に一致することを確認しました。
 
 ## ライセンス
 

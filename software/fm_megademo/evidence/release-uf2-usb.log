@@ -1,0 +1,2 @@
+SCENES 471 470 477 480 260 194 478 595
+STOP rc=0 phase=stop frames=3425 halves=1546 wraps=6 worst_latency_us=54577 synth_waits=0 synth_busy_ms=68080 fm_peak=42253 fm_clipped=0 timeouts=0 device_error=0
