@@ -35,7 +35,7 @@ RP2040の2つ目のコアで動くソフトウェアFM音源（4オペレータ�
 
 [Releases](https://github.com/siska-tech/kagura-hd/releases/latest)に、選定版bitstreamと2つのデモのUF2を置いています。ビルド環境は要りません。
 
-1. Tang Nano 9Kに`kagura-hd-qspi-pcm-stream.fs`を書き込みます（Gowin Programmer、またはopenFPGALoader）。
+1. Tang Nano 9Kに`kagura-hd-qspi-pcm-stream.fs`を書き込みます（Gowin Programmerの「embFlash Erase,Program」など）。SecurityBitがONのため、Verify付きの操作は失敗します。1.9.11.03で書込みを確認しました。
 2. Raspberry Pi Pico（RP2040）を[配線表](docs/kagura-fb-host-api.md#配線転送)のとおりにつなぎ、GNDを共通にします。
 3. PicoのBOOTSELボタンを押しながらUSBをつなぎ、現れたドライブ`RPI-RP2`へ`four-operators.uf2`か`midnight-terminal.uf2`をコピーします。
 4. Tang Nano 9KのHDMIを、720p60と音声に対応した表示機へつなぎます。

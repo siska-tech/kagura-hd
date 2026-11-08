@@ -14,7 +14,7 @@ Tang Nano 9K（GW1NR-LV9QN88PC6/I5）向けのフレームバッファ型グラ�
 
 ## デモを試す
 
-1. Tang Nano 9Kに`kagura-hd-qspi-pcm-stream.fs`を書き込みます（Gowin Programmer、またはopenFPGALoader）。
+1. Tang Nano 9Kに`kagura-hd-qspi-pcm-stream.fs`を書き込みます（Gowin Programmerの「embFlash Erase,Program」など。Verify付きの操作は使わないでください）。
 2. Raspberry Pi Pico（RP2040）を[配線表](https://github.com/siska-tech/kagura-hd/blob/main/docs/kagura-fb-host-api.md#配線転送)のとおりにつなぎ、GNDを共通にします。
 3. PicoのBOOTSELボタンを押しながらUSBをつなぎ、現れたドライブ`RPI-RP2`へUF2をコピーします。
 4. Tang Nano 9KのHDMIを、720p60と音声に対応した表示機へつなぎます。
@@ -35,7 +35,9 @@ CSR 31のbit1は診断用です。アプリケーションからは書き込ま�
 
 2つのUF2は、それぞれ同じ基板で1回ずつ実行しました。FPGAには選定版をSRAMへ投入し、Picoには添付と同じUF2を書き込みました。ホストからは開始の指示を送らず、終わるまでUSBのポートも開いていません。どちらも自動で始まり、`STOP rc=0`、QSPI timeout 0で完走しました。HDMI録音の10 ms単位の欠落は左右とも0です。PCで生成した基準との1秒ごとの相関は、FOUR OPERATORSが中央値0.993、MIDNIGHT TERMINALが中央値0.997でした。UF2の中身がELFの内容と一致することもブロック単位で確かめています。
 
-FPGAのFlashへの書込み手順（手順1）は、この確認では行っていません。
+手順1のFlashへの書込みも、実機で確かめました。Tang Nano 9KのFlashに選定版を書き込み、Flashから起動したFPGA（UserCode `0x00008039`）で`midnight-terminal.uf2`を実行しました。結果は`STOP rc=0`、音声の欠落0、相関の中央値0.998です。
+
+Flashへの書込みは、Gowin Programmer 1.9.11.03（Education版）の「embFlash Erase,Program」で成功を確認しています。このbitstreamはSecurityBitがONのため、Flashを読み戻せず、「Verify」付きの操作は必ず失敗します。また手元の基板では、1.9.12.04の`programmer_cli`での書込みが「Program failed」になり、Flashの内容が壊れました（1.9.11.03で書き直して回復）。
 
 ## 範囲
 

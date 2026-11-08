@@ -88,6 +88,8 @@ python software/midnight_terminal/tools/run_hardware.py build/midnight-terminal/
 
 配布用UF2（`aa37c59d…`、ELF `00d0910a…`）も、2026-11-09に同じ基板で1回実行しました（`hw-uf2-auto`）。Flash全体を退避してからUF2を書き込みました。ホストからは開始の指示を送らず、終わるまでUSBのポートも開いていません。デモは自動で始まり、`STOP rc=0`、QSPI timeout 0、3036フレームで完走しました。録音の10 ms単位の欠落は左右とも0、PCの基準との相関は中央値0.997、最小0.983でした。終了後に書き戻し、全2 MiBの一致を確認しています。UF2の中身はELFの内容とブロック単位で一致しました。記録は[release-uf2-result.json](evidence/release-uf2-result.json)です。
 
+同じUF2を、FPGAのFlashに書き込んだ選定版から起動した状態でも1回実行しました（`--fpga-from-flash`、SRAMへの投入なし）。`STOP rc=0`、音声の欠落0、相関の中央値0.998、最小0.980で、Releasesの手順どおりの構成でも動くことを確認しています（[記録](evidence/release-uf2-fpga-flash-result.json)）。Flashへの書込みは、Gowin Programmer 1.9.11.03（Education版）の「embFlash Erase,Program」で成功を確認しています。このbitstreamはSecurityBitがONのため、Flashを読み戻せず、「Verify」付きの操作は必ず失敗します。また手元の基板では、1.9.12.04の`programmer_cli`での書込みが「Program failed」になり、Flashの内容が壊れました（1.9.11.03で書き直して回復）。
+
 自動開始の有無は`KAGURA_AUTOSTART_MS`で切り替えます。既定のビルドでは0で、上の`528dc2ef…`と読み込まれる内容が完全に一致することを確認しました。
 
 ## ライセンス

@@ -25,6 +25,7 @@ p.add_argument('--reference', type=Path, required=True)
 p.add_argument('--analyze-only', action='store_true')
 p.add_argument('--flash', action='store_true', help='RP2040 Flash image; restore the original Flash afterwards')
 p.add_argument('--uf2', type=Path, help='with --flash: write this UF2 (built from --elf) instead of the ELF')
+p.add_argument('--fpga-from-flash', action='store_true', help='FPGA already holds the selected image in its Flash: reconfigure from it (no SRAM load, no Queue8 restore)')
 p.add_argument('--autostart', action='store_true', help='release UF2: no host start; the serial port stays closed until the end')
 args = p.parse_args()
 assert not (args.uf2 or args.autostart) or args.flash, '--uf2/--autostart need --flash'
@@ -128,7 +129,13 @@ def hardware():
     before = None
     try:
         before = flash_read('host-flash-before', uid, True); result['host_flash_before'] = before
-        result['fpga_user_code'] = sram('candidate-sram', image)
+        if args.fpga_from_flash:
+            call('fpga-reconfigure-from-flash', [programmer, '--device', 'GW1NR-9C', '--cable-index', '1', '--run', '1'])
+            code = re.search(r'User Code is: (0x[0-9A-Fa-f]+)', call('fpga-usercode', [programmer, '--device', 'GW1NR-9C', '--cable-index', '1', '--run', '73']))[1]
+            assert code.lower() == '0x00008039', code
+            result['fpga_user_code'] = code; result['fpga_source'] = 'embFlash'
+        else:
+            result['fpga_user_code'] = sram('candidate-sram', image)
         if args.flash:
             result['rp2040_flash_writes'] = 1
             if args.autostart: autostart_run(uid); return
@@ -231,4 +238,4 @@ if (out/'demo-hdmi.mkv').exists():
     except BaseException as ex: result['analysis_error'] = repr(ex)
 save()
 print(json.dumps({k: v for k, v in result.items() if k not in ('host_flash_before',)}, indent=2), flush=True)
-sys.exit(0 if result['passed'] and result.get('host_flash_equal') and result.get('restore_fpga_user_code') == '0x00004068' else 1)
+sys.exit(0 if result['passed'] and result.get('host_flash_equal') and (args.fpga_from_flash or result.get('restore_fpga_user_code') == '0x00004068') else 1)
