@@ -2,41 +2,63 @@
 
 Tang Nano 9K（GW1NR-9C）向けのフレームバッファ型グラフィックスエンジンです。RP2040などのSPI/QSPIホストからPSRAM上の画面を更新し、HDMIへ映像と音声を出力します。
 
-**実機Demoで使用したPCM2・ABI 1.4・QSPI Bitstreamを最終版として選定しました。** [公開用成果物とチェックサム](releases/pcm2-qspi-final/README.md)を用意しています。**SPI版はSTA不合格のためexperimentalへ隔離し、通常配布から除外しました。DO_NOT_PROGRAMを付けています。** [Release添付一覧](releases/README.md)。リポジトリの公開用スナップショットです。GitHub Release・タグはまだ作成していません。
+## Demo
 
-[▶ 実機動作動画を見る（YouTube）](https://youtu.be/PA18OeB-7Fw?si=ddc6YioPDyehEmua)
+### FOUR OPERATORS — 16色メガデモ
 
-## 最終版
+[![FOUR OPERATORS — 実機動画（YouTube）](https://img.youtube.com/vi/iypg81KaGmQ/maxresdefault.jpg)](https://youtu.be/iypg81KaGmQ?si=ItaV4tVjuPjqaDHs)
+
+▲ 画像をクリックするとYouTubeで実機動画が再生されます。
+
+[![FOUR OPERATORS のシーン](docs/images/four-operators.png)](software/fm_megademo/README.md)
+
+RP2040の2つ目のコアで動くソフトウェアFM音源（4オペレータ×6声）を、PCMストリーミングでHDMIへ流す132秒のメガデモです。画面はFILL・COPY・PALETTE・PRESENT・WRITEだけで描いています。実機で完走し、録音した音声の欠落は0でした。[詳細と実機結果](software/fm_megademo/README.md)。
+
+### MIDNIGHT TERMINAL — FM EDITION
+
+[![MIDNIGHT TERMINAL — 実機動画（YouTube）](https://img.youtube.com/vi/ocwRtPimfRQ/maxresdefault.jpg)](https://youtu.be/ocwRtPimfRQ)
+
+▲ 画像をクリックするとYouTubeで実機動画が再生されます。
+
+[![MIDNIGHT TERMINAL のシーン](docs/images/midnight-terminal.png)](software/midnight_terminal/README.md)
+
+雨の夜のバーで店員ミオと言葉を交わし、古い端末を覗きこむ104秒の短編です。曲と効果音はすべてFM音源で合成しています。実機で完走し、音声の欠落は0でした。[詳細と実機結果](software/midnight_terminal/README.md)。
+
+### そのほか
+
+- [BEYOND 16 COLORS](software/beyond16/README.md)：150秒・全8シーンのデモ。選定版でも回帰試験を行い、完走を確認しています。[実機結果](software/beyond16/HARDWARE_RESULT.md)
+- [6シーンのMicroPython Showcase](software/kagura_fb/showcase/README.md)
+
+デモのファームウェアは、どれもRAMで実行します。FPGAへはSRAMに一時投入して試すため、電源を切ると元のFlashの構成に戻ります。
+
+## Bitstream
+
+2026-11-08、PCMストリーミングに対応したQueue8・QSPI版を選定版にしました（従来のPCM2版を置き換え）。[パッケージと検証記録](releases/pcm-stream-qspi/README.md)、[Release添付一覧](releases/README.md)を参照してください。SPI版はSTA不合格のため[experimental](artifacts/experimental/spi-sta-fail/README.md)へ隔離してあり、DO_NOT_PROGRAMを付けています。GitHub Releaseとタグはまだ作成していません。
+
 
 |項目|内容|
 |---|---|
-|Bitstream|[kagura-hd-qspi-pcm2.fs](artifacts/validated/kagura-hd-qspi-pcm2.fs)|
-|SHA-256|`642c7a3ce961685279c229dbe9b1577285bd7867353cfaf7de8f4db06b3683a7`|
+|Bitstream|[kagura-hd-qspi-pcm-stream.fs](artifacts/validated/kagura-hd-qspi-pcm-stream.fs)|
+|SHA-256|`fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db`|
 |FPGA / Tool|GW1NR-LV9QN88PC6/I5 / Gowin Standard V1.9.12.04|
-|Host|QSPI Mode 0、MSB先行、`KFB1` / ABI **1.4** / CAPS `FF`|
+|Host|QSPI Mode 0、MSB先行、`KFB1` / ABI **1.4** / CAPS `FF`、Queue8、PCMストリーミング拡張（audio index `E3`=`0x51`）|
 |映像|640×360、4bpp、16色RGB444パレット。整数2倍で1280×720・60Hz HDMI出力|
 |画面メモリ|PSRAM、2ページ。PRESENTで垂直帰線中にページとパレットを反映|
 |描画|FILL、READ/WRITE、overlap・ページ間対応の不透明COPY_RECT（BLIT）|
 |BLIT制約|Xと幅は偶数、送受Xの差は8画素の倍数|
 |カーソル|32×32・2bpp、透明色＋独立3色、形状2バンク、垂直帰線で反映|
-|音声|signed8 PCM **2ch**、48kHz、左右GAIN・MASTER、HDMI stereo出力|
+|音声|signed8 PCM **2ch**、48kHz、左右GAIN・MASTER、HDMI stereo出力。PSRAM上のA/B半面をHostが連続補充するストリーミング|
 |SDK|[C](software/kagura_fb/kagura_fb.h)、[MicroPython Device](software/kagura_fb/kagura_fb.py)、[PCM Audio](software/kagura_fb/kagura_fb_audio.py)|
 
-最終版の音声はPCM2専用です。旧6ch音源のHost設定は使用しません。ABI 1.2の描画・カーソル・BLITを継承し、音声CSRとCOMMITを追加しています。[Host ABI・音声契約](docs/kagura-fb-host-api.md)を参照してください。
+音声はPCM2（ワンショットとループ）と、Hostが半面ずつ補充するストリーミングに対応しています。旧6ch音源のHost設定は使いません。描画、カーソル、BLITはABI 1.2を引き継ぎ、音声CSR、COMMIT、ストリーミングCSRを追加しています。[Host ABI・音声契約](docs/kagura-fb-host-api.md)を参照してください。
 
-## 実機Demoと確認範囲
+## 確認範囲
 
-- [BEYOND 16 COLORS](software/beyond16/README.md)：150秒・全8シーンを実機完走。Host timeoutと観測されたPCM STATUS faultは0。実更新3.9–21fpsで、目標30fpsは未達。[実機結果](software/beyond16/HARDWARE_RESULT.md)。
-- [MIDNIGHT TERMINAL](software/midnight_terminal/README.md)：会話・演出・PCM2の同時再生を実機HDMI録画で確認。[実機結果](software/midnight_terminal/HARDWARE_RESULT.md)。
-- [6シーンのMicroPython Showcase](software/kagura_fb/showcase/README.md)：PCプレビューと実機試験記録を区別しています。
-
-両C Demoが使用したFPGA Bitstreamは上記SHA-256と同じです。RP2040のDemo firmwareは別の成果物です。FPGAのSRAM投入は電源断で消え、既存Flashの構成へ戻ります。
-
-内部STAはSetup **+0.160ns**、Hold **+0.484ns**、Setup/Hold違反 **0/0**。Logic 7796、FF 5239、CLS 4247、BSRAM 19です。実機試験はnominal PIO QSPI 5MHzの有限試験で、最大通信速度、外部PSRAM I/Oの全PVT適合、全画面のbyte一致、長時間・複数基板の保証は含みません。SPI版はSTA未達・テスト未実施のため[experimental](artifacts/experimental/spi-sta-fail/README.md)へ隔離し、通常Releaseから除外しています。過去の評価JSONの`release_ready=false`は当時のゲート結果として保持します。[公開準備状況と制限](docs/release-validation.md)。
+選定版の内部STAはSetup **+0.177ns**、Hold **+0.527ns**、Setup/Hold違反 **0/0**です。実機試験はnominal PIO QSPI 5MHzの有限試験で、最大通信速度、外部PSRAM I/Oの全PVT適合、全画面のbyte一致、長時間・複数基板の保証は含みません。SPI版はSTA未達・テスト未実施のため[experimental](artifacts/experimental/spi-sta-fail/README.md)へ隔離し、通常Releaseから除外しています。過去の評価JSONの`release_ready=false`は当時のゲート結果として保持します。[公開準備状況と制限](docs/release-validation.md)。
 
 ## ビルドと検証
 
-QSPI版は実機で動作した既存Bitstreamをそのまま固定しています。再ビルドで採用ファイルを上書きしません。元のビルド入力40ファイルとSHA-256を[成果物ディレクトリ](releases/pcm2-qspi-final/)へ保存しました。
+選定版は、実機で認定したBitstreamをそのまま固定しています。再ビルドしても採用ファイルを上書きしません。元のビルド入力41ファイル、P&R設定、SHA-256、再現スクリプトを[成果物ディレクトリ](releases/pcm-stream-qspi/)に保存しました（旧PCM2版は[pcm2-qspi-final](releases/pcm2-qspi-final/)）。選定版は2段階で作ります。まずP4/R2で合成し、そのnetlistをP3/R2/maxfan 23で配置配線し直します。同じ手順で再現できることは、`releases/pcm-stream-qspi/reproduce.ps1` で確認できます。
 
 Windows、Gowin Standard V1.9.12.04、Python 3で、リポジトリルートから実行します。
 
@@ -46,7 +68,7 @@ python tools/check-release.py
 ./tools/build-fb.ps1 -Transport qspi
 ```
 
-`-GowinExe 'C:/path/to/IDE/bin/gw_sh.exe'`で配置先を指定できます。出力は`build/kagura-fb-qspi/impl/pnr/kagura_fb.fs`です。Place1/Route2、Setup ≥0.100ns、Setup/Hold違反0を検査します。[正確な入力・ビルド手順](docs/standard-build.md)。
+`-GowinExe 'C:/path/to/IDE/bin/gw_sh.exe'`で配置先を指定できます。出力は`build/kagura-fb-qspi/impl/pnr/kagura_fb.fs`です。この通常のビルドは、選定版とは配置配線が異なります（STAの検査は Setup ≥0.100ns、Setup/Hold違反0）。選定版そのものを再現するときは、上の`reproduce.ps1`を使ってください。[入力とビルド手順](docs/standard-build.md)。
 
 WSL/LinuxではPython 3、C11、g++、make、Verilator **5.032**、bash、flock、timeoutを使用します。
 
@@ -62,7 +84,7 @@ bash tools/test-fb-drivers.sh
 MICROPYTHON=/path/to/micropython bash tools/test-fb-micropython.sh
 ```
 
-[今回の統合後回帰](docs/release-preparation-validation.md)ではFB全26件、共通22構成、wrap統合12件、SDK29件、Demo PC20件が合格しました。[CI](.github/workflows/kagura-fb.yml)でもRTL・SDK・公開成果物を検証します。実機試験の再実行には配線・復旧手順と各Demoの手順を使用してください。
+[公開前の回帰](docs/release-preparation-validation.md)では、CIと同じシミュレーションとドライバ試験を、選定版のRTLで手元で再実行し、すべて合格しました（2026-11-09）。[CI](.github/workflows/kagura-fb.yml)でもRTL・SDK・公開成果物を検証します。実機試験の再実行には配線・復旧手順と各Demoの手順を使用してください。
 
 ## 資料と出典
 

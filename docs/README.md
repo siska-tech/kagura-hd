@@ -1,17 +1,19 @@
 # KAGURA-HD 資料案内
 
-現行版は実機Demoで使用した **PCM2 / ABI 1.4 / QSPI** です。
+現行の選定版は、PCMストリーミングに対応した **Queue8 / ABI 1.4 / QSPI** 版です（2026-11-08にPCM2版を置き換え）。
 
-- [製品概要・実機確認範囲](../README.md)
+- [製品概要・Demo・実機確認範囲](../README.md)
+- Demo：[FOUR OPERATORS](../software/fm_megademo/README.md)（[動画](https://youtu.be/iypg81KaGmQ?si=ItaV4tVjuPjqaDHs)）、[MIDNIGHT TERMINAL — FM EDITION](../software/midnight_terminal/README.md)（[動画](https://youtu.be/ocwRtPimfRQ)）、[BEYOND 16 COLORS](../software/beyond16/README.md)
+- [PCMストリーミング版の設計監査・昇格の記録](../diagnostics/pcm-stream-rc1/design-audit-report.md)
 - [通常Release添付一覧（QSPIのみ）](../releases/README.md)
 - [validated / experimental成果物の区分](../artifacts/README.md)
-- [最終Bitstream・SHA-256・元ビルド入力](../releases/pcm2-qspi-final/README.md)
+- [最終Bitstream・SHA-256・元ビルド入力（PCMストリーミング選定版）](../releases/pcm-stream-qspi/README.md)、[旧PCM2版](../releases/pcm2-qspi-final/README.md)
 - [公開準備状況・制限](release-validation.md)
 - [Standard Editionのビルド手順](standard-build.md)
 - [Host ABI 1.4・配線・C/MicroPython API](kagura-fb-host-api.md)
 - [BLIT](kagura-fb-blit.md)、[カーソル](kagura-fb-cursor.md)
 - [BEYOND 16 COLORS 実機結果](../software/beyond16/HARDWARE_RESULT.md)
-- [MIDNIGHT TERMINAL 実機結果](../software/midnight_terminal/HARDWARE_RESULT.md)
+- [MIDNIGHT TERMINAL — FM EDITION](../software/midnight_terminal/README.md)（[旧PCM2版の実機結果](https://github.com/siska-tech/kagura-hd/blob/52fd69f6507b22c8c58d4112fd335562c7f9c57f/software/midnight_terminal/HARDWARE_RESULT.md)）
 - [公開準備でのファイル整理](cleanup.md)
 - [統合後の回帰検証](release-preparation-validation.md)
 
