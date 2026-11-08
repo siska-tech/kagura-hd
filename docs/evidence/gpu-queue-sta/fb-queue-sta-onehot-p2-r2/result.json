@@ -1,0 +1,14 @@
+{
+  "depth": 8,
+  "transport": "qspi",
+  "place": 2,
+  "route": 2,
+  "exit_code": 1,
+  "register_audio_credits": false,
+  "replicate_packet_first": true,
+  "optimization_goal": "auto",
+  "build_failed": true,
+  "fresh_bitstream": false,
+  "timing": null,
+  "elapsed_seconds": 847.9
+}

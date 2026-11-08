@@ -2,12 +2,12 @@
 from pathlib import Path
 import os
 import sys,json,time,subprocess,re,datetime
-repo=Path(__file__).resolve().parents[3];out=repo/'build/beyond16-hardware-2026-11-06';sys.path.insert(0,str(repo/'build/showcase-hardware-deps'))
+repo=Path(__file__).resolve().parents[3];out=Path(os.environ.get('KAGURA_CAMPAIGN_DIR',str(repo/'build/beyond16-hardware-2026-11-06'))).resolve();sys.path.insert(0,str(repo/'build/showcase-hardware-deps'))
 import serial
 from serial.tools import list_ports
 mode=sys.argv[1];assert mode in ('bench','demo');assert(out/'flash-write-verified.json').exists();assert not(out/(mode+'.started')).exists()
 ports=[p for p in list_ports.comports() if p.vid==0x2e8a and p.serial_number.upper()==os.environ['KAGURA_RP2040_UID'].upper()];assert len(ports)==1
-state={'mode':mode,'release_ready':False,'port':ports[0].device,'started':False,'success':False,'failure':None,'start_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'perf':[]}
+state={'mode':mode,'release_ready':False,'port':ports[0].device,'started':False,'success':False,'failure':None,'start_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'perf':[],'bus':[]}
 def save():(out/(mode+'-result.json')).write_text(json.dumps(state,indent=2))
 p=serial.Serial(ports[0].device,115200,timeout=.1,write_timeout=5);capture=None;caplog=None;rawlog=(out/(mode+'-usb.log')).open('wb');raw=bytearray();(out/(mode+'.started')).write_text(state['start_utc']);begin=time.monotonic()
 try:
@@ -23,6 +23,8 @@ try:
   if data:rawlog.write(data);rawlog.flush();pending.extend(data)
   while b'\n' in pending:
    line,_,pending=pending.partition(b'\n');line=line.decode(errors='replace').strip()
+   if line.startswith('BUS '):
+    state['bus'].append({k:int(v) for k,v in re.findall(r'(\w+)=(-?\d+)',line)});save()
    if line.startswith('PERF '):
     sample={k:int(v) for k,v in re.findall(r'(\w+)=(-?\d+)',line)};sample['capture_elapsed_s']=time.monotonic()-begin;state['perf'].append(sample);save()
     if sample.get('audio_fault',0) or sample.get('timeouts',0):raise RuntimeError(line)

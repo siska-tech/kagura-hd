@@ -1,0 +1,4 @@
+// Only for the frozen packet-first QSPI Queue8 mapped netlist.
+// The reference control-to-TX net spans R8C9 -> R2C41, fanout 498.
+INS_LOC "core/memory_ctrl/n2777_s2" R8C25[0][A];
+INS_LOC "core/display/palette_71_s0" R14C9[0][A];

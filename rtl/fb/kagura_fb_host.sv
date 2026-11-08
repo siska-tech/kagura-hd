@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Kagura-FB ABI 1.1 SPI/QSPI host endpoint. Mode 0, MSB first.
 // BUSY covers command submission; status reads remain available while busy.
-module kagura_fb_host #(parameter integer LANES=1, parameter bit AUDIO_CSR=0) (
+module kagura_fb_host #(parameter integer LANES=1, parameter bit AUDIO_CSR=0, parameter integer QUEUE_DEPTH=1) (
     input wire clk,reset,enabled,video_error,audio_error,
     input wire host_sck,host_cs_n,
     inout wire [3:0] host_io,
@@ -95,16 +95,24 @@ module kagura_fb_host #(parameter integer LANES=1, parameter bit AUDIO_CSR=0) (
     wire [15:0] cmd_tag;
     wire [7:0] cmd_error;
     wire [127:0] command;
+    wire engine_valid,engine_ready;
+    wire [127:0] engine_command;
+    generate if(QUEUE_DEPTH>1) begin: registered_head
+        kagura_fb_command_head head(.clk,.reset,.in_valid(cmd_valid),.in_ready(cmd_ready),.in_command(command),
+            .out_valid(engine_valid),.out_ready(engine_ready),.out_done(cmd_done),.out_command(engine_command));
+    end else begin: direct_head
+        assign engine_valid=cmd_valid;assign cmd_ready=engine_ready;assign engine_command=command;
+    end endgenerate
     wire [511:0] upload_data,cmd_read_data;
-    kagura_fb_registers #(.AUDIO_CSR(AUDIO_CSR)) registers(
+    kagura_fb_registers #(.AUDIO_CSR(AUDIO_CSR),.QUEUE_DEPTH(QUEUE_DEPTH)) registers(
         .clk,.reset,.enabled(enabled_sys),.spi_late(late),.video_error(video_sync[1]),.audio_error(audio_sync[1]),
         .external_error(AUDIO_CSR && bus_audio && audio_rsp_valid && audio_rsp_error),
         .req_valid(base_valid),.req_write(base_write),.req_addr(base_addr),.req_wdata(base_data),
         .req_ready(base_ready),.rsp_valid(base_rsp_valid),.rsp_error(base_rsp_error),.rsp_rdata(base_rsp_data),
         .busy,.irq,.cmd_valid,.cmd_ready,.cmd_done,.cmd_read_result,.cmd_tag,.cmd_error,.cmd_read_data,
         .command,.upload_data);
-    kagura_fb_commands #(.AUDIO_CSR(AUDIO_CSR)) commands(
-        .clk,.reset,.valid(cmd_valid),.ready(cmd_ready),.command,.upload_data,
+    kagura_fb_commands #(.AUDIO_CSR(AUDIO_CSR),.REGISTER_DECODE(QUEUE_DEPTH>1)) commands(
+        .clk,.reset,.valid(engine_valid),.ready(engine_ready),.command(engine_command),.upload_data,
         .done(cmd_done),.error(cmd_error),.tag(cmd_tag),.read_data(cmd_read_data),.read_result(cmd_read_result),
         .host_valid,.host_ready(mem_ready),.host_write,.host_addr,.host_words,.host_wdata,.host_mask,
         .host_done(mem_done),.host_error(mem_error),.host_rdata(mem_rdata),

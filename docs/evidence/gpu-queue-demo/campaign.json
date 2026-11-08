@@ -1,0 +1,68 @@
+{
+  "start_utc": "2026-11-06T15:13:59.307249+00:00",
+  "release_ready": false,
+  "authorized": "User provisionally approved depth 8 and requested queued megademo hardware load validation",
+  "numeric_timing_gate_passed": false,
+  "worst_setup_ns": 0.05,
+  "fpga_flash_writes": 0,
+  "fpga_sram_programs": 1,
+  "rp2040_uid": "E663A837CB73512D",
+  "bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "variants": [
+    {
+      "name": "serial",
+      "stage": "complete",
+      "success": true,
+      "firmware_sha256": "a3a2044a0cdd8b78a0698451a061c6a58b834ca74a78c7aae2b3484102ac796e",
+      "full_flash_after_tests_verified": true,
+      "after_sha256": "9295e821c05c7cf259609aa043f27ddc72bc2eccf1b431d440083fb032628926"
+    },
+    {
+      "name": "queued",
+      "stage": "complete",
+      "success": true,
+      "firmware_sha256": "79042cca5328e9b293a53f251091f1aeb6b1f35adab180db03aa3e6a47e33387",
+      "queue": {
+        "depth": 8,
+        "submitted": 320062,
+        "retired": 320062,
+        "peak": 8,
+        "pending": 0,
+        "barriers": 4839,
+        "errors": 0
+      },
+      "full_flash_after_tests_verified": true,
+      "after_sha256": "d6737657592f7694049ee9758682fadaf05360c93f7505db1bbeb134c5dd26cf"
+    }
+  ],
+  "success": true,
+  "failure": null,
+  "firmwares": {
+    "fw-serial": {
+      "bin_sha256": "a3a2044a0cdd8b78a0698451a061c6a58b834ca74a78c7aae2b3484102ac796e",
+      "elf_sha256": "b28a530a956bbd39e4e8eb5f9ba41e3dfdb3e816d2675d1c95a85ad5111f58af"
+    },
+    "fw-queue8": {
+      "bin_sha256": "79042cca5328e9b293a53f251091f1aeb6b1f35adab180db03aa3e6a47e33387",
+      "elf_sha256": "403d0acdbf5386624a7b7501454f3102452df61e858876f1bef40fcfc76ed322"
+    }
+  },
+  "protected": {
+    "artifacts/validated/kagura-hd-qspi-pcm2.fs": "642c7a3ce961685279c229dbe9b1577285bd7867353cfaf7de8f4db06b3683a7",
+    "artifacts/validated/SHA256SUMS": "4ee71362a8c36d07a2e8f5edb641d7765dc60af94eec5c52950bd8907fee5fcb",
+    "software/beyond16/out/headroom-firmware/A-detailed/beyond16.bin": "29a4d3f39814bf98b7c4198979e83a4407342ab7853e95bad1d25e37d3ef2bd4",
+    "software/beyond16/out/headroom-firmware/A-off/beyond16.bin": "44d9e58caec817e78453ee6123001b3f1ac311bbfd9d77e4642082268e241a12",
+    "software/beyond16/out/headroom-firmware/A-summary/beyond16.bin": "a2ebbb82763e6dcdac9024915966c9b1fab900d4166645beaa0aac7184425334",
+    "software/beyond16/out/headroom-firmware/absolute30/beyond16.bin": "d742b15292cd2f99febd8d1e3fd38340efc39b8d5360db84f8e4ba39ecb4040b",
+    "software/beyond16/out/headroom-firmware/B-summary/beyond16.bin": "e54dccc72a0b2da5897426559b12741dcffbbe56ef7a0b8ccaa2802be2e86a86",
+    "software/beyond16/out/headroom-firmware/C-test128/beyond16.bin": "5f40aaa4d62dab48d7bfe4f36e210c74181cca212cdf00e8099ad48d4414ca6e",
+    "software/beyond16/out/headroom-firmware/cooperative/beyond16.bin": "36a9026439da9fef3124af0f927905c37908cea0337a3d417812b1eaf72c5825",
+    "software/beyond16/out/headroom-firmware/work64/beyond16.bin": "71a5dbdfe6ea30b3ffde23975630ae0e219bb6914cd157da750daccc67a93ea7"
+  },
+  "original_backup": {
+    "path": "build/queue-demo-20261107/hardware/serial/before.bin",
+    "sha256": "0298d14b33e86f470eaa8987d4654e198c9de493d981aec542aa9e03a2226c86"
+  },
+  "final_state": "Queue 8 SRAM FPGA and queued RP2040 firmware; PCM stopped, explicit USB start gate",
+  "finish_utc": "2026-11-06T15:20:51.331110+00:00"
+}

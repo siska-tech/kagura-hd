@@ -1,0 +1,98 @@
+{
+  "start_utc": "2026-11-06T03:07:33.003406+00:00",
+  "release_ready": false,
+  "authorized_scope": "user requested eight-variant physical comparison",
+  "variants": [
+    {
+      "name": "A-off",
+      "firmware_sha256": "44d9e58caec817e78453ee6123001b3f1ac311bbfd9d77e4642082268e241a12",
+      "stage": "complete",
+      "success": true,
+      "backup_sha256": "70eae6a4d1a9881056a5426be77f3dadc2f4b57caf62bfa12eb6e9ca5c65a387",
+      "after_sha256": "fab538f4ec08153015e844efacad5a53e85bade769d5517c729dc63976aaf116",
+      "filesystem_unchanged": true,
+      "full_readback_unchanged": true
+    },
+    {
+      "name": "A-summary",
+      "firmware_sha256": "a2ebbb82763e6dcdac9024915966c9b1fab900d4166645beaa0aac7184425334",
+      "stage": "complete",
+      "success": true,
+      "backup_sha256": "fab538f4ec08153015e844efacad5a53e85bade769d5517c729dc63976aaf116",
+      "after_sha256": "3e807653babedf71adccd8ddc4a492f224f851c97fe072cf8d00373d8626dcfc",
+      "filesystem_unchanged": true,
+      "full_readback_unchanged": true
+    },
+    {
+      "name": "A-detailed",
+      "firmware_sha256": "29a4d3f39814bf98b7c4198979e83a4407342ab7853e95bad1d25e37d3ef2bd4",
+      "stage": "complete",
+      "success": true,
+      "backup_sha256": "3e807653babedf71adccd8ddc4a492f224f851c97fe072cf8d00373d8626dcfc",
+      "after_sha256": "7a9431d16afb298e2abe41da2905d74e4076e9defd3fa815c910b6ec723a0f75",
+      "filesystem_unchanged": true,
+      "full_readback_unchanged": true
+    },
+    {
+      "name": "B-summary",
+      "firmware_sha256": "e54dccc72a0b2da5897426559b12741dcffbbe56ef7a0b8ccaa2802be2e86a86",
+      "stage": "complete",
+      "success": true,
+      "backup_sha256": "7a9431d16afb298e2abe41da2905d74e4076e9defd3fa815c910b6ec723a0f75",
+      "after_sha256": "f3e3a8c54528f289cdf746bef44cb812bb7893ef66c537a2684feb2ffefacce3",
+      "filesystem_unchanged": true,
+      "full_readback_unchanged": true
+    },
+    {
+      "name": "C-test128",
+      "firmware_sha256": "5f40aaa4d62dab48d7bfe4f36e210c74181cca212cdf00e8099ad48d4414ca6e",
+      "stage": "complete",
+      "success": true,
+      "backup_sha256": "f3e3a8c54528f289cdf746bef44cb812bb7893ef66c537a2684feb2ffefacce3",
+      "after_sha256": "efb84885366e9668b4cb23422a3deb8b204153929e647ba2d98270c9bcb6fa6c",
+      "filesystem_unchanged": true,
+      "full_readback_unchanged": true
+    },
+    {
+      "name": "absolute30",
+      "firmware_sha256": "d742b15292cd2f99febd8d1e3fd38340efc39b8d5360db84f8e4ba39ecb4040b",
+      "stage": "complete",
+      "success": true,
+      "backup_sha256": "efb84885366e9668b4cb23422a3deb8b204153929e647ba2d98270c9bcb6fa6c",
+      "after_sha256": "ea68a07fd6bb63d18a0ed3593bc97d89f8d41bfdf60aad6e73deebfd65b7fb59",
+      "filesystem_unchanged": true,
+      "full_readback_unchanged": true
+    },
+    {
+      "name": "cooperative",
+      "firmware_sha256": "36a9026439da9fef3124af0f927905c37908cea0337a3d417812b1eaf72c5825",
+      "stage": "complete",
+      "success": true,
+      "backup_sha256": "ea68a07fd6bb63d18a0ed3593bc97d89f8d41bfdf60aad6e73deebfd65b7fb59",
+      "after_sha256": "65f824d768962d4baf266f168b9f22c3159cfb09d00762e8009a7af6c4e623ed",
+      "filesystem_unchanged": true,
+      "full_readback_unchanged": true
+    },
+    {
+      "name": "work64",
+      "firmware_sha256": "71a5dbdfe6ea30b3ffde23975630ae0e219bb6914cd157da750daccc67a93ea7",
+      "stage": "complete",
+      "success": true,
+      "backup_sha256": "65f824d768962d4baf266f168b9f22c3159cfb09d00762e8009a7af6c4e623ed",
+      "after_sha256": "0298d14b33e86f470eaa8987d4654e198c9de493d981aec542aa9e03a2226c86",
+      "filesystem_unchanged": true,
+      "full_readback_unchanged": true
+    }
+  ],
+  "failure": null,
+  "fpga_programming": 0,
+  "fpga_flash_writes": 0,
+  "success": true,
+  "finish_utc": "2026-11-06T03:37:43.944459+00:00",
+  "prestart_incident": "AssertionError('A-off/demo failed; no retry')",
+  "resumed_utc": "2026-11-06T03:09:26.454110+00:00",
+  "prestart_incidents": [
+    "FileExistsError(17, 'File exists')"
+  ],
+  "final_state": "work64 installed; explicit g/b gate, PCM stopped, FPGA unchanged"
+}

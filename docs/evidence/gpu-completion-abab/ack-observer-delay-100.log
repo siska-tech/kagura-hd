@@ -1,0 +1,7 @@
+PASS: command queue depth=8 registered_head=1
+- sim/tests/tb_fb_command_queue.sv:123: Verilog $finish
+ACK_OBSERVE cycles=4432 completion_hold=3777 blocked_dispatch=3283 no_younger=494 blocked_runs=29
+PASS: passive ACK dispatch observer; simulation cycles, not hardware cycles
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 44us; walltime 0.011 s; speed 6.860 ms/s
+- Verilator: cpu 0.006 s on 1 threads; alloced 121 MB

@@ -1,0 +1,34 @@
+--- a/rtl/fb/kagura_fb_scanout.sv
++++ b/rtl/fb/kagura_fb_scanout.sv
+@@ -48,6 +48,16 @@
+     reg [191:0] palette;
+     reg [15:0] generation;
+     assign generation_out=generation;
+     reg vblank,take;
++    reg generation_carry;
++    // Track the carry for the generation value after this edge, including
++    // when a vblank increment changes the low byte on the same edge.
++    always @(posedge pix_clk) begin
++        if(pix_reset) generation_carry<=0;
++        else generation_carry<=generation[7:0]=={7'b1111111,!vblank};
++    end
++    wire [15:0] next_generation={generation[15:8]+8'(generation_carry),
++                                 generation[7:0]+8'd1};
++
+     reg [8:0] next_row;
+     always @(posedge pix_clk) begin
+@@ -74,12 +84,12 @@
+             line_ack_sync<={line_ack_sync[0],line_ack};
+             if(vblank) begin
+-                started<=1; generation<=generation+1'b1;
++                started<=1; generation<=next_generation;
+                 if(present_sync[1]!=present_seen) begin
+                     active_page<=held_page; palette<=held_palette;
+                     present_ack<=present_sync[1]; present_seen<=present_sync[1];
+                 end
+                 if(line_slot_free) begin
+                     line_page<=present_sync[1]!=present_seen ? held_page : active_page;
+-                    line_generation<=generation+1'b1; line_row<=0; line_toggle<=~line_toggle;
++                    line_generation<=next_generation; line_row<=0; line_toggle<=~line_toggle;
+                 end
+             end else if(take && next_row<359 && line_slot_free) begin

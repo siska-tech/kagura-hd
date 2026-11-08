@@ -1,0 +1,144 @@
+{
+  "scope": "offline audit; hardware untouched; estimates are not measured improvements",
+  "sources_sha256": {
+    "src/b16.c": "52003eec9ad10f21794c673b2664387b066e85b5f81cb499f3335d608fbc4d06",
+    "src/rp2040_main.c": "e91bbbea0634c2e27430772a3fa9cd70a31e3c3f6c568e676844ea328efe726d",
+    "out/optimized.dll": "97d8125219541cb36a4cd6df7afa857b39c4980a024cf1c74cebf3c863eb8016",
+    "evidence/hardware/demo-usb.log": "f1a1c14e99a20ed17194ef7a8cf44c1cd75ea1a3eb791e95b3ebced2936831de",
+    "evidence/hardware/performance.json": "c5d4c017574a6d5472d0d5f9819ee165786e35fd6a738ca8eea78d967b061211"
+  },
+  "scenes": [
+    {
+      "scene": 0,
+      "name": "BOOT",
+      "hardware_fps": 14.5,
+      "required_throughput_factor": 2.0689655172413794,
+      "hardware_commands_per_logged_frame": 118.09655172413792,
+      "hardware_mean_call_ms": 59.712248275862066,
+      "observed_between_calls_median_ms": 7.512999999999998,
+      "pc_59_frame_trace_commands_per_frame": {
+        "black_fill": 62.186440677966104,
+        "fill": 45.30508474576271,
+        "blit": 6.915254237288136,
+        "palette": 1.0,
+        "present": 1.0
+      },
+      "pc_scope": "33ms input times, scene t=1066..2980ms; not hardware command distribution"
+    },
+    {
+      "scene": 1,
+      "name": "HYPERSPACE",
+      "hardware_fps": 15.35,
+      "required_throughput_factor": 1.9543973941368078,
+      "hardware_commands_per_logged_frame": 105.0814332247557,
+      "hardware_mean_call_ms": 56.68845928338762,
+      "observed_between_calls_median_ms": 7.749000000000002,
+      "pc_59_frame_trace_commands_per_frame": {
+        "black_fill": 40.74576271186441,
+        "fill": 64.03389830508475,
+        "palette": 1.0,
+        "present": 1.0
+      },
+      "pc_scope": "33ms input times, scene t=1066..2980ms; not hardware command distribution"
+    },
+    {
+      "scene": 2,
+      "name": "RASTER WAVES",
+      "hardware_fps": 8.35,
+      "required_throughput_factor": 3.5928143712574854,
+      "hardware_commands_per_logged_frame": 242.89221556886227,
+      "hardware_mean_call_ms": 110.45048502994013,
+      "observed_between_calls_median_ms": 7.847999999999999,
+      "pc_59_frame_trace_commands_per_frame": {
+        "black_fill": 24.135593220338983,
+        "fill": 162.0,
+        "blit": 55.0,
+        "palette": 1.0,
+        "present": 1.0
+      },
+      "pc_scope": "33ms input times, scene t=1066..2980ms; not hardware command distribution"
+    },
+    {
+      "scene": 3,
+      "name": "PLASMA ENGINE",
+      "hardware_fps": 11.65,
+      "required_throughput_factor": 2.575107296137339,
+      "hardware_commands_per_logged_frame": 136.1802575107296,
+      "hardware_mean_call_ms": 76.5483991416309,
+      "observed_between_calls_median_ms": 7.301000000000002,
+      "pc_59_frame_trace_commands_per_frame": {
+        "black_fill": 24.0,
+        "blit": 108.0,
+        "palette": 1.0,
+        "present": 1.0
+      },
+      "pc_scope": "33ms input times, scene t=1066..2980ms; not hardware command distribution"
+    },
+    {
+      "scene": 4,
+      "name": "ROTOZOOM",
+      "hardware_fps": 6.52,
+      "required_throughput_factor": 4.601226993865031,
+      "hardware_commands_per_logged_frame": 323.1226993865031,
+      "hardware_mean_call_ms": 143.18188957055216,
+      "observed_between_calls_median_ms": 7.7239999999999895,
+      "pc_59_frame_trace_commands_per_frame": {
+        "black_fill": 24.0,
+        "fill": 288.0,
+        "blit": 7.0,
+        "palette": 1.0,
+        "present": 1.0
+      },
+      "pc_scope": "33ms input times, scene t=1066..2980ms; not hardware command distribution"
+    },
+    {
+      "scene": 5,
+      "name": "BLIT STORM",
+      "hardware_fps": 14.4,
+      "required_throughput_factor": 2.0833333333333335,
+      "hardware_commands_per_logged_frame": 120.075,
+      "hardware_mean_call_ms": 60.69552222222222,
+      "observed_between_calls_median_ms": 8.012999999999998,
+      "pc_59_frame_trace_commands_per_frame": {
+        "black_fill": 99.13559322033899,
+        "blit": 27.8135593220339,
+        "palette": 1.0,
+        "present": 1.0
+      },
+      "pc_scope": "33ms input times, scene t=1066..2980ms; not hardware command distribution"
+    },
+    {
+      "scene": 6,
+      "name": "VECTOR WORLD",
+      "hardware_fps": 3.9,
+      "required_throughput_factor": 7.6923076923076925,
+      "hardware_commands_per_logged_frame": 569.9871794871794,
+      "hardware_mean_call_ms": 246.5908205128205,
+      "observed_between_calls_median_ms": 7.805500000000009,
+      "pc_59_frame_trace_commands_per_frame": {
+        "black_fill": 103.94915254237289,
+        "fill": 447.6779661016949,
+        "palette": 1.0,
+        "present": 1.0
+      },
+      "pc_scope": "33ms input times, scene t=1066..2980ms; not hardware command distribution"
+    },
+    {
+      "scene": 7,
+      "name": "FINALE",
+      "hardware_fps": 21.0,
+      "required_throughput_factor": 1.4285714285714286,
+      "hardware_commands_per_logged_frame": 37.095238095238095,
+      "hardware_mean_call_ms": 26.166295238095238,
+      "observed_between_calls_median_ms": 21.66,
+      "pc_59_frame_trace_commands_per_frame": {
+        "black_fill": 54.220338983050844,
+        "fill": 31.338983050847457,
+        "blit": 61.91525423728814,
+        "palette": 1.0,
+        "present": 1.0
+      },
+      "pc_scope": "33ms input times, scene t=1066..2980ms; not hardware command distribution"
+    }
+  ]
+}

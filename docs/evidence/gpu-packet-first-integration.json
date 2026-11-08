@@ -1,0 +1,112 @@
+{
+  "hardware_tested": false,
+  "description": "packet replication enabled SPI/QSPI queue depths 2/4/8; default-disabled depth-one board SPI/QSPI",
+  "tests": [
+    {
+      "path": "build/fb-verilator/tb_fb_board.run.log",
+      "passed": true,
+      "sha256": "CAB376ABDEC9CC0B1D3F7FE93A09AFD2AE6127FB15357976D1C49B56BF3AEF5F",
+      "results": [
+        "PASS: PCM2 board LANES=1 ABI1.4, Host upload/readback/FENCE, stereo sample oracle, gains, pause/resume, loop/one-shot, rejection, display"
+      ]
+    },
+    {
+      "path": "build/audio-qspi/run.log",
+      "passed": true,
+      "sha256": "CA6DD155C4DB9B914AF62A4C9ECEB177FE9090D8DD335671B4B5566786C67E7A",
+      "results": [
+        "PASS: PCM2 board LANES=4 ABI1.4, Host upload/readback/FENCE, stereo sample oracle, gains, pause/resume, loop/one-shot, rejection, display"
+      ]
+    },
+    {
+      "path": "build/fb-queue-host-packet-first/lanes-1-depth-2/run.log",
+      "passed": true,
+      "sha256": "192CB1F262D2E1B331FF6D899437A310E4A25070A7E1484C15F847EEB0CB4FBC",
+      "results": [
+        "PASS: queued fb_host LANES=1 depth=2 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching"
+      ]
+    },
+    {
+      "path": "build/fb-queue-host-packet-first/lanes-1-depth-4/run.log",
+      "passed": true,
+      "sha256": "30026337A528D122345A5E7D79CDD877262F58762515D51630B0F3EC78615A2E",
+      "results": [
+        "PASS: queued fb_host LANES=1 depth=4 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching"
+      ]
+    },
+    {
+      "path": "build/fb-queue-host-packet-first/lanes-1-depth-8/run.log",
+      "passed": true,
+      "sha256": "AFF14D1F6D2FB994A683A421FFBA7456A9557903CDB0BBF9786EFF64598E1F21",
+      "results": [
+        "PASS: queued fb_host LANES=1 depth=8 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching"
+      ]
+    },
+    {
+      "path": "build/fb-queue-host-packet-first/lanes-4-depth-2/run.log",
+      "passed": true,
+      "sha256": "CFEFD15CC03424A4C52296E8969217FEF585D9C45355412DA4429D8EE5EFA7B1",
+      "results": [
+        "PASS: queued fb_host LANES=4 depth=2 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching"
+      ]
+    },
+    {
+      "path": "build/fb-queue-host-packet-first/lanes-4-depth-4/run.log",
+      "passed": true,
+      "sha256": "22865CA03631E601E1BCD050D18F6B115887CEDBE7E68987841AD57B44A3CD8F",
+      "results": [
+        "PASS: queued fb_host LANES=4 depth=4 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching"
+      ]
+    },
+    {
+      "path": "build/fb-queue-host-packet-first/lanes-4-depth-8/run.log",
+      "passed": true,
+      "sha256": "AF2003BADDB1A09D10A700287A4A61A6F995DB7BE6A91DC871DE311CF509840D",
+      "results": [
+        "PASS: queued fb_host LANES=4 depth=8 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "rtl/hdmi/kagura_packet_assembler.sv",
+      "sha256": "ADFED5D85BBB90221E798E98C33ABD84504DC6FDFA7A39493F826740ED4304C0"
+    },
+    {
+      "path": "rtl/hdmi/kagura_hdmi_stream_eval.sv",
+      "sha256": "29D3D925BE1638361BCF3CB87B6D36233981C55D44B4EAC7F3A7A946C049DBDE"
+    },
+    {
+      "path": "rtl/fb/kagura_fb_core.sv",
+      "sha256": "5A6B35458127AFAE3333AF0B3E036F964195755BED6E024E228C042D7A321F1D"
+    },
+    {
+      "path": "boards/tang-nano-9k/kagura_fb_top.sv",
+      "sha256": "4F132A83F1D6A3B6F26CAAB7932F67AE8E581DD6E11BE70DAE0DAE8366A9820F"
+    },
+    {
+      "path": "sim/tests/tb_fb_host.sv",
+      "sha256": "5553D132701B38DA37AB88C9D373D62BCDFC46B736D576C3F72C0CC4798BB122"
+    },
+    {
+      "path": "sim/tests/tb_fb_board.sv",
+      "sha256": "156FE8A01C3A22F033E93B4404E21C83CAB2C416F7D6873E3C61A22DBA42AD77"
+    },
+    {
+      "path": "sim/tests/tb_fb_board_qspi.sv",
+      "sha256": "C8E5344DD9A0677D076BD5E5665AC5C1A40ADA7836EE724DB08023392B10A8E8"
+    },
+    {
+      "path": "tools/prepare-hdmi-stream.py",
+      "sha256": "492A5AB431D95C98619FF8AFA983CB82D5FDB22E628B8E081C37E59D893FE422"
+    },
+    {
+      "path": "tools/build-fb.tcl",
+      "sha256": "5480594B6C66E7F952C9AB7D83D938FC52FDBBE44EABCC2AF47B862595FAF711"
+    },
+    {
+      "path": "tools/test-fb-queue-host.sh",
+      "sha256": "0F1C6FD7D0DADBBC0323B4595C54E28D5637B55B8D97CA9756468FE3ACE9E58F"
+    }
+  ]
+}

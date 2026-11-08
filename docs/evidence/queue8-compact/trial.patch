@@ -1,0 +1,49 @@
+diff --git a/build/queue8-compact/original.sv b/build/queue8-compact/block/source-snapshot/rtl/fb/kagura_fb_registers.sv
+index e36febc..db11ce5 100644
+--- a/build/queue8-compact/original.sv
++++ b/build/queue8-compact/block/source-snapshot/rtl/fb/kagura_fb_registers.sv
+@@ -26,7 +26,7 @@ module kagura_fb_registers #(parameter bit AUDIO_CSR=0, parameter integer QUEUE_
+     reg legacy_valid;
+     reg [127:0] staging_command;
+     localparam PTR_BITS=QUEUE_DEPTH<=2 ? 1 : $clog2(QUEUE_DEPTH);
+-    reg [127:0] descriptors [0:QUEUE_DEPTH-1];
++
+     reg [PTR_BITS-1:0] read_ptr,write_ptr;
+     reg [PTR_BITS:0] queue_count;
+     reg active,barrier;
+@@ -35,7 +35,25 @@ module kagura_fb_registers #(parameter bit AUDIO_CSR=0, parameter integer QUEUE_
+     wire simple_command=staging_command[7:0]<=3;
+     wire accepting=req_valid && req_ready && req_write && req_addr==26 &&
+         req_wdata==1 && !busy && (queued ? (simple_command || queue_count==0) : cmd_ready);
+-    assign command=queued ? descriptors[read_ptr] : staging_command;
++    if(QUEUE_DEPTH==8) begin: compact_queue
++        // For queued opcodes 0..3, high colour/reserved bits are tested only
++        // for zero. Retain that predicate and the entire low payload.
++        // A barrier locks staging until retirement, so its omitted bits
++        // remain available without another full-width snapshot.
++        (* syn_ramstyle = "block_ram" *) reg [94:0] entries [0:7];
++        always @(posedge clk)
++            if(accepting)
++                entries[write_ptr]<={|staging_command[127:100],
++                    staging_command[99:8],staging_command[1:0]};
++        wire [94:0] head=entries[read_ptr];
++        assign command={barrier ? staging_command[127:100] : {27'b0,head[94]},
++            head[93:2],barrier ? staging_command[7:2] : 6'd0,head[1:0]};
++    end else if(QUEUE_DEPTH>1) begin: full_queue
++        reg [127:0] descriptors [0:QUEUE_DEPTH-1];
++        always @(posedge clk)
++            if(accepting) descriptors[write_ptr]<=staging_command;
++        assign command=descriptors[read_ptr];
++    end else assign command=staging_command;
+     assign cmd_valid=queued ? (!reset && queue_count!=0 && !active && !completed) : legacy_valid;
+     initial begin
+         if(QUEUE_DEPTH!=1 && QUEUE_DEPTH!=2 && QUEUE_DEPTH!=4 && QUEUE_DEPTH!=8)
+@@ -50,7 +68,7 @@ module kagura_fb_registers #(parameter bit AUDIO_CSR=0, parameter integer QUEUE_
+                 default: ;
+             endcase
+             if(accepting) begin
+-                descriptors[write_ptr]<=staging_command;
++
+                 write_ptr<=write_ptr+1'b1;
+                 if(!simple_command) barrier<=1;
+             end

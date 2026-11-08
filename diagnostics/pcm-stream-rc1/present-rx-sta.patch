@@ -1,0 +1,29 @@
+--- a/rtl/fb/kagura_fb_scanout.sv
++++ b/rtl/fb/kagura_fb_scanout.sv
+@@ -44,6 +44,12 @@ module kagura_fb_scanout (
+             end
+         end
+     end
++    // The held payload settles within one pixel period, before the second
++    // REQ sample. At commit, both the payload and synchronized REQ are ready.
++    reg [192:0] present_rx;
++    always @(posedge pix_clk)
++        present_rx <= {held_page, held_palette};
++
+     reg active_page,started;
+     reg [191:0] palette;
+     reg [15:0] generation;
+@@ -75,11 +81,11 @@ module kagura_fb_scanout (
+             if(vblank) begin
+                 started<=1; generation<=generation+1'b1;
+                 if(present_sync[1]!=present_seen) begin
+-                    active_page<=held_page; palette<=held_palette;
++                    {active_page,palette}<=present_rx;
+                     present_ack<=present_sync[1]; present_seen<=present_sync[1];
+                 end
+                 if(line_slot_free) begin
+-                    line_page<=present_sync[1]!=present_seen ? held_page : active_page;
++                    line_page<=present_sync[1]!=present_seen ? present_rx[192] : active_page;
+                     line_generation<=generation+1'b1; line_row<=0; line_toggle<=~line_toggle;
+                 end
+             end else if(take && next_row<359 && line_slot_free) begin

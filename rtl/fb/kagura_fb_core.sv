@@ -9,7 +9,10 @@
 module kagura_fb_core #(
     parameter integer INIT_CYCLES=4096,
     parameter bit AUDIO_REGISTER_TICK=1,
-    parameter bit PCM_ONLY=0
+    parameter bit PCM_ONLY=0,
+    parameter bit CURSOR_PIPELINE_MAILBOX=0,
+    parameter bit AUDIO_REGISTER_CREDITS=0,
+    parameter bit PACKET_REPLICATE_FIRST=0
 ) (
     input wire clk_system,clk_pixel,clk_pixel_x5,reset,
     input wire host_valid,host_write,
@@ -39,6 +42,9 @@ module kagura_fb_core #(
     input wire [43:0] pcm_start,pcm_end,pcm_loop,
     input wire [1:0] pcm_loop_enable,
     output wire [7:0] pcm_status0,pcm_status1,
+    input wire stream_control_write,stream_publish,
+    input wire [7:0] stream_data,
+    output wire [7:0] stream_token,stream_status,
     output wire wave_read,
     output wire [8:0] wave_addr,
     input wire signed [7:0] wave_data,
@@ -103,16 +109,19 @@ module kagura_fb_core #(
     wire [1:0] cfg_valid,cfg_ready,start_play,stop_play,pf_ready,pf_active;
     wire [1:0] pf_done,pf_underrun,pf_config_error,pf_memory_error;
     wire signed [7:0] pcm0,pcm1;
-    wire apply_boundary,sample_boundary;
-    kagura_pcm_prefetch #(.ADDR_WIDTH(22),.BUFFER_ADDR_BITS(5),.MEMORY_BYTES(23'h400000),.RESPONSE_TIMEOUT(4096)) prefetch(
+    wire apply_boundary,sample_boundary,stream_cancel_control;
+    kagura_pcm_prefetch #(.ADDR_WIDTH(22),.BUFFER_ADDR_BITS(5),.MEMORY_BYTES(23'h400000),.RESPONSE_TIMEOUT(4096),.STREAM(1)) prefetch(
         .clk(clk_system),.reset(system_reset),.sample_tick(sample_boundary),.cfg_valid,.cfg_ready,
+        .stream_control_write,.stream_publish,.stream_data,.stream_token,.stream_status,
+        .explicit_stop(pcm_stop),.stream_cancel_control,
         .cfg_start(pcm_start),.cfg_end(pcm_end),.cfg_loop(pcm_loop),.cfg_loop_enable(pcm_loop_enable),
         .start_play,.stop_play,.ready(pf_ready),.active(pf_active),.done(pf_done),
         .underrun(pf_underrun),.config_error(pf_config_error),.memory_error(pf_memory_error),
         .sample0(pcm0),.sample1(pcm1),.mem_req_valid(pf_req),.mem_req_ready(pf_req_ready),
         .mem_req_addr(pf_addr),.mem_rsp_valid(pf_rsp),.mem_rsp_data(pf_data),.mem_rsp_error(pf_rsp_error));
     kagura_pcm_control pcm_control(
-        .clk(clk_system),.reset(system_reset),.prepare(pcm_prepare),.stop(pcm_stop),.clear(pcm_clear),
+        .clk(clk_system),.reset(system_reset),.prepare(pcm_prepare),.stop(pcm_stop | {2{stream_cancel_control}}),
+        .cancel_pending(stream_cancel_control),.clear(pcm_clear),
         .apply_boundary,.commit_enable(cfg_pcm_enable),.cfg_valid,.cfg_ready,.start_play,.stop_play,.cache_flush,
         .pf_ready,.pf_active,.pf_done,.pf_underrun,.pf_config_error,.pf_memory_error,
         .status0(pcm_status0),.status1(pcm_status1));
@@ -128,12 +137,12 @@ module kagura_fb_core #(
     // The inherited protocol registers video_data_period one cycle before
     // mode. Delay RGB to keep first/last encoded pixels aligned with that DE.
     wire [23:0] hdmi_rgb;
-    kagura_fb_cursor cursor(
+    kagura_fb_cursor #(.PIPELINE_MAILBOX(CURSOR_PIPELINE_MAILBOX)) cursor(
         .sys_clk(clk_system),.sys_reset(system_reset),.pix_clk(clk_pixel),.pix_reset(pixel_reset),
         .req_valid(cursor_req_valid),.req_write(cursor_req_write),.req_addr(cursor_req_addr),.req_wdata(cursor_req_wdata),
         .req_ready(cursor_req_ready),.rsp_valid(cursor_rsp_valid),.rsp_error(cursor_rsp_error),.rsp_data(cursor_rsp_data),.irq(cursor_irq),
         .cx,.cy,.background(rgb),.rgb_out(hdmi_rgb));
-    kagura_hdmi_stream_eval #(.EXTERNAL_RGB(1),.VIDEO_ID_CODE(4),.AUDIO_REGISTER_TICK(AUDIO_REGISTER_TICK)) hdmi(
+    kagura_hdmi_stream_eval #(.EXTERNAL_RGB(1),.VIDEO_ID_CODE(4),.AUDIO_REGISTER_TICK(AUDIO_REGISTER_TICK),.AUDIO_REGISTER_CREDITS(AUDIO_REGISTER_CREDITS),.PACKET_REPLICATE_FIRST(PACKET_REPLICATE_FIRST)) hdmi(
         .clk_system,.clk_pixel,.clk_pixel_x5,.reset(pixel_reset),.sample_valid,.sample_data({sample_right,sample_left}),
         .full(),.overflow(audio_overflow),.underflow(audio_underflow),.tmds,.tmds_clock,.muted(audio_muted),
         .rgb_in(hdmi_rgb),.cx_out(cx),.cy_out(cy),.underflow_toggle());

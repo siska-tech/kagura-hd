@@ -1,0 +1,14 @@
+{
+  "audit_functionally_feasible_for_board": true,
+  "prototype_implemented_and_tested": true,
+  "adopted": false,
+  "reason": "Only 13 CLS saved (0.3%); exposing boot/RUN mux in the bundled CDC path worsens Setup from +0.050 to -3.569 ns with 68 violated endpoints",
+  "ff_saved": 192,
+  "cls_saved": 13,
+  "mainline_restored": true,
+  "prior_production_inputs_hash_matched": 41,
+  "strict_numeric_gate_passed": false,
+  "fpga_sram_programs": 0,
+  "fpga_flash_writes": 0,
+  "rp2040_writes": 0
+}

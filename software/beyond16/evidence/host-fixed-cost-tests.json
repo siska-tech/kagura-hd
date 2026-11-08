@@ -1,0 +1,16 @@
+[
+  {
+    "fast": 0,
+    "lengths_and_data": "PASS",
+    "wait_cycles": "PASS",
+    "three_fault_modes_no_retry": "PASS",
+    "wrong_clock": "PASS"
+  },
+  {
+    "fast": 1,
+    "lengths_and_data": "PASS",
+    "wait_cycles": "PASS",
+    "three_fault_modes_no_retry": "PASS",
+    "wrong_clock": "PASS"
+  }
+]

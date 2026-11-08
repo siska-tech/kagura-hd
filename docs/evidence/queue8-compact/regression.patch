@@ -1,0 +1,27 @@
+diff --git a/sim/tests/tb_fb_host.sv b/build/queue8-compact/tb_fb_host.sv
+index a507aa0..342b919 100644
+--- a/sim/tests/tb_fb_host.sv
++++ b/build/queue8-compact/tb_fb_host.sv
+@@ -169,6 +169,22 @@ module tb_fb_host #(parameter integer LANES=1, QUEUE_DEPTH=1, parameter bit REGI
+                 $display("QUEUE transport LANES=%0d depth=%0d round=%0d accept=%0d drain=%0d cycles",
+                     LANES,QUEUE_DEPTH,round_id,last_accept_cycle-first_cycle,sys_cycles-first_cycle);
+             end
++            // Primary perturbation: each folded bit independently, with every simple opcode.
++            for(integer op=0;op<4;op++) begin
++                for(integer bitpos=100;bitpos<128;bitpos++) begin
++                    descriptor=0;
++                    descriptor[7:0]=8'(op);
++                    descriptor[31:16]=16'(1000+bitpos+32*op);
++                    descriptor[bitpos]=1;
++                    stage_command(descriptor);
++                    wait_tag(descriptor[31:16],2);
++                    read_registers(7,0,1);
++                    if(rxbuf[0]!=2) $fatal(1,"folded bit sticky error");
++                    write_one(31,1);write_one(7,0);
++                end
++            end
++            descriptor=0;descriptor[7:0]=8'h80;descriptor[31:16]=777;
++            stage_command(descriptor);wait_tag(777,2);write_one(31,1);write_one(7,0);
+             // Shared-window operations after drain, with explicit completion ACK.
+             write_one(25,0);
+             for(integer i=0;i<64;i++) txbuf[i]=8'(i*7+3);

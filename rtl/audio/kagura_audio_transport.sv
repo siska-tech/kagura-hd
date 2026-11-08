@@ -9,7 +9,8 @@ module kagura_audio_transport #(
     parameter integer TICK_NUM=525,
     parameter integer TICK_DEN=1,
     parameter integer PREFILL=4,
-    parameter bit REGISTER_TICK=0
+    parameter bit REGISTER_TICK=0,
+    parameter bit REGISTER_CREDITS=0
 ) (
     input wire reset, clk_system, clk_pixel,
     input wire sample_valid,
@@ -71,7 +72,20 @@ module kagura_audio_transport #(
     endgenerate
     // Prepare the output independently of ready; a valid word is held until
     // accepted. This removes packetizer-ready from the FIFO request path.
-    wire issue=!pending && !pixel_valid && credits!=0;
+    // Cache the next counter's nonzero predicate, without delaying issue.
+    // issue can only subtract from a nonzero counter; saturation keeps it
+    // nonzero. This removes the three-bit reduction from the FIFO pop path.
+    wire have_credits,issue;
+    generate if(REGISTER_CREDITS) begin: cached_credits
+        reg nonzero;
+        always @(posedge clk_pixel or posedge reset)
+            if(reset) nonzero<=0;
+            else nonzero<=|credits[2:1] || tick || (credits[0] && !issue);
+        assign have_credits=nonzero;
+    end else begin: direct_credits
+        assign have_credits=credits!=0;
+    end endgenerate
+    assign issue=!pending && !pixel_valid && have_credits;
     wire pop=!reset && issue && !muted && !empty;
     wire fill=issue && (muted || empty);
     kagura_async_fifo fifo(.reset(reset),.write_clk(clk_system),

@@ -1,0 +1,10 @@
+{
+  "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+  "restore_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "fpga_flash_writes": 0,
+  "rp2040_flash_writes": 0,
+  "candidate_user_code": "0x00008039",
+  "flash_after": "c7052a32c9c4d83c0c4115c64b14d6bb18959301eda3ad3ecfb53fa50e1fc26a",
+  "full_flash_equal": true,
+  "restore_user_code": "0x00004068"
+}

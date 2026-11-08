@@ -1,0 +1,23 @@
+{
+  "simulation_only": true,
+  "variants": [
+    {
+      "delay": 0,
+      "cycles": 1232,
+      "completion_hold": 577,
+      "blocked_dispatch": 483,
+      "no_younger": 94,
+      "blocked_runs": 29
+    },
+    {
+      "delay": 100,
+      "cycles": 4432,
+      "completion_hold": 3777,
+      "blocked_dispatch": 3283,
+      "no_younger": 494,
+      "blocked_runs": 29
+    }
+  ],
+  "blocked_cycles_delta": 2800,
+  "hold_cycles_delta": 3200
+}

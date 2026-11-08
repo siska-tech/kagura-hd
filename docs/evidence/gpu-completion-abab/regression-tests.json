@@ -1,0 +1,26 @@
+{
+  "tests": [
+    {
+      "test": "queue-depth-2",
+      "sha256": "2558a3adba98b1197a968b72e0a51ee834f12f7cb7b0f21e1fc14ec99b820a1a",
+      "passed": true
+    },
+    {
+      "test": "queue-depth-4",
+      "sha256": "8be9df5a7ae67b3338f57df8b3c92328e9a88b33836637317107af96a9790175",
+      "passed": true
+    },
+    {
+      "test": "queue-depth-8",
+      "sha256": "7bb898fc60d2953f129d9e4397d3dd1b0071d9b832dff2701fb75536c0de7d5e",
+      "passed": true
+    },
+    {
+      "test": "depth-one-register-window",
+      "sha256": "b7a6ac914a40f16b596143e11ac6508262f2edbda8c65cfc29623df1ad261e5c",
+      "passed": true
+    }
+  ],
+  "passive_ack_observer": "ack-observer.json",
+  "frozen_firmware_host_tests": "../gpu-completion-burst/host-tests.json"
+}

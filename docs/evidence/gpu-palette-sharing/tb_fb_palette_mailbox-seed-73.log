@@ -1,0 +1,5 @@
+PASS: shared PALETTE mailbox frozen-reference cycle equality; acknowledgements=495 applications=497 resets=17
+- sim/tests/tb_fb_palette_mailbox.sv:58: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 102us; walltime 0.010 s; speed 9.668 ms/s
+- Verilator: cpu 0.011 s on 1 threads; alloced 121 MB

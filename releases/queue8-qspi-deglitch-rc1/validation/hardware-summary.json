@@ -1,0 +1,261 @@
+{
+  "hardware_tested": true,
+  "release_ready": false,
+  "user_provisionally_approved": true,
+  "numeric_timing_gate_passed": true,
+  "bitstream_sha256": "1f4aeec6f87cc6a8e795f8712047c335fe355045b74639454398a7acfd3ce46f",
+  "fpga_queue_depth": 8,
+  "fpga_sram_programs": 1,
+  "fpga_flash_writes": 0,
+  "conditions": "Same depth-eight FPGA, 120 MHz RP2040, CPU+PIO, profile OFF, relative33 scheduler, seed 0xb1616, one 150s full HDMI run",
+  "host_queue_scope": "Only FILL/PALETTE async; COPY/PRESENT/transfers/audio drain FIFO in order",
+  "variants": [
+    {
+      "name": "hardware",
+      "firmware_sha256": "c83545b61127dba78944037543f80b849fd8d87b6cb41e1b2bbeed280d74b008",
+      "frames": 4452,
+      "actual_present_fps": 29.68641376096469,
+      "present_intervals_us": {
+        "samples": 4451,
+        "mean": 33685.4430465064,
+        "median": 33334,
+        "p95": 49992,
+        "worst": 100004
+      },
+      "worst_call_us": 82299,
+      "worst_call_frame": {
+        "ms": 143101,
+        "scene": 7,
+        "us": 82299,
+        "present_before_us": 152912551,
+        "present_after_us": 152923993,
+        "draw_start_us": 152841697,
+        "deadline_us": 152875030
+      },
+      "scenes": [
+        {
+          "scene": 0,
+          "frames": 302,
+          "actual_update_fps": 30.301877166055696,
+          "present_intervals": {
+            "median_us": 33334,
+            "p95_us": 33343,
+            "worst_us": 50008,
+            "over_33_333ms_rate": 0.5016611295681063
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 1,
+          "frames": 606,
+          "actual_update_fps": 30.32569292955216,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33346,
+            "worst_us": 50010,
+            "over_33_333ms_rate": 0.4644628099173554
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 2,
+          "frames": 600,
+          "actual_update_fps": 29.999868781876113,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 33350,
+            "over_33_333ms_rate": 0.4774624373956594
+          },
+          "deadline_miss_rate": 0.0016666666666666668,
+          "relative_call_budget_miss_rate": 0.0016666666666666668
+        },
+        {
+          "scene": 3,
+          "frames": 601,
+          "actual_update_fps": 30.125399989998368,
+          "present_intervals": {
+            "median_us": 33334.0,
+            "p95_us": 50002,
+            "worst_us": 50016,
+            "over_33_333ms_rate": 0.5183333333333333
+          },
+          "deadline_miss_rate": 0.05324459234608985,
+          "relative_call_budget_miss_rate": 0.05324459234608985
+        },
+        {
+          "scene": 4,
+          "frames": 754,
+          "actual_update_fps": 30.16009845409669,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33346,
+            "worst_us": 50004,
+            "over_33_333ms_rate": 0.49667994687915007
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 5,
+          "frames": 758,
+          "actual_update_fps": 30.300091384595298,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33346,
+            "worst_us": 50012,
+            "over_33_333ms_rate": 0.48745046235138706
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 6,
+          "frames": 532,
+          "actual_update_fps": 26.59420755121238,
+          "present_intervals": {
+            "median_us": 33336,
+            "p95_us": 50013,
+            "worst_us": 66677,
+            "over_33_333ms_rate": 0.5988700564971752
+          },
+          "deadline_miss_rate": 0.2161654135338346,
+          "relative_call_budget_miss_rate": 0.2161654135338346
+        },
+        {
+          "scene": 7,
+          "frames": 299,
+          "actual_update_fps": 30.05027673481357,
+          "present_intervals": {
+            "median_us": 33334.0,
+            "p95_us": 33345,
+            "worst_us": 100004,
+            "over_33_333ms_rate": 0.5335570469798657
+          },
+          "deadline_miss_rate": 0.006688963210702341,
+          "relative_call_budget_miss_rate": 0.006688963210702341
+        }
+      ],
+      "transitions": [
+        {
+          "from_scene": 0,
+          "to_scene": 1,
+          "present_gap_us": 49995,
+          "next_draw_gap_us": 17069
+        },
+        {
+          "from_scene": 1,
+          "to_scene": 2,
+          "present_gap_us": 66657,
+          "next_draw_gap_us": 19077
+        },
+        {
+          "from_scene": 2,
+          "to_scene": 3,
+          "present_gap_us": 49997,
+          "next_draw_gap_us": 1010
+        },
+        {
+          "from_scene": 3,
+          "to_scene": 4,
+          "present_gap_us": 49988,
+          "next_draw_gap_us": 28113
+        },
+        {
+          "from_scene": 4,
+          "to_scene": 5,
+          "present_gap_us": 16670,
+          "next_draw_gap_us": 1006
+        },
+        {
+          "from_scene": 5,
+          "to_scene": 6,
+          "present_gap_us": 66667,
+          "next_draw_gap_us": 17071
+        },
+        {
+          "from_scene": 6,
+          "to_scene": 7,
+          "present_gap_us": 33320,
+          "next_draw_gap_us": 1743
+        }
+      ],
+      "timeouts": 0,
+      "pcm_status_fault": 0,
+      "stop_rc": 0,
+      "selftest_readback_bytes": 32,
+      "queue": {
+        "errors": 0,
+        "peak": 8,
+        "pending": 0,
+        "submitted": 324936,
+        "retired": 324936
+      },
+      "transaction_window_s": 148.968,
+      "transactions_per_second": 39481.17045271468,
+      "wire_bytes_per_second": 196460.11895172118,
+      "frame_deadline_misses": 150,
+      "full_flash_after_tests_verified": true,
+      "audio": {
+        "sample_rate": 48000,
+        "channels": 2,
+        "onset_s": 3.46,
+        "audible_span_s": 150.01,
+        "low_10ms_blocks": 0,
+        "low_10ms_blocks_by_channel": [
+          0,
+          0
+        ],
+        "longest_low_rms_ms": 0,
+        "bgm_correlations": [
+          0.9948263526074163,
+          0.9943468134580373,
+          0.9965324208800781,
+          0.9979505422399172,
+          0.9978079922759483,
+          0.9972470361914313,
+          0.9952173316803267,
+          0.9946769387287611
+        ],
+        "scope": "Physical HDMI capture; RMS scan and eight quiet segments, not an independent underrun counter"
+      },
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "60/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "157.323000"
+        }
+      },
+      "capture_buffer_full_mentions": 0,
+      "recording_sha256": "5213c0c0c2f9135eb1a11f3c27b2bce97e332be1ad17d3b0e42caf72814836ee"
+    }
+  ],
+  "limits": [
+    "Single fixed-order run per host; no randomized repeated/PVT qualification",
+    "Software pending peak is not a hardware occupancy counter",
+    "No concurrent depth-one FPGA reference in this campaign",
+    "CPU-observed PRESENT completion; not scanout timestamp",
+    "32-byte selftest readback is not full framebuffer verification",
+    "Physical PIO waveforms and all-sample audio integrity not measured"
+  ],
+  "original_backup": {
+    "sha256": "c7052a32c9c4d83c0c4115c64b14d6bb18959301eda3ad3ecfb53fa50e1fc26a"
+  },
+  "final_state": "approved Queue8 restored; full RP2040 flash unchanged"
+}

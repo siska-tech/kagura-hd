@@ -1,0 +1,613 @@
+--- a/rtl/fb/kagura_fb_scanout.sv
++++ b/rtl/fb/kagura_fb_scanout.sv
+@@ -4,7 +4,10 @@
+ // A five-pixel lookahead includes controls, RAM, index, selection and RGB.
+ // System/pixel resets must be asserted together. Mailbox payloads are held
+ // until ack; the board implementation must constrain these CDC paths.
+-module kagura_fb_scanout (
++// SHARED_PRESENT_PALETTE is only for a producer that holds its palette from
++// request acceptance through present_done (inclusive), e.g. kagura_fb_commands.
++// Default preserves the standalone snapshot interface.
++module kagura_fb_scanout #(parameter bit SHARED_PRESENT_PALETTE=0) (
+     input wire sys_clk,sys_reset,pix_clk,pix_reset,
+     input wire [10:0] cx,
+     input wire [9:0] cy,
+@@ -26,6 +29,18 @@
+     reg present_toggle,present_pending;
+     reg held_page;
+     reg [191:0] held_palette;
++    generate if(SHARED_PRESENT_PALETTE) begin: shared_palette_contract
++`ifndef SYNTHESIS
++        reg [191:0] accepted_palette;
++        always @(posedge sys_clk) begin
++            if(!sys_reset) begin
++                if(present_valid && present_ready) accepted_palette<=present_palette;
++                if(present_pending && present_palette!==accepted_palette)
++                    $fatal(1,"shared PRESENT palette changed before acknowledgement");
++            end
++        end
++`endif
++    end endgenerate
+     reg present_ack,present_seen;
+     (* ASYNC_REG="TRUE" *) reg [1:0] present_sync,present_ack_sync;
+     assign present_ready=!sys_reset && !present_pending;
+@@ -37,7 +52,8 @@
+             present_ack_sync<={present_ack_sync[0],present_ack};
+             present_done<=0;
+             if(present_valid && present_ready) begin
+-                held_page<=present_page; held_palette<=present_palette;
++                held_page<=present_page;
++                if(!SHARED_PRESENT_PALETTE) held_palette<=present_palette;
+                 present_toggle<=~present_toggle; present_pending<=1;
+             end else if(present_pending && present_ack_sync[1]==present_toggle) begin
+                 present_pending<=0; present_done<=1;
+@@ -75,7 +91,7 @@
+             if(vblank) begin
+                 started<=1; generation<=generation+1'b1;
+                 if(present_sync[1]!=present_seen) begin
+-                    active_page<=held_page; palette<=held_palette;
++                    active_page<=held_page; palette<=SHARED_PRESENT_PALETTE ? present_palette : held_palette;
+                     present_ack<=present_sync[1]; present_seen<=present_sync[1];
+                 end
+                 if(line_slot_free) begin
+--- a/rtl/fb/kagura_fb_core.sv
++++ b/rtl/fb/kagura_fb_core.sv
+@@ -12,7 +12,8 @@
+     parameter bit PCM_ONLY=0,
+     parameter bit CURSOR_PIPELINE_MAILBOX=0,
+     parameter bit AUDIO_REGISTER_CREDITS=0,
+-    parameter bit PACKET_REPLICATE_FIRST=0
++    parameter bit PACKET_REPLICATE_FIRST=0,
++    parameter bit SHARED_PRESENT_PALETTE=0
+ ) (
+     input wire clk_system,clk_pixel,clk_pixel_x5,reset,
+     input wire host_valid,host_write,
+@@ -80,7 +81,7 @@
+     assign host_done=rsp_done[2];
+     assign host_error=rsp_error[2];
+     assign host_rdata=rsp_data;
+-    kagura_fb_scanout display(
++    kagura_fb_scanout #(.SHARED_PRESENT_PALETTE(SHARED_PRESENT_PALETTE)) display(
+         .sys_clk(clk_system),.sys_reset(system_reset),.pix_clk(clk_pixel),.pix_reset(pixel_reset),.cx,.cy,
+         .present_valid,.present_page,.present_palette,.present_ready,.present_done,
+         .req_valid(req_valid[0]),.req_ready(req_ready[0]),.req_addr(req_addr[0]),
+--- a/boards/tang-nano-9k/kagura_fb_top.sv
++++ b/boards/tang-nano-9k/kagura_fb_top.sv
+@@ -2,7 +2,7 @@
+ // Kagura-FB host target. Clears both pages to black and initializes two
+ // silent PCM storage before accepting host commands. ABI1.4 PCM-only audio settings
+ // are Host-controlled and boot muted. No flash IO.
+-module kagura_fb_top #(parameter integer HOST_LANES=kagura_fb_config::HOST_LANES, parameter integer GPU_QUEUE_DEPTH=kagura_fb_config::GPU_QUEUE_DEPTH, parameter bit GPU_AUDIO_CREDITS=kagura_fb_config::GPU_AUDIO_CREDITS, parameter bit GPU_PACKET_FIRST=kagura_fb_config::GPU_PACKET_FIRST) (
++module kagura_fb_top #(parameter integer HOST_LANES=kagura_fb_config::HOST_LANES, parameter integer GPU_QUEUE_DEPTH=kagura_fb_config::GPU_QUEUE_DEPTH, parameter bit GPU_AUDIO_CREDITS=kagura_fb_config::GPU_AUDIO_CREDITS, parameter bit GPU_PACKET_FIRST=kagura_fb_config::GPU_PACKET_FIRST, parameter bit GPU_SHARED_PALETTE=kagura_fb_config::GPU_SHARED_PALETTE) (
+     input wire clk27,reset_n,host_sck,host_cs_n,
+     inout wire [3:0] host_io,
+     output wire host_busy,host_ready,host_irq_n,
+@@ -111,7 +111,7 @@
+     assign sd_hiz=4'bzzzz;
+     // Equivalent fractional-tick representations give the two transport
+     // placements different packing choices, with identical 48 kHz decisions.
+-    kagura_fb_core #(.AUDIO_REGISTER_TICK(HOST_LANES==4),.PCM_ONLY(1),.CURSOR_PIPELINE_MAILBOX(GPU_QUEUE_DEPTH>1),.AUDIO_REGISTER_CREDITS(GPU_QUEUE_DEPTH>1 && GPU_AUDIO_CREDITS),.PACKET_REPLICATE_FIRST(GPU_QUEUE_DEPTH>1 && GPU_PACKET_FIRST)) core(
++    kagura_fb_core #(.SHARED_PRESENT_PALETTE(GPU_SHARED_PALETTE),.AUDIO_REGISTER_TICK(HOST_LANES==4),.PCM_ONLY(1),.CURSOR_PIPELINE_MAILBOX(GPU_QUEUE_DEPTH>1),.AUDIO_REGISTER_CREDITS(GPU_QUEUE_DEPTH>1 && GPU_AUDIO_CREDITS),.PACKET_REPLICATE_FIRST(GPU_QUEUE_DEPTH>1 && GPU_PACKET_FIRST)) core(
+         .clk_system(system_clk),.clk_pixel(pixel),.clk_pixel_x5(serial),.reset,
+         .host_valid(host_active ? command_valid : stage==SEND),.host_write(host_active ? command_write : 1'b1),
+         .host_addr(host_active ? command_addr : host_addr),.host_words(host_active ? command_words : 5'd16),
+--- a/tools/build-fb.tcl
++++ b/tools/build-fb.tcl
+@@ -16,10 +16,12 @@
+ if {$packet_first ni {0 1}} { error "Expected packet first replication 0 or 1" }
+ set opt_goal [expr {[llength $argv]>6 ? [lindex $argv 6] : "auto"}]
+ if {$opt_goal ni {auto area timing}} { error "Expected synthesis goal auto, area or timing" }
+-puts "KAGURA_BUILD transport=$transport place_option=$place_option route_option=$route_option queue_depth=$queue_depth"
++set shared_palette [expr {[llength $argv]>7 ? [lindex $argv 7] : 0}]
++if {$shared_palette ni {0 1}} { error "Expected shared palette 0 or 1" }
++puts "KAGURA_BUILD transport=$transport place_option=$place_option route_option=$route_option queue_depth=$queue_depth shared_palette=$shared_palette"
+ set config [file join [pwd] kagura_fb_config.sv]
+ set configfile [open $config w]
+-puts $configfile "package kagura_fb_config; localparam integer HOST_LANES=[expr {$transport eq {qspi} ? 4 : 1}], GPU_QUEUE_DEPTH=$queue_depth, GPU_AUDIO_CREDITS=$audio_credits, GPU_PACKET_FIRST=$packet_first; endpackage"
++puts $configfile "package kagura_fb_config; localparam integer HOST_LANES=[expr {$transport eq {qspi} ? 4 : 1}], GPU_QUEUE_DEPTH=$queue_depth, GPU_AUDIO_CREDITS=$audio_credits, GPU_PACKET_FIRST=$packet_first, GPU_SHARED_PALETTE=$shared_palette; endpackage"
+ close $configfile
+ add_file -type verilog $config
+ set_device -name GW1NR-9C GW1NR-LV9QN88PC6/I5
+--- a/tools/build-fb.ps1
++++ b/tools/build-fb.ps1
+@@ -8,6 +8,7 @@
+     [ValidateSet(1,2,4,8)][int]$QueueDepth=1,
+     [switch]$RegisterAudioCredits,
+     [switch]$ReplicatePacketFirst,
++    [switch]$SharePresentPalette,
+     [ValidateSet('auto','area','timing')][string]$OptimizationGoal='auto',
+     [switch]$ReportOnly
+ )
+@@ -24,13 +25,14 @@
+     if($QueueDepth -ne 1) { $relativeBuild += "-queue$QueueDepth" }
+     if($RegisterAudioCredits) { $relativeBuild += '-credits' }
+     if($ReplicatePacketFirst) { $relativeBuild += '-packet-first' }
++    if($SharePresentPalette) { $relativeBuild += '-shared-palette' }
+     if($OptimizationGoal -ne 'auto') { $relativeBuild += "-opt-$OptimizationGoal" }
+     $build=Join-Path $root $relativeBuild
+     New-Item -ItemType Directory -Force $build | Out-Null
+     $started=Get-Date
+     Push-Location $build
+     try {
+-        & $GowinExe (Join-Path $root 'tools/build-fb.tcl') $Transport $PlaceOption $RouteOption $QueueDepth ([int]$RegisterAudioCredits.IsPresent) ([int]$ReplicatePacketFirst.IsPresent) $OptimizationGoal 2>&1 | Tee-Object -FilePath build.log
++        & $GowinExe (Join-Path $root 'tools/build-fb.tcl') $Transport $PlaceOption $RouteOption $QueueDepth ([int]$RegisterAudioCredits.IsPresent) ([int]$ReplicatePacketFirst.IsPresent) $OptimizationGoal ([int]$SharePresentPalette.IsPresent) 2>&1 | Tee-Object -FilePath build.log
+         if($LASTEXITCODE -ne 0) { throw 'Gowin build failed' }
+         if(Select-String -LiteralPath build.log -Pattern '^ERROR\s*\(' -Quiet) { throw 'Gowin reported synthesis/P&R errors' }
+         $bitstream=Get-Item -LiteralPath 'impl/pnr/kagura_fb.fs'
+--- a/tools/eval-fb-command-queue.ps1
++++ b/tools/eval-fb-command-queue.ps1
+@@ -8,6 +8,7 @@
+     [ValidateRange(0,2)][int]$RouteOption=2,
+     [switch]$RegisterAudioCredits,
+     [switch]$ReplicatePacketFirst,
++    [switch]$SharePresentPalette,
+     [ValidateSet('auto','area','timing')][string]$OptimizationGoal='auto',
+     [string]$OutputBase='build/fb-queue-eval'
+ )
+@@ -39,7 +40,7 @@
+     $started=Get-Date
+     Push-Location $build
+     try {
+-        & $GowinExe (Join-Path $root 'tools/build-fb.tcl') $Transport $PlaceOption $RouteOption $depth ([int]$RegisterAudioCredits.IsPresent) ([int]$ReplicatePacketFirst.IsPresent) $OptimizationGoal 2>&1 | Tee-Object -FilePath build.log
++        & $GowinExe (Join-Path $root 'tools/build-fb.tcl') $Transport $PlaceOption $RouteOption $depth ([int]$RegisterAudioCredits.IsPresent) ([int]$ReplicatePacketFirst.IsPresent) $OptimizationGoal ([int]$SharePresentPalette.IsPresent) 2>&1 | Tee-Object -FilePath build.log
+         $buildExit=$LASTEXITCODE
+         $failed=$buildExit -ne 0 -or (Select-String -LiteralPath build.log -Pattern '^ERROR\s*\(' -Quiet)
+         $bitstream=Get-Item -LiteralPath 'impl/pnr/kagura_fb.fs' -ErrorAction SilentlyContinue
+@@ -53,6 +54,7 @@
+             register_audio_credits=$RegisterAudioCredits.IsPresent;
+             replicate_packet_first=$ReplicatePacketFirst.IsPresent;
+             optimization_goal=$OptimizationGoal;
++            shared_present_palette=$SharePresentPalette.IsPresent;
+             build_failed=$failed;fresh_bitstream=$fresh;timing=$timing;
+             elapsed_seconds=[math]::Round(((Get-Date)-$started).TotalSeconds,1)}
+         if($fresh) { $entry.bitstream_sha256=(Get-FileHash $bitstream.FullName -Algorithm SHA256).Hash }
+--- a/sim/tests/tb_fb_board.sv
++++ b/sim/tests/tb_fb_board.sv
+@@ -1,7 +1,7 @@
+ `timescale 1ns/1ps
+ // Board-top functional integration only: clocks, DDR PHY and LVDS pins are
+ // stubbed. The real boot/host/core RTL talks to the independent CA model.
+-package kagura_fb_config; localparam integer HOST_LANES=1, GPU_QUEUE_DEPTH=1, GPU_AUDIO_CREDITS=0, GPU_PACKET_FIRST=0; endpackage
++package kagura_fb_config; localparam integer HOST_LANES=1, GPU_QUEUE_DEPTH=1, GPU_AUDIO_CREDITS=0, GPU_PACKET_FIRST=0, GPU_SHARED_PALETTE=0; endpackage
+ package fb_board_io; logic [7:0] read_r,read_f; endpackage
+ module kagura_nano9k_clocks #(parameter integer VIDEO_ID_CODE=4,PSRAM_CK_ENABLE=1)(
+  input wire clk27,reset_n,output reg pixel=0,serial=0,system_clk=0,
+--- a/sim/tests/tb_fb_board_qspi.sv
++++ b/sim/tests/tb_fb_board_qspi.sv
+@@ -1,7 +1,7 @@
+ `timescale 1ns/1ps
+ // Board-top functional integration only: clocks, DDR PHY and LVDS pins are
+ // stubbed. The real boot/host/core RTL talks to the independent CA model.
+-package kagura_fb_config; localparam integer HOST_LANES=1, GPU_QUEUE_DEPTH=1, GPU_AUDIO_CREDITS=0, GPU_PACKET_FIRST=0; endpackage
++package kagura_fb_config; localparam integer HOST_LANES=1, GPU_QUEUE_DEPTH=1, GPU_AUDIO_CREDITS=0, GPU_PACKET_FIRST=0, GPU_SHARED_PALETTE=0; endpackage
+ package fb_board_io; logic [7:0] read_r,read_f; endpackage
+ module kagura_nano9k_clocks #(parameter integer VIDEO_ID_CODE=4,PSRAM_CK_ENABLE=1)(
+  input wire clk27,reset_n,output reg pixel=0,serial=0,system_clk=0,
+--- a/sim/tests/tb_fb_scanout.sv
++++ b/sim/tests/tb_fb_scanout.sv
+@@ -1,5 +1,5 @@
+ `timescale 1ns/1ps
+-module tb_fb_scanout #(parameter bit INJECT_STALL=0);
++module tb_fb_scanout #(parameter bit INJECT_STALL=0, SHARED_PRESENT_PALETTE=0);
+     wire rword_valid,scan_word_valid;
+     wire [31:0] rword_data,scan_word_data;
+ 
+@@ -27,7 +27,7 @@
+     wire [511:0] rsp_data;
+     wire display_valid;
+     wire [19:0] display_addr;
+-    kagura_fb_scanout display(
++    kagura_fb_scanout #(.SHARED_PRESENT_PALETTE(SHARED_PRESENT_PALETTE)) display(
+         .sys_clk(clk),.sys_reset(reset),.pix_clk,.pix_reset(reset),.cx,.cy,
+         .present_valid,.present_page,.present_palette,.present_ready,.present_done,
+         .req_valid(display_valid),.req_ready(req_ready[0] && !stalled),.req_addr(display_addr),
+--- /dev/null
++++ b/sim/support/kagura_fb_scanout_palette_reference.sv
+@@ -0,0 +1,164 @@
++// SPDX-License-Identifier: Apache-2.0
++// 640x360 indexed framebuffer -> 1280x720, nearest-neighbour 2x scanout.
++// Coordinates are the current HDMI pixel-domain coordinates (1650x750 total).
++// A five-pixel lookahead includes controls, RAM, index, selection and RGB.
++// System/pixel resets must be asserted together. Mailbox payloads are held
++// until ack; the board implementation must constrain these CDC paths.
++module kagura_fb_scanout_palette_reference (
++    input wire sys_clk,sys_reset,pix_clk,pix_reset,
++    input wire [10:0] cx,
++    input wire [9:0] cy,
++    input wire present_valid,present_page,
++    input wire [191:0] present_palette,
++    output wire present_ready,
++    output reg present_done,
++    output wire req_valid,
++    input wire req_ready,
++    output wire [19:0] req_addr,
++    input wire rsp_done,rsp_error,
++    input wire scan_word_valid,
++    input wire [31:0] scan_word_data,
++    output reg [23:0] rgb,
++    output wire underrun,
++    output reg memory_error,
++    output wire [15:0] generation_out
++);
++    reg present_toggle,present_pending;
++    reg held_page;
++    reg [191:0] held_palette;
++    reg present_ack,present_seen;
++    (* ASYNC_REG="TRUE" *) reg [1:0] present_sync,present_ack_sync;
++    assign present_ready=!sys_reset && !present_pending;
++    always @(posedge sys_clk) begin
++        if(sys_reset) begin
++            present_toggle<=0; present_pending<=0; held_page<=0;
++            held_palette<=0; present_ack_sync<=0; present_done<=0;
++        end else begin
++            present_ack_sync<={present_ack_sync[0],present_ack};
++            present_done<=0;
++            if(present_valid && present_ready) begin
++                held_page<=present_page; held_palette<=present_palette;
++                present_toggle<=~present_toggle; present_pending<=1;
++            end else if(present_pending && present_ack_sync[1]==present_toggle) begin
++                present_pending<=0; present_done<=1;
++            end
++        end
++    end
++    reg active_page,started;
++    reg [191:0] palette;
++    reg [15:0] generation;
++    assign generation_out=generation;
++    reg vblank,take;
++    reg [8:0] next_row;
++    always @(posedge pix_clk) begin
++        next_row<=cy==749 ? 9'd0 : 9'((cy+10'd1)>>1);
++        if(pix_reset) begin vblank<=0; take<=0; end
++        else begin
++            vblank<=cx==1649 && cy==719;
++            take<=started && cx==1644 && (cy==749 || (cy<719 && cy[0]));
++        end
++    end
++    reg line_toggle,line_page;
++    reg [8:0] line_row;
++    reg [15:0] line_generation;
++    reg line_ack;
++    (* ASYNC_REG="TRUE" *) reg [1:0] line_ack_sync,line_sync;
++    wire line_slot_free=line_toggle==line_ack_sync[1];
++    always @(posedge pix_clk) begin
++        if(pix_reset) begin
++            present_sync<=0; present_ack<=0; present_seen<=0;
++            active_page<=0; palette<=0; generation<=0; started<=0;
++            line_toggle<=0; line_page<=0; line_row<=0; line_generation<=0; line_ack_sync<=0;
++        end else begin
++            present_sync<={present_sync[0],present_toggle};
++            line_ack_sync<={line_ack_sync[0],line_ack};
++            if(vblank) begin
++                started<=1; generation<=generation+1'b1;
++                if(present_sync[1]!=present_seen) begin
++                    active_page<=held_page; palette<=held_palette;
++                    present_ack<=present_sync[1]; present_seen<=present_sync[1];
++                end
++                if(line_slot_free) begin
++                    line_page<=present_sync[1]!=present_seen ? held_page : active_page;
++                    line_generation<=generation+1'b1; line_row<=0; line_toggle<=~line_toggle;
++                end
++            end else if(take && next_row<359 && line_slot_free) begin
++                line_page<=active_page; line_row<=next_row+1'b1;
++                line_generation<=generation; line_toggle<=~line_toggle;
++            end
++        end
++    end
++    reg fetching,fetch_start,line_seen,fetch_page;
++    reg [8:0] fetch_row;
++    reg [15:0] fetch_generation;
++    wire fetch_ready,fetch_done,fetch_error,can_write,bank_we;
++    wire [6:0] bank_addr;
++    wire [31:0] bank_data;
++    always @(posedge sys_clk) begin
++        if(sys_reset) begin
++            line_sync<=0; line_seen<=0; line_ack<=0; fetching<=0;
++            fetch_start<=0; fetch_page<=0; fetch_row<=0; fetch_generation<=0; memory_error<=0;
++        end else begin
++            line_sync<={line_sync[0],line_toggle};
++            fetch_start<=0;
++            if(!fetching && fetch_ready && can_write && line_sync[1]!=line_seen) begin
++                fetch_page<=line_page; fetch_row<=line_row; fetch_generation<=line_generation;
++                line_seen<=line_sync[1]; fetching<=1; fetch_start<=1;
++            end
++            if(fetch_done) begin
++                fetching<=0; line_ack<=line_seen;
++                if(fetch_error) memory_error<=1;
++            end
++        end
++    end
++    kagura_fb_line_fetch fetch(
++        .clk(sys_clk),.reset(sys_reset),.start(fetch_start),.page(fetch_page),.row(fetch_row),
++        .ready(fetch_ready),.done(fetch_done),.error(fetch_error),.req_valid,.req_ready,.req_addr,
++        .rsp_done,.rsp_error,.scan_word_valid,.scan_word_data,.bank_we,.bank_addr,.bank_data);
++    // Register controls ahead of the RAM, index and palette pipeline.
++    wire [10:0] ax5=cx>=1645 ? cx-11'd1645 : cx+11'd5;
++    reg scan;
++    reg [6:0] scan_addr;
++    reg [4:0] scan_shift;
++    always @(posedge pix_clk) begin
++        scan<=!pix_reset && started && ((cx<1275 && cy<720) || (cx>=1645 && (cy==749 || cy<719)));
++        scan_addr<=ax5[10:4];
++        scan_shift<={ax5[3:2],~ax5[1],2'b00};
++    end
++    wire [31:0] pixel_word;
++    wire pixel_valid,line_valid;
++    kagura_fb_line_banks banks(
++        .sys_clk,.sys_reset,.sys_can_write(can_write),.sys_write(bank_we),
++        .sys_addr(bank_addr),.sys_data(bank_data),.sys_done(fetch_done && !fetch_error),
++        .sys_row(fetch_row),.sys_page(fetch_page),.sys_generation(fetch_generation),
++        .pix_clk,.pix_reset,.pix_take(take),.pix_enable(scan),.pix_addr(scan_addr),
++        .pix_row(next_row),.pix_page(active_page),.pix_generation(generation),
++        .pix_data(pixel_word),.pix_data_valid(pixel_valid),.pix_line_valid(line_valid),.pix_underrun(underrun));
++    reg [4:0] nibble_shift;
++    reg [15:0] color_select;
++    reg index_valid,color_valid;
++    reg [3:0] index;
++    wire [3:0] pixel_index=4'(pixel_word>>nibble_shift);
++    wire [11:0] color_group[0:3];
++    wire [11:0] color=color_group[0]|color_group[1]|color_group[2]|color_group[3];
++    // One-hot registered selection and a balanced OR tree replace the long
++    // 16-color variable mux. The extra selection stage is compensated by
++    // the five-pixel lookahead; line ownership is taken one pixel earlier.
++    genvar group_id;
++    generate for(group_id=0;group_id<4;group_id=group_id+1) begin: palette_group
++        assign color_group[group_id]=
++            (palette[(group_id*4+0)*12+:12]&{12{color_select[group_id*4+0]}})|
++            (palette[(group_id*4+1)*12+:12]&{12{color_select[group_id*4+1]}})|
++            (palette[(group_id*4+2)*12+:12]&{12{color_select[group_id*4+2]}})|
++            (palette[(group_id*4+3)*12+:12]&{12{color_select[group_id*4+3]}});
++    end endgenerate
++    always @(posedge pix_clk) begin
++        nibble_shift<=scan_shift;
++        index<=pixel_index;
++        color_select<=16'd1<<index;
++        index_valid<=!pix_reset && pixel_valid;
++        color_valid<=!pix_reset && index_valid;
++        if(pix_reset || !color_valid) rgb<=0;
++        else rgb<={color[11:8],color[11:8],color[7:4],color[7:4],color[3:0],color[3:0]};
++    end
++endmodule
+--- /dev/null
++++ b/sim/tests/tb_fb_palette_mailbox.sv
+@@ -0,0 +1,61 @@
++`timescale 1ns/1ps
++module tb_fb_palette_mailbox #(parameter bit VIOLATE=0);
++    reg sys_clk=0,pix_clk=0,sys_reset=1;
++    wire pix_reset=sys_reset;
++    always #(500.0/54.0) sys_clk=~sys_clk;
++    always #(500.0/74.25) pix_clk=~pix_clk;
++    reg [10:0] cx=0;reg [9:0] cy=0;
++    reg present_valid=0,present_page=0;
++    reg [191:0] present_palette=0;
++    wire req_ready=0,rsp_done=0,rsp_error=0,scan_word_valid=0;
++    wire [31:0] scan_word_data=0;
++    wire present_ready,present_done,req_valid,underrun,memory_error;
++    wire [19:0] req_addr;wire [23:0] rgb;wire [15:0] generation_out;
++    kagura_fb_scanout_palette_reference reference(.*);
++    kagura_fb_scanout #(.SHARED_PRESENT_PALETTE(1)) candidate(
++        .sys_clk,.pix_clk,.sys_reset,.pix_reset,.cx,.cy,.present_valid,.present_page,.present_palette,
++        .req_ready,.rsp_done,.rsp_error,.scan_word_valid,.scan_word_data);
++    integer phase=0,updates=0,acks=0;
++    reg ack_previous=0;
++    always @(negedge pix_clk) begin
++        // Short vblank periods deliberately sweep request/synchronizer phase.
++        phase=(phase+1)%11;cx=phase==0 ? 1649 : 0;cy=phase==0 ? 719 : 0;
++        #1;
++        if({candidate.palette,candidate.active_page,candidate.generation,candidate.line_page,
++            candidate.line_row,candidate.line_generation,candidate.present_ack,candidate.present_seen}
++           !=={reference.palette,reference.active_page,reference.generation,reference.line_page,
++            reference.line_row,reference.line_generation,reference.present_ack,reference.present_seen})
++            $fatal(1,"PRESENT mailbox pixel application edge/data mismatch");
++        if(!pix_reset && reference.present_ack!=ack_previous) updates++;
++        ack_previous=reference.present_ack;
++    end
++    always @(negedge sys_clk) begin
++        #1;
++        if({candidate.present_ready,candidate.present_done,candidate.req_valid,candidate.req_addr}
++           !=={present_ready,present_done,req_valid,req_addr})
++            $fatal(1,"PRESENT mailbox host handshake mismatch");
++        if(present_done) acks++;
++    end
++    initial begin
++        repeat(4) @(negedge sys_clk);sys_reset=0;
++        for(integer trial=0;trial<512;trial++) begin
++            wait(present_ready);
++            repeat($urandom_range(1,6)) @(negedge sys_clk);
++            present_page=1'($urandom);
++            for(integer n=0;n<6;n++) present_palette[n*32+:32]=$urandom;
++            present_valid=1;
++            @(negedge sys_clk);present_valid=0;
++            if(VIOLATE) begin present_palette=~present_palette; repeat(4) @(negedge sys_clk); $fatal(1,"missing stability rejection"); end
++            if(trial%31==0) begin
++                // Abort in-flight mailboxes, assert both domain resets together.
++                repeat(2) @(negedge sys_clk);sys_reset=1;
++                repeat(3) @(negedge sys_clk);sys_reset=0;
++            end else wait(present_done);
++        end
++        repeat(2) @(negedge sys_clk);
++        if(acks<450 || updates<450) $fatal(1,"insufficient mailbox coverage");
++        $display("PASS: shared PALETTE mailbox frozen-reference cycle equality; acknowledgements=%0d applications=%0d resets=17",acks,updates);
++        $finish;
++    end
++    initial begin #2000000;$fatal(1,"mailbox watchdog");end
++endmodule
+--- /dev/null
++++ b/sim/tests/tb_fb_palette_queue.sv
+@@ -0,0 +1,131 @@
++`timescale 1ns/1ps
++// CSR-to-executor integration: capacity includes the active descriptor.
++module tb_fb_palette_queue;
++    localparam DEPTH=8,REGISTER_HEAD=1;
++    reg clk=0,reset=1;
++    always #(500.0/54.0) clk=~clk;
++    reg req_valid=0,req_write=0;
++    reg [4:0] req_addr=0;
++    reg [7:0] req_wdata=0;
++    wire req_ready,rsp_valid,rsp_error,busy,irq,valid,ready,done,read_result;
++    wire [7:0] rsp_rdata,error;
++    wire [15:0] tag;
++    wire [127:0] command;
++    wire engine_valid,engine_ready;
++    wire [127:0] engine_command;
++    generate if(REGISTER_HEAD) begin: registered_head
++        kagura_fb_command_head head(.clk,.reset,.in_valid(valid),.in_ready(ready),.in_command(command),
++            .out_valid(engine_valid),.out_ready(engine_ready),.out_done(done),.out_command(engine_command));
++    end else begin: direct_head
++        assign engine_valid=valid;assign ready=engine_ready;assign engine_command=command;
++    end endgenerate
++    wire [511:0] upload_data,read_data;
++    wire [191:0] present_palette;
++    wire present_done,present_ready,present_page;
++    reg pix_clk=0,allow_vblank=0;
++    always #(500.0/74.25) pix_clk=~pix_clk;
++    reg [10:0] cx=0;reg [9:0] cy=0;
++    integer phase=0,applications=0,completions=0;
++    reg last_ack=0;
++    always @(negedge pix_clk) begin
++        phase=(phase+1)%11;cx=allow_vblank && phase==0 ? 1649 : 0;cy=allow_vblank && phase==0 ? 719 : 0;
++        #1;
++        if({candidate.palette,candidate.active_page,candidate.generation,candidate.present_ack,candidate.present_seen,candidate.rgb}
++         !=={reference.palette,reference.active_page,reference.generation,reference.present_ack,reference.present_seen,reference.rgb})
++            $fatal(1,"queued shared palette pixel mismatch");
++        if(!reset && candidate.present_ack!=last_ack) applications++;
++        last_ack=candidate.present_ack;
++    end
++    kagura_fb_scanout #(.SHARED_PRESENT_PALETTE(1)) candidate(
++        .sys_clk(clk),.sys_reset(reset),.pix_clk,.pix_reset(reset),.cx,.cy,
++        .present_valid,.present_page,.present_palette,.present_ready,.present_done,
++        .req_ready(1'b0),.rsp_done(1'b0),.rsp_error(1'b0),.scan_word_valid(1'b0),.scan_word_data(32'd0));
++    kagura_fb_scanout_palette_reference reference(
++        .sys_clk(clk),.sys_reset(reset),.pix_clk,.pix_reset(reset),.cx,.cy,
++        .present_valid,.present_page,.present_palette,
++        .req_ready(1'b0),.rsp_done(1'b0),.rsp_error(1'b0),.scan_word_valid(1'b0),.scan_word_data(32'd0));
++    always @(negedge clk) begin
++        #1;
++        if({candidate.present_ready,candidate.present_done,candidate.req_valid,candidate.req_addr}
++         !=={reference.present_ready,reference.present_done,reference.req_valid,reference.req_addr})
++            $fatal(1,"queued shared palette completion edge mismatch");
++    end
++    reg mem_ready=0,mem_done=0;
++    reg [511:0] mem_data=0;
++    wire present_valid,host_valid;
++    kagura_fb_registers #(.QUEUE_DEPTH(DEPTH)) regs(
++        .clk,.reset,.enabled(1'b1),.spi_late(1'b0),.video_error(1'b0),.audio_error(1'b0),.external_error(1'b0),
++        .req_valid,.req_write,.req_addr,.req_wdata,.req_ready,.rsp_valid,.rsp_error,.rsp_rdata,.busy,.irq,
++        .cmd_valid(valid),.cmd_ready(ready),.cmd_done(done),.cmd_read_result(read_result),
++        .cmd_tag(tag),.cmd_error(error),.cmd_read_data(read_data),.command,.upload_data);
++    kagura_fb_commands #(.REGISTER_DECODE(REGISTER_HEAD)) engine(
++        .clk,.reset,.valid(engine_valid),.ready(engine_ready),.command(engine_command),.upload_data,.done,.error,.tag,.read_data,.read_result,
++        .host_valid,.host_ready(mem_ready),.host_done(mem_done),.host_error(1'b0),.host_rdata(mem_data),
++        .host_write(),.host_addr(),.host_words(),.host_wdata(),.host_mask(),
++        .present_valid,.present_ready,.present_done,.present_page,.present_palette,
++        .audio_capture(),.audio_apply(),.audio_commit_done(),
++        .audio_settings_valid(1'b0),.audio_busy(1'b0),.audio_settle(1'b0),.audio_ready(1'b0),.audio_done(1'b0),.audio_apply_error(1'b0));
++    task access(input bit wr,input integer addr,data,input bit fails,output reg [7:0] result);
++        @(negedge clk);req_valid=1;req_write=wr;req_addr=5'(addr);req_wdata=8'(data);
++        do @(posedge clk);while(!req_ready);
++        @(negedge clk);req_valid=0;
++        while(!rsp_valid) @(negedge clk);
++        if(rsp_error!==fails) $fatal(1,"CSR addr=%0d error=%0d expected=%0d",addr,rsp_error,fails);
++        result=rsp_rdata;
++    endtask
++    reg [7:0] value;
++
++    task submit(input integer opcode,arg,color,id);
++        access(1,8,opcode,0,value); access(1,9,arg,0,value);
++        access(1,10,id&255,0,value); access(1,11,id>>8,0,value);
++        access(1,12,color&255,0,value); access(1,13,color>>8,0,value);
++        access(1,26,1,0,value);
++    endtask
++    task finish_command(input integer id,err);
++        wait(irq);
++        access(0,28,0,0,value);if(value!==8'(id)) $fatal(1,"tag low order");
++        access(0,29,0,0,value);if(value!==8'(id>>8)) $fatal(1,"tag high order");
++        access(0,30,0,0,value);if(value!==8'(err)) $fatal(1,"completion error");
++        repeat($urandom_range(20,80)) @(negedge clk);
++        access(0,28,0,0,value);if(value!==8'(id)) $fatal(1,"tag overwritten before ACK");
++        access(0,7,0,0,value);if(value!==8'(err)) $fatal(1,"sticky error not reported");
++        access(1,31,1,0,value);if(err) access(1,7,0,0,value);
++        completions++;
++    endtask
++    initial begin
++        repeat(4) @(negedge clk);reset=0;
++        for(integer round_id=0;round_id<16;round_id++) begin
++            allow_vblank=0;
++            submit(3,0,0,round_id*8);wait(candidate.present_pending);
++            submit(2,6,12'hf20,round_id*8+1);
++            submit(3,1,0,round_id*8+2);
++            submit(2,16,12'hab0,round_id*8+3); // invalid index, error must survive
++            submit(3,0,0,round_id*8+4);
++            submit(2,15,12'h05a,round_id*8+5);
++            submit(3,1,0,round_id*8+6);
++            submit(0,0,0,round_id*8+7);
++            if(!busy || regs.queue_count!=8) $fatal(1,"queue8 not full");
++            repeat(20) @(negedge clk);
++            if(irq || done || present_done) $fatal(1,"early PRESENT completion");
++            allow_vblank=1;
++            for(integer n=0;n<8;n++) finish_command(round_id*8+n,n==3 ? 2 : 0);
++            repeat(8) @(negedge clk);
++            if(regs.queue_count!=0 || busy) $fatal(1,"queue8 did not drain");
++            if(present_palette[72+:12]!==12'hf20 || present_palette[180+:12]!==12'h05a) $fatal(1,"palette lost");
++        end
++        // Reset aborts an in-flight PRESENT plus younger PALETTE/PRESENT.
++        for(integer n=0;n<16;n++) begin
++            allow_vblank=0;submit(3,0,0,200);wait(candidate.present_pending);
++            submit(2,n,12'h123,201);submit(3,1,0,202);
++            repeat($urandom_range(1,9)) @(negedge clk);reset=1;
++            repeat(4) @(negedge clk);reset=0;allow_vblank=1;
++            repeat(16) @(negedge clk);
++            if(irq || regs.queue_count!=0 || candidate.present_pending) $fatal(1,"reset flush mismatch");
++            submit(3,0,0,203);finish_command(203,0);
++        end
++        if(applications<64 || completions!=144) $fatal(1,"insufficient coverage");
++        $display("PASS: shared PALETTE queue8 ordering, full queue, delayed ACK, sticky error, reset; completions=%0d applications=%0d",completions,applications);
++        $finish;
++    end
++    initial begin #5000000;$fatal(1,"palette queue watchdog");end
++endmodule
+--- /dev/null
++++ b/tools/test-fb-palette-sharing.sh
+@@ -0,0 +1,42 @@
++#!/usr/bin/env bash
++set -euo pipefail
++cd "$(dirname "$0")/.."
++mkdir -p build/fb-palette-sharing
++exec 9>build/fb-palette-sharing/.lock
++flock -n 9 || { echo 'Palette sharing regression already running' >&2; exit 1; }
++for top in tb_fb_palette_mailbox tb_fb_palette_queue; do
++    dir="build/fb-palette-sharing/$top"
++    mkdir -p "$dir"
++    verilator --binary --timing --timescale 1ns/1ps -Wno-fatal --top-module "$top" \
++        --Mdir "$PWD/$dir" -j 4 rtl/fb/kagura_fb_scanout.sv rtl/fb/kagura_fb_line_fetch.sv \
++        rtl/fb/kagura_fb_line_banks.sv rtl/memory/kagura_ram_tdp.sv \
++        rtl/fb/kagura_fb_registers.sv rtl/fb/kagura_fb_upload_word.sv \
++        rtl/fb/kagura_fb_command_head.sv rtl/fb/kagura_fb_commands.sv rtl/fb/kagura_fb_fill_burst.sv \
++        sim/support/kagura_fb_scanout_palette_reference.sv "sim/tests/$top.sv" >"$dir/build.log" 2>&1
++    for seed in 1 19 73; do
++        timeout 60 "$dir/V$top" +verilator+seed+"$seed" | tee "$dir/seed-$seed.log"
++        grep -q 'PASS: shared PALETTE' "$dir/seed-$seed.log"
++    done
++done
++dir=build/fb-palette-sharing/full-scanout
++mkdir -p "$dir"
++verilator --binary --timing --timescale 1ns/1ps -Wno-fatal --top-module tb_fb_scanout \
++    -GSHARED_PRESENT_PALETTE=1 --Mdir "$PWD/$dir" -j 4 \
++    rtl/fb/kagura_fb_scanout.sv rtl/fb/kagura_fb_line_banks.sv rtl/fb/kagura_fb_line_fetch.sv \
++    rtl/fb/kagura_fb_arbiter.sv rtl/fb/kagura_fb_burst_ctrl.sv rtl/memory/kagura_ram_tdp.sv \
++    sim/support/kagura_hyperram_pair_model.sv sim/tests/tb_fb_scanout.sv >"$dir/build.log" 2>&1
++timeout 60 "$dir/Vtb_fb_scanout" | tee "$dir/run.log"
++grep -q 'PASS: fb_scanout' "$dir/run.log"
++# Prove that the optional sharing mode rejects a producer contract violation.
++dir=build/fb-palette-sharing/contract-negative
++mkdir -p "$dir"
++verilator --binary --timing --timescale 1ns/1ps -Wno-fatal --top-module tb_fb_palette_mailbox \
++    -GVIOLATE=1 --Mdir "$PWD/$dir" -j 4 rtl/fb/kagura_fb_scanout.sv \
++    rtl/fb/kagura_fb_line_fetch.sv rtl/fb/kagura_fb_line_banks.sv rtl/memory/kagura_ram_tdp.sv \
++    sim/support/kagura_fb_scanout_palette_reference.sv sim/tests/tb_fb_palette_mailbox.sv >"$dir/build.log" 2>&1
++ulimit -c 0
++if timeout 60 "$dir/Vtb_fb_palette_mailbox" >"$dir/run.log" 2>&1; then
++    echo 'Expected a stability assertion failure' >&2; exit 1
++fi
++grep -q 'shared PRESENT palette changed before acknowledgement' "$dir/run.log"
++echo 'PASS: shared PALETTE stability contract rejects an invalid producer'

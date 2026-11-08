@@ -1,0 +1,14 @@
+{
+  "netlist_equal": true,
+  "native_cst_equal": true,
+  "bin_equal": true,
+  "fs_equal_except_created_time": true,
+  "fs_sha256": "7cd2da9aadcb6d333d9050a980abbc811401794dac455a211673f700a4fb5106",
+  "setup_wns_ns": 0.177,
+  "hold_wns_ns": 0.527,
+  "violations": [
+    0,
+    0
+  ],
+  "reproduced": true
+}

@@ -1,0 +1,5 @@
+PASS: PCM2 board LANES=4 ABI1.4, Host upload/readback/FENCE, stereo sample oracle, gains, pause/resume, loop/one-shot, rejection, display
+- sim/tests/tb_fb_board_qspi.sv:155: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 33ms; walltime 28.596 s; speed 1.167 ms/s
+- Verilator: cpu 28.558 s on 1 threads; alloced 123 MB

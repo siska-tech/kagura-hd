@@ -1,0 +1,47 @@
+{
+  "depth": 8,
+  "transport": "qspi",
+  "place": 4,
+  "route": 2,
+  "exit_code": 0,
+  "register_audio_credits": false,
+  "replicate_packet_first": true,
+  "optimization_goal": "timing",
+  "build_failed": false,
+  "fresh_bitstream": true,
+  "timing": {
+    "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+    "setup_violated_endpoints": 2,
+    "hold_violated_endpoints": 0,
+    "worst": {
+      "Setup": {
+        "slack_ns": -1.308,
+        "from": "core/display/held_palette_32_s0/Q",
+        "to": "core/display/palette_32_s0/D"
+      },
+      "Hold": {
+        "slack_ns": 0.511,
+        "from": "host/registers/write_ptr_1_s0/Q",
+        "to": "host/registers/descriptors_descriptors_0_3_s/ADA[6]"
+      },
+      "Recovery": {
+        "slack_ns": 9.823,
+        "from": "core/pix_release_2_s0/Q",
+        "to": "core/hdmi/audio_link/fifo/rd_reset_0_s0/PRESET"
+      },
+      "Removal": {
+        "slack_ns": 0.794,
+        "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+        "to": "core/hdmi/audio_link/fifo/rg_ahead_0_s0/PRESET"
+      }
+    },
+    "negative_analyses": [
+      "Setup"
+    ],
+    "boot_miso": null,
+    "release_ready": false,
+    "report_sha256": "c596a89189157a5f037fe75c68aaaed546812159bf38f6e6ec15b2c4db5c4dc7"
+  },
+  "elapsed_seconds": 670.0,
+  "bitstream_sha256": "046CDFF06D4A9C2818EBF1D52F7DC5A8E1326F3D468B80D1F7BF066A8F56B7CF"
+}

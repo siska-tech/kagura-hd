@@ -1,0 +1,393 @@
+{
+  "hardware_tested": false,
+  "queue_control_cases": 72,
+  "default_sdk_tests": 30,
+  "audio_tests": 10,
+  "logs": [
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-0-delay.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-0-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-0-io.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-0-normal.log",
+      "sha256": "fac35bd7f1df678f980744d02d677f160eaba8654a023aa5860715357bcc8d19",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-0-race.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-0-sticky.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-0-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-0-timeout.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-0-transport.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-1-delay.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-1-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-1-io.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-1-normal.log",
+      "sha256": "fac35bd7f1df678f980744d02d677f160eaba8654a023aa5860715357bcc8d19",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-1-race.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-1-sticky.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-1-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-1-timeout.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-0-burst-1-transport.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-0-delay.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-0-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-0-io.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-0-normal.log",
+      "sha256": "64ee73a9c93d894f39118d8aad44697afbdb7c097fb641aaeeef3984a12edee6",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\nPASS sampled queue metric partition and reset\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-0-race.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-0-sticky.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-0-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-0-timeout.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-0-transport.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-1-delay.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-1-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-1-io.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-1-normal.log",
+      "sha256": "64ee73a9c93d894f39118d8aad44697afbdb7c097fb641aaeeef3984a12edee6",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\nPASS sampled queue metric partition and reset\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-1-race.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-1-sticky.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-1-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-1-timeout.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-0-metrics-1-burst-1-transport.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-0-delay.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-0-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-0-io.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-0-normal.log",
+      "sha256": "fac35bd7f1df678f980744d02d677f160eaba8654a023aa5860715357bcc8d19",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-0-race.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-0-sticky.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-0-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-0-timeout.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-0-transport.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-1-delay.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-1-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-1-io.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-1-normal.log",
+      "sha256": "fac35bd7f1df678f980744d02d677f160eaba8654a023aa5860715357bcc8d19",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-1-race.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-1-sticky.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-1-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-1-timeout.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-0-burst-1-transport.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-0-delay.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-0-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-0-io.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-0-normal.log",
+      "sha256": "64ee73a9c93d894f39118d8aad44697afbdb7c097fb641aaeeef3984a12edee6",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\nPASS sampled queue metric partition and reset\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-0-race.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-0-sticky.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-0-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-0-timeout.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-0-transport.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-1-delay.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-1-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-1-io.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-1-normal.log",
+      "sha256": "64ee73a9c93d894f39118d8aad44697afbdb7c097fb641aaeeef3984a12edee6",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\nPASS sampled queue metric partition and reset\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-1-race.log",
+      "sha256": "e419da0b45b132d3d0a0496b9bf1be652efa344008c923bd95969f6be8b3ae66",
+      "result": "PASS incomplete/racing snapshot ignored, status-only fallback, ordered completion\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-1-sticky.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-1-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-1-timeout.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/pack-1-metrics-1-burst-1-transport.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/default-audio.log",
+      "sha256": "658ee8f6638e043f6c54394b34e4db8d602800e29e7a22d408d54348127930fd",
+      "result": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.028s\n\nOK\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/default-sdk-0.log",
+      "sha256": "dc5dcc4198d6bf3c6cdf1ee223f84d47a4dc7ce79746dbcc9467d653851cc125",
+      "result": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.363s\n\nOK\n"
+    },
+    {
+      "path": "build/completion-burst-retire-tests/default-sdk-1.log",
+      "sha256": "42285c4a0ca86bb3db25af2aa9c0bcdf8314916ec81df843878bdd8a9a0298f2",
+      "result": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.393s\n\nOK\n"
+    }
+  ],
+  "test_sources": [
+    {
+      "path": "software/beyond16/tests/queue_test.c",
+      "sha256": "fe2640691946a5b6057c56fb2883046311fbf635573ec8c6d995e419512cca0d"
+    },
+    {
+      "path": "software/beyond16/tools/test_gpu_queue.sh",
+      "sha256": "13b95527b5798680e75097bba2a8d6d9aaec62784c176f4e51a58ec123832619"
+    }
+  ]
+}

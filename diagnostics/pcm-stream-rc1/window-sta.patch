@@ -1,0 +1,31 @@
+--- a/rtl/fb/kagura_fb_registers.sv
++++ b/rtl/fb/kagura_fb_registers.sv
+@@ -98,12 +98,27 @@
+     // CPU/reset word here and keep bulk_capture on the RAM enable only.
+     wire select_window_word=reset || byte_commit;
+     wire [31:0] reset_or_window_word=reset ? 32'd0 : window_write_word;
++    wire accept_window_write=req_valid && req_ready && req_write &&
++        req_addr==24 && !busy && (!queued || queue_count==0) && data_addr<64;
++    wire [7:0] local_window_select;
++    for(genvar group=0;group<8;group=group+1) begin: window_select
++        (* syn_preserve=1, syn_keep=1 *) reg select_cpu;
++        always @(posedge clk)
++            if(reset) select_cpu<=0;
++            else select_cpu<=accept_window_write;
++        assign local_window_select[group]=select_cpu;
++        // synthesis translate_off
++        always @(posedge clk)
++            if(!reset) assert(select_cpu==byte_commit)
++                else $fatal(1,"Window commit phase mismatch");
++        // synthesis translate_on
++    end
+     genvar word_index;
+     generate for(word_index=0;word_index<16;word_index=word_index+1) begin: upload_words
+         wire cpu_write=byte_commit && window_write_addr[5:2]==4'(word_index);
+         wire writing=reset || bulk_capture || cpu_write;
+         wire [3:0] byte_enable=4'b1111;
+-        wire [31:0] write_data=QUEUE_DEPTH==8 ? (select_window_word ? reset_or_window_word : cmd_read_data[word_index*32+:32]) : reset ? 32'd0 : bulk_capture ? cmd_read_data[word_index*32+:32] : window_write_word;
++        wire [31:0] write_data=QUEUE_DEPTH==8 ? ((reset || local_window_select[word_index/2]) ? reset_or_window_word : cmd_read_data[word_index*32+:32]) : reset ? 32'd0 : bulk_capture ? cmd_read_data[word_index*32+:32] : window_write_word;
+         kagura_fb_upload_word ram(.clk,.write(writing),.byte_enable,.wdata(write_data),.rdata(upload_data[word_index*32+:32]));
+     end endgenerate
+     always @(posedge clk) begin

@@ -1,0 +1,40 @@
+{
+  "hardware_tested": false,
+  "pipeline_mailbox": 1,
+  "tests": [
+    {
+      "path": "build/fb-cursor-mailbox/tb_fb_cursor/run.log",
+      "sha256": "95DAC95E8D0AF7FACCF2CAF3EE3737C7AF1DAB80DA66C2D217E8A83D31AF9B99",
+      "passed": true,
+      "result": "PASS: fb_cursor 7425424 pixels, 2x scale, transparency/colors/hotspot, clipping, bank swap, latest coalescing, busy/range/partial-shape errors, no RAM collision"
+    },
+    {
+      "path": "build/fb-cursor-mailbox/tb_fb_cursor_mailbox_pipeline/run.log",
+      "sha256": "8E1B058A448C98924477E723F5E5C7B36F7EC6FF881F140B7B5B0D07398DD25F",
+      "passed": true,
+      "result": "PASS: cursor mailbox pipeline, 100 near-vblank commits, signed coordinates, colors/bank swaps, exact application/ack cycles"
+    }
+  ],
+  "source_sha256": [
+    {
+      "path": "rtl/fb/kagura_fb_cursor.sv",
+      "sha256": "B9DB3323B085A3C9160DD947E12C447DB3A69B4CF6EC06864EC65646754890E9"
+    },
+    {
+      "path": "sim/tests/tb_fb_cursor.sv",
+      "sha256": "5259E05F37975A060D951C84DB103A603AC5612D88D0AA769839137A69E2F138"
+    },
+    {
+      "path": "sim/tests/tb_fb_cursor_mailbox_pipeline.sv",
+      "sha256": "C30A8E3EF7B779F9726BC9482C004147126F78A6611B99C90E4FD877B8180EB1"
+    },
+    {
+      "path": "sim/support/kagura_fb_cursor_reference.sv",
+      "sha256": "4724786CCFF79C6B08E4C1D64C3BF3AA387F5ACD78EBE54A3D5561DD38DD2D10"
+    },
+    {
+      "path": "tools/test-fb-cursor-pipeline.sh",
+      "sha256": "7362128A4DB46185DB5B2DB10F3ED37E5A0A5F42C0FA6C02101013E75EA1DCE4"
+    }
+  ]
+}

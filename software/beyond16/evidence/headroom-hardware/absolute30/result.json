@@ -1,0 +1,3156 @@
+{
+  "name": "absolute30",
+  "firmware_sha256": "d742b15292cd2f99febd8d1e3fd38340efc39b8d5360db84f8e4ba39ecb4040b",
+  "release_ready": false,
+  "frames_logged": 4257,
+  "scenes": [
+    {
+      "scene": 0,
+      "frames": 299,
+      "actual_update_fps": 30.050355521924256,
+      "present_intervals": {
+        "median_us": 33333.0,
+        "p95_us": 33352,
+        "worst_us": 50015,
+        "over_33_333ms_rate": 0.4966442953020134
+      },
+      "deadline_miss_rate": 0.0,
+      "relative_call_budget_miss_rate": 0.0
+    },
+    {
+      "scene": 1,
+      "frames": 600,
+      "actual_update_fps": 29.999919866658118,
+      "present_intervals": {
+        "median_us": 33333,
+        "p95_us": 33350,
+        "worst_us": 49996,
+        "over_33_333ms_rate": 0.4741235392320534
+      },
+      "deadline_miss_rate": 0.0,
+      "relative_call_budget_miss_rate": 0.0
+    },
+    {
+      "scene": 2,
+      "frames": 599,
+      "actual_update_fps": 29.974860715894913,
+      "present_intervals": {
+        "median_us": 33334.0,
+        "p95_us": 33349,
+        "worst_us": 50017,
+        "over_33_333ms_rate": 0.5016722408026756
+      },
+      "deadline_miss_rate": 0.00333889816360601,
+      "relative_call_budget_miss_rate": 0.00333889816360601
+    },
+    {
+      "scene": 3,
+      "frames": 599,
+      "actual_update_fps": 29.99991622096975,
+      "present_intervals": {
+        "median_us": 33333.0,
+        "p95_us": 50007,
+        "worst_us": 50022,
+        "over_33_333ms_rate": 0.47157190635451507
+      },
+      "deadline_miss_rate": 0.00333889816360601,
+      "relative_call_budget_miss_rate": 0.00333889816360601
+    },
+    {
+      "scene": 4,
+      "frames": 749,
+      "actual_update_fps": 29.979883017534544,
+      "present_intervals": {
+        "median_us": 33334.0,
+        "p95_us": 33353,
+        "worst_us": 50022,
+        "over_33_333ms_rate": 0.5307486631016043
+      },
+      "deadline_miss_rate": 0.0026702269692923898,
+      "relative_call_budget_miss_rate": 0.0026702269692923898
+    },
+    {
+      "scene": 5,
+      "frames": 750,
+      "actual_update_fps": 30.01996066864112,
+      "present_intervals": {
+        "median_us": 33333,
+        "p95_us": 33349,
+        "worst_us": 33355,
+        "over_33_333ms_rate": 0.4979973297730307
+      },
+      "deadline_miss_rate": 0.0,
+      "relative_call_budget_miss_rate": 0.0
+    },
+    {
+      "scene": 6,
+      "frames": 372,
+      "actual_update_fps": 18.62755863450857,
+      "present_intervals": {
+        "median_us": 50003,
+        "p95_us": 83341,
+        "worst_us": 100019,
+        "over_33_333ms_rate": 0.9083557951482479
+      },
+      "deadline_miss_rate": 0.8763440860215054,
+      "relative_call_budget_miss_rate": 0.8064516129032258
+    },
+    {
+      "scene": 7,
+      "frames": 289,
+      "actual_update_fps": 28.993196162629683,
+      "present_intervals": {
+        "median_us": 33335.0,
+        "p95_us": 33350,
+        "worst_us": 216677,
+        "over_33_333ms_rate": 0.5590277777777778
+      },
+      "deadline_miss_rate": 0.01730103806228374,
+      "relative_call_budget_miss_rate": 0.01384083044982699
+    }
+  ],
+  "transitions": [
+    {
+      "from_scene": 0,
+      "to_scene": 1,
+      "present_gap_us": 50000,
+      "next_draw_gap_us": 18363
+    },
+    {
+      "from_scene": 1,
+      "to_scene": 2,
+      "present_gap_us": 49992,
+      "next_draw_gap_us": 1038
+    },
+    {
+      "from_scene": 2,
+      "to_scene": 3,
+      "present_gap_us": 50005,
+      "next_draw_gap_us": 1026
+    },
+    {
+      "from_scene": 3,
+      "to_scene": 4,
+      "present_gap_us": 66645,
+      "next_draw_gap_us": 17331
+    },
+    {
+      "from_scene": 4,
+      "to_scene": 5,
+      "present_gap_us": 33349,
+      "next_draw_gap_us": 1025
+    },
+    {
+      "from_scene": 5,
+      "to_scene": 6,
+      "present_gap_us": 99995,
+      "next_draw_gap_us": 17331
+    },
+    {
+      "from_scene": 6,
+      "to_scene": 7,
+      "present_gap_us": 49993,
+      "next_draw_gap_us": 1037
+    }
+  ],
+  "actual_present_fps": 28.38903265765323,
+  "present_intervals_us": {
+    "samples": 4256,
+    "mean": 35224.87053571428,
+    "median": 33335.0,
+    "p95": 50005,
+    "worst": 216677,
+    "minimum": 16645
+  },
+  "interval_over_33_333ms_rate": 0.537828947368421,
+  "worst_call_us": 215642,
+  "worst_call_frame": {
+    "ms": 143000,
+    "scene": 7,
+    "us": 215642,
+    "present_before_us": 152488121,
+    "present_after_us": 152492288,
+    "draw_start_us": 152276654,
+    "deadline_us": 152309333
+  },
+  "call_budget_overruns": 310,
+  "deadline_misses": 337,
+  "timeout": 0,
+  "pcm_status_fault": 0,
+  "stop_rc": 0,
+  "gpu_error": "none observed (faults stop application)",
+  "busy_overwrite": "no independent hardware counter; serialized SDK contract unchanged",
+  "transaction_mean_us": 20.4060928858495,
+  "host_measurement_window_s": 148.433,
+  "bench": [
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_pointer_write",
+      "n": 1,
+      "us": {
+        "samples": 16,
+        "mean": 67.9375,
+        "median": 82.0,
+        "p95": 93,
+        "worst": 93,
+        "minimum": 22
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_pointer_write",
+      "n": 2,
+      "us": {
+        "samples": 16,
+        "mean": 69.4375,
+        "median": 78.0,
+        "p95": 94,
+        "worst": 94,
+        "minimum": 39
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_pointer_write",
+      "n": 4,
+      "us": {
+        "samples": 16,
+        "mean": 74.3125,
+        "median": 76.0,
+        "p95": 94,
+        "worst": 94,
+        "minimum": 43
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_pointer_write",
+      "n": 8,
+      "us": {
+        "samples": 16,
+        "mean": 86.3125,
+        "median": 91.0,
+        "p95": 99,
+        "worst": 99,
+        "minimum": 44
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_pointer_write",
+      "n": 16,
+      "us": {
+        "samples": 16,
+        "mean": 87.5625,
+        "median": 91.5,
+        "p95": 105,
+        "worst": 105,
+        "minimum": 53
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_pointer_write",
+      "n": 32,
+      "us": {
+        "samples": 16,
+        "mean": 101.875,
+        "median": 111.0,
+        "p95": 121,
+        "worst": 121,
+        "minimum": 64
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_pointer_write",
+      "n": 64,
+      "us": {
+        "samples": 16,
+        "mean": 132.625,
+        "median": 134.5,
+        "p95": 161,
+        "worst": 161,
+        "minimum": 88
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_pointer_write",
+      "n": 128,
+      "us": {
+        "samples": 16,
+        "mean": 186.25,
+        "median": 188.0,
+        "p95": 204,
+        "worst": 204,
+        "minimum": 160
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_pointer_write",
+      "n": 256,
+      "us": {
+        "samples": 16,
+        "mean": 289.9375,
+        "median": 291.0,
+        "p95": 308,
+        "worst": 308,
+        "minimum": 259
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_pointer_write",
+      "n": 512,
+      "us": {
+        "samples": 16,
+        "mean": 492.9375,
+        "median": 491.0,
+        "p95": 525,
+        "worst": 525,
+        "minimum": 478
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_csr_read",
+      "n": 1,
+      "us": {
+        "samples": 16,
+        "mean": 52.9375,
+        "median": 40.5,
+        "p95": 83,
+        "worst": 83,
+        "minimum": 31
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_csr_read",
+      "n": 2,
+      "us": {
+        "samples": 16,
+        "mean": 52.75,
+        "median": 39.5,
+        "p95": 80,
+        "worst": 80,
+        "minimum": 32
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_csr_read",
+      "n": 4,
+      "us": {
+        "samples": 16,
+        "mean": 56.8125,
+        "median": 56.0,
+        "p95": 83,
+        "worst": 83,
+        "minimum": 36
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_csr_read",
+      "n": 8,
+      "us": {
+        "samples": 16,
+        "mean": 57.4375,
+        "median": 48.0,
+        "p95": 81,
+        "worst": 81,
+        "minimum": 39
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_csr_read",
+      "n": 16,
+      "us": {
+        "samples": 16,
+        "mean": 69.75,
+        "median": 78.5,
+        "p95": 97,
+        "worst": 97,
+        "minimum": 43
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_csr_read",
+      "n": 32,
+      "us": {
+        "samples": 16,
+        "mean": 88.75,
+        "median": 96.0,
+        "p95": 112,
+        "worst": 112,
+        "minimum": 57
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_csr_read",
+      "n": 64,
+      "us": {
+        "samples": 16,
+        "mean": 119.125,
+        "median": 123.0,
+        "p95": 132,
+        "worst": 132,
+        "minimum": 89
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_csr_read",
+      "n": 128,
+      "us": {
+        "samples": 16,
+        "mean": 175.0625,
+        "median": 176.5,
+        "p95": 188,
+        "worst": 188,
+        "minimum": 161
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_csr_read",
+      "n": 256,
+      "us": {
+        "samples": 16,
+        "mean": 273.75,
+        "median": 273.0,
+        "p95": 298,
+        "worst": 298,
+        "minimum": 257
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "raw_csr_read",
+      "n": 512,
+      "us": {
+        "samples": 16,
+        "mean": 492.9375,
+        "median": 497.0,
+        "p95": 511,
+        "worst": 511,
+        "minimum": 444
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_write",
+      "n": 1,
+      "us": {
+        "samples": 16,
+        "mean": 288.8125,
+        "median": 287.5,
+        "p95": 389,
+        "worst": 389,
+        "minimum": 239
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_write",
+      "n": 2,
+      "us": {
+        "samples": 16,
+        "mean": 289.375,
+        "median": 290.0,
+        "p95": 338,
+        "worst": 338,
+        "minimum": 237
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_write",
+      "n": 4,
+      "us": {
+        "samples": 16,
+        "mean": 284.375,
+        "median": 286.5,
+        "p95": 304,
+        "worst": 304,
+        "minimum": 237
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_write",
+      "n": 8,
+      "us": {
+        "samples": 16,
+        "mean": 298.75,
+        "median": 294.5,
+        "p95": 338,
+        "worst": 338,
+        "minimum": 286
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_write",
+      "n": 16,
+      "us": {
+        "samples": 16,
+        "mean": 304.125,
+        "median": 300.5,
+        "p95": 347,
+        "worst": 347,
+        "minimum": 274
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_write",
+      "n": 32,
+      "us": {
+        "samples": 16,
+        "mean": 321.875,
+        "median": 317.0,
+        "p95": 367,
+        "worst": 367,
+        "minimum": 284
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_write",
+      "n": 64,
+      "us": {
+        "samples": 16,
+        "mean": 363.5,
+        "median": 365.5,
+        "p95": 392,
+        "worst": 392,
+        "minimum": 338
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_write",
+      "n": 128,
+      "us": {
+        "samples": 16,
+        "mean": 647.75,
+        "median": 649.0,
+        "p95": 666,
+        "worst": 666,
+        "minimum": 618
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_write",
+      "n": 256,
+      "us": {
+        "samples": 16,
+        "mean": 1200.8125,
+        "median": 1199.5,
+        "p95": 1228,
+        "worst": 1228,
+        "minimum": 1176
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_write",
+      "n": 512,
+      "us": {
+        "samples": 16,
+        "mean": 2275.375,
+        "median": 2279.0,
+        "p95": 2312,
+        "worst": 2312,
+        "minimum": 2252
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_read",
+      "n": 1,
+      "us": {
+        "samples": 16,
+        "mean": 310,
+        "median": 310.5,
+        "p95": 333,
+        "worst": 333,
+        "minimum": 265
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_read",
+      "n": 2,
+      "us": {
+        "samples": 16,
+        "mean": 305.5,
+        "median": 310.5,
+        "p95": 333,
+        "worst": 333,
+        "minimum": 278
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_read",
+      "n": 4,
+      "us": {
+        "samples": 16,
+        "mean": 312.5625,
+        "median": 310.5,
+        "p95": 336,
+        "worst": 336,
+        "minimum": 285
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_read",
+      "n": 8,
+      "us": {
+        "samples": 16,
+        "mean": 305.1875,
+        "median": 308.0,
+        "p95": 329,
+        "worst": 329,
+        "minimum": 244
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_read",
+      "n": 16,
+      "us": {
+        "samples": 16,
+        "mean": 316.3125,
+        "median": 318.5,
+        "p95": 349,
+        "worst": 349,
+        "minimum": 288
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_read",
+      "n": 32,
+      "us": {
+        "samples": 16,
+        "mean": 322.625,
+        "median": 328.5,
+        "p95": 346,
+        "worst": 346,
+        "minimum": 283
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_read",
+      "n": 64,
+      "us": {
+        "samples": 16,
+        "mean": 331.5,
+        "median": 329.0,
+        "p95": 357,
+        "worst": 357,
+        "minimum": 318
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_read",
+      "n": 128,
+      "us": {
+        "samples": 16,
+        "mean": 599.25,
+        "median": 597.5,
+        "p95": 637,
+        "worst": 637,
+        "minimum": 587
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_read",
+      "n": 256,
+      "us": {
+        "samples": 16,
+        "mean": 1123.1875,
+        "median": 1120.5,
+        "p95": 1140,
+        "worst": 1140,
+        "minimum": 1113
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "psram_read",
+      "n": 512,
+      "us": {
+        "samples": 16,
+        "mean": 2195,
+        "median": 2194.5,
+        "p95": 2216,
+        "worst": 2216,
+        "minimum": 2186
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "stages",
+      "n": 1,
+      "begin_us": {
+        "samples": 16,
+        "mean": 199.3125,
+        "median": 193.5,
+        "p95": 271,
+        "worst": 271,
+        "minimum": 154
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 83.8125,
+        "median": 78.0,
+        "p95": 106,
+        "worst": 106,
+        "minimum": 73
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 167.125,
+        "median": 163.5,
+        "p95": 212,
+        "worst": 212,
+        "minimum": 122
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 12.6875,
+        "median": 11.5,
+        "p95": 26,
+        "worst": 26,
+        "minimum": 8
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "stages",
+      "n": 2,
+      "begin_us": {
+        "samples": 16,
+        "mean": 191.0625,
+        "median": 183.0,
+        "p95": 259,
+        "worst": 259,
+        "minimum": 146
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 88.75,
+        "median": 86.5,
+        "p95": 112,
+        "worst": 112,
+        "minimum": 76
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 169.9375,
+        "median": 166.5,
+        "p95": 218,
+        "worst": 218,
+        "minimum": 129
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 13.375,
+        "median": 11.0,
+        "p95": 35,
+        "worst": 35,
+        "minimum": 7
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "stages",
+      "n": 4,
+      "begin_us": {
+        "samples": 16,
+        "mean": 193.0625,
+        "median": 187.5,
+        "p95": 243,
+        "worst": 243,
+        "minimum": 150
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 93.375,
+        "median": 92.5,
+        "p95": 122,
+        "worst": 122,
+        "minimum": 73
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 161.25,
+        "median": 160.5,
+        "p95": 227,
+        "worst": 227,
+        "minimum": 128
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 11.1875,
+        "median": 11.0,
+        "p95": 21,
+        "worst": 21,
+        "minimum": 8
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "stages",
+      "n": 8,
+      "begin_us": {
+        "samples": 16,
+        "mean": 208.75,
+        "median": 217.0,
+        "p95": 271,
+        "worst": 271,
+        "minimum": 148
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 93.75,
+        "median": 87.5,
+        "p95": 134,
+        "worst": 134,
+        "minimum": 74
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 181.125,
+        "median": 176.0,
+        "p95": 227,
+        "worst": 227,
+        "minimum": 145
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 11.4375,
+        "median": 10.5,
+        "p95": 24,
+        "worst": 24,
+        "minimum": 7
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "stages",
+      "n": 16,
+      "begin_us": {
+        "samples": 16,
+        "mean": 207.4375,
+        "median": 219.5,
+        "p95": 255,
+        "worst": 255,
+        "minimum": 150
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 95,
+        "median": 82.0,
+        "p95": 163,
+        "worst": 163,
+        "minimum": 72
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 215.5,
+        "median": 214.5,
+        "p95": 278,
+        "worst": 278,
+        "minimum": 166
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 10.4375,
+        "median": 10.0,
+        "p95": 13,
+        "worst": 13,
+        "minimum": 6
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "stages",
+      "n": 32,
+      "begin_us": {
+        "samples": 16,
+        "mean": 200.75,
+        "median": 193.0,
+        "p95": 244,
+        "worst": 244,
+        "minimum": 168
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 86.0625,
+        "median": 81.5,
+        "p95": 114,
+        "worst": 114,
+        "minimum": 75
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 279.875,
+        "median": 281.5,
+        "p95": 328,
+        "worst": 328,
+        "minimum": 235
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 11.5625,
+        "median": 10.5,
+        "p95": 38,
+        "worst": 38,
+        "minimum": 6
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "stages",
+      "n": 64,
+      "begin_us": {
+        "samples": 16,
+        "mean": 210.25,
+        "median": 209.0,
+        "p95": 263,
+        "worst": 263,
+        "minimum": 169
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 88.625,
+        "median": 81.5,
+        "p95": 154,
+        "worst": 154,
+        "minimum": 74
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 384.5625,
+        "median": 381.5,
+        "p95": 461,
+        "worst": 461,
+        "minimum": 328
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 11.125,
+        "median": 10.5,
+        "p95": 26,
+        "worst": 26,
+        "minimum": 3
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "stages",
+      "n": 128,
+      "begin_us": {
+        "samples": 16,
+        "mean": 303.625,
+        "median": 292.0,
+        "p95": 355,
+        "worst": 355,
+        "minimum": 257
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 158.5625,
+        "median": 159.0,
+        "p95": 170,
+        "worst": 170,
+        "minimum": 148
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 712.75,
+        "median": 717.5,
+        "p95": 769,
+        "worst": 769,
+        "minimum": 649
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 19.5625,
+        "median": 20.5,
+        "p95": 25,
+        "worst": 25,
+        "minimum": 13
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "stages",
+      "n": 256,
+      "begin_us": {
+        "samples": 16,
+        "mean": 513.25,
+        "median": 512.5,
+        "p95": 601,
+        "worst": 601,
+        "minimum": 473
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 289.6875,
+        "median": 288.0,
+        "p95": 324,
+        "worst": 324,
+        "minimum": 271
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 1323.25,
+        "median": 1335.5,
+        "p95": 1381,
+        "worst": 1381,
+        "minimum": 1248
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 40.5625,
+        "median": 40.5,
+        "p95": 49,
+        "worst": 49,
+        "minimum": 32
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "stages",
+      "n": 512,
+      "begin_us": {
+        "samples": 16,
+        "mean": 915.1875,
+        "median": 917.0,
+        "p95": 967,
+        "worst": 967,
+        "minimum": 855
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 566.125,
+        "median": 563.0,
+        "p95": 591,
+        "worst": 591,
+        "minimum": 550
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0.125,
+        "median": 0.0,
+        "p95": 1,
+        "worst": 1,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 2541,
+        "median": 2539.0,
+        "p95": 2625,
+        "worst": 2625,
+        "minimum": 2495
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 74.625,
+        "median": 74.0,
+        "p95": 83,
+        "worst": 83,
+        "minimum": 63
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "fence",
+      "n": 0,
+      "completion_us": {
+        "samples": 64,
+        "mean": 104.625,
+        "median": 105.0,
+        "p95": 134,
+        "worst": 159,
+        "minimum": 92
+      },
+      "issue_us": {
+        "samples": 64,
+        "mean": 127.53125,
+        "median": 129.5,
+        "p95": 149,
+        "worst": 174,
+        "minimum": 88
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "fill",
+      "n": 0,
+      "us": {
+        "samples": 8,
+        "mean": 251.625,
+        "median": 248.5,
+        "p95": 278,
+        "worst": 278,
+        "minimum": 242
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "blit",
+      "n": 0,
+      "us": {
+        "samples": 8,
+        "mean": 287.375,
+        "median": 287.5,
+        "p95": 316,
+        "worst": 316,
+        "minimum": 259
+      }
+    },
+    {
+      "phase": "PCM_STOPPED",
+      "op": "present",
+      "n": 0,
+      "us": {
+        "samples": 8,
+        "mean": 14612.125,
+        "median": 15788.5,
+        "p95": 15822,
+        "worst": 15822,
+        "minimum": 6355
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_pointer_write",
+      "n": 1,
+      "us": {
+        "samples": 16,
+        "mean": 65.875,
+        "median": 71.5,
+        "p95": 96,
+        "worst": 96,
+        "minimum": 23
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_pointer_write",
+      "n": 2,
+      "us": {
+        "samples": 16,
+        "mean": 69.125,
+        "median": 76.5,
+        "p95": 95,
+        "worst": 95,
+        "minimum": 40
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_pointer_write",
+      "n": 4,
+      "us": {
+        "samples": 16,
+        "mean": 73.8125,
+        "median": 76.0,
+        "p95": 97,
+        "worst": 97,
+        "minimum": 39
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_pointer_write",
+      "n": 8,
+      "us": {
+        "samples": 16,
+        "mean": 82.6875,
+        "median": 86.5,
+        "p95": 105,
+        "worst": 105,
+        "minimum": 45
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_pointer_write",
+      "n": 16,
+      "us": {
+        "samples": 16,
+        "mean": 88.5,
+        "median": 88.0,
+        "p95": 115,
+        "worst": 115,
+        "minimum": 54
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_pointer_write",
+      "n": 32,
+      "us": {
+        "samples": 16,
+        "mean": 98.6875,
+        "median": 110.0,
+        "p95": 120,
+        "worst": 120,
+        "minimum": 63
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_pointer_write",
+      "n": 64,
+      "us": {
+        "samples": 16,
+        "mean": 135.0625,
+        "median": 138.5,
+        "p95": 148,
+        "worst": 148,
+        "minimum": 89
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_pointer_write",
+      "n": 128,
+      "us": {
+        "samples": 16,
+        "mean": 183.875,
+        "median": 186.0,
+        "p95": 193,
+        "worst": 193,
+        "minimum": 162
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_pointer_write",
+      "n": 256,
+      "us": {
+        "samples": 16,
+        "mean": 288.875,
+        "median": 291.0,
+        "p95": 304,
+        "worst": 304,
+        "minimum": 260
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_pointer_write",
+      "n": 512,
+      "us": {
+        "samples": 16,
+        "mean": 491.6875,
+        "median": 488.5,
+        "p95": 519,
+        "worst": 519,
+        "minimum": 482
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_csr_read",
+      "n": 1,
+      "us": {
+        "samples": 16,
+        "mean": 54.5625,
+        "median": 42.0,
+        "p95": 93,
+        "worst": 93,
+        "minimum": 34
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_csr_read",
+      "n": 2,
+      "us": {
+        "samples": 16,
+        "mean": 52.375,
+        "median": 41.5,
+        "p95": 80,
+        "worst": 80,
+        "minimum": 30
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_csr_read",
+      "n": 4,
+      "us": {
+        "samples": 16,
+        "mean": 56,
+        "median": 58.0,
+        "p95": 80,
+        "worst": 80,
+        "minimum": 36
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_csr_read",
+      "n": 8,
+      "us": {
+        "samples": 16,
+        "mean": 53.0625,
+        "median": 42.5,
+        "p95": 78,
+        "worst": 78,
+        "minimum": 38
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_csr_read",
+      "n": 16,
+      "us": {
+        "samples": 16,
+        "mean": 63.9375,
+        "median": 59.0,
+        "p95": 87,
+        "worst": 87,
+        "minimum": 45
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_csr_read",
+      "n": 32,
+      "us": {
+        "samples": 16,
+        "mean": 96.0625,
+        "median": 100.0,
+        "p95": 136,
+        "worst": 136,
+        "minimum": 57
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_csr_read",
+      "n": 64,
+      "us": {
+        "samples": 16,
+        "mean": 115.1875,
+        "median": 119.0,
+        "p95": 139,
+        "worst": 139,
+        "minimum": 83
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_csr_read",
+      "n": 128,
+      "us": {
+        "samples": 16,
+        "mean": 174.4375,
+        "median": 176.0,
+        "p95": 190,
+        "worst": 190,
+        "minimum": 146
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_csr_read",
+      "n": 256,
+      "us": {
+        "samples": 16,
+        "mean": 275.875,
+        "median": 275.0,
+        "p95": 312,
+        "worst": 312,
+        "minimum": 264
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "raw_csr_read",
+      "n": 512,
+      "us": {
+        "samples": 16,
+        "mean": 492.8125,
+        "median": 499.0,
+        "p95": 516,
+        "worst": 516,
+        "minimum": 444
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_write",
+      "n": 1,
+      "us": {
+        "samples": 16,
+        "mean": 285.75,
+        "median": 287.5,
+        "p95": 324,
+        "worst": 324,
+        "minimum": 239
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_write",
+      "n": 2,
+      "us": {
+        "samples": 16,
+        "mean": 284.4375,
+        "median": 288.5,
+        "p95": 322,
+        "worst": 322,
+        "minimum": 238
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_write",
+      "n": 4,
+      "us": {
+        "samples": 16,
+        "mean": 293.8125,
+        "median": 291.0,
+        "p95": 322,
+        "worst": 322,
+        "minimum": 256
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_write",
+      "n": 8,
+      "us": {
+        "samples": 16,
+        "mean": 289.125,
+        "median": 290.0,
+        "p95": 329,
+        "worst": 329,
+        "minimum": 260
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_write",
+      "n": 16,
+      "us": {
+        "samples": 16,
+        "mean": 307.125,
+        "median": 303.5,
+        "p95": 336,
+        "worst": 336,
+        "minimum": 291
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_write",
+      "n": 32,
+      "us": {
+        "samples": 16,
+        "mean": 319.9375,
+        "median": 318.0,
+        "p95": 346,
+        "worst": 346,
+        "minimum": 295
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_write",
+      "n": 64,
+      "us": {
+        "samples": 16,
+        "mean": 348.5,
+        "median": 349.0,
+        "p95": 388,
+        "worst": 388,
+        "minimum": 298
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_write",
+      "n": 128,
+      "us": {
+        "samples": 16,
+        "mean": 654.8125,
+        "median": 654.5,
+        "p95": 668,
+        "worst": 668,
+        "minimum": 618
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_write",
+      "n": 256,
+      "us": {
+        "samples": 16,
+        "mean": 1199.25,
+        "median": 1199.5,
+        "p95": 1223,
+        "worst": 1223,
+        "minimum": 1152
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_write",
+      "n": 512,
+      "us": {
+        "samples": 16,
+        "mean": 2282.6875,
+        "median": 2286.5,
+        "p95": 2308,
+        "worst": 2308,
+        "minimum": 2256
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_read",
+      "n": 1,
+      "us": {
+        "samples": 16,
+        "mean": 307.1875,
+        "median": 310.5,
+        "p95": 328,
+        "worst": 328,
+        "minimum": 283
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_read",
+      "n": 2,
+      "us": {
+        "samples": 16,
+        "mean": 310.6875,
+        "median": 313.0,
+        "p95": 336,
+        "worst": 336,
+        "minimum": 277
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_read",
+      "n": 4,
+      "us": {
+        "samples": 16,
+        "mean": 293.25,
+        "median": 293.5,
+        "p95": 325,
+        "worst": 325,
+        "minimum": 243
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_read",
+      "n": 8,
+      "us": {
+        "samples": 16,
+        "mean": 313.9375,
+        "median": 314.0,
+        "p95": 333,
+        "worst": 333,
+        "minimum": 282
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_read",
+      "n": 16,
+      "us": {
+        "samples": 16,
+        "mean": 318.4375,
+        "median": 322.0,
+        "p95": 346,
+        "worst": 346,
+        "minimum": 278
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_read",
+      "n": 32,
+      "us": {
+        "samples": 16,
+        "mean": 319.0625,
+        "median": 322.0,
+        "p95": 336,
+        "worst": 336,
+        "minimum": 280
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_read",
+      "n": 64,
+      "us": {
+        "samples": 16,
+        "mean": 339.875,
+        "median": 333.5,
+        "p95": 377,
+        "worst": 377,
+        "minimum": 304
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_read",
+      "n": 128,
+      "us": {
+        "samples": 16,
+        "mean": 598.0625,
+        "median": 598.5,
+        "p95": 612,
+        "worst": 612,
+        "minimum": 586
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_read",
+      "n": 256,
+      "us": {
+        "samples": 16,
+        "mean": 1121.0625,
+        "median": 1118.0,
+        "p95": 1151,
+        "worst": 1151,
+        "minimum": 1112
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "psram_read",
+      "n": 512,
+      "us": {
+        "samples": 16,
+        "mean": 2193.25,
+        "median": 2194.0,
+        "p95": 2205,
+        "worst": 2205,
+        "minimum": 2181
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "stages",
+      "n": 1,
+      "begin_us": {
+        "samples": 16,
+        "mean": 210.3125,
+        "median": 202.5,
+        "p95": 298,
+        "worst": 298,
+        "minimum": 166
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 84.25,
+        "median": 78.5,
+        "p95": 117,
+        "worst": 117,
+        "minimum": 74
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 154.875,
+        "median": 158.0,
+        "p95": 177,
+        "worst": 177,
+        "minimum": 125
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 10.625,
+        "median": 11.0,
+        "p95": 13,
+        "worst": 13,
+        "minimum": 4
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "stages",
+      "n": 2,
+      "begin_us": {
+        "samples": 16,
+        "mean": 194.875,
+        "median": 197.5,
+        "p95": 262,
+        "worst": 262,
+        "minimum": 153
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 101.375,
+        "median": 94.0,
+        "p95": 167,
+        "worst": 167,
+        "minimum": 75
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 157.4375,
+        "median": 151.0,
+        "p95": 204,
+        "worst": 204,
+        "minimum": 126
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 19.8125,
+        "median": 12.0,
+        "p95": 74,
+        "worst": 74,
+        "minimum": 3
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "stages",
+      "n": 4,
+      "begin_us": {
+        "samples": 16,
+        "mean": 201.9375,
+        "median": 202.5,
+        "p95": 259,
+        "worst": 259,
+        "minimum": 159
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 94.0625,
+        "median": 93.0,
+        "p95": 136,
+        "worst": 136,
+        "minimum": 72
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 169.9375,
+        "median": 170.5,
+        "p95": 219,
+        "worst": 219,
+        "minimum": 134
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 16,
+        "median": 12.5,
+        "p95": 40,
+        "worst": 40,
+        "minimum": 6
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "stages",
+      "n": 8,
+      "begin_us": {
+        "samples": 16,
+        "mean": 205.0625,
+        "median": 201.0,
+        "p95": 266,
+        "worst": 266,
+        "minimum": 153
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 90.875,
+        "median": 89.5,
+        "p95": 117,
+        "worst": 117,
+        "minimum": 75
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 179.75,
+        "median": 163.5,
+        "p95": 243,
+        "worst": 243,
+        "minimum": 142
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 11.8125,
+        "median": 10.5,
+        "p95": 25,
+        "worst": 25,
+        "minimum": 7
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "stages",
+      "n": 16,
+      "begin_us": {
+        "samples": 16,
+        "mean": 192.75,
+        "median": 196.5,
+        "p95": 248,
+        "worst": 248,
+        "minimum": 153
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 92.5625,
+        "median": 84.5,
+        "p95": 133,
+        "worst": 133,
+        "minimum": 74
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 228,
+        "median": 231.5,
+        "p95": 300,
+        "worst": 300,
+        "minimum": 176
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 12.0625,
+        "median": 11.0,
+        "p95": 36,
+        "worst": 36,
+        "minimum": 7
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "stages",
+      "n": 32,
+      "begin_us": {
+        "samples": 16,
+        "mean": 207.25,
+        "median": 203.0,
+        "p95": 272,
+        "worst": 272,
+        "minimum": 149
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 86.875,
+        "median": 85.5,
+        "p95": 115,
+        "worst": 115,
+        "minimum": 72
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0.0625,
+        "median": 0.0,
+        "p95": 1,
+        "worst": 1,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 267.375,
+        "median": 259.0,
+        "p95": 329,
+        "worst": 329,
+        "minimum": 235
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 10.25,
+        "median": 10.0,
+        "p95": 20,
+        "worst": 20,
+        "minimum": 5
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "stages",
+      "n": 64,
+      "begin_us": {
+        "samples": 16,
+        "mean": 199.5,
+        "median": 198.0,
+        "p95": 325,
+        "worst": 325,
+        "minimum": 148
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 90.5625,
+        "median": 84.0,
+        "p95": 121,
+        "worst": 121,
+        "minimum": 74
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 379.625,
+        "median": 395.5,
+        "p95": 423,
+        "worst": 423,
+        "minimum": 313
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 14.9375,
+        "median": 10.0,
+        "p95": 55,
+        "worst": 55,
+        "minimum": 6
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "stages",
+      "n": 128,
+      "begin_us": {
+        "samples": 16,
+        "mean": 302.1875,
+        "median": 292.0,
+        "p95": 353,
+        "worst": 353,
+        "minimum": 252
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 158.5625,
+        "median": 150.5,
+        "p95": 178,
+        "worst": 178,
+        "minimum": 145
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 714.875,
+        "median": 700.0,
+        "p95": 776,
+        "worst": 776,
+        "minimum": 672
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 19.1875,
+        "median": 19.0,
+        "p95": 27,
+        "worst": 27,
+        "minimum": 14
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "stages",
+      "n": 256,
+      "begin_us": {
+        "samples": 16,
+        "mean": 514.625,
+        "median": 502.0,
+        "p95": 602,
+        "worst": 602,
+        "minimum": 455
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 291.375,
+        "median": 290.0,
+        "p95": 322,
+        "worst": 322,
+        "minimum": 275
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 1323.8125,
+        "median": 1326.5,
+        "p95": 1389,
+        "worst": 1389,
+        "minimum": 1259
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 39,
+        "median": 38.5,
+        "p95": 51,
+        "worst": 51,
+        "minimum": 31
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "stages",
+      "n": 512,
+      "begin_us": {
+        "samples": 16,
+        "mean": 941,
+        "median": 944.0,
+        "p95": 1015,
+        "worst": 1015,
+        "minimum": 903
+      },
+      "dma_setup_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "dma_wait_us": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "end_us": {
+        "samples": 16,
+        "mean": 566.0625,
+        "median": 561.0,
+        "p95": 592,
+        "worst": 592,
+        "minimum": 544
+      },
+      "fifo_stalls": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "gpu_error": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "timeouts": {
+        "samples": 16,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "worst": 0,
+        "minimum": 0
+      },
+      "transfer_us": {
+        "samples": 16,
+        "mean": 2542.5625,
+        "median": 2541.5,
+        "p95": 2600,
+        "worst": 2600,
+        "minimum": 2482
+      },
+      "wire_wait_us": {
+        "samples": 16,
+        "mean": 79.8125,
+        "median": 78.5,
+        "p95": 102,
+        "worst": 102,
+        "minimum": 68
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "fence",
+      "n": 0,
+      "completion_us": {
+        "samples": 64,
+        "mean": 104.78125,
+        "median": 106.0,
+        "p95": 137,
+        "worst": 165,
+        "minimum": 92
+      },
+      "issue_us": {
+        "samples": 64,
+        "mean": 125.609375,
+        "median": 130.5,
+        "p95": 148,
+        "worst": 170,
+        "minimum": 90
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "fill",
+      "n": 0,
+      "us": {
+        "samples": 8,
+        "mean": 240.125,
+        "median": 242.5,
+        "p95": 255,
+        "worst": 255,
+        "minimum": 219
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "blit",
+      "n": 0,
+      "us": {
+        "samples": 8,
+        "mean": 271.875,
+        "median": 274.5,
+        "p95": 316,
+        "worst": 316,
+        "minimum": 209
+      }
+    },
+    {
+      "phase": "PCM_PLAYING",
+      "op": "present",
+      "n": 0,
+      "us": {
+        "samples": 8,
+        "mean": 14105.375,
+        "median": 15804.0,
+        "p95": 15938,
+        "worst": 15938,
+        "minimum": 2071
+      }
+    }
+  ],
+  "profile": [
+    {
+      "region": "IDLE",
+      "exclusive_us": 226229,
+      "calls": 0,
+      "wall_fraction": 0.0015085183084041186
+    },
+    {
+      "region": "DRAW",
+      "exclusive_us": 2234390,
+      "calls": 4257,
+      "wall_fraction": 0.014899143006047316
+    },
+    {
+      "region": "NO_DRAW",
+      "exclusive_us": 99976,
+      "calls": 23928,
+      "wall_fraction": 0.0006666502809145164
+    },
+    {
+      "region": "USB",
+      "exclusive_us": 154856,
+      "calls": 28185,
+      "wall_fraction": 0.0010325957820006637
+    },
+    {
+      "region": "LOG",
+      "exclusive_us": 147391,
+      "calls": 28185,
+      "wall_fraction": 0.0009828183919567846
+    },
+    {
+      "region": "SCHEDULE",
+      "exclusive_us": 36843,
+      "calls": 28185,
+      "wall_fraction": 0.00024567292449921514
+    },
+    {
+      "region": "SLEEP",
+      "exclusive_us": 28218863,
+      "calls": 28185,
+      "wall_fraction": 0.18816628936983132
+    },
+    {
+      "region": "GEOMETRY",
+      "exclusive_us": 27144,
+      "calls": 372,
+      "wall_fraction": 0.00018099899200951864
+    },
+    {
+      "region": "MASK",
+      "exclusive_us": 74744,
+      "calls": 12780,
+      "wall_fraction": 0.0004984007021352587
+    },
+    {
+      "region": "RECT",
+      "exclusive_us": 954301,
+      "calls": 372,
+      "wall_fraction": 0.006363377507871929
+    },
+    {
+      "region": "DESCRIPTOR",
+      "exclusive_us": 2208537,
+      "calls": 414837,
+      "wall_fraction": 0.014726752535209485
+    },
+    {
+      "region": "SUBMIT",
+      "exclusive_us": 19171343,
+      "calls": 419094,
+      "wall_fraction": 0.12783649272283898
+    },
+    {
+      "region": "DONE",
+      "exclusive_us": 45899235,
+      "calls": 419094,
+      "wall_fraction": 0.3060608336651937
+    },
+    {
+      "region": "PRESENT",
+      "exclusive_us": 18259,
+      "calls": 4257,
+      "wall_fraction": 0.00012175289548709846
+    },
+    {
+      "region": "BEGIN",
+      "exclusive_us": 20837241,
+      "calls": 4873678,
+      "wall_fraction": 0.13894487243071818
+    },
+    {
+      "region": "DIRECTION",
+      "exclusive_us": 0,
+      "calls": 0,
+      "wall_fraction": 0.0
+    },
+    {
+      "region": "CS_SETUP",
+      "exclusive_us": 0,
+      "calls": 0,
+      "wall_fraction": 0.0
+    },
+    {
+      "region": "TX",
+      "exclusive_us": 0,
+      "calls": 0,
+      "wall_fraction": 0.0
+    },
+    {
+      "region": "RX",
+      "exclusive_us": 0,
+      "calls": 0,
+      "wall_fraction": 0.0
+    },
+    {
+      "region": "FIFO_WAIT",
+      "exclusive_us": 0,
+      "calls": 0,
+      "wall_fraction": 0.0
+    },
+    {
+      "region": "DEADLINE",
+      "exclusive_us": 0,
+      "calls": 0,
+      "wall_fraction": 0.0
+    },
+    {
+      "region": "WIRE",
+      "exclusive_us": 10071830,
+      "calls": 4873678,
+      "wall_fraction": 0.0671600013885658
+    },
+    {
+      "region": "CS_HOLD",
+      "exclusive_us": 0,
+      "calls": 0,
+      "wall_fraction": 0.0
+    },
+    {
+      "region": "END",
+      "exclusive_us": 19586504,
+      "calls": 4873678,
+      "wall_fraction": 0.13060482909631613
+    },
+    {
+      "region": "DMA_SETUP",
+      "exclusive_us": 0,
+      "calls": 0,
+      "wall_fraction": 0.0
+    },
+    {
+      "region": "DMA_WAIT",
+      "exclusive_us": 0,
+      "calls": 0,
+      "wall_fraction": 0.0
+    },
+    {
+      "region": "WORK",
+      "exclusive_us": 0,
+      "calls": 0,
+      "wall_fraction": 0.0
+    },
+    {
+      "region": "COOP_WORK",
+      "exclusive_us": 0,
+      "calls": 0,
+      "wall_fraction": 0.0
+    }
+  ],
+  "profile_total_wall_us": 149967686,
+  "work": {
+    "batches": 0,
+    "rounds": 0,
+    "us": 0,
+    "checksum": 726550,
+    "valid": 1,
+    "call_over_budget": 310,
+    "deadline_misses": 337,
+    "rounds_completed": 0,
+    "arithmetic_operations": 0,
+    "operations_per_profile_window_second": 0.0
+  },
+  "full_flash_after_tests_verified": true,
+  "transport_data_validation": "Frozen finite benchmark compares all-zero scratch data; changing-pattern physical DMA integrity is not independently established. PC fake tests use nonzero patterns.",
+  "physical_waveform_validation": "NOT RUN; HDMI capture is not a PIO logic analyzer",
+  "audio": {
+    "sample_rate": 48000,
+    "channels": 2,
+    "capture_seconds": 157.5,
+    "onset_s": 4.32,
+    "audible_span_s": 150.0,
+    "low_rms_threshold": 20,
+    "low_10ms_blocks": 0,
+    "longest_low_rms_ms": 0,
+    "low_intervals_s": [],
+    "peak": 14449,
+    "pcm_status_fault": 0,
+    "independent_underrun_counter": false,
+    "scope": "physical HDMI audio; silence scan does not prove every sample",
+    "bgm_quiet_segment_correlations": [
+      {
+        "scene": 0,
+        "correlation": 0.995534180825876,
+        "loop_offset_samples": 144005
+      },
+      {
+        "scene": 1,
+        "correlation": 0.9973118675415852,
+        "loop_offset_samples": 240014
+      },
+      {
+        "scene": 2,
+        "correlation": 0.9952914627598994,
+        "loop_offset_samples": 48032
+      },
+      {
+        "scene": 3,
+        "correlation": 0.9963310313762247,
+        "loop_offset_samples": 240049
+      },
+      {
+        "scene": 4,
+        "correlation": 0.99518739535401,
+        "loop_offset_samples": 48066
+      },
+      {
+        "scene": 5,
+        "correlation": 0.9942887451528237,
+        "loop_offset_samples": 96089
+      },
+      {
+        "scene": 6,
+        "correlation": 0.9962029864848505,
+        "loop_offset_samples": 144110
+      },
+      {
+        "scene": 7,
+        "correlation": 0.9976259235587874,
+        "loop_offset_samples": 336127
+      }
+    ]
+  },
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1"
+      },
+      {
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "157.839000"
+    }
+  },
+  "capture_health": {
+    "final_progress": "frame= 9467 fps= 60 q=-1.0 Lsize=   98573KiB time=00:02:37.79 bitrate=5117.3kbits/s speed=   1x elapsed=0:02:37.79    ",
+    "buffer_too_full_mentions": 0,
+    "caveat": "Capture encoder statistics are not GPU PRESENT or source-frame drop counters"
+  }
+}

@@ -8,3 +8,7 @@
 /releases/pcm2-spi/** -text
 
 /artifacts/** -text
+
+/releases/queue8-qspi-deglitch-rc1/** -text
+
+/releases/pcm-stream-qspi/** -text

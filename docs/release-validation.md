@@ -1,12 +1,21 @@
 # 公開スナップショットと成果物の区分
 
-実機Demoで使用したPCM2 / ABI 1.4 / QSPI版を最終版とします。リポジトリ公開とGitHub Release作成は別です。通常のRelease assetはQSPIだけで、Release・タグはまだ作成していません。
+2026-11-08から、**PCMストリーミング QSPI版**を最終版とします。従来のPCM2 / ABI 1.4 / QSPI版は置き換え済み（superseded）として、下の節に記録を残します。リポジトリの公開とGitHub Releaseの作成は別の作業です。通常のRelease assetはQSPIだけで、Releaseとタグはまだ作成していません。
 
-## Validated
+## Validated（選定版）
+
+[artifacts/validated/kagura-hd-qspi-pcm-stream.fs](../artifacts/validated/kagura-hd-qspi-pcm-stream.fs)。SHA-256は`fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db`です。内部STAはSetup +0.177 ns、Hold +0.527 ns、違反0/0。
+
+- **入力と再現：** [パッケージ](../releases/pcm-stream-qspi/README.md)に、元入力41ファイル、P&R設定、STA、検証記録、再現スクリプトを保存しています。
+- **実機での確認：** G1正式認定（53回）、BEYOND 16 COLORSの150秒回帰、[FOUR OPERATORS](../software/fm_megademo/README.md)の132秒完走。いずれも有限の試験です。
+- **経緯：** [設計監査報告書](../diagnostics/pcm-stream-rc1/design-audit-report.md)を参照してください。
+- **保証の範囲外：** 全PVT、長時間運用、複数基板、最大通信速度。
+
+## Validated（置き換え済み：PCM2）
 
 [artifacts/validated/kagura-hd-qspi-pcm2.fs](../artifacts/validated/kagura-hd-qspi-pcm2.fs)。SHA-256は`642c7a3ce961685279c229dbe9b1577285bd7867353cfaf7de8f4db06b3683a7`。実機で使用したファイルを改変せず移動しました。内部STAはSetup +0.160 ns、Hold +0.484 ns、違反0/0です。
 
-[QSPI元入力・記録](../releases/pcm2-qspi-final/README.md)に40入力、STA/PC結果、統合回帰ログ、ライセンス・出典を保存しています。実機確認は[BEYOND](../software/beyond16/HARDWARE_RESULT.md)と[MIDNIGHT](../software/midnight_terminal/HARDWARE_RESULT.md)の有限試験です。全PVT・長時間・複数基板・最大通信速度の保証は含みません。
+[QSPI元入力・記録](../releases/pcm2-qspi-final/README.md)に40入力、STA/PC結果、統合回帰ログ、ライセンス・出典を保存しています。実機確認は[BEYOND](../software/beyond16/HARDWARE_RESULT.md)と[MIDNIGHT（旧PCM2版）](https://github.com/siska-tech/kagura-hd/blob/52fd69f6507b22c8c58d4112fd335562c7f9c57f/software/midnight_terminal/HARDWARE_RESULT.md)の有限試験です。全PVT・長時間・複数基板・最大通信速度の保証は含みません。
 
 ## Experimental：SPI STA failure
 

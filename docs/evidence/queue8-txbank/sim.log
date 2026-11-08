@@ -1,0 +1,6 @@
+PASS: wrap32 linear READ/WRITE, every word offset/1..16 words, masks, guards, die/reset: cases=381 max_read=106
+- sim/tests/tb_fb_rx32_tap.sv:99: Verilog $finish
+RX32 equivalence: edges=34024 words=2124
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 340us; walltime 0.069 s; speed 5.019 ms/s
+- Verilator: cpu 0.068 s on 1 threads; alloced 129 MB

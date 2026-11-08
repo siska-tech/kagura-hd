@@ -16,6 +16,7 @@ module kagura_pcm_control (
     input  wire reset,
     input  wire [1:0] prepare,         // pulses from the register block
     input  wire [1:0] stop,
+    input  wire cancel_pending,
     input  wire [1:0] clear,
     input  wire apply_boundary,        // AUDIO_COMMIT applies on this sample boundary
     input  wire [1:0] commit_enable,   // ENABLE in the snapshot being applied
@@ -38,7 +39,7 @@ module kagura_pcm_control (
     reg [1:0] pending,need_prepare,done,underrun,config_error,memory_error;
     wire [1:0] accept=cfg_valid & cfg_ready;
     wire [1:0] ready=pf_ready & ~need_prepare & ~pending;
-    assign cfg_valid=pending & cfg_ready;
+    assign cfg_valid=pending & cfg_ready & {2{!cancel_pending}};
     assign cache_flush=|accept;
     assign stop_play=stop | (prepare & pf_active) | ({2{apply_boundary}} & ~commit_enable & pf_active);
     assign start_play={2{apply_boundary}} & commit_enable & ready & ~pf_active & ~prepare & ~stop;
@@ -51,7 +52,7 @@ module kagura_pcm_control (
         if(reset) begin
             pending<=0; need_prepare<=2'b11; done<=0; underrun<=0; config_error<=0; memory_error<=0;
         end else begin
-            pending<=(pending & ~accept) | prepare;
+            pending<=cancel_pending ? 2'b0 : (pending & ~accept) | prepare;
             need_prepare<=(need_prepare & ~accept) | stop | pf_done | pf_underrun | pf_config_error | pf_memory_error;
             done<=(done & ~clear) | pf_done;
             underrun<=(underrun & ~clear) | pf_underrun;

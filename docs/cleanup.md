@@ -1,5 +1,7 @@
 # 公開準備時の整理（2026-11-06）
 
+> 履歴資料：2026-11-06時点の整理記録です。2026-11-08に、選定版はPCMストリーミング版（[releases/pcm-stream-qspi](../releases/pcm-stream-qspi/README.md)）に置き換わりました。
+
 実機Demoで使用したPCM2 QSPI候補04を最終版として選定しました。RTL・board top・SDK・回帰試験をルートへ統合し、既存C SDKの`KFB_PACK_DESCRIPTOR`も保持しています。
 
 一回限りの候補生成・freeze・集計スクリプトは、未追跡ファイルだけを対象としてローカルの`build/development-archive-2026-11-06/tools/`へ退避しました。ファイル一覧は同ディレクトリの`manifest.json`にあります。公開用の再ビルドや回帰試験には使用しません。削除はしていません。

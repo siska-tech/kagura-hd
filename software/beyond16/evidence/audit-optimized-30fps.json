@@ -1,0 +1,88 @@
+{
+  "scope": "offline existing physical evidence; no device access",
+  "scenes": [
+    {
+      "scene": "BOOT",
+      "fps": 19.4,
+      "required_rate_factor": 1.5463917525773196,
+      "call_ms": 49.670963917525775,
+      "commands_per_frame": 91.93298969072166,
+      "necessary_mean_call_reduction_percent": 32.89171237208045
+    },
+    {
+      "scene": "HYPERSPACE",
+      "fps": 17.4,
+      "required_rate_factor": 1.7241379310344829,
+      "call_ms": 56.23749712643678,
+      "commands_per_frame": 99.87068965517241,
+      "necessary_mean_call_reduction_percent": 40.72756606078827
+    },
+    {
+      "scene": "RASTER WAVES",
+      "fps": 11.95,
+      "required_rate_factor": 2.5104602510460254,
+      "call_ms": 82.47825941422595,
+      "commands_per_frame": 143.18410041841005,
+      "necessary_mean_call_reduction_percent": 59.58530942569338
+    },
+    {
+      "scene": "PLASMA ENGINE",
+      "fps": 20.6,
+      "required_rate_factor": 1.4563106796116503,
+      "call_ms": 44.42957524271845,
+      "commands_per_frame": 68.17961165048544,
+      "necessary_mean_call_reduction_percent": 24.974899824647036
+    },
+    {
+      "scene": "ROTOZOOM",
+      "fps": 15.28,
+      "required_rate_factor": 1.9633507853403143,
+      "call_ms": 64.07743455497382,
+      "commands_per_frame": 105.6282722513089,
+      "necessary_mean_call_reduction_percent": 47.979606916478936
+    },
+    {
+      "scene": "BLIT STORM",
+      "fps": 28.16,
+      "required_rate_factor": 1.0653409090909092,
+      "call_ms": 34.16143323863636,
+      "commands_per_frame": 57.75852272727273,
+      "necessary_mean_call_reduction_percent": 2.42407834448366
+    },
+    {
+      "scene": "VECTOR WORLD",
+      "fps": 4.2,
+      "required_rate_factor": 7.142857142857142,
+      "call_ms": 238.08239285714285,
+      "commands_per_frame": 482.5952380952381,
+      "necessary_mean_call_reduction_percent": 85.99924465924936
+    },
+    {
+      "scene": "FINALE",
+      "fps": 21.4,
+      "required_rate_factor": 1.4018691588785048,
+      "call_ms": 26.35172429906542,
+      "commands_per_frame": 35.13084112149533,
+      "necessary_mean_call_reduction_percent": 0
+    }
+  ],
+  "bus": {
+    "begin_us": {
+      "seconds": 34.017524,
+      "us_per_transaction": 16.51144551675801,
+      "wall_fraction": 0.22951162147391999
+    },
+    "transfer_us": {
+      "seconds": 60.559014,
+      "us_per_transaction": 29.394169317249116,
+      "wall_fraction": 0.4085834553391311
+    },
+    "end_us": {
+      "seconds": 16.3933,
+      "us_per_transaction": 7.956989456077669,
+      "wall_fraction": 0.1106033720828245
+    }
+  },
+  "unclassified_transaction_seconds": 13.223295000000007,
+  "ideal_speedup_if_begin_end_free": 1.5154155500364312
+}

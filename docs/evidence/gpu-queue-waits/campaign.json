@@ -1,0 +1,278 @@
+{
+  "start_utc": "2026-11-06T15:34:55.393623+00:00",
+  "release_ready": false,
+  "authorized": "User provisionally approved depth 8 and requested queued megademo hardware load validation",
+  "numeric_timing_gate_passed": false,
+  "worst_setup_ns": 0.05,
+  "fpga_flash_writes": 0,
+  "fpga_sram_programs": 1,
+  "rp2040_uid": "E663A837CB73512D",
+  "bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "variants": [
+    {
+      "name": "baseline",
+      "stage": "complete",
+      "success": true,
+      "firmware_sha256": "2d94e29e23a0f8f5a886cc3525ef07415d3f76b39aa87403c7c762486d2b9128",
+      "queue": {
+        "depth": 8,
+        "submitted": 318066,
+        "retired": 318066,
+        "peak": 8,
+        "pending": 0,
+        "barriers": 4832,
+        "errors": 0
+      },
+      "QRET": [
+        {
+          "reason": 0,
+          "calls": 285414,
+          "samples": 4460,
+          "poll_us": 96003,
+          "metadata_us": 149869,
+          "ack_us": 56963
+        },
+        {
+          "reason": 1,
+          "calls": 23938,
+          "samples": 375,
+          "poll_us": 10157,
+          "metadata_us": 12603,
+          "ack_us": 4780
+        },
+        {
+          "reason": 2,
+          "calls": 8564,
+          "samples": 134,
+          "poll_us": 2285,
+          "metadata_us": 4497,
+          "ack_us": 1707
+        },
+        {
+          "reason": 3,
+          "calls": 0,
+          "samples": 0,
+          "poll_us": 0,
+          "metadata_us": 0,
+          "ack_us": 0
+        }
+      ],
+      "QSYNC": [
+        {
+          "op": 0,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 1,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 2,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 3,
+          "calls": 4413,
+          "nonempty": 1088,
+          "samples": 69,
+          "drain_us": 11588,
+          "command_us": 686049
+        },
+        {
+          "op": 4,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 5,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 6,
+          "calls": 122383,
+          "nonempty": 3741,
+          "samples": 1913,
+          "drain_us": 26207,
+          "command_us": 312944
+        },
+        {
+          "op": 7,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        }
+      ],
+      "full_flash_after_tests_verified": true,
+      "after_sha256": "d8e081ea9e6ed802da79bfc3c970c2b3999e5a71db4362bfb35dcc0c0bdbb1ea"
+    },
+    {
+      "name": "merged",
+      "stage": "complete",
+      "success": true,
+      "firmware_sha256": "9ad926d51c7974e02d7a53dbd03e92e3e69f9c3cdbb9e4cf9049dbdc8816c80c",
+      "queue": {
+        "depth": 8,
+        "submitted": 317431,
+        "retired": 317431,
+        "peak": 8,
+        "pending": 0,
+        "barriers": 4836,
+        "errors": 0
+      },
+      "QRET": [
+        {
+          "reason": 0,
+          "calls": 284757,
+          "samples": 4450,
+          "poll_us": 95360,
+          "metadata_us": 149636,
+          "ack_us": 56916
+        },
+        {
+          "reason": 1,
+          "calls": 23952,
+          "samples": 375,
+          "poll_us": 6933,
+          "metadata_us": 12598,
+          "ack_us": 4839
+        },
+        {
+          "reason": 2,
+          "calls": 8572,
+          "samples": 134,
+          "poll_us": 2291,
+          "metadata_us": 4499,
+          "ack_us": 1705
+        },
+        {
+          "reason": 3,
+          "calls": 0,
+          "samples": 0,
+          "poll_us": 0,
+          "metadata_us": 0,
+          "ack_us": 0
+        }
+      ],
+      "QSYNC": [
+        {
+          "op": 0,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 1,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 2,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 3,
+          "calls": 4420,
+          "nonempty": 1089,
+          "samples": 70,
+          "drain_us": 11054,
+          "command_us": 727582
+        },
+        {
+          "op": 4,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 5,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 6,
+          "calls": 122688,
+          "nonempty": 3744,
+          "samples": 1917,
+          "drain_us": 31040,
+          "command_us": 312872
+        },
+        {
+          "op": 7,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        }
+      ],
+      "full_flash_after_tests_verified": true,
+      "after_sha256": "4b700cfef2d8b645bc3dba93309b70ae209625d5a3878df2939c60ec8108a088"
+    }
+  ],
+  "success": true,
+  "failure": null,
+  "experiment": "sampled queue waits and pixel-equivalent finale lettering",
+  "firmwares": {
+    "fw-baseline": {
+      "bin_sha256": "2d94e29e23a0f8f5a886cc3525ef07415d3f76b39aa87403c7c762486d2b9128",
+      "elf_sha256": "55b58c07767eca67cafd6b0a097d61db931e7dfb87992a0be144565410fe77b2"
+    },
+    "fw-merged": {
+      "bin_sha256": "9ad926d51c7974e02d7a53dbd03e92e3e69f9c3cdbb9e4cf9049dbdc8816c80c",
+      "elf_sha256": "dc48706e321e7ae88d06e4f28506fb9e9a1c68c498c326729673d93c1adb5558"
+    }
+  },
+  "protected": {
+    "artifacts/validated/kagura-hd-qspi-pcm2.fs": "642c7a3ce961685279c229dbe9b1577285bd7867353cfaf7de8f4db06b3683a7",
+    "artifacts/validated/SHA256SUMS": "4ee71362a8c36d07a2e8f5edb641d7765dc60af94eec5c52950bd8907fee5fcb",
+    "software/beyond16/out/headroom-firmware/A-detailed/beyond16.bin": "29a4d3f39814bf98b7c4198979e83a4407342ab7853e95bad1d25e37d3ef2bd4",
+    "software/beyond16/out/headroom-firmware/A-off/beyond16.bin": "44d9e58caec817e78453ee6123001b3f1ac311bbfd9d77e4642082268e241a12",
+    "software/beyond16/out/headroom-firmware/A-summary/beyond16.bin": "a2ebbb82763e6dcdac9024915966c9b1fab900d4166645beaa0aac7184425334",
+    "software/beyond16/out/headroom-firmware/absolute30/beyond16.bin": "d742b15292cd2f99febd8d1e3fd38340efc39b8d5360db84f8e4ba39ecb4040b",
+    "software/beyond16/out/headroom-firmware/B-summary/beyond16.bin": "e54dccc72a0b2da5897426559b12741dcffbbe56ef7a0b8ccaa2802be2e86a86",
+    "software/beyond16/out/headroom-firmware/C-test128/beyond16.bin": "5f40aaa4d62dab48d7bfe4f36e210c74181cca212cdf00e8099ad48d4414ca6e",
+    "software/beyond16/out/headroom-firmware/cooperative/beyond16.bin": "36a9026439da9fef3124af0f927905c37908cea0337a3d417812b1eaf72c5825",
+    "software/beyond16/out/headroom-firmware/work64/beyond16.bin": "71a5dbdfe6ea30b3ffde23975630ae0e219bb6914cd157da750daccc67a93ea7"
+  },
+  "original_backup": {
+    "path": "build/queue-wait-20261107/hardware/baseline/before.bin",
+    "sha256": "d6737657592f7694049ee9758682fadaf05360c93f7505db1bbeb134c5dd26cf"
+  },
+  "final_state": "Queue 8 SRAM FPGA and queued RP2040 firmware; PCM stopped, explicit USB start gate",
+  "finish_utc": "2026-11-06T15:41:47.214037+00:00"
+}

@@ -1,0 +1,366 @@
+{
+  "system_clock_hz": 54000000,
+  "hardware_tested": false,
+  "eval_dir": "build/fb-queue-eval-credit-p1-r2",
+  "host_dir": "build/fb-queue-host-credit",
+  "baseline_dir": null,
+  "source_manifests": {
+    "build/fb-queue-eval-credit-p1-r2": [
+      {
+        "path": "rtl/fb/kagura_fb_core.sv",
+        "sha256": "703133BDEFB979BA5EA91183D349AA620D9EFD86989FA97876D2108EDA6C1947"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_scanout.sv",
+        "sha256": "F6349D1DE1E09D5A614B23A357BDB7B9E39853B09E8E2AE6E50E63D81EDCE5A2"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_line_banks.sv",
+        "sha256": "927160B42C9CE72E76502B6FF52ED65B15DC242D1DFFA866D2509B3887E9C827"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_line_fetch.sv",
+        "sha256": "90897A767B7941A8C5412DD0A5541FC3D3DDA5492C49C891A048D2E3ADC49500"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_arbiter.sv",
+        "sha256": "149B98E3E181F40AD9D0487C1A63A8581E7DE7205839FBC138DE1128657A9F9B"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_burst_ctrl.sv",
+        "sha256": "D571A66260E06C4EE9F1D61477B6F7D0CB2281D664CC8A8A760F206907D39507"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_pcm_port.sv",
+        "sha256": "C21302A2B90DAAADD0730D54DAE26107FA3C64E6E3EA0D89BA2704CF05D734BD"
+      },
+      {
+        "path": "rtl/memory/kagura_ram_tdp.sv",
+        "sha256": "3092CA6DAA905254E31C4C0AF4D5714078C0948A7805A3961743621CA6E18B6C"
+      },
+      {
+        "path": "rtl/memory/kagura_async_fifo.sv",
+        "sha256": "536010C7E934FB421584BF7645C622760932F4DE7541FD47BE959469C245B6D4"
+      },
+      {
+        "path": "rtl/audio/kagura_pcm_prefetch.sv",
+        "sha256": "1E8DC87D0DEA90E8E92A2C164EA7D2FE390B878BEDFF819F366A004C00C1B4D4"
+      },
+      {
+        "path": "rtl/audio/kagura_pcm_control.sv",
+        "sha256": "BFDE93CBEE15FF3838DD8857B23E65B2789CA2ADC81AEAE04F77F0B7D70FD2F3"
+      },
+      {
+        "path": "rtl/audio/kagura_audio_synth.sv",
+        "sha256": "8C0B610CB2AFB5478C74A385DCDD517D18388A9D410162DB9F15C1EE211E062B"
+      },
+      {
+        "path": "rtl/audio/kagura_audio_transport.sv",
+        "sha256": "C0424CCC7A2D468D10FF4454BB15B5E53656B7D3780A21E387BDA532757B7FB0"
+      },
+      {
+        "path": "rtl/hdmi/kagura_hdmi_stream_eval.sv",
+        "sha256": "9E3C2A90190A8F4688D7950BB9EF814D8FAEDBDBEBDE5F2FA9B1102CC08047FB"
+      },
+      {
+        "path": "rtl/hdmi/kagura_audio_packets.sv",
+        "sha256": "903F1C5BCD3EFE59C92B8916940013FECAE2693CB473C5B482084473857DD8ED"
+      },
+      {
+        "path": "rtl/hdmi/kagura_tmds_channel.sv",
+        "sha256": "0AC133C11510F175334C3F44CF7D3673D7F4FDAE30A1DFE868459AFF037A593F"
+      },
+      {
+        "path": "rtl/hdmi/kagura_packet_assembler.sv",
+        "sha256": "33AE43DEFFF2D15C92683AF342138FD9EA3792DBA02E781358E5C09A597A5F9A"
+      },
+      {
+        "path": "build/generated/kagura_hdmi_stream.sv",
+        "sha256": "71BE747D75DAACDF42BE1AAD5BA38EE1FA6BDA9343D2C560D4EA3F46A9B45CF6"
+      },
+      {
+        "path": "third_party/hdl-util-hdmi/src/audio_sample_packet.sv",
+        "sha256": "0E3A35CCB3E934EECFCD3916C5DAC9EF269ABEA21472D66EBD2660A9D25E6A13"
+      },
+      {
+        "path": "third_party/hdl-util-hdmi/src/audio_info_frame.sv",
+        "sha256": "DEDD552FA988D9E2875BDADC54F3C08D5041D54637DA1FF565D46078EEB2EA89"
+      },
+      {
+        "path": "third_party/hdl-util-hdmi/src/auxiliary_video_information_info_frame.sv",
+        "sha256": "C151E2675AD97EF36254044E42657F2D758512D305040137859F9B8806135F64"
+      },
+      {
+        "path": "third_party/hdl-util-hdmi/src/source_product_description_info_frame.sv",
+        "sha256": "893269FDCCD2DC147E8570519F35308AC5E5460AD7F54BF673B3C31E9A8259DE"
+      },
+      {
+        "path": "rtl/bus/kagura_spi_adapter.sv",
+        "sha256": "D1D761FE50283219E5FCE44A5211047ECF2DFB1C75E7ADE063C922406C3221DD"
+      },
+      {
+        "path": "rtl/audio/kagura_audio_registers.sv",
+        "sha256": "E2C5E406EEA5B5A41D0A45D8989115C1059C9CEFD6FE3C9D21F5E45ABF5B8A8A"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_audio_endpoint.sv",
+        "sha256": "21BD5199CC366AA997F5A30E0331BF917D873DF0E89C5D614FB41D476EC08A7C"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_host.sv",
+        "sha256": "6F7AD4453A448ED689BECABB1A5141CA59040F12CDBDD6E1DE01C45EBA660A45"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_command_head.sv",
+        "sha256": "3E5763DB1BF5B215149D9D7EAD33EA839D0C0728952C2A0D49D2434675EE87AF"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_registers.sv",
+        "sha256": "D15EDDD3B6CE1A5FA56B219A0DE5043F063FF424F0A1A15F36BA89F5AB2961A1"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_commands.sv",
+        "sha256": "E10ABB9A202B4E42599753C2FE7E69CDA193005B076571B2E4AD30FD42EF066F"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_fill_burst.sv",
+        "sha256": "918D170C69E5621B36BA37AA045307B3A942323CFC75AA6BD79167B6164D84EE"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_cursor.sv",
+        "sha256": "B9DB3323B085A3C9160DD947E12C447DB3A69B4CF6EC06864EC65646754890E9"
+      },
+      {
+        "path": "rtl/fb/kagura_fb_upload_word.sv",
+        "sha256": "8382EA49CEC0CA8B8317B910C3870201985C593C7C582EF6A4BEEBE5530815F2"
+      },
+      {
+        "path": "rtl/fb/sources.f",
+        "sha256": "693516F4D11A817C6FA81DFE90468CC6E8915BBF4F5B57B3F724E365C6CD891B"
+      },
+      {
+        "path": "rtl/platform/kagura_gowin_serializer.sv",
+        "sha256": "95913B47D739D4A5DC73677457713CC6EA4354AFE6C8E19CF0CD31DE9E6DD749"
+      },
+      {
+        "path": "rtl/platform/kagura_nano9k_clocks.sv",
+        "sha256": "C9C5300140F25F85BD5B474494DE60218E695CF20DD5716087621BEDFEA0221F"
+      },
+      {
+        "path": "rtl/memory/kagura_hyperram_phy_gowin.sv",
+        "sha256": "E20611D49ED5EBEBB84DB01CBEE732F9198DB57EC4E4FF8EF43B1A84B69D72C0"
+      },
+      {
+        "path": "boards/tang-nano-9k/kagura_fb_top.sv",
+        "sha256": "3CFDB5B9C5E1E9D2DD8D645BCDAB92E2259A8559BA6E4F7485C61241CF2BF969"
+      },
+      {
+        "path": "boards/tang-nano-9k/phase1.cst",
+        "sha256": "82FF01E377E4F1B918B0C12C0CDD51502201A8D382444D7F49E6BAABA72F9094"
+      },
+      {
+        "path": "boards/tang-nano-9k/host.cst",
+        "sha256": "87F6EED7E8C08FCCAB3FE8E6BBBEFBDC261ED443F688C963F5C9BE33EB037628"
+      },
+      {
+        "path": "boards/tang-nano-9k/kagura-fb.sdc",
+        "sha256": "169C6026948136C552BB5AB498D3F44C84FA390342433AC3F993745F253C1AA0"
+      },
+      {
+        "path": "tools/build-fb.tcl",
+        "sha256": "C914801DD51106B75EADE8F3EA62EEF8D1ABD3E543C2A26289C54C861911C1ED"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "depth": 1,
+      "evidence_dir": "build/fb-queue-eval-credit-p1-r2/qspi-depth-1",
+      "build": null,
+      "host_tests": []
+    },
+    {
+      "depth": 2,
+      "evidence_dir": "build/fb-queue-eval-credit-p1-r2/qspi-depth-2",
+      "build": null,
+      "host_tests": [
+        {
+          "lanes": 1,
+          "passed": true,
+          "measurements": [
+            {
+              "round": 0,
+              "accept_cycles": 16567,
+              "drain_cycles": 163133
+            },
+            {
+              "round": 1,
+              "accept_cycles": 16567,
+              "drain_cycles": 163133
+            }
+          ]
+        },
+        {
+          "lanes": 4,
+          "passed": true,
+          "measurements": [
+            {
+              "round": 0,
+              "accept_cycles": 4255,
+              "drain_cycles": 146608
+            },
+            {
+              "round": 1,
+              "accept_cycles": 4256,
+              "drain_cycles": 146609
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "depth": 4,
+      "evidence_dir": "build/fb-queue-eval-credit-p1-r2/qspi-depth-4",
+      "build": null,
+      "host_tests": [
+        {
+          "lanes": 1,
+          "passed": true,
+          "measurements": [
+            {
+              "round": 0,
+              "accept_cycles": 33135,
+              "drain_cycles": 179663
+            },
+            {
+              "round": 1,
+              "accept_cycles": 33135,
+              "drain_cycles": 179663
+            }
+          ]
+        },
+        {
+          "lanes": 4,
+          "passed": true,
+          "measurements": [
+            {
+              "round": 0,
+              "accept_cycles": 8510,
+              "drain_cycles": 150826
+            },
+            {
+              "round": 1,
+              "accept_cycles": 8510,
+              "drain_cycles": 150826
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "depth": 8,
+      "evidence_dir": "build/fb-queue-eval-credit-p1-r2/qspi-depth-8",
+      "build": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 1,
+        "route": 2,
+        "exit_code": 0,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 2,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.275,
+              "from": "core/display/held_palette_144_s0/Q",
+              "to": "core/display/palette_144_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.501,
+              "from": "host/registers/write_ptr_1_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_0_s/ADA[6]"
+            },
+            "Recovery": {
+              "slack_ns": 8.724,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/wg_sync2_1_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.736,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_sync2_4_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "5b155b05ad6385422d0d7b73a52ab5d7e7e05d3d3fd789b50b79592508747d82"
+        },
+        "elapsed_seconds": 592.0,
+        "bitstream_sha256": "215957DCB0547D0F94F0D6302AD6C70880CB43FFED08EE0777BED7B5AEA4515A"
+      },
+      "numeric_timing_gate_passed": false,
+      "errors": [],
+      "synthesis": {
+        "Register": 5388,
+        "Lut": 6857,
+        "Alu": 881,
+        "Bsram": 23,
+        "Ssram": 16
+      },
+      "pnr": {
+        "Logic": {
+          "used": 7961,
+          "available": 8640
+        },
+        "Register": {
+          "used": 5388,
+          "available": 6771
+        },
+        "CLS": {
+          "used": 4244,
+          "available": 4320
+        }
+      },
+      "host_tests": [
+        {
+          "lanes": 1,
+          "passed": true,
+          "measurements": [
+            {
+              "round": 0,
+              "accept_cycles": 66270,
+              "drain_cycles": 210956
+            },
+            {
+              "round": 1,
+              "accept_cycles": 66271,
+              "drain_cycles": 210957
+            }
+          ]
+        },
+        {
+          "lanes": 4,
+          "passed": true,
+          "measurements": [
+            {
+              "round": 0,
+              "accept_cycles": 17021,
+              "drain_cycles": 158791
+            },
+            {
+              "round": 1,
+              "accept_cycles": 17021,
+              "drain_cycles": 158791
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

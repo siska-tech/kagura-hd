@@ -1,0 +1,7 @@
+{
+  "flash_sha256": "c7052a32c9c4d83c0c4115c64b14d6bb18959301eda3ad3ecfb53fa50e1fc26a",
+  "full_flash_equal": true,
+  "baseline_sram_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "fpga_flash_writes": 0,
+  "rp2040_flash_writes": 0
+}

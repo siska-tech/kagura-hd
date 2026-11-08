@@ -11,6 +11,6 @@ Bitstreamは実機で使用した元ファイルから変更していません�
 
 このディレクトリの`SHA256SUMS`は元入力・メタデータ・ログ用です。直接配布するBitstream用には[一つ上のSHA256SUMS](../SHA256SUMS)を添付してください。リポジトリルートで`python tools/check-release.py`を実行すると、成果物と元入力を検査できます。元入力は改行を含めバイト単位で保持し、現在のFPGAテキストソースとの照合だけはGitのLF/CRLF変換を許容します。
 
-[ビルド手順](../../docs/standard-build.md)、[Host配線](../../docs/kagura-fb-host-api.md)、[BEYOND実機結果](../../software/beyond16/HARDWARE_RESULT.md)、[MIDNIGHT実機結果](../../software/midnight_terminal/HARDWARE_RESULT.md)を参照してください。有限の実機確認であり、最大通信速度・全PVT・長時間・複数基板を保証しません。生成物・IPの配布条件とライセンス表記は[公開資料](../../docs/release-validation.md)に記録しています。
+[ビルド手順](../../docs/standard-build.md)、[Host配線](../../docs/kagura-fb-host-api.md)、[BEYOND実機結果](../../software/beyond16/HARDWARE_RESULT.md)、[MIDNIGHT実機結果（旧PCM2版）](https://github.com/siska-tech/kagura-hd/blob/52fd69f6507b22c8c58d4112fd335562c7f9c57f/software/midnight_terminal/HARDWARE_RESULT.md)を参照してください。有限の実機確認であり、最大通信速度・全PVT・長時間・複数基板を保証しません。生成物・IPの配布条件とライセンス表記は[公開資料](../../docs/release-validation.md)に記録しています。
 
 SPIは[STA不合格の実験物](../../artifacts/experimental/spi-sta-fail/README.md)として隔離し、通常Releaseから除外しています。

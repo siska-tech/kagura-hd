@@ -1,0 +1,13 @@
+{
+  "mode": "bench",
+  "release_ready": false,
+  "port": "COM5",
+  "started": true,
+  "success": true,
+  "failure": null,
+  "start_utc": "2026-11-05T23:26:25.235496+00:00",
+  "perf": [],
+  "bus": [],
+  "stop_elapsed_s": 2.937000000034459,
+  "capture_exit": 0
+}

@@ -1,103 +1,83 @@
-# MIDNIGHT TERMINAL
+# MIDNIGHT TERMINAL — FM EDITION
 
-深夜のバー、雨、店員ミオとの短い会話。端末を調べると、美咲の架空ログが画面へ侵入し、「警告：この記憶はあなたのものではありません」を残して日常へ戻る。オリジナルの日本語ADV／KAGURA-HD技術ショーケース。
+[![実機動画（YouTube）](https://img.youtube.com/vi/ocwRtPimfRQ/maxresdefault.jpg)](https://youtu.be/ocwRtPimfRQ)
 
-**PCプレビュー、RP2040 C版のFlash投入、5MHzでの実機autoplay 1周とHDMI映像・音声captureを確認済み。性能目標は未達。Demoの性能目標は未達です。FPGA Bitstreamは[PCM2 QSPI最終版](../../releases/pcm2-qspi-final/README.md)として選定済みです。** [実機結果・録画](HARDWARE_RESULT.md)。
+雨の夜、閉店まであと少し。バーの店員ミオと言葉を交わし、カウンターの端にある古い端末を覗きこむと、来店記録が「あなたは既に退店しています」と答える。104秒の自動再生で見せる、オリジナルの短編です。
 
-## 見る・遊ぶ
+2026-11-09に全面的に作り直しました（以前のPCM2版は git の履歴にあります）。音はすべて、RP2040の2つ目のコアで動くソフトウェアFM音源がリアルタイムに合成します。合成した音は、[選定版bitstream](../../releases/pcm-stream-qspi/README.md)のPCMストリーミングでHDMIへ送ります。タイトル、バー、端末の絵は、所有者が画像生成AIで作って提供したイラストを、16色にしたものです（[出典](LICENSES.md#絵の出典)）。
 
-Windowsでこのディレクトリを起点に実行する。既存の機器を必要とせず、シリアル・JTAG・USBを開かない。
+## 流れ
 
-```powershell
-./tools/run_preview.ps1
-```
+|時刻|シーン|映像|音|
+|---|---|---|---|
+|0–11 s|TITLE|雨の夜の店の外観。自販機、電柱、濡れた路面の反射。雨はパレット循環で降らせる|雨音、ゆっくりしたEPのコード|
+|11–45 s|BAR|ミオ、逆光の酒棚、ペンダント照明、雨の窓、ネオン「NOCT」。会話、まばたき、選択肢|90 BPMのローファイジャズ（EP、ウォーキングベース、ヴィブラフォン、ブラシ）、文字送りの音|
+|45–58.5 s|TERMINAL|ブラウン管の端末で来店記録を照合する。画面が乱れていく|ペダルのベースと不穏なアルペジオ、打鍵音、テープストップ|
+|58.5–74 s|ANOMALY|赤く染まった店内に、架空のログがあふれる。BLITで画面を裂く|警報、スタッター、ビットクラッシュ|
+|74–83 s|MESSAGE|「警告：この記憶はあなたのものではありません」|ドローンと心音|
+|83–96.5 s|RESTORE|何事もなかったような店内。「……ご注文は、お決まりですか？」 一瞬だけ目が赤くなる|雨とコードが戻る|
+|96.5–104 s|END|タイトルとクレジット|最後の和音と余韻|
 
-640×360、16色、2倍の整数拡大。↑↓で注文を選択、Enterで決定／会話を全文表示。Rで最初から、SでPNG保存、Fで低頻度の部分色変化を切り替える。初期設定は点滅抑制。無操作でも88秒で一周し、ループする。選択肢の回答は3種類あり、その後は共通の異常シーンへ進む。実機RP2040版はUARTの`w`/`s`/Enter入力に対応します。
+## 構成
 
-Python、Tk、Pillow、pygame-ceが必要。ネイティブC DLLがなければMSVCでビルドする。今回取得した依存はローカルの`.deps/`に置いた。音声機器を初期化できない場合も映像は動く。GUI smokeでTk描画・48kHzミキサー初期化を確認したが、スピーカーからの聴感試験は行っていない。
-
-生成済みの[オフライン再生ページ](out/index.html)には、Cエンジンで記録した全シーンのフレーム、再生／停止、シーク、章ジャンプ、88秒のPC音声ミックスがある。外部サーバー不要。ブラウザの音声許可のためPLAYを押す。ここでは記録済みautoplayを再生し、分岐操作は上記ライブ版で行う。[一覧画像](out/contact-sheet.png)も参照。これはPC版で、[実機録画](../../build/midnight-hardware/midnight-terminal-hardware.mp4)とは別。
-
-## 再現手順
-
-Python 3.12とMSVC 2022 x64開発ツールを使用した。別環境では`build_pc.ps1`のvcvarsパスを調整する。
-
-```powershell
-python -m pip install --target .deps -r requirements.txt
-python tools/generate.py
-./tools/build_pc.ps1
-python tools/test.py
-python tools/test_device.py
-python tools/preview.py --headless
-python tools/mix_audio.py
-python tools/preview.py --smoke-gui
-```
-
-`generate.py`は保存した配布アーカイブのみを使う。ネット接続・OSフォントに依存せず、字形、PNG、4bpp、C配列、PCM/WAVを再生成する。配布物のSHA-256が保存値と違えば停止する。
-
-個別の変換入口は`tools/convert_mplus.py`、`tools/convert_misaki.py`。`story.json`のUTF-8から必要文字を抽出し、欠字を検出して停止する。M+のJIS0208はEUC-JP経由でUnicodeへ変換し、半角カナは**公式JIS0201差分**をオフライン適用する。美咲はUnicode BDFを使う。BBX・ベースライン・DWIDTHを保持した1bpp行データとUnicode索引を、独立したFlash上のグリフ配列へ変換する。
-
-M+は12px系だが、実配布の`FONTBOUNDINGBOX`は12×13、ascent 11／descent 2、全角送り12・半角送り6。美咲ゴシックは8×8、ascent 6／descent 2、送り4／8。警告画面ではASCIIも8pxセルに配置する。両subsetは各300字。実際に使う字に検査用文字・ASCIIを加えた小さな集合で、全文字を展開しない。
-
-RP2040ビルドはArm GNU 14.2.Rel1（GCC 14.2.1）、Pico SDK 2.1.1を使用する。SDKは`toolchain/pico-sdk`、展開したコンパイラは`toolchain/arm/bin`へ置く。SDK commitは`bddd20f928ce76142793bef434d4f75f4af6e433`。
-
-```powershell
-./tools/build_rp2040.ps1
-./tools/build_qspi_tests.ps1
-python tools/test_qspi.py
-# WSL + Verilator がある場合（実機操作なし）
-wsl -e bash software/midnight_terminal/tools/test_qspi_rtl.sh # repo rootから
-```
-
-[ELF](out/rp2040/midnight_terminal.elf)・[bin](out/rp2040/midnight_terminal.bin)を生成する。CMakeのupload/programターゲットは設けていない。TinyUSBをSDKの固定submodule版で取得し、USB CDCとUARTを有効にした。実機版はUSBの`g`で事前診断・再生開始、`q`で停止する。`build_rp2040.ps1`は元PCMを可逆圧縮してからビルドし、既存filesystemより手前に収める。元字形・元音声を再生成した際も同じ手順でよい。この実行環境では32bitコンパイラがサンドボックス内でDLL再配置エラーになるため、通常環境で同じビルドを実行した。
-
-## C実装とSDK契約
-
-|責務|実装|
+|部分|内容|
 |---|---|
-|シーン管理、時刻ベース演出、入力、選択肢、差分スケジューラ|`src/mt.c` / `src/mt.h`|
-|UTF-8、Unicode索引、2フォント、禁則・折返し、会話タイプライター|同ファイル内の独立した関数群|
-|素材管理・固定シナリオ・独立グリフアトラス|`generated/assets.inc`、`generated/story.inc`、`story.json`|
-|GPU・パレット・カーソル・PCMアダプター|`src/mt_device.c` / `mt_device.h`|
-|RP2040、UART入力・診断出力|`src/rp2040_main.c`|
-|KAGURA-9由来の5MHz PIO QSPI、timeout・転送統計|`src/mt_qspi.c/h`、`vendor/kagura_host.pio`|
-|PC framebuffer・記録・キーボード・音声|`tools/preview.py`から同じCエンジンを呼ぶ|
-|独立画素／行順序・SDKレジスタモデル検査|`tools/test.py`、`tools/test_device.py`|
+|台本（[story.py](tools/story.py)）|台詞、選択肢、端末の文字、ログ、すべての時刻。映像と音（文字送りや打鍵の効果音）が同じ台本を参照する|
+|絵（[bar_reference.py](tools/bar_reference.py)、[ai_art.py](tools/ai_art.py)）|提供されたイラストを640×360に縮小し、16色（RGB444）へ4×4の秩序ディザで量子化する。UIやアニメーションで使う色（ダイアログ、雨の3位相、端末の画面と文字、ネオン）を固定し、残りをk-meansで選ぶ。タイトルの雨は、絵の上に重ねたパレット循環。端末の画面ガラスは単色にして、その上に文字を書く。まばたきは、目を閉じた別のイラストから目元だけを位置・傾きを合わせて合成し、赤い目は瞳の色だけを置き換える|
+|素材（[build_assets.py](tools/build_assets.py)）|画像は参照窓4 KiBのDEFLATEで、3枚で約177 KB（タイトル75 KB、バー57 KB、端末45 KB）。RP2040のFlashに置く。フォントは台本で使う字だけ（M+ 126字、美咲179字）|
+|音源（[mt_fm.c](src/mt_fm.c)）|4オペレータFMを7声（EP 4声、ベース、ヴィブラフォン、効果音）。ブラシ、ライド、キック、リム、雨音も合成する。ステレオディレイ、テープストップ、スタッター、ビットクラッシュをかける。描画処理はすべて整数演算|
+|映像（[mt_show.c](src/mt_show.c)）|FILL・COPY・PALETTE・PRESENT・WRITEだけを使う。画像は2ページに展開して切り替える。文字は1行ずつ4bppのスキャンラインにしてWRITEで書く。選択肢を閉じたあとは、圧縮画像からその範囲だけを書き戻す|
+|ストリーミング（[stream.c](src/stream.c)）|FOUR OPERATORSと同じ方式。半面の補充を、描画コマンドの合間に分割して進める|
+|展開器（[mt_inflate.c](src/mt_inflate.c)）|RFC 1951の展開器（固定・動的ハフマン、4 KiBの窓）。PCでzlibの出力と一致することを確認|
 
-小さな作品なのでCの各責務を関数単位にまとめた。新規VMやスクリプト実行系はない。既存`../kagura_fb/kagura_fb.c/h`を**変更せずリンク**する。PCM CSR補助は既存ABI 1.4のPython facade／保存されたRTL契約を照合してCで実装した。
+旧版から残しているのは、他のデモと共有する部品だけです。
 
-開始時は`KFB1`、major 1／minor 4、GPU CAPS低7bitを照合し、bit7があればPCMを使う。GPU CAPS不足は停止。音声CAPSなし、PREPARE失敗、STATUS fault等は診断を保持して映像へfallbackする。未知のGPU命令、GPU文字描画、透明BLIT、任意PSRAMアドレスからのBLITは仮定しない。
+- `src/mt_lz.*`、`src/mt_qspi.*`
+- `vendor/`：フォント、PIO、ライセンス
+- `tools/pack_bgm.py`
+- RTLの転送試験：`tools/prepare_qspi_rtl.py`、`test_qspi_rtl.sh`、[QSPI_REPORT.md](QSPI_REPORT.md)
 
-- FILL／BLIT／WRITE／PALETTE／PRESENTは既存C SDK経由。
-- 4bppは偶数Xが上位nibble、stride 320B。WRITEはSDKが4B整列、最大64B、maskへ変換する。
-- BLITはpage間／page内だけ。X・幅は偶数、`sx % 8 == dx % 8`。Yは1px単位。重なりは既存契約を使う。
-- 背面ページの更新後にPRESENT。静止部分は再転送せず、会話は新しく現れる文字だけを更新する。シーン準備前は黒パレットをPRESENTして両ページ再構築を隠す。
-- 32×32、MSB-first 2bppカーソルを独立bankへ設定し、会話送り／選択位置を示す。PC画像はカーソルを別合成し、画素CRCはFramebuffer本体のみを対象とする。
-- 音声はINDEX/DATA 54/55、PCM0 0x60／PCM1 0x80、MASTER 0xE0、COMMIT opcode 7。START/END/LOOPはPREPARE、GAIN/ENABLE/MASTERはCOMMITのsnapshotで適用する。効果音のCOMMITでも両chの所有shadowを再設定し、BGM設定を保持する。
-- 既存制御のSTOP→非ACTIVE確認→CLEAR→範囲設定→PREPARE→READY確認→COMMIT。各待機はtimeout付き。再生エラーは1秒ごとにSTATUSを監視し、映像fallbackへ移る。不確かな送信を再送しない。
+## 作る・見る
 
-## 演出と素材
+```bash
+# 素材の再生成（Python 3.12、Pillow、NumPy。保存した配布フォントのアーカイブだけを使う）
+python software/midnight_terminal/tools/build_assets.py build/midnight-terminal/art
+# PCプレビュー（WSL / Linux）。KFBの振る舞いモデルに、実物のSDK・映像・音源をつなぐ
+bash software/midnight_terminal/tools/build_pc.sh
+build/midnight-terminal/mt_pc --wav build/midnight-terminal/pc.wav
+build/midnight-terminal/mt_pc --video - | ffmpeg -f rawvideo -pix_fmt rgb24 -s 640x360 -r 30 -i - -i build/midnight-terminal/pc.wav -vf scale=1280:720:flags=neighbor out.mp4
+```
 
-0–12s BOOT、12–30s BAR、30–40s CHOICE、40–47s ANOMALY、47–65s SYSTEM、65–80s RESTORE、80–88s ENDING。
+```powershell
+# RP2040のFlash用イメージ（ELF・bin・hex）。画像とフォントはFlashに置き、音源の内側のループはRAMに置く
+./software/midnight_terminal/tools/build_rp2040.ps1
+# 実機での実行：FPGAはSRAMへ投入する。RP2040は、Flash全体（2 MiB）を退避してからデモを書き込み、
+# 終了後に退避した内容を書き戻して、元と一致することを照合する
+python software/midnight_terminal/tools/run_hardware.py build/midnight-terminal/hw-XX --flash --elf build/midnight-terminal/rp2040/midnight_terminal.elf --elf-sha <sha256> --reference build/midnight-terminal/pc.wav
+```
 
-全画像はPillowの矩形・多角形・線と実フォントから生成したオリジナル。店員、瞬き／異常表情、雨の窓、棚・瓶、ネオン、端末、ロゴ、会話UIの編集可能なインデックスPNGを`generated/`へ保存した。RGB444へ量子化した共通16色を使い、警告時は同じindexを暗赤／白／淡シアンへ変更する。通常のindex14はネオンと照明に共有し、オプションの弱い色変化は両方へ作用する。
+## 実機結果
 
-警告は80列×44行、3,520セル（空白を除く3,013字）＋最上部の「FICTION / 架空ログ」。文字色属性はセルごとに事前焼込みする。意味のある32種の架空ログと行番号を組み合わせる。最初はバーに数行が重なり、行がUIを覆い、満杯になった後はFramebuffer内BLITで上へ流れる。新しく露出した数pixel分だけ4bpp素材から転送し、画面全体の文字を毎フレーム送らない。任意の元行をFlashの行offsetで選び、宛先行へ置換できる。行順序・境界は独立オラクルで検査した。
+2026-11-09に、Tang Nano 9KとRP2040（120 MHz、QSPI 5 MHz）で実行しました。FPGAには選定版`kagura-hd-qspi-pcm-stream.fs`（`fad15376…`）をSRAMへ投入し、FPGAのFlashには書き込んでいません。RP2040には、Flash全体を退避したうえで最終イメージ（`528dc2ef…`）を書き込みました。終了後に退避した内容を書き戻し、全2 MiBが実行前と一致することを確認しています（RP2040のFlash書込みは2回）。FPGAは承認済みQueue8に戻しました。
 
-ABIのBLITには任意のPSRAM素材アドレス指定がない。このため警告素材はPSRAMへ事前保存しつつ、**新しい行の供給元は同じFlash配列**とした。PSRAMバックアップをGPUが直接読めると偽っていない。スクロールの既存画素はBLITを使い、Host READを避ける。Phase後半は小刻みのY移動、局所色変化は初期無効、最終文は2.5秒、黒画面は約0.5秒。
+途中で見つかった不具合は次の3つで、いずれも修正済みです。
 
-BGM「After the Last Train」は8秒のオリジナルループ。PCM0へ低音・柔らかな倍音・短い音を合成する。PCM1は決定、文字通知、警告、復旧の4素材。全てsigned 8bit mono／48,000Hz。再生用WAVは同じsigned8をsigned16へ展開したもの。ブラウザ用88秒WAVはHostイベント時刻によるPCミックスで、HDMI音声captureではない。
+- **音声補充の停止：** 選択肢を閉じたあとの部分復元で、画像全体を展開する間に音声の補充が止まり、37秒でアンダーランした（`hw-ref`、rc=−20）。展開中も64バイトごとに補充を回すようにした。
+- **グリッチの引数エラー：** 異常シーンのグリッチで、コピー範囲が画面の下端を越えることがあり、SDKが引数エラーにしていた（`hw-flash1`、rc=−1）。範囲を制限した。
+- **Flashの書き戻し失敗：** 同じ回で、実行スクリプトの引数の順序が誤っていたため、Flashの書き戻しに失敗した。退避した内容を手で書き戻し、読み戻しで一致を確認したうえで、スクリプトを直した。
 
-## メモリ・検証・残課題
+|項目|結果|
+|---|---|
+|終了|`STOP rc=0`。QSPI timeout 0、device error 0|
+|開始前の画像の展開と転送（2ページ）|約1.2 s|
+|PCMストリーミング|1218半面。HALF_FREEを検出してから公開するまでの最悪は56.5 ms（期限85.3 ms）|
+|FPGAの状態|ch STATUSは左右とも0x03（UNDERRUNとfaultはなし）、HDMI STATUSは0x00|
+|音源|core 1の稼働率は約61%（104秒中63.0秒）。core 0が合成を待った回数は0。ハードクリップは0|
+|HDMI録音|基準に音がある区間で、録音が10 ms単位で欠けた箇所は左右とも0。PCで生成した基準との1秒ごとの相関は、中央値0.997、最小0.983。キャプチャとのクロック差は約16 ppm|
+|映像|3035フレーム（平均約29 fps）。シーン別には330 / 985 / 405 / 445 / 244 / 405 / 221。まばたきもHDMIで確認した（[静止画](evidence/hardware-blink.png)）|
 
-詳細は[検証・性能レポート](REPORT.md)、[PSRAM配置](memory.json)、[実機検証計画](HARDWARE_PLAN.md)、[ライセンスと出典](LICENSES.md)、[判定JSON](STATUS.json)。
+実機の画像は[contact sheet](evidence/hardware-contact-sheet.png)、記録は[evidence/](evidence/)にあります。この結果は、1枚の基板で1回ずつ実行した有限の試験です。
 
-最終RP2040リンク値とELF SHA-256は[`evidence/rp2040-build.json`](evidence/rp2040-build.json)。BSSはスタックを含まない。4KiBのスタックを明示し、最大のローカル枠はtext rendererの1,136B。Framebufferや全文字はRP2040 RAMに置かず、Flash上のconst素材と小さな行・配置バッファを使用する。
+## ライセンス
 
-**転送路はKAGURA-9で実績のある5MHz PIO版へ更新した。** RP2040 120MHz／PIO分周2／12 cycles per SCK、CS 250/40/250ns、2mA・slow slew・入力Schmittを再利用した。旧5µs待ちbitbangはこの実行経路から削除した。原PIOは変更せず、HDの6bitレジスタへC側を適合した。詳細は[5MHz移植・検証記録](QSPI_REPORT.md)。
-
-実機でPSRAM 72件・FILL/BLIT・1周再生とPCM0 BGM＋PCM1決定音の共存を確認した。通常schedulerは概ね30Hzだが、警告増殖中の一部は約0.65–3Hz、満杯後は約19–20Hz、背景ロードは約3.5秒。**30fps・非ブロッキング・60〜90秒の実周回目標は未達。** 5MHzは設定値で、SCKのオシロ測定はしていない。全画面readback CRC、全分岐・全効果音・PVTは残る。詳細は[実機結果](HARDWARE_RESULT.md)。
-
-作業ブランチは`midnight-terminal-showcase`。作業開始時の既存未コミット変更は保持し、新規成果物は未コミット。RTL、Controller/PHY、PLL、SDC/CST、Bitstream、既存STA候補は変更していない。後続の明示承認によりRP2040 firmware Flashを書換え、既存候補をFPGA SRAMへ1回投入した。元RP Flash全体を退避し、KAGURA-9のfilesystemとFPGA Flashは維持した。Merge／Releaseは行っていない。
-
-
+[LICENSES.md](LICENSES.md)

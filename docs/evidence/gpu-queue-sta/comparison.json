@@ -1,0 +1,3063 @@
+{
+  "variants": [
+    {
+      "name": "fb-queue-eval-packet-first-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 0,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": 0.05,
+              "from": "core/memory_ctrl/state_0_s1/Q",
+              "to": "core/memory_ctrl/tx_270_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.47,
+              "from": "host/registers/write_ptr_2_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_0_s/ADA[7]"
+            },
+            "Recovery": {
+              "slack_ns": 8.556,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_28_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.839,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_sync2_1_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "5d275c0f8f3a07b0245d7cda59e6d7527f95d5afbc884d66023a6063e11d3afb"
+        },
+        "elapsed_seconds": 372.7,
+        "bitstream_sha256": "5592AE2CB18E4AA0BD70417B168A2D63D098BD3D14A5D19560636DE7E6C97A77"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": true,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7868,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4246,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-control-center-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "route_maxfan": 23,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "088988509c4538379a370d125bf038975f156b442e3ac310a727a95f9d04fb87",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "extra_cst": "diagnostics/queue8-sta/control-center.cst",
+        "extra_cst_sha256": "1cae863291baf676c11dcb339da36e9bbc0ca5aaa89f4dfff6725cf3836282be",
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "replicate_resources": false,
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "exit_code": 1,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 1.8
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "failure_stage": "helper-before-pnr",
+      "errors": [],
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-control-center-p4-r2-v2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "route_maxfan": 23,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "088988509c4538379a370d125bf038975f156b442e3ac310a727a95f9d04fb87",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "extra_cst": "diagnostics/queue8-sta/control-center.cst",
+        "extra_cst_sha256": "1cae863291baf676c11dcb339da36e9bbc0ca5aaa89f4dfff6725cf3836282be",
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "replicate_resources": false,
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "exit_code": 0,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 4,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.223,
+              "from": "core/display/held_palette_137_s0/Q",
+              "to": "core/display/palette_137_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.47,
+              "from": "host/registers/write_ptr_2_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_1_s/ADA[7]"
+            },
+            "Recovery": {
+              "slack_ns": 9.572,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_valid_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.827,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_sync2_4_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "7c07d94ef4c2c96d61a555d5ff1329b50b28a72ec08f6aac38b8a3fde6ff1d0a"
+        },
+        "bitstream_sha256": "99000168308af3ab7f29f67a74466808d1922874c9381874d5aa7bf21ff7889d",
+        "elapsed_seconds": 303.3
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7868,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4241,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-control-mid-cursor-a-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "route_maxfan": 23,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "3b8cb53a3b3c68eb5b4f336b08c525efcbebc0f019617c5bc92107c2d6b52700",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "extra_cst": "diagnostics/queue8-sta/control-mid-cursor-a.cst",
+        "extra_cst_sha256": "1418fe90de36f203a42435533aa4bb11709b1fda77cf5e12d2bd994fa0286e33",
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "replicate_resources": false,
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "mapped_logic_sha256": "9225a2631f881f64d80267b9e5d3493f031f59917f753275525e291d2c00070e",
+        "reference_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "exit_code": 0,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 1,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.602,
+              "from": "core/cursor/held_colors_30_s1/Q",
+              "to": "core/cursor/sample_mailbox.value_56_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.416,
+              "from": "host/registers/read_ptr_0_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_3_s/ADB[5]"
+            },
+            "Recovery": {
+              "slack_ns": 10.092,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_0_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.824,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_sync2_3_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "5d5751d709104d3e5067b9d3a83abeec12d638c662b600e11c11682463aa8a69"
+        },
+        "numeric_gate_passed": false,
+        "bitstream_sha256": "af602c18b38c728145454af670a6a3ac9a95250d73b8561b4b94ad518a63b26d",
+        "elapsed_seconds": 584.0
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7867,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4243,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-control-mid-cursor-b-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "route_maxfan": 23,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "388c59d7289de984c648bcd86a423c3bd49f9749893f17caaa96dc113f6633ee",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "extra_cst": "diagnostics/queue8-sta/control-mid-cursor-b.cst",
+        "extra_cst_sha256": "429202e239699cada78ef3c6a2d8d9fd2ff2f6645b1e1199bc5900179c63b0d6",
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "replicate_resources": false,
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "mapped_logic_sha256": "9225a2631f881f64d80267b9e5d3493f031f59917f753275525e291d2c00070e",
+        "reference_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "exit_code": 0,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 12,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.554,
+              "from": "host/registers/executing_s0/Q",
+              "to": "host/registers/upload_words[11].ram/storage/DI[1]"
+            },
+            "Hold": {
+              "slack_ns": 0.41,
+              "from": "core/display/scan_addr_3_s0/Q",
+              "to": "core/display/banks/banks[1].ram/memory_memory_0_0_s/ADB[8]"
+            },
+            "Recovery": {
+              "slack_ns": 10.4,
+              "from": "core/pix_release_2_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rd_reset_0_s0/PRESET"
+            },
+            "Removal": {
+              "slack_ns": 0.533,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_3_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "5075065e510419a2e7ccbc20cc7933c765bf45b861c7ed00856e87fc750d34c1"
+        },
+        "numeric_gate_passed": false,
+        "bitstream_sha256": "c6efac99b98e8e7a1edc53046d63db7c7223b283e9cb055d480f8cc818117150",
+        "elapsed_seconds": 446.1
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7867,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4233,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-control-mid-left-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "route_maxfan": 23,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "8284b87f2cec7cd2e4fe13671e559a1f00f901faeaf0fd81f47f63e27e30fe8a",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "extra_cst": "diagnostics/queue8-sta/control-mid-left.cst",
+        "extra_cst_sha256": "be4291a614bbffde3fbdfb4dc0ada24d089f7caedb8d63c51fa321ff995abd90",
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "replicate_resources": false,
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "mapped_logic_sha256": "9225a2631f881f64d80267b9e5d3493f031f59917f753275525e291d2c00070e",
+        "reference_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "exit_code": 0,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 1,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.379,
+              "from": "core/cursor/held_22_s1/Q",
+              "to": "core/cursor/sample_mailbox.value_22_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.501,
+              "from": "host/registers/write_ptr_2_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_2_s/ADA[7]"
+            },
+            "Recovery": {
+              "slack_ns": 9.628,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_0_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.824,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/wb_0_s2/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "e72c4c1771b7fe4063f9faa97d635396579e0084085a0f71d66d9024b13afeb3"
+        },
+        "numeric_gate_passed": false,
+        "bitstream_sha256": "6863092e43e26bd5c9a82d1b12cca74ee9071b1f9025dbdfe8937338e5ba455a",
+        "elapsed_seconds": 480.3
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7868,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4234,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-control-mid-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "route_maxfan": 23,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "84648963d6c73d14b2e74090d34246b48b05e384201ee66fd8c992953bb34d9b",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "extra_cst": "diagnostics/queue8-sta/control-mid.cst",
+        "extra_cst_sha256": "453adbf2cf526f534d64f249bafe1e5c680254ff8287cae1a9279ef77e4c98c2",
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "replicate_resources": false,
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "exit_code": 0,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 1,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.013,
+              "from": "core/cursor/held_1_s1/Q",
+              "to": "core/cursor/sample_mailbox.value_1_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.533,
+              "from": "audio_endpoint/registers/capture_pending_s0/Q",
+              "to": "audio_endpoint/registers/snapshot_master_0_s0/CE"
+            },
+            "Recovery": {
+              "slack_ns": 10.197,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_28_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.754,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/wg_sync1_3_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "d8b5e37402a544670b9768ca0d6e708098fa7309a21b916fae90c99f0eb0f3cd"
+        },
+        "bitstream_sha256": "597ee6b9a69876a825e7c629806ebe74c801b82a4772b285a1cfdbb0820fbadc",
+        "elapsed_seconds": 454.9
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7867,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4239,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-control-mid-right-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "route_maxfan": 23,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "40c3532cc488f7269df7c5ee62fd5435a6e73e69d8f6a8f644b332a19f57ca62",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "extra_cst": "diagnostics/queue8-sta/control-mid-right.cst",
+        "extra_cst_sha256": "e622653ead8b29dbd1bbc47f7e29e045487b11af9cb008080538cc302abdafb0",
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "replicate_resources": false,
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "mapped_logic_sha256": "9225a2631f881f64d80267b9e5d3493f031f59917f753275525e291d2c00070e",
+        "reference_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "exit_code": 0,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 8,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -1.508,
+              "from": "core/display/held_palette_53_s0/Q",
+              "to": "core/display/palette_53_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.416,
+              "from": "host/registers/read_ptr_1_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_3_s/ADB[6]"
+            },
+            "Recovery": {
+              "slack_ns": 9.586,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/visible_wb_0_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.751,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_4_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "a374e11c88f3e2a05c45e57cbe80d620216b99e2b759ebb3187c811257cc012c"
+        },
+        "numeric_gate_passed": false,
+        "bitstream_sha256": "3c7ebff198bc92625bbc52efb4169434d143d8215cbd6fef6cebc07497a2c2a1",
+        "elapsed_seconds": 540.1
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7868,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4234,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-control-near-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "route_maxfan": 23,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "7a8f7d6d1bbf1cd74c28dd49060a4fb4a55db9f67394dc11561447e1287ce497",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "extra_cst": "diagnostics/queue8-sta/control-near.cst",
+        "extra_cst_sha256": "70c49172677d6526d6d4c40d01dc87d6279b8aed9d7cb89d098980719fe3d906",
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "replicate_resources": false,
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "exit_code": 0,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 1,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -1.243,
+              "from": "core/cursor/held_colors_10_s1/Q",
+              "to": "core/cursor/sample_mailbox.value_36_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.501,
+              "from": "host/registers/write_ptr_1_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_3_s/ADA[6]"
+            },
+            "Recovery": {
+              "slack_ns": 9.105,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_16_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.83,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rb_0_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "76aebf54f10d7d121ed689e816b85892eca2369107f0a092192ca576cd555f73"
+        },
+        "bitstream_sha256": "c7bd93a890feabf3f6ebd55739885fe119a5441f59be8b83560efeb97d549bd3",
+        "elapsed_seconds": 562.1
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7866,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4232,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-geometry-head-p3-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 3,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": false,
+        "pipeline_present_mailbox": false,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 50,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -5.438,
+              "from": "core/scheduler/state_1_s1/Q",
+              "to": "core/memory_ctrl/clear_receive_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.501,
+              "from": "core/display/fetch/word_count_0_s1/Q",
+              "to": "core/display/banks/banks[0].ram/memory_memory_0_0_s/ADA[5]"
+            },
+            "Recovery": {
+              "slack_ns": 9.614,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_12_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.539,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/wb_0_s2/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "444400dbf150815415e071f65162fafafac0d5c24e6ac2606304aee12db97caf"
+        },
+        "elapsed_seconds": 514.7,
+        "bitstream_sha256": "132FCF67A0D3AD0B2F8A776162AA160F8EB71D90899BBDF881C62E01F7A5DAB2"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7938,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5525,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4238,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 80,
+      "geometry_flipflops": 48,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-geometry-head-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": false,
+        "pipeline_present_mailbox": false,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 11,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -1.225,
+              "from": "core/display/held_palette_162_s0/Q",
+              "to": "core/display/palette_162_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.527,
+              "from": "core/cursor/visible_s0/Q",
+              "to": "core/cursor/delta_active_s0/RESET"
+            },
+            "Recovery": {
+              "slack_ns": 9.708,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_valid_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 1.249,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_ahead_2_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "b50d40779b696249dd332bc2dc552428943df2a160bf43ff320d56c2dd7bb611"
+        },
+        "elapsed_seconds": 521.3,
+        "bitstream_sha256": "3084D5B1BF03C5947F95600DF1A785BAED7E3E7FA7D4D75D32C937E4844C0F23"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7939,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5525,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4261,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 80,
+      "geometry_flipflops": 48,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-geometry48-head-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": false,
+        "pipeline_present_mailbox": false,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 43,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -1.033,
+              "from": "host/commands/read_result_s0/Q",
+              "to": "host/registers/upload_words[2].ram/storage/DI[17]"
+            },
+            "Hold": {
+              "slack_ns": 0.498,
+              "from": "host/registers/write_ptr_2_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_3_s/ADA[7]"
+            },
+            "Recovery": {
+              "slack_ns": 8.209,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_12_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.548,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/wg_sync1_2_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "e964e4386418f1dd6be895d3a427bddcefe4a5d413fc5f7a226f003414b6eb43"
+        },
+        "elapsed_seconds": 597.8,
+        "bitstream_sha256": "558C35632F237FCCBC4B56C9FF6C8C44281472DFEE709A5F3DB280B74C37DEF1"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7973,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5525,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4262,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 80,
+      "geometry_flipflops": 48,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-geometry48-head-tx-p3-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 3,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": true,
+        "pipeline_present_mailbox": false,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 574.4
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0004) : There are total 182 unrouted nets"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 7898,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5541,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4238,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 80,
+      "geometry_flipflops": 48,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-head-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": false,
+        "pipeline_present_mailbox": false,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 3,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.313,
+              "from": "core/cursor/held_24_s1/Q",
+              "to": "core/cursor/sample_mailbox.value_24_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.527,
+              "from": "core/synth/sample_left_14_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/memory_memory_0_3_s/DI[2]"
+            },
+            "Recovery": {
+              "slack_ns": 8.985,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_valid_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.827,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_2_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "b88a03c7b80f897e656601743c7f34aa838b424cf8efab50cfd2054f6dc3d20b"
+        },
+        "elapsed_seconds": 637.8,
+        "bitstream_sha256": "3CABEF9ABD9D7F1C8CA34FCC81AC5E8C4F7E128C3FA25234EAFFCECD1BCCCD3A"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 8050,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5525,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4260,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 128,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 128
+    },
+    {
+      "name": "fb-queue-sta-head-tx-mailbox-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": true,
+        "pipeline_present_mailbox": true,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 8,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.996,
+              "from": "core/display/held_palette_114_s0/Q",
+              "to": "core/display/present_mailbox.sampled_114_s1/D"
+            },
+            "Hold": {
+              "slack_ns": 0.539,
+              "from": "core/memory_ctrl/read_half_4_s0/Q",
+              "to": "core/memory_ctrl/rword_data_4_s0/D"
+            },
+            "Recovery": {
+              "slack_ns": 8.811,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_0_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 1.03,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_sync1_2_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "a57e2efe46b371e0d2d5f0656b8f44be0f0ff30e0b5a76e75f3b53509b18fe4b"
+        },
+        "elapsed_seconds": 550.7,
+        "bitstream_sha256": "3E2E30845F4F99BE73753084D276359F7BF788EB74EFE2D21FE48C775B8E05CD"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 8041,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5734,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4255,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 128,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 128
+    },
+    {
+      "name": "fb-queue-sta-head-tx-p3-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 3,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": true,
+        "pipeline_present_mailbox": false,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 672.4
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0004) : There are total 369 unrouted nets"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 8042,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5541,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4245,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 128,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 128
+    },
+    {
+      "name": "fb-queue-sta-minimal48-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": false,
+        "pipeline_present_mailbox": false,
+        "register_upload_window": false,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 16,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.857,
+              "from": "core/display/held_palette_34_s0/Q",
+              "to": "core/display/palette_34_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.527,
+              "from": "core/cursor/visible_s0/Q",
+              "to": "core/cursor/delta_active_s0/RESET"
+            },
+            "Recovery": {
+              "slack_ns": 9.158,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_16_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.833,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_valid_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "6a7194673b3411a5686fc37a1add188646beabddafa9195f85f6a2166353ab83"
+        },
+        "elapsed_seconds": 534.0,
+        "bitstream_sha256": "811B633DE8090576E935795312F2B589506E4F5A712A9B0AFA53241C2D2F00FF"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7973,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5445,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4243,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 48,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-minimal48-tx-p3-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 3,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": true,
+        "pipeline_present_mailbox": false,
+        "register_upload_window": false,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 582.8
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0004) : There are total 294 unrouted nets"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 7899,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5461,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4241,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 48,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-minimal48-upload-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": false,
+        "pipeline_present_mailbox": false,
+        "register_upload_window": true,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 3,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.435,
+              "from": "core/display/held_palette_147_s0/Q",
+              "to": "core/display/palette_147_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.527,
+              "from": "phy/dq_f_q_2_s0/Q",
+              "to": "phy/dq[2].od/D1"
+            },
+            "Recovery": {
+              "slack_ns": 8.005,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/wg_sync1_1_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.554,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/wg_sync2_2_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "00461dc5335112bb8bff0a75098413a9ef4521e6e60c1f40132d9f3cdb016ba5"
+        },
+        "elapsed_seconds": 627.5,
+        "bitstream_sha256": "C88A24289689743B5AB966728806C37978A28B95989CBF518DADC6F0DA56B20E"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7931,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5957,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4257,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 7,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 48,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-minimal48-upload-tx-p3-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 3,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": true,
+        "pipeline_present_mailbox": false,
+        "register_upload_window": true,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 139.8
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0003) : Failed to place with '86 REG(s) unPlaced ' in the device 'GW1NR-9C-QFN88P-6'"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 7812,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5973,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4172,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 7,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 48,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-onehot-p2-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 2,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "optimization_goal": "auto",
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 847.9
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0004) : There are total 835 unrouted nets"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 8499,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5402,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4303,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-onehot-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "optimization_goal": "auto",
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 625.2
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0004) : There are total 234 unrouted nets"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 8501,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5402,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4311,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-opt-area-p2-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 2,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "optimization_goal": "area",
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 21,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -1.428,
+              "from": "core/hdmi/protocol/true_hdmi_output.audio_packets/asp_selected_s0/Q",
+              "to": "core/hdmi/protocol/true_hdmi_output.audio_packets/sub[2]_10_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.506,
+              "from": "core/memory_ctrl/rword_data_30_s0/Q",
+              "to": "core/display/banks/banks[0].ram/memory_memory_0_0_s/DI[30]"
+            },
+            "Recovery": {
+              "slack_ns": 7.954,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_3_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 1.033,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/wg_sync2_4_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "40b689eb8014286c83955d3351ca3c3b89c7c45aaf064251451d7abb8b43b3c2"
+        },
+        "elapsed_seconds": 598.3,
+        "bitstream_sha256": "CDF2AB8848004F5C9D813CF34A891E6944B78BC61BC87B0DAF1D0DC61FA59005"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7867,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4245,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-opt-area-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "optimization_goal": "area",
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 0,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": 0.05,
+              "from": "core/memory_ctrl/state_0_s1/Q",
+              "to": "core/memory_ctrl/tx_270_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.47,
+              "from": "host/registers/write_ptr_2_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_0_s/ADA[7]"
+            },
+            "Recovery": {
+              "slack_ns": 8.556,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_28_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.839,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_sync2_1_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "78856c0e424764d431b78904beaccc75b9cf8afc9ffe48d9dc1615505aeaa4ee"
+        },
+        "elapsed_seconds": 479.4,
+        "bitstream_sha256": "11B0A252C098FFB1F2FE93EF0C28C6564AE663EB02EC8DE18EBC58916571B12B"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7868,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4246,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-opt-timing-p2-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 2,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "optimization_goal": "timing",
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 536.0
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0004) : There are total 186 unrouted nets"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 8346,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4287,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-opt-timing-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "optimization_goal": "timing",
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 2,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -1.308,
+              "from": "core/display/held_palette_32_s0/Q",
+              "to": "core/display/palette_32_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.511,
+              "from": "host/registers/write_ptr_1_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_3_s/ADA[6]"
+            },
+            "Recovery": {
+              "slack_ns": 9.823,
+              "from": "core/pix_release_2_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rd_reset_0_s0/PRESET"
+            },
+            "Removal": {
+              "slack_ns": 0.794,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_ahead_0_s0/PRESET"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "c596a89189157a5f037fe75c68aaaed546812159bf38f6e6ec15b2c4db5c4dc7"
+        },
+        "elapsed_seconds": 670.0,
+        "bitstream_sha256": "046CDFF06D4A9C2818EBF1D52F7DC5A8E1326F3D468B80D1F7BF066A8F56B7CF"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 8343,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4299,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-reroute-p2-r1",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 2,
+        "route": 1,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "exit_code": 1,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 1702.7
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "errors": [
+        "ERROR  (PR0004) : There are total 1111 unrouted nets"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 7867,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4245,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-reroute-p4-r1",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 1,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "exit_code": 1,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 1400.5
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "errors": [
+        "ERROR  (PR0004) : There are total 1492 unrouted nets"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 7868,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4246,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-reroute-p4-r2-fan10",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "route_maxfan": 10,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "replicate_resources": false,
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "exit_code": 1,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 1894.7
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "errors": [
+        "ERROR  (PR0004) : There are total 2538 unrouted nets"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 7868,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4246,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-reroute-p4-r2-fan60",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "route_maxfan": 60,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "replicate_resources": false,
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "exit_code": 0,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 0,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": 0.05,
+              "from": "core/memory_ctrl/state_0_s1/Q",
+              "to": "core/memory_ctrl/tx_270_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.47,
+              "from": "host/registers/write_ptr_2_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_0_s/ADA[7]"
+            },
+            "Recovery": {
+              "slack_ns": 8.556,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_28_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.839,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_sync2_1_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "cd50c123c168e0bc48d40cd28e277256898a891525638b4a6628d3fdc5e54341"
+        },
+        "bitstream_sha256": "36a2b682e7bdb46b534e56c6cfec9198e7cb48fe14982867ed4b209921117be1",
+        "elapsed_seconds": 374.0
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7868,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4246,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-reroute-p4-r2-replicate",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "replicate_resources": true,
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "exit_code": 0,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 0,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": 0.05,
+              "from": "core/memory_ctrl/state_0_s1/Q",
+              "to": "core/memory_ctrl/tx_270_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.47,
+              "from": "host/registers/write_ptr_2_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_0_s/ADA[7]"
+            },
+            "Recovery": {
+              "slack_ns": 8.556,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_28_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.839,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_sync2_1_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "96482e7775a4fb93aa5e7dbe73ba61680c4a9946dbf90e2fbd1aa95e4e732cf2"
+        },
+        "bitstream_sha256": "61b50a602753c2500c115eb0e7e6be4c49b3974de5db33cb03c2d00b26b0aea2",
+        "elapsed_seconds": 347.1
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7868,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4246,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-state-control-center-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "route_maxfan": 23,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "dedc34f4bb6453fd383b56132d25b4733493f8f076ff26f3789a62d08a6c1853",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "extra_cst": "diagnostics/queue8-sta/state-control-center.cst",
+        "extra_cst_sha256": "bf975f081c3e66fd4d929d4a00df23e23d151eb82661a231fb668483f64c106d",
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "replicate_resources": false,
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "exit_code": 1,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 2.3
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "failure_stage": "helper-before-pnr",
+      "errors": [],
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-state-control-center-p4-r2-v2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "route_maxfan": 23,
+        "reused_mapped_netlist": true,
+        "input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "dedc34f4bb6453fd383b56132d25b4733493f8f076ff26f3789a62d08a6c1853",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "source_input_sha256": {
+          "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+          "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+          "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+        },
+        "extra_cst": "diagnostics/queue8-sta/state-control-center.cst",
+        "extra_cst_sha256": "bf975f081c3e66fd4d929d4a00df23e23d151eb82661a231fb668483f64c106d",
+        "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+        "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+        "replicate_resources": false,
+        "fpga_flash_writes": 0,
+        "fpga_sram_programs": 0,
+        "release_ready": false,
+        "exit_code": 0,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 2,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.641,
+              "from": "core/display/held_palette_156_s0/Q",
+              "to": "core/display/palette_156_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.484,
+              "from": "core/memory_ctrl/rword_data_3_s0/Q",
+              "to": "core/display/banks/banks[0].ram/memory_memory_0_0_s/DI[3]"
+            },
+            "Recovery": {
+              "slack_ns": 10.231,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_valid_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.736,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_sync1_0_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "4cd8d8b9864d12ef67ebfdf3bfda0388026ed53fbf40d6a7ffcb0e3486bcf8ec"
+        },
+        "bitstream_sha256": "49328f1a98c49dbbd0bd230f948725f8bb58f326c4e585bcb85d42780606b1b3",
+        "elapsed_seconds": 510.3
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": false,
+      "mapped_inputs_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7868,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4233,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-stream-head-p3-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 3,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": false,
+        "pipeline_present_mailbox": false,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 634.4
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0004) : There are total 236 unrouted nets"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 8062,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5525,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4255,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 128,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-stream-head-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": false,
+        "pipeline_present_mailbox": false,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 20,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -1.106,
+              "from": "core/memory_ctrl/clock_end_1_s1/Q",
+              "to": "core/memory_ctrl/tx_501_s1/D"
+            },
+            "Hold": {
+              "slack_ns": 0.527,
+              "from": "core/synth/sample_left_7_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/memory_memory_0_1_s/DI[3]"
+            },
+            "Recovery": {
+              "slack_ns": 9.809,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_ahead_0_s0/PRESET"
+            },
+            "Removal": {
+              "slack_ns": 0.79,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/empty_s0/PRESET"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "7902951232437b279535f12e10cfbf29815fbb3fef8161fe2c86d65ecdbfe8bc"
+        },
+        "elapsed_seconds": 515.4,
+        "bitstream_sha256": "2EB7153D2A3E6442D501A80AF594E6372964BD2EA34E955669C6143C78E167DA"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 8063,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5525,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4263,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 128,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-stream-head-tx-p3-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 3,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": true,
+        "pipeline_present_mailbox": false,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 766.6
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0004) : There are total 423 unrouted nets"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 8029,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5541,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4243,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 128,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-stream-head-tx-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": true,
+        "pipeline_present_mailbox": false,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 5,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.467,
+              "from": "core/hdmi/protocol/tmds_gen[0].tmds_channel/mode2_1_s0/Q",
+              "to": "core/hdmi/protocol/tmds_gen[0].tmds_channel/tmds_6_s2/D"
+            },
+            "Hold": {
+              "slack_ns": 0.456,
+              "from": "host/registers/staging_command_75_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_2_s/DI[11]"
+            },
+            "Recovery": {
+              "slack_ns": 9.402,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/wg_sync2_2_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.542,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/visible_wb_2_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "c254d8449975eb7b94062bf0d6fabf0fe932871800d370895dd82447ef3eecff"
+        },
+        "elapsed_seconds": 507.1,
+        "bitstream_sha256": "02177551B41ED8745A7F973580150526B649ACDFC3C4D2210B8596125650A95B"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 8027,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5541,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4251,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 128,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-tx-mailbox-p3-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 3,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": true,
+        "pipeline_present_mailbox": true,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 600.6
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0004) : There are total 353 unrouted nets"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 7934,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5606,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4219,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-tx-mailbox-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": true,
+        "pipeline_present_mailbox": true,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 43,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -2.302,
+              "from": "host/registers/upload_words[14].ram/storage/DO[25]",
+              "to": "host/registers/window_write_word_25_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.388,
+              "from": "host/registers/read_ptr_1_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_2_s/ADB[6]"
+            },
+            "Recovery": {
+              "slack_ns": 8.421,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_12_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.836,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_sync2_2_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "d31b83997486ecfb4fdb981a9ea96c26a629bfa1bcacbcabe9e900b228910dc2"
+        },
+        "elapsed_seconds": 445.0,
+        "bitstream_sha256": "78B792B67118435C4AD6D1C664BF2212CAD0739D649FBCEA352BB30F62CA7307"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7933,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5606,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4244,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-tx-p3-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 3,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": true,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 4,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.347,
+              "from": "host/registers/descriptors_descriptors_0_1_s/DO[2]",
+              "to": "host/commands/fill/end_byte_6_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.47,
+              "from": "core/display/scan_addr_1_s0/Q",
+              "to": "core/display/banks/banks[1].ram/memory_memory_0_0_s/ADB[6]"
+            },
+            "Recovery": {
+              "slack_ns": 8.626,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/wg_sync2_4_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 1.281,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_sync2_0_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "b9e5a1bbf096a6b5bbbd00ea9ba2b24020bdb6d111c4a3019c617a080f344b42"
+        },
+        "elapsed_seconds": 451.8,
+        "bitstream_sha256": "50FCD8B0521430D951569BA185535BDC5CFAE98FDABF4D28D49201FDF17E639F"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7934,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5413,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4241,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-tx-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": true,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 2,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -0.458,
+              "from": "core/display/held_palette_82_s0/Q",
+              "to": "core/display/palette_82_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.382,
+              "from": "core/display/scan_addr_2_s0/Q",
+              "to": "core/display/banks/banks[0].ram/memory_memory_0_0_s/ADB[7]"
+            },
+            "Recovery": {
+              "slack_ns": 9.291,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_8_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.994,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_sync2_0_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "303998851a7f747f7382a9b676b1104d681c5a9f2fad1e8a89dd77538773b926"
+        },
+        "elapsed_seconds": 486.4,
+        "bitstream_sha256": "975481905A6A6550D907F100BBA9120F0FCEF0B6FC51BCD8D26497E574F0DC91"
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [],
+      "resources": {
+        "Logic": {
+          "used": 7934,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5413,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4245,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 0,
+      "geometry_flipflops": 0,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-upload-byte-regs-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": false,
+        "pipeline_present_mailbox": false,
+        "register_upload_window": true,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 93.5
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0003) : Failed to place with '190 REG(s) unPlaced ' in the device 'GW1NR-9C-QFN88P-6'"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 7765,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 6015,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4163,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 7,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 80,
+      "geometry_flipflops": 48,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-upload-byte-regs-tx-p3-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 3,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": true,
+        "pipeline_present_mailbox": false,
+        "register_upload_window": true,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 88.0
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0003) : Failed to place with '187 REG(s) unPlaced ' in the device 'GW1NR-9C-QFN88P-6'"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 7821,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 6031,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4169,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 7,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 80,
+      "geometry_flipflops": 48,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-upload-regs-p4-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": false,
+        "pipeline_present_mailbox": false,
+        "register_upload_window": true,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 113.6
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0003) : Failed to place with '10 REG(s) unPlaced ' in the device 'GW1NR-9C-QFN88P-6'"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 7791,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 6037,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4168,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 7,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 80,
+      "geometry_flipflops": 48,
+      "descriptor_feedback_lut_inputs": 0
+    },
+    {
+      "name": "fb-queue-sta-upload-regs-tx-p3-r2",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 3,
+        "route": 2,
+        "exit_code": 1,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "register_tx_control": true,
+        "pipeline_present_mailbox": false,
+        "register_upload_window": true,
+        "build_failed": true,
+        "fresh_bitstream": false,
+        "timing": null,
+        "elapsed_seconds": 110.6
+      },
+      "numeric_gate_passed": false,
+      "hardware_tested": false,
+      "release_ready": false,
+      "source_snapshot_verified": true,
+      "errors": [
+        "ERROR  (PR0003) : Failed to place with '113 REG(s) unPlaced ' in the device 'GW1NR-9C-QFN88P-6'"
+      ],
+      "resources": {
+        "Logic": {
+          "used": 7812,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 6053,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4174,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 7,
+          "capacity": 26
+        }
+      },
+      "descriptor_flipflops": 80,
+      "geometry_flipflops": 48,
+      "descriptor_feedback_lut_inputs": 0
+    }
+  ],
+  "fpga_flash_writes": 0,
+  "fpga_sram_programs": 0,
+  "rp2040_writes": 0,
+  "release_ready": false
+}

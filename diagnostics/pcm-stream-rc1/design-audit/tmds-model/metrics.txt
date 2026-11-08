@@ -1,0 +1,5 @@
+black {'serial_edges_per_char': 1.999, 'parallel_toggles_per_char': 7.995, 'max_run': 10, 'distinct_chars': 2}
+white {'serial_edges_per_char': 1.143, 'parallel_toggles_per_char': 7.706, 'max_run': 11, 'distinct_chars': 2}
+gray555 {'serial_edges_per_char': 5.999, 'parallel_toggles_per_char': 0.0, 'max_run': 2, 'distinct_chars': 1}
+stripes {'serial_edges_per_char': 1.5, 'parallel_toggles_per_char': 8.993, 'max_run': 10, 'distinct_chars': 4}
+original {'serial_edges_per_char': 3.082, 'parallel_toggles_per_char': 4.412, 'max_run': 14, 'distinct_chars': 22}

@@ -1,0 +1,2033 @@
+{
+  "hardware_tested": true,
+  "release_ready": false,
+  "user_provisionally_approved": true,
+  "numeric_timing_gate_passed": false,
+  "bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "fpga_queue_depth": 8,
+  "fpga_sram_programs": 1,
+  "fpga_flash_writes": 0,
+  "conditions": "Same frozen baseline/burst firmware and approved FPGA; A/B/A/B, four 150s runs; other conditions unchanged",
+  "host_queue_scope": "Only FILL/PALETTE async; COPY/PRESENT/transfers/audio drain FIFO in order",
+  "variants": [
+    {
+      "name": "baseline-1",
+      "firmware_sha256": "b100fc708260c3d1797df6fe4635d34a882af295095675d81784fc2677848ed0",
+      "frames": 4422,
+      "actual_present_fps": 29.486341724424094,
+      "present_intervals_us": {
+        "samples": 4421,
+        "mean": 33914.00701198824,
+        "median": 33334,
+        "p95": 49996,
+        "worst": 100011
+      },
+      "worst_call_us": 82938,
+      "worst_call_frame": {
+        "ms": 143017,
+        "scene": 7,
+        "us": 82938,
+        "present_before_us": 151916533,
+        "present_after_us": 151919567,
+        "draw_start_us": 151836634,
+        "deadline_us": 151869967
+      },
+      "scenes": [
+        {
+          "scene": 0,
+          "frames": 302,
+          "actual_update_fps": 30.352842210901027,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33347,
+            "worst_us": 50016,
+            "over_33_333ms_rate": 0.4418604651162791
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 1,
+          "frames": 606,
+          "actual_update_fps": 30.325723331157903,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 49994,
+            "over_33_333ms_rate": 0.4859504132231405
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 2,
+          "frames": 599,
+          "actual_update_fps": 29.97483367100134,
+          "present_intervals": {
+            "median_us": 33333.0,
+            "p95_us": 33346,
+            "worst_us": 50004,
+            "over_33_333ms_rate": 0.49498327759197325
+          },
+          "deadline_miss_rate": 0.00333889816360601,
+          "relative_call_budget_miss_rate": 0.00333889816360601
+        },
+        {
+          "scene": 3,
+          "frames": 602,
+          "actual_update_fps": 30.100060916312966,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 50005,
+            "worst_us": 50015,
+            "over_33_333ms_rate": 0.4875207986688852
+          },
+          "deadline_miss_rate": 0.08305647840531562,
+          "relative_call_budget_miss_rate": 0.08305647840531562
+        },
+        {
+          "scene": 4,
+          "frames": 754,
+          "actual_update_fps": 30.180256693303583,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 50008,
+            "over_33_333ms_rate": 0.48339973439575035
+          },
+          "deadline_miss_rate": 0.001326259946949602,
+          "relative_call_budget_miss_rate": 0.001326259946949602
+        },
+        {
+          "scene": 5,
+          "frames": 758,
+          "actual_update_fps": 30.320328462481378,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33346,
+            "worst_us": 50000,
+            "over_33_333ms_rate": 0.4848084544253633
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 6,
+          "frames": 501,
+          "actual_update_fps": 25.104525201127416,
+          "present_intervals": {
+            "median_us": 33338.0,
+            "p95_us": 66663,
+            "worst_us": 83349,
+            "over_33_333ms_rate": 0.64
+          },
+          "deadline_miss_rate": 0.31137724550898205,
+          "relative_call_budget_miss_rate": 0.31137724550898205
+        },
+        {
+          "scene": 7,
+          "frames": 300,
+          "actual_update_fps": 29.999899665887405,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33346,
+            "worst_us": 100011,
+            "over_33_333ms_rate": 0.4916387959866221
+          },
+          "deadline_miss_rate": 0.006666666666666667,
+          "relative_call_budget_miss_rate": 0.006666666666666667
+        }
+      ],
+      "transitions": [
+        {
+          "from_scene": 0,
+          "to_scene": 1,
+          "present_gap_us": 49997,
+          "next_draw_gap_us": 17074
+        },
+        {
+          "from_scene": 1,
+          "to_scene": 2,
+          "present_gap_us": 66674,
+          "next_draw_gap_us": 19083
+        },
+        {
+          "from_scene": 2,
+          "to_scene": 3,
+          "present_gap_us": 49998,
+          "next_draw_gap_us": 1015
+        },
+        {
+          "from_scene": 3,
+          "to_scene": 4,
+          "present_gap_us": 49998,
+          "next_draw_gap_us": 14064
+        },
+        {
+          "from_scene": 4,
+          "to_scene": 5,
+          "present_gap_us": 33328,
+          "next_draw_gap_us": 1013
+        },
+        {
+          "from_scene": 5,
+          "to_scene": 6,
+          "present_gap_us": 66670,
+          "next_draw_gap_us": 15067
+        },
+        {
+          "from_scene": 6,
+          "to_scene": 7,
+          "present_gap_us": 33333,
+          "next_draw_gap_us": 1015
+        }
+      ],
+      "timeouts": 0,
+      "pcm_status_fault": 0,
+      "stop_rc": 0,
+      "selftest_readback_bytes": 32,
+      "queue": {
+        "depth": 8,
+        "submitted": 317616,
+        "retired": 317616,
+        "peak": 8,
+        "pending": 0,
+        "barriers": 4836,
+        "errors": 0
+      },
+      "transaction_window_s": 148.167,
+      "transactions_per_second": 40787.00385375961,
+      "wire_bytes_per_second": 198898.75613328203,
+      "frame_deadline_misses": 211,
+      "full_flash_after_tests_verified": true,
+      "queue_retirement": [
+        {
+          "reason": 0,
+          "calls": 284932,
+          "samples": 4453,
+          "poll_us": 94864,
+          "metadata_us": 149691,
+          "ack_us": 60703,
+          "mean_poll_us": 21.30339097237817,
+          "mean_metadata_us": 33.615764653042895,
+          "mean_ack_us": 13.63193352795868
+        },
+        {
+          "reason": 1,
+          "calls": 23954,
+          "samples": 375,
+          "poll_us": 10183,
+          "metadata_us": 12612,
+          "ack_us": 5108,
+          "mean_poll_us": 27.154666666666667,
+          "mean_metadata_us": 33.632,
+          "mean_ack_us": 13.621333333333334
+        },
+        {
+          "reason": 2,
+          "calls": 8580,
+          "samples": 135,
+          "poll_us": 2442,
+          "metadata_us": 4524,
+          "ack_us": 1900,
+          "mean_poll_us": 18.08888888888889,
+          "mean_metadata_us": 33.51111111111111,
+          "mean_ack_us": 14.074074074074074
+        },
+        {
+          "reason": 3,
+          "calls": 0,
+          "samples": 0,
+          "poll_us": 0,
+          "metadata_us": 0,
+          "ack_us": 0,
+          "mean_poll_us": null,
+          "mean_metadata_us": null,
+          "mean_ack_us": null
+        }
+      ],
+      "sync_commands": [
+        {
+          "op": 0,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 1,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 2,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 3,
+          "calls": 4422,
+          "nonempty": 1090,
+          "samples": 70,
+          "drain_us": 9770,
+          "command_us": 685599,
+          "mean_drain_us": 139.57142857142858,
+          "mean_command_us": 9794.271428571428
+        },
+        {
+          "op": 4,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 5,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 6,
+          "calls": 122511,
+          "nonempty": 3743,
+          "samples": 1915,
+          "drain_us": 27756,
+          "command_us": 312000,
+          "mean_drain_us": 14.493994778067885,
+          "mean_command_us": 162.92428198433421
+        },
+        {
+          "op": 7,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        }
+      ],
+      "finale_lettering_frames": [
+        {
+          "ms": 143017,
+          "scene": 7,
+          "us": 82938,
+          "present_before_us": 151916533,
+          "present_after_us": 151919567,
+          "draw_start_us": 151836634,
+          "deadline_us": 151869967
+        },
+        {
+          "ms": 143101,
+          "scene": 7,
+          "us": 82302,
+          "present_before_us": 152000522,
+          "present_after_us": 152002897,
+          "draw_start_us": 151920601,
+          "deadline_us": 151953934
+        },
+        {
+          "ms": 143184,
+          "scene": 7,
+          "us": 15651,
+          "present_before_us": 152003934,
+          "present_after_us": 152019567,
+          "draw_start_us": 152003922,
+          "deadline_us": 152037255
+        },
+        {
+          "ms": 143217,
+          "scene": 7,
+          "us": 16485,
+          "present_before_us": 152036442,
+          "present_after_us": 152052908,
+          "draw_start_us": 152036430,
+          "deadline_us": 152069763
+        },
+        {
+          "ms": 143250,
+          "scene": 7,
+          "us": 16249,
+          "present_before_us": 152069999,
+          "present_after_us": 152086234,
+          "draw_start_us": 152069991,
+          "deadline_us": 152103324
+        },
+        {
+          "ms": 143283,
+          "scene": 7,
+          "us": 589,
+          "present_before_us": 152102316,
+          "present_after_us": 152102892,
+          "draw_start_us": 152102310,
+          "deadline_us": 152135643
+        },
+        {
+          "ms": 143316,
+          "scene": 7,
+          "us": 1218,
+          "present_before_us": 152135034,
+          "present_after_us": 152136241,
+          "draw_start_us": 152135028,
+          "deadline_us": 152168361
+        },
+        {
+          "ms": 143349,
+          "scene": 7,
+          "us": 1200,
+          "present_before_us": 152168381,
+          "present_after_us": 152169570,
+          "draw_start_us": 152168375,
+          "deadline_us": 152201708
+        },
+        {
+          "ms": 143382,
+          "scene": 7,
+          "us": 1199,
+          "present_before_us": 152201714,
+          "present_after_us": 152202905,
+          "draw_start_us": 152201709,
+          "deadline_us": 152235042
+        },
+        {
+          "ms": 143415,
+          "scene": 7,
+          "us": 2259,
+          "present_before_us": 152234041,
+          "present_after_us": 152236226,
+          "draw_start_us": 152234036,
+          "deadline_us": 152267369
+        },
+        {
+          "ms": 143448,
+          "scene": 7,
+          "us": 2145,
+          "present_before_us": 152267427,
+          "present_after_us": 152269563,
+          "draw_start_us": 152267422,
+          "deadline_us": 152300755
+        },
+        {
+          "ms": 143481,
+          "scene": 7,
+          "us": 2216,
+          "present_before_us": 152300700,
+          "present_after_us": 152302904,
+          "draw_start_us": 152300694,
+          "deadline_us": 152334027
+        }
+      ],
+      "ack_wait_observation": {
+        "samples": 4453,
+        "known_completed_before_ack_issue_us_sample_sum": 149691,
+        "mean_known_completed_before_ack_issue_us": 33.615764653042895,
+        "scope": "reason=0 only: eight software tags outstanding, DONE confirmed, no other owner/ACK. At least one younger descriptor remains; current RTL inhibits dispatch until ACK. q_done to q_ack is a known held interval, not total DONE-to-ACK or measured FPGA cycles. Do not extrapolate periodic samples to full-run totals or interpret differences as exact hardware cycle savings."
+      },
+      "completion_burst": {
+        "bursts": 0,
+        "hits": 0,
+        "misses": 0,
+        "fallback": 0
+      },
+      "audio": {
+        "sample_rate": 48000,
+        "channels": 2,
+        "onset_s": 3.62,
+        "audible_span_s": 150.0,
+        "low_10ms_blocks": 0,
+        "low_10ms_blocks_by_channel": [
+          0,
+          0
+        ],
+        "longest_low_rms_ms": 0,
+        "bgm_correlations": [
+          0.9951595616852182,
+          0.9959662498916106,
+          0.9944661394282315,
+          0.9977043890059126,
+          0.9948955040830987,
+          0.9974200172931245,
+          0.9955386375947054,
+          0.9965641024695684
+        ],
+        "scope": "Physical HDMI capture; RMS scan and eight quiet segments, not an independent underrun counter"
+      },
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "60/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "157.251000"
+        }
+      },
+      "capture_buffer_full_mentions": 0,
+      "recording_sha256": "9b9d28a744d6c644cca2f4108a63548af654a77f09677e49c917f119fe728179"
+    },
+    {
+      "name": "burst-1",
+      "firmware_sha256": "c83545b61127dba78944037543f80b849fd8d87b6cb41e1b2bbeed280d74b008",
+      "frames": 4453,
+      "actual_present_fps": 29.689792881283964,
+      "present_intervals_us": {
+        "samples": 4452,
+        "mean": 33681.609164420486,
+        "median": 33334.0,
+        "p95": 49992,
+        "worst": 100004
+      },
+      "worst_call_us": 83162,
+      "worst_call_frame": {
+        "ms": 143017,
+        "scene": 7,
+        "us": 83162,
+        "present_before_us": 151719953,
+        "present_after_us": 151732197,
+        "draw_start_us": 151649040,
+        "deadline_us": 151682373
+      },
+      "scenes": [
+        {
+          "scene": 0,
+          "frames": 302,
+          "actual_update_fps": 30.30192292378724,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 49994,
+            "over_33_333ms_rate": 0.48172757475083056
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 1,
+          "frames": 606,
+          "actual_update_fps": 30.32571421066978,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 50012,
+            "over_33_333ms_rate": 0.4578512396694215
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 2,
+          "frames": 600,
+          "actual_update_fps": 29.999901836715193,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 33350,
+            "over_33_333ms_rate": 0.48414023372287146
+          },
+          "deadline_miss_rate": 0.0016666666666666668,
+          "relative_call_budget_miss_rate": 0.0016666666666666668
+        },
+        {
+          "scene": 3,
+          "frames": 601,
+          "actual_update_fps": 30.125421165940157,
+          "present_intervals": {
+            "median_us": 33334.0,
+            "p95_us": 50003,
+            "worst_us": 50014,
+            "over_33_333ms_rate": 0.5033333333333333
+          },
+          "deadline_miss_rate": 0.064891846921797,
+          "relative_call_budget_miss_rate": 0.064891846921797
+        },
+        {
+          "scene": 4,
+          "frames": 755,
+          "actual_update_fps": 30.18002988223224,
+          "present_intervals": {
+            "median_us": 33333.0,
+            "p95_us": 33345,
+            "worst_us": 50011,
+            "over_33_333ms_rate": 0.48938992042440316
+          },
+          "deadline_miss_rate": 0.0013245033112582781,
+          "relative_call_budget_miss_rate": 0.0013245033112582781
+        },
+        {
+          "scene": 5,
+          "frames": 758,
+          "actual_update_fps": 30.300101087061158,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 50007,
+            "over_33_333ms_rate": 0.4953764861294584
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 6,
+          "frames": 532,
+          "actual_update_fps": 26.61644662818493,
+          "present_intervals": {
+            "median_us": 33336,
+            "p95_us": 50011,
+            "worst_us": 66680,
+            "over_33_333ms_rate": 0.60075329566855
+          },
+          "deadline_miss_rate": 0.2161654135338346,
+          "relative_call_budget_miss_rate": 0.2161654135338346
+        },
+        {
+          "scene": 7,
+          "frames": 299,
+          "actual_update_fps": 29.999871141493085,
+          "present_intervals": {
+            "median_us": 33334.0,
+            "p95_us": 33346,
+            "worst_us": 100004,
+            "over_33_333ms_rate": 0.5234899328859061
+          },
+          "deadline_miss_rate": 0.006688963210702341,
+          "relative_call_budget_miss_rate": 0.006688963210702341
+        }
+      ],
+      "transitions": [
+        {
+          "from_scene": 0,
+          "to_scene": 1,
+          "present_gap_us": 50003,
+          "next_draw_gap_us": 17069
+        },
+        {
+          "from_scene": 1,
+          "to_scene": 2,
+          "present_gap_us": 66668,
+          "next_draw_gap_us": 19078
+        },
+        {
+          "from_scene": 2,
+          "to_scene": 3,
+          "present_gap_us": 50008,
+          "next_draw_gap_us": 1011
+        },
+        {
+          "from_scene": 3,
+          "to_scene": 4,
+          "present_gap_us": 50006,
+          "next_draw_gap_us": 26106
+        },
+        {
+          "from_scene": 4,
+          "to_scene": 5,
+          "present_gap_us": 16673,
+          "next_draw_gap_us": 1006
+        },
+        {
+          "from_scene": 5,
+          "to_scene": 6,
+          "present_gap_us": 66661,
+          "next_draw_gap_us": 15064
+        },
+        {
+          "from_scene": 6,
+          "to_scene": 7,
+          "present_gap_us": 33340,
+          "next_draw_gap_us": 1728
+        }
+      ],
+      "timeouts": 0,
+      "pcm_status_fault": 0,
+      "stop_rc": 0,
+      "selftest_readback_bytes": 32,
+      "queue": {
+        "depth": 8,
+        "submitted": 324975,
+        "retired": 324975,
+        "peak": 8,
+        "pending": 0,
+        "barriers": 4870,
+        "errors": 0
+      },
+      "transaction_window_s": 148.967,
+      "transactions_per_second": 39352.755979512236,
+      "wire_bytes_per_second": 195959.88373263876,
+      "frame_deadline_misses": 158,
+      "full_flash_after_tests_verified": true,
+      "queue_retirement": [
+        {
+          "reason": 0,
+          "calls": 292029,
+          "samples": 4563,
+          "poll_us": 110879,
+          "metadata_us": 75933,
+          "ack_us": 59091,
+          "mean_poll_us": 24.299583607275913,
+          "mean_metadata_us": 16.641025641025642,
+          "mean_ack_us": 12.950032873109796
+        },
+        {
+          "reason": 1,
+          "calls": 24008,
+          "samples": 376,
+          "poll_us": 7770,
+          "metadata_us": 6415,
+          "ack_us": 4976,
+          "mean_poll_us": 20.664893617021278,
+          "mean_metadata_us": 17.06117021276596,
+          "mean_ack_us": 13.23404255319149
+        },
+        {
+          "reason": 2,
+          "calls": 8788,
+          "samples": 138,
+          "poll_us": 2731,
+          "metadata_us": 2257,
+          "ack_us": 1762,
+          "mean_poll_us": 19.78985507246377,
+          "mean_metadata_us": 16.355072463768117,
+          "mean_ack_us": 12.768115942028986
+        },
+        {
+          "reason": 3,
+          "calls": 0,
+          "samples": 0,
+          "poll_us": 0,
+          "metadata_us": 0,
+          "ack_us": 0,
+          "mean_poll_us": null,
+          "mean_metadata_us": null,
+          "mean_ack_us": null
+        }
+      ],
+      "sync_commands": [
+        {
+          "op": 0,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 1,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 2,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 3,
+          "calls": 4453,
+          "nonempty": 1116,
+          "samples": 70,
+          "drain_us": 8726,
+          "command_us": 660643,
+          "mean_drain_us": 124.65714285714286,
+          "mean_command_us": 9437.757142857143
+        },
+        {
+          "op": 4,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 5,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 6,
+          "calls": 122830,
+          "nonempty": 3751,
+          "samples": 1920,
+          "drain_us": 26000,
+          "command_us": 313798,
+          "mean_drain_us": 13.541666666666666,
+          "mean_command_us": 163.43645833333332
+        },
+        {
+          "op": 7,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        }
+      ],
+      "finale_lettering_frames": [
+        {
+          "ms": 143017,
+          "scene": 7,
+          "us": 83162,
+          "present_before_us": 151719953,
+          "present_after_us": 151732197,
+          "draw_start_us": 151649040,
+          "deadline_us": 151682373
+        },
+        {
+          "ms": 143101,
+          "scene": 7,
+          "us": 82316,
+          "present_before_us": 151804031,
+          "present_after_us": 151815540,
+          "draw_start_us": 151733226,
+          "deadline_us": 151766559
+        },
+        {
+          "ms": 143184,
+          "scene": 7,
+          "us": 15628,
+          "present_before_us": 151816572,
+          "present_after_us": 151832192,
+          "draw_start_us": 151816565,
+          "deadline_us": 151849898
+        },
+        {
+          "ms": 143217,
+          "scene": 7,
+          "us": 16336,
+          "present_before_us": 151849272,
+          "present_after_us": 151865536,
+          "draw_start_us": 151849269,
+          "deadline_us": 151882602
+        },
+        {
+          "ms": 143250,
+          "scene": 7,
+          "us": 16190,
+          "present_before_us": 151882677,
+          "present_after_us": 151898863,
+          "draw_start_us": 151882674,
+          "deadline_us": 151916007
+        },
+        {
+          "ms": 143283,
+          "scene": 7,
+          "us": 16268,
+          "present_before_us": 151915936,
+          "present_after_us": 151932200,
+          "draw_start_us": 151915933,
+          "deadline_us": 151949266
+        },
+        {
+          "ms": 143316,
+          "scene": 7,
+          "us": 604,
+          "present_before_us": 151948268,
+          "present_after_us": 151948868,
+          "draw_start_us": 151948265,
+          "deadline_us": 151981598
+        },
+        {
+          "ms": 143349,
+          "scene": 7,
+          "us": 190,
+          "present_before_us": 151982004,
+          "present_after_us": 151982190,
+          "draw_start_us": 151982001,
+          "deadline_us": 152015334
+        },
+        {
+          "ms": 143382,
+          "scene": 7,
+          "us": 1216,
+          "present_before_us": 152014322,
+          "present_after_us": 152015534,
+          "draw_start_us": 152014319,
+          "deadline_us": 152047652
+        },
+        {
+          "ms": 143415,
+          "scene": 7,
+          "us": 1200,
+          "present_before_us": 152047667,
+          "present_after_us": 152048863,
+          "draw_start_us": 152047664,
+          "deadline_us": 152080997
+        },
+        {
+          "ms": 143448,
+          "scene": 7,
+          "us": 1200,
+          "present_before_us": 152080995,
+          "present_after_us": 152082191,
+          "draw_start_us": 152080992,
+          "deadline_us": 152114325
+        },
+        {
+          "ms": 143481,
+          "scene": 7,
+          "us": 2210,
+          "present_before_us": 152113319,
+          "present_after_us": 152115525,
+          "draw_start_us": 152113316,
+          "deadline_us": 152146649
+        }
+      ],
+      "ack_wait_observation": {
+        "samples": 4563,
+        "known_completed_before_ack_issue_us_sample_sum": 75933,
+        "mean_known_completed_before_ack_issue_us": 16.641025641025642,
+        "scope": "reason=0 only: eight software tags outstanding, DONE confirmed, no other owner/ACK. At least one younger descriptor remains; current RTL inhibits dispatch until ACK. q_done to q_ack is a known held interval, not total DONE-to-ACK or measured FPGA cycles. Do not extrapolate periodic samples to full-run totals or interpret differences as exact hardware cycle savings."
+      },
+      "completion_burst": {
+        "bursts": 324825,
+        "hits": 309539,
+        "misses": 15286,
+        "fallback": 15286
+      },
+      "audio": {
+        "sample_rate": 48000,
+        "channels": 2,
+        "onset_s": 3.16,
+        "audible_span_s": 150.01,
+        "low_10ms_blocks": 0,
+        "low_10ms_blocks_by_channel": [
+          0,
+          0
+        ],
+        "longest_low_rms_ms": 0,
+        "bgm_correlations": [
+          0.996612442606715,
+          0.9958997754520199,
+          0.9976922363726357,
+          0.9963459165527923,
+          0.9967235658523246,
+          0.9953537116667631,
+          0.9956555218161469,
+          0.9953587347477368
+        ],
+        "scope": "Physical HDMI capture; RMS scan and eight quiet segments, not an independent underrun counter"
+      },
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "60/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "156.792000"
+        }
+      },
+      "capture_buffer_full_mentions": 0,
+      "recording_sha256": "377211ec00bbb32b13962616adfc8b9be264ff1c22290e2591672b48a7a0d2f1"
+    },
+    {
+      "name": "baseline-2",
+      "firmware_sha256": "b100fc708260c3d1797df6fe4635d34a882af295095675d81784fc2677848ed0",
+      "frames": 4421,
+      "actual_present_fps": 29.47966641343055,
+      "present_intervals_us": {
+        "samples": 4420,
+        "mean": 33921.686425339365,
+        "median": 33334.0,
+        "p95": 49997,
+        "worst": 83341
+      },
+      "worst_call_us": 82333,
+      "worst_call_frame": {
+        "ms": 139685,
+        "scene": 6,
+        "us": 82333,
+        "present_before_us": 148385210,
+        "present_after_us": 148399349,
+        "draw_start_us": 148317023,
+        "deadline_us": 148350356
+      },
+      "scenes": [
+        {
+          "scene": 0,
+          "frames": 302,
+          "actual_update_fps": 30.3528513932463,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33346,
+            "worst_us": 50007,
+            "over_33_333ms_rate": 0.4950166112956811
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 1,
+          "frames": 606,
+          "actual_update_fps": 30.300392582904628,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 50000,
+            "over_33_333ms_rate": 0.47768595041322315
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 2,
+          "frames": 599,
+          "actual_update_fps": 29.974823153555906,
+          "present_intervals": {
+            "median_us": 33334.0,
+            "p95_us": 33345,
+            "worst_us": 50011,
+            "over_33_333ms_rate": 0.5050167224080268
+          },
+          "deadline_miss_rate": 0.00333889816360601,
+          "relative_call_budget_miss_rate": 0.00333889816360601
+        },
+        {
+          "scene": 3,
+          "frames": 602,
+          "actual_update_fps": 30.100050363744835,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 50004,
+            "worst_us": 50014,
+            "over_33_333ms_rate": 0.4875207986688852
+          },
+          "deadline_miss_rate": 0.04983388704318937,
+          "relative_call_budget_miss_rate": 0.04983388704318937
+        },
+        {
+          "scene": 4,
+          "frames": 753,
+          "actual_update_fps": 30.160327810677845,
+          "present_intervals": {
+            "median_us": 33334.0,
+            "p95_us": 33346,
+            "worst_us": 50014,
+            "over_33_333ms_rate": 0.5013297872340425
+          },
+          "deadline_miss_rate": 0.0013280212483399733,
+          "relative_call_budget_miss_rate": 0.0013280212483399733
+        },
+        {
+          "scene": 5,
+          "frames": 758,
+          "actual_update_fps": 30.279910371465302,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 50009,
+            "over_33_333ms_rate": 0.4663143989431968
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 6,
+          "frames": 501,
+          "actual_update_fps": 25.104535284926435,
+          "present_intervals": {
+            "median_us": 33338.0,
+            "p95_us": 66666,
+            "worst_us": 83341,
+            "over_33_333ms_rate": 0.64
+          },
+          "deadline_miss_rate": 0.3093812375249501,
+          "relative_call_budget_miss_rate": 0.3093812375249501
+        },
+        {
+          "scene": 7,
+          "frames": 300,
+          "actual_update_fps": 29.999881605818413,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 83341,
+            "over_33_333ms_rate": 0.49498327759197325
+          },
+          "deadline_miss_rate": 0.006666666666666667,
+          "relative_call_budget_miss_rate": 0.006666666666666667
+        }
+      ],
+      "transitions": [
+        {
+          "from_scene": 0,
+          "to_scene": 1,
+          "present_gap_us": 50003,
+          "next_draw_gap_us": 17078
+        },
+        {
+          "from_scene": 1,
+          "to_scene": 2,
+          "present_gap_us": 49994,
+          "next_draw_gap_us": 14069
+        },
+        {
+          "from_scene": 2,
+          "to_scene": 3,
+          "present_gap_us": 49989,
+          "next_draw_gap_us": 1011
+        },
+        {
+          "from_scene": 3,
+          "to_scene": 4,
+          "present_gap_us": 50002,
+          "next_draw_gap_us": 14064
+        },
+        {
+          "from_scene": 4,
+          "to_scene": 5,
+          "present_gap_us": 16669,
+          "next_draw_gap_us": 1013
+        },
+        {
+          "from_scene": 5,
+          "to_scene": 6,
+          "present_gap_us": 66683,
+          "next_draw_gap_us": 9047
+        },
+        {
+          "from_scene": 6,
+          "to_scene": 7,
+          "present_gap_us": 33344,
+          "next_draw_gap_us": 1788
+        }
+      ],
+      "timeouts": 0,
+      "pcm_status_fault": 0,
+      "stop_rc": 0,
+      "selftest_readback_bytes": 32,
+      "queue": {
+        "depth": 8,
+        "submitted": 317496,
+        "retired": 317496,
+        "peak": 8,
+        "pending": 0,
+        "barriers": 4834,
+        "errors": 0
+      },
+      "transaction_window_s": 148.918,
+      "transactions_per_second": 40904.068010583,
+      "wire_bytes_per_second": 199175.33139042964,
+      "frame_deadline_misses": 190,
+      "full_flash_after_tests_verified": true,
+      "queue_retirement": [
+        {
+          "reason": 0,
+          "calls": 284828,
+          "samples": 4451,
+          "poll_us": 93313,
+          "metadata_us": 149646,
+          "ack_us": 60657,
+          "mean_poll_us": 20.964502359020443,
+          "mean_metadata_us": 33.620759379914624,
+          "mean_ack_us": 13.62772410694226
+        },
+        {
+          "reason": 1,
+          "calls": 23938,
+          "samples": 375,
+          "poll_us": 10008,
+          "metadata_us": 12651,
+          "ack_us": 5088,
+          "mean_poll_us": 26.688,
+          "mean_metadata_us": 33.736,
+          "mean_ack_us": 13.568
+        },
+        {
+          "reason": 2,
+          "calls": 8580,
+          "samples": 135,
+          "poll_us": 2440,
+          "metadata_us": 4531,
+          "ack_us": 1888,
+          "mean_poll_us": 18.074074074074073,
+          "mean_metadata_us": 33.56296296296296,
+          "mean_ack_us": 13.985185185185186
+        },
+        {
+          "reason": 3,
+          "calls": 0,
+          "samples": 0,
+          "poll_us": 0,
+          "metadata_us": 0,
+          "ack_us": 0,
+          "mean_poll_us": null,
+          "mean_metadata_us": null,
+          "mean_ack_us": null
+        }
+      ],
+      "sync_commands": [
+        {
+          "op": 0,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 1,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 2,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 3,
+          "calls": 4421,
+          "nonempty": 1090,
+          "samples": 70,
+          "drain_us": 9700,
+          "command_us": 705458,
+          "mean_drain_us": 138.57142857142858,
+          "mean_command_us": 10077.971428571429
+        },
+        {
+          "op": 4,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 5,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 6,
+          "calls": 122468,
+          "nonempty": 3741,
+          "samples": 1914,
+          "drain_us": 29893,
+          "command_us": 311878,
+          "mean_drain_us": 15.618077324973877,
+          "mean_command_us": 162.94566353187042
+        },
+        {
+          "op": 7,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        }
+      ],
+      "finale_lettering_frames": [
+        {
+          "ms": 143002,
+          "scene": 7,
+          "us": 81326,
+          "present_before_us": 151714364,
+          "present_after_us": 151716021,
+          "draw_start_us": 151634703,
+          "deadline_us": 151668036
+        },
+        {
+          "ms": 143085,
+          "scene": 7,
+          "us": 82296,
+          "present_before_us": 151797089,
+          "present_after_us": 151799347,
+          "draw_start_us": 151717056,
+          "deadline_us": 151750389
+        },
+        {
+          "ms": 143168,
+          "scene": 7,
+          "us": 15655,
+          "present_before_us": 151800386,
+          "present_after_us": 151816022,
+          "draw_start_us": 151800372,
+          "deadline_us": 151833705
+        },
+        {
+          "ms": 143201,
+          "scene": 7,
+          "us": 16259,
+          "present_before_us": 151833107,
+          "present_after_us": 151849356,
+          "draw_start_us": 151833102,
+          "deadline_us": 151866435
+        },
+        {
+          "ms": 143234,
+          "scene": 7,
+          "us": 16258,
+          "present_before_us": 151866438,
+          "present_after_us": 151882685,
+          "draw_start_us": 151866433,
+          "deadline_us": 151899766
+        },
+        {
+          "ms": 143267,
+          "scene": 7,
+          "us": 16261,
+          "present_before_us": 151899773,
+          "present_after_us": 151916021,
+          "draw_start_us": 151899766,
+          "deadline_us": 151933099
+        },
+        {
+          "ms": 143300,
+          "scene": 7,
+          "us": 591,
+          "present_before_us": 151932103,
+          "present_after_us": 151932682,
+          "draw_start_us": 151932097,
+          "deadline_us": 151965430
+        },
+        {
+          "ms": 143333,
+          "scene": 7,
+          "us": 206,
+          "present_before_us": 151965829,
+          "present_after_us": 151966027,
+          "draw_start_us": 151965824,
+          "deadline_us": 151999157
+        },
+        {
+          "ms": 143366,
+          "scene": 7,
+          "us": 1265,
+          "present_before_us": 151998167,
+          "present_after_us": 151999357,
+          "draw_start_us": 151998161,
+          "deadline_us": 152031494
+        },
+        {
+          "ms": 143399,
+          "scene": 7,
+          "us": 1136,
+          "present_before_us": 152031563,
+          "present_after_us": 152032689,
+          "draw_start_us": 152031558,
+          "deadline_us": 152064891
+        },
+        {
+          "ms": 143432,
+          "scene": 7,
+          "us": 1198,
+          "present_before_us": 152064830,
+          "present_after_us": 152066020,
+          "draw_start_us": 152064826,
+          "deadline_us": 152098159
+        },
+        {
+          "ms": 143465,
+          "scene": 7,
+          "us": 2212,
+          "present_before_us": 152097156,
+          "present_after_us": 152099358,
+          "draw_start_us": 152097150,
+          "deadline_us": 152130483
+        },
+        {
+          "ms": 143498,
+          "scene": 7,
+          "us": 2196,
+          "present_before_us": 152130496,
+          "present_after_us": 152132681,
+          "draw_start_us": 152130489,
+          "deadline_us": 152163822
+        }
+      ],
+      "ack_wait_observation": {
+        "samples": 4451,
+        "known_completed_before_ack_issue_us_sample_sum": 149646,
+        "mean_known_completed_before_ack_issue_us": 33.620759379914624,
+        "scope": "reason=0 only: eight software tags outstanding, DONE confirmed, no other owner/ACK. At least one younger descriptor remains; current RTL inhibits dispatch until ACK. q_done to q_ack is a known held interval, not total DONE-to-ACK or measured FPGA cycles. Do not extrapolate periodic samples to full-run totals or interpret differences as exact hardware cycle savings."
+      },
+      "completion_burst": {
+        "bursts": 0,
+        "hits": 0,
+        "misses": 0,
+        "fallback": 0
+      },
+      "audio": {
+        "sample_rate": 48000,
+        "channels": 2,
+        "onset_s": 3.12,
+        "audible_span_s": 150.01,
+        "low_10ms_blocks": 0,
+        "low_10ms_blocks_by_channel": [
+          0,
+          0
+        ],
+        "longest_low_rms_ms": 0,
+        "bgm_correlations": [
+          0.995614156405335,
+          0.9952192150433943,
+          0.9955869644038607,
+          0.9967907552796216,
+          0.9952674315504504,
+          0.9965337737207575,
+          0.9961919102739145,
+          0.9968977262959313
+        ],
+        "scope": "Physical HDMI capture; RMS scan and eight quiet segments, not an independent underrun counter"
+      },
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "60/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "156.804000"
+        }
+      },
+      "capture_buffer_full_mentions": 0,
+      "recording_sha256": "5c51ab4cac7b97bf4b8130ee930405aa58c57eccc5136a6be58b039a6ba1e089"
+    },
+    {
+      "name": "burst-2",
+      "firmware_sha256": "c83545b61127dba78944037543f80b849fd8d87b6cb41e1b2bbeed280d74b008",
+      "frames": 4452,
+      "actual_present_fps": 29.68642603676308,
+      "present_intervals_us": {
+        "samples": 4451,
+        "mean": 33685.42911705235,
+        "median": 33334,
+        "p95": 49994,
+        "worst": 100006
+      },
+      "worst_call_us": 83091,
+      "worst_call_frame": {
+        "ms": 143017,
+        "scene": 7,
+        "us": 83091,
+        "present_before_us": 151459117,
+        "present_after_us": 151471330,
+        "draw_start_us": 151388243,
+        "deadline_us": 151421576
+      },
+      "scenes": [
+        {
+          "scene": 0,
+          "frames": 302,
+          "actual_update_fps": 30.301871065035265,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33346,
+            "worst_us": 49999,
+            "over_33_333ms_rate": 0.4850498338870432
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 1,
+          "frames": 606,
+          "actual_update_fps": 30.325726371321828,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 50007,
+            "over_33_333ms_rate": 0.48925619834710743
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 2,
+          "frames": 600,
+          "actual_update_fps": 29.99990784669376,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 33350,
+            "over_33_333ms_rate": 0.4724540901502504
+          },
+          "deadline_miss_rate": 0.0016666666666666668,
+          "relative_call_budget_miss_rate": 0.0016666666666666668
+        },
+        {
+          "scene": 3,
+          "frames": 601,
+          "actual_update_fps": 30.075083950837463,
+          "present_intervals": {
+            "median_us": 33334.0,
+            "p95_us": 50005,
+            "worst_us": 50015,
+            "over_33_333ms_rate": 0.5016666666666667
+          },
+          "deadline_miss_rate": 0.05823627287853577,
+          "relative_call_budget_miss_rate": 0.05823627287853577
+        },
+        {
+          "scene": 4,
+          "frames": 754,
+          "actual_update_fps": 30.200418883419523,
+          "present_intervals": {
+            "median_us": 33334,
+            "p95_us": 33345,
+            "worst_us": 50009,
+            "over_33_333ms_rate": 0.5046480743691899
+          },
+          "deadline_miss_rate": 0.001326259946949602,
+          "relative_call_budget_miss_rate": 0.001326259946949602
+        },
+        {
+          "scene": 5,
+          "frames": 758,
+          "actual_update_fps": 30.300101087061158,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 50013,
+            "over_33_333ms_rate": 0.4848084544253633
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 6,
+          "frames": 532,
+          "actual_update_fps": 26.594235521654944,
+          "present_intervals": {
+            "median_us": 33336,
+            "p95_us": 50012,
+            "worst_us": 66678,
+            "over_33_333ms_rate": 0.6214689265536724
+          },
+          "deadline_miss_rate": 0.21804511278195488,
+          "relative_call_budget_miss_rate": 0.21804511278195488
+        },
+        {
+          "scene": 7,
+          "frames": 299,
+          "actual_update_fps": 30.050355521924256,
+          "present_intervals": {
+            "median_us": 33334.0,
+            "p95_us": 33346,
+            "worst_us": 100006,
+            "over_33_333ms_rate": 0.5033557046979866
+          },
+          "deadline_miss_rate": 0.006688963210702341,
+          "relative_call_budget_miss_rate": 0.006688963210702341
+        }
+      ],
+      "transitions": [
+        {
+          "from_scene": 0,
+          "to_scene": 1,
+          "present_gap_us": 50000,
+          "next_draw_gap_us": 17069
+        },
+        {
+          "from_scene": 1,
+          "to_scene": 2,
+          "present_gap_us": 66677,
+          "next_draw_gap_us": 21085
+        },
+        {
+          "from_scene": 2,
+          "to_scene": 3,
+          "present_gap_us": 50005,
+          "next_draw_gap_us": 1010
+        },
+        {
+          "from_scene": 3,
+          "to_scene": 4,
+          "present_gap_us": 49990,
+          "next_draw_gap_us": 16131
+        },
+        {
+          "from_scene": 4,
+          "to_scene": 5,
+          "present_gap_us": 16657,
+          "next_draw_gap_us": 1006
+        },
+        {
+          "from_scene": 5,
+          "to_scene": 6,
+          "present_gap_us": 66682,
+          "next_draw_gap_us": 20086
+        },
+        {
+          "from_scene": 6,
+          "to_scene": 7,
+          "present_gap_us": 33334,
+          "next_draw_gap_us": 1812
+        }
+      ],
+      "timeouts": 0,
+      "pcm_status_fault": 0,
+      "stop_rc": 0,
+      "selftest_readback_bytes": 32,
+      "queue": {
+        "depth": 8,
+        "submitted": 325061,
+        "retired": 325061,
+        "peak": 8,
+        "pending": 0,
+        "barriers": 4869,
+        "errors": 0
+      },
+      "transaction_window_s": 148.967,
+      "transactions_per_second": 39415.0315170474,
+      "wire_bytes_per_second": 196223.01583572198,
+      "frame_deadline_misses": 155,
+      "full_flash_after_tests_verified": true,
+      "queue_retirement": [
+        {
+          "reason": 0,
+          "calls": 292123,
+          "samples": 4565,
+          "poll_us": 110027,
+          "metadata_us": 75868,
+          "ack_us": 59100,
+          "mean_poll_us": 24.102300109529025,
+          "mean_metadata_us": 16.61949616648412,
+          "mean_ack_us": 12.94633077765608
+        },
+        {
+          "reason": 1,
+          "calls": 24000,
+          "samples": 375,
+          "poll_us": 7721,
+          "metadata_us": 6352,
+          "ack_us": 4970,
+          "mean_poll_us": 20.589333333333332,
+          "mean_metadata_us": 16.938666666666666,
+          "mean_ack_us": 13.253333333333334
+        },
+        {
+          "reason": 2,
+          "calls": 8788,
+          "samples": 138,
+          "poll_us": 2724,
+          "metadata_us": 2247,
+          "ack_us": 1761,
+          "mean_poll_us": 19.73913043478261,
+          "mean_metadata_us": 16.282608695652176,
+          "mean_ack_us": 12.76086956521739
+        },
+        {
+          "reason": 3,
+          "calls": 0,
+          "samples": 0,
+          "poll_us": 0,
+          "metadata_us": 0,
+          "ack_us": 0,
+          "mean_poll_us": null,
+          "mean_metadata_us": null,
+          "mean_ack_us": null
+        }
+      ],
+      "sync_commands": [
+        {
+          "op": 0,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 1,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 2,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 3,
+          "calls": 4452,
+          "nonempty": 1116,
+          "samples": 70,
+          "drain_us": 8857,
+          "command_us": 668731,
+          "mean_drain_us": 126.52857142857142,
+          "mean_command_us": 9553.3
+        },
+        {
+          "op": 4,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 5,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        },
+        {
+          "op": 6,
+          "calls": 122898,
+          "nonempty": 3750,
+          "samples": 1921,
+          "drain_us": 27880,
+          "command_us": 313456,
+          "mean_drain_us": 14.513274336283185,
+          "mean_command_us": 163.1733472149922
+        },
+        {
+          "op": 7,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0,
+          "mean_drain_us": null,
+          "mean_command_us": null
+        }
+      ],
+      "finale_lettering_frames": [
+        {
+          "ms": 143017,
+          "scene": 7,
+          "us": 83091,
+          "present_before_us": 151459117,
+          "present_after_us": 151471330,
+          "draw_start_us": 151388243,
+          "deadline_us": 151421576
+        },
+        {
+          "ms": 143101,
+          "scene": 7,
+          "us": 82302,
+          "present_before_us": 151543149,
+          "present_after_us": 151554659,
+          "draw_start_us": 151472358,
+          "deadline_us": 151505691
+        },
+        {
+          "ms": 143184,
+          "scene": 7,
+          "us": 15646,
+          "present_before_us": 151555690,
+          "present_after_us": 151571330,
+          "draw_start_us": 151555685,
+          "deadline_us": 151589018
+        },
+        {
+          "ms": 143217,
+          "scene": 7,
+          "us": 16255,
+          "present_before_us": 151588410,
+          "present_after_us": 151604659,
+          "draw_start_us": 151588405,
+          "deadline_us": 151621738
+        },
+        {
+          "ms": 143250,
+          "scene": 7,
+          "us": 16337,
+          "present_before_us": 151621734,
+          "present_after_us": 151637998,
+          "draw_start_us": 151621730,
+          "deadline_us": 151655063
+        },
+        {
+          "ms": 143283,
+          "scene": 7,
+          "us": 525,
+          "present_before_us": 151654134,
+          "present_after_us": 151654655,
+          "draw_start_us": 151654131,
+          "deadline_us": 151687464
+        },
+        {
+          "ms": 143316,
+          "scene": 7,
+          "us": 206,
+          "present_before_us": 151687792,
+          "present_after_us": 151687994,
+          "draw_start_us": 151687789,
+          "deadline_us": 151721122
+        },
+        {
+          "ms": 143349,
+          "scene": 7,
+          "us": 1200,
+          "present_before_us": 151720127,
+          "present_after_us": 151721323,
+          "draw_start_us": 151720124,
+          "deadline_us": 151753457
+        },
+        {
+          "ms": 143382,
+          "scene": 7,
+          "us": 1216,
+          "present_before_us": 151753455,
+          "present_after_us": 151754667,
+          "draw_start_us": 151753452,
+          "deadline_us": 151786785
+        },
+        {
+          "ms": 143415,
+          "scene": 7,
+          "us": 1200,
+          "present_before_us": 151786800,
+          "present_after_us": 151787996,
+          "draw_start_us": 151786797,
+          "deadline_us": 151820130
+        },
+        {
+          "ms": 143448,
+          "scene": 7,
+          "us": 2210,
+          "present_before_us": 151819124,
+          "present_after_us": 151821330,
+          "draw_start_us": 151819121,
+          "deadline_us": 151852454
+        },
+        {
+          "ms": 143481,
+          "scene": 7,
+          "us": 2210,
+          "present_before_us": 151852458,
+          "present_after_us": 151854664,
+          "draw_start_us": 151852455,
+          "deadline_us": 151885788
+        }
+      ],
+      "ack_wait_observation": {
+        "samples": 4565,
+        "known_completed_before_ack_issue_us_sample_sum": 75868,
+        "mean_known_completed_before_ack_issue_us": 16.61949616648412,
+        "scope": "reason=0 only: eight software tags outstanding, DONE confirmed, no other owner/ACK. At least one younger descriptor remains; current RTL inhibits dispatch until ACK. q_done to q_ack is a known held interval, not total DONE-to-ACK or measured FPGA cycles. Do not extrapolate periodic samples to full-run totals or interpret differences as exact hardware cycle savings."
+      },
+      "completion_burst": {
+        "bursts": 324911,
+        "hits": 309547,
+        "misses": 15364,
+        "fallback": 15364
+      },
+      "audio": {
+        "sample_rate": 48000,
+        "channels": 2,
+        "onset_s": 3.69,
+        "audible_span_s": 150.01,
+        "low_10ms_blocks": 0,
+        "low_10ms_blocks_by_channel": [
+          0,
+          0
+        ],
+        "longest_low_rms_ms": 0,
+        "bgm_correlations": [
+          0.997653776923924,
+          0.9950869438907859,
+          0.9971837838362217,
+          0.995486271923344,
+          0.9978651271434948,
+          0.9956196179370513,
+          0.9978851381355581,
+          0.9949456863417463
+        ],
+        "scope": "Physical HDMI capture; RMS scan and eight quiet segments, not an independent underrun counter"
+      },
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "60/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "157.299000"
+        }
+      },
+      "capture_buffer_full_mentions": 0,
+      "recording_sha256": "c392e95e4c38ee98dec97e3d7c7a6678c0aa1ec0ca09438002291af7cf3d11e2"
+    }
+  ],
+  "limits": [
+    "Two runs per variant in fixed A/B/A/B order; no randomized order, confidence interval or PVT qualification",
+    "Software pending peak is not a hardware occupancy counter",
+    "No concurrent depth-one FPGA reference in this campaign",
+    "CPU-observed PRESENT completion; not scanout timestamp",
+    "32-byte selftest readback is not full framebuffer verification",
+    "Physical PIO waveforms and all-sample audio integrity not measured",
+    "DONE-to-ACK hardware idle/hold cycles are not measured; all measured intervals include host IO",
+    "Snapshot moves tag/error IO into the poll interval; compare poll plus metadata plus ACK, not metadata alone",
+    "Periodic sampling is not randomized; sampled means are not exact full-run totals"
+  ],
+  "original_backup": {
+    "path": "build/completion-abab-20261107/hardware/baseline-1/before.bin",
+    "sha256": "c7052a32c9c4d83c0c4115c64b14d6bb18959301eda3ad3ecfb53fa50e1fc26a"
+  },
+  "final_state": "Queue 8 SRAM FPGA and queued RP2040 firmware; PCM stopped, explicit USB start gate",
+  "repeated_comparison": {
+    "overall": {
+      "baseline_fps": [
+        29.486341724424094,
+        29.47966641343055
+      ],
+      "burst_fps": [
+        29.689792881283964,
+        29.68642603676308
+      ],
+      "baseline_mean_fps": 29.483004068927322,
+      "burst_mean_fps": 29.688109459023522,
+      "mean_gain_percent": 0.6956733093299805,
+      "adjacent_pair_gain_percent": [
+        0.6899843960342711,
+        0.7013635108107374
+      ],
+      "improved_in_both_adjacent_pairs": true,
+      "burst_min_above_baseline_max": true
+    },
+    "vector_world": {
+      "baseline_fps": [
+        25.104525201127416,
+        25.104535284926435
+      ],
+      "burst_fps": [
+        26.61644662818493,
+        26.594235521654944
+      ],
+      "baseline_mean_fps": 25.104530243026925,
+      "burst_mean_fps": 26.605341074919938,
+      "mean_gain_percent": 5.978247023004468,
+      "adjacent_pair_gain_percent": [
+        6.022505564015268,
+        5.933988499771092
+      ],
+      "improved_in_both_adjacent_pairs": true,
+      "burst_min_above_baseline_max": true
+    }
+  },
+  "run_order": [
+    "baseline-1",
+    "burst-1",
+    "baseline-2",
+    "burst-2"
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "path": "software/beyond16/generated/assets.inc",
+    "sha256": "18dfaff32c6f32750d7fa36c24063e67d3a0f5936e731534574d37e9f1438a92"
+  },
+  {
+    "path": "software/midnight_terminal/vendor/kagura_host.pio",
+    "sha256": "4c89410848f1618a99c34c036e0bb58cae0a65f0dd44e555f8755e21b271dab3"
+  },
+  {
+    "path": "build/queue-wait-20261107/fw-baseline/CMakeCache.txt",
+    "sha256": "069c1c3d8a7f93fb9c66f97a9671226d4f9e0d79dcc39caa354f4753896b0e88"
+  },
+  {
+    "path": "build/queue-wait-20261107/fw-merged/CMakeCache.txt",
+    "sha256": "a68332abe4f9ccb50078b8ceaf912f58fc420db9dd5002b4ccf1c9f22323c155"
+  },
+  {
+    "path": "build/queue-wait-tests/build-baseline.log",
+    "sha256": "b97491ee32c27ff5dee714433e754c9db6d433ebca402472e65dcdefedcb3d39"
+  },
+  {
+    "path": "build/queue-wait-tests/build-merged.log",
+    "sha256": "1e8e64ba7bcd62c075e4f4daa2ed90a435e566a32c57c861d605d3c603f05a20"
+  },
+  {
+    "path": "software/beyond16/tools/hardware_queue_demo.py",
+    "sha256": "9cea98ac1629dc6c8d87dc6a431c2b8b6265266200ee7ad6dae185bb922433c2"
+  },
+  {
+    "path": "software/beyond16/tools/analyze_queue_demo.py",
+    "sha256": "af61d5b772ea628941a535f9e047a7edde1e82d059f67f11dddbaa17a1e86446"
+  }
+]

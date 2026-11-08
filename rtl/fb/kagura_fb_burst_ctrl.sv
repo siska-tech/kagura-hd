@@ -46,6 +46,12 @@ module kagura_fb_burst_ctrl #(
     reg [4:0] address_tail;
     reg [5:0] pairs;
     reg [19:0] cursor;
+    reg cursor_upper_carry;
+    // CHECK and the gap between bursts give the carry a cycle to settle
+    // before PREPARE consumes it. The command address still uses cursor.
+    always @(posedge clk)
+        if(reset) cursor_upper_carry<=0;
+        else cursor_upper_carry<=&cursor[10:3];
     reg [4:0] remaining;
     wire [4:0] capacity=5'd8-{2'b00,cursor[2:0]};
     wire [4:0] chunk_words=remaining<capacity ? remaining : capacity;
@@ -65,6 +71,33 @@ module kagura_fb_burst_ctrl #(
         assign rdata[slot*16+:16]=pair_data;
     end endgenerate
     reg [63:0] tx_mask;
+    // Register the wide payload enables one cycle ahead of their use.
+    // IDLE captures on every cycle, including the accepted request.
+    reg tx_load,tx_shift;
+    wire invalid_request=pairs[5:1]==0 || pairs[5:1]>16 || beyond_die;
+    always @(posedge clk) begin
+        if(reset) begin
+            tx_load<=0;
+            tx_shift<=0;
+            tx<=0;
+            tx_mask<=0;
+        end else begin
+            tx_load<=(state==IDLE && !valid) ||
+                     (state==CHECK && invalid_request) ||
+                     (state==GAP && tick==7'(CS_HIGH_CYCLES-1) &&
+                      (configuring || remaining==0));
+            tx_shift<=transferring && writing && !configuring &&
+                      tick>=7'(LAT) && tick<clock_end;
+            if(tx_load) begin
+                tx<=wdata;
+                tx_mask<=mask;
+            end else if(tx_shift) begin
+                tx<=tx>>16;
+                tx_mask<=tx_mask>>2;
+            end
+        end
+    end
+
     reg [15:0] read_half;
     reg read_half_valid;
     always @(posedge clk) begin
@@ -115,7 +148,7 @@ module kagura_fb_burst_ctrl #(
     always @(posedge clk) begin
         if(reset) begin
             state<=INIT; init_tick<=0; tick<=0; last_tick<=0; clock_end<=0; calibrated<=0; configuring<=0; writing<=0;
-            last_region<=0; address_tail<=0; pairs<=0; cursor<=0; remaining<=0; ca<=0; tx<=0; tx_mask<=0; capture_slot<=0; clear_receive<=0; capture_enable<=0; done<=0; error<=0;
+            last_region<=0; address_tail<=0; pairs<=0; cursor<=0; remaining<=0; ca<=0; capture_slot<=0; clear_receive<=0; capture_enable<=0; done<=0; error<=0;
         end else begin
             done<=0;
             error<=0;
@@ -138,13 +171,13 @@ module kagura_fb_burst_ctrl #(
                     // Bound the active transfer counter independently of the
                     // long power-up delay; precompute terminal counts once.
                     ca<=make_ca(!write,0,{11'b0,addr,1'b0});
-                    tx<=wdata; tx_mask<=mask; capture_enable<=0;
+                    capture_enable<=0;
                     last_region<=&addr[19:5]; address_tail<=addr[4:0];
                     tick<=0; if(valid) state<=CHECK;
                 end
                 CHECK: begin
                     remaining<=pairs[5:1];
-                    if(pairs[5:1]==0 || pairs[5:1]>16 || beyond_die) begin done<=1; error<=1; state<=IDLE; end
+                    if(invalid_request) begin done<=1; error<=1; state<=IDLE; end
                     else state<=PREPARE;
                 end
                 PREPARE: begin
@@ -154,13 +187,11 @@ module kagura_fb_burst_ctrl #(
                     clock_end<=7'(LAT)+{1'b0,chunk_words,1'b0};
                     last_tick<=7'(LAT)+{1'b0,chunk_words,1'b0}+(writing ? 7'd0 : 7'(RDL));
                     ca<=make_ca(!writing,0,{11'b0,cursor,1'b0});
-                    cursor<={cursor[19:3]+1'b1,3'b000};
+                    cursor<={cursor[19:11]+9'(cursor_upper_carry),
+                             cursor[10:3]+8'd1,3'b000};
                     tick<=0;state<=TRANSFER;
                 end
                 TRANSFER: begin
-                    if(data_phase && writing && !configuring) begin
-                        tx<=tx>>16; tx_mask<=tx_mask>>2;
-                    end
                     // Registered one-hot slots select the receiving pair without
                     // a wide alignment mux or variable write decoder.
                     if(!writing && tick==7'(LAT+RDL)) capture_enable<=1;
@@ -179,4 +210,15 @@ module kagura_fb_burst_ctrl #(
             endcase
         end
     end
+// synthesis translate_off
+    always @(posedge clk)
+        if(!reset) begin
+            if(state==PREPARE)
+                assert(cursor_upper_carry==(&cursor[10:3]))
+                    else $fatal(1,"Cursor carry phase mismatch");
+            assert(tx_load==(state==IDLE)) else $fatal(1,"TX load phase mismatch");
+            assert(tx_shift==(data_phase && writing && !configuring))
+                else $fatal(1,"TX shift phase mismatch");
+        end
+// synthesis translate_on
 endmodule

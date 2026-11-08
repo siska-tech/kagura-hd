@@ -1,0 +1,71 @@
+--- a/rtl/fb/kagura_fb_registers.sv
++++ b/rtl/fb/kagura_fb_registers.sv
+@@ -65,7 +65,7 @@ module kagura_fb_registers #(parameter bit AUDIO_CSR=0, parameter integer QUEUE_
+     reg [7:0] completed_error,sticky_error;
+     reg window_pending,window_write,write_recovery,port_ready;
+     reg [5:0] window_write_addr;
+-    reg [31:0] window_write_word;
++    reg [7:0] window_write_byte;
+     reg [63:0] window_group;
+     reg [2:0] window_lane;
+     assign req_ready=!reset && port_ready;
+@@ -74,8 +74,8 @@ module kagura_fb_registers #(parameter bit AUDIO_CSR=0, parameter integer QUEUE_
+     wire [7:0] status={spi_late,2'b00,completed,audio_error,video_error,enabled,busy};
+     wire bulk_capture=cmd_read_result && executing;
+     wire byte_commit=window_pending && window_write;
+-    // Merge once at CSR acceptance and hold the completed word through the
+-    // existing commit edge. Read-group storage remains dedicated to reads.
++    // Capture the selected group at CSR acceptance, then merge the byte at the
++    // existing commit edge. Reads and writes share the group snapshot.
+     reg [63:0] selected_upload_group;
+     always @* begin
+         selected_upload_group=0;
+@@ -83,11 +83,11 @@ module kagura_fb_registers #(parameter bit AUDIO_CSR=0, parameter integer QUEUE_
+             selected_upload_group=selected_upload_group |
+                 (upload_data[group_index*64+:64] & {64{upload_group_select[group_index]}});
+     end
+-    wire [31:0] cpu_old_word=data_addr[2] ? selected_upload_group[63:32] : selected_upload_group[31:0];
++    wire [31:0] cpu_old_word=window_write_addr[2] ? window_group[63:32] : window_group[31:0];
+     wire [31:0] cpu_write_word;
+     generate for(genvar byte_lane=0;byte_lane<4;byte_lane++) begin: cpu_merge
+-        assign cpu_write_word[byte_lane*8+:8]=data_addr[1:0]==2'(byte_lane) ?
++        assign cpu_write_word[byte_lane*8+:8]=window_write_addr[1:0]==2'(byte_lane) ?
+-            req_wdata : cpu_old_word[byte_lane*8+:8];
++            window_write_byte : cpu_old_word[byte_lane*8+:8];
+     end endgenerate
+     // Sixteen SP blocks retain the parallel 512-bit upload interface.
+     // Output settles one edge after capture; COPY's arbiter handoff leaves
+@@ -97,6 +97,6 @@
+     // CPU/reset word here and keep bulk_capture on the RAM enable only.
+     wire select_window_word=reset || byte_commit;
+-    wire [31:0] reset_or_window_word=reset ? 32'd0 : window_write_word;
++    wire [31:0] reset_or_window_word=reset ? 32'd0 : cpu_write_word;
+     wire accept_window_write=req_valid && req_ready && req_write &&
+         req_addr==24 && !busy && (!queued || queue_count==0) && data_addr<64;
+     wire [7:0] local_window_select;
+@@ -118,13 +118,13 @@ module kagura_fb_registers #(parameter bit AUDIO_CSR=0, parameter integer QUEUE_
+         wire cpu_write=byte_commit && window_write_addr[5:2]==4'(word_index);
+         wire writing=reset || bulk_capture || cpu_write;
+         wire [3:0] byte_enable=4'b1111;
+-        wire [31:0] write_data=QUEUE_DEPTH==8 ? ((reset || local_window_select[word_index/2]) ? reset_or_window_word : cmd_read_data[word_index*32+:32]) : reset ? 32'd0 : bulk_capture ? cmd_read_data[word_index*32+:32] : window_write_word;
++        wire [31:0] write_data=QUEUE_DEPTH==8 ? ((reset || local_window_select[word_index/2]) ? reset_or_window_word : cmd_read_data[word_index*32+:32]) : reset ? 32'd0 : bulk_capture ? cmd_read_data[word_index*32+:32] : cpu_write_word;
+         kagura_fb_upload_word ram(.clk,.write(writing),.byte_enable,.wdata(write_data),.rdata(upload_data[word_index*32+:32]));
+     end endgenerate
+     always @(posedge clk) begin
+         if(reset) begin
+             rsp_valid<=0; rsp_error<=0; rsp_rdata<=0; legacy_valid<=0;
+-            window_pending<=0; window_write<=0;write_recovery<=0;port_ready<=1; window_write_addr<=0; window_write_word<=0; window_group<=0; window_lane<=0;
++            window_pending<=0; window_write<=0;write_recovery<=0;port_ready<=1; window_write_addr<=0; window_write_byte<=0; window_group<=0; window_lane<=0;
+             staging_command<=0; executing<=0; completed<=0;finish_read<=0;
+             completed_tag<=0; completed_error<=0; sticky_error<=0; data_addr<=0;upload_group_select<=1;
+         end else begin
+@@ -147,7 +147,8 @@ module kagura_fb_registers #(parameter bit AUDIO_CSR=0, parameter integer QUEUE_
+                     else case(req_addr)
+                         7: sticky_error<=0;
+                         24: if(data_addr<64) begin
+-                                window_write_word<=cpu_write_word;
++                                window_group<=selected_upload_group;
++                                window_write_byte<=req_wdata;
+                                 window_write_addr<=data_addr[5:0];
+                                 window_pending<=1;port_ready<=0; window_write<=1; rsp_valid<=0; data_addr<=data_addr+1'b1;
+                                 if(data_addr[2:0]==7) upload_group_select<={upload_group_select[6:0],upload_group_select[7]};

@@ -1,0 +1,38 @@
+[
+  {
+    "path": "software/beyond16/generated/assets.inc",
+    "sha256": "18dfaff32c6f32750d7fa36c24063e67d3a0f5936e731534574d37e9f1438a92"
+  },
+  {
+    "path": "software/beyond16/generated/bgm.s8",
+    "sha256": "c407e1ab9be9b1fa1c47d623e6fe03344be65f70e753be37c217f4371b14bc7b"
+  },
+  {
+    "path": "software/midnight_terminal/vendor/kagura_host.pio",
+    "sha256": "4c89410848f1618a99c34c036e0bb58cae0a65f0dd44e555f8755e21b271dab3"
+  },
+  {
+    "path": "build/completion-burst-20261107/fw-baseline/CMakeCache.txt",
+    "sha256": "87ca7869e6ec5b46be77aa5982bcec3d47fd14f2d8714eb54bce7f1654eee1a7"
+  },
+  {
+    "path": "build/completion-burst-20261107/fw-burst/CMakeCache.txt",
+    "sha256": "dfbee29d4770fca4bda6d7246c356bc224007adeb489fa7a8a1e7d8cba8fb9c7"
+  },
+  {
+    "path": "build/completion-burst-retire-tests/build-baseline.log",
+    "sha256": "f413c6a5b1b7dac493d876dee045a1e477e1277eb0bab82ad7c5eb813aa01c16"
+  },
+  {
+    "path": "build/completion-burst-retire-tests/build-burst.log",
+    "sha256": "3f235143fd14bdb9b8da95d59b15d394f4706b7dd957fa336e6ef7f9984102a1"
+  },
+  {
+    "path": "software/beyond16/tools/hardware_queue_demo.py",
+    "sha256": "0b0e157024a5ca3610047c421bc7fc4d744dcb5ac2c6806f54363e9a2d89203e"
+  },
+  {
+    "path": "software/beyond16/tools/analyze_queue_demo.py",
+    "sha256": "d7a6a9bb0211d9d5090e74dadf26e48bef22f4dfc323fdeb49a4f5180728d025"
+  }
+]

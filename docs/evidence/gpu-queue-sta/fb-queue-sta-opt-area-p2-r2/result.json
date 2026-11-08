@@ -1,0 +1,47 @@
+{
+  "depth": 8,
+  "transport": "qspi",
+  "place": 2,
+  "route": 2,
+  "exit_code": 0,
+  "register_audio_credits": false,
+  "replicate_packet_first": true,
+  "optimization_goal": "area",
+  "build_failed": false,
+  "fresh_bitstream": true,
+  "timing": {
+    "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+    "setup_violated_endpoints": 21,
+    "hold_violated_endpoints": 0,
+    "worst": {
+      "Setup": {
+        "slack_ns": -1.428,
+        "from": "core/hdmi/protocol/true_hdmi_output.audio_packets/asp_selected_s0/Q",
+        "to": "core/hdmi/protocol/true_hdmi_output.audio_packets/sub[2]_10_s0/D"
+      },
+      "Hold": {
+        "slack_ns": 0.506,
+        "from": "core/memory_ctrl/rword_data_30_s0/Q",
+        "to": "core/display/banks/banks[0].ram/memory_memory_0_0_s/DI[30]"
+      },
+      "Recovery": {
+        "slack_ns": 7.954,
+        "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+        "to": "core/hdmi/audio_link/fifo/rg_3_s0/CLEAR"
+      },
+      "Removal": {
+        "slack_ns": 1.033,
+        "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+        "to": "core/hdmi/audio_link/fifo/wg_sync2_4_s0/CLEAR"
+      }
+    },
+    "negative_analyses": [
+      "Setup"
+    ],
+    "boot_miso": null,
+    "release_ready": false,
+    "report_sha256": "40b689eb8014286c83955d3351ca3c3b89c7c45aaf064251451d7abb8b43b3c2"
+  },
+  "elapsed_seconds": 598.3,
+  "bitstream_sha256": "CDF2AB8848004F5C9D813CF34A891E6944B78BC61BC87B0DAF1D0DC61FA59005"
+}

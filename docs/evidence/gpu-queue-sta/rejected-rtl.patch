@@ -1,0 +1,315 @@
+--- original/rtl/fb/kagura_fb_core.sv
++++ prototype/rtl/fb/kagura_fb_core.sv
+@@ -12,7 +12,9 @@
+     parameter bit PCM_ONLY=0,
+     parameter bit CURSOR_PIPELINE_MAILBOX=0,
+     parameter bit AUDIO_REGISTER_CREDITS=0,
+-    parameter bit PACKET_REPLICATE_FIRST=0
++    parameter bit PACKET_REPLICATE_FIRST=0,
++    parameter bit MEMORY_REGISTER_TX_CONTROL=0,
++    parameter bit PRESENT_PIPELINE_MAILBOX=0
+ ) (
+     input wire clk_system,clk_pixel,clk_pixel_x5,reset,
+     input wire host_valid,host_write,
+@@ -80,7 +82,7 @@
+     assign host_done=rsp_done[2];
+     assign host_error=rsp_error[2];
+     assign host_rdata=rsp_data;
+-    kagura_fb_scanout display(
++    kagura_fb_scanout #(.PIPELINE_PRESENT_MAILBOX(PRESENT_PIPELINE_MAILBOX)) display(
+         .sys_clk(clk_system),.sys_reset(system_reset),.pix_clk(clk_pixel),.pix_reset(pixel_reset),.cx,.cy,
+         .present_valid,.present_page,.present_palette,.present_ready,.present_done,
+         .req_valid(req_valid[0]),.req_ready(req_ready[0]),.req_addr(req_addr[0]),
+@@ -150,7 +152,7 @@
+         .rsp_done,.rsp_error,.rsp_data,.valid(ctrl_valid),.ready(ctrl_ready),.write(ctrl_write),.addr(ctrl_addr),
+         .words(ctrl_words),.wdata(ctrl_wdata),.mask(ctrl_mask),.done(ctrl_done),.error(ctrl_error),.rdata(ctrl_rdata),
+         .rword_valid,.rword_data,.scan_word_valid,.scan_word_data);
+-    kagura_fb_burst_ctrl #(.INIT_CYCLES(INIT_CYCLES)) memory_ctrl(
++    kagura_fb_burst_ctrl #(.INIT_CYCLES(INIT_CYCLES),.REGISTER_TX_CONTROL(MEMORY_REGISTER_TX_CONTROL)) memory_ctrl(
+         .clk(clk_system),.reset(system_reset),.valid(ctrl_valid),.ready(ctrl_ready),.write(ctrl_write),.addr(ctrl_addr),
+         .words(ctrl_words),.wdata(ctrl_wdata),.mask(ctrl_mask),.done(ctrl_done),.error(ctrl_error),.rdata(ctrl_rdata),
+         .rword_valid,.rword_data,
+--- original/rtl/fb/kagura_fb_scanout.sv
++++ prototype/rtl/fb/kagura_fb_scanout.sv
+@@ -4,7 +4,7 @@
+ // A five-pixel lookahead includes controls, RAM, index, selection and RGB.
+ // System/pixel resets must be asserted together. Mailbox payloads are held
+ // until ack; the board implementation must constrain these CDC paths.
+-module kagura_fb_scanout (
++module kagura_fb_scanout #(parameter bit PIPELINE_PRESENT_MAILBOX=0) (
+     input wire sys_clk,sys_reset,pix_clk,pix_reset,
+     input wire [10:0] cx,
+     input wire [9:0] cy,
+@@ -26,6 +26,19 @@
+     reg present_toggle,present_pending;
+     reg held_page;
+     reg [191:0] held_palette;
++    wire [192:0] applied_present;
++    generate if(PIPELINE_PRESENT_MAILBOX) begin: present_mailbox
++        // Payload remains held until the two-stage toggle acknowledgement.
++        // Sample continuously, before the existing vblank application edge.
++        (* syn_preserve=1, syn_keep=1 *) reg [192:0] sampled;
++        always @(posedge pix_clk) begin
++            if(pix_reset) sampled<=0;
++            else sampled<={held_page,held_palette};
++        end
++        assign applied_present=sampled;
++    end else begin: direct_present
++        assign applied_present={held_page,held_palette};
++    end endgenerate
+     reg present_ack,present_seen;
+     (* ASYNC_REG="TRUE" *) reg [1:0] present_sync,present_ack_sync;
+     assign present_ready=!sys_reset && !present_pending;
+@@ -75,11 +88,11 @@
+             if(vblank) begin
+                 started<=1; generation<=generation+1'b1;
+                 if(present_sync[1]!=present_seen) begin
+-                    active_page<=held_page; palette<=held_palette;
++                    active_page<=applied_present[192]; palette<=applied_present[191:0];
+                     present_ack<=present_sync[1]; present_seen<=present_sync[1];
+                 end
+                 if(line_slot_free) begin
+-                    line_page<=present_sync[1]!=present_seen ? held_page : active_page;
++                    line_page<=present_sync[1]!=present_seen ? applied_present[192] : active_page;
+                     line_generation<=generation+1'b1; line_row<=0; line_toggle<=~line_toggle;
+                 end
+             end else if(take && next_row<359 && line_slot_free) begin
+--- original/rtl/fb/kagura_fb_burst_ctrl.sv
++++ prototype/rtl/fb/kagura_fb_burst_ctrl.sv
+@@ -14,7 +14,8 @@
+     parameter integer INIT_CYCLES=4096,
+     parameter integer LAT=14,
+     parameter integer RDL=6,
+-    parameter integer CS_HIGH_CYCLES=2
++    parameter integer CS_HIGH_CYCLES=2,
++    parameter bit REGISTER_TX_CONTROL=0
+ ) (
+     input wire clk, reset,
+     input wire valid,
+@@ -112,10 +113,43 @@
+     function automatic [47:0] make_ca(input rd, input registers, input [31:0] halfword_addr);
+         make_ca={rd,registers,1'b1,halfword_addr[31:3],13'b0,halfword_addr[2:0]};
+     endfunction
++    // Decode the next cycle's load/shift enables once, with separate preserved
++    // control registers per 64-bit group. The data registers still update on
++    // exactly the legacy edge; no extra transfer cycle or payload copy.
++    wire invalid_request=pairs[5:1]==0 || pairs[5:1]>16 || beyond_die;
++    wire next_idle=(state==IDLE && !valid) || (state==CHECK && invalid_request) ||
++        (state==GAP && tick==7'(CS_HIGH_CYCLES-1) && (configuring || remaining==0));
++    wire next_shift=state==TRANSFER && writing && !configuring &&
++        tick>=latency && tick<clock_end && tick!=last_tick;
++    generate if(REGISTER_TX_CONTROL) begin: registered_tx
++        for(genvar group_id=0;group_id<8;group_id=group_id+1) begin: groups
++            (* syn_preserve=1, syn_keep=1 *) reg load_enable,shift_enable;
++            always @(posedge clk) begin
++                if(reset) begin load_enable<=0;shift_enable<=0;end
++                else begin load_enable<=next_idle;shift_enable<=next_shift;end
++                if(reset) begin tx[group_id*64+:64]<=0;tx_mask[group_id*8+:8]<=0;end
++                else if(load_enable) begin
++                    tx[group_id*64+:64]<=wdata[group_id*64+:64];
++                    tx_mask[group_id*8+:8]<=mask[group_id*8+:8];
++                end else if(shift_enable) begin
++                    tx[group_id*64+:64]<=64'(tx >> (group_id*64+16));
++                    tx_mask[group_id*8+:8]<=8'(tx_mask >> (group_id*8+2));
++                end
++            end
++        end
++    end else begin: legacy_tx
++        always @(posedge clk) begin
++            if(reset) begin tx<=0;tx_mask<=0;end
++            else if(state==IDLE) begin tx<=wdata;tx_mask<=mask;end
++            else if(state==TRANSFER && data_phase && writing && !configuring) begin
++                tx<=tx>>16;tx_mask<=tx_mask>>2;
++            end
++        end
++    end endgenerate
+     always @(posedge clk) begin
+         if(reset) begin
+             state<=INIT; init_tick<=0; tick<=0; last_tick<=0; clock_end<=0; calibrated<=0; configuring<=0; writing<=0;
+-            last_region<=0; address_tail<=0; pairs<=0; cursor<=0; remaining<=0; ca<=0; tx<=0; tx_mask<=0; capture_slot<=0; clear_receive<=0; capture_enable<=0; done<=0; error<=0;
++            last_region<=0; address_tail<=0; pairs<=0; cursor<=0; remaining<=0; ca<=0; capture_slot<=0; clear_receive<=0; capture_enable<=0; done<=0; error<=0;
+         end else begin
+             done<=0;
+             error<=0;
+@@ -138,7 +172,7 @@
+                     // Bound the active transfer counter independently of the
+                     // long power-up delay; precompute terminal counts once.
+                     ca<=make_ca(!write,0,{11'b0,addr,1'b0});
+-                    tx<=wdata; tx_mask<=mask; capture_enable<=0;
++                    capture_enable<=0;
+                     last_region<=&addr[19:5]; address_tail<=addr[4:0];
+                     tick<=0; if(valid) state<=CHECK;
+                 end
+@@ -158,9 +192,6 @@
+                     tick<=0;state<=TRANSFER;
+                 end
+                 TRANSFER: begin
+-                    if(data_phase && writing && !configuring) begin
+-                        tx<=tx>>16; tx_mask<=tx_mask>>2;
+-                    end
+                     // Registered one-hot slots select the receiving pair without
+                     // a wide alignment mux or variable write decoder.
+                     if(!writing && tick==7'(LAT+RDL)) capture_enable<=1;
+--- original/rtl/fb/kagura_fb_host.sv
++++ prototype/rtl/fb/kagura_fb_host.sv
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: Apache-2.0
+ // Kagura-FB ABI 1.1 SPI/QSPI host endpoint. Mode 0, MSB first.
+ // BUSY covers command submission; status reads remain available while busy.
+-module kagura_fb_host #(parameter integer LANES=1, parameter bit AUDIO_CSR=0, parameter integer QUEUE_DEPTH=1) (
++module kagura_fb_host #(parameter integer LANES=1, parameter bit AUDIO_CSR=0, parameter integer QUEUE_DEPTH=1, parameter bit UPLOAD_REGISTERS=0) (
+     input wire clk,reset,enabled,video_error,audio_error,
+     input wire host_sck,host_cs_n,
+     inout wire [3:0] host_io,
+@@ -98,13 +98,26 @@
+     wire engine_valid,engine_ready;
+     wire [127:0] engine_command;
+     generate if(QUEUE_DEPTH>1) begin: registered_head
++        wire [127:0] captured;
++        // Preserve only the fields on the long X/width arithmetic paths.
++        // Both copies capture the same stable source on the same edge.
++        (* syn_preserve=1, syn_keep=1 *) reg [47:0] geometry;
++        always @(posedge clk) begin
++            if(reset) geometry<=0;
++            else geometry<={command[111:96],command[79:64],command[47:32]};
++        end
+         kagura_fb_command_head head(.clk,.reset,.in_valid(cmd_valid),.in_ready(cmd_ready),.in_command(command),
+-            .out_valid(engine_valid),.out_ready(engine_ready),.out_done(cmd_done),.out_command(engine_command));
++            .out_valid(engine_valid),.out_ready(engine_ready),.out_done(cmd_done),.out_command(captured));
++        // Other fields use the source directly: it is held throughout execution.
++        // engine_valid is delayed by the head handshake, so geometry is already
++        // sampled before any command is decoded. Completion precedes pointer advance.
++        assign engine_command={command[127:112],geometry[47:32],command[95:80],geometry[31:16],
++            command[63:48],geometry[15:0],command[31:0]};
+     end else begin: direct_head
+         assign engine_valid=cmd_valid;assign cmd_ready=engine_ready;assign engine_command=command;
+     end endgenerate
+     wire [511:0] upload_data,cmd_read_data;
+-    kagura_fb_registers #(.AUDIO_CSR(AUDIO_CSR),.QUEUE_DEPTH(QUEUE_DEPTH)) registers(
++    kagura_fb_registers #(.AUDIO_CSR(AUDIO_CSR),.QUEUE_DEPTH(QUEUE_DEPTH),.UPLOAD_REGISTERS(UPLOAD_REGISTERS)) registers(
+         .clk,.reset,.enabled(enabled_sys),.spi_late(late),.video_error(video_sync[1]),.audio_error(audio_sync[1]),
+         .external_error(AUDIO_CSR && bus_audio && audio_rsp_valid && audio_rsp_error),
+         .req_valid(base_valid),.req_write(base_write),.req_addr(base_addr),.req_wdata(base_data),
+--- original/rtl/fb/kagura_fb_command_head.sv
++++ prototype/rtl/fb/kagura_fb_command_head.sv
+@@ -2,7 +2,7 @@
+ // Break the asynchronous descriptor-RAM -> opcode/operand decode path.
+ // Keep the captured descriptor (including tag) stable through completion and
+ // READ's delayed retirement. The register endpoint controls retirement/ACK.
+-module kagura_fb_command_head (
++module kagura_fb_command_head #(parameter bit CONTINUOUS_DATA=0) (
+     input wire clk,reset,
+     input wire in_valid,
+     output wire in_ready,
+@@ -17,8 +17,13 @@
+     always @(posedge clk) begin
+         if(reset) begin pending<=0;issued<=0;out_command<=0;end
+         else begin
++            // Only for the register endpoint's stable-head contract: its read
++            // pointer cannot advance before completion. No 128-bit enable mux
++            // is needed; inactive output values are not commands.
++            if(CONTINUOUS_DATA) out_command<=in_command;
+             if(in_valid && in_ready) begin
+-                out_command<=in_command;pending<=1;issued<=0;
++                if(!CONTINUOUS_DATA) out_command<=in_command;
++                pending<=1;issued<=0;
+             end
+             if(out_valid && out_ready) issued<=1;
+             if(out_done) begin pending<=0;issued<=0;end
+--- original/rtl/fb/kagura_fb_registers.sv
++++ prototype/rtl/fb/kagura_fb_registers.sv
+@@ -4,7 +4,7 @@
+ // Depth 1 preserves the released ABI. Experimental deeper queues snapshot
+ // descriptors, count the active operation, and hold each completion until ACK.
+ // Opcodes >=4 are drain barriers because upload/audio state is shared.
+-module kagura_fb_registers #(parameter bit AUDIO_CSR=0, parameter integer QUEUE_DEPTH=1) (
++module kagura_fb_registers #(parameter bit AUDIO_CSR=0, parameter integer QUEUE_DEPTH=1, parameter bit UPLOAD_REGISTERS=0) (
+     input wire clk,reset,enabled,spi_late,video_error,audio_error,external_error,
+     input wire req_valid,req_write,
+     input wire [4:0] req_addr,
+@@ -98,7 +98,7 @@
+         wire writing=reset || bulk_capture || cpu_write;
+         wire [3:0] byte_enable=4'b1111;
+         wire [31:0] write_data=reset ? 32'd0 : bulk_capture ? cmd_read_data[word_index*32+:32] : window_write_word;
+-        kagura_fb_upload_word ram(.clk,.write(writing),.byte_enable,.wdata(write_data),.rdata(upload_data[word_index*32+:32]));
++        kagura_fb_upload_word #(.REGISTER_STORAGE(UPLOAD_REGISTERS)) ram(.clk,.write(writing),.byte_enable,.wdata(write_data),.rdata(upload_data[word_index*32+:32]));
+     end endgenerate
+     always @(posedge clk) begin
+         if(reset) begin
+--- original/rtl/fb/kagura_fb_upload_word.sv
++++ prototype/rtl/fb/kagura_fb_upload_word.sv
+@@ -5,7 +5,7 @@
+ // provide this. Full-word bulk captures need no previous read value.
+ // The integrated CSR now shares its CPU merge and supplies byte_enable=1111,
+ // allowing the per-lane merge below to collapse to a complete-word input.
+-module kagura_fb_upload_word(
++module kagura_fb_upload_word #(parameter bit REGISTER_STORAGE=0)(
+     input wire clk,write,
+     input wire [3:0] byte_enable,
+     input wire [31:0] wdata,
+@@ -15,6 +15,11 @@
+     generate for(genvar lane=0;lane<4;lane++) begin: merge
+         assign merged[lane*8+:8]=byte_enable[lane] ? wdata[lane*8+:8] : rdata[lane*8+:8];
+     end endgenerate
++    generate if(REGISTER_STORAGE) begin: register_storage
++        reg [31:0] value;
++        always @(posedge clk) if(write) value<=merged;
++        assign rdata=value;
++    end else begin: ram_storage
+ `ifdef VERILATOR
+ `ifndef KAGURA_GOWIN_SIM
+ `define KAGURA_FB_UPLOAD_BEHAVIORAL
+@@ -35,4 +40,5 @@
+         .CLK(clk),.CE(1'b1),.OCE(1'b1),.RESET(1'b0),.WRE(write),
+         .BLKSEL(3'd0),.AD(14'h000f),.DI(merged),.DO(rdata));
+ `endif
++    end endgenerate
+ endmodule
+--- original/boards/tang-nano-9k/kagura_fb_top.sv
++++ prototype/boards/tang-nano-9k/kagura_fb_top.sv
+@@ -2,7 +2,7 @@
+ // Kagura-FB host target. Clears both pages to black and initializes two
+ // silent PCM storage before accepting host commands. ABI1.4 PCM-only audio settings
+ // are Host-controlled and boot muted. No flash IO.
+-module kagura_fb_top #(parameter integer HOST_LANES=kagura_fb_config::HOST_LANES, parameter integer GPU_QUEUE_DEPTH=kagura_fb_config::GPU_QUEUE_DEPTH, parameter bit GPU_AUDIO_CREDITS=kagura_fb_config::GPU_AUDIO_CREDITS, parameter bit GPU_PACKET_FIRST=kagura_fb_config::GPU_PACKET_FIRST) (
++module kagura_fb_top #(parameter integer HOST_LANES=kagura_fb_config::HOST_LANES, parameter integer GPU_QUEUE_DEPTH=kagura_fb_config::GPU_QUEUE_DEPTH, parameter bit GPU_AUDIO_CREDITS=kagura_fb_config::GPU_AUDIO_CREDITS, parameter bit GPU_PACKET_FIRST=kagura_fb_config::GPU_PACKET_FIRST, parameter bit GPU_TX_CONTROL=kagura_fb_config::GPU_TX_CONTROL, parameter bit GPU_PRESENT_MAILBOX=kagura_fb_config::GPU_PRESENT_MAILBOX, parameter bit GPU_UPLOAD_REGISTERS=kagura_fb_config::GPU_UPLOAD_REGISTERS) (
+     input wire clk27,reset_n,host_sck,host_cs_n,
+     inout wire [3:0] host_io,
+     output wire host_busy,host_ready,host_irq_n,
+@@ -87,7 +87,7 @@
+     wire [4:0] cursor_req_addr;
+     wire [7:0] cursor_req_wdata,cursor_rsp_data;
+     always @(posedge system_clk) host_active<=!reset && stage==RUN;
+-    kagura_fb_host #(.LANES(HOST_LANES),.AUDIO_CSR(1),.QUEUE_DEPTH(GPU_QUEUE_DEPTH)) host(
++    kagura_fb_host #(.LANES(HOST_LANES),.AUDIO_CSR(1),.QUEUE_DEPTH(GPU_QUEUE_DEPTH),.UPLOAD_REGISTERS(GPU_QUEUE_DEPTH>1 && GPU_UPLOAD_REGISTERS)) host(
+         .clk(system_clk),.reset,.enabled(host_active && !failed),
+         .video_error(video_underrun || memory_error),
+         .audio_error(audio_overflow || audio_underflow || |(pcm_status0&8'h38) || |(pcm_status1&8'h38)),
+@@ -111,7 +111,7 @@
+     assign sd_hiz=4'bzzzz;
+     // Equivalent fractional-tick representations give the two transport
+     // placements different packing choices, with identical 48 kHz decisions.
+-    kagura_fb_core #(.AUDIO_REGISTER_TICK(HOST_LANES==4),.PCM_ONLY(1),.CURSOR_PIPELINE_MAILBOX(GPU_QUEUE_DEPTH>1),.AUDIO_REGISTER_CREDITS(GPU_QUEUE_DEPTH>1 && GPU_AUDIO_CREDITS),.PACKET_REPLICATE_FIRST(GPU_QUEUE_DEPTH>1 && GPU_PACKET_FIRST)) core(
++    kagura_fb_core #(.AUDIO_REGISTER_TICK(HOST_LANES==4),.PCM_ONLY(1),.CURSOR_PIPELINE_MAILBOX(GPU_QUEUE_DEPTH>1),.AUDIO_REGISTER_CREDITS(GPU_QUEUE_DEPTH>1 && GPU_AUDIO_CREDITS),.PACKET_REPLICATE_FIRST(GPU_QUEUE_DEPTH>1 && GPU_PACKET_FIRST),.MEMORY_REGISTER_TX_CONTROL(GPU_QUEUE_DEPTH>1 && GPU_TX_CONTROL),.PRESENT_PIPELINE_MAILBOX(GPU_QUEUE_DEPTH>1 && GPU_PRESENT_MAILBOX)) core(
+         .clk_system(system_clk),.clk_pixel(pixel),.clk_pixel_x5(serial),.reset,
+         .host_valid(host_active ? command_valid : stage==SEND),.host_write(host_active ? command_write : 1'b1),
+         .host_addr(host_active ? command_addr : host_addr),.host_words(host_active ? command_words : 5'd16),
+--- original/tools/build-fb.tcl
++++ prototype/tools/build-fb.tcl
+@@ -15,9 +15,15 @@
+ set packet_first [expr {[llength $argv]>5 ? [lindex $argv 5] : 0}]
+ if {$packet_first ni {0 1}} { error "Expected packet first replication 0 or 1" }
+ puts "KAGURA_BUILD transport=$transport place_option=$place_option route_option=$route_option queue_depth=$queue_depth"
++set tx_control [expr {[llength $argv]>6 ? [lindex $argv 6] : 0}]
++if {$tx_control ni {0 1}} { error "Expected TX control registration 0 or 1" }
++set present_mailbox [expr {[llength $argv]>7 ? [lindex $argv 7] : 0}]
++if {$present_mailbox ni {0 1}} { error "Expected PRESENT mailbox sampling 0 or 1" }
++set upload_registers [expr {[llength $argv]>8 ? [lindex $argv 8] : 0}]
++if {$upload_registers ni {0 1}} { error "Expected upload register storage 0 or 1" }
+ set config [file join [pwd] kagura_fb_config.sv]
+ set configfile [open $config w]
+-puts $configfile "package kagura_fb_config; localparam integer HOST_LANES=[expr {$transport eq {qspi} ? 4 : 1}], GPU_QUEUE_DEPTH=$queue_depth, GPU_AUDIO_CREDITS=$audio_credits, GPU_PACKET_FIRST=$packet_first; endpackage"
++puts $configfile "package kagura_fb_config; localparam integer HOST_LANES=[expr {$transport eq {qspi} ? 4 : 1}], GPU_QUEUE_DEPTH=$queue_depth, GPU_AUDIO_CREDITS=$audio_credits, GPU_PACKET_FIRST=$packet_first, GPU_TX_CONTROL=$tx_control, GPU_PRESENT_MAILBOX=$present_mailbox, GPU_UPLOAD_REGISTERS=$upload_registers; endpackage"
+ close $configfile
+ add_file -type verilog $config
+ set_device -name GW1NR-9C GW1NR-LV9QN88PC6/I5

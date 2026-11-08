@@ -1,0 +1,67 @@
+{
+  "depth": 8,
+  "transport": "qspi",
+  "place": 4,
+  "route": 2,
+  "route_maxfan": 23,
+  "reused_mapped_netlist": true,
+  "input_sha256": {
+    "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+    "kagura_fb.cst": "388c59d7289de984c648bcd86a423c3bd49f9749893f17caaa96dc113f6633ee",
+    "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+  },
+  "source_input_sha256": {
+    "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+    "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+    "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+  },
+  "extra_cst": "diagnostics/queue8-sta/control-mid-cursor-b.cst",
+  "extra_cst_sha256": "429202e239699cada78ef3c6a2d8d9fd2ff2f6645b1e1199bc5900179c63b0d6",
+  "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+  "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "replicate_resources": false,
+  "fpga_flash_writes": 0,
+  "fpga_sram_programs": 0,
+  "release_ready": false,
+  "mapped_logic_sha256": "9225a2631f881f64d80267b9e5d3493f031f59917f753275525e291d2c00070e",
+  "reference_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "exit_code": 0,
+  "build_failed": false,
+  "fresh_bitstream": true,
+  "timing": {
+    "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+    "setup_violated_endpoints": 12,
+    "hold_violated_endpoints": 0,
+    "worst": {
+      "Setup": {
+        "slack_ns": -0.554,
+        "from": "host/registers/executing_s0/Q",
+        "to": "host/registers/upload_words[11].ram/storage/DI[1]"
+      },
+      "Hold": {
+        "slack_ns": 0.41,
+        "from": "core/display/scan_addr_3_s0/Q",
+        "to": "core/display/banks/banks[1].ram/memory_memory_0_0_s/ADB[8]"
+      },
+      "Recovery": {
+        "slack_ns": 10.4,
+        "from": "core/pix_release_2_s0/Q",
+        "to": "core/hdmi/audio_link/fifo/rd_reset_0_s0/PRESET"
+      },
+      "Removal": {
+        "slack_ns": 0.533,
+        "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+        "to": "core/hdmi/audio_link/fifo/rg_3_s0/CLEAR"
+      }
+    },
+    "negative_analyses": [
+      "Setup"
+    ],
+    "boot_miso": null,
+    "release_ready": false,
+    "report_sha256": "5075065e510419a2e7ccbc20cc7933c765bf45b861c7ed00856e87fc750d34c1"
+  },
+  "numeric_gate_passed": false,
+  "bitstream_sha256": "c6efac99b98e8e7a1edc53046d63db7c7223b283e9cb055d480f8cc818117150",
+  "elapsed_seconds": 446.1
+}

@@ -8,6 +8,8 @@ module kagura_hdmi_stream_eval #(
     parameter bit EXTERNAL_RGB=0,
     parameter integer VIDEO_ID_CODE=1,
     parameter bit AUDIO_REGISTER_TICK=0,
+    parameter bit AUDIO_REGISTER_CREDITS=0,
+    parameter bit PACKET_REPLICATE_FIRST=0,
     localparam integer XW=VIDEO_ID_CODE==4 ? 11 : 10
 ) (
     input wire clk_system,clk_pixel,clk_pixel_x5,reset,
@@ -38,9 +40,9 @@ module kagura_hdmi_stream_eval #(
     assign rgb=EXTERNAL_RGB ? rgb_in : pattern_rgb;
     assign cx_out=x;
     assign cy_out=y;
-    kagura_audio_transport #(.TICK_NUM(TICK_NUM),.TICK_DEN(TICK_DEN),.REGISTER_TICK(AUDIO_REGISTER_TICK)) audio_link(reset,clk_system,clk_pixel,
+    kagura_audio_transport #(.TICK_NUM(TICK_NUM),.TICK_DEN(TICK_DEN),.REGISTER_TICK(AUDIO_REGISTER_TICK),.REGISTER_CREDITS(AUDIO_REGISTER_CREDITS)) audio_link(reset,clk_system,clk_pixel,
         sample_valid,sample_data,full,overflow,valid,pcm,ready,underflow,muted,underflow_toggle);
-    kagura_hdmi_stream #(.VIDEO_ID_CODE(VIDEO_ID_CODE),.VIDEO_REFRESH_RATE(60.0),
+    kagura_hdmi_stream #(.VIDEO_ID_CODE(VIDEO_ID_CODE),.VIDEO_REFRESH_RATE(60.0),.PACKET_REPLICATE_FIRST(PACKET_REPLICATE_FIRST),
         .DVI_OUTPUT(0),.AUDIO_RATE(48000),.AUDIO_BIT_WIDTH(16)) protocol (
         .clk_pixel(clk_pixel),.clk_pixel_x5(clk_pixel_x5),.reset(reset),
         .sample_valid(valid),.sample_data(pcm),.sample_ready(ready),

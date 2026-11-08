@@ -1,0 +1,12 @@
+MODE z per_2_batches DI512=0 window_write_word=0 upload512=0 idleTX512=0
+MODE x per_2_batches DI512=6324224 window_write_word=15078 upload512=2048 idleTX512=2048
+MODE 5 per_2_batches DI512=8388608 window_write_word=192512 upload512=131072 idleTX512=131072
+MODE f per_2_batches DI512=8388608 window_write_word=192512 upload512=131072 idleTX512=131072
+MODE a per_2_batches DI512=262144 window_write_word=6144 upload512=4096 idleTX512=4096
+MODE i per_2_batches DI512=8126464 window_write_word=190464 upload512=126976 idleTX512=126976
+MODE o per_2_batches DI512=8388608 window_write_word=0 upload512=0 idleTX512=0
+PASS mode activity
+- diagnostics/pcm-stream-rc1/design-audit/tb_mode_activity.sv:93: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 8ms; walltime 2.751 s; speed 2.908 ms/s
+- Verilator: cpu 2.747 s on 1 threads; alloced 121 MB

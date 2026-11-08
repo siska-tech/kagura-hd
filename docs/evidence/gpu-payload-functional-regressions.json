@@ -1,0 +1,111 @@
+{
+  "hardware_tested": false,
+  "description": "Final payload64 and cursor mailbox functional regression logs",
+  "tests": [
+    {
+      "path": "build/fb-decode-mailbox-final/bounds/run.log",
+      "sha256": "2253F3F816618531EC066F11DA1ACF2F1958075CD70F1905302A3A0B40629771",
+      "results": [
+        "PASS: fb_command_bounds 1222 tagged read/write ranges; rejected commands never reach memory"
+      ]
+    },
+    {
+      "path": "build/fb-decode-mailbox-final/equivalence-audio-0/run.log",
+      "sha256": "4FDFD19BD4603717A7CF73DBD72CF756B3AC21CB6A61D98CA25AF6989F0AA38A",
+      "results": [
+        "PASS: decode equivalence AUDIO_CSR=0 cases=587, exact memory traces, palette, errors and audio effects"
+      ]
+    },
+    {
+      "path": "build/fb-decode-mailbox-final/equivalence-audio-1/run.log",
+      "sha256": "F093DE49A9707CE8F5FB4ED4A18C5FFEC118B068129C92DFA945D997BB30471D",
+      "results": [
+        "PASS: decode equivalence AUDIO_CSR=1 cases=588, exact memory traces, palette, errors and audio effects"
+      ]
+    },
+    {
+      "path": "build/fb-command-queue/depth-2/run.log",
+      "sha256": "B00FE0ACE4086A2C778DD4A48715613F787DBDE96EFB0272E70A1AAA3A1514FE",
+      "results": [
+        "PASS: command queue depth=2"
+      ]
+    },
+    {
+      "path": "build/fb-command-queue/depth-2-registered/run.log",
+      "sha256": "7691A1613E04E191C8ACECEC3CD46CBC904E7E4D8272B3E18F8501DAB1B9F711",
+      "results": [
+        "PASS: command queue depth=2 registered_head=1"
+      ]
+    },
+    {
+      "path": "build/fb-command-queue/depth-4/run.log",
+      "sha256": "EDB6EC75EB090C400493E45746A84B024A147591DFFDBFE72DB54BCCDF900133",
+      "results": [
+        "PASS: command queue depth=4"
+      ]
+    },
+    {
+      "path": "build/fb-command-queue/depth-4-registered/run.log",
+      "sha256": "E42A42F0983666DAD1793F7BEA46C02EF5ACF9DF1BBF10D56B62EFD0DB6B95D9",
+      "results": [
+        "PASS: command queue depth=4 registered_head=1"
+      ]
+    },
+    {
+      "path": "build/fb-command-queue/depth-8/run.log",
+      "sha256": "065715D75C653724365DE9E30E358F6E07E4D71E5E22F433D446568A22FF10B4",
+      "results": [
+        "PASS: command queue depth=8"
+      ]
+    },
+    {
+      "path": "build/fb-command-queue/depth-8-registered/run.log",
+      "sha256": "4CA585BA52376B296E62687D1F74FAE6EC51B4F7543AD4C004DB1FCBB41A9316",
+      "results": [
+        "PASS: command queue depth=8 registered_head=1"
+      ]
+    },
+    {
+      "path": "build/fb-queue-host-payload64-mailbox/lanes-1-depth-2/run.log",
+      "sha256": "F4499BCDA5145134D0AC53D3EB188B96EFBFC60460EBA480EE7603F3BE72672D",
+      "results": [
+        "PASS: queued fb_host LANES=1 depth=2 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching"
+      ]
+    },
+    {
+      "path": "build/fb-queue-host-payload64-mailbox/lanes-1-depth-4/run.log",
+      "sha256": "CA2DDD925EA63A25CE7DA783D482AF71EF191735025DC849CA8694F7E09051A0",
+      "results": [
+        "PASS: queued fb_host LANES=1 depth=4 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching"
+      ]
+    },
+    {
+      "path": "build/fb-queue-host-payload64-mailbox/lanes-1-depth-8/run.log",
+      "sha256": "D0EFC30DFAEE95E1DF770F31C6C58A66B8925622B23C8AE87632DCE250968928",
+      "results": [
+        "PASS: queued fb_host LANES=1 depth=8 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching"
+      ]
+    },
+    {
+      "path": "build/fb-queue-host-payload64-mailbox/lanes-4-depth-2/run.log",
+      "sha256": "781B7963A72E2D9C9AC0893B5D69A17343BDCB3069BAFF222FCC446148AD5676",
+      "results": [
+        "PASS: queued fb_host LANES=4 depth=2 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching"
+      ]
+    },
+    {
+      "path": "build/fb-queue-host-payload64-mailbox/lanes-4-depth-4/run.log",
+      "sha256": "6F934C7E71E081A2396117533F7BBF728C694E60E1E8FDE798570CB81D8AED78",
+      "results": [
+        "PASS: queued fb_host LANES=4 depth=4 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching"
+      ]
+    },
+    {
+      "path": "build/fb-queue-host-payload64-mailbox/lanes-4-depth-8/run.log",
+      "sha256": "A4EA82A80EFBEEAD66A9A8E3C54909B117DD0FBB263C1CC4B2082566ADD17E7A",
+      "results": [
+        "PASS: queued fb_host LANES=4 depth=8 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching"
+      ]
+    }
+  ]
+}

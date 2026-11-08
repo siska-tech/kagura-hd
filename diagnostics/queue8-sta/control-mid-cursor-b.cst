@@ -1,0 +1,4 @@
+// Alternative adjacent receiver site for the same frozen mapped circuit.
+INS_LOC "core/memory_ctrl/n2777_s2" R8C15[0][A];
+INS_LOC "core/cursor/held_1_s1" R16C18[1][B];
+INS_LOC "core/cursor/sample_mailbox.value_1_s0" R16C19[0][A];

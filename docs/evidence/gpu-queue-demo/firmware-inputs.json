@@ -1,0 +1,42 @@
+[
+  {
+    "path": "software/beyond16/generated/assets.inc",
+    "sha256": "18dfaff32c6f32750d7fa36c24063e67d3a0f5936e731534574d37e9f1438a92"
+  },
+  {
+    "path": "software/beyond16/generated/bgm.s8",
+    "sha256": "c407e1ab9be9b1fa1c47d623e6fe03344be65f70e753be37c217f4371b14bc7b"
+  },
+  {
+    "path": "software/midnight_terminal/vendor/kagura_host.pio",
+    "sha256": "4c89410848f1618a99c34c036e0bb58cae0a65f0dd44e555f8755e21b271dab3"
+  },
+  {
+    "path": "software/beyond16/tools/build_rp2040.ps1",
+    "sha256": "bbc9185e91af11817f8c9d6722f64f30f1d436267edcc9f7aa165691a0d605b0"
+  },
+  {
+    "path": "build/queue-demo-20261107/fw-serial/CMakeCache.txt",
+    "sha256": "c0f283ef2cf9e28b03a758ed7231a2eec434f4297dc76119a59ef2b1f16fa129"
+  },
+  {
+    "path": "build/queue-demo-20261107/fw-queue8/CMakeCache.txt",
+    "sha256": "a6396832ec730f61a9bf0459f1e061a401677bbb9d03b315d02a69f59c20f0f5"
+  },
+  {
+    "path": "build/queue-demo-tests/build-serial.log",
+    "sha256": "d6e0f65ad5bd7dee158e0761555884ac487e56a7ef6b7caa9fdab298ed833664"
+  },
+  {
+    "path": "build/queue-demo-tests/build-queue8.log",
+    "sha256": "9e3e344b01c39498e29c66f7df1f98ad5fa480d46416b600352d426f7fa0f8d9"
+  },
+  {
+    "path": "software/beyond16/tools/hardware_queue_demo.py",
+    "sha256": "c3ff6ba61da61629ee84d11d8b664ec5c14ffb3b7f6a048ac3eab505002e6eea"
+  },
+  {
+    "path": "software/beyond16/tools/analyze_queue_demo.py",
+    "sha256": "dd427523699c75e9c6356a665cc195df7db126710dc19861d29ec106b0eeecef"
+  }
+]

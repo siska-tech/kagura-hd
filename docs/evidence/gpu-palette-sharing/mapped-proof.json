@@ -1,0 +1,18 @@
+{
+  "baseline": {
+    "mapped_logic_sha256": "9225a2631f881f64d80267b9e5d3493f031f59917f753275525e291d2c00070e",
+    "flipflops": 5397,
+    "held_palette_flipflops": 192
+  },
+  "off": {
+    "mapped_logic_sha256": "9225a2631f881f64d80267b9e5d3493f031f59917f753275525e291d2c00070e",
+    "flipflops": 5397,
+    "held_palette_flipflops": 192
+  },
+  "on": {
+    "mapped_logic_sha256": "e74d968219cbe02a9442e5fd64306bc3007aaa0d25bf1633b37f5433d9e78f30",
+    "flipflops": 5205,
+    "held_palette_flipflops": 0
+  },
+  "off_equals_baseline": true
+}

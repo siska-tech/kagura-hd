@@ -24,6 +24,7 @@ rtl/bus/kagura_spi_adapter.sv
 rtl/audio/kagura_audio_registers.sv
 rtl/fb/kagura_fb_audio_endpoint.sv
 rtl/fb/kagura_fb_host.sv
+rtl/fb/kagura_fb_command_head.sv
 rtl/fb/kagura_fb_registers.sv
 rtl/fb/kagura_fb_commands.sv
 rtl/fb/kagura_fb_fill_burst.sv

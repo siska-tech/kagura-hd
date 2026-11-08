@@ -1,0 +1,49 @@
+--- a/rtl/hdmi/kagura_packet_assembler.sv
++++ b/rtl/hdmi/kagura_packet_assembler.sv
+@@ -37,7 +37,10 @@
+     generate for(genvar lane=0;lane<5;lane++) begin: load_control
+         if(REPLICATE_FIRST) begin: replicated
+             (* syn_preserve=1, syn_keep=1 *) reg first_local=1'b1;
+-            always_ff @(posedge clk_pixel) first_local<=counter_next==5'd0;
++            // Use the registered zero and wrap flags to keep the
++            // counter increment and decode out of the local load path.
++            always_ff @(posedge clk_pixel)
++                first_local<=reset || (data_island_period ? last : first);
+             assign load_first[lane]=first_local;
+         end else begin: direct
+             assign load_first[lane]=first;
+--- a/rtl/fb/kagura_fb_burst_ctrl.sv
++++ b/rtl/fb/kagura_fb_burst_ctrl.sv
+@@ -46,6 +46,12 @@
+     reg [4:0] address_tail;
+     reg [5:0] pairs;
+     reg [19:0] cursor;
++    reg cursor_upper_carry;
++    // CHECK and the gap between bursts give the carry a cycle to settle
++    // before PREPARE consumes it. The command address still uses cursor.
++    always @(posedge clk)
++        if(reset) cursor_upper_carry<=0;
++        else cursor_upper_carry<=&cursor[10:3];
+     reg [4:0] remaining;
+     wire [4:0] capacity=5'd8-{2'b00,cursor[2:0]};
+     wire [4:0] chunk_words=remaining<capacity ? remaining : capacity;
+@@ -181,7 +187,8 @@
+                     clock_end<=7'(LAT)+{1'b0,chunk_words,1'b0};
+                     last_tick<=7'(LAT)+{1'b0,chunk_words,1'b0}+(writing ? 7'd0 : 7'(RDL));
+                     ca<=make_ca(!writing,0,{11'b0,cursor,1'b0});
+-                    cursor<={cursor[19:3]+1'b1,3'b000};
++                    cursor<={cursor[19:11]+9'(cursor_upper_carry),
++                             cursor[10:3]+8'd1,3'b000};
+                     tick<=0;state<=TRANSFER;
+                 end
+                 TRANSFER: begin
+@@ -206,6 +213,9 @@
+ // synthesis translate_off
+     always @(posedge clk)
+         if(!reset) begin
++            if(state==PREPARE)
++                assert(cursor_upper_carry==(&cursor[10:3]))
++                    else $fatal(1,"Cursor carry phase mismatch");
+             assert(tx_load==(state==IDLE)) else $fatal(1,"TX load phase mismatch");
+             assert(tx_shift==(data_phase && writing && !configuring))
+                 else $fatal(1,"TX shift phase mismatch");

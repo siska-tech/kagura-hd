@@ -1,0 +1,194 @@
+*** GOWIN Tcl Command Line Console  *** 
+KAGURA_BUILD transport=qspi place_option=4 route_option=2 queue_depth=8
+add new file: "<repo>/build/fb-queue-sta-geometry48-head-p4-r2/qspi-depth-8/kagura_fb_config.sv"
+current device: GW1NR-9C  GW1NR-LV9QN88PC6/I5
+add new file: "<repo>/rtl/fb/kagura_fb_core.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_scanout.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_line_banks.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_line_fetch.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_arbiter.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_burst_ctrl.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_pcm_port.sv"
+add new file: "<repo>/rtl/memory/kagura_ram_tdp.sv"
+add new file: "<repo>/rtl/memory/kagura_async_fifo.sv"
+add new file: "<repo>/rtl/audio/kagura_pcm_prefetch.sv"
+add new file: "<repo>/rtl/audio/kagura_pcm_control.sv"
+add new file: "<repo>/rtl/audio/kagura_audio_synth.sv"
+add new file: "<repo>/rtl/audio/kagura_audio_transport.sv"
+add new file: "<repo>/rtl/hdmi/kagura_hdmi_stream_eval.sv"
+add new file: "<repo>/rtl/hdmi/kagura_audio_packets.sv"
+add new file: "<repo>/rtl/hdmi/kagura_tmds_channel.sv"
+add new file: "<repo>/rtl/hdmi/kagura_packet_assembler.sv"
+add new file: "<repo>/build/generated/kagura_hdmi_stream.sv"
+add new file: "<repo>/third_party/hdl-util-hdmi/src/audio_sample_packet.sv"
+add new file: "<repo>/third_party/hdl-util-hdmi/src/audio_info_frame.sv"
+add new file: "<repo>/third_party/hdl-util-hdmi/src/auxiliary_video_information_info_frame.sv"
+add new file: "<repo>/third_party/hdl-util-hdmi/src/source_product_description_info_frame.sv"
+add new file: "<repo>/rtl/bus/kagura_spi_adapter.sv"
+add new file: "<repo>/rtl/audio/kagura_audio_registers.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_audio_endpoint.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_host.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_command_head.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_registers.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_commands.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_fill_burst.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_cursor.sv"
+add new file: "<repo>/rtl/fb/kagura_fb_upload_word.sv"
+add new file: "<repo>/rtl/platform/kagura_gowin_serializer.sv"
+add new file: "<repo>/rtl/platform/kagura_nano9k_clocks.sv"
+add new file: "<repo>/rtl/memory/kagura_hyperram_phy_gowin.sv"
+add new file: "<repo>/boards/tang-nano-9k/kagura_fb_top.sv"
+add new file: "<repo>/build/fb-queue-sta-geometry48-head-p4-r2/qspi-depth-8/kagura_fb.cst"
+add new file: "<repo>/boards/tang-nano-9k/kagura-fb.sdc"
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file '<repo>\build\fb-queue-sta-geometry48-head-p4-r2\qspi-depth-8\kagura_fb_config.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_core.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_scanout.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_line_banks.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_line_fetch.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_arbiter.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_burst_ctrl.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_pcm_port.sv'
+Analyzing Verilog file '<repo>\rtl\memory\kagura_ram_tdp.sv'
+Analyzing Verilog file '<repo>\rtl\memory\kagura_async_fifo.sv'
+Analyzing Verilog file '<repo>\rtl\audio\kagura_pcm_prefetch.sv'
+Analyzing Verilog file '<repo>\rtl\audio\kagura_pcm_control.sv'
+Analyzing Verilog file '<repo>\rtl\audio\kagura_audio_synth.sv'
+Analyzing Verilog file '<repo>\rtl\audio\kagura_audio_transport.sv'
+Analyzing Verilog file '<repo>\rtl\hdmi\kagura_hdmi_stream_eval.sv'
+Analyzing Verilog file '<repo>\rtl\hdmi\kagura_audio_packets.sv'
+Analyzing Verilog file '<repo>\rtl\hdmi\kagura_tmds_channel.sv'
+WARN  (EX2478) : Non-net output port 'tmds' cannot be initialized at declaration in SystemVerilog mode("<repo>\rtl\hdmi\kagura_tmds_channel.sv":25)
+Analyzing Verilog file '<repo>\rtl\hdmi\kagura_packet_assembler.sv'
+WARN  (EX2478) : Non-net output port 'counter' cannot be initialized at declaration in SystemVerilog mode("<repo>\rtl\hdmi\kagura_packet_assembler.sv":22)
+Analyzing Verilog file '<repo>\build\generated\kagura_hdmi_stream.sv'
+WARN  (EX2478) : Non-net output port 'cx' cannot be initialized at declaration in SystemVerilog mode("<repo>\build\generated\kagura_hdmi_stream.sv":87)
+WARN  (EX2478) : Non-net output port 'cy' cannot be initialized at declaration in SystemVerilog mode("<repo>\build\generated\kagura_hdmi_stream.sv":88)
+Analyzing Verilog file '<repo>\third_party\hdl-util-hdmi\src\audio_sample_packet.sv'
+Analyzing Verilog file '<repo>\third_party\hdl-util-hdmi\src\audio_info_frame.sv'
+Analyzing Verilog file '<repo>\third_party\hdl-util-hdmi\src\auxiliary_video_information_info_frame.sv'
+Analyzing Verilog file '<repo>\third_party\hdl-util-hdmi\src\source_product_description_info_frame.sv'
+Analyzing Verilog file '<repo>\rtl\bus\kagura_spi_adapter.sv'
+Analyzing Verilog file '<repo>\rtl\audio\kagura_audio_registers.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_audio_endpoint.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_host.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_command_head.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_registers.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_commands.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_fill_burst.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_cursor.sv'
+Analyzing Verilog file '<repo>\rtl\fb\kagura_fb_upload_word.sv'
+Analyzing Verilog file '<repo>\rtl\platform\kagura_gowin_serializer.sv'
+Analyzing Verilog file '<repo>\rtl\platform\kagura_nano9k_clocks.sv'
+Analyzing Verilog file '<repo>\rtl\memory\kagura_hyperram_phy_gowin.sv'
+Analyzing Verilog file '<repo>\boards\tang-nano-9k\kagura_fb_top.sv'
+Compiling module 'kagura_fb_top'("<repo>\boards\tang-nano-9k\kagura_fb_top.sv":5)
+WARN  (EX3073) : Port 'CLKOUTP' remains unconnected for this instance("<repo>\rtl\platform\kagura_nano9k_clocks.sv":22)
+WARN  (EX3073) : Port 'CLKOUTD' remains unconnected for this instance("<repo>\rtl\platform\kagura_nano9k_clocks.sv":31)
+Compiling module 'kagura_nano9k_clocks(VIDEO_ID_CODE=4,PSRAM_CK_ENABLE=1'b1)'("<repo>\rtl\platform\kagura_nano9k_clocks.sv":6)
+Compiling module 'kagura_fb_audio_endpoint'("<repo>\rtl\fb\kagura_fb_audio_endpoint.sv":3)
+Compiling module 'kagura_audio_registers(PCM=1'b1,PCM_ONLY=1'b1)'("<repo>\rtl\audio\kagura_audio_registers.sv":11)
+Extracting RAM for identifier 'channel_data'("<repo>\rtl\audio\kagura_audio_registers.sv":59)
+Compiling module 'kagura_fb_host(LANES=4,AUDIO_CSR=1'b1,QUEUE_DEPTH=8)'("<repo>\rtl\fb\kagura_fb_host.sv":4)
+Compiling module 'kagura_spi_adapter(LANES=4,REG_ADDR_BITS=6,STATUS_ADDR=6'd27)'("<repo>\rtl\bus\kagura_spi_adapter.sv":20)
+Compiling module 'kagura_fb_command_head'("<repo>\rtl\fb\kagura_fb_command_head.sv":5)
+Compiling module 'kagura_fb_registers(AUDIO_CSR=1'b1,QUEUE_DEPTH=8)'("<repo>\rtl\fb\kagura_fb_registers.sv":7)
+Extracting RAM for identifier 'descriptors'("<repo>\rtl\fb\kagura_fb_registers.sv":29)
+Compiling module 'kagura_fb_upload_word'("<repo>\rtl\fb\kagura_fb_upload_word.sv":8)
+Compiling module 'kagura_fb_commands(AUDIO_CSR=1'b1,REGISTER_DECODE=1'b1)'("<repo>\rtl\fb\kagura_fb_commands.sv":6)
+Compiling module 'kagura_fb_fill_burst(VALIDATED_INPUT=1'b1,ENABLE_COPY=1'b1,NONEMPTY_INPUT=1'b1)'("<repo>\rtl\fb\kagura_fb_fill_burst.sv":7)
+Compiling module 'kagura_fb_core(AUDIO_REGISTER_TICK=1'b1,PCM_ONLY=1'b1,CURSOR_PIPELINE_MAILBOX=1'b1,AUDIO_REGISTER_CREDITS=1'b0,PACKET_REPLICATE_FIRST=1'b1,MEMORY_REGISTER_TX_CONTROL=1'b0,PRESENT_PIPELINE_MAILBOX=1'b0)'("<repo>\rtl\fb\kagura_fb_core.sv":9)
+Compiling module 'kagura_fb_scanout(PIPELINE_PRESENT_MAILBOX=1'b0)'("<repo>\rtl\fb\kagura_fb_scanout.sv":7)
+Compiling module 'kagura_fb_line_fetch'("<repo>\rtl\fb\kagura_fb_line_fetch.sv":7)
+Compiling module 'kagura_fb_line_banks'("<repo>\rtl\fb\kagura_fb_line_banks.sv":9)
+Compiling module 'kagura_ram_tdp(DEPTH=80,WIDTH=32)'("<repo>\rtl\memory\kagura_ram_tdp.sv":11)
+Extracting RAM for identifier 'memory'("<repo>\rtl\memory\kagura_ram_tdp.sv":25)
+Compiling module 'kagura_fb_pcm_port'("<repo>\rtl\fb\kagura_fb_pcm_port.sv":5)
+Compiling module 'kagura_pcm_prefetch(ADDR_WIDTH=22,BUFFER_ADDR_BITS=5,MEMORY_BYTES=23'h400000,RESPONSE_TIMEOUT=4096)'("<repo>\rtl\audio\kagura_pcm_prefetch.sv":10)
+Extracting RAM for identifier 'buffer0'("<repo>\rtl\audio\kagura_pcm_prefetch.sv":50)
+Extracting RAM for identifier 'buffer1'("<repo>\rtl\audio\kagura_pcm_prefetch.sv":51)
+Extracting RAM for identifier 'end_addr'("<repo>\rtl\audio\kagura_pcm_prefetch.sv":55)
+Extracting RAM for identifier 'loop_addr'("<repo>\rtl\audio\kagura_pcm_prefetch.sv":56)
+Extracting RAM for identifier 'fetch_next'("<repo>\rtl\audio\kagura_pcm_prefetch.sv":61)
+Compiling module 'kagura_pcm_control'("<repo>\rtl\audio\kagura_pcm_control.sv":14)
+Compiling module 'kagura_audio_synth(EXTERNAL_SNAPSHOT=1'b1,PCM_ENABLE=1'b1,PCM_ONLY=1'b1)'("<repo>\rtl\audio\kagura_audio_synth.sv":7)
+Compiling module 'kagura_fb_cursor(PIPELINE_MAILBOX=1'b1)'("<repo>\rtl\fb\kagura_fb_cursor.sv":7)
+Compiling module 'kagura_ram_tdp(DEPTH=512,WIDTH=8)'("<repo>\rtl\memory\kagura_ram_tdp.sv":11)
+Extracting RAM for identifier 'memory'("<repo>\rtl\memory\kagura_ram_tdp.sv":25)
+Compiling module 'kagura_hdmi_stream_eval(EXTERNAL_RGB=1'b1,VIDEO_ID_CODE=4,AUDIO_REGISTER_TICK=1'b1,AUDIO_REGISTER_CREDITS=1'b0,PACKET_REPLICATE_FIRST=1'b1)'("<repo>\rtl\hdmi\kagura_hdmi_stream_eval.sv":7)
+Compiling module 'kagura_audio_transport(TICK_NUM=12375,TICK_DEN=8,REGISTER_TICK=1'b1,REGISTER_CREDITS=1'b0)'("<repo>\rtl\audio\kagura_audio_transport.sv":8)
+Compiling module 'kagura_async_fifo'("<repo>\rtl\memory\kagura_async_fifo.sv":5)
+Extracting RAM for identifier 'memory'("<repo>\rtl\memory\kagura_async_fifo.sv":22)
+Compiling module 'kagura_hdmi_stream(VIDEO_ID_CODE=4,PACKET_REPLICATE_FIRST=1'b1,VIDEO_REFRESH_RATE=60.0,AUDIO_RATE=48000)'("<repo>\build\generated\kagura_hdmi_stream.sv":7)
+Compiling module 'kagura_audio_packets(VIDEO_ID_CODE=4,CTS=32'sb00000000000000010010001000001010)'("<repo>\rtl\hdmi\kagura_audio_packets.sv":10)
+Extracting RAM for identifier 'collected'("<repo>\rtl\hdmi\kagura_audio_packets.sv":22)
+Compiling module 'audio_sample_packet(SAMPLING_FREQUENCY=4'b0010,WORD_LENGTH=4'b0010)'("<repo>\third_party\hdl-util-hdmi\src\audio_sample_packet.sv":8)
+WARN  (EX3780) : Using initial value of 'CHANNEL_LEFT' since it is never assigned("<repo>\third_party\hdl-util-hdmi\src\audio_sample_packet.sv":63)
+WARN  (EX3780) : Using initial value of 'CHANNEL_RIGHT' since it is never assigned("<repo>\third_party\hdl-util-hdmi\src\audio_sample_packet.sv":64)
+Compiling module 'audio_info_frame'("<repo>\third_party\hdl-util-hdmi\src\audio_info_frame.sv":5)
+Compiling module 'auxiliary_video_information_info_frame(PICTURE_ASPECT_RATIO=2'b10,IT_CONTENT=1'b1)'("<repo>\third_party\hdl-util-hdmi\src\auxiliary_video_information_info_frame.sv":5)
+Compiling module 'source_product_description_info_frame(VENDOR_NAME="KAGURA",PRODUCT_DESCRIPTION="KAGURA-9",SOURCE_DEVICE_INFORMATION=8'h08)'("<repo>\third_party\hdl-util-hdmi\src\source_product_description_info_frame.sv":5)
+Compiling module 'kagura_packet_assembler(REPLICATE_FIRST=1'b1)'("<repo>\rtl\hdmi\kagura_packet_assembler.sv":15)
+Extracting RAM for identifier 'rest'("<repo>\rtl\hdmi\kagura_packet_assembler.sv":48)
+Compiling module 'kagura_tmds_channel'("<repo>\rtl\hdmi\kagura_tmds_channel.sv":17)
+Compiling module 'kagura_tmds_channel(CN=1)'("<repo>\rtl\hdmi\kagura_tmds_channel.sv":17)
+Compiling module 'kagura_tmds_channel(CN=2)'("<repo>\rtl\hdmi\kagura_tmds_channel.sv":17)
+Compiling module 'serializer(VIDEO_RATE=74250000.0)'("<repo>\rtl\platform\kagura_gowin_serializer.sv":3)
+Compiling module 'kagura_fb_arbiter'("<repo>\rtl\fb\kagura_fb_arbiter.sv":10)
+Compiling module 'kagura_fb_burst_ctrl(REGISTER_TX_CONTROL=1'b0)'("<repo>\rtl\fb\kagura_fb_burst_ctrl.sv":13)
+Compiling module 'kagura_hyperram_phy_gowin'("<repo>\rtl\memory\kagura_hyperram_phy_gowin.sv":13)
+NOTE  (EX0101) : Current top module is "kagura_fb_top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "audio_info_frame" instantiated to "aif" is swept in optimizing("<repo>\rtl\hdmi\kagura_audio_packets.sv":46)
+WARN  (NL0002) : The module "audio_sample_packet" instantiated to "asp" is swept in optimizing("<repo>\rtl\hdmi\kagura_audio_packets.sv":45)
+WARN  (NL0002) : The module "auxiliary_video_information_info_frame" instantiated to "avi" is swept in optimizing("<repo>\rtl\hdmi\kagura_audio_packets.sv":47)
+WARN  (NL0002) : The module "source_product_description_info_frame" instantiated to "spd" is swept in optimizing("<repo>\rtl\hdmi\kagura_audio_packets.sv":49)
+[95%] Generate netlist file "<repo>\build\fb-queue-sta-geometry48-head-p4-r2\qspi-depth-8\impl\gwsynthesis\kagura_fb.vg" completed
+[100%] Generate report file "<repo>\build\fb-queue-sta-geometry48-head-p4-r2\qspi-depth-8\impl\gwsynthesis\kagura_fb_syn.rpt.html" completed
+GowinSynthesis finish
+Reading netlist file: "<repo>\build\fb-queue-sta-geometry48-head-p4-r2\qspi-depth-8\impl\gwsynthesis\kagura_fb.vg"
+Parsing netlist file "<repo>\build\fb-queue-sta-geometry48-head-p4-r2\qspi-depth-8\impl\gwsynthesis\kagura_fb.vg" completed
+Processing netlist completed
+Reading constraint file: "<repo>\build\fb-queue-sta-geometry48-head-p4-r2\qspi-depth-8\kagura_fb.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "<repo>\build\fb-queue-sta-geometry48-head-p4-r2\qspi-depth-8\impl\pnr\kagura_fb.power.html" completed
+Generate file "<repo>\build\fb-queue-sta-geometry48-head-p4-r2\qspi-depth-8\impl\pnr\kagura_fb.pin.html" completed
+Generate file "<repo>\build\fb-queue-sta-geometry48-head-p4-r2\qspi-depth-8\impl\pnr\kagura_fb.rpt.html" completed
+Generate file "<repo>\build\fb-queue-sta-geometry48-head-p4-r2\qspi-depth-8\impl\pnr\kagura_fb.rpt.txt" completed
+Generate file "<repo>\build\fb-queue-sta-geometry48-head-p4-r2\qspi-depth-8\impl\pnr\kagura_fb.tr.html" completed
+Generate file "<repo>\build\fb-queue-sta-geometry48-head-p4-r2\qspi-depth-8\impl\pnr\kagura_fb.tr" completed
+Sat Nov  7 03:03:47 2026
+

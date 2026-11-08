@@ -1,0 +1,974 @@
+{
+  "label": "t8-cert",
+  "candidate": "build\\pcm-stream-rc1\\t8-di-local\\sta-p3-r2-f23\\impl\\pnr\\kagura_fb.fs",
+  "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+  "timing_status": "build\\pcm-stream-rc1\\t8-di-local\\sta-p3-r2-f23\\timing-status.json",
+  "timing_status_sha256": "25c76c1f92967737a02fdcf001938505f2490de51005b71020804d2cf4949864",
+  "sta_setup_wns_ns": 0.177,
+  "sta_hold_wns_ns": 0.527,
+  "sta_ok": true,
+  "modes": "xz5fryeaioGSR1E",
+  "rounds": 3,
+  "closing_controls": true,
+  "fault_modes": "IOTX",
+  "runs": [
+    {
+      "role": "positive",
+      "mode": "i",
+      "run": "01-positive-i",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        31,
+        29
+      ],
+      "marker_mismatches": [
+        269,
+        277
+      ],
+      "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+      "clean": false
+    },
+    {
+      "role": "negative",
+      "mode": "5",
+      "run": "02-negative-5",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "1f4aeec6f87cc6a8e795f8712047c335fe355045b74639454398a7acfd3ce46f",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "x",
+      "run": "03-candidate-x",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "z",
+      "run": "04-candidate-z",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "5",
+      "run": "05-candidate-5",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "f",
+      "run": "06-candidate-f",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "r",
+      "run": "07-candidate-r",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "y",
+      "run": "08-candidate-y",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "e",
+      "run": "09-candidate-e",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "a",
+      "run": "10-candidate-a",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "i",
+      "run": "11-candidate-i",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "o",
+      "run": "12-candidate-o",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "G",
+      "run": "13-candidate-G",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "S",
+      "run": "14-candidate-S",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "R",
+      "run": "15-candidate-R",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "1",
+      "run": "16-candidate-1",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "E",
+      "run": "17-candidate-E",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "x",
+      "run": "18-candidate-x",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "z",
+      "run": "19-candidate-z",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "5",
+      "run": "20-candidate-5",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "f",
+      "run": "21-candidate-f",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "r",
+      "run": "22-candidate-r",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "y",
+      "run": "23-candidate-y",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "e",
+      "run": "24-candidate-e",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "a",
+      "run": "25-candidate-a",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "i",
+      "run": "26-candidate-i",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "o",
+      "run": "27-candidate-o",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "G",
+      "run": "28-candidate-G",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "S",
+      "run": "29-candidate-S",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "R",
+      "run": "30-candidate-R",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "1",
+      "run": "31-candidate-1",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "E",
+      "run": "32-candidate-E",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "x",
+      "run": "33-candidate-x",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "z",
+      "run": "34-candidate-z",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "5",
+      "run": "35-candidate-5",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "f",
+      "run": "36-candidate-f",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "r",
+      "run": "37-candidate-r",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "y",
+      "run": "38-candidate-y",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "e",
+      "run": "39-candidate-e",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "a",
+      "run": "40-candidate-a",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "i",
+      "run": "41-candidate-i",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "o",
+      "run": "42-candidate-o",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "G",
+      "run": "43-candidate-G",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "S",
+      "run": "44-candidate-S",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "R",
+      "run": "45-candidate-R",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "1",
+      "run": "46-candidate-1",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "candidate",
+      "mode": "E",
+      "run": "47-candidate-E",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "fault",
+      "mode": "I",
+      "run": "48-fault-I",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "fault",
+      "mode": "O",
+      "run": "49-fault-O",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "fault",
+      "mode": "T",
+      "run": "50-fault-T",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "fault",
+      "mode": "X",
+      "run": "51-fault-X",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+      "clean": true
+    },
+    {
+      "role": "positive",
+      "mode": "i",
+      "run": "52-positive-i",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        24,
+        25
+      ],
+      "marker_mismatches": [
+        272,
+        277
+      ],
+      "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+      "clean": false
+    },
+    {
+      "role": "negative",
+      "mode": "5",
+      "run": "53-negative-5",
+      "driver_exit": 0,
+      "infra_ok": true,
+      "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+      "low_rms_10ms": [
+        0,
+        0
+      ],
+      "marker_mismatches": [
+        0,
+        0
+      ],
+      "candidate_sha256": "1f4aeec6f87cc6a8e795f8712047c335fe355045b74639454398a7acfd3ce46f",
+      "clean": true
+    }
+  ],
+  "bench_valid": true,
+  "closing_bench_valid": true,
+  "candidate_runs": 49,
+  "verdict": "PASS (no reproduction under the audit set)"
+}

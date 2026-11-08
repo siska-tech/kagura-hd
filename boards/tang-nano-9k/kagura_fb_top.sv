@@ -2,7 +2,7 @@
 // Kagura-FB host target. Clears both pages to black and initializes two
 // silent PCM storage before accepting host commands. ABI1.4 PCM-only audio settings
 // are Host-controlled and boot muted. No flash IO.
-module kagura_fb_top #(parameter integer HOST_LANES=kagura_fb_config::HOST_LANES) (
+module kagura_fb_top #(parameter integer HOST_LANES=kagura_fb_config::HOST_LANES, parameter integer GPU_QUEUE_DEPTH=kagura_fb_config::GPU_QUEUE_DEPTH, parameter bit GPU_AUDIO_CREDITS=kagura_fb_config::GPU_AUDIO_CREDITS, parameter bit GPU_PACKET_FIRST=kagura_fb_config::GPU_PACKET_FIRST) (
     input wire clk27,reset_n,host_sck,host_cs_n,
     inout wire [3:0] host_io,
     output wire host_busy,host_ready,host_irq_n,
@@ -35,6 +35,8 @@ module kagura_fb_top #(parameter integer HOST_LANES=kagura_fb_config::HOST_LANES
     wire [15:0] cfg_noise_period,cfg_pcm_gain_l,cfg_pcm_gain_r;
     wire [1:0] cfg_pcm_enable,pcm_prepare,pcm_stop,pcm_clear,pcm_loop_enable;
     wire [43:0] pcm_start,pcm_end,pcm_loop;
+    wire stream_control_write,stream_publish;
+    wire [7:0] stream_data,stream_token,stream_status;
     kagura_fb_audio_endpoint audio_endpoint(
         .clk(system_clk),.reset,.enabled(host_active && !failed),
         .req_valid(audio_req_valid),.req_write(audio_req_write),.req_addr(audio_req_addr),.req_wdata(audio_req_wdata),
@@ -42,6 +44,7 @@ module kagura_fb_top #(parameter integer HOST_LANES=kagura_fb_config::HOST_LANES
         .audio_capture,.audio_commit_done,.audio_settings_valid,.audio_busy,.audio_settle,.fifo_underflow(audio_underflow),.fifo_overflow(audio_overflow),
         .muted(audio_muted),.pcm_status0,.pcm_status1,.cfg_step,.cfg_duty,.cfg_gain_l,.cfg_gain_r,.cfg_enable,
         .cfg_phase_reset,.cfg_wave_len,.cfg_master,.cfg_noise_period,.cfg_pcm_gain_l,.cfg_pcm_gain_r,.cfg_pcm_enable,
+        .stream_control_write,.stream_publish,.stream_data,.stream_token,.stream_status,
         .pcm_start,.pcm_end,.pcm_loop,.pcm_loop_enable,.pcm_prepare,.pcm_stop,.pcm_clear);
     wire wave_read;
     wire [8:0] wave_addr;
@@ -87,7 +90,7 @@ module kagura_fb_top #(parameter integer HOST_LANES=kagura_fb_config::HOST_LANES
     wire [4:0] cursor_req_addr;
     wire [7:0] cursor_req_wdata,cursor_rsp_data;
     always @(posedge system_clk) host_active<=!reset && stage==RUN;
-    kagura_fb_host #(.LANES(HOST_LANES),.AUDIO_CSR(1)) host(
+    kagura_fb_host #(.LANES(HOST_LANES),.AUDIO_CSR(1),.QUEUE_DEPTH(GPU_QUEUE_DEPTH)) host(
         .clk(system_clk),.reset,.enabled(host_active && !failed),
         .video_error(video_underrun || memory_error),
         .audio_error(audio_overflow || audio_underflow || |(pcm_status0&8'h38) || |(pcm_status1&8'h38)),
@@ -111,7 +114,7 @@ module kagura_fb_top #(parameter integer HOST_LANES=kagura_fb_config::HOST_LANES
     assign sd_hiz=4'bzzzz;
     // Equivalent fractional-tick representations give the two transport
     // placements different packing choices, with identical 48 kHz decisions.
-    kagura_fb_core #(.AUDIO_REGISTER_TICK(HOST_LANES==4),.PCM_ONLY(1)) core(
+    kagura_fb_core #(.AUDIO_REGISTER_TICK(HOST_LANES==4),.PCM_ONLY(1),.CURSOR_PIPELINE_MAILBOX(GPU_QUEUE_DEPTH>1),.AUDIO_REGISTER_CREDITS(GPU_QUEUE_DEPTH>1 && GPU_AUDIO_CREDITS),.PACKET_REPLICATE_FIRST(GPU_QUEUE_DEPTH>1 && GPU_PACKET_FIRST)) core(
         .clk_system(system_clk),.clk_pixel(pixel),.clk_pixel_x5(serial),.reset,
         .host_valid(host_active ? command_valid : stage==SEND),.host_write(host_active ? command_write : 1'b1),
         .host_addr(host_active ? command_addr : host_addr),.host_words(host_active ? command_words : 5'd16),
@@ -126,6 +129,7 @@ module kagura_fb_top #(parameter integer HOST_LANES=kagura_fb_config::HOST_LANES
         .audio_apply,.audio_ready,.audio_done,.audio_error,
         .cfg_step,.cfg_duty,.cfg_gain_l,.cfg_gain_r,.cfg_enable,.cfg_phase_reset,.cfg_wave_len,.cfg_master,
         .cfg_noise_period,.cfg_pcm_gain_l,.cfg_pcm_gain_r,.cfg_pcm_enable,
+        .stream_control_write,.stream_publish,.stream_data,.stream_token,.stream_status,
         .pcm_prepare,.pcm_stop,.pcm_clear,.pcm_start,.pcm_end,.pcm_loop,.pcm_loop_enable,.pcm_status0,.pcm_status1,
         .wave_read,.wave_addr,.wave_data,.tmds(tx),.tmds_clock(tc),.initialized,.video_underrun,
         .memory_error,.audio_overflow,.audio_underflow,.audio_muted,.cx(),.cy(),.rgb(),

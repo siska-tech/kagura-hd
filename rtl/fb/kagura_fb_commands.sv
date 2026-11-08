@@ -3,7 +3,7 @@
 // command and CPU writes to upload_data from acceptance through done. The
 // descriptor stays stable; COPY updates upload_data via read_result internally. Completion tag/error is paired with done.
 // Opcode 0 fence, 1 fill, 2 palette, 3 present, 4 write, 5 read, 6 aligned copy, 7 optional audio commit.
-module kagura_fb_commands #(parameter bit AUDIO_CSR=0) (
+module kagura_fb_commands #(parameter bit AUDIO_CSR=0, parameter bit REGISTER_DECODE=0) (
     input wire clk,reset,valid,
     output wire ready,
     input wire [127:0] command,
@@ -29,7 +29,7 @@ module kagura_fb_commands #(parameter bit AUDIO_CSR=0) (
     input wire audio_settings_valid,audio_busy,audio_settle,audio_ready,audio_done,audio_apply_error,
     output reg [191:0] present_palette
 );
-    localparam IDLE=0,EXECUTE=1,FILL_START=2,FILL_WAIT=3,MEM_REQ=4,MEM_WAIT=5,PRESENT_REQ=6,PRESENT_WAIT=7,DECODE=8,AUDIO_SNAPSHOT=9,AUDIO_SEND=10,AUDIO_WAIT=11;
+    localparam IDLE=0,EXECUTE=1,FILL_START=2,FILL_WAIT=3,MEM_REQ=4,MEM_WAIT=5,PRESENT_REQ=6,PRESENT_WAIT=7,DECODE=8,AUDIO_SNAPSHOT=9,AUDIO_SEND=10,AUDIO_WAIT=11,VALIDATE=12;
     localparam BAD_COMMAND=2,RANGE_ERROR=3,MEMORY_ERROR=4;
     reg [3:0] state;
     wire [127:0] desc=command;
@@ -53,7 +53,7 @@ module kagura_fb_commands #(parameter bit AUDIO_CSR=0) (
     reg reading_command;
     always @(posedge clk) begin
         if(reset) reading_command<=0;
-        else if(state==EXECUTE) reading_command<=opcode==5;
+        else if(state==EXECUTE) reading_command<=REGISTER_DECODE ? opcode_q[5] : opcode==5;
     end
     always @(posedge clk) begin
         if(reset) read_result<=0;
@@ -78,8 +78,81 @@ module kagura_fb_commands #(parameter bit AUDIO_CSR=0) (
         fill_end_y<={1'b0,engine_y}+{1'b0,engine_height};
         copy_range_ok<=desc[47:32]<640 && desc[63:48]<360 && desc[79:64]<640 && desc[95:80]<360 && copy_sx_end<=640 && copy_sy_end<=360;
     end
-    wire audio_descriptor_ok=argument==0 && desc[127:32]==0;
-    assign audio_capture=!reset && AUDIO_CSR && state==EXECUTE && opcode==7 &&
+    // Optional queued path: raw descriptor -> local checks/one-hot opcode ->
+    // final execution decision -> EXECUTE. No timing exceptions are needed.
+    reg [7:0] opcode_q;
+    reg fence_ok_q,fill_format_q,fill_origin_q,palette_ok_q,present_ok_q;
+    reg memory_range_q,memory_read_q,copy_format_q,copy_same_q,audio_format_q;
+    reg [15:0] palette_select_q,palette_update_q;
+    reg [11:0] palette_data_q;
+    reg [3:0] decoded_state;
+    reg [7:0] decoded_error;
+    reg decoded_done,decoded_audio;
+    always @(posedge clk) begin
+        if(reset) begin
+            opcode_q<=0;fence_ok_q<=0;fill_format_q<=0;fill_origin_q<=0;palette_ok_q<=0;present_ok_q<=0;
+            memory_range_q<=0;memory_read_q<=0;copy_format_q<=0;copy_same_q<=0;audio_format_q<=0;
+            palette_select_q<=0;palette_update_q<=0;palette_data_q<=0;
+            decoded_state<=IDLE;decoded_error<=BAD_COMMAND;decoded_done<=1;decoded_audio<=0;
+        end else if(REGISTER_DECODE) begin
+            if(state==DECODE) begin
+                for(integer op=0;op<8;op=op+1) opcode_q[op]<=opcode==8'(op);
+                fence_ok_q<=argument==0 && desc[127:32]==0;
+                fill_format_q<=argument<=1 && desc[103:96]<=15 && desc[127:104]==0;
+                fill_origin_q<=desc[47:32]<640 && desc[63:48]<360;
+                palette_ok_q<=argument<=15 && desc[47:44]==0 && desc[127:48]==0;
+                present_ok_q<=argument<=1 && desc[127:32]==0;
+                memory_range_q<=argument!=0 && argument<=16 && byte_addr[31:22]==0 && byte_addr[1:0]==0 && !beyond_die;
+                memory_read_q<=desc[127:64]==0;
+                copy_format_q<=argument<=3 && !desc[32] && !desc[64] && !desc[96] && desc[34:32]==desc[66:64];
+                copy_same_q<=argument[0]==argument[1] && desc[47:32]==desc[79:64] && desc[63:48]==desc[95:80];
+                audio_format_q<=argument==0 && desc[127:32]==0;
+                palette_select_q<=16'b1 << argument[3:0];
+                palette_data_q<=desc[43:32];
+            end
+            if(state==VALIDATE) begin
+                decoded_state<=IDLE;decoded_done<=1;decoded_error<=BAD_COMMAND;decoded_audio<=0;
+                palette_update_q<=0;
+                // opcode_q is one-hot (or zero for an unknown full-width opcode).
+                unique case(1'b1)
+                    opcode_q[0]: decoded_error<=fence_ok_q ? 8'd0 : BAD_COMMAND;
+                    opcode_q[1]: begin
+                        if(!fill_format_q) decoded_error<=BAD_COMMAND;
+                        else if(!fill_origin_q || fill_end_x>640 || fill_end_y>360) decoded_error<=RANGE_ERROR;
+                        else begin
+                            decoded_error<=0;
+                            if(!engine_empty) begin decoded_done<=0;decoded_state<=FILL_START;end
+                        end
+                    end
+                    opcode_q[2]: begin
+                        decoded_error<=palette_ok_q ? 8'd0 : BAD_COMMAND;
+                        if(palette_ok_q) palette_update_q<=palette_select_q;
+                    end
+                    opcode_q[3]: if(present_ok_q) begin decoded_done<=0;decoded_error<=0;decoded_state<=PRESENT_REQ;end
+                    opcode_q[4],opcode_q[5]: begin
+                        if(!memory_range_q) decoded_error<=RANGE_ERROR;
+                        else if(opcode_q[5] && !memory_read_q) decoded_error<=BAD_COMMAND;
+                        else begin decoded_done<=0;decoded_error<=0;decoded_state<=MEM_REQ;end
+                    end
+                    opcode_q[6]: begin
+                        if(!copy_format_q) decoded_error<=BAD_COMMAND;
+                        else if(!copy_range_ok || fill_end_x>640 || fill_end_y>360) decoded_error<=RANGE_ERROR;
+                        else begin
+                            decoded_error<=0;
+                            if(!copy_same_q && !engine_empty) begin decoded_done<=0;decoded_state<=FILL_START;end
+                        end
+                    end
+                    opcode_q[7]: if(AUDIO_CSR && audio_format_q) begin
+                        decoded_audio<=1;decoded_done<=0;decoded_error<=0;decoded_state<=EXECUTE;
+                    end
+                    default: ;
+                endcase
+            end
+        end
+    end
+    wire audio_descriptor_ok=REGISTER_DECODE ? audio_format_q : argument==0 && desc[127:32]==0;
+    wire audio_opcode=REGISTER_DECODE ? opcode_q[7] : opcode==7;
+    assign audio_capture=!reset && AUDIO_CSR && state==EXECUTE && audio_opcode &&
         audio_descriptor_ok && !audio_settle && !audio_busy && audio_settings_valid;
     assign audio_apply=!reset && AUDIO_CSR && state==AUDIO_SEND;
     assign audio_commit_done=!reset && AUDIO_CSR && state==AUDIO_WAIT && (audio_done || audio_apply_error);
@@ -95,13 +168,28 @@ module kagura_fb_commands #(parameter bit AUDIO_CSR=0) (
     reg use_fill_payload,use_engine;
     always @(posedge clk) begin
         if(reset) begin use_fill_payload<=0; use_engine<=0; end
-        else if(state==IDLE && valid) begin use_fill_payload<=opcode==1; use_engine<=opcode==1 || opcode==6; end
+        else if(REGISTER_DECODE && state==VALIDATE) begin use_fill_payload<=opcode_q[1];use_engine<=opcode_q[1] || opcode_q[6];end
+        else if(!REGISTER_DECODE && state==IDLE && valid) begin use_fill_payload<=opcode==1; use_engine<=opcode==1 || opcode==6; end
     end
     assign host_valid=use_engine ? fill_valid : (!reset && state==MEM_REQ);
-    assign host_write=use_engine ? fill_write : opcode==4;
+    assign host_write=use_engine ? fill_write : (REGISTER_DECODE ? opcode_q[4] : opcode==4);
     assign host_addr=use_engine ? fill_addr : byte_addr[21:2];
     assign host_words=use_engine ? fill_words : argument[4:0];
-    assign host_wdata=use_fill_payload ? fill_wdata : upload_data;
+    // Queued mode: each 64-bit payload lane has its own control flop. Preserve
+    // the replicas so synthesis cannot recreate a single 512-load select net.
+    // Only the selection is held; COPY must see the live upload window after
+    // every read capture, rather than a command-time snapshot of its contents.
+    generate if(REGISTER_DECODE) begin: payload_lanes
+        for(genvar lane=0;lane<8;lane=lane+1) begin: word_lane
+            (* syn_preserve=1, syn_keep=1 *) reg select_fill;
+            always @(posedge clk)
+                if(reset) select_fill<=0;
+                else if(state==VALIDATE) select_fill<=opcode_q[1];
+            assign host_wdata[lane*64+:64]=select_fill ? fill_wdata[lane*64+:64] : upload_data[lane*64+:64];
+        end
+    end else begin: legacy_payload
+        assign host_wdata=use_fill_payload ? fill_wdata : upload_data;
+    end endgenerate
     assign host_mask=use_engine ? fill_mask : desc[127:64];
     kagura_fb_fill_burst #(.VALIDATED_INPUT(1),.ENABLE_COPY(1),.NONEMPTY_INPUT(1)) fill(
         .clk,.reset,.valid(state==FILL_START),.page(copy_command ? argument[1] : argument[0]),
@@ -119,8 +207,19 @@ module kagura_fb_commands #(parameter bit AUDIO_CSR=0) (
             done<=0; error<=0;
             case(state)
                 IDLE: if(valid) state<=DECODE;
-                DECODE: state<=EXECUTE;
-                EXECUTE: case(opcode)
+                DECODE: state<=REGISTER_DECODE ? VALIDATE : EXECUTE;
+                VALIDATE: state<=EXECUTE;
+                EXECUTE: if(REGISTER_DECODE) begin
+                    done<=decoded_done;error<=decoded_error;state<=decoded_state;
+                    for(integer pal=0;pal<16;pal=pal+1)
+                        if(palette_update_q[pal]) present_palette[pal*12+:12]<=palette_data_q;
+                    if(decoded_audio) begin
+                        if(audio_busy) begin done<=1;error<=1;state<=IDLE;end
+                        else if(audio_settle) state<=EXECUTE;
+                        else if(!audio_settings_valid) begin done<=1;error<=RANGE_ERROR;state<=IDLE;end
+                        else state<=AUDIO_SNAPSHOT;
+                    end
+                end else case(opcode)
                     0: begin
                         done<=1; state<=IDLE;
                         if(argument!=0 || desc[127:32]!=0) error<=BAD_COMMAND;

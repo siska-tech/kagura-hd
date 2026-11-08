@@ -1,6 +1,6 @@
 # KAGURA-9の実績値を再利用した5MHz QSPI
 
-RP2040エントリポイントの診断用bitbangを、PIO QSPIへ置き換えた。GPU／PCMアダプターと既存HD SDKの契約は維持する。本稿のPC試験後、ユーザーの明示承認で実機投入・1周captureも実施した。最新の結果は[HARDWARE_RESULT.md](HARDWARE_RESULT.md)。`release_ready=false`。
+RP2040エントリポイントの診断用bitbangを、PIO QSPIへ置き換えた。GPU／PCMアダプターと既存HD SDKの契約は維持する。本稿のPC試験後、ユーザーの明示承認で実機投入・1周captureも実施した。最新の結果は[HARDWARE_RESULT.md](https://github.com/siska-tech/kagura-hd/blob/52fd69f6507b22c8c58d4112fd335562c7f9c57f/software/midnight_terminal/HARDWARE_RESULT.md)。`release_ready=false`。
 
 ## 再利用した内容
 

@@ -1,0 +1,52 @@
+{
+  "name": "KAGURA-HD Queue8 QSPI CS deglitch RC1",
+  "date": "2026-11-07",
+  "status": "local_release_candidate",
+  "github_release_created": false,
+  "release_ready": false,
+  "artifact": "../../artifacts/experimental/queue8-qspi-deglitch-rc1/kagura-hd-qspi-queue8-cs-deglitch-rc1.fs",
+  "sha256": "1f4aeec6f87cc6a8e795f8712047c335fe355045b74639454398a7acfd3ce46f",
+  "size_bytes": 3558476,
+  "device": "GW1NR-LV9QN88PC6/I5",
+  "abi": "1.4",
+  "transport": "QSPI",
+  "queue_depth": 8,
+  "hdmi": "720p60 stereo PCM",
+  "tool": "Gowin Standard V1.9.12.04",
+  "place_option": 4,
+  "route_option": 2,
+  "setup_slack_ns": 0.659,
+  "hold_slack_ns": 0.527,
+  "setup_hold_violations": [
+    0,
+    0
+  ],
+  "cls": [
+    4212,
+    4320
+  ],
+  "bsram": [
+    23,
+    26
+  ],
+  "hardware": {
+    "peak": 8,
+    "seconds": 150,
+    "scenes": 8,
+    "errors": 0,
+    "timeout": 0,
+    "pcm_fault": 0,
+    "pending": 0,
+    "retired": 324936,
+    "submitted": 324936
+  },
+  "limits": [
+    "One full-HDMI run",
+    "Natural short CS high suppression on hardware is unverified",
+    "Existing external I/O timing and PVT coverage"
+  ],
+  "publication_blockers": [
+    "GitHub CLI credential invalid",
+    "Applicable Gowin redistribution terms unverified"
+  ]
+}

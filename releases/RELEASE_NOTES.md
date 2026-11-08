@@ -1,9 +1,11 @@
-# KAGURA-HD PCM2 / ABI 1.4 — Release本文案
+# KAGURA-HD PCMストリーミング QSPI — Release本文案
 
-Tang Nano 9K / GW1NR-LV9QN88PC6/I5向け。640×360・16色、720p60 HDMI、2ページ、FILL・READ/WRITE・aligned BLIT、独立カーソル、48kHz PCM2音声を備えます。
+Tang Nano 9K / GW1NR-LV9QN88PC6/I5向け。640×360・16色、720p60 HDMI、2ページ、FILL・READ/WRITE・aligned BLIT、独立カーソル、Queue8を備えます。音声は48 kHzのPCM2と、Hostから連続補充するPCMストリーミングに対応します。
 
-配布対象は実機Demo使用済みの`kagura-hd-qspi-pcm2.fs`と`SHA256SUMS`です。Bitstream SHA-256は`642c7a3ce961685279c229dbe9b1577285bd7867353cfaf7de8f4db06b3683a7`。Gowin Standard V1.9.12.04、Place1/Route2、内部STAはSetup +0.160 ns、Hold +0.484 ns、違反0/0。
+配布対象は`kagura-hd-qspi-pcm-stream.fs`と`SHA256SUMS`です。Bitstream SHA-256は`fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db`。Gowin Standard V1.9.12.04、合成後にPlace3/Route2で再配置配線しました。内部STAはSetup +0.177 ns、Hold +0.527 ns、違反0/0です。
 
-SPI版はSetup −3.359 ns・違反4件のため通常配布から除外しています。リポジトリの`artifacts/experimental/spi-sta-fail/`にDO_NOT_PROGRAM付きで調査用に隔離しています。
+試作段階で観測した音声の断続を受けて、設計監査と実機の再現試験を行いました。そのうえで、窓RAMの書込み選択をワード単位に変えた実装を採用しています。正式認定では計53回の実機試験を行い、陽性対照・陰性対照が正しく振る舞う中で、候補の49条件はすべて再現なしでした。BEYOND 16 COLORSの150秒メガデモ（全8シーン）も、timeout・PCM fault・音声欠落0で完走しました。
 
-QSPIではBEYOND 16 COLORSとMIDNIGHT TERMINALの実機HDMI動作を確認しました。Demoの目標30fps、最大通信速度、全PVT・長時間・複数基板の保証は含みません。元入力・ログ・ライセンスと出典はリポジトリ内に保存しています。公開時には最終ソースrevision・タグと適用する生成物/IP条件を記録してください。
+CSR 31のbit1は診断用です。アプリケーションからは書き込まないでください。SPI版は引き続き通常配布から除外しています。従来のPCM2版（`kagura-hd-qspi-pcm2.fs`）は置き換え済みです。
+
+実機評価は有限の試験です。全PVT、長時間運用、複数基板での動作は保証の範囲外です。元入力、検証記録、ライセンスと出典はリポジトリ内に保存しています。公開時には、最終ソースのrevision・タグと、適用される生成物/IPの条件を記録してください。

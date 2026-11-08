@@ -1,0 +1,4 @@
+// Same frozen mapped design; also move the fanout-619 source state FF.
+INS_LOC "core/memory_ctrl/state_0_s1" R8C24[0][B];
+INS_LOC "core/memory_ctrl/n2777_s2" R8C25[0][A];
+INS_LOC "core/display/palette_71_s0" R14C9[0][A];

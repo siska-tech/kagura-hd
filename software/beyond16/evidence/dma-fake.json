@@ -1,0 +1,38 @@
+[
+  {
+    "variant": 0,
+    "threshold": 0,
+    "lengths": "PASS",
+    "read_release": "PASS",
+    "fault_latch_no_retry": "PASS",
+    "dma_stop_cs_release": "PASS",
+    "profile_work": "PASS"
+  },
+  {
+    "variant": 1,
+    "threshold": 0,
+    "lengths": "PASS",
+    "read_release": "PASS",
+    "fault_latch_no_retry": "PASS",
+    "dma_stop_cs_release": "PASS",
+    "profile_work": "PASS"
+  },
+  {
+    "variant": 2,
+    "threshold": 0,
+    "lengths": "PASS",
+    "read_release": "PASS",
+    "fault_latch_no_retry": "PASS",
+    "dma_stop_cs_release": "PASS",
+    "profile_work": "PASS"
+  },
+  {
+    "variant": 2,
+    "threshold": 128,
+    "lengths": "PASS",
+    "read_release": "PASS",
+    "fault_latch_no_retry": "PASS",
+    "dma_stop_cs_release": "PASS",
+    "profile_work": "PASS"
+  }
+]

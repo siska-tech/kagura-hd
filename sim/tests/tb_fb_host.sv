@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module tb_fb_host #(parameter integer LANES=1);
+module tb_fb_host #(parameter integer LANES=1, QUEUE_DEPTH=1, parameter bit REGISTER_AUDIO_CREDITS=0, REPLICATE_PACKET_FIRST=0);
     reg clk=0,pix_clk=0,fast=0,reset=1;
     always #(500.0/54.0) clk=~clk;
     always #(500.0/74.25) pix_clk=~pix_clk;
@@ -23,7 +23,7 @@ module tb_fb_host #(parameter integer LANES=1);
     wire [10:0] cx;
     wire [9:0] cy;
     wire [23:0] rgb;
-    kagura_fb_host #(.LANES(LANES)) endpoint(
+    kagura_fb_host #(.LANES(LANES),.QUEUE_DEPTH(QUEUE_DEPTH)) endpoint(
         .clk,.reset,.enabled(initialized),.video_error(video_underrun || memory_error),
         .audio_error(audio_overflow || audio_underflow),.host_sck(sck),.host_cs_n(cs_n),.host_io,
         .host_busy(busy),.host_ready(gpio_ready),.host_irq_n(irq_n),.host_valid,.mem_ready,.host_write,
@@ -39,7 +39,7 @@ module tb_fb_host #(parameter integer LANES=1);
     wire [7:0] pcm_status0,pcm_status1;
     wire phy_reset_n,phy_cs_n,phy_ck_en,phy_dq_oe,phy_rwds_oe,phy_rwds_o_rise,phy_rwds_o_fall,phy_dq_tx,phy_rwds_tx;
     wire [7:0] phy_dq_o_rise,phy_dq_o_fall,phy_dq_i_rise,phy_dq_i_fall;
-    kagura_fb_core #(.INIT_CYCLES(64),.AUDIO_REGISTER_TICK(LANES==4)) core(
+    kagura_fb_core #(.INIT_CYCLES(64),.AUDIO_REGISTER_TICK(LANES==4),.CURSOR_PIPELINE_MAILBOX(QUEUE_DEPTH>1),.AUDIO_REGISTER_CREDITS(QUEUE_DEPTH>1 && REGISTER_AUDIO_CREDITS),.PACKET_REPLICATE_FIRST(QUEUE_DEPTH>1 && REPLICATE_PACKET_FIRST)) core(
         .clk_system(clk),.clk_pixel(pix_clk),.clk_pixel_x5(fast),.reset,
         .host_valid,.host_write,.host_addr,.host_words,.host_wdata,.host_mask,.host_ready(mem_ready),
         .host_done(mem_done),.host_error(mem_error),.host_rdata(mem_rdata),
@@ -100,7 +100,7 @@ module tb_fb_host #(parameter integer LANES=1);
         begin
             count=0;
             read_registers(27,0,1);
-            while(rxbuf[0][0] || !rxbuf[0][4]) begin
+            while((QUEUE_DEPTH==1 && rxbuf[0][0]) || !rxbuf[0][4]) begin
                 if(count>4000) $fatal(1,"command timeout tag=%h status=%h",tag,rxbuf[0]);
                 read_registers(27,0,1); count=count+1;
             end
@@ -135,12 +135,83 @@ module tb_fb_host #(parameter integer LANES=1);
         if(testing_blit) blit_pcm=blit_pcm+1;
     end
     reg [127:0] descriptor;
+    task queue_test;
+        integer first_cycle,last_accept_cycle;
+        begin
+            for(integer round_id=0;round_id<2;round_id++) begin
+                descriptor=0;descriptor[7:0]=1;descriptor[15:8]=1;
+                descriptor[31:16]=16'(256+round_id*QUEUE_DEPTH);
+                descriptor[79:64]=640;descriptor[95:80]=360;descriptor[103:96]=6;
+                first_cycle=sys_cycles;stage_command(descriptor);
+                for(integer i=1;i<QUEUE_DEPTH;i++) begin
+                    descriptor[31:16]=16'(256+round_id*QUEUE_DEPTH+i);
+                    descriptor[79:64]=8;descriptor[95:80]=1;descriptor[103:96]=8'(i);
+                    stage_command(descriptor);
+                end
+                last_accept_cycle=sys_cycles;
+                if(endpoint.registers.queue_count!=QUEUE_DEPTH || !busy)
+                    $fatal(1,"physical transport did not fill queue before first completion");
+                write_one(26,1);
+                read_registers(7,0,1);if(rxbuf[0]!=1) $fatal(1,"queue overflow error");
+                write_one(7,0);
+                for(integer i=0;i<QUEUE_DEPTH;i++) begin
+                    wait_tag(16'(256+round_id*QUEUE_DEPTH+i),0);
+                    // Completion must survive several physical transactions until ACK.
+                    read_registers(28,1,3);
+                    if({rxbuf[1],rxbuf[0]}!==16'(256+round_id*QUEUE_DEPTH+i))
+                        $fatal(1,"queued completion overwritten");
+                    write_one(31,1);
+                end
+                for(integer i=115200;i<230400;i++) begin
+                    if(model.memory[i] !== (i<115204 ? {2{4'(QUEUE_DEPTH-1)}} : 8'h66))
+                        $fatal(1,"queued fill pixel/order address=%0d",i);
+                end
+                $display("QUEUE transport LANES=%0d depth=%0d round=%0d accept=%0d drain=%0d cycles",
+                    LANES,QUEUE_DEPTH,round_id,last_accept_cycle-first_cycle,sys_cycles-first_cycle);
+            end
+            // Shared-window operations after drain, with explicit completion ACK.
+            write_one(25,0);
+            for(integer i=0;i<64;i++) txbuf[i]=8'(i*7+3);
+            write_registers(24,0,64);
+            descriptor=0;descriptor[7:0]=4;descriptor[15:8]=16;
+            descriptor[31:16]=512;descriptor[63:32]=240000;
+            stage_command(descriptor);wait_tag(512,0);write_one(31,1);
+            descriptor[7:0]=5;descriptor[31:16]=513;
+            stage_command(descriptor);wait_tag(513,0);
+            read_registers(24,0,64);
+            for(integer i=0;i<64;i++) if(rxbuf[i]!==8'(i*7+3)) $fatal(1,"queued READ byte=%0d",i);
+            write_one(31,1);
+            descriptor=0;descriptor[7:0]=3;descriptor[15:8]=1;descriptor[31:16]=514;
+            stage_command(descriptor);wait_tag(514,0);write_one(31,1);
+            wait(cy==0 && cx==100);
+            if(rgb!==24'h666666) $fatal(1,"queued page did not reach scanout");
+            // COPY consumes a fresh shared-window capture for every burst.
+            // Copy the now-displayed page into the back page, then switch back
+            // to FILL: stale per-lane selects must not leak either payload.
+            descriptor=0;descriptor[7:0]=6;descriptor[15:8]=1;descriptor[31:16]=515;
+            descriptor[111:96]=640;descriptor[127:112]=4;
+            stage_command(descriptor);wait_tag(515,0);write_one(31,1);
+            for(integer i=0;i<1280;i++)
+                if(model.memory[i]!==model.memory[115200+i]) $fatal(1,"queued COPY window byte=%0d",i);
+            descriptor=0;descriptor[7:0]=1;descriptor[31:16]=516;
+            descriptor[79:64]=8;descriptor[95:80]=1;descriptor[103:96]=15;
+            stage_command(descriptor);wait_tag(516,0);write_one(31,1);
+            for(integer i=0;i<1280;i++)
+                if(model.memory[i] !== (i<4 ? 8'hff : model.memory[115200+i]))
+                    $fatal(1,"queued COPY to FILL payload byte=%0d",i);
+            if(endpoint.late || memory_error || audio_overflow || audio_underflow)
+                $fatal(1,"queued host/core error");
+            $display("PASS: queued fb_host LANES=%0d depth=%0d physical transport, ordered pixels, READ, PRESENT, COPY and payload switching",LANES,QUEUE_DEPTH);
+            $finish;
+        end
+    endtask
     initial begin
         @(negedge clk);
         for(integer i=0;i<64;i=i+1) begin
             model.memory[240128+i]=8'(i*3+8);model.memory[240192+i]=8'(127-i*5);
         end
         repeat(5) @(negedge clk); reset=0; wait(gpio_ready);
+        if(QUEUE_DEPTH>1) queue_test();
         read_registers(0,1,7);
         if({rxbuf[3],rxbuf[2],rxbuf[1],rxbuf[0]}!==32'h3142464b || rxbuf[4]!=1 || rxbuf[5]!=2 || rxbuf[6]!=127)
             $fatal(1,"FB identity/capabilities");

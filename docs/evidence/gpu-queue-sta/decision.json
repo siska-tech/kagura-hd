@@ -1,0 +1,14 @@
+{
+  "sta_issue_resolved": false,
+  "accepted_candidate": null,
+  "reference_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "reference_setup_ns": 0.05,
+  "required_setup_ns": 0.1,
+  "recorded_builds": 45,
+  "pending_builds": 0,
+  "numeric_gate_passes": 0,
+  "helper_failures_before_pnr": 2,
+  "fpga_sram_programs": 0,
+  "fpga_flash_writes": 0,
+  "rp2040_writes": 0
+}

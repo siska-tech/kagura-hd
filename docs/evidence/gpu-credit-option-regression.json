@@ -1,0 +1,84 @@
+{
+  "hardware_tested": false,
+  "description": "Post-option default board SPI/QSPI and enabled QSPI queue depth 8",
+  "tests": [
+    {
+      "path": "build/fb-verilator/tb_fb_board.run.log",
+      "passed": true,
+      "sha256": "71602C14DFD151491888D574253AA1B56D1CD5F39AB383691FB63A5135F29952",
+      "results": [
+        "PASS: PCM2 board LANES=1 ABI1.4, Host upload/readback/FENCE, stereo sample oracle, gains, pause/resume, loop/one-shot, rejection, display"
+      ]
+    },
+    {
+      "path": "build/fb-verilator/tb_fb_audio_clock.run.log",
+      "passed": true,
+      "sha256": "717944827355C1A03250CD87ED7AA9728C9E5938F5CA0973C39228F570236976",
+      "results": [
+        "PASS: fb_audio_clock 720000 exact tick decisions, 525/1, 12375/8, 7/4, registered/combinational ticks, fast-ratio fallback, mid-phase reset"
+      ]
+    },
+    {
+      "path": "build/audio-qspi/run.log",
+      "passed": true,
+      "sha256": "66025734336D6E7AB3E3BD305660F6030D09F62587432ED034EB8E35C4117FBF",
+      "results": [
+        "PASS: PCM2 board LANES=4 ABI1.4, Host upload/readback/FENCE, stereo sample oracle, gains, pause/resume, loop/one-shot, rejection, display"
+      ]
+    },
+    {
+      "path": "build/fb-queue-host-credit-option/lanes-4-depth-8/run.log",
+      "passed": true,
+      "sha256": "837074EE3F6434125CCF974A0CFD0AD1A11B4F986851E2DCBF1A124D00F1E07B",
+      "results": [
+        "PASS: queued fb_host LANES=4 depth=8 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "boards/tang-nano-9k/kagura_fb_top.sv",
+      "sha256": "36FB977F4FE421AB68200BEFA6B691DF0B0B9D77D93C631E95A04C8BC3160928"
+    },
+    {
+      "path": "rtl/fb/kagura_fb_core.sv",
+      "sha256": "703133BDEFB979BA5EA91183D349AA620D9EFD86989FA97876D2108EDA6C1947"
+    },
+    {
+      "path": "rtl/hdmi/kagura_hdmi_stream_eval.sv",
+      "sha256": "9E3C2A90190A8F4688D7950BB9EF814D8FAEDBDBEBDE5F2FA9B1102CC08047FB"
+    },
+    {
+      "path": "rtl/audio/kagura_audio_transport.sv",
+      "sha256": "C0424CCC7A2D468D10FF4454BB15B5E53656B7D3780A21E387BDA532757B7FB0"
+    },
+    {
+      "path": "sim/tests/tb_fb_host.sv",
+      "sha256": "0789CF904F93FDCABA5F3DEDB8417E78250D8B07AF85483E92180B7BEAD3F718"
+    },
+    {
+      "path": "sim/tests/tb_fb_board.sv",
+      "sha256": "41B8664BEB17E417553888C262E2A1B8156EB67BFEF67FE9918BAD76E9633306"
+    },
+    {
+      "path": "sim/tests/tb_fb_board_qspi.sv",
+      "sha256": "1E826A570BA7AC0DB5D6B73C1DC89AA81D248BCDDE3D092F5091AD59ABFF4A75"
+    },
+    {
+      "path": "tools/build-fb.tcl",
+      "sha256": "EC217D519483E21ED95BA726FF6702353BF78A073551F9B8F42BB6D16F65B2B0"
+    },
+    {
+      "path": "tools/build-fb.ps1",
+      "sha256": "4ECEE456365A48F412A3F56ABE72E9B579C2BB8DF0A33BC67ECE54CD5B0E0DCA"
+    },
+    {
+      "path": "tools/eval-fb-command-queue.ps1",
+      "sha256": "7AF8E053601C7DCB41C58DA1E7EDE0E50BB3A527E23384B30CF855F4718D64AF"
+    },
+    {
+      "path": "tools/test-fb-queue-host.sh",
+      "sha256": "3F253CF7608DE21B62C3EFDAF1DF2646FC4412940C6CB58F90262B3C972BD1F4"
+    }
+  ]
+}

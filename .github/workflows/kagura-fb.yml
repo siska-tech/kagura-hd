@@ -58,6 +58,19 @@ jobs:
           KAGURA_STRICT_VERSION: 1
           KAGURA_SEED: 1
         run: bash tools/test-common-verilator.sh
+      - name: Run experimental GPU queue regressions
+        run: |
+          bash tools/test-fb-cursor-pipeline.sh
+          bash tools/test-audio-credit-predicate.sh
+          bash tools/test-packet-first.sh
+          bash software/beyond16/tools/test_gpu_queue.sh
+          bash software/beyond16/tools/test_lettering.sh
+          bash tools/test-fb-decode.sh
+          bash tools/test-fb-command-queue.sh
+          bash tools/test-fb-ack-observe.sh
+          bash tools/test-fb-queue-host.sh
+          KAGURA_AUDIO_CREDITS=1 KAGURA_QUEUE_LANES=4 KAGURA_QUEUE_DEPTHS=8 KAGURA_QUEUE_HOST_DIR=build/fb-queue-host-credit bash tools/test-fb-queue-host.sh
+          KAGURA_PACKET_FIRST=1 KAGURA_QUEUE_LANES=4 KAGURA_QUEUE_DEPTHS=8 KAGURA_QUEUE_HOST_DIR=build/fb-queue-host-packet-first bash tools/test-fb-queue-host.sh
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -66,6 +79,19 @@ jobs:
           path: |
             build/fb-verilator/*.log
             build/common-verilator/*.log
+            build/fb-command-queue/**/*.log
+            build/fb-ack-observe/**/*.log
+            build/fb-ack-observe/comparison.json
+            build/fb-decode/**/*.log
+            build/fb-cursor-pipeline/**/*.log
+            build/audio-credit-predicate/*.log
+            build/packet-first/**/*.log
+            build/queue-demo-tests/*.log
+            build/queue-wait-tests/*.log
+            build/queue-wait-tests/lettering-equivalence.json
+            build/fb-queue-host/**/*.log
+            build/fb-queue-host-credit/**/*.log
+            build/fb-queue-host-packet-first/**/*.log
 
   host-drivers:
     runs-on: ubuntu-24.04

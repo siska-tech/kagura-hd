@@ -1,0 +1,5 @@
+PASS: PRESENT mailbox frozen-reference cycle equality; acknowledgements=495 applications=497 resets=17
+- sim/tests/tb_fb_present_mailbox.sv:57: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 102us; walltime 0.013 s; speed 7.471 ms/s
+- Verilator: cpu 0.014 s on 1 threads; alloced 121 MB
