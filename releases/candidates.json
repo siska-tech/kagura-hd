@@ -1,9 +1,20 @@
 {
-  "qspi": {
+  "qspi_pcm_stream": {
     "status": "selected",
+    "abi": "1.4 + PCM stream extension",
+    "artifact": "../artifacts/validated/kagura-hd-qspi-pcm-stream.fs",
+    "sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+    "package": "pcm-stream-qspi/",
+    "distribution": "GitHub Releases",
+    "selected_date": "2026-11-08"
+  },
+  "qspi_pcm2": {
+    "status": "superseded",
     "abi": "1.4",
     "artifact": "../artifacts/validated/kagura-hd-qspi-pcm2.fs",
-    "distribution": "GitHub Releases"
+    "distribution": "kept as validated archive; not a release asset",
+    "superseded_by": "qspi_pcm_stream",
+    "superseded_date": "2026-11-08"
   },
   "spi": {
     "status": "quarantined_sta_fail",
@@ -28,7 +39,7 @@
     "tracking_issue_url": "https://github.com/siska-tech/kagura-hd/issues/1"
   },
   "release_assets": [
-    "../artifacts/validated/kagura-hd-qspi-pcm2.fs",
+    "../artifacts/validated/kagura-hd-qspi-pcm-stream.fs",
     "SHA256SUMS"
   ]
 }

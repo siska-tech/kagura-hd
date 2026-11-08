@@ -1,6 +1,6 @@
 # KAGURA-HD ホストABI 1.4
 
-現行最終版はPCM2専用 **ABI 1.4 / CAPS FF / QSPI** です。以下の描画・カーソル・BLIT契約はABI 1.2から継承します。実機Demoではnominal PIO QSPI 5MHzを使用しています。最大速度の保証ではありません。
+現行の選定版は **ABI 1.4 / CAPS FF / QSPI / Queue8** で、PCM2に加えてPCMストリーミング（下記）に対応しています。以下の描画・カーソル・BLIT契約はABI 1.2から継承します。実機Demoではnominal PIO QSPI 5MHzを使用しています。最大速度の保証ではありません。
 
 SPI版はテスト未実施・STA未達のため[experimental](../artifacts/experimental/spi-sta-fail/README.md)へ隔離しました。通常Releaseから除外し、DO_NOT_PROGRAMを付けています。
 
@@ -11,6 +11,37 @@ CSR `0x36`（54）がINDEX、`0x37`（55）がDATAです。PCM0はindex `0x60`�
 ch base + `0x0F`の制御はPREPARE=1、STOP=2、CLEAR=4。ch STATUSはREADY bit0、ACTIVE bit1、DONE bit2、UNDERRUN bit3、CONFIG_ERROR bit4、MEMORY_ERROR bit5、PREPARING bit6です。両ch停止→PCM転送→FENCE→設定→PREPARE→READY確認→MASTER→opcode **7 AUDIO_COMMIT**→tag完了待ちの順に開始します。COMMIT descriptorはopcodeとtag以外0で、既存DONE/error/IRQ経路を使用します。
 
 PCMは48kHz signed8 mono ×2を合成し、HDMIへsigned16 stereoを送ります。アドレスはHDのdie-relative byte address、ENDは排他です。`0x400000`の排他ENDは表現できません。FBとPCMの領域を重ねず、Host呼出しを直列化してください。
+
+### PCMストリーミング（選定版 `kagura-hd-qspi-pcm-stream.fs`）
+
+audio indexの `E3` を読むと `0x51` が返ります。この値でストリーミング対応を確認できます。各chは8192 byte境界から始まる8 KiB（START、END=START+8192、LOOP=START）を使い、4096 byteの半面2つを交互に再生します。左右は一組で扱います。
+
+|index|読出し|書込み|
+|---|---|---|
+|`E3` STREAM_CTL|識別子 `0x51`|1=ARM、0=停止|
+|`E4` STREAM_TOKEN|次に公開する半面のtoken（bit0が半面A/B）|一致するtokenを書くと、その半面を公開する|
+|`E5` STREAM_STATUS|bit0 HALF_FREE、bit1 ARMED、bit2 READ_PENDING|—|
+
+開始手順は次のとおりです。
+
+1. 両chを停止・CLEARする。
+2. START/END/LOOP、左右GAINを設定し、ENABLE（ch base＋`0x0E`）に3を書く。
+3. 2つの半面を書き込み、FENCEで完了を待つ。
+4. MASTERを設定する。
+5. `E3`に1を書く。STATUSがARMEDになり、HALF_FREEが0であることを確認する。
+6. 両chをPREPAREし、READYになるのを待つ。
+7. AUDIO_COMMITを発行する。
+
+再生中は、HALF_FREEになったら次の手順で補充します。
+
+1. `E4`のtokenを読む。
+2. `token&1` の半面を、左右とも全WRITE完了まで書き込む。
+3. 同じtokenを`E4`に書く。
+4. tokenが1進んだことを確認する。
+
+半面1つは85.3 msです。この時間内に補充を終えてください。古いtokenや二重公開は拒否されます。実装例は[PCMストリーミングHost](../diagnostics/pcm-stream-rc1/hardware-host/main.c)と[FOUR OPERATORS](../software/fm_megademo/README.md)を参照してください。
+
+CSR 31のbit1は、この画像では診断用です。アプリケーションからは書かないでください。bit0（ACK）の意味は従来と同じです。
 
 詳細なindex配置は[C SDK](../software/kagura_fb/kagura_fb.h)と[MicroPython Audio](../software/kagura_fb/kagura_fb_audio.py)を参照してください。Cは`kfb_audio_write/read/commit`、MicroPythonは`Audio`を使用します。Cの`KFB_PACK_DESCRIPTOR=1`は任意の通信削減optionで、既定は0、ABIは不変です。
 

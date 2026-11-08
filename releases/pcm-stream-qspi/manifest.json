@@ -1,0 +1,64 @@
+{
+  "name": "KAGURA-HD PCM streaming QSPI (Queue8, deglitch, window word-select)",
+  "date": "2026-11-08",
+  "status": "selected",
+  "promoted_from": "diagnostics/pcm-stream-rc1/candidate-t8 (T8)",
+  "supersedes": "releases/pcm2-qspi-final (kagura-hd-qspi-pcm2.fs)",
+  "github_release_created": false,
+  "artifact": "../../artifacts/validated/kagura-hd-qspi-pcm-stream.fs",
+  "sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+  "size_bytes": 3558476,
+  "bin_sha256": "40e37294d47265dd2aed708f9099b2db001a83c4578279892311de0e7a0d91ae",
+  "user_code": "0x00008039",
+  "device": "GW1NR-LV9QN88PC6/I5",
+  "abi": "1.4 (KFB1, CAPS FF) + PCM stream extension (audio index E3=0x51 id/control, E4 token, E5 status)",
+  "transport": "QSPI",
+  "queue_depth": 8,
+  "hdmi": "720p60, 48 kHz stereo signed8 PCM (PCM2 one-shot/loop and A/B half streaming)",
+  "tool": "Gowin Standard V1.9.12.04",
+  "rtl": "PCM-streaming prototype A inputs + diagnostics/pcm-stream-rc1/t8-di-local.patch (kagura_fb_registers.sv only)",
+  "sdc": "RC1 kagura-fb.sdc, unchanged (169c6026...)",
+  "flow": [
+    "stage 1: tools/build-fb.tcl qspi 4 2 8 0 1 auto (synthesis + P&R p4/r2; netlist used, its bitstream is not)",
+    "stage 2: pnr/reroute.tcl on the stage-1 netlist: place_option 3, route_option 2, route_maxfan 23, replicate_resources 0"
+  ],
+  "setup_slack_ns": 0.177,
+  "hold_slack_ns": 0.527,
+  "setup_hold_violations": [
+    0,
+    0
+  ],
+  "diagnostic_csr": {
+    "register": 31,
+    "bit0": "ACK / clear DONE (unchanged)",
+    "bit1": "set diag_broadcast (restores prototype A all-word window DI switching)",
+    "bit2": "clear diag_broadcast (wins over bit1)",
+    "reset_value": 0,
+    "readable": false,
+    "sdk_writes": "value 1 only (C and Python SDK)"
+  },
+  "validation": {
+    "csr31_safety_simulation": "PASS, 2282 checks (validation/csr31-safety.log)",
+    "g1_certification": "PASS: opening/closing positive A x i [31,29]/[24,25], negative RC1 x 5 clean twice, 45 candidate runs (15 modes x 3) and 4 CSR31 fault runs all low-RMS 0/0 and marker mismatches 0/0",
+    "reproduction": "PASS: netlist body, .bin and .fs (except Created Time) identical; STA 0/0 violations (validation/reproduce-result.json)",
+    "megademo_regression": "PASS: resident BEYOND 16 COLORS Queue8 firmware, 150 s, 4452 frames, all 8 scenes, timeouts 0, audio_fault 0, HDMI audio 10 ms low-RMS 0/0 (validation/megademo/summary.json)"
+  },
+  "fpga_flash_writes": 0,
+  "rp2040_flash_writes": 0,
+  "limits": [
+    "G1 PASS means no reproduction with this bench, these conditions and 25 s per condition; the physical root cause in prototype A is not identified",
+    "The fix depends on this exact placement; any rebuild that changes the netlist or P&R options needs STA and G1 again",
+    "diag_broadcast is not readable by software",
+    "Setup margin 0.177 ns (RC1: 0.659 ns); no PVT or external I/O timing coverage",
+    "Single board, single HDMI capture path",
+    "MIDNIGHT TERMINAL and MicroPython showcase were not re-run on this image",
+    "Working-tree RTL is not synchronized with build-inputs (tools/check-release.py source comparison)"
+  ],
+  "publication_blockers": [
+    "GitHub CLI credential invalid",
+    "Applicable Gowin redistribution terms unverified"
+  ],
+  "stage1_netlist_body_sha256": "79434504365e9baf1b6b76e24c53b2c900e9a68121d854d6ce1f6cecf3ce7a33",
+  "stage1_netlist_file_sha256": "38ecc4ba6caece3aef3057dc751cf6ee530f5f2b54185351aed259a43739496b",
+  "stage1_netlist_note": "Not shipped (2.6 MB); reproduce.ps1 regenerates it and checks the body hash"
+}

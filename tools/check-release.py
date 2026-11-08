@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
-release = root / 'releases/pcm2-qspi-final'
+release = root / 'releases/pcm-stream-qspi'  # selected 2026-11-08; pcm2-qspi-final superseded
 
 
 def sha(path):

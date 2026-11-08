@@ -1,4 +1,22 @@
-# 公開準備の検証（2026-11-06）
+# 公開準備の検証
+
+## 2026-11-09：PCMストリーミング選定版
+
+作業ツリーの `rtl/` と `boards/` を、選定版（[releases/pcm-stream-qspi](../releases/pcm-stream-qspi/README.md)）の入力に揃えたうえで、[CI](../.github/workflows/kagura-fb.yml) と同じ試験を WSL（Verilator 5.032、seed 1）で実行しました。すべて合格です。
+
+|区分|試験|
+|---|---|
+|RTL|FB 全回帰、QSPI PCM2 board、32B wrap、wrap 統合、共通 HDMI・音声・メモリ、カーソル pipeline、音声 credit、packet-first、GPU queue（decode、command queue、ACK 観測、queue host ×3 構成）|
+|ソフトウェア|C/Python ドライバ、BLIT 解析、BEYOND 16 の PC 回帰と lettering、FOUR OPERATORS と MIDNIGHT TERMINAL の PC ビルド・全編実行|
+|成果物|`tools/check-release.py`（選定版 bitstream、パッケージのチェックサム、固定入力 41 件、作業ツリーとの一致）、`tools/check-dependencies.ps1`（固定第三者ソース 12 件）|
+
+注記：
+
+- MicroPython の実ランタイム試験は、ローカルに環境がないため実行していません。
+- 作業ツリーの `software/beyond16/tools/ci.sh` は改行が CRLF なので、LF に変換して実行しました。git はコミット時に LF へ変換します。
+- 実機での確認は各デモの README にあります。選定版の上で、BEYOND 16 COLORS、FOUR OPERATORS、MIDNIGHT TERMINAL がそれぞれ完走しています。
+
+## 2026-11-06：PCM2 候補04（履歴）
 
 実機Demoが使用したPCM2 QSPI候補04をルートへ統合し、独立したビルド領域で回帰を実行しました。実行結果は[JSON](evidence/release-preparation-2026-11-06.json)、生ログは同じevidence配下に保存しています。
 

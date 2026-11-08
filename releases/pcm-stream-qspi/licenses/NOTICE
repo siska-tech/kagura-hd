@@ -1,0 +1,12 @@
+KAGURA-HD
+
+Derived from Kagura-9 (siska-tech/kagura), base commit
+f562b2ec84605860fdb9f701f5b2e197b5ed4432.
+Existing upstream and third-party copyright notices are retained.
+The project is distributed under Apache License 2.0. See LICENSE.
+
+Includes hdl-util/hdmi by Sameer Puri, Copyright 2019.
+Upstream revision 83b1c9543a91b776671a44e68e130f81cae437b7.
+Used under the Apache-2.0 option of MIT OR Apache-2.0.
+Both original license texts and the pinned manifest are retained in
+third_party/hdl-util-hdmi. See THIRD_PARTY.md for derivation details.
