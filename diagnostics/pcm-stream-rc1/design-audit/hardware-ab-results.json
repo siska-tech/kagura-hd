@@ -1,0 +1,765 @@
+{
+ "date": "2026-11-08",
+ "driver": "diagnostics/pcm-stream-rc1/hardware-host/run-audit-ab.py",
+ "runs": [
+  {
+   "run": "01-x-baseline",
+   "image": "A",
+   "mode": "x",
+   "elf_sha256": "82e73846d7fa63942c42286e1310fddd170f7ffc905a22defad75ef2881c7771",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    12,
+    10
+   ],
+   "marker_mismatches": [
+    236,
+    236
+   ],
+   "max_phase_step": [
+    16,
+    16
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "5e8bd01aa566097a706d77d3f9c807e15fc2ed03b957585874f97cc190b635e0",
+    "stream-usb.log": "53879573b0229f8c3e22a842e92f830164b05d836db6cba78cd1033470d5e540",
+    "stream-audio.mka": "65e8c61a4d2e4b430c01daa417a656154e33bc66d0c996a062f3a8646ea55c6e",
+    "stream-audio.wav": "e2a91512d512b564f830a5f71ab52af48ea313798661257ecfd3a4336f8e3bb0",
+    "phase-analysis.json": "a6b5b93416db7d2e6f7bc9823188c151fe0221a69ae43dbae5d5a500e85be36f"
+   }
+  },
+  {
+   "run": "02-t1-55aa",
+   "image": "A",
+   "mode": "5",
+   "elf_sha256": "82e73846d7fa63942c42286e1310fddd170f7ffc905a22defad75ef2881c7771",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    32,
+    29
+   ],
+   "marker_mismatches": [
+    274,
+    282
+   ],
+   "max_phase_step": [
+    28,
+    16
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "6f9877fb7d5e8d6239ca83723f85fbecc97b8eda79c45b5ad578f2a2084ee62f",
+    "stream-usb.log": "7eb90f982d04466f7b96940ece4ca719284a4cbc9c618bece638c8f2349a2e20",
+    "stream-audio.mka": "9bec659d43130caf47bf0961bc09e305873add19c841f9952b69ad6493059355",
+    "stream-audio.wav": "d6e3d2513958e89303899b544bd8e515fa6c90393009895c1892673f3b938be0",
+    "phase-analysis.json": "b8d972eb82932797aed6c63aca7d94fc7b2c065b52661ad80b451e5b093a54b9"
+   }
+  },
+  {
+   "run": "03-t1-0ff0",
+   "image": "A",
+   "mode": "f",
+   "elf_sha256": "82e73846d7fa63942c42286e1310fddd170f7ffc905a22defad75ef2881c7771",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    26,
+    26
+   ],
+   "marker_mismatches": [
+    274,
+    284
+   ],
+   "max_phase_step": [
+    32,
+    16
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "594194c1fa6785a5fe3d0e1b49c6de366f774ed081b7cb68906a126b17df07a3",
+    "stream-usb.log": "7eeb8305bbcb4466040fb3db513e1264a6e14401ede069403c0b1436b8a8b1b8",
+    "stream-audio.mka": "cb138026a6a80e7accab9310f41ba23d4d17c3f6d2e8f4ef480ba9eb2d9b9898",
+    "stream-audio.wav": "adda6bab2c077fcd0040af0277ddf85b665a88f79365c0c6dad5aa4906464575",
+    "phase-analysis.json": "4ffe553dfac3ff53cb7c1e4cb24f64cda27a594197082598cf5d4d8a34fc180f"
+   }
+  },
+  {
+   "run": "04-t3-staging",
+   "image": "A",
+   "mode": "r",
+   "elf_sha256": "82e73846d7fa63942c42286e1310fddd170f7ffc905a22defad75ef2881c7771",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    0,
+    0
+   ],
+   "marker_mismatches": [
+    0,
+    0
+   ],
+   "max_phase_step": [
+    1,
+    1
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "a64f05a7fa00aa92dd36cff5c32278931b89b8f16a8b859f5d2635b0e3aa129f",
+    "stream-usb.log": "d93cff517720d0d6d1e5f0ff7ae91ee339924f2cd86033243e5bb5ef33048139",
+    "stream-audio.mka": "a8aace0b24ce5ad0dc8133d4ef1aa79ea292be4abb2b47890f0fe2ff54bc6b0a",
+    "stream-audio.wav": "5a82bb4f2747c766237df39d39f4d66b55897e633c0f8a9b85e0c800de81666b",
+    "phase-analysis.json": "1fd8d13831162934d68ecb11bd83922366d3bf3349124b3cb09137df7087dca4"
+   }
+  },
+  {
+   "run": "05-t2-white",
+   "image": "A",
+   "mode": "y",
+   "elf_sha256": "82e73846d7fa63942c42286e1310fddd170f7ffc905a22defad75ef2881c7771",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    0,
+    0
+   ],
+   "marker_mismatches": [
+    0,
+    0
+   ],
+   "max_phase_step": [
+    1,
+    1
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "4cad70cf020b68bac5775687bf60b1cc75049c617a3fe0baf29968ee5e83be16",
+    "stream-usb.log": "4dac9d5164379ac18fe02d3c98072891043fc87cc4210e99684d9c608519902a",
+    "stream-audio.mka": "a700675d7ff495c38ac36a25a8775a649ab23153bad9be14a9b88999ab639050",
+    "stream-audio.wav": "6e481f358f2b4c152c4ff9e2ce1cb5696113d1f9075982bea44bc30f91263f5a",
+    "phase-analysis.json": "bf56005c5c6017220ecf9b1c5d4412027d92544d1a7fc9784ab1c015810864f5"
+   }
+  },
+  {
+   "run": "06-black",
+   "image": "A",
+   "mode": "e",
+   "elf_sha256": "82e73846d7fa63942c42286e1310fddd170f7ffc905a22defad75ef2881c7771",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    0,
+    0
+   ],
+   "marker_mismatches": [
+    0,
+    0
+   ],
+   "max_phase_step": [
+    1,
+    2
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "f378071249ed50745dd390277c10fd6fa8afb8c4e676695c1c67983a876a9b94",
+    "stream-usb.log": "18329a1fc862f25ac67f585177b7334bc3a31c33957355104e98ccec35dd5418",
+    "stream-audio.mka": "12e57ae0a698c73c0e64af4eb311d0d87bb439ed8184ab6768724c5e9d943e69",
+    "stream-audio.wav": "8142e06fea2a6d11be14e0ae6925aa92e64f07980b024d042fccccc4f67c77f8",
+    "phase-analysis.json": "821adac82b9335ef437d02516cabb67662534686525ad38621e393270301feaa"
+   }
+  },
+  {
+   "run": "07-x-end",
+   "image": "A",
+   "mode": "x",
+   "elf_sha256": "82e73846d7fa63942c42286e1310fddd170f7ffc905a22defad75ef2881c7771",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    10,
+    12
+   ],
+   "marker_mismatches": [
+    248,
+    250
+   ],
+   "max_phase_step": [
+    26,
+    16
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "57a4e739a3152e40bbf9403b36a19e2c6b4e74b0af36ec011ff6dbdf9c79f689",
+    "stream-usb.log": "c690fa53cf84b184ac22e008264ebbc229de4f575357e1f4062f5d442c107663",
+    "stream-audio.mka": "75804bab1a62a643d70e1530907d794981305d27faaecd20842013fec426b705",
+    "stream-audio.wav": "b80d45f3f2bcf44a6c0c60c88d3cf305f29eb8f365d74d8478c835c72fd6a300",
+    "phase-analysis.json": "934dd640c7816a84562cb57d4d81ea852512a773e664478e605abfc26915c1e2"
+   }
+  },
+  {
+   "run": "08-rc1-55aa",
+   "image": "B",
+   "mode": "5",
+   "elf_sha256": "82e73846d7fa63942c42286e1310fddd170f7ffc905a22defad75ef2881c7771",
+   "candidate_sha256": "1f4aeec6f87cc6a8e795f8712047c335fe355045b74639454398a7acfd3ce46f",
+   "fpga_user_code": "0x00007F87",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    0,
+    0
+   ],
+   "marker_mismatches": [
+    0,
+    0
+   ],
+   "max_phase_step": [
+    1,
+    1
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "e36fc48b0eb9e7cf1aeec437b55a1daa7f673a14eaacd67788e040243fa191cb",
+    "stream-usb.log": "f8b27caabccc215988438484cafa946a65c09d1ca0cd23b3f71b1896446f294c",
+    "stream-audio.mka": "46dfe7cc8158d7f0ec67336585dd857453d60bec1958951c7e1172b76ca6dfb2",
+    "stream-audio.wav": "6b807bdd5ade7b715fbf94b9c20dc238abdb2ad9a3e31f1f5ecc20efc2ffcbd0",
+    "phase-analysis.json": "24f7365f97df1ec4e5f395143aab3a15d0800287a54136473a0ca0030f46bbc4"
+   }
+  },
+  {
+   "run": "09-x-baseline2",
+   "image": "A",
+   "mode": "x",
+   "elf_sha256": "d7e013d0cb19b65bc12ac9513f9f38cb1bfcbe947bee6c6d3172f064a0015aab",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    14,
+    15
+   ],
+   "marker_mismatches": [
+    268,
+    267
+   ],
+   "max_phase_step": [
+    28,
+    16
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "863a033331d8a92c2373bb409fe53f19b18cf81eff4cf07d81175dc997ad1bdf",
+    "stream-usb.log": "ebabcc72a7281db8909fd6411e30c786d6304699f57cb89b128150694b88a721",
+    "stream-audio.mka": "730611cf6729128399a46a8f371fff68de09d9e2bc51b32601dd9e3f9216b8e8",
+    "stream-audio.wav": "18549c039fe192c1465066dd6f27ab886320ff8d46215ee54a32eb0bc6667fa2",
+    "phase-analysis.json": "5eb793e7707bdd03df02da03bd1f2b0581fe1afdb1620e38729f23dd4f5b7656"
+   }
+  },
+  {
+   "run": "10-t6-low2",
+   "image": "A",
+   "mode": "a",
+   "elf_sha256": "d7e013d0cb19b65bc12ac9513f9f38cb1bfcbe947bee6c6d3172f064a0015aab",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    0,
+    0
+   ],
+   "marker_mismatches": [
+    0,
+    0
+   ],
+   "max_phase_step": [
+    5,
+    5
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "355792c6b98e4a866db67448bc2869c2fccac209378eeb067aeb9977972c64f3",
+    "stream-usb.log": "0a779bb55ba052fd6eb673df1da2c4101fbf822d78a73ea3534387c6c3163e31",
+    "stream-audio.mka": "701b3b7824df68f48e701c403c2ec6beff07c8474ea22aeefa1ae6786872b794",
+    "stream-audio.wav": "23c68c8db98fa2ee41fb4619bb0148032d26a078e2895bae4f3e079b519e575c",
+    "phase-analysis.json": "674e468770f2ed2a2c9e3f0339ceecce1dabdbeb17d72610a82a6b4a5b654209"
+   }
+  },
+  {
+   "run": "11-t6-high62",
+   "image": "A",
+   "mode": "i",
+   "elf_sha256": "d7e013d0cb19b65bc12ac9513f9f38cb1bfcbe947bee6c6d3172f064a0015aab",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    38,
+    32
+   ],
+   "marker_mismatches": [
+    271,
+    244
+   ],
+   "max_phase_step": [
+    32,
+    16
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "a050c8cfeffef902680915ef1c04925fe66dab9cd71a49164d655c84fbb39039",
+    "stream-usb.log": "171195b3617a2c69d949593b6f531355d159cd91b42f82a16c75f432ac5d971c",
+    "stream-audio.mka": "29bfd037c66cf1ffa40dd7396820f18ceb4bd417904cb3b52e5e86c527d48489",
+    "stream-audio.wav": "567c0c4dc5fd67ae8fbe4ffaa1755504a0f582a22967b7cf1715a6a14de3eb34",
+    "phase-analysis.json": "06cdf6e8e48688d35a19a360d3f5a6a09b6d0d3cdf1c0c0310abc43a4feebae9"
+   }
+  },
+  {
+   "run": "12-t6-const55",
+   "image": "A",
+   "mode": "o",
+   "elf_sha256": "d7e013d0cb19b65bc12ac9513f9f38cb1bfcbe947bee6c6d3172f064a0015aab",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    25,
+    25
+   ],
+   "marker_mismatches": [
+    265,
+    265
+   ],
+   "max_phase_step": [
+    32,
+    16
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "63ab2b45c25fef18fee90de1598ed2588d7ceb9618cbd3e7f72f750e702f0f21",
+    "stream-usb.log": "9ac4560f3d34088cdd05616f12e1eb324d23c52c86a69f714589c08adf3faf51",
+    "stream-audio.mka": "5a81f77b0e29bd37798ad9d70333fd7e3c63d356fda1b6dfd8149690b0a76cd3",
+    "stream-audio.wav": "1d0d2f6e05ce167dee90f1c13b1c7e1348522491c7369d6cf06dbfcc1d100c68",
+    "phase-analysis.json": "11d17561d72e0fd4706a7e196170bfbe5fe8499abae71648ac030ba88e075bfd"
+   }
+  },
+  {
+   "run": "13-t7-gray555",
+   "image": "A",
+   "mode": "G",
+   "elf_sha256": "d7e013d0cb19b65bc12ac9513f9f38cb1bfcbe947bee6c6d3172f064a0015aab",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    13,
+    10
+   ],
+   "marker_mismatches": [
+    240,
+    247
+   ],
+   "max_phase_step": [
+    27,
+    16
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "16b8367c3e412b25baebfc9d1bdf22affbc2c43825f4a32c3cde08fd26c7f00f",
+    "stream-usb.log": "c0b4e19a1d2aaf03ca0efb716ca885b1b09365b2148208529e6e5d190883ebda",
+    "stream-audio.mka": "c1739415721c6ede0dd15ad98796defc8bd5a62c21f4521eb8c094257e1543d0",
+    "stream-audio.wav": "6fc352caca870258336d55e78993a7063642d2b5cd34ea31e47ddeaddf1e7612",
+    "phase-analysis.json": "4844986f619fb0c9e997b3f89c83b0facf1eda93ba6fe8144a245f85ad153552"
+   }
+  },
+  {
+   "run": "14-t7-stripes",
+   "image": "A",
+   "mode": "S",
+   "elf_sha256": "d7e013d0cb19b65bc12ac9513f9f38cb1bfcbe947bee6c6d3172f064a0015aab",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    38,
+    38
+   ],
+   "marker_mismatches": [
+    267,
+    279
+   ],
+   "max_phase_step": [
+    32,
+    16
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "378908499faee32f26d38c43ac0e45e81fd7f237dfcc156c97af7379b28a8377",
+    "stream-usb.log": "0229fd18b2af41844e6de53325a31bfe53e4805b2212e495fac1b93dcf2093d8",
+    "stream-audio.mka": "94f61c0d298485de8c92cef0c1d552600df7a2ce20a157d7efe19323912c9d99",
+    "stream-audio.wav": "5c34a02494afd099920cae84b5e265bc8b7b65ab59b2b1607800c3677ae41889",
+    "phase-analysis.json": "47fb9cc575e32fb5d06895401c907c867f77337473ddf57e076eda0cbc5d1a56"
+   }
+  },
+  {
+   "run": "15-sweep-red",
+   "image": "A",
+   "mode": "R",
+   "elf_sha256": "b4e61dd47869e79df3150af74b83e953bf19016e5599e8fec366cbcda01af762",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    0,
+    0
+   ],
+   "marker_mismatches": [
+    0,
+    0
+   ],
+   "max_phase_step": [
+    1,
+    1
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "618b62e42bff8f522dfc6f37201c1428e33d4986e31c6623bee7cbcc86c71658",
+    "stream-usb.log": "18ac0dd45552f889eb7d1c8353deffc16643e7c4037746c0ddd06d5b7a9b9ae7",
+    "stream-audio.mka": "97a3f3c80d827709b7c135eea9cd3c861d60c87b00cb948d5cf5829e1e290af3",
+    "stream-audio.wav": "2128525c021a6b2ec21988c4e78bb95a0ce7fe4b0f574c6b81dcfeca8c65c48b",
+    "phase-analysis.json": "61d0ddc0da39fadf7760e608f5e19fa29e5eeaf0cf9bd4e4bf24b50cf37cc757"
+   }
+  },
+  {
+   "run": "16-sweep-111",
+   "image": "A",
+   "mode": "1",
+   "elf_sha256": "b4e61dd47869e79df3150af74b83e953bf19016e5599e8fec366cbcda01af762",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    8,
+    9
+   ],
+   "marker_mismatches": [
+    224,
+    224
+   ],
+   "max_phase_step": [
+    29,
+    16
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "b443ad8b98cc5f8b2e9619a3b19c97cd57a1b1038c46e4b1f46c52392b5f0b4d",
+    "stream-usb.log": "2cd06801d7dbecb745f9a33cc0727344ef9d4c21ace06233421bcaf240dfef03",
+    "stream-audio.mka": "9b11397a3f243a10df5371d639846728f095ecdda190efbfb82c4a953dd321ed",
+    "stream-audio.wav": "65df5d9f00ee8a3aeaebc63584f6a304dda8e82be8bccbf5ccf6018598e92d1a",
+    "phase-analysis.json": "47d181ce65972af0997932e0f4250cff889bbb746fcc74a5ed4efc98ccb15d7f"
+   }
+  },
+  {
+   "run": "17-sweep-eee",
+   "image": "A",
+   "mode": "E",
+   "elf_sha256": "b4e61dd47869e79df3150af74b83e953bf19016e5599e8fec366cbcda01af762",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    11,
+    10
+   ],
+   "marker_mismatches": [
+    233,
+    232
+   ],
+   "max_phase_step": [
+    20,
+    16
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "e04dd61cd4f2efe9ffef937780877926b7605ad041df5f21f8b92b2413727816",
+    "stream-usb.log": "20f362e93e7237fb9859c5c92d4a6a8097376f0e6075037a02e30699d526076e",
+    "stream-audio.mka": "66543a7d81fb2605df18808fc48ff7907390e2342d1d8b2192ea99a10886c336",
+    "stream-audio.wav": "c3fc14b87877a3d497b7b12d722f7771e19820001d97fb5b9cbe6b1deae1640d",
+    "phase-analysis.json": "39b6d5e74f374c3e90f4bb7b84edbeceec7c608dd89cda0a9d44d584de2f240e"
+   }
+  },
+  {
+   "run": "18-white-repeat",
+   "image": "A",
+   "mode": "y",
+   "elf_sha256": "b4e61dd47869e79df3150af74b83e953bf19016e5599e8fec366cbcda01af762",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    0,
+    0
+   ],
+   "marker_mismatches": [
+    0,
+    0
+   ],
+   "max_phase_step": [
+    1,
+    1
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "b5bc8cc8cea48b10426f5ba7134f30a269362188b26a110e54e05d0eb8564cb3",
+    "stream-usb.log": "c82b05b75673423cf942ea354b1d3fda218789f1d2b87596c934d9ed511560ba",
+    "stream-audio.mka": "9cd7de304dffe10d010b08153200861d82de567f8198d170582d60ff83fe34ac",
+    "stream-audio.wav": "d95a96c607c37b1bd123169a9a24598228031c0aba66701874290faefa031660",
+    "phase-analysis.json": "51f7b4383f78903a984957f8a53ade436afa6ed7f291bb549867c6dc2354cf7c"
+   }
+  },
+  {
+   "run": "19-t8-o-broadcast",
+   "image": "T8",
+   "mode": "O",
+   "elf_sha256": "5e08a679a69d601240ab87e6a36539f2ac34bb542580f94f5717d462076acad1",
+   "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+   "fpga_user_code": "0x00008039",
+   "diag_broadcast_written": true,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    0,
+    0
+   ],
+   "marker_mismatches": [
+    0,
+    0
+   ],
+   "max_phase_step": [
+    1,
+    1
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "349318de234a1ae8d07e54b27f1e8ece1dd9e988278b2bcebf71f214e537cd99",
+    "stream-usb.log": "68cad4ea709b263d17a39955e33b5e43bd8126e61dcf45d9e8ca746390695a83",
+    "stream-audio.mka": "4ecff47aa7c110a938767e1d884db96a13b0a0e255d18e9436e1ba05b9906052",
+    "stream-audio.wav": "9281233b6f098452f08fea80e4d36540a669030b78214a834f758088db52785c",
+    "phase-analysis.json": "378a30bc3d53f32c8552625b7be47dfbfbbe03b05217777dd9463826948899e8"
+   }
+  },
+  {
+   "run": "20-t8-o-local",
+   "image": "T8",
+   "mode": "o",
+   "elf_sha256": "5e08a679a69d601240ab87e6a36539f2ac34bb542580f94f5717d462076acad1",
+   "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+   "fpga_user_code": "0x00008039",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    0,
+    0
+   ],
+   "marker_mismatches": [
+    0,
+    0
+   ],
+   "max_phase_step": [
+    1,
+    1
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "0b14334ac6f489e8291795787b5bead0502e60fd9ad23b3ae8dcd2c2c140ccf9",
+    "stream-usb.log": "39f4408f0763d740733b36ab0e0528e1a3940ba7029424b5e20555b44c6e9a27",
+    "stream-audio.mka": "60dd79d0dc7a36c804207cf30b7864c768f1b06791ec2f44883cf19df3806dfc",
+    "stream-audio.wav": "49d27a55f8ba43ee0723046b1f763adcf0b098300a9d7270d147fd1759ad8e1b",
+    "phase-analysis.json": "a252375ec31cda70f70cef037f8b7b7159cf33030831193236603abee4d88998"
+   }
+  },
+  {
+   "run": "21-t8-i-broadcast",
+   "image": "T8",
+   "mode": "I",
+   "elf_sha256": "5e08a679a69d601240ab87e6a36539f2ac34bb542580f94f5717d462076acad1",
+   "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+   "fpga_user_code": "0x00008039",
+   "diag_broadcast_written": true,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    0,
+    0
+   ],
+   "marker_mismatches": [
+    0,
+    0
+   ],
+   "max_phase_step": [
+    1,
+    1
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "82e64980fb4156456440697a7cf685274164f8f73aca7f9bfde570bcdecc8b91",
+    "stream-usb.log": "2823d72dd51f390074fc1f0335b0750871bcc96b15b7939e00572ff23d99a9bb",
+    "stream-audio.mka": "2c4d473bb4a1dcb46775e018da792436d9a115ece519ff4bb2b090e4782339c7",
+    "stream-audio.wav": "b19fab51d3ce50eb3c2df841b71b6ed7f326370c9018951103b4011d0054d032",
+    "phase-analysis.json": "01680e6ab7db38a54a39b58e0fe90e65ac32bedeea8dd8994b0d7aacb18291ca"
+   }
+  },
+  {
+   "run": "22-t8-stripes-broadcast",
+   "image": "T8",
+   "mode": "T",
+   "elf_sha256": "5e08a679a69d601240ab87e6a36539f2ac34bb542580f94f5717d462076acad1",
+   "candidate_sha256": "fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db",
+   "fpga_user_code": "0x00008039",
+   "diag_broadcast_written": true,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    0,
+    0
+   ],
+   "marker_mismatches": [
+    0,
+    0
+   ],
+   "max_phase_step": [
+    1,
+    1
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "b0bea5f76e2c92d16f1fa920fd7f00aa8c5b3f62c4442820e901a672380313e2",
+    "stream-usb.log": "38754ce065062e1dedaa92d2696e95bad57831710f087c263ee0a41361a0f783",
+    "stream-audio.mka": "bbe7f4d9c5dcc68dcef1c08460c4b24cea8262d49279bd32ff70b6cfeee4de0a",
+    "stream-audio.wav": "c5157edefc7e6ace00db7203d193e14d7f4e8bca6a0f61fd73eb8f9a0c670f8b",
+    "phase-analysis.json": "3505fa52d8241bc4aacea3184aad2db65f1a12cafef7882bcd3e3d58a76cc795"
+   }
+  },
+  {
+   "run": "23-a-i-positive",
+   "image": "A",
+   "mode": "i",
+   "elf_sha256": "5e08a679a69d601240ab87e6a36539f2ac34bb542580f94f5717d462076acad1",
+   "candidate_sha256": "de71d3fb2f45f2f119413659ef199ad72569bd8a74c6c1b68ad5ae44f119cbcb",
+   "fpga_user_code": "0x00009B86",
+   "diag_broadcast_written": false,
+   "stop": "STOP rc=0 phase=legacy_loop halves=0 wraps=0 blits=0 max_refill_us=30352 timeouts=0 device_error=0",
+   "dummy_halves": 292,
+   "low_rms_10ms": [
+    29,
+    30
+   ],
+   "marker_mismatches": [
+    276,
+    239
+   ],
+   "max_phase_step": [
+    32,
+    16
+   ],
+   "restore_fpga_user_code": "0x00004068",
+   "host_flash_equal": true,
+   "restored_host_port": "COM5",
+   "sha256": {
+    "result.json": "342017b7d1c890cb57dd094591e7182cf81a5a180a148d5b125e692db511e288",
+    "stream-usb.log": "a54156fdb13b2ca3f72405d90fb9219e913a557bc562bcdec666ebad0b4a81c0",
+    "stream-audio.mka": "d5f08185abd531432138aa83a14a69fc255800b00926f47449fb4668d6c2499f",
+    "stream-audio.wav": "af81ab060614672259fb5e66d89b64f83e8be6505bccb329cbdde6b12311d1a9",
+    "phase-analysis.json": "86886ab247021dc716ac7136b1dda55846857cc6915273fd93b414ca5d0344b8"
+   }
+  }
+ ]
+}

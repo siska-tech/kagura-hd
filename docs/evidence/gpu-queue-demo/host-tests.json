@@ -1,0 +1,63 @@
+{
+  "hardware_tested": false,
+  "queue_mock_configurations": 6,
+  "default_sdk_tests": 30,
+  "audio_tests": 10,
+  "logs": [
+    {
+      "path": "build/queue-demo-tests/pack-0-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/queue-demo-tests/pack-0-normal.log",
+      "sha256": "fac35bd7f1df678f980744d02d677f160eaba8654a023aa5860715357bcc8d19",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\n"
+    },
+    {
+      "path": "build/queue-demo-tests/pack-0-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/queue-demo-tests/pack-1-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/queue-demo-tests/pack-1-normal.log",
+      "sha256": "fac35bd7f1df678f980744d02d677f160eaba8654a023aa5860715357bcc8d19",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\n"
+    },
+    {
+      "path": "build/queue-demo-tests/pack-1-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/queue-demo-tests/default-audio.log",
+      "sha256": "658ee8f6638e043f6c54394b34e4db8d602800e29e7a22d408d54348127930fd",
+      "result": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.028s\n\nOK\n"
+    },
+    {
+      "path": "build/queue-demo-tests/default-sdk-0.log",
+      "sha256": "d24ff9b892334f47df2f700b87ab58423c92c0b2dc694f524c3fc4683e611a82",
+      "result": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.349s\n\nOK\n"
+    },
+    {
+      "path": "build/queue-demo-tests/default-sdk-1.log",
+      "sha256": "42285c4a0ca86bb3db25af2aa9c0bcdf8314916ec81df843878bdd8a9a0298f2",
+      "result": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.393s\n\nOK\n"
+    }
+  ],
+  "test_sources": [
+    {
+      "path": "software/beyond16/tests/queue_test.c",
+      "sha256": "8f8650a1df264d4040c2b19303455e86d79b36e13ba9ba177d574faa0e0b06eb"
+    },
+    {
+      "path": "software/beyond16/tools/test_gpu_queue.sh",
+      "sha256": "cb0d4ca61febd9b85cae9a0d71858d6e9dcd3e96bf732a5d45ca9deedd4b8eea"
+    }
+  ]
+}

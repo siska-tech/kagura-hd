@@ -11,6 +11,9 @@ module kagura_fb_audio_endpoint(
  output wire [47:0] cfg_gain_l,cfg_gain_r,output wire [5:0] cfg_enable,cfg_phase_reset,
  output wire [7:0] cfg_wave_len,cfg_master,output wire [15:0] cfg_noise_period,
  output wire [15:0] cfg_pcm_gain_l,cfg_pcm_gain_r,output wire [1:0] cfg_pcm_enable,
+ input wire [7:0] stream_token,stream_status,
+ output reg stream_control_write,stream_publish,
+ output reg [7:0] stream_data,
  output wire [43:0] pcm_start,pcm_end,pcm_loop,
  output wire [1:0] pcm_loop_enable,pcm_prepare,pcm_stop,pcm_clear
 );
@@ -51,16 +54,29 @@ module kagura_fb_audio_endpoint(
   .snapshot_pcm_enable(cfg_pcm_enable),.settle);
  always @(posedge clk) begin
   if(reset) begin
+   stream_control_write<=0; stream_publish<=0; stream_data<=0;
    sync1<=0;sync2<=0;old_fifo<=0;rsp_valid<=0;rsp_error<=0;rsp_data<=0;
   end else begin
    sync1<={muted,fifo_overflow,fifo_underflow};sync2<=sync1;old_fifo<=sync2[1:0];
+   stream_control_write<=0; stream_publish<=0;
    rsp_valid<=accept;rsp_error<=0;rsp_data<=0;
    if(accept) begin
     if(req_write) begin
-     if(req_addr!=6 && !(req_addr==7 && data_legal)) rsp_error<=1;
+     if(req_addr==7 && index==8'he3 && req_wdata<=1) begin
+      stream_control_write<=1;
+      stream_data<=req_wdata;
+     end else if(req_addr==7 && index==8'he4) begin
+      stream_publish<=1;
+      stream_data<=req_wdata;
+     end else if(req_addr!=6 && !(req_addr==7 && data_legal)) rsp_error<=1;
     end else case(req_addr)
      6:rsp_data<=index;
-     7:begin rsp_data<=rdata;rsp_error<=!read_legal;end
+     7:case(index)
+       8'he3: rsp_data<=8'h51;
+       8'he4: rsp_data<=stream_token;
+       8'he5: rsp_data<=stream_status;
+       default: begin rsp_data<=rdata; rsp_error<=!read_legal; end
+     endcase
      default:rsp_error<=1;
     endcase
    end

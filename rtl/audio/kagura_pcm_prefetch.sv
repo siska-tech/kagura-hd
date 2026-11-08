@@ -11,11 +11,17 @@ module kagura_pcm_prefetch #(
     parameter integer ADDR_WIDTH=24,
     parameter integer BUFFER_ADDR_BITS=8,
     parameter [ADDR_WIDTH:0] MEMORY_BYTES={1'b1,{ADDR_WIDTH{1'b0}}},
-    parameter integer RESPONSE_TIMEOUT=0
+    parameter integer RESPONSE_TIMEOUT=0,
+    parameter bit STREAM=0
 ) (
     input  wire clk,
     input  wire reset,
     input  wire sample_tick,
+    input  wire stream_control_write,stream_publish,
+    input  wire [7:0] stream_data,
+    input  wire [1:0] explicit_stop,
+    output wire [7:0] stream_token,stream_status,
+    output wire stream_cancel_control,
 
     input  wire [1:0] cfg_valid,
     output wire [1:0] cfg_ready,
@@ -71,16 +77,84 @@ module kagura_pcm_prefetch #(
     reg selected_valid;
     reg selected_ch;
 
+    // Bit 12 identifies the half of an 8 KiB aligned stereo plane.
+    reg stream_armed,stream_half;
+    reg [6:0] stream_generation;
+    reg [1:0] owed_a,owed_b;
+    reg outstanding_half,outstanding_last;
+    reg [1:0] stream_gate;
+    wire streaming=STREAM && stream_armed;
+    wire stream_arm=STREAM && stream_control_write && stream_data==1 &&
+                    !stream_armed && active==0;
+    wire stream_abort=streaming && ((stream_control_write && stream_data==0) ||
+                      (|explicit_stop) || (|underrun) ||
+                      (|config_error) || (|memory_error));
+    wire stream_clear=stream_arm || stream_abort;
+    wire half_free=stream_half ? owed_b==0 : owed_a==0;
+    assign stream_token={stream_generation,stream_half};
+    assign stream_status={5'b0,outstanding,streaming,streaming && half_free};
+    assign stream_cancel_control=stream_clear;
+    wire publish=streaming && stream_publish && half_free &&
+                 stream_data==stream_token;
+
+    if(STREAM) begin : g_stream
+        always @(posedge clk) begin
+            // next_ok already masks the one cycle after configure or issue.
+            for(int c=0;c<2;c=c+1)
+                stream_gate[c]<=fetch_addr[c][12] ? owed_b[c] : owed_a[c];
+            if(reset) begin
+                stream_armed<=0; stream_half<=0; stream_generation<=0;
+                owed_a<=0; owed_b<=0;
+                outstanding_half<=0; outstanding_last<=0;
+            end else if(stream_clear) begin
+                stream_armed<=stream_arm;
+                stream_half<=0;
+                stream_generation<=stream_generation+1'b1;
+                // Both halves must be filled and fenced before arming.
+                owed_a<=2'b11; owed_b<=2'b11;
+            end else if(streaming) begin
+                if(mem_req_valid && mem_req_ready) begin
+                    outstanding_half<=fetch_addr[selected_ch][12];
+                    outstanding_last<=(&fetch_addr[selected_ch][11:0]);
+                end
+                if(mem_rsp_valid && outstanding && !discard_response &&
+                   !mem_rsp_error && outstanding_last) begin
+                    if(outstanding_half) owed_b[outstanding_ch]<=0;
+                    else owed_a[outstanding_ch]<=0;
+                end
+                if(publish) begin
+                    if(stream_half) begin
+                        owed_b<=2'b11;
+                        stream_generation<=stream_generation+1'b1;
+                    end else owed_a<=2'b11;
+                    stream_half<=~stream_half;
+                end
+            end
+        end
+    end else begin : g_no_stream
+        assign stream_armed=0;
+        assign stream_half=0;
+        assign stream_generation=0;
+        assign owed_a=0;
+        assign owed_b=0;
+        assign outstanding_half=0;
+        assign outstanding_last=0;
+        assign stream_gate=0;
+    end
+
+    wire [1:0] playback_stop=stop_play | {2{streaming && (|stop_play)}};
+    wire stereo_starved=streaming && sample_tick && (&active) &&
+                         !(|playback_stop) && (count[0]==0 || count[1]==0);
     // A channel stopped on a sample tick does not consume that sample, so a
     // pause on the AUDIO_COMMIT boundary resumes without a gap.
-    wire pop0=sample_tick && active[0] && !stop_play[0];
-    wire pop1=sample_tick && active[1] && !stop_play[1];
-    wire push0=mem_rsp_valid && outstanding && !discard_response && !mem_rsp_error && !outstanding_ch;
-    wire push1=mem_rsp_valid && outstanding && !discard_response && !mem_rsp_error && outstanding_ch;
+    wire pop0=sample_tick && active[0] && !playback_stop[0] && !stereo_starved;
+    wire pop1=sample_tick && active[1] && !playback_stop[1] && !stereo_starved;
+    wire push0=mem_rsp_valid && outstanding && !discard_response && !mem_rsp_error && !outstanding_ch && !stream_clear;
+    wire push1=mem_rsp_valid && outstanding && !discard_response && !mem_rsp_error && outstanding_ch && !stream_clear;
     // A request is issued only with no read outstanding, so the space a channel
     // needs is simply count < depth: the MSB of count (count <= depth).
-    wire need0=configured[0] && next_ok[0] && !fetch_done[0] && !count[0][COUNT_WIDTH-1];
-    wire need1=configured[1] && next_ok[1] && !fetch_done[1] && !count[1][COUNT_WIDTH-1];
+    wire need0=(!streaming || (stream_gate[0] && (&configured))) && configured[0] && next_ok[0] && !fetch_done[0] && !count[0][COUNT_WIDTH-1];
+    wire need1=(!streaming || (stream_gate[1] && (&configured))) && configured[1] && next_ok[1] && !fetch_done[1] && !count[1][COUNT_WIDTH-1];
 
     assign cfg_ready={2{!outstanding}} & ~active;
     assign ready[0]=configured[0] && (count[0]==BUFFER_DEPTH_COUNT || fetch_done[0]);
@@ -92,7 +166,7 @@ module kagura_pcm_prefetch #(
         if(need0 && need1) begin selected_valid=1; selected_ch=rr; end
         else if(need0) begin selected_valid=1; selected_ch=0; end
         else if(need1) begin selected_valid=1; selected_ch=1; end
-        mem_req_valid=!outstanding && selected_valid;
+        mem_req_valid=!outstanding && selected_valid && !stream_clear;
         mem_req_addr=selected_ch ? fetch_addr[1] : fetch_addr[0];
     end
 
@@ -109,6 +183,20 @@ module kagura_pcm_prefetch #(
     // caller holds them for at least two cycles before cfg_valid (the public
     // registers settle for three), so the comparators stay out of the accept path.
     reg [1:0] cfg_bad;
+    reg [1:0] stream_range_bad;
+    if(STREAM) begin : g_range
+        for(genvar c=0;c<2;c=c+1) begin : g_channel
+            wire [21:0] start_byte=cfg_start[c*ADDR_WIDTH +: ADDR_WIDTH];
+            wire [21:0] end_byte=cfg_end[c*ADDR_WIDTH +: ADDR_WIDTH];
+            wire [21:0] loop_byte=cfg_loop[c*ADDR_WIDTH +: ADDR_WIDTH];
+            always @(posedge clk)
+                stream_range_bad[c]<= !cfg_loop_enable[c] ||
+                    (|start_byte[12:0]) || (|end_byte[12:0]) ||
+                    end_byte[21:13]!=start_byte[21:13]+9'd1 || loop_byte!=start_byte;
+        end
+    end else begin : g_no_range
+        assign stream_range_bad=0;
+    end
     always @(posedge clk)
         for(int c=0;c<2;c=c+1)
             cfg_bad[c]<=cfg_start[c*ADDR_WIDTH +: ADDR_WIDTH]>=cfg_end[c*ADDR_WIDTH +: ADDR_WIDTH] ||
@@ -133,7 +221,7 @@ module kagura_pcm_prefetch #(
             for(i=0;i<2;i=i+1) begin
                 if(cfg_valid[i] && cfg_ready[i]) begin
                     rd_ptr[i]<=0; wr_ptr[i]<=0; count[i]<=0; fetch_done[i]<=0;
-                    if(cfg_bad[i]) begin
+                    if(cfg_bad[i] || (streaming && (stream_range_bad[i] || configured[i]))) begin
                         configured[i]<=0;
                         config_error[i]<=1;
                     end else begin
@@ -145,12 +233,12 @@ module kagura_pcm_prefetch #(
                     end
                 end else if(cfg_valid[i] && !cfg_ready[i]) config_error[i]<=1;
 
-                if(stop_play[i]) begin
+                if(playback_stop[i]) begin
                     active[i]<=0;
                     if(i==0) sample0<=0; else sample1<=0;
                 end
                 if(start_play[i]) begin
-                    if(ready[i] && !active[i]) active[i]<=1;
+                    if(ready[i] && !active[i] && (!streaming || (&start_play))) active[i]<=1;
                     else config_error[i]<=1;
                 end
             end
@@ -218,6 +306,19 @@ module kagura_pcm_prefetch #(
 
             if(pop0 && count[0]==1 && fetch_done[0] && !push0) begin active[0]<=0; done[0]<=1; end
             if(pop1 && count[1]==1 && fetch_done[1] && !push1) begin active[1]<=0; done[1]<=1; end
+
+            if(stereo_starved) begin
+                active<=0;
+                underrun<=2'b11;
+                sample0<=0; sample1<=0;
+            end
+            if(stream_clear) begin
+                configured<=0;
+                active<=0;
+                sample0<=0; sample1<=0;
+                // Keep the outstanding slot occupied until its late response drains.
+                if(outstanding && !mem_rsp_valid) discard_response<=1;
+            end
         end
     end
 

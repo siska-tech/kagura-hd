@@ -1,0 +1,156 @@
+{
+  "scenes": [
+    {
+      "scene": 0,
+      "frames": 302,
+      "actual_update_fps": 30.35283302856131,
+      "present_intervals": {
+        "median_us": 33333,
+        "p95_us": 33345,
+        "worst_us": 33350,
+        "over_33_333ms_rate": 0.4485049833887043
+      },
+      "deadline_miss_rate": 0.0,
+      "relative_call_budget_miss_rate": 0.0
+    },
+    {
+      "scene": 1,
+      "frames": 606,
+      "actual_update_fps": 30.30038044256185,
+      "present_intervals": {
+        "median_us": 33333,
+        "p95_us": 33345,
+        "worst_us": 50002,
+        "over_33_333ms_rate": 0.4925619834710744
+      },
+      "deadline_miss_rate": 0.0,
+      "relative_call_budget_miss_rate": 0.0
+    },
+    {
+      "scene": 2,
+      "frames": 600,
+      "actual_update_fps": 29.99990784669376,
+      "present_intervals": {
+        "median_us": 33333,
+        "p95_us": 33346,
+        "worst_us": 33350,
+        "over_33_333ms_rate": 0.4741235392320534
+      },
+      "deadline_miss_rate": 0.0016666666666666668,
+      "relative_call_budget_miss_rate": 0.0016666666666666668
+    },
+    {
+      "scene": 3,
+      "frames": 601,
+      "actual_update_fps": 30.075094503465703,
+      "present_intervals": {
+        "median_us": 33333.0,
+        "p95_us": 50005,
+        "worst_us": 50016,
+        "over_33_333ms_rate": 0.49833333333333335
+      },
+      "deadline_miss_rate": 0.05823627287853577,
+      "relative_call_budget_miss_rate": 0.05823627287853577
+    },
+    {
+      "scene": 4,
+      "frames": 753,
+      "actual_update_fps": 30.16032539140843,
+      "present_intervals": {
+        "median_us": 33334.0,
+        "p95_us": 33345,
+        "worst_us": 50012,
+        "over_33_333ms_rate": 0.5026595744680851
+      },
+      "deadline_miss_rate": 0.0013280212483399733,
+      "relative_call_budget_miss_rate": 0.0013280212483399733
+    },
+    {
+      "scene": 5,
+      "frames": 758,
+      "actual_update_fps": 30.30009623582745,
+      "present_intervals": {
+        "median_us": 33333,
+        "p95_us": 33345,
+        "worst_us": 50007,
+        "over_33_333ms_rate": 0.48877146631439894
+      },
+      "deadline_miss_rate": 0.0,
+      "relative_call_budget_miss_rate": 0.0
+    },
+    {
+      "scene": 6,
+      "frames": 500,
+      "actual_update_fps": 25.054322440493852,
+      "present_intervals": {
+        "median_us": 33337,
+        "p95_us": 66666,
+        "worst_us": 83337,
+        "over_33_333ms_rate": 0.6452905811623246
+      },
+      "deadline_miss_rate": 0.316,
+      "relative_call_budget_miss_rate": 0.316
+    },
+    {
+      "scene": 7,
+      "frames": 300,
+      "actual_update_fps": 29.999881605818413,
+      "present_intervals": {
+        "median_us": 33334,
+        "p95_us": 33347,
+        "worst_us": 83345,
+        "over_33_333ms_rate": 0.5117056856187291
+      },
+      "deadline_miss_rate": 0.006666666666666667,
+      "relative_call_budget_miss_rate": 0.006666666666666667
+    }
+  ],
+  "transitions": [
+    {
+      "from_scene": 0,
+      "to_scene": 1,
+      "present_gap_us": 49997,
+      "next_draw_gap_us": 19086
+    },
+    {
+      "from_scene": 1,
+      "to_scene": 2,
+      "present_gap_us": 50000,
+      "next_draw_gap_us": 9046
+    },
+    {
+      "from_scene": 2,
+      "to_scene": 3,
+      "present_gap_us": 50005,
+      "next_draw_gap_us": 1011
+    },
+    {
+      "from_scene": 3,
+      "to_scene": 4,
+      "present_gap_us": 50009,
+      "next_draw_gap_us": 16134
+    },
+    {
+      "from_scene": 4,
+      "to_scene": 5,
+      "present_gap_us": 16656,
+      "next_draw_gap_us": 1010
+    },
+    {
+      "from_scene": 5,
+      "to_scene": 6,
+      "present_gap_us": 83346,
+      "next_draw_gap_us": 20092
+    },
+    {
+      "from_scene": 6,
+      "to_scene": 7,
+      "present_gap_us": 33338,
+      "next_draw_gap_us": 1014
+    }
+  ],
+  "timing": "CPU-observed SDK PRESENT completion after DONE/tag/error/ack, not HDMI scanout timestamp",
+  "absolute_deadline_miss": "requires selected scheduler deadline; call-budget miss is reported separately",
+  "cpu_headroom": "NOT MEASURED",
+  "release_ready": false
+}

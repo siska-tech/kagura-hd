@@ -1,0 +1,11 @@
+WINDOW pattern=0 writes=1024 DI512=0 upload512=0 idleTX512=0
+WINDOW pattern=1 writes=1024 DI512=64000 upload512=512 idleTX512=512
+WINDOW pattern=2 writes=1024 DI512=32000 upload512=256 idleTX512=256
+WINDOW pattern=3 writes=1024 DI512=32000 upload512=256 idleTX512=256
+WINDOW pattern=4 writes=1024 DI512=31744 upload512=256 idleTX512=256
+WINDOW pattern=5 writes=1024 DI512=31754 upload512=4125 idleTX512=4125
+PASS window activity and per-byte contents
+- diagnostics/pcm-stream-rc1/design-audit/tb_window_activity.sv:70: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 335us; walltime 0.129 s; speed 2.681 ms/s
+- Verilator: cpu 0.125 s on 1 threads; alloced 121 MB

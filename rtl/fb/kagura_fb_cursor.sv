@@ -4,7 +4,7 @@
 // shape/palette/hotspot through the bundled-data toggle/ack mailbox. Position
 // commits coalesce in one latest-value slot while a vblank update is pending.
 // Resets must assert together. Physical CDC signoff remains a board obligation.
-module kagura_fb_cursor(
+module kagura_fb_cursor #(parameter bit PIPELINE_MAILBOX=0) (
  input wire sys_clk,sys_reset,pix_clk,pix_reset,
  input wire req_valid,req_write,input wire [4:0] req_addr,input wire [7:0] req_wdata,
  output wire req_ready,output reg rsp_valid,rsp_error,output reg [7:0] rsp_data,output wire irq,
@@ -137,6 +137,22 @@ module kagura_fb_cursor(
   end
  end
  reg signed [11:0] position_x,position_y;
+ // The held bundle remains stable until the acknowledgement returns. The
+ // two request synchronizer stages leave a complete PIX edge to sample data
+ // before its qualified vblank commit. This adds a data-path stage without
+ // delaying the mailbox application/ack edge or changing bundle coherence.
+ wire [25:0] apply_bundle;
+ wire [35:0] apply_colors;
+ generate if(PIPELINE_MAILBOX) begin: sample_mailbox
+  reg [61:0] value;
+  always @(posedge pix_clk)
+   if(pix_reset) value<=0;
+   else value<={held_colors,held};
+  assign {apply_colors,apply_bundle}=value;
+ end else begin: direct_mailbox
+  assign apply_bundle=held;
+  assign apply_colors=held_colors;
+ end endgenerate
  reg active_bank,visible,vblank;
  reg [35:0] pixel_colors;
  always @(posedge pix_clk) begin
@@ -147,10 +163,10 @@ module kagura_fb_cursor(
    request_sync<={request_sync[0],request_toggle};
    vblank<=cx==1649 && cy==719;
    if(vblank && request_sync[1]!=seen) begin
-    position_x<=held[11:0];position_y<=held[23:12];active_bank<=held[25];visible<=held[24];
+    position_x<=apply_bundle[11:0];position_y<=apply_bundle[23:12];active_bank<=apply_bundle[25];visible<=apply_bundle[24];
     // Palette is snapshotted with the SYS mailbox. Its selection must
     // not share the 10 ns bundled-data crossing with a 36-bit pixel mux.
-    pixel_colors<=held_colors;
+    pixel_colors<=apply_colors;
     seen<=request_sync[1];ack<=request_sync[1];
    end
   end

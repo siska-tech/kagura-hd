@@ -1,0 +1,1863 @@
+{
+ "note": "Only cells appearing in the 25+25+25 reported setup/hold/recovery path details; not a full placement.",
+ "summary": {
+  "A": {
+   "tmds_ch0": {
+    "n": 6,
+    "rows": [
+     5,
+     20
+    ],
+    "cols": [
+     26,
+     45
+    ],
+    "centroid": [
+     13.5,
+     39.7
+    ]
+   },
+   "tmds_ch1": {
+    "n": 9,
+    "rows": [
+     6,
+     16
+    ],
+    "cols": [
+     39,
+     42
+    ],
+    "centroid": [
+     9.7,
+     40.7
+    ]
+   },
+   "tmds_ch2": {
+    "n": 14,
+    "rows": [
+     7,
+     15
+    ],
+    "cols": [
+     33,
+     46
+    ],
+    "centroid": [
+     9.8,
+     41.5
+    ]
+   },
+   "audio_packets": {
+    "n": 6,
+    "rows": [
+     5,
+     7
+    ],
+    "cols": [
+     31,
+     39
+    ],
+    "centroid": [
+     6.0,
+     35.3
+    ]
+   },
+   "packet_assembler": {
+    "n": 5,
+    "rows": [
+     13,
+     13
+    ],
+    "cols": [
+     33,
+     33
+    ],
+    "centroid": [
+     13.0,
+     33.0
+    ]
+   },
+   "audio_fifo": {
+    "n": 108,
+    "rows": [
+     2,
+     18
+    ],
+    "cols": [
+     41,
+     46
+    ],
+    "centroid": [
+     4.7,
+     43.1
+    ]
+   },
+   "palette": {
+    "n": 9,
+    "rows": [
+     11,
+     18
+    ],
+    "cols": [
+     17,
+     29
+    ],
+    "centroid": [
+     15.7,
+     23.0
+    ]
+   },
+   "held_palette": {
+    "n": 9,
+    "rows": [
+     12,
+     27
+    ],
+    "cols": [
+     18,
+     29
+    ],
+    "centroid": [
+     20.1,
+     23.4
+    ]
+   },
+   "window_regs": {
+    "n": 1,
+    "rows": [
+     3,
+     3
+    ],
+    "cols": [
+     11,
+     11
+    ],
+    "centroid": [
+     3.0,
+     11.0
+    ]
+   },
+   "memory_tx": {
+    "n": 3,
+    "rows": [
+     2,
+     21
+    ],
+    "cols": [
+     4,
+     18
+    ],
+    "centroid": [
+     13.3,
+     10.3
+    ]
+   },
+   "hdmi_cx": {
+    "n": 2,
+    "rows": [
+     13,
+     13
+    ],
+    "cols": [
+     31,
+     31
+    ],
+    "centroid": [
+     13.0,
+     31.0
+    ]
+   },
+   "prefetch": {
+    "n": 3,
+    "rows": [
+     15,
+     17
+    ],
+    "cols": [
+     44,
+     44
+    ],
+    "centroid": [
+     15.7,
+     44.0
+    ]
+   }
+  },
+  "B": {
+   "tmds_ch0": {
+    "n": 37,
+    "rows": [
+     2,
+     25
+    ],
+    "cols": [
+     26,
+     46
+    ],
+    "centroid": [
+     14.9,
+     36.2
+    ]
+   },
+   "tmds_ch1": {
+    "n": 5,
+    "rows": [
+     20,
+     25
+    ],
+    "cols": [
+     41,
+     42
+    ],
+    "centroid": [
+     22.0,
+     41.2
+    ]
+   },
+   "tmds_ch2": {
+    "n": 16,
+    "rows": [
+     15,
+     27
+    ],
+    "cols": [
+     32,
+     45
+    ],
+    "centroid": [
+     21.7,
+     40.8
+    ]
+   },
+   "audio_packets": {
+    "n": 4,
+    "rows": [
+     20,
+     21
+    ],
+    "cols": [
+     27,
+     33
+    ],
+    "centroid": [
+     20.2,
+     31.5
+    ]
+   },
+   "packet_assembler": {
+    "n": 5,
+    "rows": [
+     23,
+     23
+    ],
+    "cols": [
+     30,
+     30
+    ],
+    "centroid": [
+     23.0,
+     30.0
+    ]
+   },
+   "audio_fifo": {
+    "n": 117,
+    "rows": [
+     4,
+     23
+    ],
+    "cols": [
+     31,
+     46
+    ],
+    "centroid": [
+     18.6,
+     41.9
+    ]
+   },
+   "palette": {
+    "n": 4,
+    "rows": [
+     14,
+     17
+    ],
+    "cols": [
+     8,
+     11
+    ],
+    "centroid": [
+     16.0,
+     9.2
+    ]
+   },
+   "held_palette": {
+    "n": 4,
+    "rows": [
+     13,
+     23
+    ],
+    "cols": [
+     3,
+     10
+    ],
+    "centroid": [
+     18.0,
+     7.0
+    ]
+   },
+   "memory_tx": {
+    "n": 1,
+    "rows": [
+     4,
+     4
+    ],
+    "cols": [
+     30,
+     30
+    ],
+    "centroid": [
+     4.0,
+     30.0
+    ]
+   },
+   "hdmi_cx": {
+    "n": 2,
+    "rows": [
+     18,
+     18
+    ],
+    "cols": [
+     27,
+     27
+    ],
+    "centroid": [
+     18.0,
+     27.0
+    ]
+   }
+  }
+ },
+ "cells": {
+  "A": {
+   "91.67%": [
+    "R12C11",
+    "R15C13",
+    "R15C15",
+    "R7C14",
+    "R7C16",
+    "R7C9"
+   ],
+   "93.06%": [
+    "R15C11"
+   ],
+   "94.44%": [
+    "R15C9",
+    "R8C11"
+   ],
+   "95.83%": [
+    "R13C7"
+   ],
+   "audio_endpoint": [
+    "R18C38[1][B]",
+    "R22C36[2][A]",
+    "R23C38[2][A]"
+   ],
+   "audio_endpoint/sync1_0_s0": [
+    "R18C38[1][A]"
+   ],
+   "audio_endpoint/sync1_1_s0": [
+    "R23C38[2][B]"
+   ],
+   "audio_endpoint/sync1_2_s0": [
+    "R22C36[2][A]"
+   ],
+   "audio_endpoint/sync2_0_s0": [
+    "R18C38[1][B]"
+   ],
+   "audio_endpoint/sync2_1_s0": [
+    "R23C38[2][A]"
+   ],
+   "clocks/pixel_div": [
+    "TOPSIDE[0]"
+   ],
+   "clocks/system_pll": [
+    "PLL_L"
+   ],
+   "core/cursor": [
+    "R4C27[1][B]",
+    "R5C23[2][A]",
+    "R5C24[0][A]",
+    "R5C24[0][B]"
+   ],
+   "core/cursor/ack_sync_0_s0": [
+    "R4C27[0][A]"
+   ],
+   "core/cursor/ack_sync_1_s0": [
+    "R4C27[1][B]"
+   ],
+   "core/cursor/ahead_y_4_s0": [
+    "R5C24[0][B]"
+   ],
+   "core/cursor/ahead_y_5_s0": [
+    "R5C24[0][A]"
+   ],
+   "core/cursor/ahead_y_9_s1": [
+    "R9C26[3][A]"
+   ],
+   "core/cursor/logical_y_3_s0": [
+    "R5C24[0][B]"
+   ],
+   "core/cursor/logical_y_4_s0": [
+    "R5C24[0][A]"
+   ],
+   "core/cursor/n2728_s2": [
+    "R9C25[1][A]"
+   ],
+   "core/cursor/request_sync_0_s0": [
+    "R5C23[2][A]"
+   ],
+   "core/cursor/request_toggle_s0": [
+    "R8C27[0][A]"
+   ],
+   "core/display": [
+    "R11C27[1][A]",
+    "R12C16[0][B]",
+    "R12C29[1][B]",
+    "R13C17[0][A]",
+    "R13C17[1][B]",
+    "R13C32[2][A]",
+    "R13C32[2][B]",
+    "R14C23[0][B]",
+    "R14C29[2][B]",
+    "R16C20[1][A]",
+    "R16C21[1][A]",
+    "R17C19[2][A]",
+    "R17C24[2][A]",
+    "R17C25[0][A]",
+    "R18C22[1][A]",
+    "R18C24[0][B]",
+    "R9C20[2][A]"
+   ],
+   "core/display/ax5_10_s2": [
+    "R9C26[0][B]"
+   ],
+   "core/display/ax5_10_s5": [
+    "R12C26[3][B]"
+   ],
+   "core/display/ax5_3_s0": [
+    "R9C20[2][A]"
+   ],
+   "core/display/ax5_3_s1": [
+    "R9C25[0][A]"
+   ],
+   "core/display/ax5_4_s4": [
+    "R12C25[2][B]"
+   ],
+   "core/display/ax5_5_s0": [
+    "R13C32[2][A]"
+   ],
+   "core/display/ax5_6_s0": [
+    "R13C32[2][B]"
+   ],
+   "core/display/ax5_7_s0": [
+    "R12C29[1][B]"
+   ],
+   "core/display/ax5_7_s1": [
+    "R12C26[2][B]"
+   ],
+   "core/display/ax5_8_s4": [
+    "R11C26[0][A]"
+   ],
+   "core/display/banks": [
+    "R11C17[1][B]"
+   ],
+   "core/display/banks/ack_sync_0_s0": [
+    "R11C17[1][A]"
+   ],
+   "core/display/banks/ack_sync_1_s0": [
+    "R11C17[1][B]"
+   ],
+   "core/display/fetch_row_1_s0": [
+    "R12C16[0][B]"
+   ],
+   "core/display/fetch_row_2_s0": [
+    "R13C17[0][A]"
+   ],
+   "core/display/fetch_row_4_s0": [
+    "R16C21[1][A]"
+   ],
+   "core/display/held_palette_122_s0": [
+    "R24C25[1][B]"
+   ],
+   "core/display/held_palette_17_s0": [
+    "R21C29[0][B]"
+   ],
+   "core/display/held_palette_181_s0": [
+    "R26C22[0][B]"
+   ],
+   "core/display/held_palette_24_s0": [
+    "R12C23[0][B]"
+   ],
+   "core/display/held_palette_34_s0": [
+    "R16C28[2][A]"
+   ],
+   "core/display/held_palette_37_s0": [
+    "R24C21[0][A]"
+   ],
+   "core/display/held_palette_52_s0": [
+    "R15C18[0][B]"
+   ],
+   "core/display/held_palette_5_s0": [
+    "R16C21[2][A]"
+   ],
+   "core/display/held_palette_74_s0": [
+    "R27C24[1][A]"
+   ],
+   "core/display/line_row_1_s1": [
+    "R12C20[1][B]"
+   ],
+   "core/display/line_row_2_s1": [
+    "R13C21[1][B]"
+   ],
+   "core/display/line_row_4_s1": [
+    "R11C21[2][B]"
+   ],
+   "core/display/palette_122_s0": [
+    "R17C24[2][A]"
+   ],
+   "core/display/palette_17_s0": [
+    "R16C20[1][A]"
+   ],
+   "core/display/palette_181_s0": [
+    "R17C25[0][A]"
+   ],
+   "core/display/palette_24_s0": [
+    "R11C27[1][A]"
+   ],
+   "core/display/palette_34_s0": [
+    "R14C29[2][B]"
+   ],
+   "core/display/palette_37_s0": [
+    "R18C22[1][A]"
+   ],
+   "core/display/palette_52_s0": [
+    "R13C17[1][B]"
+   ],
+   "core/display/palette_5_s0": [
+    "R17C19[2][A]"
+   ],
+   "core/display/palette_74_s0": [
+    "R18C24[0][B]"
+   ],
+   "core/display/present_ack_sync_0_s0": [
+    "R14C23[0][A]"
+   ],
+   "core/display/present_ack_sync_1_s0": [
+    "R14C23[0][B]"
+   ],
+   "core/display/scan_addr_1_s0": [
+    "R13C32[2][A]"
+   ],
+   "core/display/scan_addr_2_s0": [
+    "R13C32[2][B]"
+   ],
+   "core/display/scan_addr_3_s0": [
+    "R12C29[1][B]"
+   ],
+   "core/display/scan_shift_4_s0": [
+    "R9C20[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo": [
+    "R2C41[1][A]",
+    "R2C41[1][B]",
+    "R2C43[2][A]",
+    "R2C43[2][B]",
+    "R2C44[0][A]",
+    "R2C44[0][B]",
+    "R2C46[2][A]",
+    "R2C46[2][B]",
+    "R3C42[0][A]",
+    "R3C42[0][B]",
+    "R3C42[1][A]",
+    "R3C42[1][B]",
+    "R3C42[2][A]",
+    "R3C42[2][B]",
+    "R3C43[1][A]",
+    "R3C43[1][B]",
+    "R3C44[0][A]",
+    "R3C44[0][B]",
+    "R3C46[0][A]",
+    "R4C42[0][A]",
+    "R4C42[0][B]",
+    "R4C42[1][A]",
+    "R4C42[2][A]",
+    "R5C41[1][A]",
+    "R5C41[1][B]",
+    "R5C42[0][A]",
+    "R5C42[0][B]",
+    "R5C42[1][A]",
+    "R5C42[1][B]",
+    "R5C43[0][A]",
+    "R5C43[0][B]",
+    "R5C43[1][A]",
+    "R5C43[1][B]",
+    "R5C44[0][A]",
+    "R5C44[0][B]",
+    "R5C44[1][A]",
+    "R5C44[1][B]",
+    "R5C45[0][A]",
+    "R5C45[0][B]",
+    "R6C42[2][A]",
+    "R6C42[2][B]",
+    "R6C43[0][A]",
+    "R6C43[0][B]",
+    "R6C45[0][A]",
+    "R6C46[0][A]",
+    "R6C46[0][B]",
+    "R6C46[1][A]",
+    "R6C46[1][B]",
+    "R7C44[2][B]",
+    "R8C42[1][A]",
+    "R8C42[1][B]",
+    "R9C42[2][A]",
+    "R9C42[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/full_s0": [
+    "R5C41[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rb_0_s0": [
+    "R2C46[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rd_reset_1_s0": [
+    "R8C42[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_0_s0": [
+    "R6C46[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_12_s0": [
+    "R6C45[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_16_s0": [
+    "R5C45[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_17_s0": [
+    "R5C45[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_1_s0": [
+    "R6C46[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_20_s0": [
+    "R5C43[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_21_s0": [
+    "R5C43[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_22_s0": [
+    "R5C43[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_23_s0": [
+    "R5C43[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_24_s0": [
+    "R5C44[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_25_s0": [
+    "R5C44[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_26_s0": [
+    "R5C44[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_27_s0": [
+    "R5C44[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_28_s0": [
+    "R5C42[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_29_s0": [
+    "R5C42[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_2_s0": [
+    "R6C46[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_30_s0": [
+    "R5C42[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_31_s0": [
+    "R5C42[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_3_s0": [
+    "R6C46[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_valid_s0": [
+    "R3C44[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_0_s0": [
+    "R2C41[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_1_s0": [
+    "R2C41[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_3_s0": [
+    "R3C46[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_ahead_0_s0": [
+    "R2C44[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_ahead_1_s0": [
+    "R2C44[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_ahead_2_s0": [
+    "R2C46[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_ahead_3_s0": [
+    "R3C43[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_ahead_4_s0": [
+    "R3C43[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync1_0_s0": [
+    "R3C42[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync1_1_s0": [
+    "R3C42[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync1_2_s0": [
+    "R9C42[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync1_3_s0": [
+    "R4C42[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync2_0_s0": [
+    "R4C42[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync2_1_s0": [
+    "R4C42[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync2_2_s0": [
+    "R9C42[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/visible_wb_0_s0": [
+    "R3C42[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/visible_wb_1_s0": [
+    "R3C42[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/visible_wb_2_s0": [
+    "R3C42[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/visible_wb_3_s0": [
+    "R2C43[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/visible_wb_4_s0": [
+    "R4C42[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wb_1_s2": [
+    "R5C41[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wb_2_s0": [
+    "R6C42[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wb_3_s0": [
+    "R6C42[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/wb_4_s1": [
+    "R18C41[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_sync1_0_s0": [
+    "R6C43[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_sync1_1_s0": [
+    "R3C42[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_sync1_3_s0": [
+    "R2C43[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_sync1_4_s0": [
+    "R7C44[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_sync2_0_s0": [
+    "R6C43[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_sync2_3_s0": [
+    "R3C44[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wr_reset_0_s0": [
+    "R8C42[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/wr_reset_1_s0": [
+    "R8C42[1][A]"
+   ],
+   "core/hdmi/audio_link/muted_s2": [
+    "R2C42[0][B]"
+   ],
+   "core/hdmi/audio_link/starved_s0": [
+    "R2C39[0][A]"
+   ],
+   "core/hdmi/protocol/cx_3_s0": [
+    "R13C31[1][A]"
+   ],
+   "core/hdmi/protocol/cx_6_s0": [
+    "R13C31[2][B]"
+   ],
+   "core/hdmi/protocol/n1053_s2": [
+    "R11C31[1][B]"
+   ],
+   "core/hdmi/protocol/n127_s1": [
+    "R11C29[3][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel": [
+    "R17C41[0][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/mode2_0_s0": [
+    "R20C26[1][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n258_s2": [
+    "R5C45[3][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n323_s13": [
+    "R11C44[0][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n323_s16": [
+    "R11C41[3][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/tmds_2_s2": [
+    "R17C41[0][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[1].tmds_channel": [
+    "R16C39[1][B]",
+    "R6C41[2][A]",
+    "R7C42[1][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[1].tmds_channel/ctrl0_0_s0": [
+    "R16C39[1][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[1].tmds_channel/ctrl1_0_s0": [
+    "R16C39[1][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[1].tmds_channel/island1_0_s0": [
+    "R7C42[1][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[1].tmds_channel/island1_2_s0": [
+    "R6C41[2][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[1].tmds_channel/island2_0_s0": [
+    "R7C42[1][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[1].tmds_channel/island2_2_s0": [
+    "R6C41[2][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel": [
+    "R11C43[1][B]",
+    "R15C33[0][B]",
+    "R7C43[1][A]",
+    "R7C43[1][B]",
+    "R8C46[1][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/island0_0_s0": [
+    "R7C43[0][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/island0_2_s0": [
+    "R15C33[0][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/island1_0_s0": [
+    "R7C43[1][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/island1_2_s0": [
+    "R15C33[0][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/island1_3_s0": [
+    "R11C43[0][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/island2_0_s0": [
+    "R7C43[1][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/island2_3_s0": [
+    "R11C43[1][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/qm1_8_s0": [
+    "R8C46[1][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/qm2_8_s0": [
+    "R8C46[1][A]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.audio_packets": [
+    "R5C36[0][A]",
+    "R7C39[0][A]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.audio_packets/audio_sent_s1": [
+    "R5C36[0][A]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.audio_packets/audio_sent_s6": [
+    "R5C31[3][B]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.audio_packets/spd_sent_s1": [
+    "R7C39[0][A]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.audio_packets/spd_sent_s4": [
+    "R7C31[3][B]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.packet_assembler": [
+    "R13C33[1][A]",
+    "R13C33[1][B]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.packet_assembler/parity[1]_3_s0": [
+    "R13C33[1][B]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.packet_assembler/parity[3]_6_s0": [
+    "R13C33[1][A]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.packet_assembler/tail28_s1": [
+    "R13C33[2][A]"
+   ],
+   "core/memory_ctrl": [
+    "R15C8[0][A]",
+    "R15C8[0][B]",
+    "R17C8[0][A]",
+    "R21C4[0][A]",
+    "R21C4[0][B]",
+    "R21C9[2][A]",
+    "R23C9[1][A]",
+    "R2C18[0][A]"
+   ],
+   "core/memory_ctrl/n2212_s2": [
+    "R15C18[1][B]"
+   ],
+   "core/memory_ctrl/n2245_s0": [
+    "R21C9[2][A]"
+   ],
+   "core/memory_ctrl/n2245_s1": [
+    "R13C9[2][A]"
+   ],
+   "core/memory_ctrl/n2284_s0": [
+    "R2C18[0][A]"
+   ],
+   "core/memory_ctrl/n2284_s1": [
+    "R6C17[2][A]"
+   ],
+   "core/memory_ctrl/n2785_s3": [
+    "R7C20[3][A]"
+   ],
+   "core/memory_ctrl/read_half_12_s0": [
+    "R21C4[2][B]"
+   ],
+   "core/memory_ctrl/read_half_15_s0": [
+    "R15C8[1][B]"
+   ],
+   "core/memory_ctrl/read_half_3_s0": [
+    "R23C9[2][A]"
+   ],
+   "core/memory_ctrl/read_half_4_s0": [
+    "R21C4[2][A]"
+   ],
+   "core/memory_ctrl/read_half_6_s0": [
+    "R17C8[2][B]"
+   ],
+   "core/memory_ctrl/read_half_7_s0": [
+    "R15C8[1][A]"
+   ],
+   "core/memory_ctrl/rword_data_12_s0": [
+    "R21C4[0][B]"
+   ],
+   "core/memory_ctrl/rword_data_15_s0": [
+    "R15C8[0][B]"
+   ],
+   "core/memory_ctrl/rword_data_3_s0": [
+    "R23C9[1][A]"
+   ],
+   "core/memory_ctrl/rword_data_4_s0": [
+    "R21C4[0][A]"
+   ],
+   "core/memory_ctrl/rword_data_6_s0": [
+    "R17C8[0][A]"
+   ],
+   "core/memory_ctrl/rword_data_7_s0": [
+    "R15C8[0][A]"
+   ],
+   "core/memory_ctrl/tx_423_s1": [
+    "R2C18[0][A]"
+   ],
+   "core/memory_ctrl/tx_462_s1": [
+    "R21C9[2][A]"
+   ],
+   "core/memory_ctrl/tx_load_s0": [
+    "R17C4[2][A]"
+   ],
+   "core/pix_release_2_s0": [
+    "R6C38[2][A]"
+   ],
+   "core/prefetch": [
+    "R15C44"
+   ],
+   "core/prefetch/buffer1_buffer1_1_1_s": [
+    "R15C44"
+   ],
+   "core/prefetch/wr_ptr[1]_1_s1": [
+    "R17C44[2][B]"
+   ],
+   "host": [
+    "R23C39[1][B]",
+    "R9C15[1][B]"
+   ],
+   "host/audio_sync_0_s0": [
+    "R23C39[1][B]"
+   ],
+   "host/base_addr_3_s0": [
+    "R14C25[0][A]"
+   ],
+   "host/commands/engine_x_2_s0": [
+    "R23C24[0][A]"
+   ],
+   "host/commands/fill": [
+    "R27C21[1][A]"
+   ],
+   "host/commands/fill/end_byte_7_s0": [
+    "R27C21[1][A]"
+   ],
+   "host/commands/fill/ex_2_s": [
+    "R25C27[1][A]"
+   ],
+   "host/commands/fill/ex_3_s": [
+    "R25C27[1][B]"
+   ],
+   "host/commands/fill/fill_color_2_s0": [
+    "R22C21[1][A]"
+   ],
+   "host/commands/fill/rounded_end_4_s4": [
+    "R25C26[1][B]"
+   ],
+   "host/commands/fill/rounded_end_7_s4": [
+    "R25C24[3][B]"
+   ],
+   "host/commands/fill/rounded_end_8_s3": [
+    "R27C22[1][A]"
+   ],
+   "host/registers": [
+    "R17C15[2][B]",
+    "R3C11[1][B]"
+   ],
+   "host/registers/cpu_write_word_22_s1": [
+    "R3C12[3][B]"
+   ],
+   "host/registers/cpu_write_word_22_s2": [
+    "R3C11[1][B]"
+   ],
+   "host/registers/n2770_s13": [
+    "R3C16[3][B]"
+   ],
+   "host/registers/n4427_s1": [
+    "R13C15[3][B]"
+   ],
+   "host/registers/n4427_s6": [
+    "R15C13[0][A]"
+   ],
+   "host/registers/n5060_s3": [
+    "R4C15[1][A]"
+   ],
+   "host/registers/n5200_s1": [
+    "R17C15[2][B]"
+   ],
+   "host/registers/n5200_s4": [
+    "R17C15[2][A]"
+   ],
+   "host/registers/n5200_s6": [
+    "R7C15[1][B]"
+   ],
+   "host/registers/sticky_error_1_s1": [
+    "R17C15[2][B]"
+   ],
+   "host/registers/window_write_word_22_s0": [
+    "R3C11[1][B]"
+   ],
+   "host/video_sync_0_s0": [
+    "R9C15[1][A]"
+   ],
+   "host/video_sync_1_s0": [
+    "R9C15[1][B]"
+   ],
+   "n794_s3": [
+    "R23C39[1][B]"
+   ]
+  },
+  "B": {
+   "87.50%": [
+    "R10C11",
+    "R10C17",
+    "R11C27",
+    "R11C30",
+    "R12C37",
+    "R5C11",
+    "R9C14"
+   ],
+   "90.28%": [
+    "R13C17",
+    "R5C12",
+    "R8C32"
+   ],
+   "audio_endpoint": [
+    "R11C41[2][A]",
+    "R6C42[2][A]",
+    "R9C42[2][A]"
+   ],
+   "audio_endpoint/registers/snapshot_pcm_r_12_s0": [
+    "R6C41[1][B]"
+   ],
+   "audio_endpoint/sync1_0_s0": [
+    "R11C41[2][A]"
+   ],
+   "audio_endpoint/sync1_1_s0": [
+    "R6C42[2][B]"
+   ],
+   "audio_endpoint/sync1_2_s0": [
+    "R9C42[2][A]"
+   ],
+   "audio_endpoint/sync2_1_s0": [
+    "R6C42[2][A]"
+   ],
+   "clocks/pixel_div": [
+    "TOPSIDE[0]"
+   ],
+   "clocks/system_pll": [
+    "PLL_L"
+   ],
+   "core": [
+    "R3C39[2][B]"
+   ],
+   "core/cursor": [
+    "R13C15[2][A]",
+    "R18C21[2][A]",
+    "R20C18[1][A]"
+   ],
+   "core/cursor/delta_active_s0": [
+    "R20C18[1][A]"
+   ],
+   "core/cursor/held_4_s1": [
+    "R20C25[1][B]"
+   ],
+   "core/cursor/held_colors_29_s1": [
+    "R17C15[1][B]"
+   ],
+   "core/cursor/n2728_s1": [
+    "R20C26[0][B]"
+   ],
+   "core/cursor/sample_mailbox.value_4_s0": [
+    "R18C21[2][A]"
+   ],
+   "core/cursor/sample_mailbox.value_55_s0": [
+    "R13C15[2][A]"
+   ],
+   "core/cursor/visible_s0": [
+    "R20C18[0][B]"
+   ],
+   "core/display": [
+    "R14C9[0][B]",
+    "R16C8[1][A]",
+    "R17C11[2][A]",
+    "R17C9[0][B]",
+    "R24C25[0][A]",
+    "R24C25[1][A]",
+    "R24C25[1][B]",
+    "R24C25[2][A]",
+    "R24C25[2][B]",
+    "R25C13[1][A]",
+    "R25C26[1][B]"
+   ],
+   "core/display/ax5_10_s5": [
+    "R24C27[1][A]"
+   ],
+   "core/display/banks": [
+    "R23C25[2][A]"
+   ],
+   "core/display/banks/ack_sync_0_s0": [
+    "R23C25[2][B]"
+   ],
+   "core/display/banks/ack_sync_1_s0": [
+    "R23C25[2][A]"
+   ],
+   "core/display/fetch_generation_10_s0": [
+    "R25C26[1][B]"
+   ],
+   "core/display/held_palette_106_s0": [
+    "R23C6[0][B]"
+   ],
+   "core/display/held_palette_119_s0": [
+    "R18C10[0][B]"
+   ],
+   "core/display/held_palette_162_s0": [
+    "R13C3[0][A]"
+   ],
+   "core/display/held_palette_82_s0": [
+    "R18C9[2][B]"
+   ],
+   "core/display/line_generation_10_s1": [
+    "R23C23[2][B]"
+   ],
+   "core/display/line_page_s3": [
+    "R27C22[3][A]"
+   ],
+   "core/display/line_row_0_s1": [
+    "R24C25[0][A]"
+   ],
+   "core/display/line_row_1_s1": [
+    "R24C25[1][A]"
+   ],
+   "core/display/line_row_2_s1": [
+    "R24C25[2][B]"
+   ],
+   "core/display/line_row_5_s1": [
+    "R24C25[1][B]"
+   ],
+   "core/display/line_row_6_s1": [
+    "R24C25[2][A]"
+   ],
+   "core/display/n1239_s3": [
+    "R22C25[3][B]"
+   ],
+   "core/display/n1953_s2": [
+    "R20C26[3][A]"
+   ],
+   "core/display/n3259_s1": [
+    "R22C23[3][A]"
+   ],
+   "core/display/n3259_s2": [
+    "R22C23[2][A]"
+   ],
+   "core/display/next_row_2_s0": [
+    "R22C23[2][A]"
+   ],
+   "core/display/palette_106_s0": [
+    "R17C9[0][B]"
+   ],
+   "core/display/palette_119_s0": [
+    "R17C11[2][A]"
+   ],
+   "core/display/palette_162_s0": [
+    "R14C9[0][B]"
+   ],
+   "core/display/palette_82_s0": [
+    "R16C8[1][A]"
+   ],
+   "core/display/present_ack_sync_0_s0": [
+    "R25C13[1][B]"
+   ],
+   "core/display/present_ack_sync_1_s0": [
+    "R25C13[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo": [
+    "R12C31[2][A]",
+    "R14C33[2][B]",
+    "R15C45[0][A]",
+    "R15C45[0][B]",
+    "R15C45[1][A]",
+    "R15C45[1][B]",
+    "R16C34[2][A]",
+    "R16C34[2][B]",
+    "R16C36[0][A]",
+    "R16C36[0][B]",
+    "R16C40[0][A]",
+    "R16C40[0][B]",
+    "R16C40[1][A]",
+    "R16C40[1][B]",
+    "R16C40[2][A]",
+    "R16C41[2][A]",
+    "R16C41[2][B]",
+    "R16C46[1][A]",
+    "R16C46[1][B]",
+    "R17C44[0][A]",
+    "R17C44[0][B]",
+    "R17C44[1][A]",
+    "R17C44[1][B]",
+    "R17C44[2][A]",
+    "R17C44[2][B]",
+    "R20C38[2][A]",
+    "R20C38[2][B]",
+    "R20C44[2][A]",
+    "R20C46[1][A]",
+    "R20C46[1][B]",
+    "R21C42[0][A]",
+    "R21C42[0][B]",
+    "R21C42[1][A]",
+    "R21C42[1][B]",
+    "R21C45[2][A]",
+    "R22C43[0][A]",
+    "R22C43[0][B]",
+    "R22C43[1][A]",
+    "R22C43[1][B]",
+    "R23C43[0][A]",
+    "R23C43[0][B]",
+    "R23C43[1][A]",
+    "R23C43[1][B]",
+    "R23C44[0][A]",
+    "R23C44[0][B]",
+    "R23C44[1][A]",
+    "R23C44[1][B]",
+    "R23C45[0][A]",
+    "R23C45[0][B]",
+    "R23C45[1][A]",
+    "R23C45[1][B]",
+    "R23C46[0][A]",
+    "R23C46[0][B]",
+    "R23C46[1][A]",
+    "R23C46[1][B]",
+    "R4C32[2][A]",
+    "R4C32[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/empty_s0": [
+    "R21C42[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rb_0_s0": [
+    "R16C40[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rb_1_s0": [
+    "R22C43[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rb_2_s0": [
+    "R22C43[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rb_3_s0": [
+    "R22C43[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rb_4_s0": [
+    "R22C43[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rd_reset_1_s0": [
+    "R21C44[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_10_s0": [
+    "R15C45[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_11_s0": [
+    "R15C45[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_12_s0": [
+    "R23C43[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_13_s0": [
+    "R23C43[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_14_s0": [
+    "R23C43[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_15_s0": [
+    "R23C43[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_16_s0": [
+    "R23C46[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_17_s0": [
+    "R23C46[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_18_s0": [
+    "R23C46[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_19_s0": [
+    "R23C46[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_20_s0": [
+    "R23C45[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_21_s0": [
+    "R23C45[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_22_s0": [
+    "R23C45[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_23_s0": [
+    "R23C45[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_4_s0": [
+    "R23C44[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_5_s0": [
+    "R23C44[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_6_s0": [
+    "R23C44[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_7_s0": [
+    "R23C44[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_8_s0": [
+    "R15C45[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/read_data_9_s0": [
+    "R15C45[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/read_valid_s0": [
+    "R21C42[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_0_s0": [
+    "R16C40[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_1_s0": [
+    "R16C40[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_2_s0": [
+    "R17C44[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_3_s0": [
+    "R16C41[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_4_s0": [
+    "R16C41[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_ahead_0_s0": [
+    "R16C40[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_ahead_1_s0": [
+    "R16C40[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_ahead_2_s0": [
+    "R17C44[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_ahead_3_s0": [
+    "R16C46[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_ahead_4_s0": [
+    "R16C46[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync1_0_s0": [
+    "R12C31[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync1_1_s0": [
+    "R4C32[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync1_3_s0": [
+    "R14C33[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync1_4_s0": [
+    "R17C44[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync2_0_s0": [
+    "R12C31[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync2_1_s0": [
+    "R4C32[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync2_3_s0": [
+    "R14C33[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/rg_sync2_4_s0": [
+    "R17C44[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/visible_wb_0_s0": [
+    "R21C45[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wb_2_s0": [
+    "R16C34[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/wb_3_s0": [
+    "R16C36[0][B]"
+   ],
+   "core/hdmi/audio_link/fifo/wb_4_s0": [
+    "R16C36[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_1_s0": [
+    "R16C34[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_sync1_0_s0": [
+    "R21C42[0][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_sync1_1_s0": [
+    "R20C44[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_sync1_3_s0": [
+    "R20C38[2][B]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_sync1_4_s0": [
+    "R20C46[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_sync2_0_s0": [
+    "R21C42[1][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_sync2_3_s0": [
+    "R20C38[2][A]"
+   ],
+   "core/hdmi/audio_link/fifo/wg_sync2_4_s0": [
+    "R20C46[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/wr_reset_0_s0": [
+    "R17C44[1][B]"
+   ],
+   "core/hdmi/audio_link/fifo/wr_reset_1_s0": [
+    "R17C44[1][A]"
+   ],
+   "core/hdmi/audio_link/muted_s2": [
+    "R21C46[1][B]"
+   ],
+   "core/hdmi/audio_link/starved_s0": [
+    "R21C45[0][A]"
+   ],
+   "core/hdmi/protocol": [
+    "R21C27[0][A]"
+   ],
+   "core/hdmi/protocol/control_data_1_s0": [
+    "R21C27[0][A]"
+   ],
+   "core/hdmi/protocol/cx_3_s0": [
+    "R18C27[1][A]"
+   ],
+   "core/hdmi/protocol/cx_5_s0": [
+    "R18C27[2][A]"
+   ],
+   "core/hdmi/protocol/n127_s1": [
+    "R18C28[3][A]"
+   ],
+   "core/hdmi/protocol/n127_s4": [
+    "R20C28[1][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel": [
+    "R11C44[2][B]",
+    "R2C36[2][A]",
+    "R2C36[2][B]",
+    "R3C32[0][B]",
+    "R4C35[1][A]",
+    "R9C30[1][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/acc_add_4_s5": [
+    "R25C44[2][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/ctrl2_1_s0": [
+    "R9C27[1][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/island2_3_s0": [
+    "R11C29[2][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/mode2_0_s0": [
+    "R11C28[2][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/mode2_1_s0": [
+    "R8C26[2][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n316_s11": [
+    "R17C32[0][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n316_s12": [
+    "R18C32[1][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n318_s14": [
+    "R22C31[1][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n319_s13": [
+    "R21C41[3][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n319_s15": [
+    "R21C41[3][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n319_s17": [
+    "R22C41[3][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n319_s18": [
+    "R21C41[2][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n320_s10": [
+    "R18C38[3][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n320_s11": [
+    "R22C39[3][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n320_s14": [
+    "R22C39[0][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n322_s11": [
+    "R22C40[2][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n322_s13": [
+    "R17C33[2][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n322_s14": [
+    "R22C41[0][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n323_s12": [
+    "R23C30[2][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n323_s14": [
+    "R23C40[3][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n323_s17": [
+    "R23C40[1][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n323_s19": [
+    "R23C44[3][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n323_s20": [
+    "R23C40[3][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/n325_s10": [
+    "R23C30[2][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/positive2_s0": [
+    "R24C46[1][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/tmds_0_s1": [
+    "R4C35[1][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/tmds_2_s2": [
+    "R9C30[1][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/tmds_3_s1": [
+    "R2C36[2][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/tmds_5_s1": [
+    "R2C36[2][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/tmds_6_s2": [
+    "R11C44[2][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[0].tmds_channel/tmds_9_s2": [
+    "R3C32[0][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[1].tmds_channel": [
+    "R20C41[2][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[1].tmds_channel/n320_s12": [
+    "R20C41[2][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[1].tmds_channel/n320_s13": [
+    "R25C42[3][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[1].tmds_channel/n320_s14": [
+    "R25C41[2][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[1].tmds_channel/tmds_5_s1": [
+    "R20C41[2][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel": [
+    "R15C32[1][A]",
+    "R17C45[1][A]",
+    "R25C43[1][B]",
+    "R26C44[2][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/ctrl1_0_s0": [
+    "R17C45[0][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/ctrl2_0_s0": [
+    "R17C45[1][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/island0_0_s0": [
+    "R15C32[1][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/island0_2_s0": [
+    "R25C43[2][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/island1_0_s0": [
+    "R15C32[1][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/island1_2_s0": [
+    "R25C43[1][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/n258_s1": [
+    "R23C34[3][B]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/n322_s13": [
+    "R26C44[2][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/n322_s15": [
+    "R26C43[2][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/n323_s16": [
+    "R22C39[1][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/n325_s13": [
+    "R27C44[2][A]"
+   ],
+   "core/hdmi/protocol/tmds_gen[2].tmds_channel/tmds_3_s1": [
+    "R26C44[2][A]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.audio_packets": [
+    "R20C33[2][A]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.audio_packets/audio_sent_s1": [
+    "R20C33[2][A]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.audio_packets/audio_sent_s3": [
+    "R20C33[3][A]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.audio_packets/audio_sent_s4": [
+    "R21C27[1][A]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.packet_assembler": [
+    "R23C30[2][A]",
+    "R23C30[2][B]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.packet_assembler/parity[0]_3_s0": [
+    "R23C30[2][A]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.packet_assembler/parity[0]_5_s0": [
+    "R23C30[2][B]"
+   ],
+   "core/hdmi/protocol/true_hdmi_output.packet_assembler/tail28_s1": [
+    "R23C30[1][A]"
+   ],
+   "core/hdmi/protocol/vsync_s0": [
+    "R21C27[0][A]"
+   ],
+   "core/hdmi/protocol/vsync_s1": [
+    "R20C22[3][B]"
+   ],
+   "core/hdmi/protocol/vsync_s3": [
+    "R20C22[1][B]"
+   ],
+   "core/hdmi/protocol/vsync_s4": [
+    "R20C26[1][A]"
+   ],
+   "core/memory_ctrl": [
+    "R4C30[1][A]",
+    "R7C15[1][A]",
+    "R7C15[1][B]",
+    "R8C15[2][B]",
+    "R9C14[2][A]",
+    "R9C15[1][A]",
+    "R9C15[1][B]",
+    "R9C19[2][A]"
+   ],
+   "core/memory_ctrl/n2991_s0": [
+    "R4C30[1][A]"
+   ],
+   "core/memory_ctrl/n2991_s1": [
+    "R4C35[3][B]"
+   ],
+   "core/memory_ctrl/n3564_s11": [
+    "R13C13[3][A]"
+   ],
+   "core/memory_ctrl/read_half_0_s0": [
+    "R8C15[1][A]"
+   ],
+   "core/memory_ctrl/read_half_12_s0": [
+    "R9C15[2][B]"
+   ],
+   "core/memory_ctrl/read_half_14_s0": [
+    "R7C15[2][A]"
+   ],
+   "core/memory_ctrl/read_half_15_s0": [
+    "R7C15[0][B]"
+   ],
+   "core/memory_ctrl/read_half_2_s0": [
+    "R9C14[1][A]"
+   ],
+   "core/memory_ctrl/read_half_4_s0": [
+    "R9C19[1][A]"
+   ],
+   "core/memory_ctrl/read_half_6_s0": [
+    "R9C15[2][A]"
+   ],
+   "core/memory_ctrl/rword_data_0_s0": [
+    "R8C15[2][B]"
+   ],
+   "core/memory_ctrl/rword_data_12_s0": [
+    "R9C15[1][B]"
+   ],
+   "core/memory_ctrl/rword_data_14_s0": [
+    "R7C15[1][A]"
+   ],
+   "core/memory_ctrl/rword_data_15_s0": [
+    "R7C15[1][B]"
+   ],
+   "core/memory_ctrl/rword_data_2_s0": [
+    "R9C14[2][A]"
+   ],
+   "core/memory_ctrl/rword_data_4_s0": [
+    "R9C19[2][A]"
+   ],
+   "core/memory_ctrl/rword_data_6_s0": [
+    "R9C15[1][A]"
+   ],
+   "core/memory_ctrl/tx_281_s0": [
+    "R4C30[1][A]"
+   ],
+   "core/pix_release_2_s0": [
+    "R27C27[2][A]"
+   ],
+   "core/synth": [
+    "R6C41[2][B]"
+   ],
+   "core/synth/active_pcm_r_12_s0": [
+    "R6C41[2][B]"
+   ],
+   "core/sys_release_0_s0": [
+    "R3C39[2][A]"
+   ],
+   "core/sys_release_1_s0": [
+    "R3C39[2][B]"
+   ],
+   "host": [
+    "R13C34[2][A]",
+    "R13C34[2][B]"
+   ],
+   "host/audio_sync_0_s0": [
+    "R13C34[2][A]"
+   ],
+   "host/audio_sync_1_s0": [
+    "R13C34[2][B]"
+   ],
+   "host/commands": [
+    "R26C13[2][A]"
+   ],
+   "host/commands/engine_x_0_s0": [
+    "R17C3[3][B]"
+   ],
+   "host/commands/fill": [
+    "R27C5[1][A]"
+   ],
+   "host/commands/fill/end_byte_8_s0": [
+    "R27C5[1][A]"
+   ],
+   "host/commands/fill/ex_0_s": [
+    "R22C3[0][A]"
+   ],
+   "host/commands/fill/ex_1_s": [
+    "R22C3[0][B]"
+   ],
+   "host/commands/fill/rmw_s0": [
+    "R24C7[0][A]"
+   ],
+   "host/commands/fill/rounded_end_4_s4": [
+    "R23C5[3][A]"
+   ],
+   "host/commands/fill/rounded_end_7_s4": [
+    "R23C5[3][B]"
+   ],
+   "host/commands/fill/rounded_end_9_s2": [
+    "R23C4[3][A]"
+   ],
+   "host/commands/n1007_s0": [
+    "R26C13[2][A]"
+   ],
+   "host/commands/n1017_s1": [
+    "R18C11[0][B]"
+   ],
+   "host/commands/n1017_s4": [
+    "R13C11[0][A]"
+   ],
+   "host/commands/n1017_s7": [
+    "R13C8[1][A]"
+   ],
+   "host/commands/n1017_s9": [
+    "R18C11[3][B]"
+   ],
+   "host/commands/n883_s0": [
+    "R22C12[3][A]"
+   ],
+   "host/commands/present_ok_q_s0": [
+    "R26C13[2][A]"
+   ],
+   "host/transport": [
+    "R4C42[2][B]",
+    "R9C35[0][A]"
+   ],
+   "host/transport/io_sync0_2_s0": [
+    "R4C42[2][A]"
+   ],
+   "host/transport/io_sync0_3_s0": [
+    "R9C35[0][B]"
+   ],
+   "host/transport/io_sync1_2_s0": [
+    "R4C42[2][B]"
+   ],
+   "host/transport/io_sync1_3_s0": [
+    "R9C35[0][A]"
+   ],
+   "n784_s3": [
+    "R11C41[3][B]"
+   ]
+  }
+ }
+}

@@ -1,0 +1,9 @@
+{
+  "firmware_source_manifest_identical": true,
+  "source_files": 14,
+  "origin": "build/completion-burst-20261107",
+  "firmwares": {
+    "fw-baseline": "b100fc708260c3d1797df6fe4635d34a882af295095675d81784fc2677848ed0",
+    "fw-burst": "c83545b61127dba78944037543f80b849fd8d87b6cb41e1b2bbeed280d74b008"
+  }
+}

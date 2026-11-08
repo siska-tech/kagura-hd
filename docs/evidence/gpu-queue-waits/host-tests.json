@@ -1,0 +1,102 @@
+{
+  "hardware_tested": false,
+  "queue_cases": 12,
+  "pixel_comparisons": 45,
+  "default_sdk_tests": 30,
+  "audio_tests": 10,
+  "tests": [
+    {
+      "path": "build/queue-wait-tests/pack-0-metrics-0-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/queue-wait-tests/pack-0-metrics-0-normal.log",
+      "sha256": "fac35bd7f1df678f980744d02d677f160eaba8654a023aa5860715357bcc8d19",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\n"
+    },
+    {
+      "path": "build/queue-wait-tests/pack-0-metrics-0-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/queue-wait-tests/pack-0-metrics-1-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/queue-wait-tests/pack-0-metrics-1-normal.log",
+      "sha256": "64ee73a9c93d894f39118d8aad44697afbdb7c097fb641aaeeef3984a12edee6",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\nPASS sampled queue metric partition and reset\n"
+    },
+    {
+      "path": "build/queue-wait-tests/pack-0-metrics-1-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/queue-wait-tests/pack-1-metrics-0-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/queue-wait-tests/pack-1-metrics-0-normal.log",
+      "sha256": "fac35bd7f1df678f980744d02d677f160eaba8654a023aa5860715357bcc8d19",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\n"
+    },
+    {
+      "path": "build/queue-wait-tests/pack-1-metrics-0-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/queue-wait-tests/pack-1-metrics-1-error.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/queue-wait-tests/pack-1-metrics-1-normal.log",
+      "sha256": "64ee73a9c93d894f39118d8aad44697afbdb7c097fb641aaeeef3984a12edee6",
+      "result": "PASS queue wrap/full+DONE/barriers/clipping/tags/ordered ACK; 116 queued commands\nPASS sampled queue metric partition and reset\n"
+    },
+    {
+      "path": "build/queue-wait-tests/pack-1-metrics-1-tag.log",
+      "sha256": "3f04deb167a4a1993e0e5e1ad5006ad383005059b58583979f234d2b8daa77eb",
+      "result": "PASS queue first-fault latch; no replay; unexpected tag not ACKed\n"
+    },
+    {
+      "path": "build/queue-wait-tests/default-audio.log",
+      "sha256": "4953417aab84c5f724fae90ef047a24094aedf99179fe4023c23d308d690d15d",
+      "result": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.037s\n\nOK\n"
+    },
+    {
+      "path": "build/queue-wait-tests/default-sdk-0.log",
+      "sha256": "97f9a5edfc4b8f2a75155f3349d24684ab6794bede9cc85d9e4d022472efbdf4",
+      "result": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.443s\n\nOK\n"
+    },
+    {
+      "path": "build/queue-wait-tests/default-sdk-1.log",
+      "sha256": "6fb337424474c5d2ce3a5d51422d3c144dee05a48bf148cf49d069e8b9a87ed0",
+      "result": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.333s\n\nOK\n"
+    }
+  ],
+  "test_sources": [
+    {
+      "path": "software/beyond16/tests/queue_test.c",
+      "sha256": "12d7f2616e4887ae08e44ebc29b02ec2c7e792bc7b3f20bfd28db88ec6656d51"
+    },
+    {
+      "path": "software/beyond16/tools/test_gpu_queue.sh",
+      "sha256": "95580b3446e75badce00458476095a6dff9786abcb001c29ecfe0893d1eb82f3"
+    },
+    {
+      "path": "software/beyond16/tools/test_lettering.sh",
+      "sha256": "bddfd107d239403da600bdb29179665b1e5a335743b873d59eb51abf9fc7289c"
+    },
+    {
+      "path": "software/beyond16/tools/test_lettering.py",
+      "sha256": "bf806b6df69db87af385732130dfd6dd3593c6e40c55964e518a5b1215eb5f34"
+    }
+  ]
+}

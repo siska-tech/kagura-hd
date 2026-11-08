@@ -1,0 +1,3 @@
+// Small displacement of the original high-fanout LUT; frozen netlist only.
+INS_LOC "core/memory_ctrl/n2777_s2" R8C10[0][A];
+INS_LOC "core/display/palette_71_s0" R14C9[0][A];

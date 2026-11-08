@@ -1,0 +1,21 @@
+{
+  "source": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8/impl/pnr/kagura_fb_tr_content.html",
+  "sha256": "5d275c0f8f3a07b0245d7cda59e6d7527f95d5afbc884d66023a6063e11d3afb",
+  "critical_source": {
+    "cell": "core/memory_ctrl/state_0_s1",
+    "location": "R6C12[2][B]",
+    "fanout": 619
+  },
+  "critical_control": {
+    "cell": "core/memory_ctrl/n2777_s2",
+    "location": "R8C9[0][A]",
+    "fanout": 498
+  },
+  "critical_sink": {
+    "cell": "core/memory_ctrl/n3002_s1",
+    "location": "R2C41[2][A]"
+  },
+  "control_to_sink_wire_ns": 12.031,
+  "baseline_setup_slack_ns": 0.05,
+  "palette71_setup_slack_ns": 0.098
+}

@@ -1,0 +1,5 @@
+PASS A/B common 5MHz waveform: A CSR0 WRITE=2 B=0
+- ../tb_cs_filter.sv:101: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 24us; walltime 0.002 s; speed 9.747 ms/s
+- Verilator: cpu 0.002 s on 1 threads; alloced 121 MB

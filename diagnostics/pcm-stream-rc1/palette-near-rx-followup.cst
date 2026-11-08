@@ -1,0 +1,10 @@
+INS_LOC "core/display/held_palette_11_s0" R9C19[1][B];
+INS_LOC "core/display/palette_11_s0" R8C19[1][B];
+INS_LOC "core/display/held_palette_184_s0" R15C17[0][B];
+INS_LOC "core/display/palette_184_s0" R14C17[0][B];
+INS_LOC "core/display/held_palette_77_s0" R16C23[2][B];
+INS_LOC "core/display/palette_77_s0" R15C23[2][B];
+INS_LOC "core/display/held_palette_89_s0" R22C22[2][B];
+INS_LOC "core/display/palette_89_s0" R21C22[2][B];
+INS_LOC "core/display/held_palette_125_s0" R14C16[2][A];
+INS_LOC "core/display/palette_125_s0" R13C16[2][A];

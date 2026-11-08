@@ -1,0 +1,33 @@
+{
+  "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+  "setup_violated_endpoints": 11,
+  "hold_violated_endpoints": 0,
+  "worst": {
+    "Setup": {
+      "slack_ns": -1.225,
+      "from": "core/display/held_palette_162_s0/Q",
+      "to": "core/display/palette_162_s0/D"
+    },
+    "Hold": {
+      "slack_ns": 0.527,
+      "from": "core/cursor/visible_s0/Q",
+      "to": "core/cursor/delta_active_s0/RESET"
+    },
+    "Recovery": {
+      "slack_ns": 9.708,
+      "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+      "to": "core/hdmi/audio_link/fifo/read_valid_s0/CLEAR"
+    },
+    "Removal": {
+      "slack_ns": 1.249,
+      "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+      "to": "core/hdmi/audio_link/fifo/rg_ahead_2_s0/CLEAR"
+    }
+  },
+  "negative_analyses": [
+    "Setup"
+  ],
+  "boot_miso": null,
+  "release_ready": false,
+  "report_sha256": "b50d40779b696249dd332bc2dc552428943df2a160bf43ff320d56c2dd7bb611"
+}

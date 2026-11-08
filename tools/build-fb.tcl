@@ -8,14 +8,23 @@ set route_option [expr {[llength $argv]>2 ? [lindex $argv 2] : 2}]
 if {$place_option ni {0 1 2 3 4} || $route_option ni {0 1 2}} {
     error "Invalid placement/routing option"
 }
-puts "KAGURA_BUILD transport=$transport place_option=$place_option route_option=$route_option"
+set queue_depth [expr {[llength $argv]>3 ? [lindex $argv 3] : 1}]
+if {$queue_depth ni {1 2 4 8}} { error "Expected queue depth 1, 2, 4 or 8" }
+set audio_credits [expr {[llength $argv]>4 ? [lindex $argv 4] : 0}]
+if {$audio_credits ni {0 1}} { error "Expected audio credit predicate 0 or 1" }
+set packet_first [expr {[llength $argv]>5 ? [lindex $argv 5] : 0}]
+if {$packet_first ni {0 1}} { error "Expected packet first replication 0 or 1" }
+set opt_goal [expr {[llength $argv]>6 ? [lindex $argv 6] : "auto"}]
+if {$opt_goal ni {auto area timing}} { error "Expected synthesis goal auto, area or timing" }
+puts "KAGURA_BUILD transport=$transport place_option=$place_option route_option=$route_option queue_depth=$queue_depth"
 set config [file join [pwd] kagura_fb_config.sv]
 set configfile [open $config w]
-puts $configfile "package kagura_fb_config; localparam integer HOST_LANES=[expr {$transport eq {qspi} ? 4 : 1}]; endpackage"
+puts $configfile "package kagura_fb_config; localparam integer HOST_LANES=[expr {$transport eq {qspi} ? 4 : 1}], GPU_QUEUE_DEPTH=$queue_depth, GPU_AUDIO_CREDITS=$audio_credits, GPU_PACKET_FIRST=$packet_first; endpackage"
 close $configfile
 add_file -type verilog $config
 set_device -name GW1NR-9C GW1NR-LV9QN88PC6/I5
 set_option -verilog_std sysv2017
+set_option -opt_goal $opt_goal
 set listfile [open [file join $root rtl fb sources.f] r]
 foreach path [split [read $listfile] "\n"] {
     set path [string trim $path]

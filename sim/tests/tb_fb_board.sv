@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 // Board-top functional integration only: clocks, DDR PHY and LVDS pins are
 // stubbed. The real boot/host/core RTL talks to the independent CA model.
-package kagura_fb_config; localparam integer HOST_LANES=1; endpackage
+package kagura_fb_config; localparam integer HOST_LANES=1, GPU_QUEUE_DEPTH=1, GPU_AUDIO_CREDITS=0, GPU_PACKET_FIRST=0; endpackage
 package fb_board_io; logic [7:0] read_r,read_f; endpackage
 module kagura_nano9k_clocks #(parameter integer VIDEO_ID_CODE=4,PSRAM_CK_ENABLE=1)(
  input wire clk27,reset_n,output reg pixel=0,serial=0,system_clk=0,

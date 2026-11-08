@@ -1,11 +1,11 @@
 `timescale 1ns/1ps
-module tb_fb_command_bounds;
+module tb_fb_command_bounds #(parameter bit REGISTER_DECODE=0);
  reg clk=0,reset=1,valid=0;always #5 clk=~clk;
  reg [127:0] command=0;
  wire ready,done,host_valid,host_write,read_result;wire [7:0] error;wire [15:0] tag;
  wire [19:0] host_addr;wire [4:0] host_words;
  reg host_done=0;integer requests=0,cases=0;
- kagura_fb_commands dut(.clk,.reset,.valid,.ready,.command,.upload_data(512'd0),.done,.error,.tag,
+ kagura_fb_commands #(.REGISTER_DECODE(REGISTER_DECODE)) dut(.clk,.reset,.valid,.ready,.command,.upload_data(512'd0),.done,.error,.tag,
   .read_data(),.read_result,.host_valid,.host_ready(1'b1),.host_write,.host_addr,.host_words,.host_wdata(),.host_mask(),
   .host_done,.host_error(1'b0),.host_rdata(512'd0),.present_valid(),.present_ready(1'b1),.present_done(1'b0),.present_page(),.present_palette());
  always @(posedge clk) begin

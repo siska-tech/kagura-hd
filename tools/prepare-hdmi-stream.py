@@ -21,6 +21,8 @@ def replace_once(old, new):
     text = text.replace(old, new, 1)
 
 replace_once('module hdmi ', 'module kagura_hdmi_stream ')
+replace_once('    parameter int VIDEO_ID_CODE = 1,',
+             '    parameter int VIDEO_ID_CODE = 1,\n    parameter bit PACKET_REPLICATE_FIRST = 0,')
 replace_once('    input logic clk_audio,', '''    input logic sample_valid,
     input logic [31:0] sample_data,
     output wire sample_ready,''')
@@ -39,7 +41,8 @@ text = text[:start] + '''        kagura_audio_packets #(.VIDEO_ID_CODE(VIDEO_ID_
 replace_once('        tmds_channel #(.CN(i)) tmds_channel (', '        kagura_tmds_channel #(.CN(i)) tmds_channel (')
 # Same output sequence without the counter-indexed bit mux in front of the BCH
 # update; checked against the upstream module by sim/tests/tb_packet_assembler.sv.
-replace_once('        packet_assembler packet_assembler (', '        kagura_packet_assembler packet_assembler (')
+replace_once('        packet_assembler packet_assembler (',
+             '        kagura_packet_assembler #(.REPLICATE_FIRST(PACKET_REPLICATE_FIRST)) packet_assembler (')
 # Predict the packet-start pulse one pixel ahead. The registered pulse is
 # consumed at exactly the original cx, but the range/modulo decode no longer
 # chains into the audio scheduler's count and packet-selection enables.

@@ -1,0 +1,62 @@
+{
+  "hardware_tested": false,
+  "enabled_packets": 85522,
+  "enabled_island_pixels": 2735030,
+  "enabled_mid_packet_resets": 93,
+  "tests": [
+    {
+      "path": "build/packet-first/replica-0/seed-1.log",
+      "passed": true,
+      "sha256": "5E0A504AEFD9EF52116C9F1179C7F89AF9A11FAE94AA3B429A013B1AF0F5A63D",
+      "result": "PASS: packet assembler matches hdl-util, 28282 packets, 904466 island pixels, 31 resets"
+    },
+    {
+      "path": "build/packet-first/replica-0/seed-19.log",
+      "passed": true,
+      "sha256": "D7EE9D4B61FC707E5111894D579F0C74DEF86318A62D7BE9CE197E2619167D19",
+      "result": "PASS: packet assembler matches hdl-util, 28511 packets, 911794 island pixels, 31 resets"
+    },
+    {
+      "path": "build/packet-first/replica-0/seed-73.log",
+      "passed": true,
+      "sha256": "18BF57C778B67A65EA27D44ECCA372C7992432E5C9E2DCD98D15F6D6FBAEDB32",
+      "result": "PASS: packet assembler matches hdl-util, 28729 packets, 918770 island pixels, 31 resets"
+    },
+    {
+      "path": "build/packet-first/replica-1/seed-1.log",
+      "passed": true,
+      "sha256": "2877898496E6E7CC75BD2CA81C1FC9F409D1CEEB616FC84E21F69DA6147C9940",
+      "result": "PASS: packet assembler matches hdl-util, 28282 packets, 904466 island pixels, 31 resets"
+    },
+    {
+      "path": "build/packet-first/replica-1/seed-19.log",
+      "passed": true,
+      "sha256": "AB84DFD1CF7662531E660C8044EA358EDFB7F03952CDF4A17D605C2C39461B79",
+      "result": "PASS: packet assembler matches hdl-util, 28511 packets, 911794 island pixels, 31 resets"
+    },
+    {
+      "path": "build/packet-first/replica-1/seed-73.log",
+      "passed": true,
+      "sha256": "165A29772CF295E17524C38DACDC788522ACF6545A2B1121D2A596FF178A035B",
+      "result": "PASS: packet assembler matches hdl-util, 28729 packets, 918770 island pixels, 31 resets"
+    }
+  ],
+  "sources": [
+    {
+      "path": "rtl/hdmi/kagura_packet_assembler.sv",
+      "sha256": "ADFED5D85BBB90221E798E98C33ABD84504DC6FDFA7A39493F826740ED4304C0"
+    },
+    {
+      "path": "third_party/hdl-util-hdmi/src/packet_assembler.sv",
+      "sha256": "00D143E3B4226CB8AC7418BAB35B9EA6F3A963E81FD0F2F7F3109844F4BDE2C6"
+    },
+    {
+      "path": "sim/tests/tb_packet_assembler.sv",
+      "sha256": "2D4CEB2988B9D879054F35DDA649264AF3CA1A9E3B6625046170A58F555D2B12"
+    },
+    {
+      "path": "tools/test-packet-first.sh",
+      "sha256": "FC0D3E1279D839E8AEA8ED25ECEA0ECBDF70BB3ECD6B3B27AD6FB6364ADEB4A0"
+    }
+  ]
+}

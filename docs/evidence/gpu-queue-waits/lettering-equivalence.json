@@ -1,0 +1,322 @@
+{
+  "passed": true,
+  "comparisons": 45,
+  "scope": "Both 115200-byte framebuffers, active palette and displayed page; functional model, not physical timing",
+  "rows": [
+    {
+      "seed": 726550,
+      "ms": 0,
+      "framebuffers_crc32": 2001457035,
+      "baseline_commands": 10106,
+      "merged_commands": 10106
+    },
+    {
+      "seed": 726550,
+      "ms": 1000,
+      "framebuffers_crc32": 4207395332,
+      "baseline_commands": 10240,
+      "merged_commands": 10240
+    },
+    {
+      "seed": 726550,
+      "ms": 10000,
+      "framebuffers_crc32": 3880215448,
+      "baseline_commands": 10413,
+      "merged_commands": 10413
+    },
+    {
+      "seed": 726550,
+      "ms": 30000,
+      "framebuffers_crc32": 3706956628,
+      "baseline_commands": 10653,
+      "merged_commands": 10653
+    },
+    {
+      "seed": 726550,
+      "ms": 50000,
+      "framebuffers_crc32": 749230335,
+      "baseline_commands": 10887,
+      "merged_commands": 10887
+    },
+    {
+      "seed": 726550,
+      "ms": 70000,
+      "framebuffers_crc32": 162439376,
+      "baseline_commands": 11073,
+      "merged_commands": 11073
+    },
+    {
+      "seed": 726550,
+      "ms": 95000,
+      "framebuffers_crc32": 3562932231,
+      "baseline_commands": 11166,
+      "merged_commands": 11166
+    },
+    {
+      "seed": 726550,
+      "ms": 120000,
+      "framebuffers_crc32": 3409734431,
+      "baseline_commands": 11504,
+      "merged_commands": 11504
+    },
+    {
+      "seed": 726550,
+      "ms": 140000,
+      "framebuffers_crc32": 4052184241,
+      "baseline_commands": 11703,
+      "merged_commands": 11703
+    },
+    {
+      "seed": 726550,
+      "ms": 142999,
+      "framebuffers_crc32": 912652724,
+      "baseline_commands": 11879,
+      "merged_commands": 11879
+    },
+    {
+      "seed": 726550,
+      "ms": 143000,
+      "framebuffers_crc32": 912652724,
+      "baseline_commands": 11879,
+      "merged_commands": 11879
+    },
+    {
+      "seed": 726550,
+      "ms": 143034,
+      "framebuffers_crc32": 3700367664,
+      "baseline_commands": 13076,
+      "merged_commands": 12517
+    },
+    {
+      "seed": 726550,
+      "ms": 143068,
+      "framebuffers_crc32": 1782161147,
+      "baseline_commands": 14275,
+      "merged_commands": 13157
+    },
+    {
+      "seed": 726550,
+      "ms": 145555,
+      "framebuffers_crc32": 1782161147,
+      "baseline_commands": 14277,
+      "merged_commands": 13159
+    },
+    {
+      "seed": 726550,
+      "ms": 149999,
+      "framebuffers_crc32": 1782161147,
+      "baseline_commands": 14278,
+      "merged_commands": 13160
+    },
+    {
+      "seed": 19,
+      "ms": 0,
+      "framebuffers_crc32": 4129054090,
+      "baseline_commands": 10105,
+      "merged_commands": 10105
+    },
+    {
+      "seed": 19,
+      "ms": 1000,
+      "framebuffers_crc32": 2953022639,
+      "baseline_commands": 10239,
+      "merged_commands": 10239
+    },
+    {
+      "seed": 19,
+      "ms": 10000,
+      "framebuffers_crc32": 3198870649,
+      "baseline_commands": 10408,
+      "merged_commands": 10408
+    },
+    {
+      "seed": 19,
+      "ms": 30000,
+      "framebuffers_crc32": 1317924895,
+      "baseline_commands": 10647,
+      "merged_commands": 10647
+    },
+    {
+      "seed": 19,
+      "ms": 50000,
+      "framebuffers_crc32": 749230335,
+      "baseline_commands": 10876,
+      "merged_commands": 10876
+    },
+    {
+      "seed": 19,
+      "ms": 70000,
+      "framebuffers_crc32": 162439376,
+      "baseline_commands": 11062,
+      "merged_commands": 11062
+    },
+    {
+      "seed": 19,
+      "ms": 95000,
+      "framebuffers_crc32": 3562932231,
+      "baseline_commands": 11155,
+      "merged_commands": 11155
+    },
+    {
+      "seed": 19,
+      "ms": 120000,
+      "framebuffers_crc32": 3409734431,
+      "baseline_commands": 11493,
+      "merged_commands": 11493
+    },
+    {
+      "seed": 19,
+      "ms": 140000,
+      "framebuffers_crc32": 894961469,
+      "baseline_commands": 11697,
+      "merged_commands": 11697
+    },
+    {
+      "seed": 19,
+      "ms": 142999,
+      "framebuffers_crc32": 3625415696,
+      "baseline_commands": 11873,
+      "merged_commands": 11873
+    },
+    {
+      "seed": 19,
+      "ms": 143000,
+      "framebuffers_crc32": 3625415696,
+      "baseline_commands": 11873,
+      "merged_commands": 11873
+    },
+    {
+      "seed": 19,
+      "ms": 143034,
+      "framebuffers_crc32": 4129474328,
+      "baseline_commands": 13071,
+      "merged_commands": 12512
+    },
+    {
+      "seed": 19,
+      "ms": 143068,
+      "framebuffers_crc32": 1782161147,
+      "baseline_commands": 14266,
+      "merged_commands": 13148
+    },
+    {
+      "seed": 19,
+      "ms": 145555,
+      "framebuffers_crc32": 1782161147,
+      "baseline_commands": 14268,
+      "merged_commands": 13150
+    },
+    {
+      "seed": 19,
+      "ms": 149999,
+      "framebuffers_crc32": 1782161147,
+      "baseline_commands": 14269,
+      "merged_commands": 13151
+    },
+    {
+      "seed": 73,
+      "ms": 0,
+      "framebuffers_crc32": 1861363091,
+      "baseline_commands": 10112,
+      "merged_commands": 10112
+    },
+    {
+      "seed": 73,
+      "ms": 1000,
+      "framebuffers_crc32": 2561442787,
+      "baseline_commands": 10247,
+      "merged_commands": 10247
+    },
+    {
+      "seed": 73,
+      "ms": 10000,
+      "framebuffers_crc32": 1061872130,
+      "baseline_commands": 10418,
+      "merged_commands": 10418
+    },
+    {
+      "seed": 73,
+      "ms": 30000,
+      "framebuffers_crc32": 2133623089,
+      "baseline_commands": 10657,
+      "merged_commands": 10657
+    },
+    {
+      "seed": 73,
+      "ms": 50000,
+      "framebuffers_crc32": 749230335,
+      "baseline_commands": 10888,
+      "merged_commands": 10888
+    },
+    {
+      "seed": 73,
+      "ms": 70000,
+      "framebuffers_crc32": 162439376,
+      "baseline_commands": 11074,
+      "merged_commands": 11074
+    },
+    {
+      "seed": 73,
+      "ms": 95000,
+      "framebuffers_crc32": 3562932231,
+      "baseline_commands": 11167,
+      "merged_commands": 11167
+    },
+    {
+      "seed": 73,
+      "ms": 120000,
+      "framebuffers_crc32": 3409734431,
+      "baseline_commands": 11505,
+      "merged_commands": 11505
+    },
+    {
+      "seed": 73,
+      "ms": 140000,
+      "framebuffers_crc32": 2765539176,
+      "baseline_commands": 11707,
+      "merged_commands": 11707
+    },
+    {
+      "seed": 73,
+      "ms": 142999,
+      "framebuffers_crc32": 1102212349,
+      "baseline_commands": 11882,
+      "merged_commands": 11882
+    },
+    {
+      "seed": 73,
+      "ms": 143000,
+      "framebuffers_crc32": 1102212349,
+      "baseline_commands": 11882,
+      "merged_commands": 11882
+    },
+    {
+      "seed": 73,
+      "ms": 143034,
+      "framebuffers_crc32": 4262010784,
+      "baseline_commands": 13073,
+      "merged_commands": 12514
+    },
+    {
+      "seed": 73,
+      "ms": 143068,
+      "framebuffers_crc32": 1782161147,
+      "baseline_commands": 14273,
+      "merged_commands": 13155
+    },
+    {
+      "seed": 73,
+      "ms": 145555,
+      "framebuffers_crc32": 1782161147,
+      "baseline_commands": 14275,
+      "merged_commands": 13157
+    },
+    {
+      "seed": 73,
+      "ms": 149999,
+      "framebuffers_crc32": 1782161147,
+      "baseline_commands": 14276,
+      "merged_commands": 13158
+    }
+  ]
+}

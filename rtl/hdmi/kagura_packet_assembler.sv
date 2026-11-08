@@ -12,7 +12,7 @@
 // packet_enable edge): header/sub only change on the edge into counter 0, and
 // stay constant while the packet is sent. tb_packet_assembler checks the
 // output against the unchanged upstream module.
-module kagura_packet_assembler (
+module kagura_packet_assembler #(parameter bit REPLICATE_FIRST=0) (
     input logic clk_pixel,
     input logic reset,
     input logic data_island_period,
@@ -30,6 +30,23 @@ module kagura_packet_assembler (
         tail28<=counter_next>=5'd28; last<=counter_next==5'd31;
     end
 
+    // Keep the large packet-load muxes off the common first flag. Each
+    // replica predicts the same counter-zero condition on the same edge;
+    // packet/ECC output selection continues to use the original flag.
+    wire [4:0] load_first;
+    generate for(genvar lane=0;lane<5;lane++) begin: load_control
+        if(REPLICATE_FIRST) begin: replicated
+            (* syn_preserve=1, syn_keep=1 *) reg first_local=1'b1;
+            // Use the registered zero and wrap flags to keep the
+            // counter increment and decode out of the local load path.
+            always_ff @(posedge clk_pixel)
+                first_local<=reset || (data_island_period ? last : first);
+            assign load_first[lane]=first_local;
+        end else begin: direct
+            assign load_first[lane]=first;
+        end
+    end endgenerate
+
     // Remaining bits of the packet in flight: bit 0 (and 1) is the next one.
     logic [53:0] rest [3:0];
     logic [22:0] header_rest;
@@ -45,8 +62,8 @@ module kagura_packet_assembler (
     end
     always_ff @(posedge clk_pixel)
         if(data_island_period) begin
-            for(int i=0;i<4;i++) rest[i]<=first ? sub[i][55:2] : rest[i]>>2;
-            header_rest<=first ? header[23:1] : header_rest>>1;
+            for(int i=0;i<4;i++) rest[i]<=load_first[i] ? sub[i][55:2] : rest[i]>>2;
+            header_rest<=load_first[4] ? header[23:1] : header_rest>>1;
         end
 
     // Data bits, then the parity bytes (BCH blocks 0..3 two bits per pixel).

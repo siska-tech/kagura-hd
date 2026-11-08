@@ -1,0 +1,64 @@
+{
+  "depth": 8,
+  "transport": "qspi",
+  "place": 4,
+  "route": 2,
+  "route_maxfan": 23,
+  "reused_mapped_netlist": true,
+  "input_sha256": {
+    "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+    "kagura_fb.cst": "84648963d6c73d14b2e74090d34246b48b05e384201ee66fd8c992953bb34d9b",
+    "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+  },
+  "source_input_sha256": {
+    "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+    "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+    "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+  },
+  "extra_cst": "diagnostics/queue8-sta/control-mid.cst",
+  "extra_cst_sha256": "453adbf2cf526f534d64f249bafe1e5c680254ff8287cae1a9279ef77e4c98c2",
+  "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+  "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "replicate_resources": false,
+  "fpga_flash_writes": 0,
+  "fpga_sram_programs": 0,
+  "release_ready": false,
+  "exit_code": 0,
+  "build_failed": false,
+  "fresh_bitstream": true,
+  "timing": {
+    "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+    "setup_violated_endpoints": 1,
+    "hold_violated_endpoints": 0,
+    "worst": {
+      "Setup": {
+        "slack_ns": -0.013,
+        "from": "core/cursor/held_1_s1/Q",
+        "to": "core/cursor/sample_mailbox.value_1_s0/D"
+      },
+      "Hold": {
+        "slack_ns": 0.533,
+        "from": "audio_endpoint/registers/capture_pending_s0/Q",
+        "to": "audio_endpoint/registers/snapshot_master_0_s0/CE"
+      },
+      "Recovery": {
+        "slack_ns": 10.197,
+        "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+        "to": "core/hdmi/audio_link/fifo/read_data_28_s0/CLEAR"
+      },
+      "Removal": {
+        "slack_ns": 0.754,
+        "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+        "to": "core/hdmi/audio_link/fifo/wg_sync1_3_s0/CLEAR"
+      }
+    },
+    "negative_analyses": [
+      "Setup"
+    ],
+    "boot_miso": null,
+    "release_ready": false,
+    "report_sha256": "d8b5e37402a544670b9768ca0d6e708098fa7309a21b916fae90c99f0eb0f3cd"
+  },
+  "bitstream_sha256": "597ee6b9a69876a825e7c629806ebe74c801b82a4772b285a1cfdbb0820fbadc",
+  "elapsed_seconds": 454.9
+}

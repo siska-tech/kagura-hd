@@ -1,0 +1,14 @@
+--- a/rtl/fb/kagura_fb_fill_burst.sv
++++ b/rtl/fb/kagura_fb_fill_burst.sv
+@@ -46,7 +46,10 @@
+     reg [31:0] edge_data;
+     wire [16:0] ex={1'b0,x}+{1'b0,width};
+     wire [16:0] ey={1'b0,y}+{1'b0,height};
+-    wire [16:0] rounded_end=ex+17'd1;
++    // ceil((x+width)/2) = x/2 + width/2 + (x[0] | width[0]).
++    // Bit 0 feeds the rounding carry into the same adder.
++    wire [9:0] rounded_end={x[9:1],1'b1}+
++                           {width[9:1],(x[0] | width[0])};
+     wire [8:0] last_byte=end_byte-9'd1;
+     reg [6:0] last_word_index,end_word;
+     wire [8:0] last_word={last_word_index,2'b00};

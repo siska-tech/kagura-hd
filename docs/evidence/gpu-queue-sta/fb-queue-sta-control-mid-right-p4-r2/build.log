@@ -1,0 +1,36 @@
+*** GOWIN Tcl Command Line Console  *** 
+current device: GW1NR-9C  GW1NR-LV9QN88PC6/I5
+add new file: "<repo>/build/fb-queue-sta-control-mid-right-p4-r2/impl/gwsynthesis/kagura_fb.vg"
+add new file: "<repo>/build/fb-queue-sta-control-mid-right-p4-r2/kagura_fb.cst"
+add new file: "<repo>/build/fb-queue-sta-control-mid-right-p4-r2/kagura-fb.sdc"
+NOTE (PJ2001) : Skip synthesis, because there is only one netlist file in this project
+Reading netlist file: "<repo>\build\fb-queue-sta-control-mid-right-p4-r2\impl\gwsynthesis\kagura_fb.vg"
+Parsing netlist file "<repo>\build\fb-queue-sta-control-mid-right-p4-r2\impl\gwsynthesis\kagura_fb.vg" completed
+Processing netlist completed
+Reading constraint file: "<repo>\build\fb-queue-sta-control-mid-right-p4-r2\kagura_fb.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "<repo>\build\fb-queue-sta-control-mid-right-p4-r2\impl\pnr\kagura_fb.power.html" completed
+Generate file "<repo>\build\fb-queue-sta-control-mid-right-p4-r2\impl\pnr\kagura_fb.pin.html" completed
+Generate file "<repo>\build\fb-queue-sta-control-mid-right-p4-r2\impl\pnr\kagura_fb.rpt.html" completed
+Generate file "<repo>\build\fb-queue-sta-control-mid-right-p4-r2\impl\pnr\kagura_fb.rpt.txt" completed
+Generate file "<repo>\build\fb-queue-sta-control-mid-right-p4-r2\impl\pnr\kagura_fb.tr.html" completed
+Generate file "<repo>\build\fb-queue-sta-control-mid-right-p4-r2\impl\pnr\kagura_fb.tr" completed
+Sat Nov  7 04:47:36 2026
+

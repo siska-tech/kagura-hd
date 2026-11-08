@@ -1,0 +1,542 @@
+{
+  "start_utc": "2026-11-06T16:20:30.260319+00:00",
+  "release_ready": false,
+  "authorized": "User provisionally approved depth 8 and requested queued megademo hardware load validation",
+  "numeric_timing_gate_passed": false,
+  "worst_setup_ns": 0.05,
+  "fpga_flash_writes": 0,
+  "fpga_sram_programs": 1,
+  "rp2040_uid": "E663A837CB73512D",
+  "bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "variants": [
+    {
+      "name": "baseline-1",
+      "stage": "complete",
+      "success": true,
+      "firmware_sha256": "b100fc708260c3d1797df6fe4635d34a882af295095675d81784fc2677848ed0",
+      "queue": {
+        "depth": 8,
+        "submitted": 317616,
+        "retired": 317616,
+        "peak": 8,
+        "pending": 0,
+        "barriers": 4836,
+        "errors": 0
+      },
+      "QRET": [
+        {
+          "reason": 0,
+          "calls": 284932,
+          "samples": 4453,
+          "poll_us": 94864,
+          "metadata_us": 149691,
+          "ack_us": 60703
+        },
+        {
+          "reason": 1,
+          "calls": 23954,
+          "samples": 375,
+          "poll_us": 10183,
+          "metadata_us": 12612,
+          "ack_us": 5108
+        },
+        {
+          "reason": 2,
+          "calls": 8580,
+          "samples": 135,
+          "poll_us": 2442,
+          "metadata_us": 4524,
+          "ack_us": 1900
+        },
+        {
+          "reason": 3,
+          "calls": 0,
+          "samples": 0,
+          "poll_us": 0,
+          "metadata_us": 0,
+          "ack_us": 0
+        }
+      ],
+      "QSYNC": [
+        {
+          "op": 0,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 1,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 2,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 3,
+          "calls": 4422,
+          "nonempty": 1090,
+          "samples": 70,
+          "drain_us": 9770,
+          "command_us": 685599
+        },
+        {
+          "op": 4,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 5,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 6,
+          "calls": 122511,
+          "nonempty": 3743,
+          "samples": 1915,
+          "drain_us": 27756,
+          "command_us": 312000
+        },
+        {
+          "op": 7,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        }
+      ],
+      "completion_burst": {
+        "bursts": 0,
+        "hits": 0,
+        "misses": 0,
+        "fallback": 0
+      },
+      "full_flash_after_tests_verified": true,
+      "after_sha256": "2684e27d0c8f0912debf51844095c038ab7ce6f3b492bbdb9a208393ddc792fc"
+    },
+    {
+      "name": "burst-1",
+      "stage": "complete",
+      "success": true,
+      "firmware_sha256": "c83545b61127dba78944037543f80b849fd8d87b6cb41e1b2bbeed280d74b008",
+      "queue": {
+        "depth": 8,
+        "submitted": 324975,
+        "retired": 324975,
+        "peak": 8,
+        "pending": 0,
+        "barriers": 4870,
+        "errors": 0
+      },
+      "QRET": [
+        {
+          "reason": 0,
+          "calls": 292029,
+          "samples": 4563,
+          "poll_us": 110879,
+          "metadata_us": 75933,
+          "ack_us": 59091
+        },
+        {
+          "reason": 1,
+          "calls": 24008,
+          "samples": 376,
+          "poll_us": 7770,
+          "metadata_us": 6415,
+          "ack_us": 4976
+        },
+        {
+          "reason": 2,
+          "calls": 8788,
+          "samples": 138,
+          "poll_us": 2731,
+          "metadata_us": 2257,
+          "ack_us": 1762
+        },
+        {
+          "reason": 3,
+          "calls": 0,
+          "samples": 0,
+          "poll_us": 0,
+          "metadata_us": 0,
+          "ack_us": 0
+        }
+      ],
+      "QSYNC": [
+        {
+          "op": 0,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 1,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 2,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 3,
+          "calls": 4453,
+          "nonempty": 1116,
+          "samples": 70,
+          "drain_us": 8726,
+          "command_us": 660643
+        },
+        {
+          "op": 4,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 5,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 6,
+          "calls": 122830,
+          "nonempty": 3751,
+          "samples": 1920,
+          "drain_us": 26000,
+          "command_us": 313798
+        },
+        {
+          "op": 7,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        }
+      ],
+      "completion_burst": {
+        "bursts": 324825,
+        "hits": 309539,
+        "misses": 15286,
+        "fallback": 15286
+      },
+      "full_flash_after_tests_verified": true,
+      "after_sha256": "c7052a32c9c4d83c0c4115c64b14d6bb18959301eda3ad3ecfb53fa50e1fc26a"
+    },
+    {
+      "name": "baseline-2",
+      "stage": "complete",
+      "success": true,
+      "firmware_sha256": "b100fc708260c3d1797df6fe4635d34a882af295095675d81784fc2677848ed0",
+      "queue": {
+        "depth": 8,
+        "submitted": 317496,
+        "retired": 317496,
+        "peak": 8,
+        "pending": 0,
+        "barriers": 4834,
+        "errors": 0
+      },
+      "QRET": [
+        {
+          "reason": 0,
+          "calls": 284828,
+          "samples": 4451,
+          "poll_us": 93313,
+          "metadata_us": 149646,
+          "ack_us": 60657
+        },
+        {
+          "reason": 1,
+          "calls": 23938,
+          "samples": 375,
+          "poll_us": 10008,
+          "metadata_us": 12651,
+          "ack_us": 5088
+        },
+        {
+          "reason": 2,
+          "calls": 8580,
+          "samples": 135,
+          "poll_us": 2440,
+          "metadata_us": 4531,
+          "ack_us": 1888
+        },
+        {
+          "reason": 3,
+          "calls": 0,
+          "samples": 0,
+          "poll_us": 0,
+          "metadata_us": 0,
+          "ack_us": 0
+        }
+      ],
+      "QSYNC": [
+        {
+          "op": 0,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 1,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 2,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 3,
+          "calls": 4421,
+          "nonempty": 1090,
+          "samples": 70,
+          "drain_us": 9700,
+          "command_us": 705458
+        },
+        {
+          "op": 4,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 5,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 6,
+          "calls": 122468,
+          "nonempty": 3741,
+          "samples": 1914,
+          "drain_us": 29893,
+          "command_us": 311878
+        },
+        {
+          "op": 7,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        }
+      ],
+      "completion_burst": {
+        "bursts": 0,
+        "hits": 0,
+        "misses": 0,
+        "fallback": 0
+      },
+      "full_flash_after_tests_verified": true,
+      "after_sha256": "2684e27d0c8f0912debf51844095c038ab7ce6f3b492bbdb9a208393ddc792fc"
+    },
+    {
+      "name": "burst-2",
+      "stage": "complete",
+      "success": true,
+      "firmware_sha256": "c83545b61127dba78944037543f80b849fd8d87b6cb41e1b2bbeed280d74b008",
+      "queue": {
+        "depth": 8,
+        "submitted": 325061,
+        "retired": 325061,
+        "peak": 8,
+        "pending": 0,
+        "barriers": 4869,
+        "errors": 0
+      },
+      "QRET": [
+        {
+          "reason": 0,
+          "calls": 292123,
+          "samples": 4565,
+          "poll_us": 110027,
+          "metadata_us": 75868,
+          "ack_us": 59100
+        },
+        {
+          "reason": 1,
+          "calls": 24000,
+          "samples": 375,
+          "poll_us": 7721,
+          "metadata_us": 6352,
+          "ack_us": 4970
+        },
+        {
+          "reason": 2,
+          "calls": 8788,
+          "samples": 138,
+          "poll_us": 2724,
+          "metadata_us": 2247,
+          "ack_us": 1761
+        },
+        {
+          "reason": 3,
+          "calls": 0,
+          "samples": 0,
+          "poll_us": 0,
+          "metadata_us": 0,
+          "ack_us": 0
+        }
+      ],
+      "QSYNC": [
+        {
+          "op": 0,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 1,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 2,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 3,
+          "calls": 4452,
+          "nonempty": 1116,
+          "samples": 70,
+          "drain_us": 8857,
+          "command_us": 668731
+        },
+        {
+          "op": 4,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 5,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        },
+        {
+          "op": 6,
+          "calls": 122898,
+          "nonempty": 3750,
+          "samples": 1921,
+          "drain_us": 27880,
+          "command_us": 313456
+        },
+        {
+          "op": 7,
+          "calls": 0,
+          "nonempty": 0,
+          "samples": 0,
+          "drain_us": 0,
+          "command_us": 0
+        }
+      ],
+      "completion_burst": {
+        "bursts": 324911,
+        "hits": 309547,
+        "misses": 15364,
+        "fallback": 15364
+      },
+      "full_flash_after_tests_verified": true,
+      "after_sha256": "c7052a32c9c4d83c0c4115c64b14d6bb18959301eda3ad3ecfb53fa50e1fc26a"
+    }
+  ],
+  "success": true,
+  "failure": null,
+  "experiment": "queue completion burst",
+  "run_order": [
+    "baseline-1",
+    "burst-1",
+    "baseline-2",
+    "burst-2"
+  ],
+  "firmwares": {
+    "fw-baseline": {
+      "bin_sha256": "b100fc708260c3d1797df6fe4635d34a882af295095675d81784fc2677848ed0",
+      "elf_sha256": "12ad9c2594649afa1b6d252a27f8da7c93d545eb8503cc7853794cd3d7374047"
+    },
+    "fw-burst": {
+      "bin_sha256": "c83545b61127dba78944037543f80b849fd8d87b6cb41e1b2bbeed280d74b008",
+      "elf_sha256": "5bb7015a00c9cad9335685e6ddb045edb6a67f0642b70b22cb8d92d41dd35086"
+    }
+  },
+  "protected": {
+    "artifacts/validated/kagura-hd-qspi-pcm2.fs": "642c7a3ce961685279c229dbe9b1577285bd7867353cfaf7de8f4db06b3683a7",
+    "artifacts/validated/SHA256SUMS": "4ee71362a8c36d07a2e8f5edb641d7765dc60af94eec5c52950bd8907fee5fcb",
+    "software/beyond16/out/headroom-firmware/A-detailed/beyond16.bin": "29a4d3f39814bf98b7c4198979e83a4407342ab7853e95bad1d25e37d3ef2bd4",
+    "software/beyond16/out/headroom-firmware/A-off/beyond16.bin": "44d9e58caec817e78453ee6123001b3f1ac311bbfd9d77e4642082268e241a12",
+    "software/beyond16/out/headroom-firmware/A-summary/beyond16.bin": "a2ebbb82763e6dcdac9024915966c9b1fab900d4166645beaa0aac7184425334",
+    "software/beyond16/out/headroom-firmware/absolute30/beyond16.bin": "d742b15292cd2f99febd8d1e3fd38340efc39b8d5360db84f8e4ba39ecb4040b",
+    "software/beyond16/out/headroom-firmware/B-summary/beyond16.bin": "e54dccc72a0b2da5897426559b12741dcffbbe56ef7a0b8ccaa2802be2e86a86",
+    "software/beyond16/out/headroom-firmware/C-test128/beyond16.bin": "5f40aaa4d62dab48d7bfe4f36e210c74181cca212cdf00e8099ad48d4414ca6e",
+    "software/beyond16/out/headroom-firmware/cooperative/beyond16.bin": "36a9026439da9fef3124af0f927905c37908cea0337a3d417812b1eaf72c5825",
+    "software/beyond16/out/headroom-firmware/work64/beyond16.bin": "71a5dbdfe6ea30b3ffde23975630ae0e219bb6914cd157da750daccc67a93ea7"
+  },
+  "original_backup": {
+    "path": "build/completion-abab-20261107/hardware/baseline-1/before.bin",
+    "sha256": "c7052a32c9c4d83c0c4115c64b14d6bb18959301eda3ad3ecfb53fa50e1fc26a"
+  },
+  "final_state": "Queue 8 SRAM FPGA and queued RP2040 firmware; PCM stopped, explicit USB start gate",
+  "finish_utc": "2026-11-06T16:34:08.100735+00:00"
+}

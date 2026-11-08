@@ -1,0 +1,475 @@
+{
+  "hardware_tested": true,
+  "release_ready": false,
+  "user_provisionally_approved": true,
+  "numeric_timing_gate_passed": false,
+  "bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "fpga_queue_depth": 8,
+  "fpga_sram_programs": 1,
+  "fpga_flash_writes": 0,
+  "conditions": "Same depth-eight FPGA, 120 MHz RP2040, CPU+PIO, profile OFF, relative33 scheduler, seed 0xb1616, one 150s run each",
+  "host_queue_scope": "Only FILL/PALETTE async; COPY/PRESENT/transfers/audio drain FIFO in order",
+  "variants": [
+    {
+      "name": "serial",
+      "firmware_sha256": "a3a2044a0cdd8b78a0698451a061c6a58b834ca74a78c7aae2b3484102ac796e",
+      "frames": 4404,
+      "actual_present_fps": 29.366284256240792,
+      "present_intervals_us": {
+        "samples": 4403,
+        "mean": 34052.65682489212,
+        "median": 33334,
+        "p95": 49998,
+        "worst": 150012
+      },
+      "worst_call_us": 148999,
+      "scenes": [
+        {
+          "scene": 0,
+          "frames": 302,
+          "actual_update_fps": 30.352808542349226,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33346,
+            "worst_us": 50004,
+            "over_33_333ms_rate": 0.49169435215946844
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 1,
+          "frames": 606,
+          "actual_update_fps": 30.325720290994585,
+          "present_intervals": {
+            "median_us": 33334,
+            "p95_us": 33345,
+            "worst_us": 50007,
+            "over_33_333ms_rate": 0.5074380165289256
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 2,
+          "frames": 599,
+          "actual_update_fps": 29.97484118346688,
+          "present_intervals": {
+            "median_us": 33334.0,
+            "p95_us": 33345,
+            "worst_us": 49996,
+            "over_33_333ms_rate": 0.5033444816053512
+          },
+          "deadline_miss_rate": 0.00333889816360601,
+          "relative_call_budget_miss_rate": 0.00333889816360601
+        },
+        {
+          "scene": 3,
+          "frames": 602,
+          "actual_update_fps": 30.10006393133379,
+          "present_intervals": {
+            "median_us": 33334,
+            "p95_us": 50005,
+            "worst_us": 50016,
+            "over_33_333ms_rate": 0.502495840266223
+          },
+          "deadline_miss_rate": 0.06478405315614617,
+          "relative_call_budget_miss_rate": 0.06478405315614617
+        },
+        {
+          "scene": 4,
+          "frames": 752,
+          "actual_update_fps": 30.12021736770236,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 49995,
+            "over_33_333ms_rate": 0.48868175765645805
+          },
+          "deadline_miss_rate": 0.0013297872340425532,
+          "relative_call_budget_miss_rate": 0.0013297872340425532
+        },
+        {
+          "scene": 5,
+          "frames": 758,
+          "actual_update_fps": 30.320327248053,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33345,
+            "worst_us": 50009,
+            "over_33_333ms_rate": 0.49273447820343463
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 6,
+          "frames": 490,
+          "actual_update_fps": 24.531697913561533,
+          "present_intervals": {
+            "median_us": 33339,
+            "p95_us": 66663,
+            "worst_us": 83341,
+            "over_33_333ms_rate": 0.689161554192229
+          },
+          "deadline_miss_rate": 0.363265306122449,
+          "relative_call_budget_miss_rate": 0.363265306122449
+        },
+        {
+          "scene": 7,
+          "frames": 295,
+          "actual_update_fps": 29.547637726665055,
+          "present_intervals": {
+            "median_us": 33333.0,
+            "p95_us": 33346,
+            "worst_us": 150012,
+            "over_33_333ms_rate": 0.4965986394557823
+          },
+          "deadline_miss_rate": 0.006779661016949152,
+          "relative_call_budget_miss_rate": 0.006779661016949152
+        }
+      ],
+      "transitions": [
+        {
+          "from_scene": 0,
+          "to_scene": 1,
+          "present_gap_us": 49999,
+          "next_draw_gap_us": 17082
+        },
+        {
+          "from_scene": 1,
+          "to_scene": 2,
+          "present_gap_us": 66670,
+          "next_draw_gap_us": 19086
+        },
+        {
+          "from_scene": 2,
+          "to_scene": 3,
+          "present_gap_us": 50006,
+          "next_draw_gap_us": 1008
+        },
+        {
+          "from_scene": 3,
+          "to_scene": 4,
+          "present_gap_us": 49990,
+          "next_draw_gap_us": 11048
+        },
+        {
+          "from_scene": 4,
+          "to_scene": 5,
+          "present_gap_us": 33333,
+          "next_draw_gap_us": 1006
+        },
+        {
+          "from_scene": 5,
+          "to_scene": 6,
+          "present_gap_us": 83344,
+          "next_draw_gap_us": 15065
+        },
+        {
+          "from_scene": 6,
+          "to_scene": 7,
+          "present_gap_us": 33339,
+          "next_draw_gap_us": 1007
+        }
+      ],
+      "timeouts": 0,
+      "pcm_status_fault": 0,
+      "stop_rc": 0,
+      "selftest_readback_bytes": 32,
+      "queue": null,
+      "transaction_window_s": 148.151,
+      "transactions_per_second": 42126.51281462832,
+      "wire_bytes_per_second": 204189.77934674756,
+      "frame_deadline_misses": 222,
+      "full_flash_after_tests_verified": true,
+      "audio": {
+        "sample_rate": 48000,
+        "channels": 2,
+        "onset_s": 3.47,
+        "audible_span_s": 150.0,
+        "low_10ms_blocks": 0,
+        "low_10ms_blocks_by_channel": [
+          0,
+          0
+        ],
+        "longest_low_rms_ms": 0,
+        "bgm_correlations": [
+          0.9948068429219031,
+          0.9963573170834394,
+          0.9952341093733693,
+          0.9976376327284256,
+          0.995005831870503,
+          0.9976106024785556,
+          0.9947638329252753,
+          0.9973436895138238
+        ],
+        "scope": "Physical HDMI capture; RMS scan and eight quiet segments, not an independent underrun counter"
+      },
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "60/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "157.325000"
+        }
+      },
+      "capture_buffer_full_mentions": 0,
+      "recording_sha256": "5ee75da7dce3d72ddfc334e20b147c7a5db7119530e0f37390fb24e696cdae16"
+    },
+    {
+      "name": "queued",
+      "firmware_sha256": "79042cca5328e9b293a53f251091f1aeb6b1f35adab180db03aa3e6a47e33387",
+      "frames": 4421,
+      "actual_present_fps": 29.479669166080186,
+      "present_intervals_us": {
+        "samples": 4420,
+        "mean": 33921.68325791855,
+        "median": 33334.0,
+        "p95": 49995,
+        "worst": 166663
+      },
+      "worst_call_us": 149591,
+      "scenes": [
+        {
+          "scene": 0,
+          "frames": 302,
+          "actual_update_fps": 30.352842210901027,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33344,
+            "worst_us": 49986,
+            "over_33_333ms_rate": 0.4983388704318937
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 1,
+          "frames": 606,
+          "actual_update_fps": 30.325695969709994,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33344,
+            "worst_us": 50003,
+            "over_33_333ms_rate": 0.4925619834710744
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 2,
+          "frames": 599,
+          "actual_update_fps": 29.974814138608554,
+          "present_intervals": {
+            "median_us": 33333.5,
+            "p95_us": 33344,
+            "worst_us": 50014,
+            "over_33_333ms_rate": 0.5
+          },
+          "deadline_miss_rate": 0.00333889816360601,
+          "relative_call_budget_miss_rate": 0.00333889816360601
+        },
+        {
+          "scene": 3,
+          "frames": 602,
+          "actual_update_fps": 30.10007297639989,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 50003,
+            "worst_us": 50014,
+            "over_33_333ms_rate": 0.47420965058236275
+          },
+          "deadline_miss_rate": 0.06478405315614617,
+          "relative_call_budget_miss_rate": 0.06478405315614617
+        },
+        {
+          "scene": 4,
+          "frames": 753,
+          "actual_update_fps": 30.16032055287076,
+          "present_intervals": {
+            "median_us": 33333.0,
+            "p95_us": 33346,
+            "worst_us": 50013,
+            "over_33_333ms_rate": 0.47074468085106386
+          },
+          "deadline_miss_rate": 0.0013280212483399733,
+          "relative_call_budget_miss_rate": 0.0013280212483399733
+        },
+        {
+          "scene": 5,
+          "frames": 758,
+          "actual_update_fps": 30.320322390340465,
+          "present_intervals": {
+            "median_us": 33333,
+            "p95_us": 33344,
+            "worst_us": 50007,
+            "over_33_333ms_rate": 0.4914134742404227
+          },
+          "deadline_miss_rate": 0.0,
+          "relative_call_budget_miss_rate": 0.0
+        },
+        {
+          "scene": 6,
+          "frames": 507,
+          "actual_update_fps": 25.342143985447798,
+          "present_intervals": {
+            "median_us": 33337.5,
+            "p95_us": 66665,
+            "worst_us": 83341,
+            "over_33_333ms_rate": 0.6482213438735178
+          },
+          "deadline_miss_rate": 0.2859960552268245,
+          "relative_call_budget_miss_rate": 0.2859960552268245
+        },
+        {
+          "scene": 7,
+          "frames": 294,
+          "actual_update_fps": 29.54612215213954,
+          "present_intervals": {
+            "median_us": 33334,
+            "p95_us": 33345,
+            "worst_us": 166663,
+            "over_33_333ms_rate": 0.5051194539249146
+          },
+          "deadline_miss_rate": 0.006802721088435374,
+          "relative_call_budget_miss_rate": 0.006802721088435374
+        }
+      ],
+      "transitions": [
+        {
+          "from_scene": 0,
+          "to_scene": 1,
+          "present_gap_us": 49988,
+          "next_draw_gap_us": 17077
+        },
+        {
+          "from_scene": 1,
+          "to_scene": 2,
+          "present_gap_us": 66656,
+          "next_draw_gap_us": 19084
+        },
+        {
+          "from_scene": 2,
+          "to_scene": 3,
+          "present_gap_us": 49996,
+          "next_draw_gap_us": 1005
+        },
+        {
+          "from_scene": 3,
+          "to_scene": 4,
+          "present_gap_us": 50006,
+          "next_draw_gap_us": 11046
+        },
+        {
+          "from_scene": 4,
+          "to_scene": 5,
+          "present_gap_us": 33332,
+          "next_draw_gap_us": 1006
+        },
+        {
+          "from_scene": 5,
+          "to_scene": 6,
+          "present_gap_us": 83331,
+          "next_draw_gap_us": 20083
+        },
+        {
+          "from_scene": 6,
+          "to_scene": 7,
+          "present_gap_us": 33329,
+          "next_draw_gap_us": 1005
+        }
+      ],
+      "timeouts": 0,
+      "pcm_status_fault": 0,
+      "stop_rc": 0,
+      "selftest_readback_bytes": 32,
+      "queue": {
+        "depth": 8,
+        "submitted": 320062,
+        "retired": 320062,
+        "peak": 8,
+        "pending": 0,
+        "barriers": 4839,
+        "errors": 0
+      },
+      "transaction_window_s": 148.151,
+      "transactions_per_second": 41288.99568683303,
+      "wire_bytes_per_second": 201105.06172756173,
+      "frame_deadline_misses": 189,
+      "full_flash_after_tests_verified": true,
+      "audio": {
+        "sample_rate": 48000,
+        "channels": 2,
+        "onset_s": 2.56,
+        "audible_span_s": 150.0,
+        "low_10ms_blocks": 0,
+        "low_10ms_blocks_by_channel": [
+          0,
+          0
+        ],
+        "longest_low_rms_ms": 0,
+        "bgm_correlations": [
+          0.9950755883150836,
+          0.9957172113110314,
+          0.9951152957361249,
+          0.9953881125972139,
+          0.9977656961944898,
+          0.998102708043464,
+          0.9945137673823821,
+          0.9960529463255581
+        ],
+        "scope": "Physical HDMI capture; RMS scan and eight quiet segments, not an independent underrun counter"
+      },
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "60/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "156.265000"
+        }
+      },
+      "capture_buffer_full_mentions": 0,
+      "recording_sha256": "9b9134d80f84f3219b98276d8fc627076029848d3d4e15ee18bc710be9173826"
+    }
+  ],
+  "limits": [
+    "Single fixed-order run per host; no randomized repeated/PVT qualification",
+    "Software pending peak is not a hardware occupancy counter",
+    "No concurrent depth-one FPGA reference in this campaign",
+    "CPU-observed PRESENT completion; not scanout timestamp",
+    "32-byte selftest readback is not full framebuffer verification",
+    "Physical PIO waveforms and all-sample audio integrity not measured"
+  ],
+  "original_backup": {
+    "path": "build/queue-demo-20261107/hardware/serial/before.bin",
+    "sha256": "0298d14b33e86f470eaa8987d4654e198c9de493d981aec542aa9e03a2226c86"
+  },
+  "final_state": "Queue 8 SRAM FPGA and queued RP2040 firmware; PCM stopped, explicit USB start gate"
+}

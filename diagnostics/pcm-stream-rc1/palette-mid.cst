@@ -1,0 +1,4 @@
+INS_LOC "core/display/held_palette_11_s0" R11C19[2][B];
+INS_LOC "core/display/palette_11_s0" R10C19[1][B];
+INS_LOC "core/display/held_palette_184_s0" R18C18[2][B];
+INS_LOC "core/display/palette_184_s0" R17C18[0][B];

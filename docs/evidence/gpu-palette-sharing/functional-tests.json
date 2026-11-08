@@ -1,0 +1,57 @@
+{
+  "tests": [
+    {
+      "path": "build/fb-palette-sharing/contract-negative/run.log",
+      "sha256": "ba4eb811e86178ec31643c432325127ede53484486c587525fe1afab85790240",
+      "expected_assertion_failure": true,
+      "passed": true
+    },
+    {
+      "path": "build/fb-palette-sharing/full-scanout/run.log",
+      "sha256": "0891538a2745a6574c2c1bf3e7e2688978078ea4e247f19d7de1f4307db55ecb",
+      "expected_assertion_failure": false,
+      "passed": true
+    },
+    {
+      "path": "build/fb-palette-sharing/tb_fb_palette_mailbox/seed-1.log",
+      "sha256": "64350336596844d14c809a4f6ceeacde6bc16d49a006e0acc65019fde351673a",
+      "expected_assertion_failure": false,
+      "passed": true
+    },
+    {
+      "path": "build/fb-palette-sharing/tb_fb_palette_mailbox/seed-19.log",
+      "sha256": "9268047f5972f065677213d22810372eccacca52672ab1252d78d8ecd90363cc",
+      "expected_assertion_failure": false,
+      "passed": true
+    },
+    {
+      "path": "build/fb-palette-sharing/tb_fb_palette_mailbox/seed-73.log",
+      "sha256": "d7060438b0692718c06f1cc25387a5e6b2a412fe510f47383f00b8cc73fd3461",
+      "expected_assertion_failure": false,
+      "passed": true
+    },
+    {
+      "path": "build/fb-palette-sharing/tb_fb_palette_queue/seed-1.log",
+      "sha256": "8773d2bb8c961d9263f14ae3d55d847bdc5a9698c7488869e8a67e211828a203",
+      "expected_assertion_failure": false,
+      "passed": true
+    },
+    {
+      "path": "build/fb-palette-sharing/tb_fb_palette_queue/seed-19.log",
+      "sha256": "adff3717ca23732dc16ab244aa0351704db3953ef5796eb1c2a2c02876fd95cf",
+      "expected_assertion_failure": false,
+      "passed": true
+    },
+    {
+      "path": "build/fb-palette-sharing/tb_fb_palette_queue/seed-73.log",
+      "sha256": "64f198efc990c16aaf048cd90551c9749154f319eae8217b74c2503633fa12cf",
+      "expected_assertion_failure": false,
+      "passed": true
+    }
+  ],
+  "default_scanout_log": "build/fb-verilator/tb_fb_scanout.run.log",
+  "default_scanout_log_sha256": "dbbe7ecd77b7913fb6e40b0a0b78faaa2a562df56960e7228a546741d89e9026",
+  "reference_original_sha256": "f6349d1de1e09d5a614b23a357bdb7b9e39853b09e8e2ae6e50e63d81edce5a2",
+  "reference_body_equals_original": true,
+  "hardware_tested": false
+}

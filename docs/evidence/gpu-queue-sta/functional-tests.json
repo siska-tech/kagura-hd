@@ -1,0 +1,101 @@
+{
+  "tests": [
+    {
+      "name": "stream-fifo-2",
+      "source": "build/fb-command-queue/depth-2-registered-continuous/run.log",
+      "sha256": "2dba815772da80d59178856a58b0a30d0248f9fdc984a3b057edfa70ed0e441a",
+      "passed": true,
+      "configuration": "rejected RTL prototype (not retained)"
+    },
+    {
+      "name": "stream-fifo-4",
+      "source": "build/fb-command-queue/depth-4-registered-continuous/run.log",
+      "sha256": "13254599dafa316cf2d44851da2760bb0364af1a2a7d66700552adf5c349e035",
+      "passed": true,
+      "configuration": "rejected RTL prototype (not retained)"
+    },
+    {
+      "name": "stream-fifo-8",
+      "source": "build/fb-command-queue/depth-8-registered-continuous/run.log",
+      "sha256": "6e81830c42127c173774672beebeb2c39dba53f9916d17b42efd87049cbcbb3d",
+      "passed": true,
+      "configuration": "rejected RTL prototype (not retained)"
+    },
+    {
+      "name": "stream-host-spi8",
+      "source": "build/fb-queue-host-stream-head/lanes-1-depth-8/run.log",
+      "sha256": "33724631341abdb51a4d6ed0a9b162d6a8c6471c2bac6d1a859d4141e67d298b",
+      "passed": true,
+      "configuration": "rejected RTL prototype (not retained)"
+    },
+    {
+      "name": "stream-host-qspi8",
+      "source": "build/fb-queue-host-stream-head/lanes-4-depth-8/run.log",
+      "sha256": "cb6e30b2678443596df1c10386d622bbe9b9d0cfe3572e9dccd2c20a98017b4b",
+      "passed": true,
+      "configuration": "rejected RTL prototype (not retained)"
+    },
+    {
+      "name": "default-register-window",
+      "source": "build/fb-verilator/tb_fb_register_window.run.log",
+      "sha256": "dc5bd35787da32032c7867449424ae13dbb1e4f2994a68c9137116aafb15eb18",
+      "passed": true,
+      "configuration": "baseline RTL"
+    },
+    {
+      "name": "default-board-spi",
+      "source": "build/fb-verilator/tb_fb_board.run.log",
+      "sha256": "ff199e783496b430556b16237291708fc27767debd439681eef8ec66ffa7d384",
+      "passed": true,
+      "configuration": "baseline RTL"
+    },
+    {
+      "name": "default-board-qspi",
+      "source": "build/audio-qspi/run.log",
+      "sha256": "e04b10b32d32e384c24755c2238007335b84b3cca43f1f3168406477b30418f1",
+      "passed": true,
+      "configuration": "baseline RTL"
+    },
+    {
+      "name": "restored-burst-controller",
+      "source": "build/fb-verilator/tb_fb_burst_ctrl.run.log",
+      "sha256": "46495e9f7d4f78c6a66b35576ef408bc016eab4852a9f12a143653d71b21dfd2",
+      "passed": true,
+      "configuration": "restored baseline RTL"
+    },
+    {
+      "name": "present-reference-seed-1",
+      "source": "build/fb-present-mailbox/seed-1.log",
+      "sha256": "bca05e0202c76b014f321d16865e093e08109ebf470987933d6d0963090a71c9",
+      "passed": true,
+      "configuration": "rejected palette pipeline prototype vs frozen baseline"
+    },
+    {
+      "name": "present-reference-seed-19",
+      "source": "build/fb-present-mailbox/seed-19.log",
+      "sha256": "d460ec67005bead35bcdc859ae1bb757c8cad18ec14629ab52c90809e7ad4f3f",
+      "passed": true,
+      "configuration": "rejected palette pipeline prototype vs frozen baseline"
+    },
+    {
+      "name": "present-reference-seed-73",
+      "source": "build/fb-present-mailbox/seed-73.log",
+      "sha256": "b747681b95438f2e973555c4833bb6059422046dd5e2bc3a1d7bb1c98832fe4f",
+      "passed": true,
+      "configuration": "rejected palette pipeline prototype vs frozen baseline"
+    }
+  ],
+  "tx_reference_seeds": [
+    1,
+    19,
+    73
+  ],
+  "present_reference_seeds": [
+    1,
+    19,
+    73
+  ],
+  "hardware_tested": false,
+  "verilator": "5.032",
+  "scope": "Baseline and rejected-prototype RTL simulations, labelled per configuration; not hardware validation of STA candidates"
+}

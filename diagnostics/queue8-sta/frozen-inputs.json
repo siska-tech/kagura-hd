@@ -1,0 +1,8 @@
+{
+  "device": "GW1NR-LV9QN88PC6/I5",
+  "tool": "V1.9.12.04 (89079)",
+  "reference_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "mapped_noncomment_verilog_sha256": "9225a2631f881f64d80267b9e5d3493f031f59917f753275525e291d2c00070e",
+  "cst_sha256": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+  "sdc_sha256": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+}

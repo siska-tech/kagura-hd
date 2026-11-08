@@ -1,0 +1,72 @@
+{
+  "files": [
+    {
+      "path": "rtl/fb/kagura_fb_scanout.sv",
+      "prototype_sha256": "2f5afde562fbb6e09873db4db4f5f2d8d568e08f5dfc72bf058f61373308b45e",
+      "restore_sha256": "f6349d1de1e09d5a614b23a357bdb7b9e39853b09e8e2ae6e50e63d81edce5a2"
+    },
+    {
+      "path": "rtl/fb/kagura_fb_core.sv",
+      "prototype_sha256": "10d9a84f0872e0de0f341b370dfbc71f30a505a1f8508cc326f10f50410c5297",
+      "restore_sha256": "5a6b35458127afae3333af0b3e036f964195755bed6e024e228c042d7a321f1d"
+    },
+    {
+      "path": "boards/tang-nano-9k/kagura_fb_top.sv",
+      "prototype_sha256": "44bd6af796e34670643e1493c9a78d7af580729643a647f826946de4274f56bf",
+      "restore_sha256": "4f132a83f1d6a3b6f26caab7932f67ae8e581dd6e11be70dae0dae8366a9820f"
+    },
+    {
+      "path": "tools/build-fb.tcl",
+      "prototype_sha256": "5d839f20be4322c11681988c393d5013052155749c153f47182fed860571a4e0",
+      "restore_sha256": "139a4e6aab4ca0bf6cfd72095c353e80b77805b3d4d7a22ede41ada5cfb07e9e"
+    },
+    {
+      "path": "tools/build-fb.ps1",
+      "prototype_sha256": "bf55f5a8a21d82ebc54723a50927257969d8c8c30dff98912233be6b5f232b94",
+      "restore_sha256": "5d55ba882792ff1085c2883301a8f7a0828f1e846b9a9a469e6f5cb7e6de5946"
+    },
+    {
+      "path": "tools/eval-fb-command-queue.ps1",
+      "prototype_sha256": "9bbec94a5dd32218c39ecd22458f802edcfaa789fc7183998e16fe6c388b353e",
+      "restore_sha256": "4093fc8367273168aa301e0e806691ece76a6fa7070fe554a64cf91e15d14bb2"
+    },
+    {
+      "path": "sim/tests/tb_fb_board.sv",
+      "prototype_sha256": "c9a39cfd2d39b54b0fd545183038a7fc03c5243f3f9121149fddb81c2c9efcf7",
+      "restore_sha256": "156fe8a01c3a22f033e93b4404e21c83cab2c416f7d6873e3c61a22dba42ad77"
+    },
+    {
+      "path": "sim/tests/tb_fb_board_qspi.sv",
+      "prototype_sha256": "8de80e8b8f065bce3fd1b8cec6a48f7862515a7f13af7cbe0bf51e8d5b299150",
+      "restore_sha256": "449bba56a76773a813a30a9278345fb81fa1fb6e07bda4658df844ab8d2727ff"
+    },
+    {
+      "path": "sim/tests/tb_fb_scanout.sv",
+      "prototype_sha256": "98ca1d13aa72bd5ef3a5de7cc5633dc3946f8076c8727c77af48f729a3687c2a",
+      "restore_sha256": "d40f632d4fd9bb2f4b7a73353cda44e02d2a9d50a7ff590af9fa9c3e0ae9a5d7"
+    },
+    {
+      "path": "sim/support/kagura_fb_scanout_palette_reference.sv",
+      "prototype_sha256": "2710c6b12c726810e15fd18842848b56b80ac815f1a1d9e252cf14050710dec4",
+      "restore_sha256": null
+    },
+    {
+      "path": "sim/tests/tb_fb_palette_mailbox.sv",
+      "prototype_sha256": "f49a45fc0002f012a30112c3305f2f14517b3f22e3f1f645ed90a8ffe90bd2cb",
+      "restore_sha256": null
+    },
+    {
+      "path": "sim/tests/tb_fb_palette_queue.sv",
+      "prototype_sha256": "231f18258048ad44e4dc4b6e1cbdf41f6d4c07b7bc14f8d4624a64e2a6ae7cd3",
+      "restore_sha256": null
+    },
+    {
+      "path": "tools/test-fb-palette-sharing.sh",
+      "prototype_sha256": "6fdea5f06fb6aea822d59aa72301b596fc7be21ac07cfa563ab2cde65dbd7776",
+      "restore_sha256": null
+    }
+  ],
+  "previous_sta_input_hashes_restored": true,
+  "restored_inputs": 41,
+  "prototype_mainline_adopted": false
+}

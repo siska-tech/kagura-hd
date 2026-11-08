@@ -1,0 +1,22 @@
+{
+  "depth": 8,
+  "transport": "qspi",
+  "place": 2,
+  "route": 1,
+  "reused_mapped_netlist": true,
+  "input_sha256": {
+    "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+    "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+    "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+  },
+  "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+  "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "fpga_flash_writes": 0,
+  "fpga_sram_programs": 0,
+  "release_ready": false,
+  "exit_code": 1,
+  "build_failed": true,
+  "fresh_bitstream": false,
+  "timing": null,
+  "elapsed_seconds": 1702.7
+}

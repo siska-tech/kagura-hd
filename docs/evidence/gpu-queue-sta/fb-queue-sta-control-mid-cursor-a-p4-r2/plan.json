@@ -1,0 +1,28 @@
+{
+  "depth": 8,
+  "transport": "qspi",
+  "place": 4,
+  "route": 2,
+  "route_maxfan": 23,
+  "reused_mapped_netlist": true,
+  "input_sha256": {
+    "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+    "kagura_fb.cst": "3b8cb53a3b3c68eb5b4f336b08c525efcbebc0f019617c5bc92107c2d6b52700",
+    "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+  },
+  "source_input_sha256": {
+    "impl/gwsynthesis/kagura_fb.vg": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+    "kagura_fb.cst": "77ef83cf7170946c84d752b990b50c7091a8afa258cc4cdfa4051f57c5d5d077",
+    "kagura-fb.sdc": "169c6026948136c552bb5ab498d3f44c84fa390342433ac3f993745f253c1aa0"
+  },
+  "extra_cst": "diagnostics/queue8-sta/control-mid-cursor-a.cst",
+  "extra_cst_sha256": "1418fe90de36f203a42435533aa4bb11709b1fda77cf5e12d2bd994fa0286e33",
+  "source_build": "build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8",
+  "source_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "replicate_resources": false,
+  "fpga_flash_writes": 0,
+  "fpga_sram_programs": 0,
+  "release_ready": false,
+  "mapped_logic_sha256": "9225a2631f881f64d80267b9e5d3493f031f59917f753275525e291d2c00070e",
+  "reference_bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77"
+}

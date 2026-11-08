@@ -1,0 +1,7 @@
+{
+  "source": "software/beyond16/generated/assets.inc",
+  "sha256": "18dfaff32c6f32750d7fa36c24063e67d3a0f5936e731534574d37e9f1438a92",
+  "frame_bytes": 115200,
+  "frame_sha256": "e659e3cde231018d4146a11b4d0af9564e2f56381fe25fa3f2730066b4c65454",
+  "note": "Current saved assets; historical ELF input hash not attested."
+}

@@ -1,0 +1,35 @@
+{
+  "hardware_tested": false,
+  "variants": 5,
+  "compared_cycles": 1550000,
+  "passed": true,
+  "coverage": [
+    "COVER: ratio=12375/8 registered_tick=1 saturated=34788 samples=71 silence=103 stalled=130086 starved=1",
+    "COVER: ratio=7/4 registered_tick=1 saturated=279502 samples=16562 silence=54527 stalled=151253 starved=1",
+    "COVER: ratio=525/1 registered_tick=1 saturated=101884 samples=139 silence=253 stalled=134965 starved=1",
+    "COVER: ratio=5/3 registered_tick=1 saturated=281540 samples=16562 silence=54527 stalled=151253 starved=1",
+    "COVER: ratio=12375/8 registered_tick=0 saturated=34788 samples=71 silence=103 stalled=130086 starved=1"
+  ],
+  "log": {
+    "path": "build/audio-credit-predicate/run.log",
+    "sha256": "D3A498DCAA685BAA3523AE5C5D912DF85E6DD0740B133C6CD43FD0E3760B2D42"
+  },
+  "sources": [
+    {
+      "path": "rtl/audio/kagura_audio_transport.sv",
+      "sha256": "C0424CCC7A2D468D10FF4454BB15B5E53656B7D3780A21E387BDA532757B7FB0"
+    },
+    {
+      "path": "rtl/memory/kagura_async_fifo.sv",
+      "sha256": "536010C7E934FB421584BF7645C622760932F4DE7541FD47BE959469C245B6D4"
+    },
+    {
+      "path": "sim/tests/tb_audio_credit_predicate.sv",
+      "sha256": "9DB90C07CB6B460D323B07E5DAE7FA28C8B251CA05654D80E59671CB8FA12B4C"
+    },
+    {
+      "path": "tools/test-audio-credit-predicate.sh",
+      "sha256": "B7A788E2D9B069607A4185D2D0978B0453F9934C6BAC058B2D0F943A6BF030AF"
+    }
+  ]
+}

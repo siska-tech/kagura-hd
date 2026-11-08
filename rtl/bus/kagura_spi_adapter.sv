@@ -28,7 +28,7 @@ module kagura_spi_adapter #(
     input wire spi_sck, spi_cs_n,
     input wire [3:0] spi_io_in,
     output wire [3:0] spi_io_out,
-    output reg [3:0] spi_io_oe,
+    output wire [3:0] spi_io_oe,
     output reg busy,
     output reg irq_drive,              // 1 pulls /IRQ low (open drain)
     input wire irq_level,
@@ -52,7 +52,25 @@ module kagura_spi_adapter #(
     (* ASYNC_REG="TRUE" *) reg [3:0] io_sync0, io_sync1;
     reg sck_q, cs_q;
     wire active=!cs_sync[1];
-    wire start=active && cs_q;
+    localparam bit FILTER_CS_HIGH=LANES==4;
+    reg frame_active;
+    reg [1:0] cs_high_cycles;
+    reg [3:0] drive_mask;
+    wire start=active && (FILTER_CS_HIGH ? !frame_active : cs_q);
+    wire qualified_end=frame_active && !active && cs_high_cycles==2;
+    // Release the bus on synchronized CS high while the parser qualifies it.
+    assign spi_io_oe=FILTER_CS_HIGH && !active ? 4'd0 : drive_mask;
+    always @(posedge clk) begin
+        if(reset) begin
+            frame_active<=0;
+            cs_high_cycles<=0;
+        end else begin
+            if(active) cs_high_cycles<=0;
+            else if(cs_high_cycles!=3) cs_high_cycles<=cs_high_cycles+1'b1;
+            if(start) frame_active<=1;
+            else if(qualified_end) frame_active<=0;
+        end
+    end
     wire rise=active && !cs_q && sck_sync[1] && !sck_q;
     wire [LANES-1:0] lanes_in=io_sync1[LANES-1:0];
 
@@ -77,7 +95,7 @@ module kagura_spi_adapter #(
             phase<=HEADER; chunk<=0; is_read<=0; inc<=0; discard<=1; offset<=0; fetch_left<=0;
             in_shift<=0; out_shift<=0; next_out<=0; next_valid<=0; fetched<=0;
             pending_read<=0; status_pending<=0;
-            spi_io_oe<=0; busy<=1; irq_drive<=0; late<=0;
+            drive_mask<=0; busy<=1; irq_drive<=0; late<=0;
             req_valid<=0; req_write<=0; req_addr<=0; req_wdata<=0;
         end else begin
             sck_sync<={sck_sync[0],spi_sck}; cs_sync<={cs_sync[0],spi_cs_n};
@@ -98,19 +116,20 @@ module kagura_spi_adapter #(
                 // The previous transaction must be finished (t_CSW).
                 if(req_valid || pending_read) late<=1;
                 else if(LANES==1) begin
-                    spi_io_oe<=4'b0010;
+                    drive_mask<=4'b0010;
                     req_valid<=1; req_write<=0; req_addr<=FIFO_STATUS;
                     pending_read<=1; status_pending<=1;
                 end
-            end else if(!active) begin
-                spi_io_oe<=0; phase<=HEADER; discard<=1;
+            end else if(FILTER_CS_HIGH ? qualified_end : !active) begin
+                drive_mask<=0; phase<=HEADER; discard<=1;
+                if(FILTER_CS_HIGH) chunk<=0;
             end else if(rise && !discard) begin
                 chunk<=last_chunk ? 3'd0 : chunk+1'b1;
                 in_shift<=byte_in;
                 out_shift<=out_shift<<LANES;
                 if(phase==HEADER && chunk==0 && status_pending) late<=1;
                 // QSPI turns the bus around on the first dummy edge.
-                if(LANES!=1 && phase==DUMMY && chunk==0) spi_io_oe<=4'b1111;
+                if(LANES!=1 && phase==DUMMY && chunk==0) drive_mask<=4'b1111;
                 if(fetch) begin
                     if(req_valid && !req_ready) late<=1;
                     else begin

@@ -1,0 +1,3 @@
+[157000] %Fatal: kagura_fb_scanout.sv:39: Assertion failed in tb_fb_palette_mailbox.candidate.shared_palette_contract: shared PRESENT palette changed before acknowledgement
+%Error: rtl/fb/kagura_fb_scanout.sv:39: Verilog $stop
+Aborting...

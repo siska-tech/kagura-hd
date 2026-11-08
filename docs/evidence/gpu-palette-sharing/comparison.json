@@ -1,0 +1,149 @@
+{
+  "variants": [
+    {
+      "mode": "off",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "optimization_goal": "auto",
+        "shared_present_palette": false,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 0,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": 0.05,
+              "from": "core/memory_ctrl/state_0_s1/Q",
+              "to": "core/memory_ctrl/tx_270_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.47,
+              "from": "host/registers/write_ptr_2_s0/Q",
+              "to": "host/registers/descriptors_descriptors_0_0_s/ADA[7]"
+            },
+            "Recovery": {
+              "slack_ns": 8.556,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_28_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.839,
+              "from": "core/hdmi/audio_link/fifo/wr_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/rg_sync2_1_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "fa631aa4955a2e49c7dc356972471b2acbec7206fb843e082810c9525e16e1aa"
+        },
+        "elapsed_seconds": 400.8,
+        "bitstream_sha256": "22C0B04FFD1F15084E2D01E61376719DE3C30296C3D102DAB4D374D8054AAE38"
+      },
+      "resources": {
+        "Logic": {
+          "used": 7868,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5397,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4246,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "numeric_gate_passed": false,
+      "source_snapshot_verified": true,
+      "current_input_hashes_verified": true
+    },
+    {
+      "mode": "on",
+      "result": {
+        "depth": 8,
+        "transport": "qspi",
+        "place": 4,
+        "route": 2,
+        "exit_code": 0,
+        "register_audio_credits": false,
+        "replicate_packet_first": true,
+        "optimization_goal": "auto",
+        "shared_present_palette": true,
+        "build_failed": false,
+        "fresh_bitstream": true,
+        "timing": {
+          "scope": "Kagura-FB numeric STA; draft CDC bounds; external PSRAM IO timing and hardware unverified",
+          "setup_violated_endpoints": 68,
+          "hold_violated_endpoints": 0,
+          "worst": {
+            "Setup": {
+              "slack_ns": -3.569,
+              "from": "host_active_s0/Q",
+              "to": "core/display/palette_92_s0/D"
+            },
+            "Hold": {
+              "slack_ns": 0.533,
+              "from": "core/display/fetch/done_s0/Q",
+              "to": "core/display/line_ack_s0/CE"
+            },
+            "Recovery": {
+              "slack_ns": 9.639,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/read_data_16_s0/CLEAR"
+            },
+            "Removal": {
+              "slack_ns": 0.83,
+              "from": "core/hdmi/audio_link/fifo/rd_reset_1_s0/Q",
+              "to": "core/hdmi/audio_link/fifo/wg_sync2_2_s0/CLEAR"
+            }
+          },
+          "negative_analyses": [
+            "Setup"
+          ],
+          "boot_miso": null,
+          "release_ready": false,
+          "report_sha256": "9a5ba504b8a09ecc6bf79f6655da4b3ee9e44c5dd972569fd225dcf837a704ed"
+        },
+        "elapsed_seconds": 513.5,
+        "bitstream_sha256": "11710DB5A5920EC76586904D9FE15A0D890CA42C1CB5579F016CE22022FC931D"
+      },
+      "resources": {
+        "Logic": {
+          "used": 7867,
+          "capacity": 8640
+        },
+        "Register": {
+          "used": 5205,
+          "capacity": 6771
+        },
+        "CLS": {
+          "used": 4233,
+          "capacity": 4320
+        },
+        "BSRAM": {
+          "used": 23,
+          "capacity": 26
+        }
+      },
+      "numeric_gate_passed": false,
+      "source_snapshot_verified": true,
+      "current_input_hashes_verified": true
+    }
+  ],
+  "fpga_sram_programs": 0,
+  "fpga_flash_writes": 0,
+  "rp2040_writes": 0
+}

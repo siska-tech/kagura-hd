@@ -1,0 +1,24 @@
+{
+  "baseline_mapped_netlist_sha256": "910c273c83a8c5181787e5415996a8271163d6e82c2cb7281d778be361fc92c2",
+  "baseline_noncomment_verilog_sha256": "9225a2631f881f64d80267b9e5d3493f031f59917f753275525e291d2c00070e",
+  "area_comparisons": {
+    "fb-queue-sta-opt-area-p4-r2": {
+      "noncomment_verilog_sha256": "9225a2631f881f64d80267b9e5d3493f031f59917f753275525e291d2c00070e",
+      "identical_logic_text": true
+    },
+    "fb-queue-sta-opt-area-p2-r2": {
+      "noncomment_verilog_sha256": "9225a2631f881f64d80267b9e5d3493f031f59917f753275525e291d2c00070e",
+      "identical_logic_text": true
+    }
+  },
+  "documentation": [
+    {
+      "file": "SUG1220-2.1E_Gowin Software Tcl Commands User Guide.pdf",
+      "sha256": "c8ee7e8cb8486220a8639424f71debe9f4c3dff0d4c365860474c24782ded08c"
+    },
+    {
+      "file": "SUG550-2.4E_GowinSynthesis User Guide.pdf",
+      "sha256": "d9ecc1d51509a1af8cfc0e7835064c32c6e87d1950d8ca42dfe3cab1010781c2"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ set_option -verilog_std sysv2017
 foreach path {
     rtl/bus/kagura_spi_adapter.sv
     rtl/fb/kagura_fb_registers.sv
+    rtl/fb/kagura_fb_command_head.sv
     rtl/fb/kagura_fb_upload_word.sv
     rtl/fb/kagura_fb_commands.sv
     rtl/fb/kagura_fb_fill_burst.sv

@@ -1,0 +1,320 @@
+--- a/rtl/audio/kagura_pcm_prefetch.sv
++++ b/rtl/audio/kagura_pcm_prefetch.sv
+@@ -11,11 +11,17 @@
+     parameter integer ADDR_WIDTH=24,
+     parameter integer BUFFER_ADDR_BITS=8,
+     parameter [ADDR_WIDTH:0] MEMORY_BYTES={1'b1,{ADDR_WIDTH{1'b0}}},
+-    parameter integer RESPONSE_TIMEOUT=0
++    parameter integer RESPONSE_TIMEOUT=0,
++    parameter bit STREAM=0
+ ) (
+     input  wire clk,
+     input  wire reset,
+     input  wire sample_tick,
++    input  wire stream_control_write,stream_publish,
++    input  wire [7:0] stream_data,
++    input  wire [1:0] explicit_stop,
++    output wire [7:0] stream_token,stream_status,
++    output wire stream_cancel_control,
+ 
+     input  wire [1:0] cfg_valid,
+     output wire [1:0] cfg_ready,
+@@ -71,16 +77,84 @@
+     reg selected_valid;
+     reg selected_ch;
+ 
++    // Bit 12 identifies the half of an 8 KiB aligned stereo plane.
++    reg stream_armed,stream_half;
++    reg [6:0] stream_generation;
++    reg [1:0] owed_a,owed_b;
++    reg outstanding_half,outstanding_last;
++    reg [1:0] stream_gate;
++    wire streaming=STREAM && stream_armed;
++    wire stream_arm=STREAM && stream_control_write && stream_data==1 &&
++                    !stream_armed && active==0;
++    wire stream_abort=streaming && ((stream_control_write && stream_data==0) ||
++                      (|explicit_stop) || (|underrun) ||
++                      (|config_error) || (|memory_error));
++    wire stream_clear=stream_arm || stream_abort;
++    wire half_free=stream_half ? owed_b==0 : owed_a==0;
++    assign stream_token={stream_generation,stream_half};
++    assign stream_status={5'b0,outstanding,streaming,streaming && half_free};
++    assign stream_cancel_control=stream_clear;
++    wire publish=streaming && stream_publish && half_free &&
++                 stream_data==stream_token;
++
++    if(STREAM) begin : g_stream
++        always @(posedge clk) begin
++            // next_ok already masks the one cycle after configure or issue.
++            for(int c=0;c<2;c=c+1)
++                stream_gate[c]<=fetch_addr[c][12] ? owed_b[c] : owed_a[c];
++            if(reset) begin
++                stream_armed<=0; stream_half<=0; stream_generation<=0;
++                owed_a<=0; owed_b<=0;
++                outstanding_half<=0; outstanding_last<=0;
++            end else if(stream_clear) begin
++                stream_armed<=stream_arm;
++                stream_half<=0;
++                stream_generation<=stream_generation+1'b1;
++                // Both halves must be filled and fenced before arming.
++                owed_a<=2'b11; owed_b<=2'b11;
++            end else if(streaming) begin
++                if(mem_req_valid && mem_req_ready) begin
++                    outstanding_half<=fetch_addr[selected_ch][12];
++                    outstanding_last<=(&fetch_addr[selected_ch][11:0]);
++                end
++                if(mem_rsp_valid && outstanding && !discard_response &&
++                   !mem_rsp_error && outstanding_last) begin
++                    if(outstanding_half) owed_b[outstanding_ch]<=0;
++                    else owed_a[outstanding_ch]<=0;
++                end
++                if(publish) begin
++                    if(stream_half) begin
++                        owed_b<=2'b11;
++                        stream_generation<=stream_generation+1'b1;
++                    end else owed_a<=2'b11;
++                    stream_half<=~stream_half;
++                end
++            end
++        end
++    end else begin : g_no_stream
++        assign stream_armed=0;
++        assign stream_half=0;
++        assign stream_generation=0;
++        assign owed_a=0;
++        assign owed_b=0;
++        assign outstanding_half=0;
++        assign outstanding_last=0;
++        assign stream_gate=0;
++    end
++
++    wire [1:0] playback_stop=stop_play | {2{streaming && (|stop_play)}};
++    wire stereo_starved=streaming && sample_tick && (&active) &&
++                         !(|playback_stop) && (count[0]==0 || count[1]==0);
+     // A channel stopped on a sample tick does not consume that sample, so a
+     // pause on the AUDIO_COMMIT boundary resumes without a gap.
+-    wire pop0=sample_tick && active[0] && !stop_play[0];
+-    wire pop1=sample_tick && active[1] && !stop_play[1];
+-    wire push0=mem_rsp_valid && outstanding && !discard_response && !mem_rsp_error && !outstanding_ch;
+-    wire push1=mem_rsp_valid && outstanding && !discard_response && !mem_rsp_error && outstanding_ch;
++    wire pop0=sample_tick && active[0] && !playback_stop[0] && !stereo_starved;
++    wire pop1=sample_tick && active[1] && !playback_stop[1] && !stereo_starved;
++    wire push0=mem_rsp_valid && outstanding && !discard_response && !mem_rsp_error && !outstanding_ch && !stream_clear;
++    wire push1=mem_rsp_valid && outstanding && !discard_response && !mem_rsp_error && outstanding_ch && !stream_clear;
+     // A request is issued only with no read outstanding, so the space a channel
+     // needs is simply count < depth: the MSB of count (count <= depth).
+-    wire need0=configured[0] && next_ok[0] && !fetch_done[0] && !count[0][COUNT_WIDTH-1];
+-    wire need1=configured[1] && next_ok[1] && !fetch_done[1] && !count[1][COUNT_WIDTH-1];
++    wire need0=(!streaming || (stream_gate[0] && (&configured))) && configured[0] && next_ok[0] && !fetch_done[0] && !count[0][COUNT_WIDTH-1];
++    wire need1=(!streaming || (stream_gate[1] && (&configured))) && configured[1] && next_ok[1] && !fetch_done[1] && !count[1][COUNT_WIDTH-1];
+ 
+     assign cfg_ready={2{!outstanding}} & ~active;
+     assign ready[0]=configured[0] && (count[0]==BUFFER_DEPTH_COUNT || fetch_done[0]);
+@@ -92,7 +166,7 @@
+         if(need0 && need1) begin selected_valid=1; selected_ch=rr; end
+         else if(need0) begin selected_valid=1; selected_ch=0; end
+         else if(need1) begin selected_valid=1; selected_ch=1; end
+-        mem_req_valid=!outstanding && selected_valid;
++        mem_req_valid=!outstanding && selected_valid && !stream_clear;
+         mem_req_addr=selected_ch ? fetch_addr[1] : fetch_addr[0];
+     end
+ 
+@@ -109,6 +183,20 @@
+     // caller holds them for at least two cycles before cfg_valid (the public
+     // registers settle for three), so the comparators stay out of the accept path.
+     reg [1:0] cfg_bad;
++    reg [1:0] stream_range_bad;
++    if(STREAM) begin : g_range
++        for(genvar c=0;c<2;c=c+1) begin : g_channel
++            wire [21:0] start_byte=cfg_start[c*ADDR_WIDTH +: ADDR_WIDTH];
++            wire [21:0] end_byte=cfg_end[c*ADDR_WIDTH +: ADDR_WIDTH];
++            wire [21:0] loop_byte=cfg_loop[c*ADDR_WIDTH +: ADDR_WIDTH];
++            always @(posedge clk)
++                stream_range_bad[c]<= !cfg_loop_enable[c] ||
++                    (|start_byte[12:0]) || (|end_byte[12:0]) ||
++                    end_byte[21:13]!=start_byte[21:13]+9'd1 || loop_byte!=start_byte;
++        end
++    end else begin : g_no_range
++        assign stream_range_bad=0;
++    end
+     always @(posedge clk)
+         for(int c=0;c<2;c=c+1)
+             cfg_bad[c]<=cfg_start[c*ADDR_WIDTH +: ADDR_WIDTH]>=cfg_end[c*ADDR_WIDTH +: ADDR_WIDTH] ||
+@@ -133,7 +221,7 @@
+             for(i=0;i<2;i=i+1) begin
+                 if(cfg_valid[i] && cfg_ready[i]) begin
+                     rd_ptr[i]<=0; wr_ptr[i]<=0; count[i]<=0; fetch_done[i]<=0;
+-                    if(cfg_bad[i]) begin
++                    if(cfg_bad[i] || (streaming && (stream_range_bad[i] || configured[i]))) begin
+                         configured[i]<=0;
+                         config_error[i]<=1;
+                     end else begin
+@@ -145,12 +233,12 @@
+                     end
+                 end else if(cfg_valid[i] && !cfg_ready[i]) config_error[i]<=1;
+ 
+-                if(stop_play[i]) begin
++                if(playback_stop[i]) begin
+                     active[i]<=0;
+                     if(i==0) sample0<=0; else sample1<=0;
+                 end
+                 if(start_play[i]) begin
+-                    if(ready[i] && !active[i]) active[i]<=1;
++                    if(ready[i] && !active[i] && (!streaming || (&start_play))) active[i]<=1;
+                     else config_error[i]<=1;
+                 end
+             end
+@@ -218,6 +306,19 @@
+ 
+             if(pop0 && count[0]==1 && fetch_done[0] && !push0) begin active[0]<=0; done[0]<=1; end
+             if(pop1 && count[1]==1 && fetch_done[1] && !push1) begin active[1]<=0; done[1]<=1; end
++
++            if(stereo_starved) begin
++                active<=0;
++                underrun<=2'b11;
++                sample0<=0; sample1<=0;
++            end
++            if(stream_clear) begin
++                configured<=0;
++                active<=0;
++                sample0<=0; sample1<=0;
++                // Keep the outstanding slot occupied until its late response drains.
++                if(outstanding && !mem_rsp_valid) discard_response<=1;
++            end
+         end
+     end
+ 
+--- a/rtl/audio/kagura_pcm_control.sv
++++ b/rtl/audio/kagura_pcm_control.sv
+@@ -16,6 +16,7 @@
+     input  wire reset,
+     input  wire [1:0] prepare,         // pulses from the register block
+     input  wire [1:0] stop,
++    input  wire cancel_pending,
+     input  wire [1:0] clear,
+     input  wire apply_boundary,        // AUDIO_COMMIT applies on this sample boundary
+     input  wire [1:0] commit_enable,   // ENABLE in the snapshot being applied
+@@ -38,7 +39,7 @@
+     reg [1:0] pending,need_prepare,done,underrun,config_error,memory_error;
+     wire [1:0] accept=cfg_valid & cfg_ready;
+     wire [1:0] ready=pf_ready & ~need_prepare & ~pending;
+-    assign cfg_valid=pending & cfg_ready;
++    assign cfg_valid=pending & cfg_ready & {2{!cancel_pending}};
+     assign cache_flush=|accept;
+     assign stop_play=stop | (prepare & pf_active) | ({2{apply_boundary}} & ~commit_enable & pf_active);
+     assign start_play={2{apply_boundary}} & commit_enable & ready & ~pf_active & ~prepare & ~stop;
+@@ -51,7 +52,7 @@
+         if(reset) begin
+             pending<=0; need_prepare<=2'b11; done<=0; underrun<=0; config_error<=0; memory_error<=0;
+         end else begin
+-            pending<=(pending & ~accept) | prepare;
++            pending<=cancel_pending ? 2'b0 : (pending & ~accept) | prepare;
+             need_prepare<=(need_prepare & ~accept) | stop | pf_done | pf_underrun | pf_config_error | pf_memory_error;
+             done<=(done & ~clear) | pf_done;
+             underrun<=(underrun & ~clear) | pf_underrun;
+--- a/rtl/fb/kagura_fb_core.sv
++++ b/rtl/fb/kagura_fb_core.sv
+@@ -42,6 +42,9 @@
+     input wire [43:0] pcm_start,pcm_end,pcm_loop,
+     input wire [1:0] pcm_loop_enable,
+     output wire [7:0] pcm_status0,pcm_status1,
++    input wire stream_control_write,stream_publish,
++    input wire [7:0] stream_data,
++    output wire [7:0] stream_token,stream_status,
+     output wire wave_read,
+     output wire [8:0] wave_addr,
+     input wire signed [7:0] wave_data,
+@@ -106,16 +109,19 @@
+     wire [1:0] cfg_valid,cfg_ready,start_play,stop_play,pf_ready,pf_active;
+     wire [1:0] pf_done,pf_underrun,pf_config_error,pf_memory_error;
+     wire signed [7:0] pcm0,pcm1;
+-    wire apply_boundary,sample_boundary;
+-    kagura_pcm_prefetch #(.ADDR_WIDTH(22),.BUFFER_ADDR_BITS(5),.MEMORY_BYTES(23'h400000),.RESPONSE_TIMEOUT(4096)) prefetch(
++    wire apply_boundary,sample_boundary,stream_cancel_control;
++    kagura_pcm_prefetch #(.ADDR_WIDTH(22),.BUFFER_ADDR_BITS(5),.MEMORY_BYTES(23'h400000),.RESPONSE_TIMEOUT(4096),.STREAM(1)) prefetch(
+         .clk(clk_system),.reset(system_reset),.sample_tick(sample_boundary),.cfg_valid,.cfg_ready,
++        .stream_control_write,.stream_publish,.stream_data,.stream_token,.stream_status,
++        .explicit_stop(pcm_stop),.stream_cancel_control,
+         .cfg_start(pcm_start),.cfg_end(pcm_end),.cfg_loop(pcm_loop),.cfg_loop_enable(pcm_loop_enable),
+         .start_play,.stop_play,.ready(pf_ready),.active(pf_active),.done(pf_done),
+         .underrun(pf_underrun),.config_error(pf_config_error),.memory_error(pf_memory_error),
+         .sample0(pcm0),.sample1(pcm1),.mem_req_valid(pf_req),.mem_req_ready(pf_req_ready),
+         .mem_req_addr(pf_addr),.mem_rsp_valid(pf_rsp),.mem_rsp_data(pf_data),.mem_rsp_error(pf_rsp_error));
+     kagura_pcm_control pcm_control(
+-        .clk(clk_system),.reset(system_reset),.prepare(pcm_prepare),.stop(pcm_stop),.clear(pcm_clear),
++        .clk(clk_system),.reset(system_reset),.prepare(pcm_prepare),.stop(pcm_stop | {2{stream_cancel_control}}),
++        .cancel_pending(stream_cancel_control),.clear(pcm_clear),
+         .apply_boundary,.commit_enable(cfg_pcm_enable),.cfg_valid,.cfg_ready,.start_play,.stop_play,.cache_flush,
+         .pf_ready,.pf_active,.pf_done,.pf_underrun,.pf_config_error,.pf_memory_error,
+         .status0(pcm_status0),.status1(pcm_status1));
+--- a/rtl/fb/kagura_fb_audio_endpoint.sv
++++ b/rtl/fb/kagura_fb_audio_endpoint.sv
+@@ -11,6 +11,9 @@
+  output wire [47:0] cfg_gain_l,cfg_gain_r,output wire [5:0] cfg_enable,cfg_phase_reset,
+  output wire [7:0] cfg_wave_len,cfg_master,output wire [15:0] cfg_noise_period,
+  output wire [15:0] cfg_pcm_gain_l,cfg_pcm_gain_r,output wire [1:0] cfg_pcm_enable,
++ input wire [7:0] stream_token,stream_status,
++ output reg stream_control_write,stream_publish,
++ output reg [7:0] stream_data,
+  output wire [43:0] pcm_start,pcm_end,pcm_loop,
+  output wire [1:0] pcm_loop_enable,pcm_prepare,pcm_stop,pcm_clear
+ );
+@@ -51,16 +54,29 @@
+   .snapshot_pcm_enable(cfg_pcm_enable),.settle);
+  always @(posedge clk) begin
+   if(reset) begin
++   stream_control_write<=0; stream_publish<=0; stream_data<=0;
+    sync1<=0;sync2<=0;old_fifo<=0;rsp_valid<=0;rsp_error<=0;rsp_data<=0;
+   end else begin
+    sync1<={muted,fifo_overflow,fifo_underflow};sync2<=sync1;old_fifo<=sync2[1:0];
++   stream_control_write<=0; stream_publish<=0;
+    rsp_valid<=accept;rsp_error<=0;rsp_data<=0;
+    if(accept) begin
+     if(req_write) begin
+-     if(req_addr!=6 && !(req_addr==7 && data_legal)) rsp_error<=1;
++     if(req_addr==7 && index==8'he3 && req_wdata<=1) begin
++      stream_control_write<=1;
++      stream_data<=req_wdata;
++     end else if(req_addr==7 && index==8'he4) begin
++      stream_publish<=1;
++      stream_data<=req_wdata;
++     end else if(req_addr!=6 && !(req_addr==7 && data_legal)) rsp_error<=1;
+     end else case(req_addr)
+      6:rsp_data<=index;
+-     7:begin rsp_data<=rdata;rsp_error<=!read_legal;end
++     7:case(index)
++       8'he3: rsp_data<=8'h51;
++       8'he4: rsp_data<=stream_token;
++       8'he5: rsp_data<=stream_status;
++       default: begin rsp_data<=rdata; rsp_error<=!read_legal; end
++     endcase
+      default:rsp_error<=1;
+     endcase
+    end
+--- a/boards/tang-nano-9k/kagura_fb_top.sv
++++ b/boards/tang-nano-9k/kagura_fb_top.sv
+@@ -35,6 +35,8 @@
+     wire [15:0] cfg_noise_period,cfg_pcm_gain_l,cfg_pcm_gain_r;
+     wire [1:0] cfg_pcm_enable,pcm_prepare,pcm_stop,pcm_clear,pcm_loop_enable;
+     wire [43:0] pcm_start,pcm_end,pcm_loop;
++    wire stream_control_write,stream_publish;
++    wire [7:0] stream_data,stream_token,stream_status;
+     kagura_fb_audio_endpoint audio_endpoint(
+         .clk(system_clk),.reset,.enabled(host_active && !failed),
+         .req_valid(audio_req_valid),.req_write(audio_req_write),.req_addr(audio_req_addr),.req_wdata(audio_req_wdata),
+@@ -42,6 +44,7 @@
+         .audio_capture,.audio_commit_done,.audio_settings_valid,.audio_busy,.audio_settle,.fifo_underflow(audio_underflow),.fifo_overflow(audio_overflow),
+         .muted(audio_muted),.pcm_status0,.pcm_status1,.cfg_step,.cfg_duty,.cfg_gain_l,.cfg_gain_r,.cfg_enable,
+         .cfg_phase_reset,.cfg_wave_len,.cfg_master,.cfg_noise_period,.cfg_pcm_gain_l,.cfg_pcm_gain_r,.cfg_pcm_enable,
++        .stream_control_write,.stream_publish,.stream_data,.stream_token,.stream_status,
+         .pcm_start,.pcm_end,.pcm_loop,.pcm_loop_enable,.pcm_prepare,.pcm_stop,.pcm_clear);
+     wire wave_read;
+     wire [8:0] wave_addr;
+@@ -126,6 +129,7 @@
+         .audio_apply,.audio_ready,.audio_done,.audio_error,
+         .cfg_step,.cfg_duty,.cfg_gain_l,.cfg_gain_r,.cfg_enable,.cfg_phase_reset,.cfg_wave_len,.cfg_master,
+         .cfg_noise_period,.cfg_pcm_gain_l,.cfg_pcm_gain_r,.cfg_pcm_enable,
++        .stream_control_write,.stream_publish,.stream_data,.stream_token,.stream_status,
+         .pcm_prepare,.pcm_stop,.pcm_clear,.pcm_start,.pcm_end,.pcm_loop,.pcm_loop_enable,.pcm_status0,.pcm_status1,
+         .wave_read,.wave_addr,.wave_data,.tmds(tx),.tmds_clock(tc),.initialized,.video_underrun,
+         .memory_error,.audio_overflow,.audio_underflow,.audio_muted,.cx(),.cy(),.rgb(),

@@ -1,0 +1,6 @@
+{
+  "bitstream_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "firmware_sha256": "c83545b61127dba78944037543f80b849fd8d87b6cb41e1b2bbeed280d74b008",
+  "backup_sha256": "2684e27d0c8f0912debf51844095c038ab7ce6f3b492bbdb9a208393ddc792fc",
+  "release_ready": false
+}

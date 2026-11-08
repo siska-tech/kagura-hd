@@ -4,7 +4,7 @@
 // island pixel. Header/sub change only on the edge into a packet, as
 // kagura_audio_packets does on packet_enable; runs of 1..18 packets with
 // random gaps, and resets in the middle of packets.
-module tb_packet_assembler;
+module tb_packet_assembler #(parameter bit REPLICATE_FIRST=0);
     reg clk=0; always #6.734 clk=~clk;
     reg reset=1, island=0;
     reg [23:0] header=0;
@@ -13,7 +13,7 @@ module tb_packet_assembler;
     wire [4:0] want_counter, got_counter;
     packet_assembler reference(.clk_pixel(clk),.reset(reset),.data_island_period(island),
         .header(header),.sub(sub),.packet_data(want),.counter(want_counter));
-    kagura_packet_assembler dut(.clk_pixel(clk),.reset(reset),.data_island_period(island),
+    kagura_packet_assembler #(.REPLICATE_FIRST(REPLICATE_FIRST)) dut(.clk_pixel(clk),.reset(reset),.data_island_period(island),
         .header(header),.sub(sub),.packet_data(got),.counter(got_counter));
     integer checked=0, packets=0, resets=0;
     always @(posedge clk) begin

@@ -1,6 +1,6 @@
 # RTL
 
-現行最終版はPCM2 ABI 1.4 / QSPIです。合成対象は[`fb/sources.f`](fb/sources.f)、board topは[`kagura_fb_top`](../boards/tang-nano-9k/kagura_fb_top.sv)です。採用Bitstreamの入力とルートRTLの一致を`python tools/check-release.py`で確認します。
+現行の選定版は、PCMストリーミングに対応したQueue8・QSPI（ABI 1.4にストリーミングCSRを追加したもの）です。旧PCM2版は置き換え済みです。合成対象は[`fb/sources.f`](fb/sources.f)、board topは[`kagura_fb_top`](../boards/tang-nano-9k/kagura_fb_top.sv)です。採用Bitstreamの入力とルートRTLの一致を`python tools/check-release.py`で確認します。
 
 |ディレクトリ|用途|
 |---|---|

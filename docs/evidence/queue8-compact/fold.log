@@ -1,0 +1,7 @@
+QUEUE transport LANES=4 depth=8 round=0 accept=17021 drain=158791 cycles
+QUEUE transport LANES=4 depth=8 round=1 accept=17021 drain=158791 cycles
+PASS: queued fb_host LANES=4 depth=8 physical transport, ordered pixels, READ, PRESENT, COPY and payload switching
+- build/queue8-compact/tb_fb_host.sv:221: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 17ms; walltime 18.531 s; speed 913.239 us/s
+- Verilator: cpu 18.481 s on 1 threads; alloced 122 MB

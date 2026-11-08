@@ -1,0 +1,16 @@
+{
+  "depth": 8,
+  "transport": "qspi",
+  "place": 3,
+  "route": 2,
+  "exit_code": 1,
+  "register_audio_credits": false,
+  "replicate_packet_first": true,
+  "register_tx_control": true,
+  "pipeline_present_mailbox": false,
+  "register_upload_window": true,
+  "build_failed": true,
+  "fresh_bitstream": false,
+  "timing": null,
+  "elapsed_seconds": 110.6
+}

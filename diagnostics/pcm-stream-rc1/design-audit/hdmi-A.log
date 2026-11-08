@@ -1,0 +1,11 @@
+HDMI pattern=0 RGB24=0 parallelTMDS30=44522215 serializedEdges=23249672 tmdsFNV64=536beedddd3208b3
+HDMI pattern=1 RGB24=69120 parallelTMDS30=42920935 serializedEdges=18514952 tmdsFNV64=a14fe51c51e3a033
+HDMI pattern=2 RGB24=23040 parallelTMDS30=43986535 serializedEdges=21671432 tmdsFNV64=268fe712989208b3
+HDMI pattern=3 RGB24=23040 parallelTMDS30=43992295 serializedEdges=21671432 tmdsFNV64=92a4637a2acca0b3
+HDMI pattern=4 RGB24=23040 parallelTMDS30=43986535 serializedEdges=21671432 tmdsFNV64=8b7739b9ed65d033
+HDMI pattern=5 RGB24=347760 parallelTMDS30=25045895 serializedEdges=29150600 tmdsFNV64=d83420c16eafb6eb
+PASS RGB packet/TERC4 equality accepted=1599 consumed=1596 ASP=399 ACR=34 DI_symbols=480000
+- diagnostics/pcm-stream-rc1/design-audit/tb_hdmi_activity.sv:91: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 25ms; walltime 10.898 s; speed 2.358 ms/s
+- Verilator: cpu 10.497 s on 1 threads; alloced 121 MB

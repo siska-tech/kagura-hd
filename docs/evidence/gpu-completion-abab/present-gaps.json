@@ -1,0 +1,1666 @@
+[
+  {
+    "log": "build\\completion-abab-20261107\\hardware\\baseline-1\\demo-usb.log",
+    "sha256": "aaea909e0c8872ef6a83812864a1f35729ba6a0807fa6032f64f9fba3fa99f61",
+    "frames": 4422,
+    "worst": {
+      "frame_index": 4213,
+      "timeline_ms": 143017,
+      "scene": 7,
+      "interval_us": 100011,
+      "before_draw_us": 17078,
+      "draw_to_present_us": 79899,
+      "present_call_us": 3034,
+      "call_us": 82938,
+      "finale_page_initial_lettering": true,
+      "context": [
+        {
+          "ms": 142951,
+          "scene": 7,
+          "us": 32330,
+          "present_before_us": 151787291,
+          "present_after_us": 151802905,
+          "draw_start_us": 151770580,
+          "deadline_us": 151803913
+        },
+        {
+          "ms": 142984,
+          "scene": 7,
+          "us": 15648,
+          "present_before_us": 151819350,
+          "present_after_us": 151819556,
+          "draw_start_us": 151803915,
+          "deadline_us": 151837248
+        },
+        {
+          "ms": 143017,
+          "scene": 7,
+          "us": 82938,
+          "present_before_us": 151916533,
+          "present_after_us": 151919567,
+          "draw_start_us": 151836634,
+          "deadline_us": 151869967
+        },
+        {
+          "ms": 143101,
+          "scene": 7,
+          "us": 82302,
+          "present_before_us": 152000522,
+          "present_after_us": 152002897,
+          "draw_start_us": 151920601,
+          "deadline_us": 151953934
+        },
+        {
+          "ms": 143184,
+          "scene": 7,
+          "us": 15651,
+          "present_before_us": 152003934,
+          "present_after_us": 152019567,
+          "draw_start_us": 152003922,
+          "deadline_us": 152037255
+        }
+      ]
+    },
+    "over_80ms": [
+      {
+        "frame_index": 4117,
+        "timeline_ms": 139601,
+        "scene": 6,
+        "interval_us": 83334,
+        "before_draw_us": 1015,
+        "draw_to_present_us": 65646,
+        "present_call_us": 16673,
+        "call_us": 82325,
+        "finale_page_initial_lettering": false,
+        "context": [
+          {
+            "ms": 139468,
+            "scene": 6,
+            "us": 65660,
+            "present_before_us": 148346088,
+            "present_after_us": 148352894,
+            "draw_start_us": 148287240,
+            "deadline_us": 148320573
+          },
+          {
+            "ms": 139534,
+            "scene": 6,
+            "us": 65652,
+            "present_before_us": 148418222,
+            "present_after_us": 148419556,
+            "draw_start_us": 148353910,
+            "deadline_us": 148387243
+          },
+          {
+            "ms": 139601,
+            "scene": 6,
+            "us": 82325,
+            "present_before_us": 148486217,
+            "present_after_us": 148502890,
+            "draw_start_us": 148420571,
+            "deadline_us": 148453904
+          },
+          {
+            "ms": 139684,
+            "scene": 6,
+            "us": 82324,
+            "present_before_us": 148572138,
+            "present_after_us": 148586225,
+            "draw_start_us": 148503907,
+            "deadline_us": 148537240
+          },
+          {
+            "ms": 139768,
+            "scene": 6,
+            "us": 82314,
+            "present_before_us": 148655044,
+            "present_after_us": 148669546,
+            "draw_start_us": 148587238,
+            "deadline_us": 148620571
+          }
+        ]
+      },
+      {
+        "frame_index": 4118,
+        "timeline_ms": 139684,
+        "scene": 6,
+        "interval_us": 83335,
+        "before_draw_us": 1017,
+        "draw_to_present_us": 68231,
+        "present_call_us": 14087,
+        "call_us": 82324,
+        "finale_page_initial_lettering": false,
+        "context": [
+          {
+            "ms": 139534,
+            "scene": 6,
+            "us": 65652,
+            "present_before_us": 148418222,
+            "present_after_us": 148419556,
+            "draw_start_us": 148353910,
+            "deadline_us": 148387243
+          },
+          {
+            "ms": 139601,
+            "scene": 6,
+            "us": 82325,
+            "present_before_us": 148486217,
+            "present_after_us": 148502890,
+            "draw_start_us": 148420571,
+            "deadline_us": 148453904
+          },
+          {
+            "ms": 139684,
+            "scene": 6,
+            "us": 82324,
+            "present_before_us": 148572138,
+            "present_after_us": 148586225,
+            "draw_start_us": 148503907,
+            "deadline_us": 148537240
+          },
+          {
+            "ms": 139768,
+            "scene": 6,
+            "us": 82314,
+            "present_before_us": 148655044,
+            "present_after_us": 148669546,
+            "draw_start_us": 148587238,
+            "deadline_us": 148620571
+          },
+          {
+            "ms": 139851,
+            "scene": 6,
+            "us": 82336,
+            "present_before_us": 148738174,
+            "present_after_us": 148752895,
+            "draw_start_us": 148670564,
+            "deadline_us": 148703897
+          }
+        ]
+      },
+      {
+        "frame_index": 4119,
+        "timeline_ms": 139768,
+        "scene": 6,
+        "interval_us": 83321,
+        "before_draw_us": 1013,
+        "draw_to_present_us": 67806,
+        "present_call_us": 14502,
+        "call_us": 82314,
+        "finale_page_initial_lettering": false,
+        "context": [
+          {
+            "ms": 139601,
+            "scene": 6,
+            "us": 82325,
+            "present_before_us": 148486217,
+            "present_after_us": 148502890,
+            "draw_start_us": 148420571,
+            "deadline_us": 148453904
+          },
+          {
+            "ms": 139684,
+            "scene": 6,
+            "us": 82324,
+            "present_before_us": 148572138,
+            "present_after_us": 148586225,
+            "draw_start_us": 148503907,
+            "deadline_us": 148537240
+          },
+          {
+            "ms": 139768,
+            "scene": 6,
+            "us": 82314,
+            "present_before_us": 148655044,
+            "present_after_us": 148669546,
+            "draw_start_us": 148587238,
+            "deadline_us": 148620571
+          },
+          {
+            "ms": 139851,
+            "scene": 6,
+            "us": 82336,
+            "present_before_us": 148738174,
+            "present_after_us": 148752895,
+            "draw_start_us": 148670564,
+            "deadline_us": 148703897
+          },
+          {
+            "ms": 139934,
+            "scene": 6,
+            "us": 65643,
+            "present_before_us": 148810648,
+            "present_after_us": 148819547,
+            "draw_start_us": 148753910,
+            "deadline_us": 148787243
+          }
+        ]
+      },
+      {
+        "frame_index": 4120,
+        "timeline_ms": 139851,
+        "scene": 6,
+        "interval_us": 83349,
+        "before_draw_us": 1018,
+        "draw_to_present_us": 67610,
+        "present_call_us": 14721,
+        "call_us": 82336,
+        "finale_page_initial_lettering": false,
+        "context": [
+          {
+            "ms": 139684,
+            "scene": 6,
+            "us": 82324,
+            "present_before_us": 148572138,
+            "present_after_us": 148586225,
+            "draw_start_us": 148503907,
+            "deadline_us": 148537240
+          },
+          {
+            "ms": 139768,
+            "scene": 6,
+            "us": 82314,
+            "present_before_us": 148655044,
+            "present_after_us": 148669546,
+            "draw_start_us": 148587238,
+            "deadline_us": 148620571
+          },
+          {
+            "ms": 139851,
+            "scene": 6,
+            "us": 82336,
+            "present_before_us": 148738174,
+            "present_after_us": 148752895,
+            "draw_start_us": 148670564,
+            "deadline_us": 148703897
+          },
+          {
+            "ms": 139934,
+            "scene": 6,
+            "us": 65643,
+            "present_before_us": 148810648,
+            "present_after_us": 148819547,
+            "draw_start_us": 148753910,
+            "deadline_us": 148787243
+          },
+          {
+            "ms": 140001,
+            "scene": 7,
+            "us": 32325,
+            "present_before_us": 148847882,
+            "present_after_us": 148852880,
+            "draw_start_us": 148820562,
+            "deadline_us": 148853895
+          }
+        ]
+      },
+      {
+        "frame_index": 4213,
+        "timeline_ms": 143017,
+        "scene": 7,
+        "interval_us": 100011,
+        "before_draw_us": 17078,
+        "draw_to_present_us": 79899,
+        "present_call_us": 3034,
+        "call_us": 82938,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142951,
+            "scene": 7,
+            "us": 32330,
+            "present_before_us": 151787291,
+            "present_after_us": 151802905,
+            "draw_start_us": 151770580,
+            "deadline_us": 151803913
+          },
+          {
+            "ms": 142984,
+            "scene": 7,
+            "us": 15648,
+            "present_before_us": 151819350,
+            "present_after_us": 151819556,
+            "draw_start_us": 151803915,
+            "deadline_us": 151837248
+          },
+          {
+            "ms": 143017,
+            "scene": 7,
+            "us": 82938,
+            "present_before_us": 151916533,
+            "present_after_us": 151919567,
+            "draw_start_us": 151836634,
+            "deadline_us": 151869967
+          },
+          {
+            "ms": 143101,
+            "scene": 7,
+            "us": 82302,
+            "present_before_us": 152000522,
+            "present_after_us": 152002897,
+            "draw_start_us": 151920601,
+            "deadline_us": 151953934
+          },
+          {
+            "ms": 143184,
+            "scene": 7,
+            "us": 15651,
+            "present_before_us": 152003934,
+            "present_after_us": 152019567,
+            "draw_start_us": 152003922,
+            "deadline_us": 152037255
+          }
+        ]
+      },
+      {
+        "frame_index": 4214,
+        "timeline_ms": 143101,
+        "scene": 7,
+        "interval_us": 83330,
+        "before_draw_us": 1034,
+        "draw_to_present_us": 79921,
+        "present_call_us": 2375,
+        "call_us": 82302,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142984,
+            "scene": 7,
+            "us": 15648,
+            "present_before_us": 151819350,
+            "present_after_us": 151819556,
+            "draw_start_us": 151803915,
+            "deadline_us": 151837248
+          },
+          {
+            "ms": 143017,
+            "scene": 7,
+            "us": 82938,
+            "present_before_us": 151916533,
+            "present_after_us": 151919567,
+            "draw_start_us": 151836634,
+            "deadline_us": 151869967
+          },
+          {
+            "ms": 143101,
+            "scene": 7,
+            "us": 82302,
+            "present_before_us": 152000522,
+            "present_after_us": 152002897,
+            "draw_start_us": 151920601,
+            "deadline_us": 151953934
+          },
+          {
+            "ms": 143184,
+            "scene": 7,
+            "us": 15651,
+            "present_before_us": 152003934,
+            "present_after_us": 152019567,
+            "draw_start_us": 152003922,
+            "deadline_us": 152037255
+          },
+          {
+            "ms": 143217,
+            "scene": 7,
+            "us": 16485,
+            "present_before_us": 152036442,
+            "present_after_us": 152052908,
+            "draw_start_us": 152036430,
+            "deadline_us": 152069763
+          }
+        ]
+      }
+    ],
+    "finale_initial_lettering": [
+      {
+        "frame_index": 4213,
+        "timeline_ms": 143017,
+        "scene": 7,
+        "interval_us": 100011,
+        "before_draw_us": 17078,
+        "draw_to_present_us": 79899,
+        "present_call_us": 3034,
+        "call_us": 82938,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142951,
+            "scene": 7,
+            "us": 32330,
+            "present_before_us": 151787291,
+            "present_after_us": 151802905,
+            "draw_start_us": 151770580,
+            "deadline_us": 151803913
+          },
+          {
+            "ms": 142984,
+            "scene": 7,
+            "us": 15648,
+            "present_before_us": 151819350,
+            "present_after_us": 151819556,
+            "draw_start_us": 151803915,
+            "deadline_us": 151837248
+          },
+          {
+            "ms": 143017,
+            "scene": 7,
+            "us": 82938,
+            "present_before_us": 151916533,
+            "present_after_us": 151919567,
+            "draw_start_us": 151836634,
+            "deadline_us": 151869967
+          },
+          {
+            "ms": 143101,
+            "scene": 7,
+            "us": 82302,
+            "present_before_us": 152000522,
+            "present_after_us": 152002897,
+            "draw_start_us": 151920601,
+            "deadline_us": 151953934
+          },
+          {
+            "ms": 143184,
+            "scene": 7,
+            "us": 15651,
+            "present_before_us": 152003934,
+            "present_after_us": 152019567,
+            "draw_start_us": 152003922,
+            "deadline_us": 152037255
+          }
+        ]
+      },
+      {
+        "frame_index": 4214,
+        "timeline_ms": 143101,
+        "scene": 7,
+        "interval_us": 83330,
+        "before_draw_us": 1034,
+        "draw_to_present_us": 79921,
+        "present_call_us": 2375,
+        "call_us": 82302,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142984,
+            "scene": 7,
+            "us": 15648,
+            "present_before_us": 151819350,
+            "present_after_us": 151819556,
+            "draw_start_us": 151803915,
+            "deadline_us": 151837248
+          },
+          {
+            "ms": 143017,
+            "scene": 7,
+            "us": 82938,
+            "present_before_us": 151916533,
+            "present_after_us": 151919567,
+            "draw_start_us": 151836634,
+            "deadline_us": 151869967
+          },
+          {
+            "ms": 143101,
+            "scene": 7,
+            "us": 82302,
+            "present_before_us": 152000522,
+            "present_after_us": 152002897,
+            "draw_start_us": 151920601,
+            "deadline_us": 151953934
+          },
+          {
+            "ms": 143184,
+            "scene": 7,
+            "us": 15651,
+            "present_before_us": 152003934,
+            "present_after_us": 152019567,
+            "draw_start_us": 152003922,
+            "deadline_us": 152037255
+          },
+          {
+            "ms": 143217,
+            "scene": 7,
+            "us": 16485,
+            "present_before_us": 152036442,
+            "present_after_us": 152052908,
+            "draw_start_us": 152036430,
+            "deadline_us": 152069763
+          }
+        ]
+      }
+    ],
+    "interpretation": "CPU-observed intervals; PRESENT call includes Queue drain, submit, GPU/vblank wait and ACK. before_draw includes scheduling and any work after previous PRESENT. No direct GPU timing."
+  },
+  {
+    "log": "build\\completion-abab-20261107\\hardware\\burst-1\\demo-usb.log",
+    "sha256": "674146e324336ffcd5090df89d576af84a9abc4753f706f7e9720679ae339f55",
+    "frames": 4453,
+    "worst": {
+      "frame_index": 4244,
+      "timeline_ms": 143017,
+      "scene": 7,
+      "interval_us": 100004,
+      "before_draw_us": 16847,
+      "draw_to_present_us": 70913,
+      "present_call_us": 12244,
+      "call_us": 83162,
+      "finale_page_initial_lettering": true,
+      "context": [
+        {
+          "ms": 142951,
+          "scene": 7,
+          "us": 32331,
+          "present_before_us": 151599046,
+          "present_after_us": 151615525,
+          "draw_start_us": 151583199,
+          "deadline_us": 151616532
+        },
+        {
+          "ms": 142984,
+          "scene": 7,
+          "us": 15663,
+          "present_before_us": 151631212,
+          "present_after_us": 151632193,
+          "draw_start_us": 151616534,
+          "deadline_us": 151649867
+        },
+        {
+          "ms": 143017,
+          "scene": 7,
+          "us": 83162,
+          "present_before_us": 151719953,
+          "present_after_us": 151732197,
+          "draw_start_us": 151649040,
+          "deadline_us": 151682373
+        },
+        {
+          "ms": 143101,
+          "scene": 7,
+          "us": 82316,
+          "present_before_us": 151804031,
+          "present_after_us": 151815540,
+          "draw_start_us": 151733226,
+          "deadline_us": 151766559
+        },
+        {
+          "ms": 143184,
+          "scene": 7,
+          "us": 15628,
+          "present_before_us": 151816572,
+          "present_after_us": 151832192,
+          "draw_start_us": 151816565,
+          "deadline_us": 151849898
+        }
+      ]
+    },
+    "over_80ms": [
+      {
+        "frame_index": 4244,
+        "timeline_ms": 143017,
+        "scene": 7,
+        "interval_us": 100004,
+        "before_draw_us": 16847,
+        "draw_to_present_us": 70913,
+        "present_call_us": 12244,
+        "call_us": 83162,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142951,
+            "scene": 7,
+            "us": 32331,
+            "present_before_us": 151599046,
+            "present_after_us": 151615525,
+            "draw_start_us": 151583199,
+            "deadline_us": 151616532
+          },
+          {
+            "ms": 142984,
+            "scene": 7,
+            "us": 15663,
+            "present_before_us": 151631212,
+            "present_after_us": 151632193,
+            "draw_start_us": 151616534,
+            "deadline_us": 151649867
+          },
+          {
+            "ms": 143017,
+            "scene": 7,
+            "us": 83162,
+            "present_before_us": 151719953,
+            "present_after_us": 151732197,
+            "draw_start_us": 151649040,
+            "deadline_us": 151682373
+          },
+          {
+            "ms": 143101,
+            "scene": 7,
+            "us": 82316,
+            "present_before_us": 151804031,
+            "present_after_us": 151815540,
+            "draw_start_us": 151733226,
+            "deadline_us": 151766559
+          },
+          {
+            "ms": 143184,
+            "scene": 7,
+            "us": 15628,
+            "present_before_us": 151816572,
+            "present_after_us": 151832192,
+            "draw_start_us": 151816565,
+            "deadline_us": 151849898
+          }
+        ]
+      },
+      {
+        "frame_index": 4245,
+        "timeline_ms": 143101,
+        "scene": 7,
+        "interval_us": 83343,
+        "before_draw_us": 1029,
+        "draw_to_present_us": 70805,
+        "present_call_us": 11509,
+        "call_us": 82316,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142984,
+            "scene": 7,
+            "us": 15663,
+            "present_before_us": 151631212,
+            "present_after_us": 151632193,
+            "draw_start_us": 151616534,
+            "deadline_us": 151649867
+          },
+          {
+            "ms": 143017,
+            "scene": 7,
+            "us": 83162,
+            "present_before_us": 151719953,
+            "present_after_us": 151732197,
+            "draw_start_us": 151649040,
+            "deadline_us": 151682373
+          },
+          {
+            "ms": 143101,
+            "scene": 7,
+            "us": 82316,
+            "present_before_us": 151804031,
+            "present_after_us": 151815540,
+            "draw_start_us": 151733226,
+            "deadline_us": 151766559
+          },
+          {
+            "ms": 143184,
+            "scene": 7,
+            "us": 15628,
+            "present_before_us": 151816572,
+            "present_after_us": 151832192,
+            "draw_start_us": 151816565,
+            "deadline_us": 151849898
+          },
+          {
+            "ms": 143217,
+            "scene": 7,
+            "us": 16336,
+            "present_before_us": 151849272,
+            "present_after_us": 151865536,
+            "draw_start_us": 151849269,
+            "deadline_us": 151882602
+          }
+        ]
+      }
+    ],
+    "finale_initial_lettering": [
+      {
+        "frame_index": 4244,
+        "timeline_ms": 143017,
+        "scene": 7,
+        "interval_us": 100004,
+        "before_draw_us": 16847,
+        "draw_to_present_us": 70913,
+        "present_call_us": 12244,
+        "call_us": 83162,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142951,
+            "scene": 7,
+            "us": 32331,
+            "present_before_us": 151599046,
+            "present_after_us": 151615525,
+            "draw_start_us": 151583199,
+            "deadline_us": 151616532
+          },
+          {
+            "ms": 142984,
+            "scene": 7,
+            "us": 15663,
+            "present_before_us": 151631212,
+            "present_after_us": 151632193,
+            "draw_start_us": 151616534,
+            "deadline_us": 151649867
+          },
+          {
+            "ms": 143017,
+            "scene": 7,
+            "us": 83162,
+            "present_before_us": 151719953,
+            "present_after_us": 151732197,
+            "draw_start_us": 151649040,
+            "deadline_us": 151682373
+          },
+          {
+            "ms": 143101,
+            "scene": 7,
+            "us": 82316,
+            "present_before_us": 151804031,
+            "present_after_us": 151815540,
+            "draw_start_us": 151733226,
+            "deadline_us": 151766559
+          },
+          {
+            "ms": 143184,
+            "scene": 7,
+            "us": 15628,
+            "present_before_us": 151816572,
+            "present_after_us": 151832192,
+            "draw_start_us": 151816565,
+            "deadline_us": 151849898
+          }
+        ]
+      },
+      {
+        "frame_index": 4245,
+        "timeline_ms": 143101,
+        "scene": 7,
+        "interval_us": 83343,
+        "before_draw_us": 1029,
+        "draw_to_present_us": 70805,
+        "present_call_us": 11509,
+        "call_us": 82316,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142984,
+            "scene": 7,
+            "us": 15663,
+            "present_before_us": 151631212,
+            "present_after_us": 151632193,
+            "draw_start_us": 151616534,
+            "deadline_us": 151649867
+          },
+          {
+            "ms": 143017,
+            "scene": 7,
+            "us": 83162,
+            "present_before_us": 151719953,
+            "present_after_us": 151732197,
+            "draw_start_us": 151649040,
+            "deadline_us": 151682373
+          },
+          {
+            "ms": 143101,
+            "scene": 7,
+            "us": 82316,
+            "present_before_us": 151804031,
+            "present_after_us": 151815540,
+            "draw_start_us": 151733226,
+            "deadline_us": 151766559
+          },
+          {
+            "ms": 143184,
+            "scene": 7,
+            "us": 15628,
+            "present_before_us": 151816572,
+            "present_after_us": 151832192,
+            "draw_start_us": 151816565,
+            "deadline_us": 151849898
+          },
+          {
+            "ms": 143217,
+            "scene": 7,
+            "us": 16336,
+            "present_before_us": 151849272,
+            "present_after_us": 151865536,
+            "draw_start_us": 151849269,
+            "deadline_us": 151882602
+          }
+        ]
+      }
+    ],
+    "interpretation": "CPU-observed intervals; PRESENT call includes Queue drain, submit, GPU/vblank wait and ACK. before_draw includes scheduling and any work after previous PRESENT. No direct GPU timing."
+  },
+  {
+    "log": "build\\completion-abab-20261107\\hardware\\baseline-2\\demo-usb.log",
+    "sha256": "6ab4a0787aabc6d8a3f4ada3d0aa7260cf36bfce66b0a64e2e062f7c8e5a622d",
+    "frames": 4421,
+    "worst": {
+      "frame_index": 4117,
+      "timeline_ms": 139685,
+      "scene": 6,
+      "interval_us": 83341,
+      "before_draw_us": 1015,
+      "draw_to_present_us": 68187,
+      "present_call_us": 14139,
+      "call_us": 82333,
+      "finale_page_initial_lettering": false,
+      "context": [
+        {
+          "ms": 139535,
+          "scene": 6,
+          "us": 65657,
+          "present_before_us": 148231336,
+          "present_after_us": 148232670,
+          "draw_start_us": 148167018,
+          "deadline_us": 148200351
+        },
+        {
+          "ms": 139601,
+          "scene": 6,
+          "us": 82329,
+          "present_before_us": 148299385,
+          "present_after_us": 148316008,
+          "draw_start_us": 148233685,
+          "deadline_us": 148267018
+        },
+        {
+          "ms": 139685,
+          "scene": 6,
+          "us": 82333,
+          "present_before_us": 148385210,
+          "present_after_us": 148399349,
+          "draw_start_us": 148317023,
+          "deadline_us": 148350356
+        },
+        {
+          "ms": 139768,
+          "scene": 6,
+          "us": 82322,
+          "present_before_us": 148468160,
+          "present_after_us": 148482680,
+          "draw_start_us": 148400365,
+          "deadline_us": 148433698
+        },
+        {
+          "ms": 139851,
+          "scene": 6,
+          "us": 82324,
+          "present_before_us": 148551295,
+          "present_after_us": 148566014,
+          "draw_start_us": 148483696,
+          "deadline_us": 148517029
+        }
+      ]
+    },
+    "over_80ms": [
+      {
+        "frame_index": 4116,
+        "timeline_ms": 139601,
+        "scene": 6,
+        "interval_us": 83338,
+        "before_draw_us": 1015,
+        "draw_to_present_us": 65700,
+        "present_call_us": 16623,
+        "call_us": 82329,
+        "finale_page_initial_lettering": false,
+        "context": [
+          {
+            "ms": 139468,
+            "scene": 6,
+            "us": 65647,
+            "present_before_us": 148159247,
+            "present_after_us": 148166002,
+            "draw_start_us": 148100361,
+            "deadline_us": 148133694
+          },
+          {
+            "ms": 139535,
+            "scene": 6,
+            "us": 65657,
+            "present_before_us": 148231336,
+            "present_after_us": 148232670,
+            "draw_start_us": 148167018,
+            "deadline_us": 148200351
+          },
+          {
+            "ms": 139601,
+            "scene": 6,
+            "us": 82329,
+            "present_before_us": 148299385,
+            "present_after_us": 148316008,
+            "draw_start_us": 148233685,
+            "deadline_us": 148267018
+          },
+          {
+            "ms": 139685,
+            "scene": 6,
+            "us": 82333,
+            "present_before_us": 148385210,
+            "present_after_us": 148399349,
+            "draw_start_us": 148317023,
+            "deadline_us": 148350356
+          },
+          {
+            "ms": 139768,
+            "scene": 6,
+            "us": 82322,
+            "present_before_us": 148468160,
+            "present_after_us": 148482680,
+            "draw_start_us": 148400365,
+            "deadline_us": 148433698
+          }
+        ]
+      },
+      {
+        "frame_index": 4117,
+        "timeline_ms": 139685,
+        "scene": 6,
+        "interval_us": 83341,
+        "before_draw_us": 1015,
+        "draw_to_present_us": 68187,
+        "present_call_us": 14139,
+        "call_us": 82333,
+        "finale_page_initial_lettering": false,
+        "context": [
+          {
+            "ms": 139535,
+            "scene": 6,
+            "us": 65657,
+            "present_before_us": 148231336,
+            "present_after_us": 148232670,
+            "draw_start_us": 148167018,
+            "deadline_us": 148200351
+          },
+          {
+            "ms": 139601,
+            "scene": 6,
+            "us": 82329,
+            "present_before_us": 148299385,
+            "present_after_us": 148316008,
+            "draw_start_us": 148233685,
+            "deadline_us": 148267018
+          },
+          {
+            "ms": 139685,
+            "scene": 6,
+            "us": 82333,
+            "present_before_us": 148385210,
+            "present_after_us": 148399349,
+            "draw_start_us": 148317023,
+            "deadline_us": 148350356
+          },
+          {
+            "ms": 139768,
+            "scene": 6,
+            "us": 82322,
+            "present_before_us": 148468160,
+            "present_after_us": 148482680,
+            "draw_start_us": 148400365,
+            "deadline_us": 148433698
+          },
+          {
+            "ms": 139851,
+            "scene": 6,
+            "us": 82324,
+            "present_before_us": 148551295,
+            "present_after_us": 148566014,
+            "draw_start_us": 148483696,
+            "deadline_us": 148517029
+          }
+        ]
+      },
+      {
+        "frame_index": 4118,
+        "timeline_ms": 139768,
+        "scene": 6,
+        "interval_us": 83331,
+        "before_draw_us": 1016,
+        "draw_to_present_us": 67795,
+        "present_call_us": 14520,
+        "call_us": 82322,
+        "finale_page_initial_lettering": false,
+        "context": [
+          {
+            "ms": 139601,
+            "scene": 6,
+            "us": 82329,
+            "present_before_us": 148299385,
+            "present_after_us": 148316008,
+            "draw_start_us": 148233685,
+            "deadline_us": 148267018
+          },
+          {
+            "ms": 139685,
+            "scene": 6,
+            "us": 82333,
+            "present_before_us": 148385210,
+            "present_after_us": 148399349,
+            "draw_start_us": 148317023,
+            "deadline_us": 148350356
+          },
+          {
+            "ms": 139768,
+            "scene": 6,
+            "us": 82322,
+            "present_before_us": 148468160,
+            "present_after_us": 148482680,
+            "draw_start_us": 148400365,
+            "deadline_us": 148433698
+          },
+          {
+            "ms": 139851,
+            "scene": 6,
+            "us": 82324,
+            "present_before_us": 148551295,
+            "present_after_us": 148566014,
+            "draw_start_us": 148483696,
+            "deadline_us": 148517029
+          },
+          {
+            "ms": 139935,
+            "scene": 6,
+            "us": 65646,
+            "present_before_us": 148623739,
+            "present_after_us": 148632669,
+            "draw_start_us": 148567029,
+            "deadline_us": 148600362
+          }
+        ]
+      },
+      {
+        "frame_index": 4119,
+        "timeline_ms": 139851,
+        "scene": 6,
+        "interval_us": 83334,
+        "before_draw_us": 1016,
+        "draw_to_present_us": 67599,
+        "present_call_us": 14719,
+        "call_us": 82324,
+        "finale_page_initial_lettering": false,
+        "context": [
+          {
+            "ms": 139685,
+            "scene": 6,
+            "us": 82333,
+            "present_before_us": 148385210,
+            "present_after_us": 148399349,
+            "draw_start_us": 148317023,
+            "deadline_us": 148350356
+          },
+          {
+            "ms": 139768,
+            "scene": 6,
+            "us": 82322,
+            "present_before_us": 148468160,
+            "present_after_us": 148482680,
+            "draw_start_us": 148400365,
+            "deadline_us": 148433698
+          },
+          {
+            "ms": 139851,
+            "scene": 6,
+            "us": 82324,
+            "present_before_us": 148551295,
+            "present_after_us": 148566014,
+            "draw_start_us": 148483696,
+            "deadline_us": 148517029
+          },
+          {
+            "ms": 139935,
+            "scene": 6,
+            "us": 65646,
+            "present_before_us": 148623739,
+            "present_after_us": 148632669,
+            "draw_start_us": 148567029,
+            "deadline_us": 148600362
+          },
+          {
+            "ms": 140002,
+            "scene": 7,
+            "us": 31565,
+            "present_before_us": 148661810,
+            "present_after_us": 148666013,
+            "draw_start_us": 148634457,
+            "deadline_us": 148667790
+          }
+        ]
+      },
+      {
+        "frame_index": 4211,
+        "timeline_ms": 143002,
+        "scene": 7,
+        "interval_us": 83341,
+        "before_draw_us": 2023,
+        "draw_to_present_us": 79661,
+        "present_call_us": 1657,
+        "call_us": 81326,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142935,
+            "scene": 7,
+            "us": 32323,
+            "present_before_us": 151583480,
+            "present_after_us": 151599344,
+            "draw_start_us": 151567027,
+            "deadline_us": 151600360
+          },
+          {
+            "ms": 142969,
+            "scene": 7,
+            "us": 31511,
+            "present_before_us": 151617977,
+            "present_after_us": 151632680,
+            "draw_start_us": 151601177,
+            "deadline_us": 151634510
+          },
+          {
+            "ms": 143002,
+            "scene": 7,
+            "us": 81326,
+            "present_before_us": 151714364,
+            "present_after_us": 151716021,
+            "draw_start_us": 151634703,
+            "deadline_us": 151668036
+          },
+          {
+            "ms": 143085,
+            "scene": 7,
+            "us": 82296,
+            "present_before_us": 151797089,
+            "present_after_us": 151799347,
+            "draw_start_us": 151717056,
+            "deadline_us": 151750389
+          },
+          {
+            "ms": 143168,
+            "scene": 7,
+            "us": 15655,
+            "present_before_us": 151800386,
+            "present_after_us": 151816022,
+            "draw_start_us": 151800372,
+            "deadline_us": 151833705
+          }
+        ]
+      },
+      {
+        "frame_index": 4212,
+        "timeline_ms": 143085,
+        "scene": 7,
+        "interval_us": 83326,
+        "before_draw_us": 1035,
+        "draw_to_present_us": 80033,
+        "present_call_us": 2258,
+        "call_us": 82296,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142969,
+            "scene": 7,
+            "us": 31511,
+            "present_before_us": 151617977,
+            "present_after_us": 151632680,
+            "draw_start_us": 151601177,
+            "deadline_us": 151634510
+          },
+          {
+            "ms": 143002,
+            "scene": 7,
+            "us": 81326,
+            "present_before_us": 151714364,
+            "present_after_us": 151716021,
+            "draw_start_us": 151634703,
+            "deadline_us": 151668036
+          },
+          {
+            "ms": 143085,
+            "scene": 7,
+            "us": 82296,
+            "present_before_us": 151797089,
+            "present_after_us": 151799347,
+            "draw_start_us": 151717056,
+            "deadline_us": 151750389
+          },
+          {
+            "ms": 143168,
+            "scene": 7,
+            "us": 15655,
+            "present_before_us": 151800386,
+            "present_after_us": 151816022,
+            "draw_start_us": 151800372,
+            "deadline_us": 151833705
+          },
+          {
+            "ms": 143201,
+            "scene": 7,
+            "us": 16259,
+            "present_before_us": 151833107,
+            "present_after_us": 151849356,
+            "draw_start_us": 151833102,
+            "deadline_us": 151866435
+          }
+        ]
+      }
+    ],
+    "finale_initial_lettering": [
+      {
+        "frame_index": 4211,
+        "timeline_ms": 143002,
+        "scene": 7,
+        "interval_us": 83341,
+        "before_draw_us": 2023,
+        "draw_to_present_us": 79661,
+        "present_call_us": 1657,
+        "call_us": 81326,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142935,
+            "scene": 7,
+            "us": 32323,
+            "present_before_us": 151583480,
+            "present_after_us": 151599344,
+            "draw_start_us": 151567027,
+            "deadline_us": 151600360
+          },
+          {
+            "ms": 142969,
+            "scene": 7,
+            "us": 31511,
+            "present_before_us": 151617977,
+            "present_after_us": 151632680,
+            "draw_start_us": 151601177,
+            "deadline_us": 151634510
+          },
+          {
+            "ms": 143002,
+            "scene": 7,
+            "us": 81326,
+            "present_before_us": 151714364,
+            "present_after_us": 151716021,
+            "draw_start_us": 151634703,
+            "deadline_us": 151668036
+          },
+          {
+            "ms": 143085,
+            "scene": 7,
+            "us": 82296,
+            "present_before_us": 151797089,
+            "present_after_us": 151799347,
+            "draw_start_us": 151717056,
+            "deadline_us": 151750389
+          },
+          {
+            "ms": 143168,
+            "scene": 7,
+            "us": 15655,
+            "present_before_us": 151800386,
+            "present_after_us": 151816022,
+            "draw_start_us": 151800372,
+            "deadline_us": 151833705
+          }
+        ]
+      },
+      {
+        "frame_index": 4212,
+        "timeline_ms": 143085,
+        "scene": 7,
+        "interval_us": 83326,
+        "before_draw_us": 1035,
+        "draw_to_present_us": 80033,
+        "present_call_us": 2258,
+        "call_us": 82296,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142969,
+            "scene": 7,
+            "us": 31511,
+            "present_before_us": 151617977,
+            "present_after_us": 151632680,
+            "draw_start_us": 151601177,
+            "deadline_us": 151634510
+          },
+          {
+            "ms": 143002,
+            "scene": 7,
+            "us": 81326,
+            "present_before_us": 151714364,
+            "present_after_us": 151716021,
+            "draw_start_us": 151634703,
+            "deadline_us": 151668036
+          },
+          {
+            "ms": 143085,
+            "scene": 7,
+            "us": 82296,
+            "present_before_us": 151797089,
+            "present_after_us": 151799347,
+            "draw_start_us": 151717056,
+            "deadline_us": 151750389
+          },
+          {
+            "ms": 143168,
+            "scene": 7,
+            "us": 15655,
+            "present_before_us": 151800386,
+            "present_after_us": 151816022,
+            "draw_start_us": 151800372,
+            "deadline_us": 151833705
+          },
+          {
+            "ms": 143201,
+            "scene": 7,
+            "us": 16259,
+            "present_before_us": 151833107,
+            "present_after_us": 151849356,
+            "draw_start_us": 151833102,
+            "deadline_us": 151866435
+          }
+        ]
+      }
+    ],
+    "interpretation": "CPU-observed intervals; PRESENT call includes Queue drain, submit, GPU/vblank wait and ACK. before_draw includes scheduling and any work after previous PRESENT. No direct GPU timing."
+  },
+  {
+    "log": "build\\completion-abab-20261107\\hardware\\burst-2\\demo-usb.log",
+    "sha256": "1f0d2ca0fd281385fedd905c2611661589909032eb46b2d9af26037b6a5437eb",
+    "frames": 4452,
+    "worst": {
+      "frame_index": 4243,
+      "timeline_ms": 143017,
+      "scene": 7,
+      "interval_us": 100006,
+      "before_draw_us": 16919,
+      "draw_to_present_us": 70874,
+      "present_call_us": 12213,
+      "call_us": 83091,
+      "finale_page_initial_lettering": true,
+      "context": [
+        {
+          "ms": 142951,
+          "scene": 7,
+          "us": 32329,
+          "present_before_us": 151338175,
+          "present_after_us": 151354654,
+          "draw_start_us": 151322329,
+          "deadline_us": 151355662
+        },
+        {
+          "ms": 142984,
+          "scene": 7,
+          "us": 15667,
+          "present_before_us": 151370277,
+          "present_after_us": 151371324,
+          "draw_start_us": 151355662,
+          "deadline_us": 151388995
+        },
+        {
+          "ms": 143017,
+          "scene": 7,
+          "us": 83091,
+          "present_before_us": 151459117,
+          "present_after_us": 151471330,
+          "draw_start_us": 151388243,
+          "deadline_us": 151421576
+        },
+        {
+          "ms": 143101,
+          "scene": 7,
+          "us": 82302,
+          "present_before_us": 151543149,
+          "present_after_us": 151554659,
+          "draw_start_us": 151472358,
+          "deadline_us": 151505691
+        },
+        {
+          "ms": 143184,
+          "scene": 7,
+          "us": 15646,
+          "present_before_us": 151555690,
+          "present_after_us": 151571330,
+          "draw_start_us": 151555685,
+          "deadline_us": 151589018
+        }
+      ]
+    },
+    "over_80ms": [
+      {
+        "frame_index": 4243,
+        "timeline_ms": 143017,
+        "scene": 7,
+        "interval_us": 100006,
+        "before_draw_us": 16919,
+        "draw_to_present_us": 70874,
+        "present_call_us": 12213,
+        "call_us": 83091,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142951,
+            "scene": 7,
+            "us": 32329,
+            "present_before_us": 151338175,
+            "present_after_us": 151354654,
+            "draw_start_us": 151322329,
+            "deadline_us": 151355662
+          },
+          {
+            "ms": 142984,
+            "scene": 7,
+            "us": 15667,
+            "present_before_us": 151370277,
+            "present_after_us": 151371324,
+            "draw_start_us": 151355662,
+            "deadline_us": 151388995
+          },
+          {
+            "ms": 143017,
+            "scene": 7,
+            "us": 83091,
+            "present_before_us": 151459117,
+            "present_after_us": 151471330,
+            "draw_start_us": 151388243,
+            "deadline_us": 151421576
+          },
+          {
+            "ms": 143101,
+            "scene": 7,
+            "us": 82302,
+            "present_before_us": 151543149,
+            "present_after_us": 151554659,
+            "draw_start_us": 151472358,
+            "deadline_us": 151505691
+          },
+          {
+            "ms": 143184,
+            "scene": 7,
+            "us": 15646,
+            "present_before_us": 151555690,
+            "present_after_us": 151571330,
+            "draw_start_us": 151555685,
+            "deadline_us": 151589018
+          }
+        ]
+      },
+      {
+        "frame_index": 4244,
+        "timeline_ms": 143101,
+        "scene": 7,
+        "interval_us": 83329,
+        "before_draw_us": 1028,
+        "draw_to_present_us": 70791,
+        "present_call_us": 11510,
+        "call_us": 82302,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142984,
+            "scene": 7,
+            "us": 15667,
+            "present_before_us": 151370277,
+            "present_after_us": 151371324,
+            "draw_start_us": 151355662,
+            "deadline_us": 151388995
+          },
+          {
+            "ms": 143017,
+            "scene": 7,
+            "us": 83091,
+            "present_before_us": 151459117,
+            "present_after_us": 151471330,
+            "draw_start_us": 151388243,
+            "deadline_us": 151421576
+          },
+          {
+            "ms": 143101,
+            "scene": 7,
+            "us": 82302,
+            "present_before_us": 151543149,
+            "present_after_us": 151554659,
+            "draw_start_us": 151472358,
+            "deadline_us": 151505691
+          },
+          {
+            "ms": 143184,
+            "scene": 7,
+            "us": 15646,
+            "present_before_us": 151555690,
+            "present_after_us": 151571330,
+            "draw_start_us": 151555685,
+            "deadline_us": 151589018
+          },
+          {
+            "ms": 143217,
+            "scene": 7,
+            "us": 16255,
+            "present_before_us": 151588410,
+            "present_after_us": 151604659,
+            "draw_start_us": 151588405,
+            "deadline_us": 151621738
+          }
+        ]
+      }
+    ],
+    "finale_initial_lettering": [
+      {
+        "frame_index": 4243,
+        "timeline_ms": 143017,
+        "scene": 7,
+        "interval_us": 100006,
+        "before_draw_us": 16919,
+        "draw_to_present_us": 70874,
+        "present_call_us": 12213,
+        "call_us": 83091,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142951,
+            "scene": 7,
+            "us": 32329,
+            "present_before_us": 151338175,
+            "present_after_us": 151354654,
+            "draw_start_us": 151322329,
+            "deadline_us": 151355662
+          },
+          {
+            "ms": 142984,
+            "scene": 7,
+            "us": 15667,
+            "present_before_us": 151370277,
+            "present_after_us": 151371324,
+            "draw_start_us": 151355662,
+            "deadline_us": 151388995
+          },
+          {
+            "ms": 143017,
+            "scene": 7,
+            "us": 83091,
+            "present_before_us": 151459117,
+            "present_after_us": 151471330,
+            "draw_start_us": 151388243,
+            "deadline_us": 151421576
+          },
+          {
+            "ms": 143101,
+            "scene": 7,
+            "us": 82302,
+            "present_before_us": 151543149,
+            "present_after_us": 151554659,
+            "draw_start_us": 151472358,
+            "deadline_us": 151505691
+          },
+          {
+            "ms": 143184,
+            "scene": 7,
+            "us": 15646,
+            "present_before_us": 151555690,
+            "present_after_us": 151571330,
+            "draw_start_us": 151555685,
+            "deadline_us": 151589018
+          }
+        ]
+      },
+      {
+        "frame_index": 4244,
+        "timeline_ms": 143101,
+        "scene": 7,
+        "interval_us": 83329,
+        "before_draw_us": 1028,
+        "draw_to_present_us": 70791,
+        "present_call_us": 11510,
+        "call_us": 82302,
+        "finale_page_initial_lettering": true,
+        "context": [
+          {
+            "ms": 142984,
+            "scene": 7,
+            "us": 15667,
+            "present_before_us": 151370277,
+            "present_after_us": 151371324,
+            "draw_start_us": 151355662,
+            "deadline_us": 151388995
+          },
+          {
+            "ms": 143017,
+            "scene": 7,
+            "us": 83091,
+            "present_before_us": 151459117,
+            "present_after_us": 151471330,
+            "draw_start_us": 151388243,
+            "deadline_us": 151421576
+          },
+          {
+            "ms": 143101,
+            "scene": 7,
+            "us": 82302,
+            "present_before_us": 151543149,
+            "present_after_us": 151554659,
+            "draw_start_us": 151472358,
+            "deadline_us": 151505691
+          },
+          {
+            "ms": 143184,
+            "scene": 7,
+            "us": 15646,
+            "present_before_us": 151555690,
+            "present_after_us": 151571330,
+            "draw_start_us": 151555685,
+            "deadline_us": 151589018
+          },
+          {
+            "ms": 143217,
+            "scene": 7,
+            "us": 16255,
+            "present_before_us": 151588410,
+            "present_after_us": 151604659,
+            "draw_start_us": 151588405,
+            "deadline_us": 151621738
+          }
+        ]
+      }
+    ],
+    "interpretation": "CPU-observed intervals; PRESENT call includes Queue drain, submit, GPU/vblank wait and ACK. before_draw includes scheduling and any work after previous PRESENT. No direct GPU timing."
+  }
+]

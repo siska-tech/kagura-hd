@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module tb_fb_cursor;
+module tb_fb_cursor #(parameter bit PIPELINE_MAILBOX=0);
  reg sys_clk=0,pix_clk=0,sys_reset=1,pix_reset=1;
  always #(500.0/54) sys_clk=~sys_clk;
  always #(500.0/74.25) pix_clk=~pix_clk;
@@ -14,7 +14,7 @@ module tb_fb_cursor;
  wire [23:0] background=backdrop(int'(cx),int'(cy)),rgb_out;
  reg req_valid=0,req_write=0;reg [4:0] req_addr=0;reg [7:0] req_wdata=0;
  wire req_ready,rsp_valid,rsp_error,irq;wire [7:0] rsp_data;
- kagura_fb_cursor dut(.*);
+ kagura_fb_cursor #(.PIPELINE_MAILBOX(PIPELINE_MAILBOX)) dut(.*);
  wire ref_ready,ref_valid,ref_error,ref_irq;wire [7:0] ref_data;wire [23:0] ref_rgb;
  kagura_fb_cursor_reference reference_cursor(
   .sys_clk,.sys_reset,.pix_clk,.pix_reset,.req_valid,.req_write,.req_addr,.req_wdata,

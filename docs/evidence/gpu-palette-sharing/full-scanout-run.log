@@ -1,0 +1,5 @@
+PASS: fb_scanout 1843200 pixels, 2x scaling, palette+page atomic flip, saturated background, missing lines=0
+- sim/tests/tb_fb_scanout.sv:88: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 50ms; walltime 3.089 s; speed 16.184 ms/s
+- Verilator: cpu 3.090 s on 1 threads; alloced 121 MB
