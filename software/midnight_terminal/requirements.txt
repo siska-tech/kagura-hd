@@ -1,5 +1,2 @@
 Pillow==13.0.0
-pygame-ce==2.5.8
-cmake==4.4.4
-ninja==1.13.2
-
+numpy

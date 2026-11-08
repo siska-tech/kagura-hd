@@ -1,8 +1,0 @@
-{
-  "source": "build/pcm2-timing-04/sim/tests/tb_fb_board_qspi.sv",
-  "source_sha256": "a3cfd450ec474dd06ca9d5c5ae2b9f1432d3a2e226ebc89ba0af1459c93bf567",
-  "derived_sha256": "6dc357e1b62660d0169d966640f5d4eb28a2cbe28811055e552857455f34e070",
-  "changes": "test-only SCK half period 100ns, CS guards 250/40/250ns, contention/late assertions",
-  "clock_phy_lvds": "existing functional test stubs; not physical validation",
-  "release_ready": false
-}

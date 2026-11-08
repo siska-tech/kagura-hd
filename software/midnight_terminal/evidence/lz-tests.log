@@ -1,9 +1,0 @@
-test_exact_original_bgm_and_history_wrap (__main__.Tests.test_exact_original_bgm_and_history_wrap) ... ok
-test_independent_roundtrip_patterns_and_overlap (__main__.Tests.test_independent_roundtrip_patterns_and_overlap) ... ok
-test_reject_malformed_streams (__main__.Tests.test_reject_malformed_streams) ... ok
-test_sink_error_stops_without_replay (__main__.Tests.test_sink_error_stops_without_replay) ... ok
-
-----------------------------------------------------------------------
-Ran 4 tests in 0.180s
-
-OK
