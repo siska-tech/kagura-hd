@@ -6,10 +6,11 @@
 * whitespace=cr-at-eol
 
 *.fs linguist-generated=true
+/releases/** linguist-generated=true
 
 /releases/pcm2-spi/** -text
 
-/artifacts/** -text
+/artifacts/** -text linguist-generated=true
 
 /releases/queue8-qspi-deglitch-rc1/** -text
 
