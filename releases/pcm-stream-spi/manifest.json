@@ -1,0 +1,76 @@
+{
+  "name": "KAGURA-HD PCM streaming SPI (Queue8, SPI overlay)",
+  "date": "2026-11-09",
+  "status": "selected",
+  "configuration": "optional SPI configuration; build-time exclusive with releases/pcm-stream-qspi (no runtime switching, no dual-protocol bitstream)",
+  "supersedes": "artifacts/experimental/spi-sta-fail (PCM2 SPI, STA fail, never validated)",
+  "qspi_release_unchanged": "releases/pcm-stream-qspi and artifacts/validated/kagura-hd-qspi-pcm-stream.fs (fad15376...) are not modified; a QSPI build of this tree reproduces the selected stage-1 netlist body 79434504...",
+  "github_release_created": false,
+  "artifact": "../../artifacts/validated/kagura-hd-spi-pcm-stream.fs",
+  "sha256": "e9f67c683df4ab9c5f9ee382433d0a46f101578dbdcf66684da14992ce8c1767",
+  "size_bytes": 3558476,
+  "bin_sha256": "9a88257f7798af3ecb4dab4dc090409a1d54d556591b3706abd9a06d5032864f",
+  "netlist_body_sha256": "37f8eff9ef5ec46df6a2e5b01daf5f7c8767597ae1eac9ec860efa496e5a4340",
+  "netlist_note": "Not shipped (about 2.6 MB); reproduce.ps1 regenerates it and checks the body hash (lines starting with // excluded)",
+  "user_code": "0x0000694E",
+  "device": "GW1NR-LV9QN88PC6/I5",
+  "abi": "1.4 (KFB1, CAPS FF) + PCM stream extension, same as the QSPI release",
+  "transport": "SPI mode 0, MSB first, MOSI=IO0, MISO=IO1 (IO2/IO3 unused, never driven by the FPGA)",
+  "queue_depth": 8,
+  "tool": "Gowin Standard V1.9.12.04",
+  "rtl": "releases/pcm-stream-qspi build-inputs (41 files, unchanged) + rtl/spi overlay (kagura_spi_adapter, kagura_fb_scanout, kagura_fb_commands, kagura_fb_cursor) + tools/build-fb.tcl with the spi-only overlay substitution",
+  "sdc": "kagura-fb.sdc, unchanged (169c6026...)",
+  "flow": [
+    "tools/build-fb.tcl spi 4 2 8 0 1 auto (synthesis + P&R place 4 / route 2; the build log lists four KAGURA_SPI_OVERLAY substitutions)"
+  ],
+  "setup_slack_ns": 0.159,
+  "hold_slack_ns": 0.456,
+  "recovery_slack_ns": 8.19,
+  "removal_slack_ns": 0.533,
+  "setup_hold_violations": [0, 0],
+  "utilization": {"cls": "4245/4320", "bsram": "25/26"},
+  "spi_clock": {
+    "default_mhz": 5,
+    "tested_mhz": [5, 6, 8],
+    "optional_fast_mhz": 8,
+    "optional_fast_note": "tested-fast configuration on one board; not a guaranteed operating frequency",
+    "unsupported_from_mhz": 10,
+    "host_setting": "CMake -DKAGURA_HOST_LANES=1 [-DKAGURA_SPI_PIO_DIV=1.25 for 8 MHz]; SCK = 120 MHz / (12 * div)"
+  },
+  "uf2": {
+    "four-operators-spi.uf2": {
+      "sha256": "a8475e9140d094046e3c8778728264e4d8aeee779e5ad276fb84fc33e51c0f95",
+      "elf_sha256": "2e1b2496e2ffe70c127679a2cb9e21cbef13db354fba15554f50c5a701e82f95",
+      "build": "software/fm_megademo/tools/build_rp2040.ps1 -Release -HostLanes 1",
+      "evidence": "software/fm_megademo/evidence/release-uf2-spi-result.json"
+    },
+    "midnight-terminal-spi.uf2": {
+      "sha256": "df1b51ca7ec6d2ca340888bddf0f6d5726857eae99b53d924ac1ce528dfc9347",
+      "elf_sha256": "3df7d6dab8d7949858b8e3ef390cff9a864b2ea90d74b6648b731cdcb582eb0c",
+      "build": "software/midnight_terminal/tools/build_rp2040.ps1 -Release -HostLanes 1",
+      "evidence": "software/midnight_terminal/evidence/release-uf2-spi-result.json"
+    },
+    "uf2_elf_check": "validation/uf2-elf-check.json: every ELF load byte present in the UF2, 0 mismatches",
+    "qspi_uf2_unchanged": "QSPI release builds of this tree reproduce four-operators.uf2 6c8a2fd9... and midnight-terminal.uf2 aa37c59d..."
+  },
+  "validation": {
+    "simulation": "PASS, tools/test-fb-spi.sh 11 checks (validation/spi-regression.log): frozen-vs-overlay scanout equivalence (3 seeds), cursor reference (mailbox 0/1), /CS glitch filtered and unfiltered, tb_fb_host and PCM2 board LANES=1 Queue8",
+    "reproduction": "PASS: netlist body, .bin and .fs (except Created Time) identical; STA 0/0 (validation/reproduce-result.json)",
+    "hardware_5mhz": "PASS: FOUR OPERATORS, MIDNIGHT TERMINAL, BEYOND 16 COLORS (all 8 scenes) ran to completion; timeouts 0, audio faults 0, HDMI audio 10 ms low-RMS 0/0; both release UF2s auto-started and completed",
+    "hardware_clock_sweep": "5/6/8 MHz PASS (8 MHz: all three demos and the bench with PSRAM compare); 10 MHz FAIL at device identification (validation/clock-sweep.json)",
+    "restore": "every run restored the RP2040 Flash (verified byte-for-byte) and the approved Queue8 FPGA SRAM image; no FPGA Flash writes"
+  },
+  "fpga_flash_writes": 0,
+  "limits": [
+    "Finite runs on one board and one HDMI capture path; no PVT, long-term or multi-board coverage",
+    "Setup margin 0.159 ns; the same netlist fails at place 3 (-3.427 ns) and place 2 (-4.370 ns), so any change to the inputs or P&R options needs STA and hardware checks again",
+    "SPI bandwidth is a quarter of QSPI at the same SCK: demo frame counts are 3-14% lower than QSPI at 5 MHz and 1-5% lower at 8 MHz; audio is unaffected",
+    "8 MHz is an optional tested-fast setting, not a guaranteed frequency; 10 MHz and above are unsupported",
+    "6 and 8 MHz use fractional PIO dividers (SCK period jitter of one PIO clock)",
+    "External SPI pad timing is not in STA (host signals are false paths through the 2FF oversampling synchronizers)",
+    "The MicroPython SPI helper (SoftSPI 1 MHz) was not re-run on this image"
+  ],
+  "publication_blockers": [
+    "Applicable Gowin redistribution terms unverified (same as the QSPI release)"
+  ]
+}

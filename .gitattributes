@@ -15,3 +15,5 @@
 /releases/queue8-qspi-deglitch-rc1/** -text
 
 /releases/pcm-stream-qspi/** -text
+
+/releases/pcm-stream-spi/** -text

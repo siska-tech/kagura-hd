@@ -2,6 +2,8 @@
 
 追跡Issue：[https://github.com/siska-tech/kagura-hd/issues/1](https://github.com/siska-tech/kagura-hd/issues/1)
 
+**置き換え済み（2026-11-09）：** SPIの配布物は [validated/kagura-hd-spi-pcm-stream.fs](../../validated/kagura-hd-spi-pcm-stream.fs)（[パッケージ](../../../releases/pcm-stream-spi/README.md)）です。このディレクトリは旧PCM2のSPIビルドの記録として残します。下の注意は、このディレクトリのファイルについてのものです。
+
 
 **DO NOT PROGRAM。FPGAのSRAM・Flashへ書き込まないでください。通常のRelease配布対象ではありません。**
 

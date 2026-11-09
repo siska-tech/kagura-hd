@@ -1,0 +1,3 @@
+FOUR OPERATORS / FM MEGADEMO / RAM ELF / g=start q=stop
+SCENES 0 0 0 0 0 0 0 0
+STOP rc=-4 phase=identify frames=0 halves=0 wraps=0 worst_latency_us=0 synth_waits=0 synth_busy_ms=0 fm_peak=8 fm_clipped=0 timeouts=0 device_error=0

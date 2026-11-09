@@ -54,6 +54,16 @@ python software/fm_megademo/tools/run_hardware.py build/fm-megademo/hw-XX --flas
   --elf-sha <sha256> --reference build/fm-megademo/pc.wav
 ```
 
+SPI版のFPGA（`kagura-hd-spi-pcm-stream.fs`）で使うときは、Hostも同じくSPIでビルドします。`-HostLanes 1` を付けると、Kagura-9のPIOプログラム `kagura_spi` を使ったSPI 5 MHzになります。`-SpiPioDiv 1.25` を足すと8 MHzです（任意の高速設定で、動作を保証する周波数ではありません）。実機ではSPI版のbitstreamを `--image` で渡します。
+
+```powershell
+./software/fm_megademo/tools/build_rp2040.ps1 -Release -HostLanes 1 -Output build/fm-megademo/rp2040-release-spi
+python software/fm_megademo/tools/run_hardware.py build/fm-megademo/hw-XX --flash --autostart `
+  --uf2 build/fm-megademo/rp2040-release-spi/four_operators.uf2 --elf build/fm-megademo/rp2040-release-spi/four_operators.elf `
+  --elf-sha <sha256> --reference build/fm-megademo/pc.wav `
+  --image artifacts/validated/kagura-hd-spi-pcm-stream.fs --image-sha e9f67c683df4ab9c5f9ee382433d0a46f101578dbdcf66684da14992ce8c1767
+```
+
 ## 実機結果
 
 2026-11-08、Tang Nano 9K と RP2040（120 MHz、QSPI 5 MHz）で 1 回実行しました（`build/fm-megademo/hw-03`）。FPGA には選定版 `kagura-hd-qspi-pcm-stream.fs`（`fad15376…`）を、RP2040 には RAM ELF（`87a142fc…`）を SRAM へ投入しています。FPGA と RP2040 の Flash への書込みは 0 回です。終了後は承認済みの Queue8 に戻し、RP2040 の全 Flash が実行前と一致することを確認しました。

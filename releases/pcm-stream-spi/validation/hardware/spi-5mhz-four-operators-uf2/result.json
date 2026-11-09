@@ -1,0 +1,40 @@
+{
+  "image_sha256": "e9f67c683df4ab9c5f9ee382433d0a46f101578dbdcf66684da14992ce8c1767",
+  "elf_sha256": "2e1b2496e2ffe70c127679a2cb9e21cbef13db354fba15554f50c5a701e82f95",
+  "passed": true,
+  "fpga_flash_writes": 0,
+  "rp2040_flash_writes": 2,
+  "uf2_sha256": "a8475e9140d094046e3c8778728264e4d8aeee779e5ad276fb84fc33e51c0f95",
+  "autostart": true,
+  "host_flash_before": "0c89de19ae4c600464b6909d8c2eb17815d274b2925b289b2e29934c43a9ae89",
+  "fpga_user_code": "0x0000694E",
+  "started": "autostart",
+  "banner_seen": false,
+  "stop": "STOP rc=0 phase=stop frames=2970 halves=1546 wraps=6 worst_latency_us=64914 synth_waits=0 synth_busy_ms=68031 fm_peak=42253 fm_clipped=0 timeouts=0 device_error=0",
+  "pcm_status": null,
+  "scenes": "SCENES 417 415 437 402 156 123 427 593",
+  "capture_exit": 0,
+  "restore_fpga_user_code": "0x00004068",
+  "host_flash_equal": true,
+  "restored_host_port": "COM5",
+  "audio": {
+    "lag_frames": 438503,
+    "lag_s": 9.135479166666666,
+    "onset_s": 9.16,
+    "audible_span_s": 132.01,
+    "low_10ms_blocks_where_reference_audible": [
+      0,
+      0
+    ],
+    "drift_frames_first_last": [
+      12,
+      -90
+    ],
+    "per_second_corr_min": 0.8233796802669935,
+    "per_second_corr_median": 0.9942354019516243,
+    "seconds_below_0_9": 2,
+    "seconds_compared": 132,
+    "scope": "Correlation against the PC render of the same integer synthesizer; init-time libm differences can lower it slowly"
+  },
+  "recording_sha256": "357854e72ed159b8f30c59343229f2cb2598a5f0e1d3716098afc7cfa97fbfb8"
+}

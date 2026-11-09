@@ -1,0 +1,12 @@
+Prepared /mnt/c/Users/Shion/Documents/Projects/kagura-hd/build/generated/kagura_hdmi_stream.sv
+ok   palette-bsram-s1
+ok   palette-bsram-s2
+ok   palette-bsram-s3
+ok   cursor-mailbox0
+ok   cursor-mailbox1
+ok   cs-glitch-20
+ok   cs-glitch-40
+ok   cs-glitch-unfiltered
+ok   host-l1-q8
+ok   board-l1-q8
+PASS: SPI overlay regressions

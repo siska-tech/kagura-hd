@@ -1,8 +1,8 @@
-# SPI overlay（任意対応・実験中）
+# SPI overlay（任意のSPI構成）
 
 SPI（`HOST_LANES=1`）ビルドだけで使う差し替えRTLです。`tools/build-fb.tcl spi …` は、`rtl/fb/sources.f` のファイルと同じ名前のファイルがここにあると、そちらを読み込みます。QSPIのビルドは常に元のファイルを使います。そのため選定版QSPIの入力は変わらず、`python tools/check-release.py` も通ります。
 
-SPI対応は任意です。通常Releaseの要件ではありません。目的は、QSPIを使えないHostでも動かせるようにすることです。
+SPI対応は任意で、目的はQSPIを使えないHostでも動かせるようにすることです。QSPIとSPIはビルド時にどちらか一方を選び、実行時の切替えはしません。2026-11-09に、このoverlayでビルドしたbitstreamを配布対象にしました（[パッケージ](../../releases/pcm-stream-spi/README.md)）。
 
 |ファイル|元のファイル|変更点|
 |---|---|---|
@@ -36,4 +36,6 @@ bash tools/test-fb-spi.sh
 - CLS 4245/4320、BSRAM 25/26
 - 同じネットリストでも、P3は−3.427 ns、P2は−4.370 nsでした。STAの余裕は配置に強く依存します。
 
-実機ではまだ試していません。PVT、外部I/O、複数基板の評価もしていません。Host側（RP2040のPIO SPI transport）もまだありません。認定が済むまで、SPIのbitstreamは通常のReleaseに含めず、FPGAのFlashにも書き込まないでください。経緯は [docs/issues/spi-sta-fail.md](../../docs/issues/spi-sta-fail.md) にあります。
+このビルドを [artifacts/validated/kagura-hd-spi-pcm-stream.fs](../../artifacts/validated/kagura-hd-spi-pcm-stream.fs) として固定しました。実機での確認とSPIクロックの範囲（既定5 MHz、8 MHzは任意の高速設定、10 MHz以上は非対応）は、[パッケージ](../../releases/pcm-stream-spi/README.md)にまとめています。PVT、外部I/O、複数基板は評価していません。
+
+overlayを変えると、ネットリストも配置も変わります。STAの余裕は配置に強く依存するので、変えたあとはSTA、`tools/test-fb-spi.sh`、実機での確認をやり直し、パッケージを作り直してください。`tools/check-release.py` は、ここにあるファイルがパッケージの入力と一致することを確かめます。経緯は [docs/issues/spi-sta-fail.md](../../docs/issues/spi-sta-fail.md) にあります。

@@ -2,7 +2,7 @@
 
 現行の選定版は **ABI 1.4 / CAPS FF / QSPI / Queue8** で、PCM2に加えてPCMストリーミング（下記）に対応しています。以下の描画・カーソル・BLIT契約はABI 1.2から継承します。実機Demoではnominal PIO QSPI 5MHzを使用しています。最大速度の保証ではありません。
 
-SPI版はテスト未実施・STA未達のため[experimental](../artifacts/experimental/spi-sta-fail/README.md)へ隔離しました。通常Releaseから除外し、DO_NOT_PROGRAMを付けています。
+2026-11-09から、同じABIのSPI版（[パッケージ](../releases/pcm-stream-spi/README.md)）も配布対象です。QSPIとSPIはビルド時にどちらか一方を選びます。実行時の切替えや、1つのbitstreamでの両対応はしません。QSPIを使えないHost向けの任意の構成で、選定版QSPIは変わりません。旧PCM2のSPI実験物（STA不合格）は、[experimental](../artifacts/experimental/spi-sta-fail/README.md)に記録として残しています。
 
 ## PCM2音声（ABI 1.4）
 
@@ -64,7 +64,18 @@ CSR 31のbit1は、この画像では診断用です。アプリケーション�
 
 IRQ_nはオープンドレイン出力です。使用する場合は3.3 Vへのプルアップを設けます。
 
-ビルドは `tools/build-fb.ps1`（QSPI既定）、`-Transport spi`（実験用・STA未達のSPI）です。両端で同じレーン数を選びます。Mode 0、MSB先行。初期動作確認用は1 MHz、実機Demoはnominal PIO QSPI 5MHzです。実機の最大クロックは未測定です。QSPIは1バイトを上位・下位の順に2ニブルで転送します。IOの方向切替と読み出しダミーを守ってください。
+ビルドは `tools/build-fb.ps1`（QSPI既定）か、`-Transport spi`（SPI。`rtl/spi/` の差し替えを使う）です。FPGAとHostで同じレーン数を選びます。Mode 0、MSB先行です。初期の動作確認には1 MHzを使います。QSPIは、1バイトを上位・下位の順に2ニブルで転送します。IOの方向切替えと、読出しのダミーを守ってください。
+
+SPIの配線はQSPIと同じです。IO0がMOSI、IO1がMISOで、IO2とIO3は使いません。SPI版のFPGAは、IO1以外を出力にしません。RP2040のハードウェアSPIは、この配線では使えません（GP2/GP3をMOSI/MISOに割り当てられない）。デモのC transport（`software/beyond16/src/b16_qspi.c`）は、CMakeで `-DKAGURA_HOST_LANES=1` を指定すると、Kagura-9のPIOプログラム `kagura_spi` を使うSPIになります。
+
+|SPIのSCK|位置づけ|実機の確認（Tang Nano 9K 1枚、有限試験）|
+|---|---|---|
+|5 MHz|**既定**|3デモ完走、PSRAMの書込み・読出しの照合、配布UF2の自動開始|
+|6 MHz|試験済み|BEYOND 16 COLORSのbenchとdemo、FOUR OPERATORS|
+|8 MHz|**任意の高速設定。保証する動作周波数ではない**|3デモ完走、benchの照合|
+|10 MHz以上|**現在の実装では非対応**|起動時の識別読出しから値が崩れる|
+
+SCKを変えるときは、`-DKAGURA_SPI_PIO_DIV=<分周>` を指定します（SCK = 120 MHz ÷（12 × 分周）、8 MHzなら1.25）。FPGAは、SCKを54 MHzで同期化してから、立ち上がりを検出してMISOを更新します。読出しの期限は、要求から1 SCK周期以内です。周波数を上げるほど、この余裕が減ります。測定値は[SPIパッケージ](../releases/pcm-stream-spi/README.md)を参照してください。
 
 レジスタ転送ヘッダは `bit7=read, bit6=address increment, bit5:0=address` です。書込みはヘッダの直後にデータを送ります。読出しはヘッダ、読出しバイト数、ダミー1バイト、その後データです。CSを転送全体でLowに保ちます。24番データ窓はアドレス増分を無効にし、内部ポインタだけを進めます。
 

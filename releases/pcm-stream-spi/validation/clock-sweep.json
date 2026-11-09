@@ -1,0 +1,214 @@
+{
+  "method": "Same SPI bitstream (e9f67c68...); host PIO divider only. SCK = 120 MHz / (12 * div). 6 and 8 MHz use fractional dividers (SCK period jitters by one PIO clock). Bench: BEYOND 16 COLORS benchmark, 512-byte medians, PSRAM read compared with what was written.",
+  "board": "Tang Nano 9K + RP2040 (120 MHz), one board, finite runs, 2026-11-09",
+  "qspi_5mhz_reference": {
+    "bench": {
+      "raw_pointer_write_512_us_median": 451.0,
+      "raw_pointer_write_512_MBps": 1.135,
+      "raw_csr_read_512_us_median": 462.0,
+      "raw_csr_read_512_MBps": 1.108,
+      "psram_write_512_us_median": 1732.5,
+      "psram_write_512_MBps": 0.296,
+      "psram_read_512_us_median": 1637.0,
+      "psram_read_512_MBps": 0.313
+    },
+    "beyond16_frames_selected_release": 4452,
+    "four_operators": {
+      "passed": true,
+      "rc": 0,
+      "frames": 3429,
+      "halves": 1546,
+      "worst_latency_us": 54564,
+      "timeouts": 0,
+      "low_10ms_blocks": [
+        0,
+        0
+      ],
+      "corr_min": 0.8272375311405635,
+      "corr_median": 0.9944227026071942
+    },
+    "midnight_terminal_frames": 3036
+  },
+  "spi_5mhz": {
+    "status": "default",
+    "divider": 2.0,
+    "bench": {
+      "raw_pointer_write_512_us_median": 897.0,
+      "raw_pointer_write_512_MBps": 0.571,
+      "raw_csr_read_512_us_median": 923.0,
+      "raw_csr_read_512_MBps": 0.555,
+      "psram_write_512_us_median": 2542.0,
+      "psram_write_512_MBps": 0.201,
+      "psram_read_512_us_median": 2490.0,
+      "psram_read_512_MBps": 0.206
+    },
+    "beyond16": {
+      "passed": true,
+      "frames": 4310,
+      "scenes": 8,
+      "worst_us": 115740,
+      "timeouts": 0,
+      "audio_fault": 0,
+      "low_10ms_blocks": [
+        0,
+        0
+      ]
+    },
+    "four_operators": {
+      "passed": true,
+      "rc": 0,
+      "frames": 2961,
+      "halves": 1546,
+      "worst_latency_us": 63201,
+      "timeouts": 0,
+      "low_10ms_blocks": [
+        0,
+        0
+      ],
+      "corr_min": 0.912192964645741,
+      "corr_median": 0.9949657546160668
+    },
+    "midnight_terminal": {
+      "passed": true,
+      "rc": 0,
+      "frames": 2891,
+      "halves": 1218,
+      "worst_latency_us": 70205,
+      "timeouts": 0,
+      "low_10ms_blocks": [
+        0,
+        0
+      ],
+      "corr_min": 0.9825772485852253,
+      "corr_median": 0.9970161489218952
+    },
+    "four_operators_uf2": {
+      "passed": true,
+      "rc": 0,
+      "frames": 2970,
+      "halves": 1546,
+      "worst_latency_us": 64914,
+      "timeouts": 0,
+      "low_10ms_blocks": [
+        0,
+        0
+      ],
+      "corr_min": 0.8233796802669935,
+      "corr_median": 0.9942354019516243
+    },
+    "midnight_terminal_uf2": {
+      "passed": true,
+      "rc": 0,
+      "frames": 2893,
+      "halves": 1218,
+      "worst_latency_us": 70186,
+      "timeouts": 0,
+      "low_10ms_blocks": [
+        0,
+        0
+      ],
+      "corr_min": 0.9759816773719596,
+      "corr_median": 0.9977346171069147
+    }
+  },
+  "spi_6mhz": {
+    "status": "tested",
+    "divider": 1.6666667,
+    "bench": {
+      "raw_pointer_write_512_us_median": 760.0,
+      "raw_pointer_write_512_MBps": 0.674,
+      "raw_csr_read_512_us_median": 781.0,
+      "raw_csr_read_512_MBps": 0.656,
+      "psram_write_512_us_median": 2304.5,
+      "psram_write_512_MBps": 0.222,
+      "psram_read_512_us_median": 2242.5,
+      "psram_read_512_MBps": 0.228
+    },
+    "beyond16": {
+      "passed": true,
+      "frames": 4359,
+      "scenes": 8,
+      "worst_us": 115657,
+      "timeouts": 0,
+      "audio_fault": 0,
+      "low_10ms_blocks": [
+        0,
+        0
+      ]
+    },
+    "four_operators": {
+      "passed": true,
+      "rc": 0,
+      "frames": 3128,
+      "halves": 1546,
+      "worst_latency_us": 62561,
+      "timeouts": 0,
+      "low_10ms_blocks": [
+        0,
+        0
+      ],
+      "corr_min": 0.8304829813094164,
+      "corr_median": 0.9952812130521271
+    }
+  },
+  "spi_8mhz": {
+    "status": "optional tested-fast configuration; not a guaranteed operating frequency",
+    "divider": 1.25,
+    "bench": {
+      "raw_pointer_write_512_us_median": 577.0,
+      "raw_pointer_write_512_MBps": 0.887,
+      "raw_csr_read_512_us_median": 608.0,
+      "raw_csr_read_512_MBps": 0.842,
+      "psram_write_512_us_median": 2012.5,
+      "psram_write_512_MBps": 0.254,
+      "psram_read_512_us_median": 1941.0,
+      "psram_read_512_MBps": 0.264
+    },
+    "beyond16": {
+      "passed": true,
+      "frames": 4388,
+      "scenes": 8,
+      "worst_us": 98989,
+      "timeouts": 0,
+      "audio_fault": 0,
+      "low_10ms_blocks": [
+        0,
+        0
+      ]
+    },
+    "four_operators": {
+      "passed": true,
+      "rc": 0,
+      "frames": 3263,
+      "halves": 1546,
+      "worst_latency_us": 57790,
+      "timeouts": 0,
+      "low_10ms_blocks": [
+        0,
+        0
+      ],
+      "corr_min": 0.8633610050964414,
+      "corr_median": 0.9943457400252909
+    },
+    "midnight_terminal": {
+      "passed": true,
+      "rc": 0,
+      "frames": 3004,
+      "halves": 1218,
+      "worst_latency_us": 61481,
+      "timeouts": 0,
+      "low_10ms_blocks": [
+        0,
+        0
+      ],
+      "corr_min": 0.9797026986016324,
+      "corr_median": 0.9974630011430443
+    }
+  },
+  "spi_10mhz": {
+    "status": "unsupported (current implementation)",
+    "divider": 1.0,
+    "beyond16": "bench stopped at device identification: STOP rc=-5 (KFB_DEVICE)",
+    "four_operators": "STOP rc=-4 phase=identify (KFB_VERSION)"
+  }
+}

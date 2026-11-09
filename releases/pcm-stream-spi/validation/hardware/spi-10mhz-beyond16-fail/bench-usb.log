@@ -1,0 +1,48 @@
+BEYOND 16 COLORS / release_ready=false / g=150s autoplay b=benchmark q=idle; no automatic start
+CONFIG gpu_queue=8 queue_metrics=1 merged_lettering=1 completion_burst=0
+GPU_RET_TAG expected=5 received=4 status=18 completion_error=0
+QUEUE_SELFTEST commands=8 readback_bytes=32 rc=-5
+PROFILE region=0 us=10 calls=0 overflow=0
+PROFILE region=1 us=0 calls=0 overflow=0
+PROFILE region=2 us=0 calls=0 overflow=0
+PROFILE region=3 us=0 calls=0 overflow=0
+PROFILE region=4 us=0 calls=0 overflow=0
+PROFILE region=5 us=0 calls=0 overflow=0
+PROFILE region=6 us=0 calls=0 overflow=0
+PROFILE region=7 us=0 calls=0 overflow=0
+PROFILE region=8 us=0 calls=0 overflow=0
+PROFILE region=9 us=0 calls=0 overflow=0
+PROFILE region=10 us=0 calls=0 overflow=0
+PROFILE region=11 us=0 calls=0 overflow=0
+PROFILE region=12 us=0 calls=0 overflow=0
+PROFILE region=13 us=0 calls=0 overflow=0
+PROFILE region=14 us=0 calls=0 overflow=0
+PROFILE region=15 us=0 calls=0 overflow=0
+PROFILE region=16 us=0 calls=0 overflow=0
+PROFILE region=17 us=0 calls=0 overflow=0
+PROFILE region=18 us=0 calls=0 overflow=0
+PROFILE region=19 us=0 calls=0 overflow=0
+PROFILE region=20 us=0 calls=0 overflow=0
+PROFILE region=21 us=0 calls=0 overflow=0
+PROFILE region=22 us=0 calls=0 overflow=0
+PROFILE region=23 us=0 calls=0 overflow=0
+PROFILE region=24 us=0 calls=0 overflow=0
+PROFILE region=25 us=0 calls=0 overflow=0
+PROFILE region=26 us=0 calls=0 overflow=0
+PROFILE region=27 us=0 calls=0 overflow=0
+WORK batches=0 rounds=0 us=0 checksum=726550 valid=1 call_over_budget=0 deadline_misses=0
+QUEUE depth=8 submitted=8 retired=4 peak=8 pending=4 barriers=1 errors=1
+QBURST bursts=0 hits=0 misses=0 fallback=0
+QRET reason=0 calls=0 samples=0 poll_us=0 metadata_us=0 ack_us=0
+QRET reason=1 calls=0 samples=0 poll_us=0 metadata_us=0 ack_us=0
+QRET reason=2 calls=0 samples=0 poll_us=0 metadata_us=0 ack_us=0
+QRET reason=3 calls=0 samples=0 poll_us=0 metadata_us=0 ack_us=0
+QSYNC op=0 calls=0 nonempty=0 samples=0 drain_us=0 command_us=0
+QSYNC op=1 calls=0 nonempty=0 samples=0 drain_us=0 command_us=0
+QSYNC op=2 calls=0 nonempty=0 samples=0 drain_us=0 command_us=0
+QSYNC op=3 calls=0 nonempty=0 samples=0 drain_us=0 command_us=0
+QSYNC op=4 calls=0 nonempty=0 samples=0 drain_us=0 command_us=0
+QSYNC op=5 calls=0 nonempty=0 samples=0 drain_us=0 command_us=0
+QSYNC op=6 calls=0 nonempty=0 samples=0 drain_us=0 command_us=0
+QSYNC op=7 calls=0 nonempty=0 samples=0 drain_us=0 command_us=0
+STOP rc=-5; no retry; release_ready=false

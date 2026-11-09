@@ -1,0 +1,16 @@
+{
+  "four-operators-spi": {
+    "blocks": 240,
+    "elf_bytes": 61328,
+    "compared": 61328,
+    "mismatches": 0,
+    "complete": true
+  },
+  "midnight-terminal-spi": {
+    "blocks": 997,
+    "elf_bytes": 255076,
+    "compared": 255076,
+    "mismatches": 0,
+    "complete": true
+  }
+}
