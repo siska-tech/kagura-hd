@@ -39,7 +39,7 @@
 
 ## 作る・見る
 
-すぐに実機で見るときは、[Releases](https://github.com/siska-tech/kagura-hd/releases/latest)の`midnight-terminal.uf2`を使います。手順は[ルートのREADME](../../README.md#すぐに試す)にあります。約5秒後に自動で始まります。
+すぐに実機で見るときは、[Releases](https://github.com/siska-tech/kagura-hd/releases/latest)の`midnight-terminal.uf2`を使います（SPI版のFPGAと組み合わせるときは`midnight-terminal-spi.uf2`）。手順は[ルートのREADME](../../README.md#すぐに試す)にあります。約5秒後に自動で始まります。
 
 ```bash
 # 素材の再生成（Python 3.12、Pillow、NumPy。保存した配布フォントのアーカイブだけを使う）

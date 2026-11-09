@@ -1,4 +1,6 @@
-# KAGURA-HD 2026-11-09 — PCMストリーミング（QSPI・SPI）とFMデモ
+# KAGURA-HD 2026-11-09.1 — PCMストリーミング（QSPI・SPI）とFMデモ
+
+[v2026.11.09](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.09)に、任意の構成としてSPI版のbitstreamとUF2を加えたReleaseです。QSPI版のファイルは、v2026.11.09と同じものです（SHA-256も同じ）。
 
 Tang Nano 9K（GW1NR-LV9QN88PC6/I5）向けのフレームバッファ型グラフィックスエンジンです。640×360・16色、720p60 HDMI、2ページ、FILL・READ/WRITE・aligned BLIT、独立カーソル、Queue8を備えます。音声は48 kHzのPCM2と、Hostから連続補充するPCMストリーミングに対応します。
 
@@ -6,13 +8,13 @@ Tang Nano 9K（GW1NR-LV9QN88PC6/I5）向けのフレームバッファ型グラ�
 
 |ファイル|内容|
 |---|---|
-|`kagura-hd-qspi-pcm-stream.fs`|選定版bitstream（Tang Nano 9K用）|
-|`four-operators.uf2`|FOUR OPERATORS：ソフトウェアFM音源の132秒メガデモ（Raspberry Pi Pico用）|
-|`midnight-terminal.uf2`|MIDNIGHT TERMINAL — FM EDITION：104秒の短編（Raspberry Pi Pico用）|
+|`kagura-hd-qspi-pcm-stream.fs`|選定版bitstream（QSPI、Tang Nano 9K用）|
+|`four-operators.uf2`|FOUR OPERATORS：ソフトウェアFM音源の132秒メガデモ（QSPI、Raspberry Pi Pico用）|
+|`midnight-terminal.uf2`|MIDNIGHT TERMINAL — FM EDITION：104秒の短編（QSPI、Raspberry Pi Pico用）|
 |`kagura-hd-spi-pcm-stream.fs`|SPI版bitstream（任意の構成。下記「SPI版」）|
 |`four-operators-spi.uf2`|FOUR OPERATORSのSPI版（SPI版bitstreamと組み合わせる）|
 |`midnight-terminal-spi.uf2`|MIDNIGHT TERMINALのSPI版（SPI版bitstreamと組み合わせる）|
-|`demo-licenses.zip`|UF2に含まれるソフトウェアとフォントのライセンス文書|
+|`demo-licenses.zip`|UF2に含まれるソフトウェアとフォントのライセンス文書（QSPI版・SPI版で共通）|
 |`SHA256SUMS`|上記ファイルのSHA-256|
 
 ## デモを試す
@@ -21,6 +23,8 @@ Tang Nano 9K（GW1NR-LV9QN88PC6/I5）向けのフレームバッファ型グラ�
 2. Raspberry Pi Pico（RP2040）を[配線表](https://github.com/siska-tech/kagura-hd/blob/main/docs/kagura-fb-host-api.md#配線転送)のとおりにつなぎ、GNDを共通にします。
 3. PicoのBOOTSELボタンを押しながらUSBをつなぎ、現れたドライブ`RPI-RP2`へUF2をコピーします。
 4. Tang Nano 9KのHDMIを、720p60と音声に対応した表示機へつなぎます。
+
+SPIで使うときは、手順1で`kagura-hd-spi-pcm-stream.fs`を、手順3で`four-operators-spi.uf2`か`midnight-terminal-spi.uf2`を使います。配線は同じで、IO2とIO3は使いません。FPGAとUF2の組合せ（QSPI同士、SPI同士）を間違えると動きません。
 
 Picoは起動から約5秒後に、自動でデモを始めます。もう一度見るときは、Picoの電源を入れ直してください。UF2を書き込むと、Picoにそれまで入っていたプログラムは消えます。起動から5秒以内にシリアル端末でPicoのUSBポートを開くと、`g`の入力を待ってから始まり、終了時に結果を表示します。
 
@@ -38,13 +42,13 @@ CSR 31のbit1は診断用です。アプリケーションからは書き込ま�
 
 QSPIを使えないHost向けに、同じ機能のSPI版を用意しました。SHA-256は`e9f67c683df4ab9c5f9ee382433d0a46f101578dbdcf66684da14992ce8c1767`（UserCode `0x0000694E`）です。QSPIとSPIはビルド時にどちらか一方を選ぶ別々の構成で、選定版QSPIのbitstreamは変わりません。配線は同じで、IO0がMOSI、IO1がMISOです。IO2とIO3は使いません。FPGAとUF2は、必ずSPI同士、QSPI同士で組み合わせてください。
 
-内部STAはSetup +0.159 ns、Hold +0.456 ns、違反0/0です。SPI 5 MHz（既定）で3つのデモを完走し、2つのSPI版UF2も自動開始から完走しました。timeout、audio fault、音声の10 ms欠落はどれも0です。SPIの帯域はQSPIの1/4なので、5 MHzでは描画のフレーム数がQSPIより3〜14%少なくなります。音声には影響しません。
+内部STAはSetup +0.159 ns、Hold +0.456 ns、違反0/0です。SPI 5 MHz（既定）で3つのデモを完走し、2つのSPI版UF2も自動開始から完走しました（FOUR OPERATORS 2970フレーム、MIDNIGHT TERMINAL 2893フレーム。UF2の中身はELFと一致）。timeout、audio fault、音声の10 ms欠落はどれも0です。SPIの帯域はQSPIの1/4なので、5 MHzでは描画のフレーム数がQSPIより3〜14%少なくなります。音声には影響しません。
 
 SPIクロックは5、6、8、10 MHzで試しました。8 MHzは3デモを完走した任意の高速設定で、動作を保証する周波数ではありません。10 MHz以上は、起動時の識別読出しから失敗するため非対応です。詳しくは[SPIパッケージ](https://github.com/siska-tech/kagura-hd/blob/main/releases/pcm-stream-spi/README.md)を参照してください。
 
-## UF2の確認
+## QSPI版UF2の確認
 
-2つのUF2は、それぞれ同じ基板で1回ずつ実行しました。FPGAには選定版をSRAMへ投入し、Picoには添付と同じUF2を書き込みました。ホストからは開始の指示を送らず、終わるまでUSBのポートも開いていません。どちらも自動で始まり、`STOP rc=0`、QSPI timeout 0で完走しました。HDMI録音の10 ms単位の欠落は左右とも0です。PCで生成した基準との1秒ごとの相関は、FOUR OPERATORSが中央値0.993、MIDNIGHT TERMINALが中央値0.997でした。UF2の中身がELFの内容と一致することもブロック単位で確かめています。
+QSPI版の2つのUF2は、それぞれ同じ基板で1回ずつ実行しました。FPGAには選定版をSRAMへ投入し、Picoには添付と同じUF2を書き込みました。ホストからは開始の指示を送らず、終わるまでUSBのポートも開いていません。どちらも自動で始まり、`STOP rc=0`、QSPI timeout 0で完走しました。HDMI録音の10 ms単位の欠落は左右とも0です。PCで生成した基準との1秒ごとの相関は、FOUR OPERATORSが中央値0.993、MIDNIGHT TERMINALが中央値0.997でした。UF2の中身がELFの内容と一致することもブロック単位で確かめています。
 
 手順1のFlashへの書込みも、実機で確かめました。Tang Nano 9KのFlashに選定版を書き込み、Flashから起動したFPGA（UserCode `0x00008039`）で`midnight-terminal.uf2`を実行しました。結果は`STOP rc=0`、音声の欠落0、相関の中央値0.998です。
 

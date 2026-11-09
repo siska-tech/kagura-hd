@@ -33,7 +33,7 @@ RP2040の2つ目のコアで動くソフトウェアFM音源（4オペレータ�
 
 ## すぐに試す
 
-[Releases](https://github.com/siska-tech/kagura-hd/releases/latest)に、選定版bitstreamと2つのデモのUF2を置いています。ビルド環境は要りません。
+[Releases](https://github.com/siska-tech/kagura-hd/releases/latest)に、選定版bitstreamと2つのデモのUF2を置いています（2026-11-09の[v2026.11.09.1](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.09.1)から、SPI版のbitstreamとUF2も添付）。ビルド環境は要りません。
 
 1. Tang Nano 9Kに`kagura-hd-qspi-pcm-stream.fs`を書き込みます（Gowin Programmerの「embFlash Erase,Program」など）。SecurityBitがONのため、Verify付きの操作は失敗します。1.9.11.03で書込みを確認しました。
 2. Raspberry Pi Pico（RP2040）を[配線表](docs/kagura-fb-host-api.md#配線転送)のとおりにつなぎ、GNDを共通にします。
@@ -49,7 +49,7 @@ Picoは起動から約5秒後に、自動でデモを始めます。もう一度
 
 2026-11-08、PCMストリーミングに対応したQueue8・QSPI版を選定版にしました（従来のPCM2版を置き換え）。[パッケージと検証記録](releases/pcm-stream-qspi/README.md)、[Release添付一覧](releases/README.md)を参照してください。
 
-2026-11-09には、同じ機能のSPI版も配布対象にしました（[パッケージと検証記録](releases/pcm-stream-spi/README.md)）。QSPIとSPIはビルド時にどちらか一方を選び、実行時の切替えはしません。SPI版は、STAを通すためにSPIだけの差し替えRTL（[rtl/spi/](rtl/spi/README.md)）を使います。QSPI版のbitstreamと入力は変わりません。SPIの既定は5 MHzです。8 MHzは任意の高速設定で、動作を保証する周波数ではありません。10 MHz以上は非対応です。GitHub Releaseとタグはまだ作成していません。
+2026-11-09には、同じ機能のSPI版も配布対象にしました（[パッケージと検証記録](releases/pcm-stream-spi/README.md)）。QSPIとSPIはビルド時にどちらか一方を選び、実行時の切替えはしません。SPI版は、STAを通すためにSPIだけの差し替えRTL（[rtl/spi/](rtl/spi/README.md)）を使います。QSPI版のbitstreamと入力は変わりません。SPIの既定は5 MHzです。8 MHzは任意の高速設定で、動作を保証する周波数ではありません。10 MHz以上は非対応です。SPI版は[v2026.11.09.1](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.09.1)からGitHub Releaseに添付しています。
 
 
 |項目|内容|

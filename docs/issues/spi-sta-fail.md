@@ -82,6 +82,8 @@ SPI対応は任意です。通常Releaseの要件ではありません。目的�
 |SPI 8 MHz|OK|577 µs（0.89 MB/s）|0.254 / 0.264 MB/s|4388フレーム、全8シーン|3263フレーム、最悪 57.8 ms|
 |SPI 10 MHz|**不可**|―|―|benchの起動時の識別で `KFB_DEVICE`|識別で `KFB_VERSION`（rc=−4）|
 
-5〜8 MHzでは、照合の失敗、timeout、audio fault、音声の10 ms欠落がどれも0でした。10 MHzでは識別用の読出しから値が崩れます。FPGAは54 MHzでSCKを同期化しているため、立ち上がりを検出してからMISOが変わるまでに約3 system cycleかかります。さらに、読出しの期限は要求から1 SCK周期以内です。10 MHzでは、この余裕が足りないと考えています。8 MHzでは、BEYOND 16 COLORSのフレーム数はQSPIとの差が1.4%、FOUR OPERATORSは4.8%まで縮まりました。MIDNIGHT TERMINALは5 MHzでだけ試しています。基板は1枚で、有限時間の試験です。PVTは評価していません。
+5〜8 MHzでは、照合の失敗、timeout、audio fault、音声の10 ms欠落がどれも0でした。10 MHzでは識別用の読出しから値が崩れます。FPGAは54 MHzでSCKを同期化しているため、立ち上がりを検出してからMISOが変わるまでに約3 system cycleかかります。さらに、読出しの期限は要求から1 SCK周期以内です。10 MHzでは、この余裕が足りないと考えています。8 MHzでは、BEYOND 16 COLORSのフレーム数はQSPIとの差が1.4%、FOUR OPERATORSは4.8%まで縮まりました。MIDNIGHT TERMINALは、このスイープの時点では5 MHzでだけ試していました（8 MHzの結果は次の「解決」にあります）。基板は1枚で、有限時間の試験です。PVTは評価していません。
 
 **解決（2026-11-09）。** MIDNIGHT TERMINALも8 MHzで完走しました（3004フレーム、音声の欠落0）。これで8 MHzは3デモとも確認済みです。SPI 5 MHzの配布UF2（FOUR OPERATORS、MIDNIGHT TERMINAL）は、自動開始から完走しました。SPI版は [releases/pcm-stream-spi](../../releases/pcm-stream-spi/README.md) にまとめ、[artifacts/validated/kagura-hd-spi-pcm-stream.fs](../../artifacts/validated/kagura-hd-spi-pcm-stream.fs) へ昇格させました。既定は5 MHz、8 MHzは任意の高速設定（保証しない）、10 MHz以上は非対応です。旧PCM2のSPI実験物は、記録として `artifacts/experimental/spi-sta-fail/` に残しています。
+
+**公開（2026-11-09）。** PR #4でmainへ統合し、このIssueは閉じました。SPI版のbitstreamと2つのSPI版UF2は、QSPI版と一緒に[GitHub Release v2026.11.09.1](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.09.1)へ添付しています。

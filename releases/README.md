@@ -1,12 +1,15 @@
 # 通常のRelease配布対象
 
-2026-11-08から、**PCMストリーミング QSPI版**を通常のGitHub Releases添付対象とします（[選定版パッケージ](pcm-stream-qspi/README.md)）。従来のPCM2 / ABI 1.4 / QSPI版は置き換え済み（superseded）で、`artifacts/validated/` に記録として残しています。リポジトリ公開とGitHub Release作成は別です。Releaseはまだ作成していません。
+2026-11-08から、**PCMストリーミング QSPI版**を通常のGitHub Releases添付対象とします（[選定版パッケージ](pcm-stream-qspi/README.md)）。従来のPCM2 / ABI 1.4 / QSPI版は置き換え済み（superseded）で、`artifacts/validated/` に記録として残しています。QSPI版は[v2026.11.09](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.09)で公開しました。QSPI版とSPI版をそろえた最新のReleaseは[v2026.11.09.1](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.09.1)です。
 
 |添付asset|保存先|
 |---|---|
 |`kagura-hd-qspi-pcm-stream.fs`|[validated artifact](../artifacts/validated/kagura-hd-qspi-pcm-stream.fs)|
 |`kagura-hd-spi-pcm-stream.fs`|[validated artifact](../artifacts/validated/kagura-hd-spi-pcm-stream.fs)（SPI、任意の構成）|
-|`SHA256SUMS`|[直接添付用チェックサム](SHA256SUMS)|
+|`four-operators.uf2`、`midnight-terminal.uf2`|QSPI版のデモUF2（リポジトリには含めない。SHA-256は[QSPIのmanifest](pcm-stream-qspi/manifest.json)）|
+|`four-operators-spi.uf2`、`midnight-terminal-spi.uf2`|SPI版のデモUF2（リポジトリには含めない。SHA-256は[SPIのmanifest](pcm-stream-spi/manifest.json)）|
+|`demo-licenses.zip`|UF2に含まれるソフトウェアとフォントのライセンス文書（QSPI版・SPI版で共通）|
+|`SHA256SUMS`|[bitstreamのチェックサム](SHA256SUMS)。Releaseに添付する`SHA256SUMS`は、UF2とライセンス文書も含めた全添付ファイルのものです|
 
 2026-11-09から、**PCMストリーミング SPI版**も添付対象です（[SPIパッケージ](pcm-stream-spi/README.md)）。QSPIとSPIは、ビルド時にどちらか一方を選ぶ別々の構成です。SPIのデモ用UF2（`four-operators-spi.uf2`、`midnight-terminal-spi.uf2`）のSHA-256は、パッケージの`manifest.json`に記録しています。旧PCM2のSPI実験物（STA不合格）は、[experimental/spi-sta-fail](../artifacts/experimental/spi-sta-fail/README.md)に記録として残しています。この実験物は引き続き書込み禁止です。
 

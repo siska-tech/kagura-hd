@@ -27,7 +27,7 @@
 
 ## 見る・作る
 
-すぐに実機で見るときは、[Releases](https://github.com/siska-tech/kagura-hd/releases/latest)の`four-operators.uf2`を使います。手順は[ルートのREADME](../../README.md#すぐに試す)にあります。このUF2は、下のRAM ELFと同じプログラムを`copy_to_ram`の形式にしたものです。起動時にFlashからSRAMへ写して実行し、約5秒後に自動で始まります。
+すぐに実機で見るときは、[Releases](https://github.com/siska-tech/kagura-hd/releases/latest)の`four-operators.uf2`を使います（SPI版のFPGAと組み合わせるときは`four-operators-spi.uf2`）。手順は[ルートのREADME](../../README.md#すぐに試す)にあります。このUF2は、下のRAM ELFと同じプログラムを`copy_to_ram`の形式にしたものです。起動時にFlashからSRAMへ写して実行し、約5秒後に自動で始まります。
 
 PC プレビューの作り方です。KFB の振る舞いモデルに、実物の SDK・デモ・音源をつないで描画します。
 
