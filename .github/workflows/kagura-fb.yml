@@ -71,6 +71,8 @@ jobs:
           bash tools/test-fb-queue-host.sh
           KAGURA_AUDIO_CREDITS=1 KAGURA_QUEUE_LANES=4 KAGURA_QUEUE_DEPTHS=8 KAGURA_QUEUE_HOST_DIR=build/fb-queue-host-credit bash tools/test-fb-queue-host.sh
           KAGURA_PACKET_FIRST=1 KAGURA_QUEUE_LANES=4 KAGURA_QUEUE_DEPTHS=8 KAGURA_QUEUE_HOST_DIR=build/fb-queue-host-packet-first bash tools/test-fb-queue-host.sh
+      - name: Run optional SPI overlay regressions
+        run: bash tools/test-fb-spi.sh
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -86,6 +88,7 @@ jobs:
             build/fb-cursor-pipeline/**/*.log
             build/audio-credit-predicate/*.log
             build/packet-first/**/*.log
+            build/fb-spi/**/*.log
             build/queue-demo-tests/*.log
             build/queue-wait-tests/*.log
             build/queue-wait-tests/lettering-equivalence.json
