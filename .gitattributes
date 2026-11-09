@@ -5,6 +5,8 @@
 
 * whitespace=cr-at-eol
 
+*.fs linguist-generated=true
+
 /releases/pcm2-spi/** -text
 
 /artifacts/** -text
