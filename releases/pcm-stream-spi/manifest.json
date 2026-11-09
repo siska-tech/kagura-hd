@@ -5,7 +5,8 @@
   "configuration": "optional SPI configuration; build-time exclusive with releases/pcm-stream-qspi (no runtime switching, no dual-protocol bitstream)",
   "supersedes": "artifacts/experimental/spi-sta-fail (PCM2 SPI, STA fail, never validated)",
   "qspi_release_unchanged": "releases/pcm-stream-qspi and artifacts/validated/kagura-hd-qspi-pcm-stream.fs (fad15376...) are not modified; a QSPI build of this tree reproduces the selected stage-1 netlist body 79434504...",
-  "github_release_created": false,
+  "github_release_created": true,
+  "github_release_tag": "v2026.11.09.1",
   "artifact": "../../artifacts/validated/kagura-hd-spi-pcm-stream.fs",
   "sha256": "e9f67c683df4ab9c5f9ee382433d0a46f101578dbdcf66684da14992ce8c1767",
   "size_bytes": 3558476,
@@ -70,7 +71,7 @@
     "External SPI pad timing is not in STA (host signals are false paths through the 2FF oversampling synchronizers)",
     "The MicroPython SPI helper (SoftSPI 1 MHz) was not re-run on this image"
   ],
-  "publication_blockers": [
-    "Applicable Gowin redistribution terms unverified (same as the QSPI release)"
+  "open_items": [
+    "Applicable Gowin redistribution terms unverified (same as the QSPI release, which is already published); published as v2026.11.09.1 by the owner's decision on 2026-11-09"
   ]
 }
