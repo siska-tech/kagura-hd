@@ -62,7 +62,16 @@ SPI対応は任意です。通常Releaseの要件ではありません。目的�
 
 主な変異は検出できることを確認済みです。
 
+**実機（2026-11-09）。** Tang Nano 9K、RP2040（120 MHz）、SPI 5 MHz（Kagura-9の `kagura_spi` PIO。配線はQSPIと同じで、IO2とIO3は使わない）。FPGAには上のSPI bitstream（`e9f67c68…`）をSRAMへ投入し、終了後に承認済みのQueue8へ戻しました。Host側は `B16_HOST_LANES=1`（CMakeの `-DKAGURA_HOST_LANES=1`）でビルドしています。QSPIのビルド（既定値）は、3本とも変更前と同じバイナリになりました。
+
+|デモ|結果|SPI|QSPI（参考）|
+|---|---|---|---|
+|FOUR OPERATORS（RAM ELF）|完走、timeout 0、音声の10 ms欠落 0/0、相関の最小値 0.912|2961フレーム、最悪 63.2 ms|3429フレーム、54.6 ms|
+|MIDNIGHT TERMINAL（Flash、後で書き戻し）|完走、timeout 0、音声の10 ms欠落 0/0、相関の最小値 0.983|2891フレーム、最悪 70.2 ms|3036フレーム、56.5〜59.2 ms|
+|BEYOND 16 COLORS（Flash、後で書き戻し）|完走、全8シーン、timeout 0、audio fault 0、音声の10 ms欠落 0/0|4310フレーム|4452フレーム|
+
+音声の半面の数はQSPIと同じです。帯域がQSPIの1/4なので、描画フレーム数は3〜14%減ります。RP2040のFlashは書き戻し、全2 MiBが一致することを確認しました。FPGAのFlashには書き込んでいません。BEYOND 16 COLORSは [`diagnostics/spi-hardware/run-beyond16.py`](../../diagnostics/spi-hardware/run-beyond16.py) で動かしました。ほかの2本は各デモの `run_hardware.py --image` で動かしています。
+
 **残り。**
-- SPI実機試験。RP2040側に、Kagura-9の `kagura_spi` PIOを使うtransportが必要
-- 入力とSTAを固定した成果物パッケージの作成
-- validatedへ昇格させるかどうかの判断。それまでは `DO_NOT_PROGRAM` の扱いを続ける
+- 入力とSTAを固定した成果物パッケージを作り、validatedへ昇格させる
+- SPI用の配布UF2を用意する（自動開始の確認を含む）

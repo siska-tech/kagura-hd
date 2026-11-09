@@ -16,6 +16,18 @@ target_compile_options(beyond16 PRIVATE -O2 -Wall -Wextra -fstack-usage)
 option(B16_HOST_FAST "Constant clock waits and bounded FIFO deadline checks" ON)
 target_compile_definitions(beyond16 PRIVATE B16_HOST_FAST=$<BOOL:${B16_HOST_FAST}>)
 target_compile_definitions(beyond16 PRIVATE PICO_STACK_SIZE=0x2000 KFB_PACK_DESCRIPTOR=1)
+# Host transport, build-time exclusive like the FPGA build: 4 = QSPI (selected
+# bitstream), 1 = SPI (tools/build-fb.tcl spi). KAGURA_SPI_PIO_DIV overrides the
+# SPI PIO divider (default: the QSPI divider, 5 MHz SCK).
+set(KAGURA_HOST_LANES 4 CACHE STRING "Host lanes: 4 QSPI or 1 SPI")
+set(KAGURA_SPI_PIO_DIV "" CACHE STRING "SPI PIO clock divider (empty: QSPI divider)")
+if(NOT KAGURA_HOST_LANES MATCHES "^(1|4)$")
+    message(FATAL_ERROR "KAGURA_HOST_LANES must be 1 or 4")
+endif()
+target_compile_definitions(beyond16 PRIVATE B16_HOST_LANES=${KAGURA_HOST_LANES})
+if(KAGURA_SPI_PIO_DIV)
+    target_compile_definitions(beyond16 PRIVATE B16_SPI_PIO_DIV=${KAGURA_SPI_PIO_DIV}f)
+endif()
 pico_enable_stdio_uart(beyond16 0)
 pico_enable_stdio_usb(beyond16 1)
 add_custom_command(TARGET beyond16 POST_BUILD COMMAND ${CMAKE_OBJCOPY} -O binary $<TARGET_FILE:beyond16> ${CMAKE_CURRENT_BINARY_DIR}/beyond16.bin)

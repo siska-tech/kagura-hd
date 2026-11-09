@@ -27,14 +27,18 @@ p.add_argument('--flash', action='store_true', help='RP2040 Flash image; restore
 p.add_argument('--uf2', type=Path, help='with --flash: write this UF2 (built from --elf) instead of the ELF')
 p.add_argument('--fpga-from-flash', action='store_true', help='FPGA already holds the selected image in its Flash: reconfigure from it (no SRAM load, no Queue8 restore)')
 p.add_argument('--autostart', action='store_true', help='release UF2: no host start; the serial port stays closed until the end')
+p.add_argument('--image', type=Path, help='FPGA SRAM image other than the selected QSPI one (e.g. the SPI build); needs --image-sha')
+p.add_argument('--image-sha', help='SHA-256 of --image')
 args = p.parse_args()
+assert bool(args.image) == bool(args.image_sha), '--image and --image-sha go together'
 assert not (args.uf2 or args.autostart) or args.flash, '--uf2/--autostart need --flash'
 out = (args.out if args.out.is_absolute() else root/args.out).resolve()
 assert out.is_relative_to(root/'build')
 pico = root/'build/midnight-hardware/picotool/picotool/picotool.exe'
 programmer = Path('C:/Gowin/Gowin_V1.9.12.04_x64/Programmer/bin/programmer_cli.exe')
-image = root/'artifacts/validated/kagura-hd-qspi-pcm-stream.fs'
-IMAGE_SHA = 'fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db'
+image = ((args.image if args.image.is_absolute() else root/args.image).resolve() if args.image
+         else root/'artifacts/validated/kagura-hd-qspi-pcm-stream.fs')
+IMAGE_SHA = args.image_sha.lower() if args.image else 'fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db'
 restore = root/'build/fb-queue-eval-packet-first-p4-r2/qspi-depth-8/impl/pnr/kagura_fb.fs'
 elf = (args.elf if args.elf.is_absolute() else root/args.elf).resolve()
 uf2 = (args.uf2 if args.uf2.is_absolute() else root/args.uf2).resolve() if args.uf2 else None

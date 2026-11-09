@@ -19,6 +19,30 @@ static uint32_t dma_words[512],dma_sink;
 #include "kagura_host.pio.h"
 #include <string.h>
 enum { IO0=2,SCK=6,CS=7 };
+/* B16_HOST_LANES=1 builds the SPI host for the SPI-only FPGA build (the two
+ * are build-time exclusive): KAGURA-9 kagura_spi, MOSI=IO0, MISO=IO1. The
+ * host drives only IO0; IO1 belongs to the FPGA, IO2/IO3 stay inputs. */
+#ifndef B16_HOST_LANES
+#define B16_HOST_LANES 4
+#endif
+#if B16_HOST_LANES==1
+#define HOST_PROGRAM kagura_spi_program
+#define HOST_WRAP kagura_spi_wrap_target
+#define HOST_CONFIG kagura_spi_program_get_default_config
+#define HOST_SHIFT 23
+#define HOST_DRIVE (1u<<IO0)
+#ifndef B16_SPI_PIO_DIV
+#define B16_SPI_PIO_DIV MT_QSPI_PIO_DIV
+#endif
+#elif B16_HOST_LANES==4
+#define HOST_PROGRAM kagura_qspi_program
+#define HOST_WRAP kagura_qspi_wrap_target
+#define HOST_CONFIG kagura_qspi_program_get_default_config
+#define HOST_SHIFT 22
+#define HOST_DRIVE (15u<<IO0)
+#else
+#error "B16_HOST_LANES must be 1 or 4"
+#endif
 static PIO const bus=pio0;
 static int sm=-1;
 static uint offset,pull_pc;
@@ -58,8 +82,9 @@ static int transfer_inner(const uint8_t *tx,uint8_t *rx,size_t count,bool releas
  while(got<count){
   bool progress=false;
   if(sent<count&&!pio_sm_is_tx_fifo_full(bus,(uint)sm)){
-   uint32_t word=(uint32_t)(tx?tx[sent]:0)<<22;
-   if(release_last&&sent+1==count)word|=1u<<30;
+   uint32_t word=(uint32_t)(tx?tx[sent]:0)<<HOST_SHIFT;
+   /* QSPI only: bit30 releases IO0..3 after the byte. SPI never turns IO0 around. */
+   if(B16_HOST_LANES==4&&release_last&&sent+1==count)word|=1u<<30;
    /* bit31 remains 0: KAGURA-9 queue-consuming registers/BUSY gating do
     * not describe HD's descriptor protocol. kfb SDK serializes commands. */
    BDETAIL(B16_TX);pio_sm_put(bus,(uint)sm,word);sent++;progress=true;BDETAIL_END();
@@ -86,7 +111,7 @@ static int transfer(const uint8_t *tx,uint8_t *rx,size_t count,bool release_last
  * RX is drained even on WRITE (PIO autopushes every byte). No chaining/IRQ. */
 static int transfer_dma(const uint8_t *data,size_t n,uint64_t deadline){
  BPUSH(B16_DMA_SETUP);uint64_t start=time_us_64();
- for(size_t i=0;i<n;i++)dma_words[i]=(uint32_t)data[i]<<22;
+ for(size_t i=0;i<n;i++)dma_words[i]=(uint32_t)data[i]<<HOST_SHIFT;
  dma_channel_config tx=dma_channel_get_default_config((uint)dma_tx);
  channel_config_set_transfer_data_size(&tx,DMA_SIZE_32);
  channel_config_set_read_increment(&tx,true);channel_config_set_write_increment(&tx,false);
@@ -116,7 +141,7 @@ static int begin_transaction(void){
  if(sm<0||stats.faulted)return KFB_IO;
  /* SM is stalled at pull with SCK low after the previous end. */
  pio_sm_set_enabled(bus,(uint)sm,false);
- BDETAIL(B16_DIRECTION);pio_sm_set_pindirs_with_mask(bus,(uint)sm,15u<<IO0,15u<<IO0);BDETAIL_END();
+ BDETAIL(B16_DIRECTION);pio_sm_set_pindirs_with_mask(bus,(uint)sm,HOST_DRIVE,15u<<IO0);BDETAIL_END();
  pio_sm_set_enabled(bus,(uint)sm,true);
  BDETAIL(B16_CS_SETUP);gpio_put(CS,0);wait_ns(MT_QSPI_CSS_NS);BDETAIL_END();stats.transactions++;
  return 0;
@@ -170,17 +195,21 @@ const mt_qspi_stats *mt_qspi_statistics(void){return &stats;}
 int mt_qspi_init(void){
  if(sm>=0)return KFB_ARGUMENT;
  if(clock_get_hz(clk_sys)!=MT_QSPI_SYS_HZ)return KFB_ARGUMENT;
- if(!pio_can_add_program(bus,&kagura_qspi_program))return KFB_IO;
+ if(!pio_can_add_program(bus,&HOST_PROGRAM))return KFB_IO;
  int claimed=pio_claim_unused_sm(bus,false);if(claimed<0)return KFB_IO;sm=claimed;
- offset=pio_add_program(bus,&kagura_qspi_program);loaded=true;pull_pc=offset+kagura_qspi_wrap_target;
+ offset=pio_add_program(bus,&HOST_PROGRAM);loaded=true;pull_pc=offset+HOST_WRAP;
 #if B16_TRANSPORT
  dma_tx=dma_claim_unused_channel(false);dma_rx=dma_claim_unused_channel(false);
- if(dma_tx<0||dma_rx<0){if(dma_tx>=0)dma_channel_unclaim((uint)dma_tx);if(dma_rx>=0)dma_channel_unclaim((uint)dma_rx);dma_tx=dma_rx=-1;pio_remove_program(bus,&kagura_qspi_program,offset);pio_sm_unclaim(bus,(uint)sm);sm=-1;loaded=false;return KFB_IO;}
+ if(dma_tx<0||dma_rx<0){if(dma_tx>=0)dma_channel_unclaim((uint)dma_tx);if(dma_rx>=0)dma_channel_unclaim((uint)dma_rx);dma_tx=dma_rx=-1;pio_remove_program(bus,&HOST_PROGRAM,offset);pio_sm_unclaim(bus,(uint)sm);sm=-1;loaded=false;return KFB_IO;}
 #endif
  memset(&stats,0,sizeof stats);
  gpio_init(CS);gpio_put(CS,1);gpio_set_dir(CS,GPIO_OUT);
- pio_sm_config c=kagura_qspi_program_get_default_config(offset);
+ pio_sm_config c=HOST_CONFIG(offset);
+#if B16_HOST_LANES==1
+ kagura_host_sm_config(bus,(uint)sm,offset,&c,IO0,1,IO0+1,SCK,B16_SPI_PIO_DIV);
+#else
  kagura_host_sm_config(bus,(uint)sm,offset,&c,IO0,4,IO0,SCK,MT_QSPI_PIO_DIV);
+#endif
  for(uint pin=IO0;pin<=SCK;pin++)pio_gpio_init(bus,pin);
  for(uint pin=IO0;pin<=CS;pin++){
   gpio_set_drive_strength(pin,GPIO_DRIVE_STRENGTH_2MA);
@@ -201,7 +230,7 @@ void mt_qspi_deinit(void){
  pio_sm_set_enabled(bus,(uint)sm,false);
  pio_sm_set_pins_with_mask(bus,(uint)sm,0,1u<<SCK);
  wait_ns(MT_QSPI_CSH_NS);gpio_put(CS,1);wait_ns(MT_QSPI_CSW_NS);
- if(loaded)pio_remove_program(bus,&kagura_qspi_program,offset);
+ if(loaded)pio_remove_program(bus,&HOST_PROGRAM,offset);
  pio_sm_unclaim(bus,(uint)sm);sm=-1;loaded=false;
  for(uint pin=IO0;pin<=SCK;pin++)gpio_init(pin);
 }
