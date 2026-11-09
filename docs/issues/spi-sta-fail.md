@@ -72,6 +72,18 @@ SPI対応は任意です。通常Releaseの要件ではありません。目的�
 
 音声の半面の数はQSPIと同じです。帯域がQSPIの1/4なので、描画フレーム数は3〜14%減ります。RP2040のFlashは書き戻し、全2 MiBが一致することを確認しました。FPGAのFlashには書き込んでいません。BEYOND 16 COLORSは [`diagnostics/spi-hardware/run-beyond16.py`](../../diagnostics/spi-hardware/run-beyond16.py) で動かしました。ほかの2本は各デモの `run_hardware.py --image` で動かしています。
 
+**SPIクロックのスイープ（2026-11-09）。** 同じSPI bitstreamを使い、Host側だけPIOの分周を変えて測りました。SCK = 120 MHz ÷（12 × 分周）です。6 MHzと8 MHzは端数のある分周になるため、SCKの周期が1 PIOクロック分揺らぎます。BEYOND 16 COLORSのbenchは、PSRAMの書込みと読出しを内容の照合込みで行い、512 byte転送の中央値を取りました。
+
+|SCK|通信|生書込み 512 B|PSRAM書込み / 読出し|BEYOND 16 COLORS|FOUR OPERATORS|
+|---|---|---|---|---|---|
+|QSPI 5 MHz（参考）|OK|451 µs（1.14 MB/s）|0.296 / 0.313 MB/s|4452フレーム（選定版の検証）|3429フレーム、最悪 54.6 ms|
+|SPI 5 MHz|OK|897 µs（0.57 MB/s）|0.201 / 0.206 MB/s|4310フレーム、全8シーン|2961フレーム、最悪 63.2 ms|
+|SPI 6 MHz|OK|760 µs（0.67 MB/s）|0.222 / 0.228 MB/s|4359フレーム、全8シーン|3128フレーム、最悪 62.6 ms|
+|SPI 8 MHz|OK|577 µs（0.89 MB/s）|0.254 / 0.264 MB/s|4388フレーム、全8シーン|3263フレーム、最悪 57.8 ms|
+|SPI 10 MHz|**不可**|―|―|benchの起動時の識別で `KFB_DEVICE`|識別で `KFB_VERSION`（rc=−4）|
+
+5〜8 MHzでは、照合の失敗、timeout、audio fault、音声の10 ms欠落がどれも0でした。10 MHzでは識別用の読出しから値が崩れます。FPGAは54 MHzでSCKを同期化しているため、立ち上がりを検出してからMISOが変わるまでに約3 system cycleかかります。さらに、読出しの期限は要求から1 SCK周期以内です。10 MHzでは、この余裕が足りないと考えています。8 MHzでは、BEYOND 16 COLORSのフレーム数はQSPIとの差が1.4%、FOUR OPERATORSは4.8%まで縮まりました。MIDNIGHT TERMINALは5 MHzでだけ試しています。基板は1枚で、有限時間の試験です。PVTは評価していません。
+
 **残り。**
 - 入力とSTAを固定した成果物パッケージを作り、validatedへ昇格させる
 - SPI用の配布UF2を用意する（自動開始の確認を含む）

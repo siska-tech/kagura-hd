@@ -6,7 +6,8 @@ twice (must match), the firmware ELF is written, and afterwards the backup is
 written back and read again (must match the first read). FPGA: SRAM only, the
 approved Queue8 image is restored in all cases. No FPGA Flash writes.
 
-usage: run-beyond16.py OUT_DIR --image FS --image-sha SHA --firmware ELF --firmware-sha SHA
+usage: run-beyond16.py OUT_DIR --image FS --image-sha SHA --firmware ELF --firmware-sha SHA [--modes bench,demo]
+Modes run in order on the same firmware; the RP2040 is rebooted between them.
 """
 from pathlib import Path
 import argparse, hashlib, json, os, re, subprocess, sys, time, wave
@@ -19,7 +20,10 @@ ap.add_argument('--image-sha', required=True)
 ap.add_argument('--firmware', type=Path, required=True)
 ap.add_argument('--firmware-sha', required=True)
 ap.add_argument('--analyze-only', action='store_true')
+ap.add_argument('--modes', default='demo', help='comma-separated hardware_run.py modes: bench, demo')
 args = ap.parse_args()
+modes = args.modes.split(',')
+assert modes and all(m in ('bench', 'demo') for m in modes) and len(set(modes)) == len(modes)
 def resolve(p): return (p if p.is_absolute() else root/p).resolve()
 out, image, firmware = resolve(args.out), resolve(args.image), resolve(args.firmware)
 assert out.is_relative_to(root/'build')
@@ -76,11 +80,16 @@ def hardware():
         time.sleep(2); wait_stable_port()
         env = dict(os.environ, KAGURA_CAMPAIGN_DIR=str(out), KAGURA_RP2040_UID=uid)
         env.pop('PYTHONIOENCODING', None)
-        try:
-            call('runner', [sys.executable, root/'software/beyond16/tools/hardware_run.py', 'demo'], timeout=320, env=env)
-        finally:
-            state['demo_result'] = json.loads((out/'demo-result.json').read_text()) if (out/'demo-result.json').exists() else None
-        call('analysis', [sys.executable, root/'software/beyond16/tools/analyze_headroom_log.py', out/'demo-usb.log', '--output', out/'present.json'])
+        for i, mode in enumerate(modes):
+            if i:
+                call(f'reboot-before-{mode}', [pico, 'reboot', '-f', '--ser', uid]); time.sleep(2); wait_stable_port()
+            try:
+                call(f'runner-{mode}', [sys.executable, root/'software/beyond16/tools/hardware_run.py', mode], timeout=320, env=env)
+            finally:
+                path = out/f'{mode}-result.json'
+                state[f'{mode}_result'] = json.loads(path.read_text()) if path.exists() else None
+        if 'demo' in modes:
+            call('analysis', [sys.executable, root/'software/beyond16/tools/analyze_headroom_log.py', out/'demo-usb.log', '--output', out/'present.json'])
     finally:
         try:
             if state['rp2040_flash_writes']:
@@ -92,12 +101,20 @@ def hardware():
         finally:
             state['restore_user_code'] = sram(restore, 'restore-sram')
             call('restore-reboot', [pico, 'reboot', '--ser', uid])
-            (out/'state.json').write_text(json.dumps({k: v for k, v in state.items() if k != 'demo_result'}, indent=2))
+            (out/'state.json').write_text(json.dumps({k: v for k, v in state.items() if not k.endswith('_result')}, indent=2))
 
 if args.analyze_only:
-    state = json.loads((out/'state.json').read_text()); state['demo_result'] = json.loads((out/'demo-result.json').read_text())
+    state = json.loads((out/'state.json').read_text())
+    for mode in modes: state[f'{mode}_result'] = json.loads((out/f'{mode}-result.json').read_text())
 else:
     hardware()
+
+bench = [l for l in (out/'bench-usb.log').read_text(errors='replace').splitlines() if l.startswith('BENCH')] if 'bench' in modes else []
+(out/'bench.txt').write_text(''.join(line+'\n' for line in bench))
+if 'demo' not in modes:
+    print(json.dumps(dict(bench_success=bool(state.get('bench_result') and state['bench_result']['success']),
+                          full_flash_equal=state.get('full_flash_equal'), restore_user_code=state.get('restore_user_code')), indent=2))
+    sys.exit(0)
 
 # Audio: same 10 ms low-RMS scan as run-megademo.py.
 sys.path[:0] = [str(root/'build/uv-cache/archive-v0/rlh7ljqubiQHl4bs')]
