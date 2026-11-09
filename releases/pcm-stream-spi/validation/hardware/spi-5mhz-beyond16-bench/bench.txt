@@ -1,0 +1,1778 @@
+BENCH_PHASE PCM_STOPPED
+BENCH raw_pointer_write n=1 us=18 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=57 rc=0
+BENCH psram_write n=1 us=325 rc=0
+BENCH psram_read n=1 us=260 rc=0
+BENCH stages n=1 begin_us=77 transfer_us=296 end_us=34 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=297 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=16 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=24 rc=0
+BENCH psram_write n=1 us=246 rc=0
+BENCH psram_read n=1 us=252 rc=0
+BENCH stages n=1 begin_us=105 transfer_us=274 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=297 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=17 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=27 rc=0
+BENCH psram_write n=1 us=257 rc=0
+BENCH psram_read n=1 us=268 rc=0
+BENCH stages n=1 begin_us=98 transfer_us=278 end_us=59 dma_setup_us=0 dma_wait_us=0 wire_wait_us=41 fifo_stalls=297 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=18 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=26 rc=0
+BENCH psram_write n=1 us=251 rc=0
+BENCH psram_read n=1 us=266 rc=0
+BENCH stages n=1 begin_us=75 transfer_us=295 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=283 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=16 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=52 rc=0
+BENCH psram_write n=1 us=251 rc=0
+BENCH psram_read n=1 us=263 rc=0
+BENCH stages n=1 begin_us=75 transfer_us=296 end_us=27 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=266 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=18 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=26 rc=0
+BENCH psram_write n=1 us=236 rc=0
+BENCH psram_read n=1 us=241 rc=0
+BENCH stages n=1 begin_us=97 transfer_us=262 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=284 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=18 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=26 rc=0
+BENCH psram_write n=1 us=242 rc=0
+BENCH psram_read n=1 us=260 rc=0
+BENCH stages n=1 begin_us=73 transfer_us=313 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=271 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=18 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=26 rc=0
+BENCH psram_write n=1 us=260 rc=0
+BENCH psram_read n=1 us=255 rc=0
+BENCH stages n=1 begin_us=92 transfer_us=305 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=292 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=18 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=25 rc=0
+BENCH psram_write n=1 us=224 rc=0
+BENCH psram_read n=1 us=247 rc=0
+BENCH stages n=1 begin_us=69 transfer_us=232 end_us=44 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=299 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=18 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=27 rc=0
+BENCH psram_write n=1 us=246 rc=0
+BENCH psram_read n=1 us=264 rc=0
+BENCH stages n=1 begin_us=98 transfer_us=267 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=287 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=44 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=28 rc=0
+BENCH psram_write n=1 us=253 rc=0
+BENCH psram_read n=1 us=268 rc=0
+BENCH stages n=1 begin_us=87 transfer_us=248 end_us=33 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=289 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=18 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=26 rc=0
+BENCH psram_write n=1 us=267 rc=0
+BENCH psram_read n=1 us=244 rc=0
+BENCH stages n=1 begin_us=91 transfer_us=301 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=269 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=18 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=27 rc=0
+BENCH psram_write n=1 us=224 rc=0
+BENCH psram_read n=1 us=236 rc=0
+BENCH stages n=1 begin_us=99 transfer_us=243 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=299 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=19 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=25 rc=0
+BENCH psram_write n=1 us=230 rc=0
+BENCH psram_read n=1 us=240 rc=0
+BENCH stages n=1 begin_us=97 transfer_us=257 end_us=27 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=289 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=18 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=25 rc=0
+BENCH psram_write n=1 us=254 rc=0
+BENCH psram_read n=1 us=253 rc=0
+BENCH stages n=1 begin_us=74 transfer_us=280 end_us=27 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=283 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=42 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=61 rc=0
+BENCH psram_write n=1 us=243 rc=0
+BENCH psram_read n=1 us=257 rc=0
+BENCH stages n=1 begin_us=134 transfer_us=297 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=283 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=18 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=27 rc=0
+BENCH psram_write n=2 us=273 rc=0
+BENCH psram_read n=2 us=260 rc=0
+BENCH stages n=2 begin_us=104 transfer_us=283 end_us=26 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=291 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=29 rc=0
+BENCH psram_write n=2 us=258 rc=0
+BENCH psram_read n=2 us=247 rc=0
+BENCH stages n=2 begin_us=73 transfer_us=294 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=303 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=20 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=29 rc=0
+BENCH psram_write n=2 us=243 rc=0
+BENCH psram_read n=2 us=243 rc=0
+BENCH stages n=2 begin_us=75 transfer_us=271 end_us=26 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=280 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=28 rc=0
+BENCH psram_write n=2 us=254 rc=0
+BENCH psram_read n=2 us=262 rc=0
+BENCH stages n=2 begin_us=70 transfer_us=274 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=299 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=18 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=27 rc=0
+BENCH psram_write n=2 us=248 rc=0
+BENCH psram_read n=2 us=273 rc=0
+BENCH stages n=2 begin_us=72 transfer_us=305 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=301 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=21 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=27 rc=0
+BENCH psram_write n=2 us=236 rc=0
+BENCH psram_read n=2 us=255 rc=0
+BENCH stages n=2 begin_us=72 transfer_us=272 end_us=27 dma_setup_us=0 dma_wait_us=0 wire_wait_us=16 fifo_stalls=286 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=21 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=29 rc=0
+BENCH psram_write n=2 us=251 rc=0
+BENCH psram_read n=2 us=245 rc=0
+BENCH stages n=2 begin_us=76 transfer_us=297 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=287 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=21 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=28 rc=0
+BENCH psram_write n=2 us=257 rc=0
+BENCH psram_read n=2 us=227 rc=0
+BENCH stages n=2 begin_us=74 transfer_us=235 end_us=41 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=303 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=51 rc=0
+BENCH psram_write n=2 us=262 rc=0
+BENCH psram_read n=2 us=239 rc=0
+BENCH stages n=2 begin_us=75 transfer_us=275 end_us=54 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=279 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=20 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=28 rc=0
+BENCH psram_write n=2 us=247 rc=0
+BENCH psram_read n=2 us=254 rc=0
+BENCH stages n=2 begin_us=72 transfer_us=295 end_us=41 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=302 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=18 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=53 rc=0
+BENCH psram_write n=2 us=225 rc=0
+BENCH psram_read n=2 us=249 rc=0
+BENCH stages n=2 begin_us=78 transfer_us=306 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=16 fifo_stalls=295 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=29 rc=0
+BENCH psram_write n=2 us=257 rc=0
+BENCH psram_read n=2 us=248 rc=0
+BENCH stages n=2 begin_us=75 transfer_us=273 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=288 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=20 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=53 rc=0
+BENCH psram_write n=2 us=253 rc=0
+BENCH psram_read n=2 us=235 rc=0
+BENCH stages n=2 begin_us=91 transfer_us=257 end_us=58 dma_setup_us=0 dma_wait_us=0 wire_wait_us=37 fifo_stalls=303 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=20 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=50 rc=0
+BENCH psram_write n=2 us=265 rc=0
+BENCH psram_read n=2 us=243 rc=0
+BENCH stages n=2 begin_us=78 transfer_us=242 end_us=42 dma_setup_us=0 dma_wait_us=0 wire_wait_us=24 fifo_stalls=293 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=20 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=26 rc=0
+BENCH psram_write n=2 us=248 rc=0
+BENCH psram_read n=2 us=260 rc=0
+BENCH stages n=2 begin_us=76 transfer_us=297 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=298 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=50 rc=0
+BENCH psram_write n=2 us=252 rc=0
+BENCH psram_read n=2 us=268 rc=0
+BENCH stages n=2 begin_us=76 transfer_us=246 end_us=59 dma_setup_us=0 dma_wait_us=0 wire_wait_us=39 fifo_stalls=298 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=23 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=31 rc=0
+BENCH psram_write n=4 us=258 rc=0
+BENCH psram_read n=4 us=237 rc=0
+BENCH stages n=4 begin_us=74 transfer_us=284 end_us=43 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=294 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=23 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=47 rc=0
+BENCH psram_write n=4 us=223 rc=0
+BENCH psram_read n=4 us=259 rc=0
+BENCH stages n=4 begin_us=72 transfer_us=292 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=287 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=60 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=31 rc=0
+BENCH psram_write n=4 us=249 rc=0
+BENCH psram_read n=4 us=247 rc=0
+BENCH stages n=4 begin_us=103 transfer_us=285 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=304 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=23 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=32 rc=0
+BENCH psram_write n=4 us=252 rc=0
+BENCH psram_read n=4 us=248 rc=0
+BENCH stages n=4 begin_us=74 transfer_us=314 end_us=26 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=278 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=23 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=31 rc=0
+BENCH psram_write n=4 us=271 rc=0
+BENCH psram_read n=4 us=261 rc=0
+BENCH stages n=4 begin_us=73 transfer_us=272 end_us=59 dma_setup_us=0 dma_wait_us=0 wire_wait_us=14 fifo_stalls=313 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=21 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=33 rc=0
+BENCH psram_write n=4 us=231 rc=0
+BENCH psram_read n=4 us=243 rc=0
+BENCH stages n=4 begin_us=75 transfer_us=286 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=16 fifo_stalls=301 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=25 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=32 rc=0
+BENCH psram_write n=4 us=259 rc=0
+BENCH psram_read n=4 us=258 rc=0
+BENCH stages n=4 begin_us=70 transfer_us=279 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=312 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=23 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=32 rc=0
+BENCH psram_write n=4 us=227 rc=0
+BENCH psram_read n=4 us=248 rc=0
+BENCH stages n=4 begin_us=74 transfer_us=256 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=314 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=22 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=32 rc=0
+BENCH psram_write n=4 us=253 rc=0
+BENCH psram_read n=4 us=248 rc=0
+BENCH stages n=4 begin_us=73 transfer_us=267 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=310 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=45 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=33 rc=0
+BENCH psram_write n=4 us=242 rc=0
+BENCH psram_read n=4 us=262 rc=0
+BENCH stages n=4 begin_us=98 transfer_us=286 end_us=40 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=310 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=24 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=32 rc=0
+BENCH psram_write n=4 us=247 rc=0
+BENCH psram_read n=4 us=267 rc=0
+BENCH stages n=4 begin_us=75 transfer_us=302 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=295 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=22 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=51 rc=0
+BENCH psram_write n=4 us=265 rc=0
+BENCH psram_read n=4 us=250 rc=0
+BENCH stages n=4 begin_us=72 transfer_us=308 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=298 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=22 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=28 rc=0
+BENCH psram_write n=4 us=265 rc=0
+BENCH psram_read n=4 us=245 rc=0
+BENCH stages n=4 begin_us=73 transfer_us=305 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=307 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=35 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=32 rc=0
+BENCH psram_write n=4 us=241 rc=0
+BENCH psram_read n=4 us=250 rc=0
+BENCH stages n=4 begin_us=99 transfer_us=258 end_us=40 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=314 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=21 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=32 rc=0
+BENCH psram_write n=4 us=262 rc=0
+BENCH psram_read n=4 us=258 rc=0
+BENCH stages n=4 begin_us=74 transfer_us=280 end_us=62 dma_setup_us=0 dma_wait_us=0 wire_wait_us=43 fifo_stalls=283 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=23 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=32 rc=0
+BENCH psram_write n=4 us=226 rc=0
+BENCH psram_read n=4 us=239 rc=0
+BENCH stages n=4 begin_us=71 transfer_us=268 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=291 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=49 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=53 rc=0
+BENCH psram_write n=8 us=256 rc=0
+BENCH psram_read n=8 us=270 rc=0
+BENCH stages n=8 begin_us=71 transfer_us=335 end_us=53 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=305 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=30 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=39 rc=0
+BENCH psram_write n=8 us=265 rc=0
+BENCH psram_read n=8 us=226 rc=0
+BENCH stages n=8 begin_us=79 transfer_us=284 end_us=33 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=312 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=46 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=51 rc=0
+BENCH psram_write n=8 us=259 rc=0
+BENCH psram_read n=8 us=232 rc=0
+BENCH stages n=8 begin_us=70 transfer_us=307 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=313 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=29 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=61 rc=0
+BENCH psram_write n=8 us=235 rc=0
+BENCH psram_read n=8 us=256 rc=0
+BENCH stages n=8 begin_us=103 transfer_us=291 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=330 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=30 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=52 rc=0
+BENCH psram_write n=8 us=257 rc=0
+BENCH psram_read n=8 us=248 rc=0
+BENCH stages n=8 begin_us=74 transfer_us=281 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=314 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=64 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=53 rc=0
+BENCH psram_write n=8 us=262 rc=0
+BENCH psram_read n=8 us=266 rc=0
+BENCH stages n=8 begin_us=98 transfer_us=316 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=14 fifo_stalls=300 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=29 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=55 rc=0
+BENCH psram_write n=8 us=264 rc=0
+BENCH psram_read n=8 us=255 rc=0
+BENCH stages n=8 begin_us=96 transfer_us=332 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=318 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=47 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=35 rc=0
+BENCH psram_write n=8 us=251 rc=0
+BENCH psram_read n=8 us=276 rc=0
+BENCH stages n=8 begin_us=75 transfer_us=329 end_us=53 dma_setup_us=0 dma_wait_us=0 wire_wait_us=35 fifo_stalls=329 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=30 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=38 rc=0
+BENCH psram_write n=8 us=262 rc=0
+BENCH psram_read n=8 us=259 rc=0
+BENCH stages n=8 begin_us=72 transfer_us=269 end_us=41 dma_setup_us=0 dma_wait_us=0 wire_wait_us=24 fifo_stalls=346 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=30 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=51 rc=0
+BENCH psram_write n=8 us=257 rc=0
+BENCH psram_read n=8 us=254 rc=0
+BENCH stages n=8 begin_us=129 transfer_us=279 end_us=43 dma_setup_us=0 dma_wait_us=0 wire_wait_us=16 fifo_stalls=342 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=65 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=57 rc=0
+BENCH psram_write n=8 us=253 rc=0
+BENCH psram_read n=8 us=269 rc=0
+BENCH stages n=8 begin_us=99 transfer_us=311 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=328 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=29 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=39 rc=0
+BENCH psram_write n=8 us=265 rc=0
+BENCH psram_read n=8 us=254 rc=0
+BENCH stages n=8 begin_us=75 transfer_us=323 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=323 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=32 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=39 rc=0
+BENCH psram_write n=8 us=263 rc=0
+BENCH psram_read n=8 us=278 rc=0
+BENCH stages n=8 begin_us=74 transfer_us=340 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=334 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=32 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=38 rc=0
+BENCH psram_write n=8 us=262 rc=0
+BENCH psram_read n=8 us=253 rc=0
+BENCH stages n=8 begin_us=104 transfer_us=276 end_us=57 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=328 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=29 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=36 rc=0
+BENCH psram_write n=8 us=260 rc=0
+BENCH psram_read n=8 us=259 rc=0
+BENCH stages n=8 begin_us=67 transfer_us=296 end_us=40 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=346 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=42 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=58 rc=0
+BENCH psram_write n=8 us=269 rc=0
+BENCH psram_read n=8 us=252 rc=0
+BENCH stages n=8 begin_us=92 transfer_us=369 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=316 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=64 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=51 rc=0
+BENCH psram_write n=16 us=271 rc=0
+BENCH psram_read n=16 us=289 rc=0
+BENCH stages n=16 begin_us=80 transfer_us=370 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=383 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=68 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=67 rc=0
+BENCH psram_write n=16 us=273 rc=0
+BENCH psram_read n=16 us=288 rc=0
+BENCH stages n=16 begin_us=99 transfer_us=408 end_us=35 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=363 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=61 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=68 rc=0
+BENCH psram_write n=16 us=281 rc=0
+BENCH psram_read n=16 us=277 rc=0
+BENCH stages n=16 begin_us=71 transfer_us=406 end_us=38 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=332 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=58 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=70 rc=0
+BENCH psram_write n=16 us=264 rc=0
+BENCH psram_read n=16 us=274 rc=0
+BENCH stages n=16 begin_us=79 transfer_us=396 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=348 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=60 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=70 rc=0
+BENCH psram_write n=16 us=281 rc=0
+BENCH psram_read n=16 us=277 rc=0
+BENCH stages n=16 begin_us=88 transfer_us=436 end_us=27 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=350 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=65 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=51 rc=0
+BENCH psram_write n=16 us=248 rc=0
+BENCH psram_read n=16 us=291 rc=0
+BENCH stages n=16 begin_us=97 transfer_us=355 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=14 fifo_stalls=400 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=60 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=51 rc=0
+BENCH psram_write n=16 us=259 rc=0
+BENCH psram_read n=16 us=261 rc=0
+BENCH stages n=16 begin_us=87 transfer_us=357 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=372 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=43 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=52 rc=0
+BENCH psram_write n=16 us=276 rc=0
+BENCH psram_read n=16 us=283 rc=0
+BENCH stages n=16 begin_us=143 transfer_us=343 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=379 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=67 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=70 rc=0
+BENCH psram_write n=16 us=256 rc=0
+BENCH psram_read n=16 us=278 rc=0
+BENCH stages n=16 begin_us=87 transfer_us=393 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=368 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=42 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=52 rc=0
+BENCH psram_write n=16 us=275 rc=0
+BENCH psram_read n=16 us=284 rc=0
+BENCH stages n=16 begin_us=91 transfer_us=364 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=377 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=74 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=67 rc=0
+BENCH psram_write n=16 us=270 rc=0
+BENCH psram_read n=16 us=294 rc=0
+BENCH stages n=16 begin_us=97 transfer_us=416 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=364 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=63 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=51 rc=0
+BENCH psram_write n=16 us=265 rc=0
+BENCH psram_read n=16 us=268 rc=0
+BENCH stages n=16 begin_us=87 transfer_us=374 end_us=33 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=376 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=60 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=66 rc=0
+BENCH psram_write n=16 us=275 rc=0
+BENCH psram_read n=16 us=287 rc=0
+BENCH stages n=16 begin_us=72 transfer_us=445 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=15 fifo_stalls=363 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=74 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=67 rc=0
+BENCH psram_write n=16 us=283 rc=0
+BENCH psram_read n=16 us=275 rc=0
+BENCH stages n=16 begin_us=71 transfer_us=381 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=356 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=57 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=50 rc=0
+BENCH psram_write n=16 us=277 rc=0
+BENCH psram_read n=16 us=290 rc=0
+BENCH stages n=16 begin_us=73 transfer_us=354 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=14 fifo_stalls=372 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=65 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=52 rc=0
+BENCH psram_write n=16 us=261 rc=0
+BENCH psram_read n=16 us=283 rc=0
+BENCH stages n=16 begin_us=74 transfer_us=375 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=368 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=69 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=86 rc=0
+BENCH psram_write n=32 us=299 rc=0
+BENCH psram_read n=32 us=309 rc=0
+BENCH stages n=32 begin_us=76 transfer_us=476 end_us=42 dma_setup_us=0 dma_wait_us=0 wire_wait_us=17 fifo_stalls=479 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=96 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=96 rc=0
+BENCH psram_write n=32 us=286 rc=0
+BENCH psram_read n=32 us=313 rc=0
+BENCH stages n=32 begin_us=86 transfer_us=475 end_us=42 dma_setup_us=0 dma_wait_us=0 wire_wait_us=6 fifo_stalls=482 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=86 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=79 rc=0
+BENCH psram_write n=32 us=295 rc=0
+BENCH psram_read n=32 us=318 rc=0
+BENCH stages n=32 begin_us=76 transfer_us=506 end_us=54 dma_setup_us=0 dma_wait_us=0 wire_wait_us=38 fifo_stalls=466 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=94 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=77 rc=0
+BENCH psram_write n=32 us=303 rc=0
+BENCH psram_read n=32 us=311 rc=0
+BENCH stages n=32 begin_us=71 transfer_us=484 end_us=55 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=465 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=84 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=95 rc=0
+BENCH psram_write n=32 us=316 rc=0
+BENCH psram_read n=32 us=300 rc=0
+BENCH stages n=32 begin_us=76 transfer_us=489 end_us=68 dma_setup_us=0 dma_wait_us=0 wire_wait_us=53 fifo_stalls=477 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=68 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=91 rc=0
+BENCH psram_write n=32 us=296 rc=0
+BENCH psram_read n=32 us=310 rc=0
+BENCH stages n=32 begin_us=95 transfer_us=478 end_us=42 dma_setup_us=0 dma_wait_us=0 wire_wait_us=24 fifo_stalls=490 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=88 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=78 rc=0
+BENCH psram_write n=32 us=311 rc=0
+BENCH psram_read n=32 us=305 rc=0
+BENCH stages n=32 begin_us=93 transfer_us=495 end_us=49 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=482 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=89 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=78 rc=0
+BENCH psram_write n=32 us=277 rc=0
+BENCH psram_read n=32 us=300 rc=0
+BENCH stages n=32 begin_us=75 transfer_us=469 end_us=33 dma_setup_us=0 dma_wait_us=0 wire_wait_us=14 fifo_stalls=468 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=87 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=77 rc=0
+BENCH psram_write n=32 us=266 rc=0
+BENCH psram_read n=32 us=320 rc=0
+BENCH stages n=32 begin_us=100 transfer_us=455 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=479 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=91 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=99 rc=0
+BENCH psram_write n=32 us=263 rc=0
+BENCH psram_read n=32 us=316 rc=0
+BENCH stages n=32 begin_us=73 transfer_us=516 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=466 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=69 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=117 rc=0
+BENCH psram_write n=32 us=292 rc=0
+BENCH psram_read n=32 us=300 rc=0
+BENCH stages n=32 begin_us=88 transfer_us=478 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=491 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=86 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=79 rc=0
+BENCH psram_write n=32 us=294 rc=0
+BENCH psram_read n=32 us=304 rc=0
+BENCH stages n=32 begin_us=100 transfer_us=490 end_us=26 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=496 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=92 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=76 rc=0
+BENCH psram_write n=32 us=280 rc=0
+BENCH psram_read n=32 us=314 rc=0
+BENCH stages n=32 begin_us=84 transfer_us=509 end_us=25 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=467 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=91 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=77 rc=0
+BENCH psram_write n=32 us=279 rc=0
+BENCH psram_read n=32 us=311 rc=0
+BENCH stages n=32 begin_us=75 transfer_us=470 end_us=58 dma_setup_us=0 dma_wait_us=0 wire_wait_us=35 fifo_stalls=462 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=84 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=106 rc=0
+BENCH psram_write n=32 us=295 rc=0
+BENCH psram_read n=32 us=320 rc=0
+BENCH stages n=32 begin_us=76 transfer_us=562 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=457 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=92 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=78 rc=0
+BENCH psram_write n=32 us=307 rc=0
+BENCH psram_read n=32 us=308 rc=0
+BENCH stages n=32 begin_us=93 transfer_us=519 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=454 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=140 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=159 rc=0
+BENCH psram_write n=64 us=382 rc=0
+BENCH psram_read n=64 us=357 rc=0
+BENCH stages n=64 begin_us=77 transfer_us=750 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=676 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=145 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=158 rc=0
+BENCH psram_write n=64 us=358 rc=0
+BENCH psram_read n=64 us=354 rc=0
+BENCH stages n=64 begin_us=78 transfer_us=697 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=678 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=128 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=139 rc=0
+BENCH psram_write n=64 us=355 rc=0
+BENCH psram_read n=64 us=378 rc=0
+BENCH stages n=64 begin_us=101 transfer_us=723 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=685 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=142 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=131 rc=0
+BENCH psram_write n=64 us=356 rc=0
+BENCH psram_read n=64 us=367 rc=0
+BENCH stages n=64 begin_us=74 transfer_us=681 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=694 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=142 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=154 rc=0
+BENCH psram_write n=64 us=356 rc=0
+BENCH psram_read n=64 us=365 rc=0
+BENCH stages n=64 begin_us=71 transfer_us=714 end_us=65 dma_setup_us=0 dma_wait_us=0 wire_wait_us=34 fifo_stalls=664 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=142 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=149 rc=0
+BENCH psram_write n=64 us=323 rc=0
+BENCH psram_read n=64 us=342 rc=0
+BENCH stages n=64 begin_us=71 transfer_us=684 end_us=26 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=675 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=161 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=128 rc=0
+BENCH psram_write n=64 us=367 rc=0
+BENCH psram_read n=64 us=353 rc=0
+BENCH stages n=64 begin_us=99 transfer_us=711 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=662 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=130 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=150 rc=0
+BENCH psram_write n=64 us=382 rc=0
+BENCH psram_read n=64 us=350 rc=0
+BENCH stages n=64 begin_us=72 transfer_us=697 end_us=64 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=678 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=142 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=151 rc=0
+BENCH psram_write n=64 us=371 rc=0
+BENCH psram_read n=64 us=346 rc=0
+BENCH stages n=64 begin_us=74 transfer_us=760 end_us=34 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=649 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=121 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=169 rc=0
+BENCH psram_write n=64 us=354 rc=0
+BENCH psram_read n=64 us=371 rc=0
+BENCH stages n=64 begin_us=77 transfer_us=715 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=685 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=149 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=144 rc=0
+BENCH psram_write n=64 us=357 rc=0
+BENCH psram_read n=64 us=351 rc=0
+BENCH stages n=64 begin_us=80 transfer_us=715 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=661 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=144 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=151 rc=0
+BENCH psram_write n=64 us=372 rc=0
+BENCH psram_read n=64 us=349 rc=0
+BENCH stages n=64 begin_us=74 transfer_us=736 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=636 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=145 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=161 rc=0
+BENCH psram_write n=64 us=363 rc=0
+BENCH psram_read n=64 us=355 rc=0
+BENCH stages n=64 begin_us=78 transfer_us=765 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=679 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=122 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=132 rc=0
+BENCH psram_write n=64 us=360 rc=0
+BENCH psram_read n=64 us=371 rc=0
+BENCH stages n=64 begin_us=73 transfer_us=670 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=713 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=144 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=130 rc=0
+BENCH psram_write n=64 us=327 rc=0
+BENCH psram_read n=64 us=361 rc=0
+BENCH stages n=64 begin_us=73 transfer_us=679 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=691 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=142 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=146 rc=0
+BENCH psram_write n=64 us=383 rc=0
+BENCH psram_read n=64 us=345 rc=0
+BENCH stages n=64 begin_us=76 transfer_us=732 end_us=54 dma_setup_us=0 dma_wait_us=0 wire_wait_us=34 fifo_stalls=653 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=250 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=260 rc=0
+BENCH psram_write n=128 us=671 rc=0
+BENCH psram_read n=128 us=678 rc=0
+BENCH stages n=128 begin_us=169 transfer_us=1343 end_us=57 dma_setup_us=0 dma_wait_us=0 wire_wait_us=17 fifo_stalls=1375 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=256 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=264 rc=0
+BENCH psram_write n=128 us=683 rc=0
+BENCH psram_read n=128 us=650 rc=0
+BENCH stages n=128 begin_us=166 transfer_us=1359 end_us=51 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=1338 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=248 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=266 rc=0
+BENCH psram_write n=128 us=685 rc=0
+BENCH psram_read n=128 us=658 rc=0
+BENCH stages n=128 begin_us=164 transfer_us=1380 end_us=56 dma_setup_us=0 dma_wait_us=0 wire_wait_us=15 fifo_stalls=1351 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=249 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=260 rc=0
+BENCH psram_write n=128 us=703 rc=0
+BENCH psram_read n=128 us=662 rc=0
+BENCH stages n=128 begin_us=131 transfer_us=1418 end_us=54 dma_setup_us=0 dma_wait_us=0 wire_wait_us=15 fifo_stalls=1370 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=245 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=260 rc=0
+BENCH psram_write n=128 us=681 rc=0
+BENCH psram_read n=128 us=655 rc=0
+BENCH stages n=128 begin_us=163 transfer_us=1341 end_us=64 dma_setup_us=0 dma_wait_us=0 wire_wait_us=35 fifo_stalls=1363 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=249 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=259 rc=0
+BENCH psram_write n=128 us=686 rc=0
+BENCH psram_read n=128 us=653 rc=0
+BENCH stages n=128 begin_us=135 transfer_us=1399 end_us=56 dma_setup_us=0 dma_wait_us=0 wire_wait_us=26 fifo_stalls=1354 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=255 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=264 rc=0
+BENCH psram_write n=128 us=684 rc=0
+BENCH psram_read n=128 us=648 rc=0
+BENCH stages n=128 begin_us=133 transfer_us=1367 end_us=52 dma_setup_us=0 dma_wait_us=0 wire_wait_us=15 fifo_stalls=1326 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=253 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=259 rc=0
+BENCH psram_write n=128 us=681 rc=0
+BENCH psram_read n=128 us=655 rc=0
+BENCH stages n=128 begin_us=133 transfer_us=1375 end_us=59 dma_setup_us=0 dma_wait_us=0 wire_wait_us=18 fifo_stalls=1309 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=249 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=259 rc=0
+BENCH psram_write n=128 us=692 rc=0
+BENCH psram_read n=128 us=659 rc=0
+BENCH stages n=128 begin_us=133 transfer_us=1398 end_us=57 dma_setup_us=0 dma_wait_us=0 wire_wait_us=14 fifo_stalls=1357 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=253 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=260 rc=0
+BENCH psram_write n=128 us=694 rc=0
+BENCH psram_read n=128 us=657 rc=0
+BENCH stages n=128 begin_us=146 transfer_us=1339 end_us=80 dma_setup_us=0 dma_wait_us=0 wire_wait_us=20 fifo_stalls=1359 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=251 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=261 rc=0
+BENCH psram_write n=128 us=692 rc=0
+BENCH psram_read n=128 us=659 rc=0
+BENCH stages n=128 begin_us=132 transfer_us=1352 end_us=82 dma_setup_us=0 dma_wait_us=0 wire_wait_us=43 fifo_stalls=1364 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=252 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=259 rc=0
+BENCH psram_write n=128 us=698 rc=0
+BENCH psram_read n=128 us=659 rc=0
+BENCH stages n=128 begin_us=167 transfer_us=1371 end_us=52 dma_setup_us=0 dma_wait_us=0 wire_wait_us=23 fifo_stalls=1370 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=250 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=266 rc=0
+BENCH psram_write n=128 us=692 rc=0
+BENCH psram_read n=128 us=668 rc=0
+BENCH stages n=128 begin_us=213 transfer_us=1343 end_us=64 dma_setup_us=0 dma_wait_us=0 wire_wait_us=18 fifo_stalls=1374 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=250 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=261 rc=0
+BENCH psram_write n=128 us=698 rc=0
+BENCH psram_read n=128 us=662 rc=0
+BENCH stages n=128 begin_us=157 transfer_us=1362 end_us=54 dma_setup_us=0 dma_wait_us=0 wire_wait_us=20 fifo_stalls=1352 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=250 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=266 rc=0
+BENCH psram_write n=128 us=697 rc=0
+BENCH psram_read n=128 us=658 rc=0
+BENCH stages n=128 begin_us=134 transfer_us=1351 end_us=73 dma_setup_us=0 dma_wait_us=0 wire_wait_us=17 fifo_stalls=1399 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=250 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=259 rc=0
+BENCH psram_write n=128 us=674 rc=0
+BENCH psram_read n=128 us=663 rc=0
+BENCH stages n=128 begin_us=160 transfer_us=1329 end_us=77 dma_setup_us=0 dma_wait_us=0 wire_wait_us=15 fifo_stalls=1354 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=469 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=481 rc=0
+BENCH psram_write n=256 us=1316 rc=0
+BENCH psram_read n=256 us=1267 rc=0
+BENCH stages n=256 begin_us=295 transfer_us=2622 end_us=113 dma_setup_us=0 dma_wait_us=0 wire_wait_us=45 fifo_stalls=2759 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=447 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=492 rc=0
+BENCH psram_write n=256 us=1298 rc=0
+BENCH psram_read n=256 us=1269 rc=0
+BENCH stages n=256 begin_us=245 transfer_us=2648 end_us=95 dma_setup_us=0 dma_wait_us=0 wire_wait_us=31 fifo_stalls=2764 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=467 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=479 rc=0
+BENCH psram_write n=256 us=1309 rc=0
+BENCH psram_read n=256 us=1256 rc=0
+BENCH stages n=256 begin_us=279 transfer_us=2592 end_us=137 dma_setup_us=0 dma_wait_us=0 wire_wait_us=63 fifo_stalls=2757 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=462 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=482 rc=0
+BENCH psram_write n=256 us=1298 rc=0
+BENCH psram_read n=256 us=1266 rc=0
+BENCH stages n=256 begin_us=256 transfer_us=2631 end_us=106 dma_setup_us=0 dma_wait_us=0 wire_wait_us=37 fifo_stalls=2746 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=450 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=489 rc=0
+BENCH psram_write n=256 us=1313 rc=0
+BENCH psram_read n=256 us=1258 rc=0
+BENCH stages n=256 begin_us=279 transfer_us=2612 end_us=123 dma_setup_us=0 dma_wait_us=0 wire_wait_us=34 fifo_stalls=2760 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=465 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=485 rc=0
+BENCH psram_write n=256 us=1304 rc=0
+BENCH psram_read n=256 us=1265 rc=0
+BENCH stages n=256 begin_us=278 transfer_us=2621 end_us=97 dma_setup_us=0 dma_wait_us=0 wire_wait_us=48 fifo_stalls=2729 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=467 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=487 rc=0
+BENCH psram_write n=256 us=1315 rc=0
+BENCH psram_read n=256 us=1264 rc=0
+BENCH stages n=256 begin_us=259 transfer_us=2624 end_us=106 dma_setup_us=0 dma_wait_us=0 wire_wait_us=42 fifo_stalls=2746 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=465 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=479 rc=0
+BENCH psram_write n=256 us=1302 rc=0
+BENCH psram_read n=256 us=1261 rc=0
+BENCH stages n=256 begin_us=255 transfer_us=2637 end_us=103 dma_setup_us=0 dma_wait_us=0 wire_wait_us=41 fifo_stalls=2737 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=465 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=486 rc=0
+BENCH psram_write n=256 us=1294 rc=0
+BENCH psram_read n=256 us=1274 rc=0
+BENCH stages n=256 begin_us=251 transfer_us=2674 end_us=109 dma_setup_us=0 dma_wait_us=0 wire_wait_us=44 fifo_stalls=2733 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=462 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=480 rc=0
+BENCH psram_write n=256 us=1309 rc=0
+BENCH psram_read n=256 us=1256 rc=0
+BENCH stages n=256 begin_us=279 transfer_us=2629 end_us=107 dma_setup_us=0 dma_wait_us=0 wire_wait_us=36 fifo_stalls=2735 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=469 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=480 rc=0
+BENCH psram_write n=256 us=1302 rc=0
+BENCH psram_read n=256 us=1261 rc=0
+BENCH stages n=256 begin_us=272 transfer_us=2641 end_us=125 dma_setup_us=0 dma_wait_us=0 wire_wait_us=55 fifo_stalls=2729 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=463 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=487 rc=0
+BENCH psram_write n=256 us=1302 rc=0
+BENCH psram_read n=256 us=1267 rc=0
+BENCH stages n=256 begin_us=263 transfer_us=2620 end_us=157 dma_setup_us=0 dma_wait_us=0 wire_wait_us=58 fifo_stalls=2767 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=463 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=494 rc=0
+BENCH psram_write n=256 us=1299 rc=0
+BENCH psram_read n=256 us=1277 rc=0
+BENCH stages n=256 begin_us=258 transfer_us=2643 end_us=141 dma_setup_us=0 dma_wait_us=0 wire_wait_us=62 fifo_stalls=2758 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=463 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=480 rc=0
+BENCH psram_write n=256 us=1295 rc=0
+BENCH psram_read n=256 us=1264 rc=0
+BENCH stages n=256 begin_us=278 transfer_us=2597 end_us=124 dma_setup_us=0 dma_wait_us=0 wire_wait_us=35 fifo_stalls=2732 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=469 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=480 rc=0
+BENCH psram_write n=256 us=1316 rc=0
+BENCH psram_read n=256 us=1263 rc=0
+BENCH stages n=256 begin_us=277 transfer_us=2599 end_us=113 dma_setup_us=0 dma_wait_us=0 wire_wait_us=46 fifo_stalls=2741 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=463 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=486 rc=0
+BENCH psram_write n=256 us=1299 rc=0
+BENCH psram_read n=256 us=1257 rc=0
+BENCH stages n=256 begin_us=253 transfer_us=2600 end_us=103 dma_setup_us=0 dma_wait_us=0 wire_wait_us=34 fifo_stalls=2750 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=897 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=935 rc=0
+BENCH psram_write n=512 us=2533 rc=0
+BENCH psram_read n=512 us=2494 rc=0
+BENCH stages n=512 begin_us=520 transfer_us=5131 end_us=235 dma_setup_us=0 dma_wait_us=0 wire_wait_us=113 fifo_stalls=5581 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=902 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=922 rc=0
+BENCH psram_write n=512 us=2543 rc=0
+BENCH psram_read n=512 us=2486 rc=0
+BENCH stages n=512 begin_us=517 transfer_us=5188 end_us=225 dma_setup_us=0 dma_wait_us=0 wire_wait_us=65 fifo_stalls=5575 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=898 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=930 rc=0
+BENCH psram_write n=512 us=2556 rc=0
+BENCH psram_read n=512 us=2473 rc=0
+BENCH stages n=512 begin_us=525 transfer_us=5144 end_us=240 dma_setup_us=0 dma_wait_us=0 wire_wait_us=73 fifo_stalls=5575 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=898 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=926 rc=0
+BENCH psram_write n=512 us=2539 rc=0
+BENCH psram_read n=512 us=2496 rc=0
+BENCH stages n=512 begin_us=507 transfer_us=5157 end_us=232 dma_setup_us=0 dma_wait_us=0 wire_wait_us=54 fifo_stalls=5588 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=897 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=924 rc=0
+BENCH psram_write n=512 us=2558 rc=0
+BENCH psram_read n=512 us=2490 rc=0
+BENCH stages n=512 begin_us=505 transfer_us=5127 end_us=193 dma_setup_us=0 dma_wait_us=0 wire_wait_us=81 fifo_stalls=5559 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=899 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=922 rc=0
+BENCH psram_write n=512 us=2548 rc=0
+BENCH psram_read n=512 us=2495 rc=0
+BENCH stages n=512 begin_us=491 transfer_us=5133 end_us=201 dma_setup_us=0 dma_wait_us=0 wire_wait_us=92 fifo_stalls=5588 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=896 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=931 rc=0
+BENCH psram_write n=512 us=2536 rc=0
+BENCH psram_read n=512 us=2500 rc=0
+BENCH stages n=512 begin_us=504 transfer_us=5142 end_us=246 dma_setup_us=0 dma_wait_us=0 wire_wait_us=65 fifo_stalls=5573 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=901 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=921 rc=0
+BENCH psram_write n=512 us=2552 rc=0
+BENCH psram_read n=512 us=2488 rc=0
+BENCH stages n=512 begin_us=524 transfer_us=5156 end_us=242 dma_setup_us=0 dma_wait_us=0 wire_wait_us=84 fifo_stalls=5578 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=896 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=915 rc=0
+BENCH psram_write n=512 us=2540 rc=0
+BENCH psram_read n=512 us=2485 rc=0
+BENCH stages n=512 begin_us=569 transfer_us=5116 end_us=235 dma_setup_us=0 dma_wait_us=0 wire_wait_us=89 fifo_stalls=5546 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=896 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=918 rc=0
+BENCH psram_write n=512 us=2540 rc=0
+BENCH psram_read n=512 us=2482 rc=0
+BENCH stages n=512 begin_us=493 transfer_us=5131 end_us=236 dma_setup_us=0 dma_wait_us=0 wire_wait_us=54 fifo_stalls=5591 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=897 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=920 rc=0
+BENCH psram_write n=512 us=2537 rc=0
+BENCH psram_read n=512 us=2490 rc=0
+BENCH stages n=512 begin_us=494 transfer_us=5161 end_us=210 dma_setup_us=0 dma_wait_us=0 wire_wait_us=81 fifo_stalls=5553 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=899 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=923 rc=0
+BENCH psram_write n=512 us=2537 rc=0
+BENCH psram_read n=512 us=2487 rc=0
+BENCH stages n=512 begin_us=492 transfer_us=5183 end_us=203 dma_setup_us=0 dma_wait_us=0 wire_wait_us=88 fifo_stalls=5559 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=898 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=923 rc=0
+BENCH psram_write n=512 us=2559 rc=0
+BENCH psram_read n=512 us=2493 rc=0
+BENCH stages n=512 begin_us=506 transfer_us=5153 end_us=238 dma_setup_us=0 dma_wait_us=0 wire_wait_us=69 fifo_stalls=5565 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=896 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=921 rc=0
+BENCH psram_write n=512 us=2542 rc=0
+BENCH psram_read n=512 us=2493 rc=0
+BENCH stages n=512 begin_us=525 transfer_us=5109 end_us=266 dma_setup_us=0 dma_wait_us=0 wire_wait_us=100 fifo_stalls=5573 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=899 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=927 rc=0
+BENCH psram_write n=512 us=2540 rc=0
+BENCH psram_read n=512 us=2503 rc=0
+BENCH stages n=512 begin_us=497 transfer_us=5146 end_us=213 dma_setup_us=0 dma_wait_us=0 wire_wait_us=74 fifo_stalls=5576 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=897 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=919 rc=0
+BENCH psram_write n=512 us=2542 rc=0
+BENCH psram_read n=512 us=2485 rc=0
+BENCH stages n=512 begin_us=507 transfer_us=5153 end_us=214 dma_setup_us=0 dma_wait_us=0 wire_wait_us=71 fifo_stalls=5524 timeouts=0 gpu_error=0
+BENCH fence issue_us=138 completion_us=89 rc=0
+BENCH fence issue_us=107 completion_us=106 rc=0
+BENCH fence issue_us=122 completion_us=84 rc=0
+BENCH fence issue_us=106 completion_us=97 rc=0
+BENCH fence issue_us=99 completion_us=84 rc=0
+BENCH fence issue_us=98 completion_us=94 rc=0
+BENCH fence issue_us=101 completion_us=98 rc=0
+BENCH fence issue_us=102 completion_us=82 rc=0
+BENCH fence issue_us=88 completion_us=104 rc=0
+BENCH fence issue_us=117 completion_us=82 rc=0
+BENCH fence issue_us=107 completion_us=82 rc=0
+BENCH fence issue_us=82 completion_us=96 rc=0
+BENCH fence issue_us=113 completion_us=96 rc=0
+BENCH fence issue_us=117 completion_us=83 rc=0
+BENCH fence issue_us=101 completion_us=96 rc=0
+BENCH fence issue_us=118 completion_us=83 rc=0
+BENCH fence issue_us=118 completion_us=84 rc=0
+BENCH fence issue_us=105 completion_us=99 rc=0
+BENCH fence issue_us=102 completion_us=122 rc=0
+BENCH fence issue_us=120 completion_us=84 rc=0
+BENCH fence issue_us=98 completion_us=95 rc=0
+BENCH fence issue_us=82 completion_us=83 rc=0
+BENCH fence issue_us=105 completion_us=96 rc=0
+BENCH fence issue_us=120 completion_us=82 rc=0
+BENCH fence issue_us=116 completion_us=83 rc=0
+BENCH fence issue_us=118 completion_us=97 rc=0
+BENCH fence issue_us=84 completion_us=121 rc=0
+BENCH fence issue_us=113 completion_us=82 rc=0
+BENCH fence issue_us=93 completion_us=115 rc=0
+BENCH fence issue_us=115 completion_us=83 rc=0
+BENCH fence issue_us=99 completion_us=82 rc=0
+BENCH fence issue_us=84 completion_us=97 rc=0
+BENCH fence issue_us=105 completion_us=84 rc=0
+BENCH fence issue_us=98 completion_us=83 rc=0
+BENCH fence issue_us=113 completion_us=86 rc=0
+BENCH fence issue_us=121 completion_us=96 rc=0
+BENCH fence issue_us=110 completion_us=82 rc=0
+BENCH fence issue_us=117 completion_us=82 rc=0
+BENCH fence issue_us=81 completion_us=120 rc=0
+BENCH fence issue_us=90 completion_us=84 rc=0
+BENCH fence issue_us=117 completion_us=84 rc=0
+BENCH fence issue_us=109 completion_us=81 rc=0
+BENCH fence issue_us=125 completion_us=86 rc=0
+BENCH fence issue_us=120 completion_us=83 rc=0
+BENCH fence issue_us=116 completion_us=84 rc=0
+BENCH fence issue_us=115 completion_us=97 rc=0
+BENCH fence issue_us=101 completion_us=82 rc=0
+BENCH fence issue_us=118 completion_us=83 rc=0
+BENCH fence issue_us=82 completion_us=118 rc=0
+BENCH fence issue_us=114 completion_us=83 rc=0
+BENCH fence issue_us=115 completion_us=83 rc=0
+BENCH fence issue_us=100 completion_us=84 rc=0
+BENCH fence issue_us=118 completion_us=84 rc=0
+BENCH fence issue_us=115 completion_us=83 rc=0
+BENCH fence issue_us=100 completion_us=96 rc=0
+BENCH fence issue_us=112 completion_us=100 rc=0
+BENCH fence issue_us=117 completion_us=84 rc=0
+BENCH fence issue_us=115 completion_us=85 rc=0
+BENCH fence issue_us=81 completion_us=94 rc=0
+BENCH fence issue_us=82 completion_us=128 rc=0
+BENCH fence issue_us=116 completion_us=82 rc=0
+BENCH fence issue_us=100 completion_us=84 rc=0
+BENCH fence issue_us=94 completion_us=81 rc=0
+BENCH fence issue_us=107 completion_us=85 rc=0
+BENCH fill us=173 rc=0
+BENCH blit pixels=1024 us=431 rc=0
+BENCH present us=10003 rc=0
+BENCH fill us=142 rc=0
+BENCH blit pixels=1024 us=384 rc=0
+BENCH present us=15772 rc=0
+BENCH fill us=157 rc=0
+BENCH blit pixels=1024 us=377 rc=0
+BENCH present us=15799 rc=0
+BENCH fill us=154 rc=0
+BENCH blit pixels=1024 us=336 rc=0
+BENCH present us=15828 rc=0
+BENCH fill us=143 rc=0
+BENCH blit pixels=1024 us=357 rc=0
+BENCH present us=15775 rc=0
+BENCH fill us=164 rc=0
+BENCH blit pixels=1024 us=332 rc=0
+BENCH present us=15824 rc=0
+BENCH fill us=170 rc=0
+BENCH blit pixels=1024 us=351 rc=0
+BENCH present us=15773 rc=0
+BENCH fill us=152 rc=0
+BENCH blit pixels=1024 us=385 rc=0
+BENCH present us=15792 rc=0
+BENCH_PHASE PCM_PLAYING
+BENCH raw_pointer_write n=1 us=18 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=37 rc=0
+BENCH psram_write n=1 us=317 rc=0
+BENCH psram_read n=1 us=265 rc=0
+BENCH stages n=1 begin_us=81 transfer_us=324 end_us=25 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=276 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=17 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=29 rc=0
+BENCH psram_write n=1 us=238 rc=0
+BENCH psram_read n=1 us=244 rc=0
+BENCH stages n=1 begin_us=77 transfer_us=263 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=299 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=20 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=27 rc=0
+BENCH psram_write n=1 us=260 rc=0
+BENCH psram_read n=1 us=250 rc=0
+BENCH stages n=1 begin_us=90 transfer_us=269 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=297 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=20 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=28 rc=0
+BENCH psram_write n=1 us=262 rc=0
+BENCH psram_read n=1 us=251 rc=0
+BENCH stages n=1 begin_us=98 transfer_us=282 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=286 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=19 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=26 rc=0
+BENCH psram_write n=1 us=225 rc=0
+BENCH psram_read n=1 us=255 rc=0
+BENCH stages n=1 begin_us=86 transfer_us=276 end_us=33 dma_setup_us=0 dma_wait_us=0 wire_wait_us=6 fifo_stalls=287 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=43 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=28 rc=0
+BENCH psram_write n=1 us=247 rc=0
+BENCH psram_read n=1 us=270 rc=0
+BENCH stages n=1 begin_us=129 transfer_us=296 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=284 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=16 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=26 rc=0
+BENCH psram_write n=1 us=273 rc=0
+BENCH psram_read n=1 us=265 rc=0
+BENCH stages n=1 begin_us=114 transfer_us=270 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=296 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=20 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=28 rc=0
+BENCH psram_write n=1 us=259 rc=0
+BENCH psram_read n=1 us=250 rc=0
+BENCH stages n=1 begin_us=110 transfer_us=259 end_us=33 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=290 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=18 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=27 rc=0
+BENCH psram_write n=1 us=265 rc=0
+BENCH psram_read n=1 us=252 rc=0
+BENCH stages n=1 begin_us=112 transfer_us=281 end_us=35 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=299 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=19 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=27 rc=0
+BENCH psram_write n=1 us=245 rc=0
+BENCH psram_read n=1 us=265 rc=0
+BENCH stages n=1 begin_us=106 transfer_us=258 end_us=24 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=299 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=19 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=27 rc=0
+BENCH psram_write n=1 us=249 rc=0
+BENCH psram_read n=1 us=258 rc=0
+BENCH stages n=1 begin_us=99 transfer_us=266 end_us=57 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=289 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=47 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=29 rc=0
+BENCH psram_write n=1 us=255 rc=0
+BENCH psram_read n=1 us=257 rc=0
+BENCH stages n=1 begin_us=77 transfer_us=253 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=283 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=19 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=25 rc=0
+BENCH psram_write n=1 us=252 rc=0
+BENCH psram_read n=1 us=250 rc=0
+BENCH stages n=1 begin_us=111 transfer_us=232 end_us=33 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=299 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=20 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=28 rc=0
+BENCH psram_write n=1 us=250 rc=0
+BENCH psram_read n=1 us=250 rc=0
+BENCH stages n=1 begin_us=88 transfer_us=260 end_us=27 dma_setup_us=0 dma_wait_us=0 wire_wait_us=14 fifo_stalls=299 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=17 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=25 rc=0
+BENCH psram_write n=1 us=254 rc=0
+BENCH psram_read n=1 us=243 rc=0
+BENCH stages n=1 begin_us=71 transfer_us=311 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=6 fifo_stalls=264 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=1 us=17 rc=0
+BENCH raw_csr_read n=1 transactions=1 us=27 rc=0
+BENCH psram_write n=1 us=248 rc=0
+BENCH psram_read n=1 us=264 rc=0
+BENCH stages n=1 begin_us=71 transfer_us=303 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=276 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=49 rc=0
+BENCH psram_write n=2 us=260 rc=0
+BENCH psram_read n=2 us=249 rc=0
+BENCH stages n=2 begin_us=73 transfer_us=294 end_us=53 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=299 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=27 rc=0
+BENCH psram_write n=2 us=251 rc=0
+BENCH psram_read n=2 us=253 rc=0
+BENCH stages n=2 begin_us=103 transfer_us=272 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=299 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=50 rc=0
+BENCH psram_write n=2 us=248 rc=0
+BENCH psram_read n=2 us=235 rc=0
+BENCH stages n=2 begin_us=75 transfer_us=285 end_us=41 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=300 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=20 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=28 rc=0
+BENCH psram_write n=2 us=246 rc=0
+BENCH psram_read n=2 us=253 rc=0
+BENCH stages n=2 begin_us=73 transfer_us=282 end_us=58 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=299 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=42 rc=0
+BENCH psram_write n=2 us=260 rc=0
+BENCH psram_read n=2 us=247 rc=0
+BENCH stages n=2 begin_us=122 transfer_us=267 end_us=33 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=290 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=27 rc=0
+BENCH psram_write n=2 us=248 rc=0
+BENCH psram_read n=2 us=258 rc=0
+BENCH stages n=2 begin_us=72 transfer_us=265 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=289 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=29 rc=0
+BENCH psram_write n=2 us=247 rc=0
+BENCH psram_read n=2 us=248 rc=0
+BENCH stages n=2 begin_us=73 transfer_us=235 end_us=49 dma_setup_us=0 dma_wait_us=0 wire_wait_us=31 fifo_stalls=303 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=20 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=28 rc=0
+BENCH psram_write n=2 us=267 rc=0
+BENCH psram_read n=2 us=252 rc=0
+BENCH stages n=2 begin_us=108 transfer_us=254 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=290 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=18 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=28 rc=0
+BENCH psram_write n=2 us=242 rc=0
+BENCH psram_read n=2 us=251 rc=0
+BENCH stages n=2 begin_us=101 transfer_us=283 end_us=35 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=296 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=27 rc=0
+BENCH psram_write n=2 us=249 rc=0
+BENCH psram_read n=2 us=247 rc=0
+BENCH stages n=2 begin_us=86 transfer_us=269 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=292 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=18 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=48 rc=0
+BENCH psram_write n=2 us=253 rc=0
+BENCH psram_read n=2 us=259 rc=0
+BENCH stages n=2 begin_us=104 transfer_us=303 end_us=33 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=292 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=29 rc=0
+BENCH psram_write n=2 us=238 rc=0
+BENCH psram_read n=2 us=231 rc=0
+BENCH stages n=2 begin_us=72 transfer_us=254 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=292 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=30 rc=0
+BENCH psram_write n=2 us=243 rc=0
+BENCH psram_read n=2 us=252 rc=0
+BENCH stages n=2 begin_us=75 transfer_us=312 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=292 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=19 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=53 rc=0
+BENCH psram_write n=2 us=244 rc=0
+BENCH psram_read n=2 us=258 rc=0
+BENCH stages n=2 begin_us=112 transfer_us=304 end_us=33 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=285 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=20 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=28 rc=0
+BENCH psram_write n=2 us=239 rc=0
+BENCH psram_read n=2 us=225 rc=0
+BENCH stages n=2 begin_us=85 transfer_us=236 end_us=54 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=303 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=2 us=21 rc=0
+BENCH raw_csr_read n=2 transactions=1 us=28 rc=0
+BENCH psram_write n=2 us=250 rc=0
+BENCH psram_read n=2 us=252 rc=0
+BENCH stages n=2 begin_us=73 transfer_us=272 end_us=57 dma_setup_us=0 dma_wait_us=0 wire_wait_us=6 fifo_stalls=301 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=62 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=31 rc=0
+BENCH psram_write n=4 us=226 rc=0
+BENCH psram_read n=4 us=273 rc=0
+BENCH stages n=4 begin_us=75 transfer_us=279 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=308 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=24 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=33 rc=0
+BENCH psram_write n=4 us=265 rc=0
+BENCH psram_read n=4 us=256 rc=0
+BENCH stages n=4 begin_us=91 transfer_us=277 end_us=44 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=303 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=47 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=31 rc=0
+BENCH psram_write n=4 us=250 rc=0
+BENCH psram_read n=4 us=267 rc=0
+BENCH stages n=4 begin_us=96 transfer_us=266 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=312 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=24 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=32 rc=0
+BENCH psram_write n=4 us=253 rc=0
+BENCH psram_read n=4 us=246 rc=0
+BENCH stages n=4 begin_us=121 transfer_us=256 end_us=42 dma_setup_us=0 dma_wait_us=0 wire_wait_us=23 fifo_stalls=301 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=23 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=29 rc=0
+BENCH psram_write n=4 us=250 rc=0
+BENCH psram_read n=4 us=240 rc=0
+BENCH stages n=4 begin_us=109 transfer_us=247 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=298 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=24 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=52 rc=0
+BENCH psram_write n=4 us=254 rc=0
+BENCH psram_read n=4 us=257 rc=0
+BENCH stages n=4 begin_us=77 transfer_us=310 end_us=26 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=301 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=21 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=33 rc=0
+BENCH psram_write n=4 us=252 rc=0
+BENCH psram_read n=4 us=243 rc=0
+BENCH stages n=4 begin_us=97 transfer_us=249 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=300 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=24 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=32 rc=0
+BENCH psram_write n=4 us=264 rc=0
+BENCH psram_read n=4 us=267 rc=0
+BENCH stages n=4 begin_us=110 transfer_us=306 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=6 fifo_stalls=311 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=47 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=33 rc=0
+BENCH psram_write n=4 us=246 rc=0
+BENCH psram_read n=4 us=264 rc=0
+BENCH stages n=4 begin_us=106 transfer_us=287 end_us=51 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=312 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=23 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=32 rc=0
+BENCH psram_write n=4 us=250 rc=0
+BENCH psram_read n=4 us=254 rc=0
+BENCH stages n=4 begin_us=91 transfer_us=257 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=301 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=23 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=30 rc=0
+BENCH psram_write n=4 us=251 rc=0
+BENCH psram_read n=4 us=254 rc=0
+BENCH stages n=4 begin_us=100 transfer_us=269 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=314 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=24 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=55 rc=0
+BENCH psram_write n=4 us=247 rc=0
+BENCH psram_read n=4 us=247 rc=0
+BENCH stages n=4 begin_us=75 transfer_us=310 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=310 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=44 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=30 rc=0
+BENCH psram_write n=4 us=250 rc=0
+BENCH psram_read n=4 us=250 rc=0
+BENCH stages n=4 begin_us=80 transfer_us=306 end_us=49 dma_setup_us=0 dma_wait_us=0 wire_wait_us=28 fifo_stalls=297 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=21 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=30 rc=0
+BENCH psram_write n=4 us=258 rc=0
+BENCH psram_read n=4 us=246 rc=0
+BENCH stages n=4 begin_us=71 transfer_us=281 end_us=27 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=296 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=22 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=30 rc=0
+BENCH psram_write n=4 us=250 rc=0
+BENCH psram_read n=4 us=251 rc=0
+BENCH stages n=4 begin_us=77 transfer_us=280 end_us=65 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=313 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=4 us=21 rc=0
+BENCH raw_csr_read n=4 transactions=1 us=53 rc=0
+BENCH psram_write n=4 us=261 rc=0
+BENCH psram_read n=4 us=246 rc=0
+BENCH stages n=4 begin_us=76 transfer_us=323 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=287 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=52 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=40 rc=0
+BENCH psram_write n=8 us=281 rc=0
+BENCH psram_read n=8 us=272 rc=0
+BENCH stages n=8 begin_us=90 transfer_us=304 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=338 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=29 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=37 rc=0
+BENCH psram_write n=8 us=259 rc=0
+BENCH psram_read n=8 us=254 rc=0
+BENCH stages n=8 begin_us=87 transfer_us=302 end_us=57 dma_setup_us=0 dma_wait_us=0 wire_wait_us=40 fifo_stalls=330 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=31 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=37 rc=0
+BENCH psram_write n=8 us=261 rc=0
+BENCH psram_read n=8 us=264 rc=0
+BENCH stages n=8 begin_us=105 transfer_us=305 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=345 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=43 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=72 rc=0
+BENCH psram_write n=8 us=263 rc=0
+BENCH psram_read n=8 us=262 rc=0
+BENCH stages n=8 begin_us=87 transfer_us=354 end_us=61 dma_setup_us=0 dma_wait_us=0 wire_wait_us=47 fifo_stalls=309 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=29 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=38 rc=0
+BENCH psram_write n=8 us=257 rc=0
+BENCH psram_read n=8 us=251 rc=0
+BENCH stages n=8 begin_us=71 transfer_us=300 end_us=57 dma_setup_us=0 dma_wait_us=0 wire_wait_us=25 fifo_stalls=317 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=30 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=38 rc=0
+BENCH psram_write n=8 us=282 rc=0
+BENCH psram_read n=8 us=233 rc=0
+BENCH stages n=8 begin_us=89 transfer_us=282 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=346 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=28 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=40 rc=0
+BENCH psram_write n=8 us=262 rc=0
+BENCH psram_read n=8 us=251 rc=0
+BENCH stages n=8 begin_us=113 transfer_us=300 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=325 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=31 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=37 rc=0
+BENCH psram_write n=8 us=260 rc=0
+BENCH psram_read n=8 us=261 rc=0
+BENCH stages n=8 begin_us=74 transfer_us=271 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=346 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=62 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=36 rc=0
+BENCH psram_write n=8 us=266 rc=0
+BENCH psram_read n=8 us=262 rc=0
+BENCH stages n=8 begin_us=100 transfer_us=323 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=4 fifo_stalls=323 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=28 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=37 rc=0
+BENCH psram_write n=8 us=270 rc=0
+BENCH psram_read n=8 us=247 rc=0
+BENCH stages n=8 begin_us=97 transfer_us=314 end_us=44 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=314 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=49 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=62 rc=0
+BENCH psram_write n=8 us=277 rc=0
+BENCH psram_read n=8 us=230 rc=0
+BENCH stages n=8 begin_us=101 transfer_us=340 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=340 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=29 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=38 rc=0
+BENCH psram_write n=8 us=260 rc=0
+BENCH psram_read n=8 us=263 rc=0
+BENCH stages n=8 begin_us=72 transfer_us=272 end_us=46 dma_setup_us=0 dma_wait_us=0 wire_wait_us=15 fifo_stalls=335 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=28 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=37 rc=0
+BENCH psram_write n=8 us=265 rc=0
+BENCH psram_read n=8 us=257 rc=0
+BENCH stages n=8 begin_us=128 transfer_us=266 end_us=44 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=346 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=63 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=62 rc=0
+BENCH psram_write n=8 us=260 rc=0
+BENCH psram_read n=8 us=285 rc=0
+BENCH stages n=8 begin_us=72 transfer_us=366 end_us=44 dma_setup_us=0 dma_wait_us=0 wire_wait_us=20 fifo_stalls=339 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=29 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=39 rc=0
+BENCH psram_write n=8 us=267 rc=0
+BENCH psram_read n=8 us=251 rc=0
+BENCH stages n=8 begin_us=100 transfer_us=296 end_us=35 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=315 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=8 us=52 rc=0
+BENCH raw_csr_read n=8 transactions=1 us=37 rc=0
+BENCH psram_write n=8 us=277 rc=0
+BENCH psram_read n=8 us=266 rc=0
+BENCH stages n=8 begin_us=75 transfer_us=322 end_us=56 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=332 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=61 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=67 rc=0
+BENCH psram_write n=16 us=267 rc=0
+BENCH psram_read n=16 us=289 rc=0
+BENCH stages n=16 begin_us=96 transfer_us=368 end_us=26 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=373 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=65 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=50 rc=0
+BENCH psram_write n=16 us=248 rc=0
+BENCH psram_read n=16 us=261 rc=0
+BENCH stages n=16 begin_us=85 transfer_us=366 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=384 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=43 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=48 rc=0
+BENCH psram_write n=16 us=281 rc=0
+BENCH psram_read n=16 us=272 rc=0
+BENCH stages n=16 begin_us=72 transfer_us=394 end_us=40 dma_setup_us=0 dma_wait_us=0 wire_wait_us=23 fifo_stalls=397 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=65 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=52 rc=0
+BENCH psram_write n=16 us=271 rc=0
+BENCH psram_read n=16 us=274 rc=0
+BENCH stages n=16 begin_us=73 transfer_us=355 end_us=56 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=376 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=42 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=67 rc=0
+BENCH psram_write n=16 us=281 rc=0
+BENCH psram_read n=16 us=282 rc=0
+BENCH stages n=16 begin_us=70 transfer_us=414 end_us=27 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=363 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=59 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=74 rc=0
+BENCH psram_write n=16 us=279 rc=0
+BENCH psram_read n=16 us=279 rc=0
+BENCH stages n=16 begin_us=76 transfer_us=408 end_us=71 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=359 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=61 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=52 rc=0
+BENCH psram_write n=16 us=289 rc=0
+BENCH psram_read n=16 us=269 rc=0
+BENCH stages n=16 begin_us=73 transfer_us=347 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=6 fifo_stalls=375 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=57 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=51 rc=0
+BENCH psram_write n=16 us=246 rc=0
+BENCH psram_read n=16 us=292 rc=0
+BENCH stages n=16 begin_us=96 transfer_us=353 end_us=27 dma_setup_us=0 dma_wait_us=0 wire_wait_us=14 fifo_stalls=382 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=68 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=71 rc=0
+BENCH psram_write n=16 us=287 rc=0
+BENCH psram_read n=16 us=276 rc=0
+BENCH stages n=16 begin_us=111 transfer_us=384 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=384 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=59 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=72 rc=0
+BENCH psram_write n=16 us=271 rc=0
+BENCH psram_read n=16 us=288 rc=0
+BENCH stages n=16 begin_us=103 transfer_us=381 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=361 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=62 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=68 rc=0
+BENCH psram_write n=16 us=281 rc=0
+BENCH psram_read n=16 us=285 rc=0
+BENCH stages n=16 begin_us=74 transfer_us=407 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=363 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=58 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=51 rc=0
+BENCH psram_write n=16 us=276 rc=0
+BENCH psram_read n=16 us=282 rc=0
+BENCH stages n=16 begin_us=70 transfer_us=373 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=372 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=65 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=52 rc=0
+BENCH psram_write n=16 us=260 rc=0
+BENCH psram_read n=16 us=277 rc=0
+BENCH stages n=16 begin_us=88 transfer_us=400 end_us=29 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=367 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=42 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=75 rc=0
+BENCH psram_write n=16 us=272 rc=0
+BENCH psram_read n=16 us=279 rc=0
+BENCH stages n=16 begin_us=70 transfer_us=400 end_us=27 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=350 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=59 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=69 rc=0
+BENCH psram_write n=16 us=267 rc=0
+BENCH psram_read n=16 us=282 rc=0
+BENCH stages n=16 begin_us=73 transfer_us=400 end_us=27 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=377 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=16 us=62 rc=0
+BENCH raw_csr_read n=16 transactions=1 us=51 rc=0
+BENCH psram_write n=16 us=264 rc=0
+BENCH psram_read n=16 us=281 rc=0
+BENCH stages n=16 begin_us=69 transfer_us=387 end_us=65 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=381 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=70 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=97 rc=0
+BENCH psram_write n=32 us=282 rc=0
+BENCH psram_read n=32 us=297 rc=0
+BENCH stages n=32 begin_us=99 transfer_us=470 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=471 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=85 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=102 rc=0
+BENCH psram_write n=32 us=272 rc=0
+BENCH psram_read n=32 us=310 rc=0
+BENCH stages n=32 begin_us=98 transfer_us=506 end_us=26 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=457 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=90 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=94 rc=0
+BENCH psram_write n=32 us=284 rc=0
+BENCH psram_read n=32 us=315 rc=0
+BENCH stages n=32 begin_us=77 transfer_us=538 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=456 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=69 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=87 rc=0
+BENCH psram_write n=32 us=299 rc=0
+BENCH psram_read n=32 us=308 rc=0
+BENCH stages n=32 begin_us=74 transfer_us=476 end_us=44 dma_setup_us=0 dma_wait_us=0 wire_wait_us=29 fifo_stalls=470 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=85 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=107 rc=0
+BENCH psram_write n=32 us=305 rc=0
+BENCH psram_read n=32 us=318 rc=0
+BENCH stages n=32 begin_us=95 transfer_us=533 end_us=34 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=477 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=68 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=113 rc=0
+BENCH psram_write n=32 us=295 rc=0
+BENCH psram_read n=32 us=317 rc=0
+BENCH stages n=32 begin_us=75 transfer_us=523 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=469 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=82 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=106 rc=0
+BENCH psram_write n=32 us=304 rc=0
+BENCH psram_read n=32 us=299 rc=0
+BENCH stages n=32 begin_us=100 transfer_us=522 end_us=26 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=457 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=92 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=96 rc=0
+BENCH psram_write n=32 us=298 rc=0
+BENCH psram_read n=32 us=319 rc=0
+BENCH stages n=32 begin_us=96 transfer_us=487 end_us=55 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=455 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=85 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=76 rc=0
+BENCH psram_write n=32 us=278 rc=0
+BENCH psram_read n=32 us=310 rc=0
+BENCH stages n=32 begin_us=87 transfer_us=454 end_us=34 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=491 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=77 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=92 rc=0
+BENCH psram_write n=32 us=293 rc=0
+BENCH psram_read n=32 us=304 rc=0
+BENCH stages n=32 begin_us=72 transfer_us=477 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=467 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=69 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=84 rc=0
+BENCH psram_write n=32 us=283 rc=0
+BENCH psram_read n=32 us=305 rc=0
+BENCH stages n=32 begin_us=88 transfer_us=452 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=490 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=86 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=76 rc=0
+BENCH psram_write n=32 us=310 rc=0
+BENCH psram_read n=32 us=313 rc=0
+BENCH stages n=32 begin_us=69 transfer_us=494 end_us=27 dma_setup_us=0 dma_wait_us=0 wire_wait_us=11 fifo_stalls=479 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=68 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=100 rc=0
+BENCH psram_write n=32 us=299 rc=0
+BENCH psram_read n=32 us=315 rc=0
+BENCH stages n=32 begin_us=101 transfer_us=484 end_us=43 dma_setup_us=0 dma_wait_us=0 wire_wait_us=6 fifo_stalls=481 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=82 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=79 rc=0
+BENCH psram_write n=32 us=308 rc=0
+BENCH psram_read n=32 us=315 rc=0
+BENCH stages n=32 begin_us=112 transfer_us=443 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=493 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=87 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=96 rc=0
+BENCH psram_write n=32 us=306 rc=0
+BENCH psram_read n=32 us=326 rc=0
+BENCH stages n=32 begin_us=101 transfer_us=502 end_us=44 dma_setup_us=0 dma_wait_us=0 wire_wait_us=27 fifo_stalls=460 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=32 us=92 rc=0
+BENCH raw_csr_read n=32 transactions=1 us=76 rc=0
+BENCH psram_write n=32 us=298 rc=0
+BENCH psram_read n=32 us=314 rc=0
+BENCH stages n=32 begin_us=73 transfer_us=459 end_us=27 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=475 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=130 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=165 rc=0
+BENCH psram_write n=64 us=380 rc=0
+BENCH psram_read n=64 us=350 rc=0
+BENCH stages n=64 begin_us=96 transfer_us=726 end_us=51 dma_setup_us=0 dma_wait_us=0 wire_wait_us=37 fifo_stalls=695 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=144 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=152 rc=0
+BENCH psram_write n=64 us=364 rc=0
+BENCH psram_read n=64 us=355 rc=0
+BENCH stages n=64 begin_us=88 transfer_us=722 end_us=26 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=664 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=123 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=170 rc=0
+BENCH psram_write n=64 us=360 rc=0
+BENCH psram_read n=64 us=377 rc=0
+BENCH stages n=64 begin_us=117 transfer_us=683 end_us=33 dma_setup_us=0 dma_wait_us=0 wire_wait_us=6 fifo_stalls=707 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=143 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=130 rc=0
+BENCH psram_write n=64 us=331 rc=0
+BENCH psram_read n=64 us=361 rc=0
+BENCH stages n=64 begin_us=73 transfer_us=677 end_us=26 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=688 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=147 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=154 rc=0
+BENCH psram_write n=64 us=357 rc=0
+BENCH psram_read n=64 us=353 rc=0
+BENCH stages n=64 begin_us=74 transfer_us=709 end_us=30 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=658 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=144 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=164 rc=0
+BENCH psram_write n=64 us=368 rc=0
+BENCH psram_read n=64 us=354 rc=0
+BENCH stages n=64 begin_us=71 transfer_us=731 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=9 fifo_stalls=685 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=131 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=144 rc=0
+BENCH psram_write n=64 us=354 rc=0
+BENCH psram_read n=64 us=359 rc=0
+BENCH stages n=64 begin_us=73 transfer_us=727 end_us=28 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=680 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=146 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=131 rc=0
+BENCH psram_write n=64 us=355 rc=0
+BENCH psram_read n=64 us=355 rc=0
+BENCH stages n=64 begin_us=76 transfer_us=704 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=7 fifo_stalls=671 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=142 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=152 rc=0
+BENCH psram_write n=64 us=394 rc=0
+BENCH psram_read n=64 us=338 rc=0
+BENCH stages n=64 begin_us=76 transfer_us=733 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=644 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=142 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=156 rc=0
+BENCH psram_write n=64 us=354 rc=0
+BENCH psram_read n=64 us=359 rc=0
+BENCH stages n=64 begin_us=76 transfer_us=723 end_us=31 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=676 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=137 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=141 rc=0
+BENCH psram_write n=64 us=355 rc=0
+BENCH psram_read n=64 us=370 rc=0
+BENCH stages n=64 begin_us=86 transfer_us=717 end_us=48 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=701 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=145 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=131 rc=0
+BENCH psram_write n=64 us=332 rc=0
+BENCH psram_read n=64 us=365 rc=0
+BENCH stages n=64 begin_us=86 transfer_us=705 end_us=33 dma_setup_us=0 dma_wait_us=0 wire_wait_us=8 fifo_stalls=689 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=142 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=164 rc=0
+BENCH psram_write n=64 us=384 rc=0
+BENCH psram_read n=64 us=344 rc=0
+BENCH stages n=64 begin_us=96 transfer_us=724 end_us=32 dma_setup_us=0 dma_wait_us=0 wire_wait_us=12 fifo_stalls=670 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=141 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=151 rc=0
+BENCH psram_write n=64 us=356 rc=0
+BENCH psram_read n=64 us=352 rc=0
+BENCH stages n=64 begin_us=70 transfer_us=689 end_us=58 dma_setup_us=0 dma_wait_us=0 wire_wait_us=42 fifo_stalls=670 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=123 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=132 rc=0
+BENCH psram_write n=64 us=361 rc=0
+BENCH psram_read n=64 us=379 rc=0
+BENCH stages n=64 begin_us=73 transfer_us=696 end_us=75 dma_setup_us=0 dma_wait_us=0 wire_wait_us=13 fifo_stalls=718 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=64 us=145 rc=0
+BENCH raw_csr_read n=64 transactions=1 us=129 rc=0
+BENCH psram_write n=64 us=346 rc=0
+BENCH psram_read n=64 us=356 rc=0
+BENCH stages n=64 begin_us=74 transfer_us=709 end_us=37 dma_setup_us=0 dma_wait_us=0 wire_wait_us=6 fifo_stalls=662 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=252 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=262 rc=0
+BENCH psram_write n=128 us=683 rc=0
+BENCH psram_read n=128 us=649 rc=0
+BENCH stages n=128 begin_us=133 transfer_us=1373 end_us=58 dma_setup_us=0 dma_wait_us=0 wire_wait_us=17 fifo_stalls=1332 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=255 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=259 rc=0
+BENCH psram_write n=128 us=684 rc=0
+BENCH psram_read n=128 us=655 rc=0
+BENCH stages n=128 begin_us=134 transfer_us=1356 end_us=70 dma_setup_us=0 dma_wait_us=0 wire_wait_us=23 fifo_stalls=1331 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=250 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=259 rc=0
+BENCH psram_write n=128 us=688 rc=0
+BENCH psram_read n=128 us=657 rc=0
+BENCH stages n=128 begin_us=149 transfer_us=1394 end_us=60 dma_setup_us=0 dma_wait_us=0 wire_wait_us=23 fifo_stalls=1365 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=249 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=262 rc=0
+BENCH psram_write n=128 us=690 rc=0
+BENCH psram_read n=128 us=653 rc=0
+BENCH stages n=128 begin_us=132 transfer_us=1413 end_us=56 dma_setup_us=0 dma_wait_us=0 wire_wait_us=19 fifo_stalls=1349 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=254 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=262 rc=0
+BENCH psram_write n=128 us=690 rc=0
+BENCH psram_read n=128 us=653 rc=0
+BENCH stages n=128 begin_us=160 transfer_us=1357 end_us=78 dma_setup_us=0 dma_wait_us=0 wire_wait_us=19 fifo_stalls=1360 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=250 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=266 rc=0
+BENCH psram_write n=128 us=676 rc=0
+BENCH psram_read n=128 us=657 rc=0
+BENCH stages n=128 begin_us=135 transfer_us=1363 end_us=76 dma_setup_us=0 dma_wait_us=0 wire_wait_us=21 fifo_stalls=1372 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=250 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=266 rc=0
+BENCH psram_write n=128 us=681 rc=0
+BENCH psram_read n=128 us=657 rc=0
+BENCH stages n=128 begin_us=144 transfer_us=1350 end_us=57 dma_setup_us=0 dma_wait_us=0 wire_wait_us=24 fifo_stalls=1362 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=252 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=260 rc=0
+BENCH psram_write n=128 us=698 rc=0
+BENCH psram_read n=128 us=651 rc=0
+BENCH stages n=128 begin_us=134 transfer_us=1352 end_us=62 dma_setup_us=0 dma_wait_us=0 wire_wait_us=36 fifo_stalls=1360 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=250 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=259 rc=0
+BENCH psram_write n=128 us=686 rc=0
+BENCH psram_read n=128 us=658 rc=0
+BENCH stages n=128 begin_us=171 transfer_us=1366 end_us=56 dma_setup_us=0 dma_wait_us=0 wire_wait_us=10 fifo_stalls=1357 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=249 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=261 rc=0
+BENCH psram_write n=128 us=682 rc=0
+BENCH psram_read n=128 us=660 rc=0
+BENCH stages n=128 begin_us=145 transfer_us=1352 end_us=50 dma_setup_us=0 dma_wait_us=0 wire_wait_us=18 fifo_stalls=1354 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=253 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=256 rc=0
+BENCH psram_write n=128 us=688 rc=0
+BENCH psram_read n=128 us=657 rc=0
+BENCH stages n=128 begin_us=144 transfer_us=1349 end_us=61 dma_setup_us=0 dma_wait_us=0 wire_wait_us=24 fifo_stalls=1362 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=249 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=256 rc=0
+BENCH psram_write n=128 us=686 rc=0
+BENCH psram_read n=128 us=664 rc=0
+BENCH stages n=128 begin_us=149 transfer_us=1339 end_us=83 dma_setup_us=0 dma_wait_us=0 wire_wait_us=25 fifo_stalls=1368 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=250 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=258 rc=0
+BENCH psram_write n=128 us=686 rc=0
+BENCH psram_read n=128 us=663 rc=0
+BENCH stages n=128 begin_us=167 transfer_us=1375 end_us=56 dma_setup_us=0 dma_wait_us=0 wire_wait_us=16 fifo_stalls=1351 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=248 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=262 rc=0
+BENCH psram_write n=128 us=691 rc=0
+BENCH psram_read n=128 us=658 rc=0
+BENCH stages n=128 begin_us=165 transfer_us=1357 end_us=57 dma_setup_us=0 dma_wait_us=0 wire_wait_us=20 fifo_stalls=1368 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=249 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=260 rc=0
+BENCH psram_write n=128 us=690 rc=0
+BENCH psram_read n=128 us=651 rc=0
+BENCH stages n=128 begin_us=132 transfer_us=1368 end_us=51 dma_setup_us=0 dma_wait_us=0 wire_wait_us=21 fifo_stalls=1342 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=128 us=258 rc=0
+BENCH raw_csr_read n=128 transactions=1 us=266 rc=0
+BENCH psram_write n=128 us=686 rc=0
+BENCH psram_read n=128 us=649 rc=0
+BENCH stages n=128 begin_us=134 transfer_us=1407 end_us=60 dma_setup_us=0 dma_wait_us=0 wire_wait_us=16 fifo_stalls=1336 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=464 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=488 rc=0
+BENCH psram_write n=256 us=1307 rc=0
+BENCH psram_read n=256 us=1264 rc=0
+BENCH stages n=256 begin_us=270 transfer_us=2633 end_us=116 dma_setup_us=0 dma_wait_us=0 wire_wait_us=34 fifo_stalls=2764 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=467 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=481 rc=0
+BENCH psram_write n=256 us=1307 rc=0
+BENCH psram_read n=256 us=1259 rc=0
+BENCH stages n=256 begin_us=259 transfer_us=2646 end_us=110 dma_setup_us=0 dma_wait_us=0 wire_wait_us=35 fifo_stalls=2715 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=463 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=483 rc=0
+BENCH psram_write n=256 us=1288 rc=0
+BENCH psram_read n=256 us=1258 rc=0
+BENCH stages n=256 begin_us=251 transfer_us=2641 end_us=111 dma_setup_us=0 dma_wait_us=0 wire_wait_us=33 fifo_stalls=2719 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=462 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=483 rc=0
+BENCH psram_write n=256 us=1305 rc=0
+BENCH psram_read n=256 us=1271 rc=0
+BENCH stages n=256 begin_us=249 transfer_us=2621 end_us=100 dma_setup_us=0 dma_wait_us=0 wire_wait_us=40 fifo_stalls=2723 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=467 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=484 rc=0
+BENCH psram_write n=256 us=1309 rc=0
+BENCH psram_read n=256 us=1267 rc=0
+BENCH stages n=256 begin_us=269 transfer_us=2628 end_us=146 dma_setup_us=0 dma_wait_us=0 wire_wait_us=41 fifo_stalls=2764 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=464 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=481 rc=0
+BENCH psram_write n=256 us=1303 rc=0
+BENCH psram_read n=256 us=1253 rc=0
+BENCH stages n=256 begin_us=286 transfer_us=2634 end_us=108 dma_setup_us=0 dma_wait_us=0 wire_wait_us=35 fifo_stalls=2740 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=463 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=486 rc=0
+BENCH psram_write n=256 us=1302 rc=0
+BENCH psram_read n=256 us=1275 rc=0
+BENCH stages n=256 begin_us=294 transfer_us=2623 end_us=118 dma_setup_us=0 dma_wait_us=0 wire_wait_us=48 fifo_stalls=2759 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=465 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=481 rc=0
+BENCH psram_write n=256 us=1305 rc=0
+BENCH psram_read n=256 us=1276 rc=0
+BENCH stages n=256 begin_us=278 transfer_us=2623 end_us=118 dma_setup_us=0 dma_wait_us=0 wire_wait_us=48 fifo_stalls=2751 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=472 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=479 rc=0
+BENCH psram_write n=256 us=1318 rc=0
+BENCH psram_read n=256 us=1261 rc=0
+BENCH stages n=256 begin_us=255 transfer_us=2645 end_us=118 dma_setup_us=0 dma_wait_us=0 wire_wait_us=44 fifo_stalls=2742 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=464 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=487 rc=0
+BENCH psram_write n=256 us=1299 rc=0
+BENCH psram_read n=256 us=1271 rc=0
+BENCH stages n=256 begin_us=270 transfer_us=2621 end_us=141 dma_setup_us=0 dma_wait_us=0 wire_wait_us=50 fifo_stalls=2752 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=465 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=496 rc=0
+BENCH psram_write n=256 us=1304 rc=0
+BENCH psram_read n=256 us=1271 rc=0
+BENCH stages n=256 begin_us=292 transfer_us=2577 end_us=113 dma_setup_us=0 dma_wait_us=0 wire_wait_us=55 fifo_stalls=2795 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=468 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=485 rc=0
+BENCH psram_write n=256 us=1310 rc=0
+BENCH psram_read n=256 us=1258 rc=0
+BENCH stages n=256 begin_us=258 transfer_us=2622 end_us=111 dma_setup_us=0 dma_wait_us=0 wire_wait_us=44 fifo_stalls=2736 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=462 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=486 rc=0
+BENCH psram_write n=256 us=1306 rc=0
+BENCH psram_read n=256 us=1267 rc=0
+BENCH stages n=256 begin_us=308 transfer_us=2608 end_us=104 dma_setup_us=0 dma_wait_us=0 wire_wait_us=46 fifo_stalls=2760 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=461 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=496 rc=0
+BENCH psram_write n=256 us=1305 rc=0
+BENCH psram_read n=256 us=1280 rc=0
+BENCH stages n=256 begin_us=299 transfer_us=2638 end_us=121 dma_setup_us=0 dma_wait_us=0 wire_wait_us=38 fifo_stalls=2775 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=461 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=479 rc=0
+BENCH psram_write n=256 us=1298 rc=0
+BENCH psram_read n=256 us=1265 rc=0
+BENCH stages n=256 begin_us=256 transfer_us=2619 end_us=106 dma_setup_us=0 dma_wait_us=0 wire_wait_us=39 fifo_stalls=2732 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=256 us=469 rc=0
+BENCH raw_csr_read n=256 transactions=1 us=481 rc=0
+BENCH psram_write n=256 us=1311 rc=0
+BENCH psram_read n=256 us=1266 rc=0
+BENCH stages n=256 begin_us=249 transfer_us=2666 end_us=100 dma_setup_us=0 dma_wait_us=0 wire_wait_us=30 fifo_stalls=2761 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=890 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=924 rc=0
+BENCH psram_write n=512 us=2553 rc=0
+BENCH psram_read n=512 us=2490 rc=0
+BENCH stages n=512 begin_us=523 transfer_us=5113 end_us=196 dma_setup_us=0 dma_wait_us=0 wire_wait_us=81 fifo_stalls=5612 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=900 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=922 rc=0
+BENCH psram_write n=512 us=2556 rc=0
+BENCH psram_read n=512 us=2490 rc=0
+BENCH stages n=512 begin_us=508 transfer_us=5136 end_us=229 dma_setup_us=0 dma_wait_us=0 wire_wait_us=89 fifo_stalls=5554 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=898 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=925 rc=0
+BENCH psram_write n=512 us=2541 rc=0
+BENCH psram_read n=512 us=2499 rc=0
+BENCH stages n=512 begin_us=533 transfer_us=5110 end_us=250 dma_setup_us=0 dma_wait_us=0 wire_wait_us=63 fifo_stalls=5580 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=893 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=923 rc=0
+BENCH psram_write n=512 us=2537 rc=0
+BENCH psram_read n=512 us=2502 rc=0
+BENCH stages n=512 begin_us=520 transfer_us=5105 end_us=219 dma_setup_us=0 dma_wait_us=0 wire_wait_us=91 fifo_stalls=5569 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=896 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=923 rc=0
+BENCH psram_write n=512 us=2551 rc=0
+BENCH psram_read n=512 us=2489 rc=0
+BENCH stages n=512 begin_us=491 transfer_us=5177 end_us=224 dma_setup_us=0 dma_wait_us=0 wire_wait_us=84 fifo_stalls=5546 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=897 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=932 rc=0
+BENCH psram_write n=512 us=2539 rc=0
+BENCH psram_read n=512 us=2487 rc=0
+BENCH stages n=512 begin_us=497 transfer_us=5154 end_us=213 dma_setup_us=0 dma_wait_us=0 wire_wait_us=82 fifo_stalls=5554 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=904 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=919 rc=0
+BENCH psram_write n=512 us=2534 rc=0
+BENCH psram_read n=512 us=2488 rc=0
+BENCH stages n=512 begin_us=499 transfer_us=5158 end_us=204 dma_setup_us=0 dma_wait_us=0 wire_wait_us=84 fifo_stalls=5565 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=896 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=922 rc=0
+BENCH psram_write n=512 us=2544 rc=0
+BENCH psram_read n=512 us=2486 rc=0
+BENCH stages n=512 begin_us=505 transfer_us=5121 end_us=223 dma_setup_us=0 dma_wait_us=0 wire_wait_us=74 fifo_stalls=5546 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=895 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=923 rc=0
+BENCH psram_write n=512 us=2538 rc=0
+BENCH psram_read n=512 us=2493 rc=0
+BENCH stages n=512 begin_us=503 transfer_us=5137 end_us=224 dma_setup_us=0 dma_wait_us=0 wire_wait_us=89 fifo_stalls=5577 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=898 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=923 rc=0
+BENCH psram_write n=512 us=2549 rc=0
+BENCH psram_read n=512 us=2491 rc=0
+BENCH stages n=512 begin_us=522 transfer_us=5178 end_us=208 dma_setup_us=0 dma_wait_us=0 wire_wait_us=73 fifo_stalls=5549 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=896 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=921 rc=0
+BENCH psram_write n=512 us=2544 rc=0
+BENCH psram_read n=512 us=2490 rc=0
+BENCH stages n=512 begin_us=556 transfer_us=5115 end_us=232 dma_setup_us=0 dma_wait_us=0 wire_wait_us=82 fifo_stalls=5570 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=898 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=924 rc=0
+BENCH psram_write n=512 us=2548 rc=0
+BENCH psram_read n=512 us=2508 rc=0
+BENCH stages n=512 begin_us=516 transfer_us=5110 end_us=216 dma_setup_us=0 dma_wait_us=0 wire_wait_us=75 fifo_stalls=5584 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=898 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=925 rc=0
+BENCH psram_write n=512 us=2562 rc=0
+BENCH psram_read n=512 us=2492 rc=0
+BENCH stages n=512 begin_us=502 transfer_us=5153 end_us=212 dma_setup_us=0 dma_wait_us=0 wire_wait_us=67 fifo_stalls=5562 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=893 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=924 rc=0
+BENCH psram_write n=512 us=2535 rc=0
+BENCH psram_read n=512 us=2486 rc=0
+BENCH stages n=512 begin_us=504 transfer_us=5154 end_us=206 dma_setup_us=0 dma_wait_us=0 wire_wait_us=83 fifo_stalls=5566 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=894 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=928 rc=0
+BENCH psram_write n=512 us=2533 rc=0
+BENCH psram_read n=512 us=2503 rc=0
+BENCH stages n=512 begin_us=516 transfer_us=5138 end_us=225 dma_setup_us=0 dma_wait_us=0 wire_wait_us=85 fifo_stalls=5576 timeouts=0 gpu_error=0
+BENCH raw_pointer_write n=512 us=896 rc=0
+BENCH raw_csr_read n=512 transactions=2 us=918 rc=0
+BENCH psram_write n=512 us=2543 rc=0
+BENCH psram_read n=512 us=2490 rc=0
+BENCH stages n=512 begin_us=508 transfer_us=5169 end_us=196 dma_setup_us=0 dma_wait_us=0 wire_wait_us=79 fifo_stalls=5535 timeouts=0 gpu_error=0
+BENCH fence issue_us=120 completion_us=87 rc=0
+BENCH fence issue_us=121 completion_us=83 rc=0
+BENCH fence issue_us=121 completion_us=83 rc=0
+BENCH fence issue_us=124 completion_us=84 rc=0
+BENCH fence issue_us=100 completion_us=92 rc=0
+BENCH fence issue_us=117 completion_us=95 rc=0
+BENCH fence issue_us=121 completion_us=84 rc=0
+BENCH fence issue_us=100 completion_us=100 rc=0
+BENCH fence issue_us=83 completion_us=94 rc=0
+BENCH fence issue_us=126 completion_us=84 rc=0
+BENCH fence issue_us=110 completion_us=95 rc=0
+BENCH fence issue_us=100 completion_us=82 rc=0
+BENCH fence issue_us=114 completion_us=83 rc=0
+BENCH fence issue_us=119 completion_us=83 rc=0
+BENCH fence issue_us=100 completion_us=82 rc=0
+BENCH fence issue_us=115 completion_us=83 rc=0
+BENCH fence issue_us=90 completion_us=83 rc=0
+BENCH fence issue_us=118 completion_us=83 rc=0
+BENCH fence issue_us=82 completion_us=96 rc=0
+BENCH fence issue_us=84 completion_us=130 rc=0
+BENCH fence issue_us=83 completion_us=119 rc=0
+BENCH fence issue_us=100 completion_us=83 rc=0
+BENCH fence issue_us=93 completion_us=83 rc=0
+BENCH fence issue_us=109 completion_us=98 rc=0
+BENCH fence issue_us=119 completion_us=83 rc=0
+BENCH fence issue_us=104 completion_us=105 rc=0
+BENCH fence issue_us=120 completion_us=83 rc=0
+BENCH fence issue_us=113 completion_us=83 rc=0
+BENCH fence issue_us=82 completion_us=82 rc=0
+BENCH fence issue_us=94 completion_us=82 rc=0
+BENCH fence issue_us=120 completion_us=82 rc=0
+BENCH fence issue_us=105 completion_us=83 rc=0
+BENCH fence issue_us=118 completion_us=97 rc=0
+BENCH fence issue_us=121 completion_us=83 rc=0
+BENCH fence issue_us=124 completion_us=83 rc=0
+BENCH fence issue_us=81 completion_us=118 rc=0
+BENCH fence issue_us=99 completion_us=96 rc=0
+BENCH fence issue_us=104 completion_us=100 rc=0
+BENCH fence issue_us=102 completion_us=85 rc=0
+BENCH fence issue_us=111 completion_us=83 rc=0
+BENCH fence issue_us=123 completion_us=82 rc=0
+BENCH fence issue_us=114 completion_us=83 rc=0
+BENCH fence issue_us=112 completion_us=96 rc=0
+BENCH fence issue_us=100 completion_us=84 rc=0
+BENCH fence issue_us=117 completion_us=84 rc=0
+BENCH fence issue_us=82 completion_us=116 rc=0
+BENCH fence issue_us=118 completion_us=82 rc=0
+BENCH fence issue_us=101 completion_us=96 rc=0
+BENCH fence issue_us=106 completion_us=81 rc=0
+BENCH fence issue_us=118 completion_us=84 rc=0
+BENCH fence issue_us=122 completion_us=81 rc=0
+BENCH fence issue_us=100 completion_us=98 rc=0
+BENCH fence issue_us=111 completion_us=95 rc=0
+BENCH fence issue_us=120 completion_us=83 rc=0
+BENCH fence issue_us=116 completion_us=84 rc=0
+BENCH fence issue_us=83 completion_us=120 rc=0
+BENCH fence issue_us=112 completion_us=83 rc=0
+BENCH fence issue_us=119 completion_us=82 rc=0
+BENCH fence issue_us=105 completion_us=84 rc=0
+BENCH fence issue_us=115 completion_us=84 rc=0
+BENCH fence issue_us=117 completion_us=84 rc=0
+BENCH fence issue_us=102 completion_us=83 rc=0
+BENCH fence issue_us=109 completion_us=97 rc=0
+BENCH fence issue_us=116 completion_us=83 rc=0
+BENCH fill us=179 rc=0
+BENCH blit pixels=1024 us=398 rc=0
+BENCH present us=13685 rc=0
+BENCH fill us=160 rc=0
+BENCH blit pixels=1024 us=378 rc=0
+BENCH present us=15783 rc=0
+BENCH fill us=140 rc=0
+BENCH blit pixels=1024 us=382 rc=0
+BENCH present us=15789 rc=0
+BENCH fill us=168 rc=0
+BENCH blit pixels=1024 us=383 rc=0
+BENCH present us=15785 rc=0
+BENCH fill us=156 rc=0
+BENCH blit pixels=1024 us=375 rc=0
+BENCH present us=15803 rc=0
+BENCH fill us=178 rc=0
+BENCH blit pixels=1024 us=377 rc=0
+BENCH present us=15774 rc=0
+BENCH fill us=159 rc=0
+BENCH blit pixels=1024 us=381 rc=0
+BENCH present us=15793 rc=0
+BENCH fill us=161 rc=0
+BENCH blit pixels=1024 us=372 rc=0
+BENCH present us=15801 rc=0

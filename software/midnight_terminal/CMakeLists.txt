@@ -20,6 +20,18 @@ target_include_directories(midnight_terminal PRIVATE "${QSPI}" "${CMAKE_CURRENT_
 target_compile_definitions(midnight_terminal PRIVATE KFB_PACK_DESCRIPTOR=1 MT_RAMFUNC=1)
 target_link_libraries(midnight_terminal pico_stdlib pico_multicore hardware_pio)
 target_compile_options(midnight_terminal PRIVATE -Wall -Wextra -O2)
+# Host transport, build-time exclusive like the FPGA build: 4 = QSPI (selected
+# bitstream), 1 = SPI (tools/build-fb.tcl spi). KAGURA_SPI_PIO_DIV overrides the
+# SPI PIO divider (default: the QSPI divider, 5 MHz SCK).
+set(KAGURA_HOST_LANES 4 CACHE STRING "Host lanes: 4 QSPI or 1 SPI")
+set(KAGURA_SPI_PIO_DIV "" CACHE STRING "SPI PIO clock divider (empty: QSPI divider)")
+if(NOT KAGURA_HOST_LANES MATCHES "^(1|4)$")
+    message(FATAL_ERROR "KAGURA_HOST_LANES must be 1 or 4")
+endif()
+target_compile_definitions(midnight_terminal PRIVATE B16_HOST_LANES=${KAGURA_HOST_LANES})
+if(KAGURA_SPI_PIO_DIV)
+    target_compile_definitions(midnight_terminal PRIVATE B16_SPI_PIO_DIV=${KAGURA_SPI_PIO_DIV}f)
+endif()
 pico_enable_stdio_uart(midnight_terminal 0)
 pico_enable_stdio_usb(midnight_terminal 1)
 pico_add_extra_outputs(midnight_terminal)

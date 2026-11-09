@@ -1,0 +1,18 @@
+{
+  "image_sha256": "e9f67c683df4ab9c5f9ee382433d0a46f101578dbdcf66684da14992ce8c1767",
+  "elf_sha256": "70a4add1d78608bccc7f77f589f27499f819299d5d886964706026d4f10263ff",
+  "passed": false,
+  "fpga_flash_writes": 0,
+  "rp2040_flash_writes": 0,
+  "host_flash_before": "0c89de19ae4c600464b6909d8c2eb17815d274b2925b289b2e29934c43a9ae89",
+  "fpga_user_code": "0x0000694E",
+  "started": true,
+  "stop": "STOP rc=-4 phase=identify frames=0 halves=0 wraps=0 worst_latency_us=0 synth_waits=0 synth_busy_ms=0 fm_peak=8 fm_clipped=0 timeouts=0 device_error=0",
+  "pcm_status": null,
+  "scenes": "SCENES 0 0 0 0 0 0 0 0",
+  "capture_exit": 0,
+  "restore_fpga_user_code": "0x00004068",
+  "host_flash_equal": true,
+  "restored_host_port": "COM5",
+  "analysis_error": "IndexError('index 0 is out of bounds for axis 0 with size 0')"
+}

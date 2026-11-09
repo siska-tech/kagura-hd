@@ -1,0 +1,13 @@
+{
+  "mode": "bench",
+  "release_ready": false,
+  "port": "COM5",
+  "started": true,
+  "success": false,
+  "failure": "AssertionError('STOP rc=-5; no retry; release_ready=false')",
+  "start_utc": "2026-11-09T06:43:04.760829+00:00",
+  "perf": [],
+  "bus": [],
+  "stop_elapsed_s": 0.11909340007696301,
+  "capture_exit": 0
+}

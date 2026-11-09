@@ -1,0 +1,126 @@
+{
+  "spi-5mhz-four-operators": {
+    "source": "build/spi-demos/hw-four-operators-1",
+    "files": [
+      "result.json",
+      "demo-usb.log"
+    ]
+  },
+  "spi-5mhz-midnight-terminal": {
+    "source": "build/spi-demos/hw-midnight-terminal-1",
+    "files": [
+      "result.json",
+      "demo-usb.log"
+    ]
+  },
+  "spi-5mhz-beyond16-demo": {
+    "source": "build/spi-demos/hw-beyond16-1",
+    "files": [
+      "summary.json",
+      "state.json",
+      "demo-result.json",
+      "present.json",
+      "demo-usb.log",
+      "flash-write-verified.json"
+    ]
+  },
+  "spi-5mhz-beyond16-bench": {
+    "source": "build/spi-demos/hw-sweep2/spi-5mhz-b16",
+    "files": [
+      "state.json",
+      "bench-result.json",
+      "bench-usb.log",
+      "bench.txt",
+      "flash-write-verified.json"
+    ]
+  },
+  "spi-6mhz-beyond16": {
+    "source": "build/spi-demos/hw-sweep2/spi-6mhz-b16",
+    "files": [
+      "summary.json",
+      "state.json",
+      "demo-result.json",
+      "bench-result.json",
+      "present.json",
+      "demo-usb.log",
+      "bench-usb.log",
+      "bench.txt",
+      "flash-write-verified.json"
+    ]
+  },
+  "spi-6mhz-four-operators": {
+    "source": "build/spi-demos/hw-sweep2/spi-6mhz-fm",
+    "files": [
+      "result.json",
+      "demo-usb.log"
+    ]
+  },
+  "spi-8mhz-beyond16": {
+    "source": "build/spi-demos/hw-sweep2/spi-8mhz-b16",
+    "files": [
+      "summary.json",
+      "state.json",
+      "demo-result.json",
+      "bench-result.json",
+      "present.json",
+      "demo-usb.log",
+      "bench-usb.log",
+      "bench.txt",
+      "flash-write-verified.json"
+    ]
+  },
+  "spi-8mhz-four-operators": {
+    "source": "build/spi-demos/hw-sweep/spi-8mhz-fm",
+    "files": [
+      "result.json",
+      "demo-usb.log"
+    ]
+  },
+  "spi-8mhz-midnight-terminal": {
+    "source": "build/spi-release/hw/mt-spi-8mhz",
+    "files": [
+      "result.json",
+      "demo-usb.log"
+    ]
+  },
+  "spi-10mhz-beyond16-fail": {
+    "source": "build/spi-demos/hw-sweep/spi-10mhz-b16",
+    "files": [
+      "state.json",
+      "bench-result.json",
+      "bench-usb.log",
+      "flash-write-verified.json"
+    ]
+  },
+  "spi-10mhz-four-operators-fail": {
+    "source": "build/spi-demos/hw-sweep/spi-10mhz-fm",
+    "files": [
+      "result.json",
+      "demo-usb.log"
+    ]
+  },
+  "qspi-5mhz-beyond16-bench-reference": {
+    "source": "build/spi-demos/hw-sweep/qspi-5mhz-b16",
+    "files": [
+      "state.json",
+      "bench-result.json",
+      "bench-usb.log",
+      "bench.txt",
+      "flash-write-verified.json"
+    ]
+  },
+  "spi-5mhz-four-operators-uf2": {
+    "source": "build/spi-release/hw/fm-spi-uf2",
+    "files": [
+      "result.json",
+      "demo-usb.log"
+    ]
+  },
+  "spi-5mhz-midnight-terminal-uf2": {
+    "source": "build/spi-release/hw/mt-spi-uf2",
+    "files": [
+      "result.json",
+      "demo-usb.log"
+    ]
+  }
+}

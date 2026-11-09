@@ -60,6 +60,9 @@ build/midnight-terminal/mt_pc --video - | ffmpeg -f rawvideo -pix_fmt rgb24 -s 6
 python software/midnight_terminal/tools/run_hardware.py build/midnight-terminal/hw-XX --flash --elf build/midnight-terminal/rp2040/midnight_terminal.elf --elf-sha <sha256> --reference build/midnight-terminal/pc.wav
 # 配布用UF2：ホストから開始せず、終わるまでUSBのポートも開かずに自動開始を確かめる
 python software/midnight_terminal/tools/run_hardware.py build/midnight-terminal/hw-XX --flash --autostart --uf2 build/midnight-terminal/rp2040-release/midnight_terminal.uf2 --elf build/midnight-terminal/rp2040-release/midnight_terminal.elf --elf-sha <sha256> --reference build/midnight-terminal/pc.wav
+# SPI版のFPGA（kagura-hd-spi-pcm-stream.fs）用：Hostも -HostLanes 1 でSPIにする（5 MHz。-SpiPioDiv 1.25 で8 MHz）。実機ではbitstreamを --image で渡す
+./software/midnight_terminal/tools/build_rp2040.ps1 -Release -HostLanes 1 -Output build/midnight-terminal/rp2040-release-spi
+python software/midnight_terminal/tools/run_hardware.py build/midnight-terminal/hw-XX --flash --autostart --uf2 build/midnight-terminal/rp2040-release-spi/midnight_terminal.uf2 --elf build/midnight-terminal/rp2040-release-spi/midnight_terminal.elf --elf-sha <sha256> --reference build/midnight-terminal/pc.wav --image artifacts/validated/kagura-hd-spi-pcm-stream.fs --image-sha e9f67c683df4ab9c5f9ee382433d0a46f101578dbdcf66684da14992ce8c1767
 ```
 
 ## 実機結果

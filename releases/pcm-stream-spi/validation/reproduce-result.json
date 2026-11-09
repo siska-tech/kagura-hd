@@ -1,0 +1,14 @@
+{
+  "netlist_body_sha256": "37f8eff9ef5ec46df6a2e5b01daf5f7c8767597ae1eac9ec860efa496e5a4340",
+  "netlist_equal": true,
+  "bin_equal": true,
+  "fs_equal_except_created_time": true,
+  "fs_sha256": "4d2cc2dbbdf99724f41b2e322234df19f0df32a4b2ab1c3ccf08b5340c5353ad",
+  "setup_wns_ns": 0.159,
+  "hold_wns_ns": 0.456,
+  "violations": [
+    0,
+    0
+  ],
+  "reproduced": true
+}

@@ -28,7 +28,15 @@ set_option -opt_goal $opt_goal
 set listfile [open [file join $root rtl fb sources.f] r]
 foreach path [split [read $listfile] "\n"] {
     set path [string trim $path]
-    if {$path ne ""} { add_file -type verilog [file join $root $path] }
+    if {$path eq ""} continue
+    # SPI only: rtl/spi/ files replace the frozen RTL of the same name
+    # (rtl/spi/README.md). QSPI always uses the frozen files.
+    set overlay [file join $root rtl spi [file tail $path]]
+    if {$transport eq {spi} && [file exists $overlay]} {
+        puts "KAGURA_SPI_OVERLAY $path -> rtl/spi/[file tail $path]"
+        set path [file join rtl spi [file tail $path]]
+    }
+    add_file -type verilog [file join $root $path]
 }
 close $listfile
 foreach path {

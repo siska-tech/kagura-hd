@@ -1,0 +1,12 @@
+{
+  "image_sha256": "e9f67c683df4ab9c5f9ee382433d0a46f101578dbdcf66684da14992ce8c1767",
+  "firmware_sha256": "c335c77686149227016c4fca955bc2d42d14a574a424a16387a517b1a6c87bac",
+  "restore_sha256": "5592ae2cb18e4aa0bd70417b168a2d63d098bd3d14a5d19560636de7e6c97a77",
+  "fpga_flash_writes": 0,
+  "rp2040_flash_writes": 2,
+  "flash_before": "0c89de19ae4c600464b6909d8c2eb17815d274b2925b289b2e29934c43a9ae89",
+  "candidate_user_code": "0x0000694E",
+  "flash_after": "0c89de19ae4c600464b6909d8c2eb17815d274b2925b289b2e29934c43a9ae89",
+  "full_flash_equal": true,
+  "restore_user_code": "0x00004068"
+}

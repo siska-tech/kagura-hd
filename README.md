@@ -42,18 +42,22 @@ RP2040の2つ目のコアで動くソフトウェアFM音源（4オペレータ�
 
 Picoは起動から約5秒後に、自動でデモを始めます。もう一度見るときは、Picoの電源を入れ直してください。UF2を書き込むと、Picoにそれまで入っていたプログラムは消えます。起動から5秒以内にシリアル端末でPicoのUSBポートを開くと、従来どおり`g`の入力を待ってから始まり、終了時に結果を表示します。
 
+**SPIで使う場合（任意）。** QSPIを使えないHost向けに、SPI版もあります。配線は同じで、IO2とIO3は使いません。手順1で`kagura-hd-spi-pcm-stream.fs`を、手順3で`four-operators-spi.uf2`か`midnight-terminal-spi.uf2`を使ってください。FPGAとUF2は、必ずSPI同士、QSPI同士で組み合わせます。SPIの既定は5 MHzです。
+
 
 ## Bitstream
 
-2026-11-08、PCMストリーミングに対応したQueue8・QSPI版を選定版にしました（従来のPCM2版を置き換え）。[パッケージと検証記録](releases/pcm-stream-qspi/README.md)、[Release添付一覧](releases/README.md)を参照してください。SPI版はSTA不合格のため[experimental](artifacts/experimental/spi-sta-fail/README.md)へ隔離してあり、DO_NOT_PROGRAMを付けています。GitHub Releaseとタグはまだ作成していません。
+2026-11-08、PCMストリーミングに対応したQueue8・QSPI版を選定版にしました（従来のPCM2版を置き換え）。[パッケージと検証記録](releases/pcm-stream-qspi/README.md)、[Release添付一覧](releases/README.md)を参照してください。
+
+2026-11-09には、同じ機能のSPI版も配布対象にしました（[パッケージと検証記録](releases/pcm-stream-spi/README.md)）。QSPIとSPIはビルド時にどちらか一方を選び、実行時の切替えはしません。SPI版は、STAを通すためにSPIだけの差し替えRTL（[rtl/spi/](rtl/spi/README.md)）を使います。QSPI版のbitstreamと入力は変わりません。SPIの既定は5 MHzです。8 MHzは任意の高速設定で、動作を保証する周波数ではありません。10 MHz以上は非対応です。GitHub Releaseとタグはまだ作成していません。
 
 
 |項目|内容|
 |---|---|
-|Bitstream|[kagura-hd-qspi-pcm-stream.fs](artifacts/validated/kagura-hd-qspi-pcm-stream.fs)|
-|SHA-256|`fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db`|
+|Bitstream|[kagura-hd-qspi-pcm-stream.fs](artifacts/validated/kagura-hd-qspi-pcm-stream.fs)（QSPI、選定版）／[kagura-hd-spi-pcm-stream.fs](artifacts/validated/kagura-hd-spi-pcm-stream.fs)（SPI）|
+|SHA-256|QSPI `fad1537627f969abf3181eebc14ce18e252a740e99ab57f4f5abb46a4286b7db`／SPI `e9f67c683df4ab9c5f9ee382433d0a46f101578dbdcf66684da14992ce8c1767`|
 |FPGA / Tool|GW1NR-LV9QN88PC6/I5 / Gowin Standard V1.9.12.04|
-|Host|QSPI Mode 0、MSB先行、`KFB1` / ABI **1.4** / CAPS `FF`、Queue8、PCMストリーミング拡張（audio index `E3`=`0x51`）|
+|Host|QSPI（またはSPI版ではSPI）Mode 0、MSB先行、`KFB1` / ABI **1.4** / CAPS `FF`、Queue8、PCMストリーミング拡張（audio index `E3`=`0x51`）|
 |映像|640×360、4bpp、16色RGB444パレット。整数2倍で1280×720・60Hz HDMI出力|
 |画面メモリ|PSRAM、2ページ。PRESENTで垂直帰線中にページとパレットを反映|
 |描画|FILL、READ/WRITE、overlap・ページ間対応の不透明COPY_RECT（BLIT）|
@@ -66,7 +70,7 @@ Picoは起動から約5秒後に、自動でデモを始めます。もう一度
 
 ## 確認範囲
 
-選定版の内部STAはSetup **+0.177ns**、Hold **+0.527ns**、Setup/Hold違反 **0/0**です。実機試験はnominal PIO QSPI 5MHzの有限試験で、最大通信速度、外部PSRAM I/Oの全PVT適合、全画面のbyte一致、長時間・複数基板の保証は含みません。SPI版はSTA未達・テスト未実施のため[experimental](artifacts/experimental/spi-sta-fail/README.md)へ隔離し、通常Releaseから除外しています。過去の評価JSONの`release_ready=false`は当時のゲート結果として保持します。[公開準備状況と制限](docs/release-validation.md)。
+選定版の内部STAはSetup **+0.177ns**、Hold **+0.527ns**、Setup/Hold違反 **0/0**です。実機試験はnominal PIO QSPI 5MHzの有限試験で、最大通信速度、外部PSRAM I/Oの全PVT適合、全画面のbyte一致、長時間・複数基板の保証は含みません。SPI版の内部STAはSetup **+0.159ns**、Hold **+0.456ns**、違反 **0/0**です。SPI 5 MHzで3デモを完走し、5〜8 MHzのクロックスイープも行いました。範囲はQSPIと同じく有限の試験です（[SPIの確認範囲](releases/pcm-stream-spi/README.md)）。旧PCM2のSPI実験物（STA不合格）は[experimental](artifacts/experimental/spi-sta-fail/README.md)に記録として残しています。過去の評価JSONの`release_ready=false`は当時のゲート結果として保持します。[公開準備状況と制限](docs/release-validation.md)。
 
 ## ビルドと検証
 
