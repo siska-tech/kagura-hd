@@ -37,7 +37,8 @@ def package(output):
     (output/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     with zipfile.ZipFile(output.with_suffix('.zip'),'w',zipfile.ZIP_DEFLATED) as archive:
         for path in output.rglob('*'):
-            if path.is_file(): archive.write(path,str(path.relative_to(output)))
+            if path.is_file() and '__pycache__' not in path.parts and path.suffix not in ('.pyc','.pyo'):
+                archive.write(path,str(path.relative_to(output)))
     return manifest
 
 

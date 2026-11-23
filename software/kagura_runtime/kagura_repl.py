@@ -6,6 +6,7 @@ occupy Python RAM. 0x80000..0x9c1ff is reserved for the console snapshot.
 """
 from io import IOBase
 import os
+import time
 
 SNAPSHOT = 0x80000
 PAGE_BYTES = 115200
@@ -94,6 +95,7 @@ class Console(IOBase):
         self._display_owned = self._suspended = self._snapshot_valid = False
         self._busy = self._closed = self.paused = self._interrupt = False
         self.last_error = None
+        self._tick_callback = self._tick
         self.dropped = 0
         self._cursor_position = None
 
@@ -134,10 +136,12 @@ class Console(IOBase):
                 self._cursor_position=position
 
     def _open_display(self):
-        self.backend.display_open()
-        self._display_owned = True
-        self._cursor_position = None
+        generation = getattr(self.backend,'generation',None)
+        before = generation() if generation is not None else None
         try:
+            self.backend.display_open()
+            self._display_owned = True
+            self._cursor_position = None
             self.backend.palette(0, 0x012)
             self.backend.palette(15, 0xfff)
             if self.screen is None:
@@ -146,6 +150,8 @@ class Console(IOBase):
                                        atlas=DirectGlyphs(self.backend, self.font))
             self.backend.present(0)
         except BaseException:
+            if generation is not None and generation()!=before:
+                self._display_owned = True
             self._release_display()
             raise
 
@@ -160,14 +166,13 @@ class Console(IOBase):
             return
         self._busy = True
         try:
-            from time import ticks_ms, ticks_diff
-            started = ticks_ms()
+            started = time.ticks_ms()
             count = min((self._head-self._tail)%len(self._buffer), 128)
             for _ in range(count):
                 value = self._buffer[self._tail]
                 self._tail = (self._tail+1)%len(self._buffer)
                 self.screen.feed(bytes((value,)))
-                if value == 10 or ticks_diff(ticks_ms(), started) >= 25:
+                if value == 10 or time.ticks_diff(time.ticks_ms(), started) >= 25:
                     break
             self.screen.flush()
             self._cursor()
@@ -175,9 +180,10 @@ class Console(IOBase):
             self._busy = False
 
     def _arm(self):
-        from machine import Timer
+        if self._closed or self._timer is None:
+            return
         delay = 5 if self._display_owned and self._head != self._tail else 20
-        self._timer.init(period=delay, mode=Timer.ONE_SHOT, callback=self._tick, hard=False)
+        self._timer.init(period=delay, mode=self._timer.ONE_SHOT, callback=self._tick_callback, hard=False)
 
     def _tick(self, timer=None):
         if self._closed:
@@ -186,8 +192,6 @@ class Console(IOBase):
             if self.keyboard is not None:
                 self.keyboard.poll()
             self._flush_display()
-        except KeyboardInterrupt:
-            self._interrupt = True
         except Exception as error:
             self.last_error = error
         if self._timer is not None:
@@ -201,9 +205,9 @@ class Console(IOBase):
             return False
         if self._busy:
             raise RuntimeError('cannot hand off the display inside a console update')
-        self.paused = self._suspended = True
-        self._snapshot_valid = False
         try:
+            self.paused = self._suspended = True
+            self._snapshot_valid = False
             while self._head != self._tail and self.last_error is None:
                 self._flush_display(paused_ok=True)
             if self.last_error is not None:
@@ -222,15 +226,23 @@ class Console(IOBase):
         if self._closed or not self._suspended:
             return False
         try:
-            if not self._snapshot_valid:
+            if (not self._snapshot_valid and self.last_error is not None
+                    and not isinstance(self.last_error,KeyboardInterrupt)):
                 self._suspended = False
                 return False
-            self._open_display()
-            self.backend.copy_bytes(SNAPSHOT, 0, PAGE_BYTES)
+            is_open=getattr(self.backend,'is_open',None)
+            if is_open is not None:
+                self._display_owned=is_open()
+            if not self._display_owned:
+                self._open_display()
+            if self._snapshot_valid:
+                self.backend.copy_bytes(SNAPSHOT, 0, PAGE_BYTES)
             self.backend.present(0)
             self._cursor()
             self.last_error = None
             self.paused = self._suspended = self._snapshot_valid = False
+            if self._timer is not None:
+                self._arm()
             return True
         except BaseException as error:
             self.last_error = error
@@ -315,6 +327,7 @@ def start(font_path='fonts/mplus12.kmf', keyboard=True, startup_ms=2000):
             result.last_error = error
             result._release_display()
         result._timer = machine.Timer(-1)
+        result._tick_callback = _kagura.interrupt_guard(result._tick,result._arm)
         result._previous = os.dupterm(result, 0)
         result._attached = True
         console = result

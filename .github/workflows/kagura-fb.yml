@@ -103,6 +103,11 @@ jobs:
       - uses: actions/checkout@v4
       - name: Test portable C and Python drivers
         run: bash tools/test-fb-drivers.sh
+      - name: Test generic MicroPython runtime and Python demo
+        run: |
+          python3 software/kagura_runtime/tests/test_runtime.py
+          python3 software/midnight_terminal/micropython/test_runner.py
+          python3 software/midnight_terminal/tools/check_micropython_port.py
       - name: Verify BLIT transaction model
         run: python3 tools/analyze-fb-blit.py --output build/fb-blit-analysis.json
       - name: Build pinned MicroPython Unix

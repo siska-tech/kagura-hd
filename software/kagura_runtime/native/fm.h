@@ -18,4 +18,6 @@ void fm_render(int8_t *left,int8_t *right,unsigned frames);
 uint32_t fm_position(void);
 uint32_t fm_peak(void);
 uint32_t fm_clipped(void);
+int fm_configuration_error(void); /* -1 OK, -2 layout/patch, >=0 invalid event index */
+const uint8_t *fm_configuration_event(void);
 #endif

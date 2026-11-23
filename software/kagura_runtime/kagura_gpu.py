@@ -11,6 +11,7 @@ class Device:
         self._opened = False
         self._previous_frequency = self._console = None
         self.cleanup_error = None
+        self._generation_query = self._generation_before = None
 
     def _open_backend(self):
         self.backend.display_open()
@@ -30,6 +31,9 @@ class Device:
                 active.suspend()
             gc.collect()
             machine.freq(120000000)
+            self._generation_query = getattr(self.backend,'generation',None)
+            if self._generation_query is not None:
+                self._generation_before = self._generation_query()
             self._open_backend()
             self._opened = True
             return self
@@ -52,10 +56,13 @@ class Device:
     def close(self):
         import machine
         try:
-            if self._opened:
+            acquired = (self._generation_query is not None and self._generation_before is not None
+                        and self._generation_query()!=self._generation_before)
+            if self._opened or acquired:
                 self._opened = False
                 self.backend.close()
         finally:
+            self._generation_query = self._generation_before = None
             if self._previous_frequency is not None:
                 previous, self._previous_frequency = self._previous_frequency, None
                 machine.freq(previous)

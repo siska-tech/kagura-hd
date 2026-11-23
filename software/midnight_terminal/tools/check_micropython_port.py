@@ -11,6 +11,7 @@ from pathlib import Path
 import shlex
 import shutil
 import subprocess
+import struct
 import sys
 
 MT = Path(__file__).resolve().parents[1]
@@ -117,10 +118,11 @@ EXPORT const uint16_t *ref_palette(void) { return display_palette; }
 
 
 def fm_check(out):
+    from kagura_fm import GAIN
     from midnight_instruments import presets,dsp_parameters
     from midnight_music import build_score
     exports = ['fm_init', 'fm_configure', 'fm_configure_pages', 'fm_effects', 'fm_command', 'fm_note_on', 'fm_note_off',
-               'fm_all_off', 'fm_render', 'fm_position', 'fm_peak', 'fm_clipped']
+               'fm_all_off', 'fm_render', 'fm_position', 'fm_peak', 'fm_clipped', 'fm_configuration_error']
     # Compare against the committed engine, not a second build of edited code.
     baseline = out/'fm_before_port.c'
     baseline.write_bytes(subprocess.check_output(['git', '-C', str(ROOT), 'show',
@@ -221,11 +223,16 @@ def fm_check(out):
     assert fm.fm_note_on(0, 0, 60, 160, 0)
     assert not fm.fm_note_on(7, 0, 60, 160, 0)
     assert not fm.fm_note_on(0, 8, 60, 160, 0)
+    invalid=struct.pack('<IBBBBII',0,GAIN,0,0,0,100,100)+struct.pack('<IBBBBII',16,255,0,0,0,0,0)
+    invalid_buffer=ct.create_string_buffer(invalid)
+    assert not fm.fm_configure(active_buffers[0],len(patch_data),invalid_buffer,len(invalid))
+    assert fm.fm_configuration_error()==1, 'configuration errors must identify the invalid event'
     return dict(score_stereo_frames_rendered=total, python_schedule_bytes=len(schedule),
                 paged_schedule_matches=True,
                 first_difference_from_legacy_frame=first_difference,
                 score_sha256=digest.hexdigest(), live_note_on_off=True, sample_timed_gate=True,
-                instruments_verified=8, voices_verified=7, queue_overflow_checked=True)
+                instruments_verified=8, voices_verified=7, queue_overflow_checked=True,
+                invalid_schedule_event_identified=True)
 
 
 if __name__ == '__main__':

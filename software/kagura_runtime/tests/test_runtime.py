@@ -33,13 +33,17 @@ class UART:
 
 class Backend(MemoryGPU):
     def __init__(self):
-        super().__init__(); self.active=False; self.calls=[]; self.saved=None
+        super().__init__(); self.active=False; self.calls=[]; self.saved=None; self.epoch=0
+    def generation(self): return self.epoch
+    def is_open(self): return self.active
     def display_open(self):
         if self.active: raise OSError('bus already owned')
         self.active=True; self.calls.append('display_open')
+        self.epoch+=1
     def open(self,*args):
         if self.active: raise OSError('bus already owned')
         self.active=True; self.calls.append('audio_open'); super().open(*args)
+        self.epoch+=1
     def start(self): self.calls.append('start'); super().start()
     def close(self):
         assert self.active
@@ -101,6 +105,19 @@ class RuntimeTests(unittest.TestCase):
         self.console._tick()
         self.assertEqual(len(self.gpu.calls),count)
 
+    def test_suspended_timer_never_imports_modules(self):
+        class Timer:
+            ONE_SHOT=0
+            def init(self,**kwargs): self.options=kwargs
+        self.console._timer=Timer()
+        self.console.paused=True
+        self.console._display_owned=False
+        with patch('builtins.__import__',side_effect=AssertionError('timer imported a module')):
+            self.console._tick()
+        self.assertIsNone(self.console.last_error)
+        self.assertEqual(self.console._timer.options['period'],20)
+        self.assertEqual(self.console._timer.options['mode'],Timer.ONE_SHOT)
+
     def test_gpu_handoff_preserves_pixels_and_terminal_position(self):
         self.console.write(b'>>> print(1)\r\n'); self.flush()
         pixels=bytes(self.gpu.pages[0]); position=(self.console.screen.x,self.console.screen.y)
@@ -140,6 +157,19 @@ class RuntimeTests(unittest.TestCase):
         self.assertTrue(self.console._display_owned)
         self.assertFalse(self.console.paused)
 
+    def test_interrupt_after_native_open_releases_bus_before_console_resume(self):
+        original=self.gpu.open
+        def interrupt_after_claim(*args):
+            original(*args)
+            raise KeyboardInterrupt()
+        self.gpu.open=interrupt_after_claim
+        with self.assertRaises(KeyboardInterrupt):
+            with Synth([Patch((operator(),)*4)],backend=self.gpu): pass
+        self.assertTrue(self.console._display_owned)
+        self.assertFalse(self.console.paused)
+        self.assertTrue(self.gpu.active)
+        self.assertIsNone(self.console.last_error)
+
     def test_snapshot_failure_releases_gpu_without_starting_application(self):
         def fail(*a): raise OSError('snapshot transfer fault')
         self.gpu.copy_bytes=fail
@@ -152,6 +182,40 @@ class RuntimeTests(unittest.TestCase):
         self.console._tick()
         b=bytearray(1); self.assertEqual(self.console.readinto(b),1); self.assertEqual(b,b'a')
         self.console.close()
+
+    def test_interrupt_between_console_flag_and_native_release_recovers(self):
+        release=self.console._release_display
+        def interrupt_before_release():
+            self.console._display_owned=False
+            self.console._release_display=release
+            raise KeyboardInterrupt()
+        self.console._release_display=interrupt_before_release
+        with self.assertRaises(KeyboardInterrupt):
+            with Device(self.gpu): pass
+        self.assertTrue(self.console._display_owned)
+        self.assertFalse(self.console.paused)
+        self.assertTrue(self.gpu.active)
+
+    def test_interrupt_during_snapshot_recovers_original_screen(self):
+        def interrupt(*args):raise KeyboardInterrupt()
+        self.gpu.copy_bytes=interrupt
+        with self.assertRaises(KeyboardInterrupt):
+            with Device(self.gpu): pass
+        self.assertTrue(self.console._display_owned)
+        self.assertFalse(self.console.paused)
+        self.assertTrue(self.gpu.active)
+
+    def test_interrupt_before_snapshot_error_handler_recovers(self):
+        def interrupt():
+            self.console.paused=self.console._suspended=True
+            self.console._snapshot_valid=False
+            raise KeyboardInterrupt()
+        self.console.suspend=interrupt
+        with self.assertRaises(KeyboardInterrupt):
+            with Device(self.gpu): pass
+        self.assertTrue(self.console._display_owned)
+        self.assertFalse(self.console.paused)
+        self.assertTrue(self.gpu.active)
 
     def test_restore_failure_keeps_keyboard_and_allows_console_close(self):
         with Device(self.gpu):

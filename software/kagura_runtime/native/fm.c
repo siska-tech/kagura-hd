@@ -174,8 +174,13 @@ static const uint8_t *schedule;
 static size_t schedule_bytes,schedule_offset;
 static const uint8_t *schedule_pages[128];
 static bool schedule_segmented;
+static int configuration_error;
+int fm_configuration_error(void) { return configuration_error; }
 static const uint8_t *event_at(size_t offset) {
     return schedule_segmented ? schedule_pages[offset/1024]+offset%1024 : schedule+offset;
+}
+const uint8_t *fm_configuration_event(void) {
+    return configuration_error>=0 ? event_at((size_t)configuration_error*16) : NULL;
 }
 typedef struct { uint8_t op,channel,a,b; uint32_t v0,v1; } command;
 static command live[32];
@@ -233,17 +238,21 @@ static bool validate_schedule(void) {
     for(size_t i=0;i<schedule_bytes;i+=16) {
         const uint8_t *v=event_at(i);
         uint32_t at=get32(v); command c={v[4],v[5],v[6],v[7],get32(v+8),get32(v+12)};
-        if(at<previous || !valid(c) || (c.v1 && at>UINT32_MAX-c.v1)) return false;
+        if(at<previous || !valid(c) || (c.v1 && at>UINT32_MAX-c.v1)) {
+            configuration_error=(int)(i/16); return false;
+        }
         previous=at;
     }
-    schedule_offset=0; return true;
+    configuration_error=-1; schedule_offset=0; return true;
 }
 bool fm_configure(const uint8_t *p,size_t pn,const uint8_t *s,size_t sn) {
+    configuration_error=-2;
     if(sn%16 || sn>131072 || (sn && !s) || !configure_patches(p,pn)) return false;
     schedule_segmented=false; schedule=s; schedule_bytes=sn;
     return validate_schedule();
 }
 bool fm_configure_pages(const uint8_t *p,size_t pn,const uint8_t *const *pages,size_t count,size_t total) {
+    configuration_error=-2;
     if(total%16 || total>131072 || count!=(total+1023)/1024 || (count && !pages) || !configure_patches(p,pn)) return false;
     for(size_t i=0;i<count;i++) { if(!pages[i]) return false; schedule_pages[i]=pages[i]; }
     schedule_segmented=true; schedule_bytes=total;
