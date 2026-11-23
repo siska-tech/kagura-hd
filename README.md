@@ -21,7 +21,7 @@ USB給電ラインの撮影時表示は約5.03 V・0.235 A・1.18 Wです。
 
 ## KAGURA-HD MicroPython
 
-**[GPU制御用MicroPythonをリリース](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.23-micropython.1)**しました。HDMIのFramebuffer REPL、日本語フォント、XIAOキーボードブリッジ、Pythonから操作できる4オペレータ×7声のFM音源を備えています。
+[GPU制御用MicroPythonをリリースしました](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.23-micropython.1)。HDMIのFramebuffer REPL、日本語フォント、XIAOキーボードブリッジ、Pythonから操作できる4オペレータ×7声のFM音源を備えています。
 
 MIDNIGHT TERMINALの演出・進行・音色・譜面はPython側に置き、FWは汎用GPU・音源機能を提供します。104秒の実機再生は**平均25.7 fps**（ネイティブC版は約29.2 fps）。OBS録音のクリップ0、音源再起動20回、USB Ctrl-C試験10回とREPL復帰を確認しました。XIAOブリッジの通信は確認済みで、実キーボードの打鍵試験は未実施です。
 
