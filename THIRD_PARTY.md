@@ -17,6 +17,13 @@ revisionとURLは[出典](docs/sources.md)。今後の導入時には原著作�
 
 `rtl/hdmi/kagura_packet_assembler.sv`も同様に、上流`src/packet_assembler.sv`を基にしたローカル置換実装である。counterで選ぶbit muxをshift registerに置き換え、上流と毎cycle同じ出力を生成する（`tb_packet_assembler`で検査）。Apache-2.0を適用し、由来・変更内容をソース先頭に記載する。
 
+## M+ BITMAP FONT
+
+`software/kagura_fb/fonts/mplus12.kmf`はM+ BITMAP FONTS 2.2.4をUnicode対応の
+独自binary形式へ変換したものです。Copyright 2002-2005 COZ。
+同梱の[原ライセンス](software/kagura_fb/fonts/LICENSE_MPLUS)に従い配布します。
+原本のhash、変更・再生成手順は[フォント資料](software/kagura_fb/fonts/README.md)を参照してください。
+
 ## 分離した旧製品資産のライセンス記録
 
 旧 Pico SDK import（BSD-3-Clause）、Meta Piano由来のCC0音声、美咲フォントとその許諾表示を含む旧ソフトウェアは、Kagura-9 の固定コミット f562b2ec84605860fdb9f701f5b2e197b5ed4432 に保存されています。移管先では元の表記とライセンスを継承してください。詳細は[分離台帳](docs/kagura-fb-separation.md)と[元の権利表示](https://github.com/siska-tech/kagura/blob/f562b2ec84605860fdb9f701f5b2e197b5ed4432/THIRD_PARTY.md)を参照してください。

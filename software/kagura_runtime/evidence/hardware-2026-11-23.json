@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-23",
+  "target_uid": "e6647c15676c8637",
+  "flash_backup": false,
+  "backup_skipped_by_user": true,
+  "firmware": "qspi/kagura-micropython.uf2",
+  "uf2_sha256": "90367e9b1ff9614107f34bb1f0892ca96d0378892e7e88670d7f9b7088aaad8f",
+  "picotool_write_verified": true,
+  "duration_ms": 104000,
+  "full_demo_pass": true,
+  "stats": {
+    "fm_clipped": 0,
+    "worst_latency_us": 30974,
+    "halves": 1218,
+    "scene_frames": [
+      138,
+      419,
+      187,
+      78,
+      89,
+      185,
+      83
+    ],
+    "fm_peak": 38183,
+    "frames": 1179
+  },
+  "average_fps": 11.34,
+  "usb_ctrl_c_pass": true,
+  "final_state": {
+    "error": "None",
+    "paused": false,
+    "framebuffer_repl": true,
+    "bridge_version": 1,
+    "free_heap": 135840,
+    "keyboard_bad_frames": 0,
+    "machine": "KAGURA-HD GPU runtime with RP2040",
+    "font_height": 13,
+    "keyboard_connected": false,
+    "uid": "e6647c15676c8637"
+  },
+  "physical_keyboard_keypress_tested": false,
+  "hdmi_capture_verified": false,
+  "scope": "One finite run on one RP2040 board; HDMI capture device was busy. XIAO bridge v1 responds, USB keyboard absent."
+}

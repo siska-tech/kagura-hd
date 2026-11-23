@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: Apache-2.0
+cmake_minimum_required(VERSION 3.13)
+include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
+project(qspi_benchmark C CXX ASM)
+set(CMAKE_C_STANDARD 11)
+pico_sdk_init()
+get_filename_component(REPO "${CMAKE_CURRENT_SOURCE_DIR}/../.." ABSOLUTE)
+set(MT "${REPO}/software/midnight_terminal")
+add_custom_command(OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/kagura_host.pio.h"
+    COMMAND "${MT}/out/pioasm/pioasm.exe" -o c-sdk "${MT}/vendor/kagura_host.pio" "${CMAKE_CURRENT_BINARY_DIR}/kagura_host.pio.h"
+    DEPENDS "${MT}/vendor/kagura_host.pio" VERBATIM)
+add_executable(qspi_benchmark main.c transport.c "${REPO}/software/kagura_fb/kagura_fb.c" "${CMAKE_CURRENT_BINARY_DIR}/kagura_host.pio.h")
+target_include_directories(qspi_benchmark PRIVATE "${CMAKE_CURRENT_BINARY_DIR}" "${REPO}/software/beyond16/src")
+target_compile_options(qspi_benchmark PRIVATE -O2 -Wall -Wextra -Werror)
+target_link_libraries(qspi_benchmark pico_stdlib hardware_pio)
+option(BENCH_DMA "Use DMA for contiguous 64-byte staging writes" OFF)
+if(BENCH_DMA)
+    target_compile_definitions(qspi_benchmark PRIVATE B16_TRANSPORT=1)
+    target_link_libraries(qspi_benchmark hardware_dma)
+endif()
+pico_enable_stdio_uart(qspi_benchmark 0)
+pico_enable_stdio_usb(qspi_benchmark 1)
+pico_set_binary_type(qspi_benchmark no_flash)

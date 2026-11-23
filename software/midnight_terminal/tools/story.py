@@ -1,5 +1,5 @@
 """MIDNIGHT TERMINAL script: every text and its timing (ms). Shared by the
-visuals (generated/script.inc) and the synthesizer (typing clicks, cues)."""
+Python visuals/SFX and the C standalone build (generated/script.h)."""
 
 CHAR_MS = 45           # dialogue typing speed
 TERM_CHAR_MS = 32      # terminal typing speed

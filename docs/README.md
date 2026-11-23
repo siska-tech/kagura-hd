@@ -11,6 +11,11 @@
 - [公開準備状況・制限](release-validation.md)
 - [Standard Editionのビルド手順](standard-build.md)
 - [Host ABI 1.4・配線・C/MicroPython API](kagura-fb-host-api.md)
+- [MicroPython FrameBuffer・M+日本語表示](micropython-framebuf.md)
+- [MicroPython PIO＋DMA＋Viper・HDMI REPL](micropython-hdmi-repl.md)
+- [MicroPythonのKAGURA-9相当化：基準版・実装・実機比較](micropython-k9-parity.md)
+- [XIAO USBキーボード→UART→MicroPython REPL](../software/xiao_keyboard/README.md)
+- [実機基板のQSPI速度試験：8 MHz照合成功・10 MHz不一致](../software/qspi_benchmark/README.md)
 - [BLIT](kagura-fb-blit.md)、[カーソル](kagura-fb-cursor.md)
 - [BEYOND 16 COLORS 実機結果](../software/beyond16/HARDWARE_RESULT.md)
 - [MIDNIGHT TERMINAL — FM EDITION](../software/midnight_terminal/README.md)（[旧PCM2版の実機結果](https://github.com/siska-tech/kagura-hd/blob/52fd69f6507b22c8c58d4112fd335562c7f9c57f/software/midnight_terminal/HARDWARE_RESULT.md)）

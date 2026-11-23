@@ -1,0 +1,88 @@
+{
+  "status": "completed_with_findings",
+  "duration_seconds": 104,
+  "device_result": {
+    "fm_clipped": 0,
+    "worst_latency_us": 31115,
+    "halves": 1218,
+    "scene_frames": [
+      137,
+      428,
+      181,
+      77,
+      84,
+      184,
+      77
+    ],
+    "fm_peak": 38183,
+    "frames": 1168
+  },
+  "application_average_fps": 11.23,
+  "scenes_visually_inspected": 7,
+  "repl_restored": true,
+  "obs_render_drop_increase": 0,
+  "obs_encode_drop_increase": 0,
+  "findings": [
+    {
+      "severity": "needs_attention",
+      "area": "OBS audio routing",
+      "detail": "Microphone and Audio Input Capture use the same device. Both are unmuted; Desktop Audio also meters the program. The resulting mixed recording peaks at 0 dBFS. Mixer settings were not changed."
+    },
+    {
+      "severity": "limitation",
+      "area": "rendering performance",
+      "detail": "The Python application rendered 1168 frames in 104 seconds (11.23 fps); OBS output at 60 fps does not imply 60 unique application frames."
+    },
+    {
+      "severity": "minor",
+      "area": "end card",
+      "detail": "Blue explanatory line is inside the captured image (x=4..1271 of 1280) but has very narrow side margins."
+    }
+  ],
+  "audio_peak_dbfs": [
+    0.0,
+    0.0
+  ],
+  "audio_clipped_pcm_samples": [
+    2,
+    6
+  ],
+  "audio_correlation_median": 0.6343671429699946,
+  "audio_dropout_verdict": "Inconclusive: the recording mixes duplicate/delayed audio paths; low-level comparison windows are candidates, not proof of hardware underrun. Native stream completed successfully with zero FM hard clips.",
+  "audio_routing": [
+    {
+      "name": "デスクトップ音声",
+      "kind": "wasapi_output_capture",
+      "monitor": "OBS_MONITORING_TYPE_NONE",
+      "same_audio_device_as": []
+    },
+    {
+      "name": "マイク",
+      "kind": "wasapi_input_capture",
+      "monitor": "OBS_MONITORING_TYPE_NONE",
+      "same_audio_device_as": [
+        "音声入力キャプチャ"
+      ]
+    },
+    {
+      "name": "映像キャプチャデバイス",
+      "kind": "dshow_input",
+      "monitor": "OBS_MONITORING_TYPE_NONE",
+      "same_audio_device_as": []
+    },
+    {
+      "name": "音声入力キャプチャ",
+      "kind": "wasapi_input_capture",
+      "monitor": "OBS_MONITORING_TYPE_NONE",
+      "same_audio_device_as": [
+        "マイク"
+      ]
+    }
+  ],
+  "recording": "Local OBS recording; video is not versioned.",
+  "recording_started_and_stopped_by_review": true,
+  "streaming_started": false,
+  "user_mixer_settings_changed": false,
+  "contact_sheet": "contact-sheet.png",
+  "scope": "One finite full run, seven OBS preview checkpoints and final REPL image, recorded PCM comparison; no claim of perceptual listening or calibrated lip-sync measurement."
+}

@@ -64,7 +64,7 @@ Picoは起動から約5秒後に、自動でデモを始めます。もう一度
 |BLIT制約|Xと幅は偶数、送受Xの差は8画素の倍数|
 |カーソル|32×32・2bpp、透明色＋独立3色、形状2バンク、垂直帰線で反映|
 |音声|signed8 PCM **2ch**、48kHz、左右GAIN・MASTER、HDMI stereo出力。PSRAM上のA/B半面をHostが連続補充するストリーミング|
-|SDK|[C](software/kagura_fb/kagura_fb.h)、[MicroPython Device](software/kagura_fb/kagura_fb.py)、[PCM Audio](software/kagura_fb/kagura_fb_audio.py)|
+|SDK|[C](software/kagura_fb/kagura_fb.h)、[MicroPython Device](software/kagura_fb/kagura_fb.py)、[FrameBuffer・日本語表示](docs/micropython-framebuf.md)、[PCM Audio](software/kagura_fb/kagura_fb_audio.py)|
 
 音声はPCM2（ワンショットとループ）と、Hostが半面ずつ補充するストリーミングに対応しています。旧6ch音源のHost設定は使いません。描画、カーソル、BLITはABI 1.2を引き継ぎ、音声CSR、COMMIT、ストリーミングCSRを追加しています。[Host ABI・音声契約](docs/kagura-fb-host-api.md)を参照してください。
 

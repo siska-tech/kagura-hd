@@ -113,4 +113,9 @@ jobs:
       - name: Test on actual MicroPython runtime
         env:
           MICROPYTHON: /tmp/micropython/ports/unix/build-standard/micropython
-        run: bash tools/test-fb-micropython.sh
+        run: |
+          bash tools/test-fb-micropython.sh
+          bash tools/test-fb-framebuf.sh
+          MICROPYPATH=software/kagura_fb:software/kagura_fb/tests "$MICROPYTHON" -X heapsize=16M software/kagura_fb/tests/test_native_commands.py
+          python3 software/kagura_fb/tests/test_gpu_kernel.py
+          PYTHONPATH=software/kagura_fb python3 software/kagura_fb/tests/test_keyboard.py

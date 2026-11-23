@@ -1,0 +1,46 @@
+{
+  "usb_host.c": {
+    "vendor_sha256": "fb274d0f6480416315f6727aed8cd93741a59ced18e2a74c4f9c008ad4f1fd41",
+    "source_sha256": "dda196d0c422e9f47e60f8e5ce6afb45052f3ea9bab1425df7f544b025140b45"
+  },
+  "keymap.h": {
+    "vendor_sha256": "bd0eba2a34361b1454095cc6d41b92145862efde7dc386ff4ffa8df08f433993",
+    "source_sha256": "bd0eba2a34361b1454095cc6d41b92145862efde7dc386ff4ffa8df08f433993"
+  },
+  "keyboard_edges.c": {
+    "vendor_sha256": "7e39dc849ca4a1698b7f3ea2c9cf3d56d8819ee023119273eb133506e8ec4be7",
+    "source_sha256": "7e39dc849ca4a1698b7f3ea2c9cf3d56d8819ee023119273eb133506e8ec4be7"
+  },
+  "usb_host.h": {
+    "vendor_sha256": "e4a629144a2f8e4ed74cd7ba8d1d51a0c72469e0cf621fa66f454111b6210953",
+    "source_sha256": "e4a629144a2f8e4ed74cd7ba8d1d51a0c72469e0cf621fa66f454111b6210953"
+  },
+  "xlink.c": {
+    "vendor_sha256": "d37d6b11323ad33c632a4a4eea4f932e890f975fd0dde0a1c6c05b0891fd6bbd",
+    "source_sha256": "d37d6b11323ad33c632a4a4eea4f932e890f975fd0dde0a1c6c05b0891fd6bbd"
+  },
+  "usb_descriptors.c": {
+    "vendor_sha256": "1769371c6afc1ded9b7855a9735e63f27ce0fe2597a2d01572ccd469dbfdda05",
+    "source_sha256": "485fbc8d5f8f480597877cc7f82ea19062ca0fc6e2651e1d45e2b5f7c288449c"
+  },
+  "keyboard.h": {
+    "vendor_sha256": "eaa83a41fb0ba1830ba23e61c397c143eca473fd63dcc71c573214a5577f574d",
+    "source_sha256": "eaa83a41fb0ba1830ba23e61c397c143eca473fd63dcc71c573214a5577f574d"
+  },
+  "tusb_config.h": {
+    "vendor_sha256": "b7b16060b5baab7ba4aa259e767bd4b2c485abe205d13764957ac41b71db8430",
+    "source_sha256": "b7b16060b5baab7ba4aa259e767bd4b2c485abe205d13764957ac41b71db8430"
+  },
+  "keymap.c": {
+    "vendor_sha256": "e946e23c7eb5a54d81743d880f435ea8b86a78d84207a32e68e0f07fa6b2f68f",
+    "source_sha256": "e946e23c7eb5a54d81743d880f435ea8b86a78d84207a32e68e0f07fa6b2f68f"
+  },
+  "xlink.h": {
+    "vendor_sha256": "7c0faff2f17b8b22195717755cda155663d4c6e6b60a02e0fcf43cd1d9930daa",
+    "source_sha256": "7c0faff2f17b8b22195717755cda155663d4c6e6b60a02e0fcf43cd1d9930daa"
+  },
+  "keyboard.c": {
+    "vendor_sha256": "4b81e28f40213200f09243047af850a78bb2c78e0ea761fc2b139c41be3b3f57",
+    "source_sha256": "4b81e28f40213200f09243047af850a78bb2c78e0ea761fc2b139c41be3b3f57"
+  }
+}

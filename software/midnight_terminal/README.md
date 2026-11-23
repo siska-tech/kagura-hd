@@ -39,6 +39,8 @@
 
 ## 作る・見る
 
+台本・描画・音色・全譜面・効果音をPython側に持つアプリ版は、[MicroPython版の手順](micropython/README.md)を参照してください。[汎用GPU FW](../kagura_runtime/README.md)を使い、作品固有のコードや素材をFWへ埋め込みません。
+
 すぐに実機で見るときは、[Releases](https://github.com/siska-tech/kagura-hd/releases/latest)の`midnight-terminal.uf2`を使います（SPI版のFPGAと組み合わせるときは`midnight-terminal-spi.uf2`）。手順は[ルートのREADME](../../README.md#すぐに試す)にあります。約5秒後に自動で始まります。
 
 ```bash
