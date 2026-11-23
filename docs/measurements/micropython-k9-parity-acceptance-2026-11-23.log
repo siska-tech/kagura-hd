@@ -1,0 +1,17 @@
+CTRL_C_PASS Traceback (most recent call last):
+  File "<stdin>", line 4, in <module>
+KeyboardInterrupt:
+
+5
+RECOVERY_PASS None 0 42928
+
+ALL_11_FILES_VERIFIED
+BOOT_PASS True True 0 43392 116 1 False
+
+BOOT_PASS True True 0 43408 118 1 False
+
+HASHES {"kagura_native_commands.py": "fad9350d4c20808154a4a118680d93bb6411c5132f922c11430349499bf0ebfb", "kagura_ja.py": "4f9915f03bec3bd3570c68af369d8e27aef82b3e743bb595c6f384c2820c8068", "fonts/mplus12.kmf": "627e49022c9111f1dabc46e5853f97ef689d6001cb11339ff19b01aaa32c9eb4", "kagura_keyboard.py": "9928112de183873c2c0e6c3e0d62fcdd805d4e7a20e529d73c9a536e952640cb", "kagura_glyph_atlas.py": "4616f270bde0f37fbe3801d9ceb914bdb4bcaca6148251030fae45ba1cc4cad5", "kagura_console.py": "4846709ed4c53f31256536ec5880a6f9f2d43f478066cc979102f03767d44674", "kagura_fb.py": "419b754d48b2360bde94a1f2799b186532b330512aa003a9f3d99431bdf24aff", "kagura_terminal.py": "f4cc410716a9bfe565898745ca8a933a4dec48fbd2c6dc2a7df093218b726a91", "fonts/mplus10.kmf": "f1d937480f3fc13620a71d353945daf0510fca8f8c3b0b07fc0f93f291e22da9", "kagura_framebuf.py": "e75098d646ef61fa5570623ac082936edeacc1301269ad853a92cc9296c35ad8", "rp2040_pio.py": "0443cf0b3d14eda06f2ec8e8c93374eba54561809dc51baa85c01e09fe8f93fc"}
+FINAL_PASS 39120 0 (144, 247)
+
+HASHES {"kagura_native_commands.py": "e40494b1fb4a7a2c71fd53498beb15e943127e07262a74d15a6ce2a6cf2a153a", "kagura_ja.py": "4f9915f03bec3bd3570c68af369d8e27aef82b3e743bb595c6f384c2820c8068", "fonts/mplus12.kmf": "627e49022c9111f1dabc46e5853f97ef689d6001cb11339ff19b01aaa32c9eb4", "kagura_keyboard.py": "9928112de183873c2c0e6c3e0d62fcdd805d4e7a20e529d73c9a536e952640cb", "kagura_glyph_atlas.py": "4616f270bde0f37fbe3801d9ceb914bdb4bcaca6148251030fae45ba1cc4cad5", "kagura_console.py": "4846709ed4c53f31256536ec5880a6f9f2d43f478066cc979102f03767d44674", "kagura_fb.py": "261d6df9d644dd62fe6f23ddb1d7ad0418d6f7b6d6f96f8d31997915a162bfc6", "kagura_terminal.py": "f4cc410716a9bfe565898745ca8a933a4dec48fbd2c6dc2a7df093218b726a91", "fonts/mplus10.kmf": "f1d937480f3fc13620a71d353945daf0510fca8f8c3b0b07fc0f93f291e22da9", "kagura_framebuf.py": "e75098d646ef61fa5570623ac082936edeacc1301269ad853a92cc9296c35ad8", "rp2040_pio.py": "7e599ddd3747aeb9994502f9e368ca7ad9d0a78f5a35b0194f31fa32bb22cb0b"}
+FINAL_PASS 38176 0 (66, 338)

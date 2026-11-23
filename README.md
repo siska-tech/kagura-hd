@@ -2,6 +2,31 @@
 
 Tang Nano 9K（GW1NR-9C）向けのフレームバッファ型グラフィックスエンジンです。RP2040などのSPI/QSPIホストからPSRAM上の画面を更新し、HDMIへ映像と音声を出力します。
 
+## キャリア基板で実機化しました
+
+**Tang Nano 9KとRP2040を自作のKAGURA Pico Carrier Board Rev.Aに実装し、HDMI映像・ステレオ音声・MicroPythonを実機で動かしています。** 写真のホストはPico Wです。今回のFWはRP2040のGPU制御用で、無線機能は含みません。
+
+<img src="docs/images/hardware-front.jpg" alt="KAGURA Pico Carrier Board Rev.Aに搭載したTang Nano 9K。HDMIを接続して動作中" width="420">
+
+<details>
+<summary>基板裏面とUSB給電の写真</summary>
+
+|RP2040ホストを搭載した裏面|USB電力計の撮影時表示|
+|---|---|
+|![Pico Wを搭載した基板裏面](docs/images/hardware-back.jpg)|![USB電力計の表示](docs/images/hardware-usb-power.jpg)|
+
+USB給電ラインの撮影時表示は約5.03 V・0.235 A・1.18 Wです。
+
+</details>
+
+## KAGURA-HD MicroPython
+
+**[GPU制御用MicroPythonをリリース](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.23-micropython.1)**しました。HDMIのFramebuffer REPL、日本語フォント、XIAOキーボードブリッジ、Pythonから操作できる4オペレータ×7声のFM音源を備えています。
+
+MIDNIGHT TERMINALの演出・進行・音色・譜面はPython側に置き、FWは汎用GPU・音源機能を提供します。104秒の実機再生は**平均25.7 fps**（ネイティブC版は約29.2 fps）。OBS録音のクリップ0、音源再起動20回、USB Ctrl-C試験10回とREPL復帰を確認しました。XIAOブリッジの通信は確認済みで、実キーボードの打鍵試験は未実施です。
+
+[導入手順・配布ファイル](releases/micropython-2026.11.23/README.md) / [GPU・FM API](software/kagura_runtime/README.md) / [実機検証記録](software/kagura_runtime/evidence/improvement-2026-11-23/summary.json)
+
 ## Demo
 
 ### FOUR OPERATORS — 16色メガデモ
@@ -29,11 +54,11 @@ RP2040の2つ目のコアで動くソフトウェアFM音源（4オペレータ�
 - [BEYOND 16 COLORS](software/beyond16/README.md)：150秒・全8シーンのデモ。選定版でも回帰試験を行い、完走を確認しています。[実機結果](software/beyond16/HARDWARE_RESULT.md)
 - [6シーンのMicroPython Showcase](software/kagura_fb/showcase/README.md)
 
-実機試験では、FPGAへは選定版をSRAMに一時投入しています（電源を切ると元のFlashの構成に戻ります）。RP2040のFlashへ書き込んだ試験では、終了後に元の内容へ書き戻し、一致を確認しています。
+従来のネイティブ版デモの実機試験では、FPGAへのSRAM一時投入とRP2040の元イメージへの復元を行っています。MicroPython版は実機へインストールした状態で継続利用しています。各試験の条件は個別の記録を参照してください。
 
-## すぐに試す
+## ネイティブC版デモを試す
 
-[Releases](https://github.com/siska-tech/kagura-hd/releases/latest)に、選定版bitstreamと2つのデモのUF2を置いています（2026-11-09の[v2026.11.09.1](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.09.1)から、SPI版のbitstreamとUF2も添付）。ビルド環境は要りません。
+[v2026.11.09.1](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.09.1)に、選定版bitstreamと2つのネイティブC版デモのUF2を置いています（QSPI版・SPI版）。ビルド環境は要りません。MicroPython版の導入は[こちら](releases/micropython-2026.11.23/README.md)です。
 
 1. Tang Nano 9Kに`kagura-hd-qspi-pcm-stream.fs`を書き込みます（Gowin Programmerの「embFlash Erase,Program」など）。SecurityBitがONのため、Verify付きの操作は失敗します。1.9.11.03で書込みを確認しました。
 2. Raspberry Pi Pico（RP2040）を[配線表](docs/kagura-fb-host-api.md#配線転送)のとおりにつなぎ、GNDを共通にします。
@@ -64,7 +89,7 @@ Picoは起動から約5秒後に、自動でデモを始めます。もう一度
 |BLIT制約|Xと幅は偶数、送受Xの差は8画素の倍数|
 |カーソル|32×32・2bpp、透明色＋独立3色、形状2バンク、垂直帰線で反映|
 |音声|signed8 PCM **2ch**、48kHz、左右GAIN・MASTER、HDMI stereo出力。PSRAM上のA/B半面をHostが連続補充するストリーミング|
-|SDK|[C](software/kagura_fb/kagura_fb.h)、[MicroPython Device](software/kagura_fb/kagura_fb.py)、[PCM Audio](software/kagura_fb/kagura_fb_audio.py)|
+|SDK|[C](software/kagura_fb/kagura_fb.h)、[MicroPython Device](software/kagura_fb/kagura_fb.py)、[FrameBuffer・日本語表示](docs/micropython-framebuf.md)、[PCM Audio](software/kagura_fb/kagura_fb_audio.py)|
 
 音声はPCM2（ワンショットとループ）と、Hostが半面ずつ補充するストリーミングに対応しています。旧6ch音源のHost設定は使いません。描画、カーソル、BLITはABI 1.2を引き継ぎ、音声CSR、COMMIT、ストリーミングCSRを追加しています。[Host ABI・音声契約](docs/kagura-fb-host-api.md)を参照してください。
 

@@ -1,0 +1,20 @@
+{
+  "display_648_bytes_ms": 7367,
+  "copy100_us": 338115,
+  "write4096_us": 399977,
+  "read4096_us": 225779,
+  "files": {
+    "kagura_console.py": "fb51dd643ebc548622e160e3594072169a22e469df12668cf2da837cd585a5a3",
+    "kagura_fb.py": "c5f5fb5cbeb5730f0a13235d4d5cb9cc6dd8db2bb621120e9b531a1b3fd9970d",
+    "kagura_fb_audio.py": "07624052155d4a6e819b2ebd76251ebe75483d3019aefdb1941f0cde8adcedc7",
+    "kagura_framebuf.py": "e75098d646ef61fa5570623ac082936edeacc1301269ad853a92cc9296c35ad8",
+    "kagura_glyph_atlas.py": "70ea81691ff9dd653f117a84a58e81ca80223cf55057d1fb9a44ab40074b6c6b",
+    "kagura_ja.py": "4f9915f03bec3bd3570c68af369d8e27aef82b3e743bb595c6f384c2820c8068",
+    "kagura_keyboard.py": "9928112de183873c2c0e6c3e0d62fcdd805d4e7a20e529d73c9a536e952640cb",
+    "kagura_native_commands.py": "627da28acb13949cfa978a54f796719d01be4c6e9e231db2a7409dddaeff4687",
+    "kagura_terminal.py": "89fb7e28df3d31b1d1afaac8baa4d193e44f57142cd9c11b52a702e6f1af2748",
+    "rp2040_bringup.py": "c9ca08f8afbcb2abcad0964d684b17136a602c479fe2ee56049854c8351a41ca",
+    "rp2040_pio.py": "8c74571e963b06ef390d6476d489718c7b7298b87633c1e400a9163029a85c43",
+    "rp2040_qspi.py": "c157815a3829da32e36e20a0b5205691347a589ebd43320d5dc2a68c2d19f185"
+  }
+}

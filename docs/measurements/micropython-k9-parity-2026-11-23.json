@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-23",
+  "hardware": "RP2040 Pico / Pico Carrier RevA",
+  "micropython": "1.26.0",
+  "cpu_hz": 125000000,
+  "qspi_hz": 5000000,
+  "font": "M+ 12px / halfwidth 6px / line height 13px",
+  "baseline_archive_sha256": "cd6c28fca7e114ff5832f1023516e1f5420d1b56aa17a0b0d7a1895cbf7a44e5",
+  "baseline_display": {
+    "native": true,
+    "samples_ms": [
+      6904,
+      6860,
+      6773
+    ],
+    "heap_free": 49264,
+    "keyboard": false,
+    "bytes": 648,
+    "dropped": 0,
+    "error": "None",
+    "stress_lines": 0
+  },
+  "final_display": {
+    "native": true,
+    "samples_ms": [
+      3154,
+      3118,
+      3118
+    ],
+    "heap_free": 41024,
+    "keyboard": false,
+    "bytes": 648,
+    "dropped": 0,
+    "error": "None",
+    "stress_lines": 0
+  },
+  "median_speedup": 2.2001282873636945,
+  "stress": {
+    "native": true,
+    "samples_ms": [
+      3222,
+      3274,
+      3223
+    ],
+    "heap_free": 41136,
+    "keyboard": false,
+    "bytes": 648,
+    "dropped": 0,
+    "error": "None",
+    "stress_lines": 128
+  },
+  "transfer_us": {
+    "baseline": {
+      "write4096": 399977,
+      "read4096": 225779,
+      "copy100": 338115
+    },
+    "final": {
+      "write4096": 78120,
+      "read4096": 104498,
+      "copy100": 121481
+    }
+  },
+  "deployed_sha256": {
+    "kagura_native_commands.py": "e40494b1fb4a7a2c71fd53498beb15e943127e07262a74d15a6ce2a6cf2a153a",
+    "kagura_ja.py": "4f9915f03bec3bd3570c68af369d8e27aef82b3e743bb595c6f384c2820c8068",
+    "fonts/mplus12.kmf": "627e49022c9111f1dabc46e5853f97ef689d6001cb11339ff19b01aaa32c9eb4",
+    "kagura_keyboard.py": "9928112de183873c2c0e6c3e0d62fcdd805d4e7a20e529d73c9a536e952640cb",
+    "kagura_glyph_atlas.py": "4616f270bde0f37fbe3801d9ceb914bdb4bcaca6148251030fae45ba1cc4cad5",
+    "kagura_console.py": "4846709ed4c53f31256536ec5880a6f9f2d43f478066cc979102f03767d44674",
+    "kagura_fb.py": "261d6df9d644dd62fe6f23ddb1d7ad0418d6f7b6d6f96f8d31997915a162bfc6",
+    "kagura_terminal.py": "f4cc410716a9bfe565898745ca8a933a4dec48fbd2c6dc2a7df093218b726a91",
+    "fonts/mplus10.kmf": "f1d937480f3fc13620a71d353945daf0510fca8f8c3b0b07fc0f93f291e22da9",
+    "kagura_framebuf.py": "e75098d646ef61fa5570623ac082936edeacc1301269ad853a92cc9296c35ad8",
+    "rp2040_pio.py": "7e599ddd3747aeb9994502f9e368ca7ad9d0a78f5a35b0194f31fa32bb22cb0b"
+  },
+  "previous_final_display": {
+    "native": true,
+    "samples_ms": [
+      3390,
+      3478,
+      3388
+    ],
+    "heap_free": 41152,
+    "keyboard": false,
+    "bytes": 648,
+    "dropped": 0,
+    "error": "None",
+    "stress_lines": 0
+  }
+}

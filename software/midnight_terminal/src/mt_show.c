@@ -200,7 +200,7 @@ static int eyes(unsigned page, uint32_t ms, bool allow_red) {
 
 /* ------------------------------------------------------------------ scenes */
 static bool terminal_ready, bar_ready, title_text, choice_open, choice_closed;
-static unsigned subtitle_drawn, choice_sel, term_drawn[8], log_written;
+static unsigned subtitle_drawn, choice_sel, term_drawn[8], log_written, message_drawn;
 static int term_cursor_x, term_cursor_y;
 static bool term_cursor_on;
 
@@ -283,7 +283,14 @@ static int terminal_frame(uint32_t ms) {
             int y = SCREEN_Y0 + (int)(rnd() % (SCREEN_Y1 - SCREEN_Y0 - 12)), h = 2 + (int)(rnd() % 10), d = ((int)(rnd() % 5) - 2)*8;
             if (d) TRY(g_copy(0, SCREEN_X0 + (d < 0 ? -d : 0), y, 0, SCREEN_X0 + (d > 0 ? d : 0), y, SCREEN_X1 - SCREEN_X0 - (d < 0 ? -d : d), h));
         }
-        if (rnd() % 4 == 0) TRY(g_fill(0, (SCREEN_X0 + (int)(rnd() % (SCREEN_X1 - SCREEN_X0 - 24))) & ~1, SCREEN_Y0 + (int)(rnd() % (SCREEN_Y1 - SCREEN_Y0 - 8)), (4 + (int)(rnd() % 20)) & ~1, 2 + (int)(rnd() % 6), 11));
+        if (rnd() % 4 == 0) {
+            /* Explicit RNG order: C argument evaluation order is unspecified.
+             * Match the RP2040 GCC build, including the Python port. */
+            int h = 2 + (int)(rnd() % 6), w = (4 + (int)(rnd() % 20)) & ~1;
+            int y = SCREEN_Y0 + (int)(rnd() % (SCREEN_Y1 - SCREEN_Y0 - 8));
+            int x = (SCREEN_X0 + (int)(rnd() % (SCREEN_X1 - SCREEN_X0 - 24))) & ~1;
+            TRY(g_fill(0, x, y, w, h, 11));
+        }
         if (rnd() % 3 == 0) { pal_want[14] = 0xe38; pal_want[13] = 0x201; }
         for (unsigned i = 0; i < 16; i++) pal_want[i] = lerp(pal_want[i], 0, level*3/4);
     }
@@ -324,11 +331,10 @@ static int message_frame(uint32_t ms) {
     base[7] = lerp(0xc66, 0xfdd, heart < 300 ? 256 - heart*256/300 : 0);
     set_pal(base, ramp_out(ms, MESSAGE_END, 600));
     if (ms >= MESSAGE_START) {
-        static unsigned drawn;
         unsigned n = text_len(TXT_MESSAGE), due = (ms - MESSAGE_START)/MESSAGE_CHAR_MS + 1;
         if (due > n) due = n;
         int x = ((W - (int)text_width(F_MPLUS, TXT_MESSAGE, 2))/2) & ~1;
-        if (due > drawn) { TRY(draw_text(0, x, 166, F_MPLUS, TXT_MESSAGE, drawn, due, 7, 0, 2)); drawn = due; }
+        if (due > message_drawn) { TRY(draw_text(0, x, 166, F_MPLUS, TXT_MESSAGE, message_drawn, due, 7, 0, 2)); message_drawn = due; }
     }
     TRY(present(0));
     if (ms >= 79000 && !bar_ready) { TRY(upload(img_bar, sizeof img_bar, 1)); TRY(dialogue_box(1)); bar_ready = true; }
@@ -372,7 +378,8 @@ int show_init(kfb_device *device, int (*service_fn)(void)) {
     font_init();
     entered = 0; dlg.line = -1; eyes_state = 0; displayed = 0;
     terminal_ready = bar_ready = title_text = choice_open = choice_closed = false;
-    subtitle_drawn = choice_sel = log_written = 0; memset(term_drawn, 0, sizeof term_drawn);
+    seed = 0x9e3779b9u;
+    subtitle_drawn = choice_sel = log_written = message_drawn = 0; memset(term_drawn, 0, sizeof term_drawn);
     term_cursor_x = term_cursor_y = 0; term_cursor_on = false;
     TRY(present(0));                                                  /* black palette */
     TRY(upload(img_title, sizeof img_title, 0));

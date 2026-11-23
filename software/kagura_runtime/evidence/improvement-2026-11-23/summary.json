@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-23",
+  "baseline_commit": "e56aa637095bfb4193287ecadf4e44eaf5f222d9",
+  "firmware_sha256": {
+    "qspi": "77e46d042461ecc0c876e23b5d04b8a7c6474da1d9e98dcac19e9f8c204e700f",
+    "spi": "0984543391d473a2b98f0f9a2e52f863091b4ece02f62005fc90afad376f2364"
+  },
+  "flash_backup": false,
+  "write_verified": true,
+  "duration_seconds": 104,
+  "before_fps": 11.23,
+  "after_fps": 25.683,
+  "full_demo_result": {
+    "fm_clipped": 0,
+    "worst_latency_us": 30944,
+    "halves": 1218,
+    "scene_frames": [
+      297,
+      909,
+      362,
+      298,
+      227,
+      375,
+      203
+    ],
+    "fm_peak": 38183,
+    "frames": 2671
+  },
+  "timer_profile": {
+    "before": {
+      "elapsed_ms": 20033,
+      "frames": 250,
+      "tick_count": 344,
+      "tick_total_us": 8813909,
+      "tick_max_us": 38308,
+      "keyboard_poll_total_us": 135583,
+      "method": "Reset counters after first frame; time Console._tick, Keyboard.poll and Show.frame with ticks_us. Only timer rearm caching changed in the A/B run."
+    },
+    "after": {
+      "elapsed_ms": 20014,
+      "frames": 526,
+      "tick_count": 646,
+      "tick_total_us": 956853,
+      "tick_max_us": 9545,
+      "keyboard_poll_total_us": 142997,
+      "method": "Reset counters after first frame; time Console._tick, Keyboard.poll and Show.frame with ticks_us. Only timer rearm caching changed in the A/B run."
+    }
+  },
+  "core1_worker_restart_cycles": 20,
+  "configuration_open_cycles": 40,
+  "idle_core_heap_integrity_pass": true,
+  "cold_start_ctrl_c_passes": 5,
+  "playing_ctrl_c_passes": 5,
+  "application_replay_passes": 3,
+  "host_tests_passed": 33,
+  "host_pixel_frames_compared": 6240,
+  "obs_render_drop_increase": 0,
+  "obs_encode_drop_increase": 0,
+  "audio": {
+    "correlation_median": 0.9939748116113846,
+    "correlation_min": 0.7049014856632009,
+    "peak_dbfs": [
+      -9.710777282714844,
+      -9.70105266571045
+    ],
+    "clipped_samples": [
+      0,
+      0
+    ],
+    "quiet_active_10ms_windows": [
+      0,
+      0
+    ],
+    "clock_difference_ppm": -13.90510700313108
+  },
+  "silence_detection": "10 ms windows; reference RMS > 0.02 FS and captured RMS < 0.001 FS. Relative-level differences remain in low-level passages; this is not proof of identical capture frequency response.",
+  "obs_routing": "Dedicated audio input -6 dB, duplicate microphone and desktop inputs muted.",
+  "final_device_state": {
+    "uid": "e6647c15676c8637",
+    "error": "None",
+    "bridge_version": 1,
+    "framebuffer_repl": true,
+    "paused": false,
+    "keyboard_connected": false,
+    "keyboard_bad_frames": 0,
+    "free_heap": 135440,
+    "clock_hz": 120000000
+  },
+  "physical_keyboard_keypress_tested": false,
+  "observed_pre_fix_error": {
+    "event_index": 540,
+    "words_hex": [
+      "d0000000",
+      "00000178",
+      "00000179",
+      "fffffff9"
+    ]
+  },
+  "fixes": [
+    "Cache timer class and time module outside periodic callbacks.",
+    "Propagate callback KeyboardInterrupt to foreground VM.",
+    "Recover ownership from native generation/state across interrupted acquisition and snapshot.",
+    "Reset core1 after worker completion before GC can reuse its stack; clock changes otherwise trigger idle FIFO IRQ on the freed stack.",
+    "Pin immutable score owners before extracting C buffer pointers.",
+    "Increase end-card margin; exclude CPython bytecode from app archive."
+  ],
+  "scope": "One RP2040 board, finite tests. No physical keyboard connected. OBS recording and seven scene checkpoints were checked; no claim of perceptual listening."
+}

@@ -1,0 +1,22 @@
+{
+  "scenes": {
+    "frames_compared": 6240,
+    "replays": 2,
+    "all_pixels_and_palettes_match": true,
+    "sha256": "ba59fe705b38cd9373d7740d3b0e352431ba077011174b3ebc5724d05f978a35"
+  },
+  "fm": {
+    "score_stereo_frames_rendered": 4992000,
+    "python_schedule_bytes": 16080,
+    "paged_schedule_matches": true,
+    "first_difference_from_legacy_frame": 2816010,
+    "score_sha256": "372050ece88bee0289e65371e7d3f0cbf2dd2125e7eb93d065f390648cbbc9e4",
+    "live_note_on_off": true,
+    "sample_timed_gate": true,
+    "instruments_verified": 8,
+    "voices_verified": 7,
+    "queue_overflow_checked": true,
+    "invalid_schedule_event_identified": true
+  },
+  "hardware_tested": false
+}

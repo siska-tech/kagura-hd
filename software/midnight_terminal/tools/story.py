@@ -1,5 +1,5 @@
 """MIDNIGHT TERMINAL script: every text and its timing (ms). Shared by the
-visuals (generated/script.inc) and the synthesizer (typing clicks, cues)."""
+Python visuals/SFX and the C standalone build (generated/script.h)."""
 
 CHAR_MS = 45           # dialogue typing speed
 TERM_CHAR_MS = 32      # terminal typing speed
@@ -53,7 +53,7 @@ MESSAGE_START, MESSAGE_CHAR_MS, MESSAGE_END = 75500, 110, 83000
 RESTORE_START = 83000
 RED_EYES = (94500, 94800)
 END_CARD = 96500
-END_LINES = ["MIDNIGHT TERMINAL", "FM SYNTHESIS / 4 OPERATORS X 7 VOICES / 48 KHZ STREAM",
+END_LINES = ["MIDNIGHT TERMINAL", "FM SYNTHESIS / 4 OPS X 7 VOICES / 48 KHZ",
              "KAGURA-HD  -  TANG NANO 9K + RP2040"]
 END_MS = 104000
 

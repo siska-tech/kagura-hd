@@ -134,5 +134,7 @@ s.append('#endif\n')
 (GEN/'assets.c').write_text(''.join(c_out), encoding='utf-8')
 (GEN/'assets.h').write_text(''.join(h_out), encoding='utf-8')
 (GEN/'script.h').write_text(''.join(s), encoding='utf-8')
+from micropython_metadata import export as export_micropython_metadata
+export_micropython_metadata(mp_chars, mk_chars)
 (GEN/'assets.json').write_text(json.dumps(manifest, indent=2, ensure_ascii=False)+'\n', encoding='utf-8')
 print(json.dumps({k: v.get('deflate_bytes', v) if isinstance(v, dict) else v for k, v in manifest.items()}, ensure_ascii=False))

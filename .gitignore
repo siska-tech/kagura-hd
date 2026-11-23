@@ -30,4 +30,5 @@ __pycache__/
 # Local agent attachments; the frozen T8 candidate (superseded by releases/pcm-stream-qspi,
 # contains a 2.6 MB netlist and the .bin) stays local.
 .codex-remote-attachments/
+.codex-attachments/
 diagnostics/pcm-stream-rc1/candidate-t8/

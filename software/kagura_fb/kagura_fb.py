@@ -3,6 +3,17 @@
 import time
 
 
+
+def _exclusive(method):
+    def guarded(self, *args, **kwargs):
+        self._display_busy += 1
+        try:
+            return method(self, *args, **kwargs)
+        finally:
+            self._display_busy -= 1
+    return guarded
+
+
 def _put16(buffer, offset, value):
     buffer[offset] = value & 255
     buffer[offset + 1] = (value >> 8) & 255
@@ -42,6 +53,8 @@ class Device:
         if not isinstance(timeout_ms, int) or not 0 <= timeout_ms <= 60000:
             raise ValueError("timeout_ms must be 0..60000")
         self.transport = transport
+        self._display_busy = 0
+        self._pending_tag = None
         self.timeout_ms = timeout_ms
         self._now = now_ms or getattr(time, "ticks_ms", lambda: int(time.monotonic() * 1000) & 0xffffffff)
         self._diff = getattr(time, "ticks_diff", lambda now, before: (now - before) & 0xffffffff)
@@ -50,6 +63,7 @@ class Device:
         identity = transport.read(0, True, 7)
         if identity[:4] != b"KFB1" or identity[4] != 1 or identity[6] & 31 != 31:
             raise ValueError("unsupported Kagura-FB identity/ABI")
+        self.capabilities = identity[6]  # Immutable for this FPGA configuration.
         tag = transport.read(28, True, 2)
         self._tag = ((tag[0] | (tag[1] << 8)) + 1) & 65535
 
@@ -73,6 +87,7 @@ class Device:
             if self._expired(started):
                 raise OSError(110, "Kagura-FB idle timeout")
 
+    @_exclusive
     def submit(self, command, payload=None):
         if len(command) != 16:
             raise ValueError("GPU command must be 16 bytes")
@@ -84,6 +99,7 @@ class Device:
             if not len(payload):
                 payload = None
         self._idle()
+        self._pending_tag = self._tag
         tag = self._tag
         self._tag = (tag + 1) & 65535
         _put16(command, 2, tag)
@@ -97,9 +113,11 @@ class Device:
         # A failed transfer can have reached the FPGA. Never resend it here.
         return tag
 
+    @_exclusive
     def _execute(self, command, payload=None):
         self.wait(self.submit(command, payload))
 
+    @_exclusive
     def wait(self, tag):
         if not isinstance(tag, int) or not 0 <= tag <= 65535:
             raise ValueError("GPU tag outside range")
@@ -113,6 +131,7 @@ class Device:
                 if result[0] | (result[1] << 8) == tag:
                     self.last_device_error = result[2] or self._read(7)
                     self._write(31, 1)
+                    self._pending_tag = None
                     if self.last_device_error:
                         raise OSError(self.last_device_error, "Kagura-FB command failed")
                     return
@@ -156,7 +175,8 @@ class Device:
             raise ValueError("copy outside pages or unsupported alignment")
         if not width or not height or (src_page == dst_page and sx == dx and sy == dy):
             return
-        if not self._read(6) & 64:
+        caps = self.capabilities if getattr(self.transport, 'capabilities_stable', False) else self._read(6)
+        if not caps & 64:
             raise ValueError("aligned copy capability missing")
         command = bytearray(16)
         command[0], command[1] = 6, src_page | (dst_page << 1)
@@ -188,6 +208,7 @@ class Device:
         if address < 0 or length < 0 or address > 4194304 or length > 4194304 - address:
             raise ValueError("memory range outside PSRAM")
 
+    @_exclusive
     def write_bytes(self, address, data):
         data = memoryview(data)
         self._range(address, len(data))
@@ -198,9 +219,7 @@ class Device:
             span = (prefix + count + 3) & ~3
             payload = bytearray(span)
             payload[prefix:prefix + count] = data[offset:offset + count]
-            mask = (1 << 64) - 1
-            for index in range(prefix, prefix + count):
-                mask &= ~(1 << index)
+            mask = ((1 << prefix) - 1) | (((1 << 64) - 1) ^ ((1 << (prefix + count)) - 1))
             command = bytearray(16)
             command[0], command[1] = 4, span // 4
             _put32(command, 4, address & ~3)
@@ -210,6 +229,7 @@ class Device:
             address += count
             offset += count
 
+    @_exclusive
     def read_into(self, address, data):
         data = memoryview(data)
         if len(data):
@@ -253,6 +273,7 @@ class Device:
         self.last_device_error = 0
         self._write(53, 0)
 
+    @_exclusive
     def cursor_status(self):
         self._cursor_available()
         status = self._read(50)
@@ -260,6 +281,7 @@ class Device:
         self._cursor_check()
         return status, generation[0] | (generation[1] << 8)
 
+    @_exclusive
     def cursor_shape(self, bank, shape, colors, hotspot=(0, 0)):
         shape = memoryview(shape)
         if not isinstance(bank, int) or bank not in (0, 1) or len(shape) != 256 or len(colors) != 3 or len(hotspot) != 2:
@@ -285,6 +307,7 @@ class Device:
             self.transport.write(48, False, shape[offset:offset + 64])
         self._cursor_check()
 
+    @_exclusive
     def cursor_move(self, x, y, bank, visible=True):
         if (not isinstance(x, int) or not isinstance(y, int) or not isinstance(bank, int)
                 or not -1024 <= x <= 1023 or not -1024 <= y <= 1023 or bank not in (0, 1)):
@@ -298,6 +321,7 @@ class Device:
         self._write(49, 1)
         self._cursor_check()  # Submission only; wait separately for vblank.
 
+    @_exclusive
     def cursor_wait(self):
         self._cursor_available()
         started = self._now()
