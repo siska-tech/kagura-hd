@@ -1,5 +1,15 @@
 # 通常のRelease配布対象
 
+## MicroPython GPU runtime — 2026-11-23
+
+**[v2026.11.23-micropython.1](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.23-micropython.1)**で、
+RP2040用の汎用GPU／FM制御MicroPythonを公開しています。
+Framebuffer REPL、日本語フォント、XIAOブリッジ入力と、Pythonから設定するFM音源に対応します。
+[導入手順・配布一覧・検証範囲](micropython-2026.11.23/README.md)を参照してください。
+ネイティブC版デモのUF2は従来のリリースに残しています。
+
+## ネイティブC版デモとFPGA構成
+
 2026-11-08から、**PCMストリーミング QSPI版**を通常のGitHub Releases添付対象とします（[選定版パッケージ](pcm-stream-qspi/README.md)）。従来のPCM2 / ABI 1.4 / QSPI版は置き換え済み（superseded）で、`artifacts/validated/` に記録として残しています。QSPI版は[v2026.11.09](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.09)で公開しました。QSPI版とSPI版をそろえた最新のReleaseは[v2026.11.09.1](https://github.com/siska-tech/kagura-hd/releases/tag/v2026.11.09.1)です。
 
 |添付asset|保存先|
